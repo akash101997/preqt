@@ -1,6 +1,6 @@
 .OurMobileAppMainConatiner {
     height: 710px;
-    max-width: 1920px;
+    /* max-width: 1920px; */
     background-color: #F7F6F2;
     padding: 20px 120px 127px 120px;
     display: flex;
@@ -8,18 +8,21 @@
     /* border: 1px solid black; */
     gap: 64px;
     overflow: hidden;
+    /* justify-content: center; */;
+    /* align-items: center; */
 }
 
 .headingMainContainer {
     display: flex;
     flex-direction: column;
-    max-width: 1680px;
+    /* max-width: 1680px; */
     height: 150px;
     padding-top: 26px;
     padding-bottom: 26px;
     gap: 12px;
     /* border: 1px solid black; */
     align-items: center;
+    justify-content: center;
 }
 
 .earlyAccessHeading {
@@ -44,14 +47,14 @@
     color: #000000;
 }
 .imageGroup {
-    position: relative;
+    position: absolute;
     transform: translateX(40px); 
     transition: transform 1s ease;
 }
 
 .imageWrapper {
     position: relative;
-    width: 1200px;
+    /* width: 1200px; */
     height: 1031px;
     /* border: 1px solid black; */
 }

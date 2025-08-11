@@ -2,13 +2,13 @@
     display: flex;
     flex-direction: column;
     height: 360px;
-    width: 1020px;
+    max-width: 1020px;
     /* border: 1px solid black; */
     gap: 20.72px;
 }
 .headingSection{
     height: 37px;
-    width: 100%;
+    /* width: 100%; */
     font-family: Helvetica;
     font-size: 25px;
     font-weight: 300;
@@ -18,7 +18,7 @@
 }
 .videoTestimonialSection{
     height: 300px;
-    width: 100%;
+    /* width: 100%; */
     gap: 20px;
     /* border: 1px solid black; */
     display: flex;
@@ -31,7 +31,7 @@
 }
 .testimonialCard{
     width: 450px;
-    height: 300px;
+    /* height: 300px; */
     /* border: 1px solid black; */
     border-radius: 0 25.9px 25.9px 25.9px;
     background-color: #F7F6F2;
@@ -39,12 +39,12 @@
 }
 .testimonialVideo{
     height: 300px;
-    width: 170px;
+    /* width: 170px; */
     /* border: 1px solid black; */
 }
 .videoTitle{
     /* height: 105px; */
-    width: 120px;
+    /* width: 120px; */
     position: absolute;
     top: 260px;
     left: 240px;
@@ -55,7 +55,7 @@
 }
 .titleBy{
     height: 40px;
-    width: 105px;
+    /* width: 105px; */
     position: absolute;
     top: 460px;
     left: 240px;
@@ -88,7 +88,7 @@
     left: 21px;
 }
 .titleBy2{
-    width: 105px;
+    /* width: 105px; */
     height: 44px;
     position: relative;
     top: 60px;
