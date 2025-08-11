@@ -1,0 +1,86 @@
+
+import Link from 'next/link';
+
+import styles from './Sidenav.module.css';
+// import { FaUser, FaMoneyCheckAlt, FaBell, FaFileAlt, FaQuestionCircle, FaFileSignature, FaSignOutAlt, FaHeadset } from 'react-icons/fa';
+
+export default function Sidenav() {
+  return (
+
+    <div className={styles.account_details}>
+    <div className={styles.sidebar}>
+      <div className={styles.profile}>
+        <div className={styles.avatar}>AM</div>
+        <div className={styles.id}>CL273874</div>
+        <div className={styles.name}>Anjali Mishra</div>
+      </div>
+
+      <ul className={styles.nav}>
+
+        <li className={styles.item}>
+         <div className={styles.My_name}> <svg width="24" height="24" viewBox="0 0 24 24" fill="rgba(201, 167, 78, 1)" xmlns="http://www.w3.org/2000/svg">
+  <path opacity="0.4" d="M21.0901 21.5C21.0901 21.78 20.8701 22 20.5901 22H3.41016C3.13016 22 2.91016 21.78 2.91016 21.5C2.91016 17.36 6.99015 14 12.0002 14C13.0302 14 14.0302 14.14 14.9502 14.41C14.3602 15.11 14.0002 16.02 14.0002 17C14.0002 17.75 14.2101 18.46 14.5801 19.06C14.7801 19.4 15.0401 19.71 15.3401 19.97C16.0401 20.61 16.9702 21 18.0002 21C19.1202 21 20.1302 20.54 20.8502 19.8C21.0102 20.34 21.0901 20.91 21.0901 21.5Z" fill="rgba(201, 167, 78, 1)"/>
+  <path d="M20.97 14.33C20.25 13.51 19.18 13 18 13C16.88 13 15.86 13.46 15.13 14.21C14.43 14.93 14 15.92 14 17C14 17.75 14.21 18.46 14.58 19.06C14.78 19.4 15.04 19.71 15.34 19.97C16.04 20.61 16.97 21 18 21C19.46 21 20.73 20.22 21.42 19.06C21.63 18.72 21.79 18.33 21.88 17.93C21.96 17.63 22 17.32 22 17C22 15.98 21.61 15.04 20.97 14.33ZM19.5 17.73H18.75V18.51C18.75 18.92 18.41 19.26 18 19.26C17.59 19.26 17.25 18.92 17.25 18.51V17.73H16.5C16.09 17.73 15.75 17.39 15.75 16.98C15.75 16.57 16.09 16.23 16.5 16.23H17.25V15.52C17.25 15.11 17.59 14.77 18 14.77C18.41 14.77 18.75 15.11 18.75 15.52V16.23H19.5C19.91 16.23 20.25 16.57 20.25 16.98C20.25 17.39 19.91 17.73 19.5 17.73Z" fill="rgba(201, 167, 78, 1)"/>
+  <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="rgba(201, 167, 78, 1)"/>
+</svg>
+</div>
+        <Link href={'/account/account_details'} className={styles.Link}> <span>Account Details</span></Link> 
+        </li>
+
+
+        <li className={styles.item}>
+          <img className={styles.icon} src='/account_sidenav/transation.svg' alt='' />
+        <Link href={'/account/account_transation'} className={styles.Link}>  <span className={styles.span}> Transactions</span></Link>
+        </li>
+
+
+        <li className={styles.item}>
+           <img className={styles.icon} src='/account_sidenav/24-support.svg' alt='' />
+            <Link href={'/account/account_support'} className={styles.Link}><span className={styles.span}>Support</span></Link>
+        </li>
+
+
+        <li className={styles.item}>
+          <img className={styles.icon} src='/account_sidenav/notification.svg' alt='' />
+          <span className={styles.span}>Notification preference</span>
+        </li>
+
+
+        <li className={styles.item}>
+             <img className={styles.icon} src='/account_sidenav/terms_condition.svg' alt='' />
+          <span className={styles.span}>Terms & Conditions</span>
+        </li>
+
+
+        <li className={styles.item}>
+             <img className={styles.icon} src='/account_sidenav/faq.svg' alt='' />
+          <span className={styles.span}>Frequently Asked Questions</span>
+        </li>
+
+
+        <li className={styles.item}>
+             <img className={styles.icon} src='/account_sidenav/privacy_policy.svg' alt='' />
+          <span className={styles.span}>Privacy Policy</span>
+        </li>
+
+
+        <li className={styles.item}>
+             <img className={styles.icon} src='/account_sidenav/my-documents.svg' alt='' />
+          <span className={styles.span}>My documents</span>
+        </li>
+
+
+      </ul>
+
+      <hr className={styles.hr} />
+
+      <div className={styles.logout}>
+           <img className={styles.icon} src='/account_sidenav/login.svg' alt='' />
+        <span className={styles.span}>Log Out</span>
+      </div>
+
+    </div>
+
+    </div>
+  );
+}
