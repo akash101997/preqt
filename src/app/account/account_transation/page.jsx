@@ -154,7 +154,7 @@ export default function Home() {
             <div>{txn.lotSize}</div>
             <div>{txn.date}</div>
             <div className={getStatusClass(txn.status)}>{txn.status}</div>
-            <div><img src="./accounttransation_icon/ellipsis.svg" alt="" /></div>
+            {/* <div><img src="./accounttransation_icon/ellipsis.svg" alt="" /></div> */}
           </div>
         ))}
       </div>

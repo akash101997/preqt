@@ -5,7 +5,7 @@
   background-color: #f9f4e8;
   padding: 3rem;
   flex-wrap: wrap;
-  height: 301px;
+  height: 361px;
 }
 
 .left {
@@ -53,7 +53,7 @@
 
 .qrImage {
 position: relative;
-top: 20px;
+top: -18px;
   border-radius: 12px;
   margin-bottom: 1rem;
 }
@@ -66,14 +66,14 @@ top: 20px;
 }
 .applestore{
     position :relative;
-    top: -75px;
+    top: -105px;
     left: -20px;
 
 
 }
 .playstore{
     position :relative;
-    top: -75px;
+    top: -105px;
     left: 20px;
 
 }

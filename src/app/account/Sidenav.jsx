@@ -42,7 +42,8 @@ export default function Sidenav() {
 
         <li className={styles.item}>
           <img className={styles.icon} src='/account_sidenav/notification.svg' alt='' />
-          <span className={styles.span}>Notification preference</span>
+            <Link href={'/account/account_notification'} className={styles.Link}>Notification preference<span className={styles.span}></span></Link>
+       
         </li>
 
 

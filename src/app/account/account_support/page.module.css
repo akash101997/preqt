@@ -1,9 +1,13 @@
 .container {
-  width: 750px;
+  width: 985px;
   /* margin: 0 auto; */
-  border: 1px solid rgba(229, 231, 235, 1);
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 1);
+  
   padding: 24px;
   height: 690px;
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
 
 .title {
@@ -49,6 +53,7 @@
 .labeltext{
    background-color: white;
    padding: 6px;
+  
 
 
 }

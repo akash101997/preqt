@@ -84,7 +84,7 @@
     color: #64748B;
 }
 
-.userInitials{
+ .userInitials{
     width: 26px;
     height: 21px;
     font-weight: 300;
@@ -94,4 +94,9 @@
     top: 15.6px;
     left: 11.7px;
     color: #FFFFFF;
+    
+}
+.Link{
+    text-decoration: none;
+
 }
