@@ -1,6 +1,9 @@
 .account_details{
   display: flex;
-gap: 24px;
+/* gap: 24px; */
+border-radius: 24px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 justify-content: center;
 background-color:  rgba(255, 255, 255, 1);
 
@@ -13,8 +16,9 @@ background-color:  rgba(255, 255, 255, 1);
 
 
 .sidebar {
-  width: 260px;
-  height: 700px;
+  width: 320px;
+  /* height: 700px; */
+  height: 100%;
   background: (255, 255, 255, 1);
   padding: 20px;
 
@@ -94,8 +98,7 @@ background-color:  rgba(255, 255, 255, 1);
   margin-top: 40px;
   padding: 12px 16px;
   border-radius: 30px;
-  color: #b89027;
-  font-weight: bold;
+  color: #555;
   cursor: pointer;
   display: flex;
   align-items: center;
