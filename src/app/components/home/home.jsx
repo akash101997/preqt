@@ -10,7 +10,7 @@ export default function home() {
             <NavBar />
             <div className={styles.marqueeSectionContainer}>
                 <div className={styles.marqueeSection}>
-                    <marquee behavior="scroll" direction="left" scrollamount="10" className={styles.marqueeContent}>
+                    <marquee behavior="scroll" direction="left" scrollamount="15" className={styles.marqueeContent}>
                         <div className={styles.marqueeItem}>
                             <div className={styles.NiftySection}>
                                 Nifty 50
