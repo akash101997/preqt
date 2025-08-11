@@ -1,0 +1,24 @@
+import styles from './heroSection.module.css'
+import LetsHearFromThem from '../LetsHearFromThem/LetsHearFromThem'
+import DealsTalk from '../DealsTalk/DealsTalk'
+import MarketSentiment from '../MarketSentiment/MarketSentiment'
+import OurMobileApp from '../OurMobileApp/OurMobileApp'
+
+export default function HeroSection() {
+    return (
+        <div>
+        <section className={styles.heroMainContainer}>
+                <div className={styles.heroFrame}>
+                    <LetsHearFromThem />
+                    <DealsTalk />
+                </div>
+
+                <div>
+                    <MarketSentiment />
+                </div>
+            </section>
+            <OurMobileApp/>
+        </div>
+
+    )
+}
