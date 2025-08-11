@@ -42,14 +42,14 @@ export default function Sidenav() {
 
         <li className={styles.item}>
           <img className={styles.icon} src='/account_sidenav/notification.svg' alt='' />
-            <Link href={'/account/account_notification'} className={styles.Link}>Notification preference<span className={styles.span}></span></Link>
+            <Link href={'/account/account_notification'} className={styles.Link}><span className={styles.span}>Notification preference</span></Link>
        
         </li>
 
 
         <li className={styles.item}>
              <img className={styles.icon} src='/account_sidenav/terms_condition.svg' alt='' />
-          <span className={styles.span}>Terms & Conditions</span>
+           <Link href={'/account/terms&condition'} className={styles.Link}><span className={styles.span}>Terms & Conditions</span></Link>
         </li>
 
 

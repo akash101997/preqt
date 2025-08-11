@@ -1,0 +1,51 @@
+.container {
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 1);
+  margin: 60px auto;
+  padding: 20px;
+  border-radius: 24px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.heading {
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 5px;
+  color: rgba(31, 41, 55, 1);
+}
+
+.date {
+  color: rgba(107, 114, 128, 1);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.date span {
+  font-weight: bold;
+}
+
+.intro {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.text {
+  margin-bottom: 20px;
+}
+
+.h2 {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.li {
+  margin-bottom: 5px;
+}
