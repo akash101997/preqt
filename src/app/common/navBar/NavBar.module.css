@@ -1,0 +1,97 @@
+.mainContainer{
+    max-height: 84px;
+    width: 100%;
+    border-bottom: 1px solid #0000000D;
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    padding: 12px 60px 12px 60px;
+}
+.logo{
+    width: 153px;
+    height: 48px;
+}
+.navigationButtonContainer{
+    width: 578px;
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background-color: #FFFFFF;
+    /* border: 1px solid black; */
+}
+.navigationButton{
+    display: flex;
+    width: 558px;
+    height: 40px;
+    /* border: 1px solid black; */
+}
+.HomeNavButton{
+    /* width: 139px; */
+    height: 40px;
+    display: flex;
+    padding: 8px 24px 8px 24px;
+    gap: 12px;
+    /* border: 1px solid black; */
+}
+.HomeNavButton:hover{
+    border-radius: 100px;
+    background-image: linear-gradient(to bottom right, #FFF2D0, #8E6B0F);
+}
+.HomeNavButton:hover .HomeIconImage {
+    filter: brightness(0) invert(1); /* turns it white */
+}
+.HomeNavButton:hover .home{
+    color: white;
+}
+
+.navRightSection{
+    max-width: 118px;
+    max-height: 52px;
+    display: flex;
+    gap: 14px;
+    /* border: 1px solid black; */
+}
+.NotificationIconContainer{
+    width: 52px;
+    height: 52px;
+    /* border: 1px solid black; */
+    display: flex;
+    padding: 11px;
+    border-radius: 117px;
+    background-color: #334155;
+}
+.UserIconContainer{
+    width: 52px;
+    height: 52px;
+    border-radius: 433px;
+    background-image: linear-gradient(to bottom right, #FFF2D0, #8E6B0F);
+}
+.HomeIconImage{
+    width: 20px;
+    height: 19px;
+    position: relative;
+    top: 2.18px;
+    left: 2px;
+}
+.home{
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0%;
+    line-height: 24px;
+    text-align: center;
+    color: #64748B;
+}
+
+.userInitials{
+    width: 26px;
+    height: 21px;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 100%;
+    position: relative;
+    top: 15.6px;
+    left: 11.7px;
+    color: #FFFFFF;
+}

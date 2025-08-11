@@ -1,0 +1,146 @@
+/* Root container (1920x919 with 400px side padding on large screens) */
+.mainContainer {
+  /* Figma: width: 1920; height: 919; padding: 80px 400px; */
+  width: 100%;
+  max-height: 919px;
+  padding: 80px 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+/* Card (1120x759, radius 30, padding 40, gradient) */
+.card {
+  width: 100%;
+  /* max-width: 1120px; */
+  min-height: 759px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  box-sizing: border-box;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #F3F4F6 0%, #FFFFFF 100%);
+}
+
+/* Heading wrap (1040 wide, center) */
+.headingWrap {
+  width: 100%;
+  max-width: 1040px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif; /* Fallback stack */
+  line-height: 100%;
+  font-size: 25px;
+  letter-spacing: 0;
+  text-align: center;
+  font-weight: 200; /* Thin */
+}
+
+.headingLight { font-weight: 200; }
+.headingBold { font-weight: 700; }
+
+/* QA list container (1040 wide, gap 16) */
+.qaList {
+  width: 100%;
+  max-width: 1040px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Each item has a 40px header row height with dark gray bg like screenshot */
+.qaItem {
+  width: 100%;
+  /* color: #ffffff; */
+  border-radius: 8px;
+  overflow: hidden; /* keep dropdown corners rounded *//* Figma background for the question row */
+  cursor: pointer;
+  user-select: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.qaItem:focus-visible {
+  outline: 2px solid #111827;
+  outline-offset: 2px;
+}
+
+.qaRow {
+  display: flex;
+  align-items: center;
+  min-height: 40px; /* exact Figma height */
+  padding: 0 20px;
+  gap: 12px;
+}
+
+.question {
+  flex: 1;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+/* Chevron “>” rotates when open */
+.chevron {
+  font-weight: 700;
+  font-size: 14px;
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+  color: #4B5563;
+}
+
+.open .chevron { transform: rotate(90deg); }
+
+/* Answer panel */
+.answerWrap {
+  display: none;
+ 
+  padding: 20px;
+  color: #111827;
+}
+
+.open .answerWrap { display: block; }
+
+/* Answer typography */
+.answer {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #6B7280;
+}
+
+/* Responsiveness to keep 100% width while honoring Figma look */
+@media (max-width: 1440px) {
+  .mainContainer { padding: 80px 200px; }
+}
+
+@media (max-width: 1024px) {
+  .mainContainer { padding: 60px 120px; }
+  .card { padding: 32px; }
+}
+
+@media (max-width: 768px) {
+  .mainContainer { padding: 40px 20px; min-height: auto; }
+  .card { border-radius: 20px; padding: 24px; gap: 24px; }
+  .headingWrap { height: auto; }
+  .heading { font-size: 28px; }
+}
+
+@media (max-width: 480px) {
+  .heading { font-size: 24px; }
+  .question { font-size: 13px; }
+}

@@ -1,0 +1,347 @@
+.DealsTalkMainContainer{
+    height: 549px;
+    width: 1020px;
+    /* border: 1px solid black;  */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.DealsTalkHeading{
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    width: 340px;
+    height: 38px;
+    letter-spacing: 0;
+    color: #1F2937;
+}
+.SpanDealsTalkHeading{
+    font-weight: 600;
+}
+.DealsTalkCardContainer{
+    height: 500px;
+    width: 1020px;
+    display: flex;
+    gap:24px;
+    /* border: 1px solid black; */
+}
+.cardContainer1{
+    height: 468px;
+    width: 340px;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 20px;
+}
+.cardInnerSections{
+    width: 340px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* border: 1px solid black; */
+}
+.cardIPOsection{
+    display: flex;
+    width: 160px;
+    height: 25px;
+    gap: 10px;
+    /* border: 1px solid black; */
+}
+.IPOheading{
+    width: 70px;
+    height: 25px;
+    border: 1px solid #ECECF0;
+    border-radius: 6px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: #ECECF0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.HeadingContent{
+    width: 50px;
+    height: 25px;
+    font-size: 10px;
+    line-height: 25px;
+    letter-spacing: 0%;
+}
+.AnthemSection{
+    width: 340px;
+    height: 32px;
+    display: flex;
+    gap: 20px;
+    /* border: 1px solid black; */
+    
+}
+.anthemPicture{
+    width: 30px;
+    height: 30px;
+    color: #FFFFFF;
+}
+.anthemHeading{
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    font-weight: bold;
+    color: #1F2937;
+    height: 17px;
+    text-align: center;
+    margin-top: 7px;
+}
+.dealCardContent{
+    width: 340px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: lighter;
+    line-height: 100%;
+    letter-spacing: 0%;
+    /* border: 1px solid black; */
+    color: #6B7280;
+}
+.revenueMainContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.revenueSection{
+    width: 280px;
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.Revenue{
+    display: flex;
+    flex-direction: column;
+    width: 123.3px;
+    height: 36px;
+    gap: 4px;
+}
+.revenuHeading{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0%;
+    color: #6B7280;
+}
+.priceInRupee{
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    height: 16px;
+
+}
+.cagrSection{
+    width: 340px;
+    height: 36px;
+    display: flex;
+}
+.merchantMainContainer{
+    width: 340px;
+    height: 30px;
+    display: flex;
+    gap: 10px;
+}
+.merchantBanker{
+    width: 186px;
+    height: 30px;
+    display: flex;
+    border: 1px solid #44319745;
+    border-radius: 40px;
+    padding-right: 10px;
+    padding-left: 10px;
+    gap: 10px;
+
+}
+.bankMerchant{
+    font-size: 11px;
+    line-height: 100%;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    margin-top: 10px;
+}
+.cardFooterMainContainer{
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    gap: 50px;
+    border-top: 1px solid #E2E8F0;
+}
+.QandA{
+    height: 24px;
+    display: flex;
+    gap: 80px;
+    margin-top: 10px;
+    align-items: center;
+}
+.QandAstats{
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: normal;
+    color: #C9A74E;
+}
+.usersIcons{
+    width: auto;
+    height: 24px;
+    display: flex;
+}
+.userImages{
+    width: 24px;
+    height: 24px;
+    border: 1px solid #FFFFFF;
+    border-radius: 100px;
+    margin-left: -11px;
+}
+
+/* card 2 */
+.card2Container {
+    width: 340px;
+    height: 468px;
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    gap: 24px;
+    border-radius: 20px;
+    backdrop-filter: blur(60px);
+    color: #f5f5f5;
+}
+
+/* Inner Section */
+.card2InnerSections {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* IPO Tags */
+.card2IPOsection {
+    display: flex;
+    gap: 10px;
+}
+.card2IPOtag {
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 0 10px;
+    background-color: #333;
+}
+.card2IPOtext {
+    font-size: 10px;
+    line-height: 25px;
+    color: #ddd;
+}
+
+/* Company Section */
+.card2CompanySection {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.card2CompanyLogo {
+    width: 30px;
+    height: 30px;
+}
+.card2CompanyName {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Description */
+.card2Description {
+    font-size: 14px;
+    color: #bbb;
+}
+
+/* Stats Section */
+.card2StatsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.card2StatsRow {
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+}
+.card2Stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.card2StatHeading {
+    font-size: 12px;
+    color: #aaa;
+}
+.card2StatValue {
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* Merchant Banker */
+.card2MerchantContainer {
+    display: flex;
+}
+.card2MerchantTag {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    padding: 6px 12px;
+}
+.card2MerchantText {
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Footer */
+.card2Footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+}
+.card2QandA {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card2QandAStats {
+    font-size: 12px;
+    color: #c9a74e;
+}
+.card2UserIcons {
+    display: flex;
+}
+.card2UserImage {
+    /* width: 24px; */
+    height: 24px;
+    border: 1px solid #1e1e1e;
+    border-radius: 50%;
+    margin-left: -8px;
+}
+
+.crousel{
+    width: 36px;
+    height: 36px;
+    border: 1px solid #E5E7EB ;
+    border-radius:50px;
+    display: flex;
+    padding: 6px;
+    gap:10px;
+    margin-top: 200px;
+}
+.crouselRight{
+    width: 6px;
+    height: 12px;
+    justify-content: center;
+    margin-left: 6px;
+    margin-top: 5px;
+}

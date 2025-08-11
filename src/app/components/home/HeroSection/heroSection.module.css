@@ -1,0 +1,16 @@
+.heroMainContainer{
+    display: flex;
+    height: 1170.37px;
+    width: 100%;
+    padding: 30px 60px 80px 60px;
+    gap: 24px;
+    /* border: 1px solid black; */
+    background-color:#FFFFFF ;
+}
+.heroFrame{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 1060px;
+    gap: 60px;
+}

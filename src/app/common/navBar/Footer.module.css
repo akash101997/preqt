@@ -1,0 +1,155 @@
+.FooterMainContainer {
+    max-width: 1920px;
+    max-height: 380px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 60px;
+    background-color: #1A1401;
+    gap: 10px;
+}
+
+.FooterInnerDiv {
+    max-width: 1800px;
+    max-height: 309px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* border: 1px solid white; */
+}
+
+.upperFooter {
+    display: flex;
+    gap: 100px;
+}
+
+.footerImage {
+    max-width: 153px;
+    max-height: 48px;
+    opacity: 1;
+}
+
+.footerRightPart {
+    width: 1457px;
+    max-height: 239px;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid wheat; */
+}
+
+.quickLink {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 86px;
+    max-height: 239px;
+    /* border: 1px solid white; */
+}
+
+.quickLinkHeading {
+    color: #FFFFFF;
+    opacity: 70%;
+}
+
+.quickLinkOptions {
+    max-width: 86px;
+    max-height: 204px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.quickLinks {
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 184%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.FundDetailsDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.FundDetailsHeading {
+    color: #FFFFFF;
+    opacity: 70%;
+}
+
+.fundDetailsOptions {
+    width: 333px;
+    height: 169px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.fundDetails {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.OfficeDetails {
+    max-width: 221px;
+    max-height: 87px;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 184%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.OfficeDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+ .contactRow {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    max-width: 256px;
+}
+.locationDetails {
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: normal;
+    max-width: 100%; 
+}
+.ContactMainContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* border: 1px solid snow; */
+}
+.ContactDetailsDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.hrLine{
+    max-width: 1800px;
+    height: 0px;
+    /* border: 1px solid #FFFFFF; */
+    color: #FFFFFF1A;
+    opacity: 10%;
+}
+.CopyWriteContent{
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 10px;
+    line-height: 184%;
+    letter-spacing: 0%;
+    font-weight: 400;
+}
+.quickLinks:hover{
+    border-bottom: 1px solid #FFFFFF;
+}
