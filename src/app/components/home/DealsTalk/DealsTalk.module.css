@@ -29,7 +29,7 @@
 }
 .cardContainer1{
     height: 468px;
-    width: 340px;
+    width: 300px;
     border: 1px solid #E2E8F0;
     display: flex;
     flex-direction: column;
@@ -95,7 +95,7 @@
     margin-top: 7px;
 }
 .dealCardContent{
-    width: 340px;
+    width: 280px;
     height: 35px;
     font-size: 15px;
     font-weight: lighter;
@@ -203,7 +203,7 @@
 
 /* card 2 */
 .card2Container {
-    width: 340px;
+    width: 327px;
     height: 468px;
     background-color: #1e1e1e;
     display: flex;
@@ -270,8 +270,8 @@
 }
 .card2StatsRow {
     display: flex;
-    justify-content: space-between;
-    gap: 4px;
+    /* justify-content: space-between; */
+    gap: 50px;
 }
 .card2Stat {
     display: flex;
@@ -337,11 +337,67 @@
     padding: 6px;
     gap:10px;
     margin-top: 200px;
+    margin-left: -15px;
 }
 .crouselRight{
     width: 6px;
     height: 12px;
     justify-content: center;
-    margin-left: 6px;
+    margin-left: 2px;
     margin-top: 5px;
+}
+
+/* progress bar in cards*/
+.progressContainer{
+    display: flex;
+    flex-direction: column;
+    max-width: 378px;
+    max-height: 34px;
+    gap: 8px;
+}
+.ProgressInPrice{
+    display: flex;
+    justify-content: space-between;
+    max-width: 378px;
+    max-height: 20px;
+}
+.PriceIncr{
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0%;
+}
+.PricePercent{
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0%;
+}
+.promoter{
+    display: flex;
+    width: 378px;
+    height: 70px;
+    gap: 10px;
+}
+.Strong{
+    max-width: 152px;
+    max-height: 30px;
+    border-radius: 40px;
+    border: 1px solid #FFFFFF1A ;
+    gap: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+.monetization{
+    max-width: 152px;
+    max-height: 30px;
+    border-radius: 40px;
+    border: 1px solid #FFFFFF1A ;
+    gap: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
 }
