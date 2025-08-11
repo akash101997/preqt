@@ -66,6 +66,10 @@
     text-transform: capitalize;
     font-weight: 400;
     text-decoration: none;
+
+    display: inline-block;
+    border-bottom: 1px solid transparent; 
+    transition: border-color 0.3s ease;
 }
 
 .FundDetailsDiv {
@@ -152,4 +156,19 @@
 }
 .quickLinks:hover{
     border-bottom: 1px solid #FFFFFF;
+}
+
+.quickLinks::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0; /* right under the text */
+    height: 1px;
+    width: 0;
+    background-color: #FFFFFF;
+    transition: width 0.3s ease;
+}
+
+.quickLinks:hover::after {
+    width: 100%; /* exactly matches text width */
 }

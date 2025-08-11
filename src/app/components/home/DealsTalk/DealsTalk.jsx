@@ -138,13 +138,29 @@ export default function DealsTalk() {
                         </div>
 
                         {/* Merchant Banker */}
-                        <section className={styles.card2MerchantContainer}>
+                        {/* <section className={styles.card2MerchantContainer}>
                             <div className={styles.card2MerchantTag}>
                                 <p className={styles.card2MerchantText}>
                                     Merchant Banker: Axis Capital
                                 </p>
                             </div>
-                        </section>
+                        </section> */}
+
+                        <div className={styles.progressContainer}>
+                            <div className={styles.ProgressInPrice}>
+                                <p className={styles.PriceIncr}>1.5 Cr / 2 Cr</p>
+                                <p className={styles.PricePercent}>94%</p>
+                            </div>
+
+                            <img src="/assets/pictures/PriceProgressBar.svg" alt="" />
+                        </div>
+
+
+                        <div className={styles.promoter}>
+                            <div className={styles.Strong}><p>Strong promoter</p></div>
+                            <div className={styles.monetization}><p>Clear Monetization</p></div>
+                        </div>
+                        
                     </div>
 
                     {/* Footer */}
@@ -178,13 +194,13 @@ export default function DealsTalk() {
 
                         {/* Anthem Section */}
                         <div className={styles.card2CompanySection}>
-                            <img src="/assets/pictures/Anthem.png" alt="" className={styles.card2CompanyLogo} />
-                            <p className={styles.card2CompanyName}>Anthem Biosciences Ltd</p>
+                            <img src="/assets/pictures/parthElectrical.png" alt="" className={styles.card2CompanyLogo} />
+                            <p className={styles.card2CompanyName}>Parth Electricals & Engineering Limited</p>
                         </div>
 
                         {/* Card Content */}
                         <p className={styles.card2Description}>
-                            India’s leading CRDMO with global clientele and 25%+ YoY revenue growth
+                            India’s fastest-growing EV infra player with 2.4x YoY revenue growth
                         </p>
 
                         {/* Revenue & ROI */}
@@ -192,42 +208,54 @@ export default function DealsTalk() {
                             <section className={styles.card2StatsRow}>
                                 <article className={styles.card2Stat}>
                                     <p className={styles.card2StatHeading}>Revenue</p>
-                                    <p className={styles.card2StatValue}>₹1,400 Cr</p>
+                                    <p className={styles.card2StatValue}>₹2,400 Cr</p>
                                 </article>
                                 <article className={styles.card2Stat}>
-                                    <p className={styles.card2StatHeading}>PAT</p>
-                                    <p className={styles.card2StatValue}>₹140Cr</p>
+                                    <p className={styles.card2StatHeading}>Revenue</p>
+                                    <p className={styles.card2StatValue}>₹1,400Cr</p>
                                 </article>
                                 <article className={styles.card2Stat}>
-                                    <p className={styles.card2StatHeading}>PAT multiple</p>
-                                    <p className={styles.card2StatValue}>₹1,41 Cr (24.7%)</p>
+                                    <p className={styles.card2StatHeading}>Expected listing </p>
+                                    <p className={styles.card2StatValue}>1.2 yr</p>
                                 </article>
                             </section>
 
                             <section className={styles.card2StatsRow}>
                                 <article className={styles.card2Stat}>
-                                    <p className={styles.card2StatHeading}>CAGR Growth 3Y</p>
-                                    <p className={styles.card2StatValue}>340%</p>
+                                    <p className={styles.card2StatHeading}>PAT</p>
+                                    <p className={styles.card2StatValue}>₹24 Cr</p>
                                 </article>
                                 <article className={styles.card2Stat}>
-                                    <p className={styles.card2StatHeading}>ROE</p>
-                                    <p className={styles.card2StatValue}>₹387 to ₹387</p>
-                                </article>
-                                <article className={styles.card2Stat}>
-                                    <p className={styles.card2StatHeading}>Issue Opening Date</p>
-                                    <p className={styles.card2StatValue}>21-05-2026</p>
+                                    <p className={styles.card2StatHeading}>P/E Multiple</p>
+                                    <p className={styles.card2StatValue}>21.6x</p>
                                 </article>
                             </section>
                         </div>
 
                         {/* Merchant Banker */}
-                        <section className={styles.card2MerchantContainer}>
+                        {/* <section className={styles.card2MerchantContainer}>
                             <div className={styles.card2MerchantTag}>
                                 <p className={styles.card2MerchantText}>
                                     Merchant Banker: Axis Capital
                                 </p>
                             </div>
-                        </section>
+                        </section> */}
+
+                        <div className={styles.progressContainer}>
+                            <div className={styles.ProgressInPrice}>
+                                <p className={styles.PriceIncr}>1.5 Cr / 2 Cr</p>
+                                <p className={styles.PricePercent}>94%</p>
+                            </div>
+
+                            <img src="/assets/pictures/PriceProgressBar.svg" alt="" />
+                        </div>
+
+
+                        <div className={styles.promoter}>
+                            <div className={styles.Strong}><p>Strong promoter</p></div>
+                            <div className={styles.monetization}><p>Clear Monetization</p></div>
+                        </div>
+                        
                     </div>
 
                     {/* Footer */}

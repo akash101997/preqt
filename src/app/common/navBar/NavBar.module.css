@@ -1,5 +1,5 @@
 .mainContainer{
-    max-height: 84px;
+    /* max-height: 84px; */
     width: 100%;
     border-bottom: 1px solid #0000000D;
     display: flex;
@@ -12,8 +12,8 @@
     height: 48px;
 }
 .navigationButtonContainer{
-    width: 578px;
-    height: 60px;
+    /* width: 578px; */
+    /* height: 60px; */
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -23,13 +23,13 @@
 }
 .navigationButton{
     display: flex;
-    width: 558px;
-    height: 40px;
+    /* width: 558px; */
+    /* height: 40px; */
     /* border: 1px solid black; */
 }
 .HomeNavButton{
     /* width: 139px; */
-    height: 40px;
+    /* height: 40px; */
     display: flex;
     padding: 8px 24px 8px 24px;
     gap: 12px;
@@ -47,8 +47,8 @@
 }
 
 .navRightSection{
-    max-width: 118px;
-    max-height: 52px;
+    /* max-width: 118px; */
+    /* max-height: 52px; */
     display: flex;
     gap: 14px;
     /* border: 1px solid black; */
