@@ -1,6 +1,8 @@
+import styles from './layout.module.css'
+import Accountfooter from '@/app/account/account_footer/Accountfooter'
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import Sidenav from "./account/Sidenav";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -21,7 +23,15 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable}`}
       >
-        {children}
+        <div className={styles.layout}>
+          <div>
+            <Sidenav />
+          </div>
+          <div>
+            {children}
+          </div>
+        </div>
+        <Accountfooter />
       </body>
     </html>
   );
