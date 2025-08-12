@@ -1,7 +1,12 @@
 .account_layout{
+  
     display: flex;
     gap: 24px;
   justify-content: center;
     /* align-items: center; */
     background-color: rgba(249, 250, 251, 1);
+}
+
+.sidenav{
+  height: 100%;
 }

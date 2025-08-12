@@ -6,10 +6,10 @@ export default function page() {
   return (
     <div className={styles.main_container}>
       <div className={styles.header}>
-          <h1>Account Details</h1>
+          <h1 className={styles.h1}>Account Details</h1>
         <div className={styles.edit_icon}><img src="/account_images/edit_icon.svg" alt="" /></div>
       </div>
-        <hr className={styles.hr} />
+        <hr className={styles.hr_header} />
         <section className={styles.details_section}>
       
         

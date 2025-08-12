@@ -1,0 +1,100 @@
+.container {
+  /* max-width: 700px; */
+  width: 936px;
+  height: 720px;
+  background-color: #fdfdfd;
+  margin: 60px auto;
+  border-radius: 24px;
+  padding:  32px;
+
+  box-shadow: rgba(0, 0, 0, 0.06);
+}
+
+.heading {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.divider {
+  border: none;
+margin-top: 30px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.documentRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+}
+
+.docName {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.emailBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #b8860b;
+  font-size: 14px;
+  font-weight: 550;
+  cursor: pointer;
+}
+
+.emailBtn:hover {
+  text-decoration: underline;
+}
+
+.icon {
+  font-size: 16px;
+}
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .container {
+    width: 90%;
+    height: auto;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .documentRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .emailBtn {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 18px;
+  }
+
+  .docName {
+    font-size: 14px;
+  }
+
+  .container {
+    margin: 20px auto;
+    padding: 16px;
+  }
+}

@@ -6,6 +6,7 @@ border-radius: 24px;
   margin-bottom: 60px;
 justify-content: center;
 background-color:  rgba(255, 255, 255, 1);
+font-family: helvetica  ;
 
 
 }
@@ -23,7 +24,7 @@ background-color:  rgba(255, 255, 255, 1);
   padding: 20px;
 
   border-radius: 12px;
-  font-family: sans-serif;
+
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -32,21 +33,22 @@ background-color:  rgba(255, 255, 255, 1);
   border-top-right-radius: 20px ;
   background: linear-gradient(to bottom, rgba(243, 244, 246, 1) 0%, rgba(255, 255, 255, 1) 100%);
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
       padding-top: 20px;
 }
 
 .avatar {
 
-  width: 100px;
-  height: 100px;
+  width: 125px;
+  height: 120px;
   background: #b89027;
   color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 38px;
+  font-weight: 540;
   border: 7px solid rgba(255, 255, 255, 1);
   margin: 0px auto 10px;
 }
@@ -89,9 +91,10 @@ background-color:  rgba(255, 255, 255, 1);
   
 }
 
-.icon {
+.icon ,.user_icon {
   
   margin-right: 10px;
+
 }
 
 .logout {
@@ -109,5 +112,10 @@ background-color:  rgba(255, 255, 255, 1);
 }
 .item .span:hover     {
     background: rgba(201, 167, 78, 1);
+  transition: background 0.3s ease;
 
+
+}
+.user_icon:hover{
+  color: aliceblue;
 }

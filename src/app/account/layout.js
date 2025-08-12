@@ -1,7 +1,7 @@
 
 import { Geist, Geist_Mono } from 'next/font/google';
 import Sidenav from '@/app/account/Sidenav';
-import Accountfooter from '@/app/account/account_footer/Accountfooter';
+import Accountfooter from '@/app/account/footer/Accountfooter';
 import styles from './account_layout.module.css';
 import NavBar from '../common/navBar/NavBar';
 import Footer from '../common/navBar/Footer';
@@ -23,7 +23,7 @@ export default function layout({ children }) {
         <div className={styles.mainaccount_layout}>
           <NavBar />
           <div className={styles.account_layout}>
-            <div>
+            <div className={styles.sidenav}>
               <Sidenav />
             </div>
             <div>

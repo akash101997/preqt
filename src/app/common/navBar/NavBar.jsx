@@ -33,7 +33,7 @@ export default function NavBar() {
                     <img src="/assets/pictures/notification.png" alt="" />
                 </div>
                 <div className={styles.UserIconContainer}>
-                  <Link href={'/account/account_details' } className={styles.Link}>  <p className={styles.userInitials}>AM</p></Link>
+                  <Link href={'/account/details' } className={styles.Link}>  <p className={styles.userInitials}>AM</p></Link>
                 </div>
             </div>
         </section>
