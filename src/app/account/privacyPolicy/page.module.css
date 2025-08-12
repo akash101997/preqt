@@ -1,0 +1,55 @@
+.container {
+  width: 936px;
+  background-color: #fdfdfd;
+  /* max-width: 800px; */
+  margin: 60px auto;
+  border-radius: 24px;
+  padding:  32px;
+  color: #333;
+}
+
+.heading {
+  font-size: 28px;
+  font-weight: 100;
+  margin-bottom: 20px;
+}
+.hr{
+  margin-bottom:40px ;
+}
+
+.section {
+  margin-bottom: 12px;
+  
+  padding-bottom: 16px;
+}
+
+.section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.section p {
+  color: rgba(75, 85, 99, 1);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.section ul {
+  margin: 8px 0 8px 20px;
+}
+
+.section li {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.email {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.email:hover {
+  text-decoration: underline;
+}

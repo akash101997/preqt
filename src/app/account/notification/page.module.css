@@ -4,9 +4,9 @@
   border-radius: 10px;
   max-width: 600px; */
    /* border: 1px solid rgb(235, 233, 233); */
-    width: 985px;
+    width: 936px;
     height: 700px;
-    background-color: rgba(255, 255, 255, 1);
+      background-color: #fdfdfd;
     border-radius: 24px;
     padding: 32px;
     margin-top: 60px;
@@ -16,13 +16,13 @@
 .title {
   font-size: 1.5rem;
   font-weight: 500;
-  margin-bottom: 5px;
+  margin-bottom: 30px;
 }
 
 .divider {
   border: none;
   border-top: 1px solid #e5e7eb;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .item {

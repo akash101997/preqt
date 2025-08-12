@@ -1,15 +1,21 @@
 
 
 .main_container{
-    border: 1px solid rgb(235, 233, 233);
-    width: 985px;
-    height: 672px;
+    width: 936px;
+    /* height: 850px; */
     background-color: rgba(255, 255, 255, 1);
     border-radius: 24px;
     padding: 32px;
-      margin-top: 60px;
+    margin-top: 60px;
   margin-bottom: 60px;
     /* margin-bottom: 60px; */
+
+}
+.h1{
+ font-weight: lighter;
+ font-size: 32px;
+ margin-bottom: 20px;
+ 
 
 }
 
@@ -20,6 +26,7 @@
     background-color: rgba(243, 244, 246, 1);
     justify-content: center;
      display: flex;
+     margin-bottom:20px ;
     align-items: center;
 
 }
@@ -27,6 +34,7 @@
 .header{
     display: flex;
     align-items: center;
+    justify-content: center;
     justify-content: space-between;
     background-color: rgba(255, 255, 255, 1);
 
@@ -37,35 +45,48 @@
 .details_section{
     border: 1px solid rgba(229, 231, 235, 1);
     border-radius: 20px;
-    height: 511px;
-    padding: 24px;
+    height: 670px;
+    padding-left: 24px;
     margin-top: 24px;
     background-color: rgba(255, 255, 255, 1);
     
 
 }
+.hr_header{
+    background: rgba(229, 231, 235,);
+    text-decoration: solid;
+    margin-top: 24px;
+    width: 865px;
+
+}
 .hr{
     background: rgba(229, 231, 235,);
     text-decoration: solid;
+    margin-top: 24px;
+    width: 835px;
     
     
 }
 
 
 .name{
-    margin-top  : 12px;
+    
+    /* border: 1px solid red; */
     height: 60px;
     background-color: rgba(255, 255, 255, 1);
 }
 .heading{
-     margin-top  : 12px;
+     margin-top  : 24px;
+     margin-bottom: 24px;
      font-size: 16px;
      color: rgba(107, 114, 128, 1);
     background-color: rgba(255, 255, 255, 1);
 
 }
 .value{
-    margin-top: 12px;
+    margin-top: 24px;
+     margin-bottom: 24px;
+
     font-size: 20px;
     color: rgba(30, 41, 59, 1);
     background-color: rgba(255, 255, 255, 1);
@@ -86,7 +107,8 @@
 
 .Link{
     position: relative;
-    top: -20px;
+    top: -50px;
+    left: -20px;
     color: rgba(177, 140, 7, 1);
     align-items: center;
     display: flex;
@@ -106,7 +128,7 @@
 
 
 .investor{
-    margin-top  : 12px;
+    margin-top  : 24px;
       height: 60px;
 }
 

@@ -9,6 +9,7 @@ const transactions = [
     lotSize: '1 Lot',
     date: '24 Jun 2025, 11:30 AM',
     status: 'Confirmed',
+    img : "/accounttransation_icon/ellipsis.svg"
     
   },
   {
@@ -18,6 +19,8 @@ const transactions = [
     lotSize: '1 Lot',
     date: '25 Jun 2025, 10:00 AM',
     status: 'Pending',
+    img : "/accounttransation_icon/ellipsis.svg"
+
   },
   {
     name: 'Green Energy Solutions',
@@ -26,6 +29,8 @@ const transactions = [
     lotSize: '1 Lot',
     date: '26 Jun 2025, 12:00 PM',
     status: 'Confirmed',
+    img : "/accounttransation_icon/ellipsis.svg"
+
   },
   {
     name: 'Smart Home Technologies',
@@ -34,6 +39,8 @@ const transactions = [
     lotSize: '1 Lot',
     date: '27 Jun 2025, 2:30 PM',
     status: 'Cancelled',
+    img : "/accounttransation_icon/ellipsis.svg"
+    
   },
   {
     name: 'AI Robotics Corporation',
@@ -42,6 +49,8 @@ const transactions = [
     lotSize: '1 Lot',
     date: '28 Jun 2025, 3:00 PM',
     status: 'Confirmed',
+    img : "/accounttransation_icon/ellipsis.svg"
+
   },
   {
     name: 'Quantum Computing Sol...',
@@ -50,6 +59,8 @@ const transactions = [
     lotSize: '1 Lot',
     date: '29 Jun 2025, 4:00 PM',
     status: 'Pending',
+    img : "/accounttransation_icon/ellipsis.svg"
+
   },
   {
     name: 'BioTech Innovations',
@@ -58,6 +69,8 @@ const transactions = [
     lotSize: '1 Lot',
     date: '30 Jun 2025, 1:00 PM',
     status: 'Confirmed',
+    img : "/accounttransation_icon/ellipsis.svg"
+
   },
   {
     name: 'Cloud Services Enterpris...',
@@ -66,6 +79,8 @@ const transactions = [
     lotSize: '1 Lot',
     date: '1 Jul 2025, 9:00 AM',
     status: 'Pending',
+    img : "/accounttransation_icon/ellipsis.svg"
+
   },
   {
     name: 'Digital Marketing Agency',
@@ -74,6 +89,9 @@ const transactions = [
     lotSize: '1 Lot',
     date: '2 Jul 2025, 11:00 AM',
     status: 'Confirmed',
+    img : "/accounttransation_icon/ellipsis.svg"
+
+
   },
   {
     name: 'Sustainable Materials Inc.',
@@ -82,6 +100,8 @@ const transactions = [
     lotSize: '1 Lot',
     date: '3 Jul 2025, 5:00 PM',
     status: 'Cancelled',
+    img : "/accounttransation_icon/ellipsis.svg"
+
   },
   {
     name: 'Cybersecurity Solutions',
@@ -90,6 +110,8 @@ const transactions = [
     lotSize: '1 Lot',
     date: '4 Jul 2025, 11:45 AM',
     status: 'Pending',
+    img : "/accounttransation_icon/ellipsis.svg"
+
   },
   {
     name: 'E-Commerce Ventures',
@@ -98,6 +120,8 @@ const transactions = [
     lotSize: '1 Lot',
     date: '5 Jul 2025, 2:00 PM',
     status: 'Confirmed',
+    img : "/accounttransation_icon/ellipsis.svg"
+
   },
   {
     name: 'Automotive Tech Innovat...',
@@ -106,6 +130,8 @@ const transactions = [
     lotSize: '1 Lot',
     date: '6 Jul 2025, 10:30 AM',
     status: 'Confirmed',
+    img : "/accounttransation_icon/ellipsis.svg"
+
   },
   {
     name: 'Healthcare Technologies',
@@ -114,6 +140,8 @@ const transactions = [
     lotSize: '1 Lot',
     date: '7 Jul 2025, 3:15 PM',
     status: 'Confirmed',
+    img : "/accounttransation_icon/ellipsis.svg"
+
   },
 ];
 
@@ -130,7 +158,7 @@ const getStatusClass = (status) => {
   }
 };
 
-export default function Home() {
+export default function page() {
   return (
     <div className={styles.container}>
       <h2 className={styles.heading}>Transactions</h2>
@@ -145,6 +173,7 @@ export default function Home() {
           <div>Status</div>
           
           
+          
         </div>
         {transactions.map((txn, idx) => (
           <div className={styles.row} key={idx}>
@@ -154,7 +183,7 @@ export default function Home() {
             <div>{txn.lotSize}</div>
             <div>{txn.date}</div>
             <div className={getStatusClass(txn.status)}>{txn.status}</div>
-            {/* <div><img src="./accounttransation_icon/ellipsis.svg" alt="" /></div> */}
+           <div className={styles.img1}> <img src={txn.img} alt="" /></div>
           </div>
         ))}
       </div>

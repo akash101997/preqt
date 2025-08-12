@@ -1,6 +1,10 @@
+    @import url('https://fonts.cdnfonts.com/css/helvetica-neue-5?styles=103506');
+
+                
+                
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Helvetica;
+  font-family: 'Helvetica Neue', sans-serif;
 }

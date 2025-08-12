@@ -1,6 +1,7 @@
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Head from "next/head";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -18,6 +19,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+    <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5?styles=103506" rel="stylesheet"/>
+                
+                
+      </Head>
+                
       <body
         className={`${geistSans.variable} ${geistMono.variable}`}
       >
