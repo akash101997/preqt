@@ -10,7 +10,8 @@ export default function home() {
             <NavBar />
             <div className={styles.marqueeSectionContainer}>
                 <div className={styles.marqueeSection}>
-                    <marquee behavior="scroll" direction="left" scrollamount="15" className={styles.marqueeContent}>
+                    <div className={styles.marqueeContent}>
+                        {/* First set of items */}
                         <div className={styles.marqueeItem}>
                             <div className={styles.NiftySection}>
                                 Nifty 50
@@ -50,14 +51,55 @@ export default function home() {
                                 <span className={styles.spanedNiftySection}>-93.90 (0.42%)</span>
                             </div>
                         </div>
-                    </marquee>
 
+                        {/* Duplicate set for seamless loop */}
+                        <div className={styles.marqueeItem}>
+                            <div className={styles.NiftySection}>
+                                Nifty 50
+                                <span className={styles.NiftyPoints}>22,419.60</span>
+                                <span className={styles.spanedNiftySection}>-93.90 (0.42%)</span>
+                            </div>
+                        </div>
+
+                        <div className={styles.marqueeItem}>
+                            <div className={styles.NiftySection}>
+                                BANK Nifty 50
+                                <span className={styles.NiftyPoints}>22,419.60</span>
+                                <span className={styles.spanedNiftySection}>-93.90 (0.42%)</span>
+                            </div>
+                        </div>
+
+                        <div className={styles.marqueeItem}>
+                            <div className={styles.NiftySection}>
+                                sensex
+                                <span className={styles.NiftyPoints}>22,419.60</span>
+                                <span className={styles.spanedNiftySection}>-93.90 (0.42%)</span>
+                            </div>
+                        </div>
+
+                        <div className={styles.marqueeItem}>
+                            <div className={styles.NiftySection}>
+                                finnifty
+                                <span className={styles.NiftyPoints}>22,419.60</span>
+                                <span className={styles.spanedNiftySection}>-93.90 (0.42%)</span>
+                            </div>
+                        </div>
+
+                        <div className={styles.marqueeItem}>
+                            <div className={styles.NiftySection}>
+                                mid cap nifty
+                                <span className={styles.NiftyPoints}>22,419.60</span>
+                                <span className={styles.spanedNiftySection}>-93.90 (0.42%)</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <HeroSection/>
-            <FAQSection/>
-            <Footer/>
+
+            <HeroSection />
+            <FAQSection />
+            <Footer />
         </section>
     )
 }

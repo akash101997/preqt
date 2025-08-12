@@ -55,8 +55,11 @@
 .imageWrapper {
     position: relative;
     /* width: 1200px; */
-    height: 1031px;
+    height: 631px;
     /* border: 1px solid black; */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .MountainImage {
@@ -107,12 +110,12 @@
     width: 500px;
     height: 177px;
     left: -800px;
-    opacity: 1;
+    opacity: 0;
     color: #000000;
     position: absolute;
     top: 90px;
     /* border: 1px solid black; */
-    /* left: -80px; */
+    left: -80px;
     transform: translateY(50px);
     transition: transform 0.8s ease, opacity 0.8s ease;
     margin-left: 45px;
@@ -133,6 +136,7 @@
 
     /* Match leftText timing exactly */
     transition: transform 0.8s ease, opacity 0.8s ease;
+    top: 100px;
 }
 
 
@@ -158,6 +162,6 @@
 .imageWrapper:hover .storeButtons {
     transform: translateY(0);
     right: -80px;
-    top: 100px;
+    /* top: 100px; */
     opacity: 1;
 }

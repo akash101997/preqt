@@ -1,5 +1,4 @@
 import styles from './NavBar.module.css'
-import homeIcon from '../../../../public/assets/pictures/home_icon.svg'
 import Link from 'next/link'
 
 export default function NavBar() {
@@ -9,7 +8,7 @@ export default function NavBar() {
 
             <div className={styles.navigationButtonContainer}>
                 <div className={styles.navigationButton}>
-                    <a className={styles.HomeNavButton}>
+                    <a className={styles.HomeNavButton} href='/'>
                         <img src="/assets/pictures/home_icon.svg" alt="home" className={styles.HomeIconImage} />
                         <p className={styles.home}>Home</p>
                     </a>

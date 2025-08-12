@@ -14,7 +14,7 @@ export default function HeroSection() {
                         <DealsTalk />
                     </div>
 
-                    <div>
+                    <div className={styles.MarketSentimentComponent}>
                         <MarketSentiment />
                     </div>
                 </section>
