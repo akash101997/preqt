@@ -351,3 +351,76 @@
     padding: 8px 4px 8px 4px;
     gap: 6px;
 }
+
+/* ---------------------------------------------- */
+.ColorGraph{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+max-width: 350px;
+}
+.MainColorGraphDiv{
+    max-width: 350px;
+    display: flex;
+    border-radius: 100px;
+    /* border: 1px solid black; */
+
+}
+.GreenColor1{
+    width: 77px;
+    height: 16px;
+   border-top-left-radius:100px;
+   border-bottom-left-radius:100px;
+    background-color: #3FD146;
+}
+.greenColor2{
+    width: 77px;
+    height: 16px;
+    background-color: #8CE249;
+}
+.yellowColor{
+    width: 77px;
+    height: 16px;
+    background-color: #EFD933;
+}
+.OrangeColor{
+     width: 77px;
+    height: 16px;
+    background-color: #EDA635;
+}
+.lastColor{
+     width: 77px;
+    height: 16px;
+    background-color: #E82D48;
+     border-top-right-radius:100px;
+   border-bottom-right-radius:100px;
+}
+.ColorLevelMainContainer{
+    max-width: 350px;
+    height: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: -12px;
+}
+.ExtremeFear{
+    /* width: 77px; */
+    height: 24px;
+    font-size: 10px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #4B5563;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 5px; */
+}
+
+.PinScaleImage{
+    position: relative;
+    right: 100px;
+    width: 18px;
+    height: 35px;
+}

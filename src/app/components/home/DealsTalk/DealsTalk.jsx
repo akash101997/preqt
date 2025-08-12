@@ -56,7 +56,7 @@ export default function DealsTalk() {
                                     <p className={styles.priceInRupee}>₹387 to ₹387 </p>
                                 </article>
                                 <article>
-                                    <p className={styles.revenuHeading}>Issue Opening Dat</p>
+                                    <p className={styles.revenuHeading}>Issue Opening Date</p>
                                     <p className={styles.priceInRupee}>21-05-2026</p>
                                 </article>
                             </section>
@@ -159,6 +159,7 @@ export default function DealsTalk() {
                         <div className={styles.promoter}>
                             <div className={styles.Strong}><p>Strong promoter</p></div>
                             <div className={styles.monetization}><p>Clear Monetization</p></div>
+                            <div className={styles.monetization}><p>Fund Participating</p></div>
                         </div>
                         
                     </div>
@@ -233,14 +234,6 @@ export default function DealsTalk() {
                         </div>
 
                         {/* Merchant Banker */}
-                        {/* <section className={styles.card2MerchantContainer}>
-                            <div className={styles.card2MerchantTag}>
-                                <p className={styles.card2MerchantText}>
-                                    Merchant Banker: Axis Capital
-                                </p>
-                            </div>
-                        </section> */}
-
                         <div className={styles.progressContainer}>
                             <div className={styles.ProgressInPrice}>
                                 <p className={styles.PriceIncr}>1.5 Cr / 2 Cr</p>
@@ -254,6 +247,7 @@ export default function DealsTalk() {
                         <div className={styles.promoter}>
                             <div className={styles.Strong}><p>Strong promoter</p></div>
                             <div className={styles.monetization}><p>Clear Monetization</p></div>
+                            <div className={styles.monetization}><p>Fund Participating</p></div>
                         </div>
                         
                     </div>

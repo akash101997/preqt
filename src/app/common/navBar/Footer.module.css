@@ -1,16 +1,19 @@
 .FooterMainContainer {
-    max-width: 1920px;
-    max-height: 380px;
+    /* max-width: 1920px; */
+    /* max-height: 380px; */
     display: flex;
     flex-direction: column;
-    padding: 40px 60px;
+    padding: 40px 5%;
     background-color: #1A1401;
     gap: 10px;
+    align-items: center;
 }
 
 .FooterInnerDiv {
+    /* max-width: 1800px; */
+    /* max-height: 309px; */
+    width: 100%;
     max-width: 1800px;
-    max-height: 309px;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -20,6 +23,7 @@
 .upperFooter {
     display: flex;
     gap: 100px;
+    flex-wrap: wrap;
 }
 
 .footerImage {
@@ -29,7 +33,8 @@
 }
 
 .footerRightPart {
-    width: 1457px;
+    /* max-width: 1457px; */
+    flex: 1;
     max-height: 239px;
     display: flex;
     justify-content: space-between;
@@ -68,7 +73,7 @@
     text-decoration: none;
 
     display: inline-block;
-    border-bottom: 1px solid transparent; 
+    border-bottom: 1px solid transparent;
     transition: border-color 0.3s ease;
 }
 
@@ -115,38 +120,43 @@
     gap: 6px;
 }
 
- .contactRow {
+.contactRow {
     display: flex;
     align-items: center;
     gap: 7px;
     max-width: 256px;
 }
+
 .locationDetails {
     color: #FFFFFF;
     font-size: 14px;
     line-height: 1.4;
     white-space: normal;
-    max-width: 100%; 
+    max-width: 100%;
 }
+
 .ContactMainContainer {
     display: flex;
     flex-direction: column;
     gap: 10px;
     /* border: 1px solid snow; */
 }
-.ContactDetailsDiv{
+
+.ContactDetailsDiv {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
-.hrLine{
+
+.hrLine {
     max-width: 1800px;
     height: 0px;
     /* border: 1px solid #FFFFFF; */
     color: #FFFFFF1A;
     opacity: 10%;
 }
-.CopyWriteContent{
+
+.CopyWriteContent {
     text-align: center;
     color: #FFFFFF;
     font-size: 10px;
@@ -154,7 +164,8 @@
     letter-spacing: 0%;
     font-weight: 400;
 }
-.quickLinks:hover{
+
+.quickLinks:hover {
     border-bottom: 1px solid #FFFFFF;
 }
 
@@ -162,7 +173,8 @@
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0; /* right under the text */
+    bottom: 0;
+    /* right under the text */
     height: 1px;
     width: 0;
     background-color: #FFFFFF;
@@ -170,5 +182,6 @@
 }
 
 .quickLinks:hover::after {
-    width: 100%; /* exactly matches text width */
+    width: 100%;
+    /* exactly matches text width */
 }

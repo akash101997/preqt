@@ -12,8 +12,27 @@ export default function MarketSentiment() {
                     </div>
 
                     {/* graph */}
-                    <div>
-                        <img src="/assets/pictures/colors.png" alt="" className={styles.colorsGraph} />
+                    <div className={styles.ColorGraph}>
+                        {/* <img src="/assets/pictures/colors.png" alt="" className={styles.colorsGraph} /> */}
+                        {/* color graph */}
+                        <div className={styles.MainColorGraphDiv}>
+                            <div className={styles.GreenColor1}></div>
+                            <div className={styles.greenColor2}></div>
+                            <div className={styles.yellowColor}></div>
+                            <div className={styles.OrangeColor}></div>
+                            <div className={styles.lastColor}></div>
+                            <img src="/assets/pictures/pinScale.png" alt="" className={styles.PinScaleImage} />
+                        </div>
+
+                        {/* color level */}
+                        <div className={styles.ColorLevelMainContainer}>
+                            <div className={styles.ExtremeFear}><p>Extreme Fear</p></div>
+                            <div className={styles.ExtremeFear}><p>Fear</p></div>
+                            <div className={styles.ExtremeFear}><p>Neutral</p></div>
+                            <div className={styles.ExtremeFear}><p>Greed</p></div>
+                            <div className={styles.ExtremeFear}><p>Extreme Greed</p></div>
+                        </div>
+
                     </div>
 
                     {/* greed */}

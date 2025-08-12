@@ -13,7 +13,7 @@
 
 /* Card (1120x759, radius 30, padding 40, gradient) */
 .card {
-  width: 100%;
+  /* width: 100%; */
   /* max-width: 1120px; */
   min-height: 759px;
   display: flex;
@@ -105,13 +105,17 @@
 
 /* Answer panel */
 .answerWrap {
-  display: none;
- 
-  padding: 20px;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
   color: #111827;
+  transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
-.open .answerWrap { display: block; }
+.open .answerWrap { 
+  max-height: 150px;
+  padding: 20px;
+ }
 
 /* Answer typography */
 .answer {
@@ -124,7 +128,7 @@
 }
 
 /* Responsiveness to keep 100% width while honoring Figma look */
-@media (max-width: 1440px) {
+/* @media (max-width: 1440px) {
   .mainContainer { padding: 80px 200px; }
 }
 
@@ -143,4 +147,4 @@
 @media (max-width: 480px) {
   .heading { font-size: 24px; }
   .question { font-size: 13px; }
-}
+} */

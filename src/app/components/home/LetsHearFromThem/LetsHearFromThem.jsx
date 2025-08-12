@@ -1,3 +1,4 @@
+"use client"
 import styles from "./LetsHearFromThem.module.css"
 
 export default function LetsHearFromThem() {
@@ -6,8 +7,15 @@ export default function LetsHearFromThem() {
             <div className={styles.headingSection}>Let’s hear from them!</div>
 
             <div className={styles.videoTestimonialSection}>
-                <div className={styles.testimonialCard}>
-                    <video src="/assets/videos/testimonial_video_1.mp4" autoPlay muted className={styles.testimonialvideo2}></video>
+                <div className={styles.testimonialCard} onMouseEnter={(e) => {
+                    const video = e.currentTarget.querySelector('video');
+                    video.play();
+                }}
+                    onMouseLeave={(e) => {
+                        const video = e.currentTarget.querySelector('video');
+                        video.pause();
+                    }} >
+                    <video src="/assets/videos/testimonial_video_1.mp4" className={styles.testimonialvideo2}></video>
                     <div>
                         <p className={styles.videoTitle2}>“ PrQty Transparency Gave me confidence i needed”</p>
                         <p className={styles.titleBy2}>Chitanshi
@@ -15,7 +23,14 @@ export default function LetsHearFromThem() {
                     </div>
                 </div>
 
-                <div className={styles.testimonialCard}>
+                <div className={styles.testimonialCard} onMouseEnter={(e) => {
+                    const video = e.currentTarget.querySelector('video');
+                    video.play();
+                }}
+                    onMouseLeave={(e) => {
+                        const video = e.currentTarget.querySelector('video');
+                        video.pause();
+                    }}>
                     <video src="/assets/videos/testimonial_video_2.mp4" autoPlay muted className={styles.testimonialvideo2}></video>
                     <div>
                         <p className={styles.videoTitle2}>“ PrQty Transparency Gave me confidence i needed”</p>
@@ -24,7 +39,14 @@ export default function LetsHearFromThem() {
                     </div>
                 </div>
 
-                <div className={styles.testimonialCard}>
+                <div className={styles.testimonialCard} onMouseEnter={(e) => {
+                    const video = e.currentTarget.querySelector('video');
+                    video.play();
+                }}
+                    onMouseLeave={(e) => {
+                        const video = e.currentTarget.querySelector('video');
+                        video.pause();
+                    }}>
                     <video src="/assets/videos/testimonial_video_3.mp4" autoPlay muted className={styles.testimonialvideo2}></video>
                     <div>
                         <p className={styles.videoTitle2}>“ PrQty Transparency Gave me confidence i needed”</p>
