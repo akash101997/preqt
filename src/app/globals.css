@@ -1,19 +1,16 @@
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-5?styles=103510,103513,103511,103506,103508,103502,103504');
 
-                            @import url('https://fonts.cdnfonts.com/css/helvetica-neue-5?styles=103510,103513,103511,103506,103508,103502,103504');
 
-                
-             
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
- font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
 }
 
 .no-scroll {
   overflow: hidden;
-}
-  font-family: 'Helvetica Neue', sans-serif;
 }
 
 .bod-section .accordion-collapse {
@@ -26,5 +23,6 @@
 }
 
 .bod-section .accordion-collapse.show {
-  height: 100%; /* adjust if your content is bigger */
+  height: 100%;
+  /* adjust if your content is bigger */
 }
