@@ -6,10 +6,11 @@
     justify-content: space-between;
     background-color: #FFFFFF;
     padding: 12px 60px 12px 60px;
+    align-items: center;
 }
 .logo{
-    width: 153px;
-    height: 48px;
+    width: 123px;
+    height: 38px;
 }
 .navigationButtonContainer{
     /* width: 578px; */
@@ -49,17 +50,17 @@
     gap: 14px;
 }
 .NotificationIconContainer{
-    width: 52px;
-    height: 52px;
+    width: 45px;
+    height: 45px;
     display: flex;
     padding: 11px;
     border-radius: 117px;
     background-color: #334155;
 }
 .UserIconContainer{
-    width: 52px;
-    height: 52px;
-    border-radius: 433px;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
     background-image: linear-gradient(to bottom right, #FFF2D0, #8E6B0F);
 }
 .HomeIconImage{
@@ -96,6 +97,8 @@
 }
 
 /* -----------responsive--------------- */
+
+/* Tablet styles (768px to 1024px) */
 /* Existing CSS remains unchanged above */
 
 /* Tablet styles (768px to 1024px) */
@@ -164,86 +167,42 @@
     }
 }
 
-/* Mobile portrait (320px to 480px) */
-@media (max-width: 480px) {
+/* ✅ NEW: Mobile 375px and similar screens - ICONS ONLY */
+@media (max-width: 400px) {
     .mainContainer {
-        padding: 8px 16px;
+        padding: 8px 12px;
     }
     
     .logo {
-        width: 100px;
-        height: 32px;
+        width: 90px;
+        height: 28px;
     }
     
     .navigationButtonContainer {
-        padding: 6px;
-    }
-    
-    .navigationButton {
-        gap: 4px;
-    }
-    
-    .HomeNavButton {
-        padding: 4px 8px;
-        gap: 4px;
-    }
-    
-    .home {
-        font-size: 12px;
-        line-height: 20px;
-    }
-    
-    .HomeIconImage {
-        width: 16px;
-        height: 15px;
-        top: 1px;
-        left: 1px;
-    }
-    
-    .navRightSection {
-        gap: 8px;
-    }
-    
-    .NotificationIconContainer,
-    .UserIconContainer {
-        width: 36px;
-        height: 36px;
-    }
-    
-    .NotificationIconContainer {
-        padding: 7px;
-    }
-    
-    .userInitials {
-        font-size: 13px;
-        top: 10px;
-        left: 7px;
-        width: 22px;
-        height: 18px;
-    }
-}
-
-/* Very small screens (below 320px) */
-@media (max-width: 320px) {
-    .mainContainer {
-        padding: 6px 12px;
-    }
-    
-    .logo {
-        width: 80px;
-        height: 26px;
-    }
-    
-    .home {
-        display: none; /* Hide text labels on very small screens */
-    }
-    
-    .HomeNavButton {
-        padding: 4px 6px;
+        padding: 4px;
     }
     
     .navigationButton {
         gap: 2px;
+    }
+    
+    .HomeNavButton {
+        padding: 6px 8px; /* Reduced padding for icon-only */
+        gap: 0; /* No gap since no text */
+        min-width: 32px; /* Ensure touch target */
+        justify-content: center;
+    }
+    
+    .home {
+        display: none; /* ✅ Hide all text labels */
+    }
+    
+    .HomeIconImage {
+        width: 18px;
+        height: 17px;
+        top: 0;
+        left: 0;
+        position: static; /* Remove relative positioning */
     }
     
     .navRightSection {
@@ -261,8 +220,97 @@
     }
     
     .userInitials {
-        font-size: 11px;
+        font-size: 12px;
         top: 8px;
         left: 6px;
     }
 }
+
+/* Mobile portrait (320px to 375px) - Even more compact */
+@media (max-width: 375px) {
+    .mainContainer {
+        padding: 6px 10px;
+    }
+    
+    .logo {
+        width: 80px;
+        height: 26px;
+    }
+    
+    .HomeNavButton {
+        padding: 4px 6px;
+        min-width: 28px;
+    }
+    
+    .HomeIconImage {
+        width: 16px;
+        height: 15px;
+    }
+    
+    .navRightSection {
+        gap: 4px;
+    }
+    
+    .NotificationIconContainer,
+    .UserIconContainer {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .NotificationIconContainer {
+        padding: 5px;
+    }
+    
+    .userInitials {
+        font-size: 10px;
+        top: 7px;
+        left: 5px;
+    }
+}
+
+/* Very small screens (below 320px) */
+@media (max-width: 320px) {
+    .mainContainer {
+        padding: 4px 8px;
+    }
+    
+    .logo {
+        width: 70px;
+        height: 24px;
+    }
+    
+    .HomeNavButton {
+        padding: 3px 5px;
+        min-width: 26px;
+    }
+    
+    .HomeIconImage {
+        width: 14px;
+        height: 13px;
+    }
+    
+    .navigationButton {
+        gap: 1px;
+    }
+    
+    .navRightSection {
+        gap: 3px;
+    }
+    
+    .NotificationIconContainer,
+    .UserIconContainer {
+        width: 26px;
+        height: 26px;
+    }
+    
+    .NotificationIconContainer {
+        padding: 4px;
+    }
+    
+    .userInitials {
+        font-size: 9px;
+        top: 6px;
+        left: 4px;
+    }
+}
+

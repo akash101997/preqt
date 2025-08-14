@@ -93,9 +93,10 @@
     letter-spacing: 0%;
     color: #000000;
     left: 21px;
+    font-weight: 300;
 }
 .titleBy2{
-    /* width: 105px; */
+    width: 105px;
     height: 44px;
     position: relative;
     top: 60px;
