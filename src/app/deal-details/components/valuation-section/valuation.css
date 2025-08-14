@@ -1,0 +1,13 @@
+.valuation-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.progress-container {
+  background-color: #e5e5e5;
+  /* light gray background */
+  border-radius: 8px;
+  height: 8px;
+  width: 100%;
+  overflow: hidden;
+}
