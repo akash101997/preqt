@@ -1,40 +1,40 @@
-import styles from './NavBar.module.css'
-import Link from 'next/link'
+    import styles from './NavBar.module.css'
+    import Link from 'next/link'
 
-export default function NavBar() {
-    return (
-        <section className={styles.mainContainer}>
-            <img src="/assets/pictures/logo.png" alt="logo" className={styles.logo} />
+    export default function NavBar() {
+        return (
+            <section className={styles.mainContainer}>
+                <img src="/assets/pictures/logo.png" alt="logo" className={styles.logo} />
 
-            <div className={styles.navigationButtonContainer}>
-                <div className={styles.navigationButton}>
-                    <a className={styles.HomeNavButton} href='/'>
-                        <img src="/assets/pictures/home.svg" alt="home" className={styles.HomeIconImage} />
-                        <p className={styles.home}>Home</p>
-                    </a>
-                    <a className={styles.HomeNavButton}>
-                        <img src="/assets/pictures/Transactions.svg" alt="" className={styles.HomeIconImage} />
-                        <p className={styles.home}>Deals</p>
-                    </a>
-                    <a className={styles.HomeNavButton}>
-                        <img src="/assets/pictures/people.svg" alt="" className={styles.HomeIconImage} />
-                        <p className={styles.home}>Community</p>
-                    </a>
-                    <a className={styles.HomeNavButton}>
-                        <img src="/assets/pictures/events.svg" alt="" className={styles.HomeIconImage} />
-                        <p className={styles.home}>Events</p>
-                    </a>
+                <div className={styles.navigationButtonContainer}>
+                    <div className={styles.navigationButton}>
+                        <Link className={styles.HomeNavButton} href='/deal-details'>
+                            <img src="/assets/pictures/home.svg" alt="home" className={styles.HomeIconImage} />
+                            <p className={styles.home}>Home</p>
+                        </Link>
+                        <Link className={styles.HomeNavButton} href='/deal-details'>
+                            <img src="/assets/pictures/Transactions.svg" alt="" className={styles.HomeIconImage} />
+                            <p className={styles.home}>Deals</p>
+                        </Link>
+                        <Link className={styles.HomeNavButton} href='/deal-details'>
+                            <img src="/assets/pictures/people.svg" alt="" className={styles.HomeIconImage} />
+                            <p className={styles.home}>Community</p>
+                        </Link>
+                        <Link className={styles.HomeNavButton} href='/deal-details'>
+                            <img src="/assets/pictures/events.svg" alt="" className={styles.HomeIconImage} />
+                            <p className={styles.home}>Events</p>
+                        </Link>
+                    </div>
                 </div>
-            </div>
 
-            <div className={styles.navRightSection}>
-                <div className={styles.NotificationIconContainer}>
-                    <img src="/assets/pictures/notification.png" alt="" />
+                <div className={styles.navRightSection}>
+                    <div className={styles.NotificationIconContainer}>
+                        <img className={styles.icons} src="/assets/pictures/notification.png" alt="" />
+                    </div>
+                    <div className={styles.UserIconContainer}>
+                    <Link href={'/account/details' } className={styles.Link}>  <p className={styles.userInitials}>AM</p></Link>
+                    </div>
                 </div>
-                <div className={styles.UserIconContainer}>
-                  <Link href={'/account/details' } className={styles.Link}>  <p className={styles.userInitials}>AM</p></Link>
-                </div>
-            </div>
-        </section>
-    )
-}
+            </section>
+        )
+    }

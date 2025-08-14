@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  background: #ffffff;
+  background: #ffffff;overflow-x: scroll;
 }
 
 /* Card (1120x759, radius 30, padding 40, gradient) */

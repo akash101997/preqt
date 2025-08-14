@@ -1,316 +1,338 @@
-.mainContainer{
-    /* max-height: 84px; */
-    width: 100%;
-    border-bottom: 1px solid #0000000D;
-    display: flex;
-    justify-content: space-between;
-    background-color: #FFFFFF;
-    padding: 12px 60px 12px 60px;
-    align-items: center;
+.mainContainer {
+  /* max-height: 84px; */
+  width: 100%;
+  border-bottom: 1px solid #0000000d;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 12px 60px 12px 60px;
+  align-items: center;
 }
-.logo{
-    width: 123px;
-    height: 38px;
+.icons {
+  padding: 10px;
+  max-width: 100%;
+        width: 48px;
 }
-.navigationButtonContainer{
-    /* width: 578px; */
-    /* height: 60px; */
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    background-color: #FFFFFF;
+.logo {
+  width: 123px;
+  height: 38px;
 }
-.navigationButton{
-    display: flex;
+.navigationButtonContainer {
+  /* width: 578px; */
+  /* height: 60px; */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background-color: #ffffff;
 }
-.HomeNavButton{
-    display: flex;
-    padding: 8px 24px 8px 24px;
-    gap: 12px;
-    text-decoration: none;
+.navigationButton {
+  display: flex;
+  gap: 8px;
 }
-.HomeNavButton:hover{
-    border-radius: 100px;
-    background-image: linear-gradient(to bottom right, #FFF2D0, #8E6B0F);
+.HomeNavButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none; 
+  padding: 8px 24px;
+  border-radius: 20px;
+  font-size: 16px;
+}
+.HomeNavButton:hover {
+  border-radius: 100px;
+  background-image: linear-gradient(to bottom right, #fff2d0, #8e6b0f);
 }
 .HomeNavButton:hover .HomeIconImage {
-    filter: brightness(0) invert(1); /* turns it white */
+  filter: brightness(0) invert(1); /* turns it white */
 }
-.HomeNavButton:hover .home{
-    color: white;
+.HomeNavButton:hover .home {
+  color: white;
 }
-.HomeNavButton.active{
-    border-radius: 100px;
-    background-image: linear-gradient(to bottom right, #FFF2D0, #8E6B0F);
-}
-
-.navRightSection{
-    display: flex;
-    gap: 14px;
-}
-.NotificationIconContainer{
-    width: 45px;
-    height: 45px;
-    display: flex;
-    padding: 11px;
-    border-radius: 117px;
-    background-color: #334155;
-}
-.UserIconContainer{
-    width: 45px;
-    height: 45px;
-    border-radius: 100%;
-    background-image: linear-gradient(to bottom right, #FFF2D0, #8E6B0F);
-}
-.HomeIconImage{
-    width: 20px;
-    height: 19px;
-    position: relative;
-    top: 2.18px;
-    left: 2px;
-}
-.home{
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 0%;
-    line-height: 24px;
-    text-align: center;
-    color: #64748B;
+.HomeNavButton.active {
+  border-radius: 100px;
+  background-image: linear-gradient(to bottom right, #fff2d0, #8e6b0f);
 }
 
- .userInitials{
-    width: 26px;
-    height: 21px;
+.navRightSection {
+  display: flex;
+  gap: 14px;
+}
+.NotificationIconContainer {
+  width: fit-content;
+  height: 46px;
+  display: flex;
+  /* padding: 11px;*/
+  border-radius: 100%;
+  background-color: #334155;
+}
+.UserIconContainer {
+ width: fit-content;
+  height: 46px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(to bottom right, #fff2d0, #8e6b0f);
+}
+.HomeIconImage {
+  width: 20px;
+  height: 19px;
+  position: relative;
+  /* top: 2.18px;
+    left: 2px; */
+}
+.home {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0%;
+  line-height: 24px;
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 0;
+}
+
+.userInitials {
+     width: fit-content;
+    height: fit-content;
     font-weight: 300;
     font-size: 17px;
     line-height: 100%;
-    position: relative;
-    top: 15.6px;
-    left: 11.7px;
-    color: #FFFFFF;
-    
+    margin: 0;
+    color: #ffffff;
+    padding: 0px 11px;
 }
-.Link{
-    text-decoration: none;
-
+.Link {
+  text-decoration: none;
 }
 
-/* -----------responsive--------------- */
-
-/* Tablet styles (768px to 1024px) */
-/* Existing CSS remains unchanged above */
-
-/* Tablet styles (768px to 1024px) */
 @media (max-width: 1024px) {
-    .mainContainer {
-        padding: 12px 40px;
-    }
-    
-    .HomeNavButton {
-        padding: 6px 16px;
-        gap: 8px;
-    }
-    
-    .home {
-        font-size: 14px;
-    }
-    
-    .HomeIconImage {
-        width: 18px;
-        height: 17px;
-    }
+  .mainContainer {
+    padding: 12px 40px;
+  }
+
+  .HomeNavButton {
+    padding: 6px 16px;
+    gap: 8px;
+  }
+
+  .home {
+    font-size: 14px;
+  }
+
+  .HomeIconImage {
+    width: 18px;
+    height: 17px;
+  }
 }
 
 /* Mobile landscape and small tablets (481px to 768px) */
 @media (max-width: 768px) {
-    .mainContainer {
-        padding: 12px 20px;
-    }
-    
-    .logo {
-        width: 120px;
-        height: 38px;
-    }
-    
-    .navigationButton {
-        gap: 8px;
-    }
-    
-    .HomeNavButton {
-        padding: 6px 12px;
-        gap: 6px;
-    }
-    
-    .home {
-        font-size: 13px;
-    }
-    
-    .navRightSection {
-        gap: 10px;
-    }
-    
-    .NotificationIconContainer,
-    .UserIconContainer {
-        width: 44px;
-        height: 44px;
-    }
-    
-    .NotificationIconContainer {
-        padding: 9px;
-    }
-    
-    .userInitials {
-        font-size: 15px;
-        top: 13px;
-        left: 9px;
-    }
+  .mainContainer {
+    padding: 12px 20px;
+  }
+
+  .logo {
+    width: 120px;
+    height: 38px;
+  }
+
+  .navigationButton {
+    gap: 8px;
+    display: none;
+  }
+
+  .HomeNavButton {
+    /* padding: 6px 12px;
+    gap: 6px; */
+  }
+
+  .home {
+    font-size: 13px;
+  }
+
+  .navRightSection {
+    gap: 10px;
+  }
+
+  .NotificationIconContainer,
+  .UserIconContainer {
+    /* width: 44px;
+        height: 44px; */
+  }
+
+  .NotificationIconContainer {
+    /* padding: 9px; */
+      width: fit-content;
+  height: 46px;
+  display: flex;
+  /* padding: 11px;*/
+  border-radius: 100%;
+  background-color: #334155;
+  }
+
+.userInitials {
+     width: fit-content;
+    height: fit-content;
+    padding: 0px 11px;
+}
 }
 
 /* ✅ NEW: Mobile 375px and similar screens - ICONS ONLY */
 @media (max-width: 400px) {
-    .mainContainer {
-        padding: 8px 12px;
-    }
-    
-    .logo {
-        width: 90px;
-        height: 28px;
-    }
-    
-    .navigationButtonContainer {
-        padding: 4px;
-    }
-    
-    .navigationButton {
-        gap: 2px;
-    }
-    
-    .HomeNavButton {
-        padding: 6px 8px; /* Reduced padding for icon-only */
-        gap: 0; /* No gap since no text */
-        min-width: 32px; /* Ensure touch target */
-        justify-content: center;
-    }
-    
-    .home {
-        display: none; /* ✅ Hide all text labels */
-    }
-    
-    .HomeIconImage {
-        width: 18px;
-        height: 17px;
-        top: 0;
-        left: 0;
-        position: static; /* Remove relative positioning */
-    }
-    
-    .navRightSection {
-        gap: 6px;
-    }
-    
-    .NotificationIconContainer,
-    .UserIconContainer {
-        width: 32px;
-        height: 32px;
-    }
-    
-    .NotificationIconContainer {
-        padding: 6px;
-    }
-    
-    .userInitials {
-        font-size: 12px;
-        top: 8px;
-        left: 6px;
-    }
+  .mainContainer {
+    padding: 8px 12px;
+  }
+  .icons {
+    max-width: 100%;
+    max-width: 100%;
+        width: 42px;
+  }
+
+  .logo {
+    width: 90px;
+    height: 28px;
+  }
+
+  .navigationButtonContainer {
+    padding: 4px;
+    display: none;
+  }
+
+  .navigationButton {
+    gap: 2px;
+  }
+
+  .HomeNavButton {
+    padding: 6px 8px; 
+    gap: 0; 
+    min-width: 32px; 
+    justify-content: center;
+  }
+
+  .home {
+    display: none; 
+  }
+
+  .HomeIconImage {
+    width: 18px;
+    height: 17px;
+    /* top: 0;
+        left: 0; */
+    position: static; /* Remove relative positioning */
+  }
+
+  .navRightSection {
+    gap: 6px;
+  }
+
+ 
+
+  .NotificationIconContainer {
+    /* padding: 6px; */
+      width: fit-content;
+  height: 46px;
+  display: flex;
+  /* padding: 11px;*/
+  border-radius: 100%;
+  background-color: #334155;
+  }
+
+  .userInitials {
+    font-size: 12px;
+    margin: 0;
+    /* top: 8px;
+        left: 6px; */
+  }
 }
 
 /* Mobile portrait (320px to 375px) - Even more compact */
 @media (max-width: 375px) {
-    .mainContainer {
-        padding: 6px 10px;
-    }
-    
-    .logo {
-        width: 80px;
-        height: 26px;
-    }
-    
-    .HomeNavButton {
-        padding: 4px 6px;
-        min-width: 28px;
-    }
-    
-    .HomeIconImage {
-        width: 16px;
-        height: 15px;
-    }
-    
-    .navRightSection {
-        gap: 4px;
-    }
-    
-    .NotificationIconContainer,
-    .UserIconContainer {
-        width: 28px;
-        height: 28px;
-    }
-    
-    .NotificationIconContainer {
-        padding: 5px;
-    }
-    
-    .userInitials {
-        font-size: 10px;
-        top: 7px;
-        left: 5px;
-    }
+  .mainContainer {
+    padding: 6px 10px;
+  }
+
+  .logo {
+    width: 80px;
+    height: 26px;
+  }
+
+  .HomeNavButton {
+    /* padding: 4px 6px;
+    min-width: 28px; */
+  }
+
+  .HomeIconImage {
+    width: 16px;
+    height: 15px;
+  }
+
+  .navRightSection {
+    gap: 4px;
+  }
+
+  .NotificationIconContainer,
+  .UserIconContainer {
+    /* width: 28px;
+        height: 28px; */
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* background-image: linear-gradient(to bottom right, #fff2d0, #8e6b0f); */
+  }
+
+  .NotificationIconContainer {
+    /* padding: 5px; */
+  }
+
+  .userInitials {
+    font-size: 12px;
+    margin: 0;
+  }
 }
 
 /* Very small screens (below 320px) */
 @media (max-width: 320px) {
-    .mainContainer {
-        padding: 4px 8px;
-    }
-    
-    .logo {
-        width: 70px;
-        height: 24px;
-    }
-    
-    .HomeNavButton {
-        padding: 3px 5px;
-        min-width: 26px;
-    }
-    
-    .HomeIconImage {
-        width: 14px;
-        height: 13px;
-    }
-    
-    .navigationButton {
-        gap: 1px;
-    }
-    
-    .navRightSection {
-        gap: 3px;
-    }
-    
-    .NotificationIconContainer,
-    .UserIconContainer {
-        width: 26px;
-        height: 26px;
-    }
-    
-    .NotificationIconContainer {
-        padding: 4px;
-    }
-    
-    .userInitials {
-        font-size: 9px;
-        top: 6px;
-        left: 4px;
-    }
-}
+  .mainContainer {
+    padding: 4px 8px;
+  }
 
+  .logo {
+    width: 70px;
+    height: 24px;
+  }
+
+  .HomeNavButton {
+    /* padding: 3px 5px;
+    min-width: 26px; */
+  }
+
+  .HomeIconImage {
+    width: 14px;
+    height: 13px;
+  }
+
+  .navigationButton {
+    gap: 1px;
+  }
+
+  .navRightSection {
+    gap: 3px;
+  }
+
+  .NotificationIconContainer,
+  .UserIconContainer {
+    /* width: 26px;
+        height: 26px; */
+  }
+
+  .NotificationIconContainer {
+    /* padding: 4px; */
+  }
+
+  .userInitials {
+    font-size: 12px;
+    margin: 0;
+  }
+}
