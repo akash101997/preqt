@@ -1,0 +1,95 @@
+.bod-section img {
+  width: 30px;
+  height: 30px;
+}
+.bod-section .header {
+  display: flex;
+  border: none;
+  background: transparent;
+  gap: 25px;
+}
+
+.accordion-collapse {
+  /* transition: height 0.6s ease-in-out; */
+}
+
+.bod-section section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bod-section .accordion {
+  --bs-accordion-bg: transparent !important;
+}
+
+.bod-section h6 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: Helvetica;
+}
+
+.bod-section p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: Helvetica;
+  color: #6b7280;
+  margin: 0;
+}
+.bod-section .accordion-button:not(.collapsed) {
+  background: transparent;
+  padding: 10px 10px;
+}
+.bod-section .accordion-button.collapsed {
+  padding: 10px 10px;
+}
+.bod-section .accordion-button {
+  display: flex;
+  gap: 20px;
+}
+.bod-section .accordion-body {
+  padding: 10px 10px;
+}
+.bod-section .accordion-button:focus {
+  box-shadow: none;
+}
+
+.bod-section .accordion-item {
+  background: transparent !important;
+  border: none;
+}
+
+@media (max-width: 400px) {
+  .bod-section h6 {
+    font-size: 14px;
+  }
+  .bod-section p {
+    font-size: 10px;
+  }
+
+  .bod-section .accordion-body {
+    font-size: 10px;
+  }
+  .bod-section {
+    padding: 20px 12px;
+    gap: 0;
+  }
+.bod-section .accordion-button {
+    gap: 8px;
+  }
+  .bod-section .accordion-button.collapsed {
+    padding: 5px 0px;
+  }
+  .bod-section .accordion-button:not(.collapsed){
+        padding: 5px 0px;
+  }
+
+}
+@media (min-width: 401px) and (max-width: 900px) {
+  .bod-section{
+    padding: 12px 15px;
+    gap: 0;
+  }
+}

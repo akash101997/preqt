@@ -8,3 +8,16 @@
   box-sizing: border-box;
   font-family: 'Helvetica Neue', sans-serif;
 }
+
+.bod-section .accordion-collapse {
+  height: 0%;
+  max-height: 200px;
+  opacity: 1 !important;
+  overflow: hidden;
+  transition: all 1s ease;
+
+}
+
+.bod-section .accordion-collapse.show {
+  height: 100%; /* adjust if your content is bigger */
+}

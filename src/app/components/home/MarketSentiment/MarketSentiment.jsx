@@ -117,7 +117,7 @@ export default function MarketSentiment() {
                 </div>
 
 
-                {/* ------------------------- */}
+             
                 <div className={styles.prqtPostConatiner}>
                     {/* logo and Time Div */}
                     <div className={styles.logoAndTimeDiv}>
