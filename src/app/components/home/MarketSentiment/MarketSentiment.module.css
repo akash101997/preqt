@@ -15,8 +15,7 @@
 }
 
 .MarketSentimentMainContainer::-webkit-scrollbar {
-    display: none;
-    /* hide scrollbar in Chrome/Safari */
+    display: none;            
 }
 
 .MarketSentimentGreed {

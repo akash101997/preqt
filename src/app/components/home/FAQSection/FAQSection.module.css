@@ -64,7 +64,7 @@
   width: 100%;
   /* color: #ffffff; */
   border-radius: 8px;
-  overflow: hidden; /* keep dropdown corners rounded *//* Figma background for the question row */
+  overflow: hidden; 
   cursor: pointer;
   user-select: none;
   transition: box-shadow 0.2s ease;
@@ -92,7 +92,7 @@
   vertical-align: middle;
 }
 
-/* Chevron “>” rotates when open */
+
 .chevron {
   font-weight: 700;
   font-size: 14px;
