@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { useState, useRef } from "react";
-import Carousel from "react-bootstrap/Carousel";
+import Link from "next/link";
 
 import "./namesection.css";
 
@@ -55,10 +54,12 @@ const Namedetailsection = () => {
   ];
   return (
     <div className="main-container">
-      {/* <NavBar /> */}
+      <NavBar />
       <div className="subcontainer">
         <section className="topbar">
+          <Link href='/'>
           <span className="home">Home</span>
+          </Link>
           <span>
             <svg
               width="8"
@@ -78,24 +79,26 @@ const Namedetailsection = () => {
           <span className="dea">Exclusive Deal</span>
         </section>
         <section className="mob-topbar">
-          <div>
-            <svg
-              width="10"
-              height="10"
-              viewBox="0 0 8 14"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 13L1 7L7 1"
-                stroke="black"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <span className="dea">Exclusive Deal</span>
-          </div>
+          <Link href='/'>
+            <div>
+              <svg
+                width="10"
+                height="10"
+                viewBox="0 0 8 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7 13L1 7L7 1"
+                  stroke="black"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span className="dea">Exclusive Deal</span>
+            </div>
+          </Link>
           <svg
             width="24"
             height="24"
@@ -103,34 +106,34 @@ const Namedetailsection = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <g clip-path="url(#clip0_672_11789)">
+            <g clipPath="url(#clip0_672_11789)">
               <path
                 d="M10.252 21C10.4275 21.304 10.68 21.5565 10.984 21.732C11.288 21.9075 11.6329 21.9999 11.984 21.9999C12.335 21.9999 12.6799 21.9075 12.9839 21.732C13.2879 21.5565 13.5404 21.304 13.716 21"
                 stroke="#B59131"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M14.9844 8H20.9844"
                 stroke="#B59131"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M17.9844 5V11"
                 stroke="#B59131"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M19.9867 14.4641C20.2143 14.767 20.4608 15.0552 20.7247 15.3271C20.8552 15.4704 20.9411 15.6485 20.9722 15.8398C21.0032 16.0311 20.978 16.2273 20.8996 16.4046C20.8212 16.5818 20.693 16.7324 20.5306 16.8382C20.3682 16.9439 20.1785 17.0001 19.9847 17.0001H3.98473C3.79093 17.0001 3.60129 16.9439 3.43887 16.8382C3.27644 16.7324 3.14824 16.5818 3.06984 16.4046C2.99145 16.2273 2.96624 16.0311 2.99729 15.8398C3.02834 15.6485 3.11431 15.4704 3.24473 15.3271C4.57473 13.9561 5.98473 12.4991 5.98473 8.00005C5.98485 6.97103 6.24962 5.95933 6.75359 5.06217C7.25756 4.16502 7.9838 3.41255 8.86253 2.87708C9.74125 2.34161 10.7429 2.04114 11.7713 2.00453C12.7997 1.96792 13.8202 2.19642 14.7347 2.66805"
                 stroke="#B59131"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </g>
             <defs>
@@ -399,7 +402,7 @@ const Namedetailsection = () => {
         </div>
       </div>
       <Questions />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
