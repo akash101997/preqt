@@ -1,17 +1,16 @@
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+justify-content: center;
+flex-direction: column; 
+align-items: center;
   background-color: #f9f4e8;
-  padding: 3rem;
   flex-wrap: wrap;
   height: 361px;
 }
 
 .left {
-  flex: 1;
-  
-  width: 300px;
+
+margin: 0 auto;
   height: 200px;
   flex-direction: row;
   
@@ -20,9 +19,11 @@
 }
 
 .left .h2 {
-  font-size: 24px;
+  width: 800px;
+  font-size: 34px;
   font-weight: 100;
   color: #1c1c1c;
+
 }
 
 .left .h2 span {
@@ -39,6 +40,9 @@
   margin-bottom: 1rem;
   font-size: 16px;
 }
+.check_icon{
+  margin-right:10px ;
+}
 
 .right {
   display: flex;
@@ -53,7 +57,8 @@
 
 .qrImage {
 position: relative;
-top: -18px;
+z-index: 1;
+top: 58px;
   border-radius: 12px;
   margin-bottom: 1rem;
 }
@@ -66,14 +71,14 @@ top: -18px;
 }
 .applestore{
     position :relative;
-    top: -105px;
+    top: -35px;
     left: -20px;
 
 
 }
 .playstore{
     position :relative;
-    top: -105px;
+    top: -35px;
     left: 20px;
 
 }

@@ -1,25 +1,27 @@
-.account_details{
+.account_details {
+  font-family: Helvetica, sans-serif;
   display: flex;
-/* gap: 24px; */
-border-radius: 24px;
+  /* gap: 24px; */
+  height: 100%;
+  border-radius: 24px;
   margin-top: 60px;
-  margin-bottom: 60px;
-justify-content: center;
-background-color:  rgba(255, 255, 255, 1);
-font-family: helvetica  ;
+  /* margin-bottom: 60px; */
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 1);
+  font-family: helvetica;
 
 
 }
-.Link{
+
+.Link {
   text-decoration: none;
-  color: #555 ;
+  color: #555;
 }
 
 
 .sidebar {
   width: 320px;
   /* height: 700px; */
-  height: 100%;
   background: (255, 255, 255, 1);
   padding: 20px;
 
@@ -29,12 +31,12 @@ font-family: helvetica  ;
 }
 
 .profile {
-  border-top-left-radius: 20px ;
-  border-top-right-radius: 20px ;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   background: linear-gradient(to bottom, rgba(243, 244, 246, 1) 0%, rgba(255, 255, 255, 1) 100%);
   text-align: center;
   margin-bottom: 40px;
-      padding-top: 20px;
+  padding-top: 20px;
 }
 
 .avatar {
@@ -48,14 +50,17 @@ font-family: helvetica  ;
   align-items: center;
   justify-content: center;
   font-size: 38px;
-  font-weight: 540;
+  font-weight: 400;
+  font-style: medium;
   border: 7px solid rgba(255, 255, 255, 1);
   margin: 0px auto 10px;
 }
 
 .id {
-  font-weight:500;
+  font-weight: 500;
+  font-style: medium;
   font-size: 20px;
+  color: rgba(31, 41, 55, 1);
 }
 
 .name {
@@ -71,10 +76,12 @@ font-family: helvetica  ;
 
 .item {
   display: flex;
+  font-size: 13px;
+  font-weight: 600;
+ font-style: medium;
   align-items: center;
-
   padding: 12px 16px;
-  color: #555;
+  color: rgba(107, 114, 128, 1);
   border-radius: 30px;
   transition: background 0.3s ease;
   cursor: pointer;
@@ -88,16 +95,25 @@ font-family: helvetica  ;
 .active {
   /* background: rgba(201, 167, 78, 1); */
   color: #555;
-  
+
+}
+.hr{
+  margin-top: 25px;
+  border: none;
+  background-color: rgba(229, 231, 235, 1);
+  height: 1px;
 }
 
-.icon ,.user_icon {
-  
+.icon,
+.user_icon {
+
   margin-right: 10px;
 
 }
 
 .logout {
+  font-size: 13px;
+  font-weight: 600;
   margin-top: 40px;
   padding: 12px 16px;
   border-radius: 30px;
@@ -109,13 +125,20 @@ font-family: helvetica  ;
 
 .logout:hover {
   background: rgba(201, 167, 78, 1);
+  color:rgba(255, 255, 255, 1) ;
+
+
 }
-.item .span:hover     {
-    background: rgba(201, 167, 78, 1);
+
+.item .span:hover {
+  background: rgba(201, 167, 78, 1);
   transition: background 0.3s ease;
+  color:rgba(255, 255, 255, 1) ;
+
 
 
 }
-.user_icon:hover{
+
+.user_icon:hover {
   color: aliceblue;
 }

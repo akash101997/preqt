@@ -20,9 +20,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-    <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5?styles=103506" rel="stylesheet"/>
-                
-                
+      {/* <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5?styles=103510,103513,103511,103506,103508,103502,103504" rel="stylesheet"/> */}
+      <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5?styles=103500,103510,103513,103511,103506,103508,103502,103504" rel="stylesheet"/>
+
+                              
       </Head>
                 
       <body

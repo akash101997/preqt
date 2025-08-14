@@ -15,8 +15,8 @@
 
 .title {
   font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 30px;
+  font-weight: 100;
+  margin-bottom: 20px;
 }
 
 .divider {
@@ -32,6 +32,7 @@
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   padding: 15px;
+  font-size: 13px;
   margin-bottom: 10px;
   cursor: pointer;
 }
@@ -77,7 +78,7 @@
 
 input:checked + .slider {
   
-  background-color:rgba(201, 167, 78, 1) ;
+  background: linear-gradient(to right ,rgb(240, 216, 156) ,rgba(142, 107, 15, 1) );
 }
 
 input:checked + .slider:before {

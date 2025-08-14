@@ -5,13 +5,14 @@
   background-color: rgba(255, 255, 255, 1);
   
   padding: 32px;
-  height: 690px;
+  height: 709px;
     margin-top: 60px;
     margin-bottom: 60px;
 }
 
 .title {
-  font-size: 1.8rem;
+  font-size: 29px;
+  color: rgba(31, 41, 55, 1);
   font-weight: 100;
   margin-bottom: 15px;
 }
@@ -22,11 +23,17 @@
   margin-bottom: 20px;
 
 }
+.hr{
+  border: none;
+  background-color:  rgba(229, 231, 235, 1);
+  height: 1px;
+  
+}
 
 .formContainer{
   border: 1px solid rgba(229, 231, 235, 1);
   margin-top: 24px;
-  height: 520px;
+  height: 542px;
   padding: 24px;
   border-radius: 20px;
 }
@@ -53,6 +60,9 @@
 .labeltext{
    background-color: white;
    padding: 6px;
+   font-size: 12px;
+   color: rgba(31, 41, 55, 1);
+   font-weight: 400;
   
 
 
@@ -60,20 +70,22 @@
 
 
 .input {
-  border: 1px solid #d1a84c;
+  border: 1px solid rgba(229, 231, 235, 1);
   border-radius: 6px;
+  font-size: 13px;
   padding: 15px;
   outline: none;
 }
 
 .input:focus {
-  border-color: #b48b2e;
+  border-color: rgba(177, 140, 7, 1);
 }
 
 .textarea {
   border: 1px solid rgba(229, 231, 235, 1);
   border-radius: 6px;
   padding: 15px;
+  font-size: 13px;
   height: 310px;
   resize: none;
   outline: none;
@@ -87,9 +99,10 @@
   background-color: #d1a84c;
   color: white;
   padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
   border: none;
   border-radius: 50px;
-  font-size: 1rem;
   cursor: pointer;
 }
 

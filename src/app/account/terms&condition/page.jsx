@@ -15,19 +15,19 @@ export default function page() {
       </p>
 
       <h2 className={styles.h2}>1. Eligibility</h2>
-      <p>
+      <p className={styles.p}>
         You must be at least 18 years of age and legally capable of entering into a binding contract in order to use MakiaOne. 
         By using our services, you confirm that all information provided by you is accurate and true to the best of your knowledge.
-      </p>
+      </p >
 
       <h2 className={styles.h2}>2. Use of Platform</h2>
-      <p>
+      <p  className={styles.p}>
         MakiaOne is an IPO discovery and investment readiness platform. We do not directly facilitate transactions or guarantee investment returns. 
         Users are responsible for conducting their own due diligence before showing interest or making investment decisions.
       </p>
 
       <h2 className={styles.h2}>3. User Conduct</h2>
-      <p>You agree not to misuse the platform, including (but not limited to):</p>
+      <p  className={styles.p}>You agree not to misuse the platform, including (but not limited to):</p>
       <ul className={styles.ul}>
         <li className={styles.li}>Uploading false or misleading information</li>
         <li className={styles.li}>Impersonating another user or entity</li>
@@ -35,23 +35,23 @@ export default function page() {
       </ul>
 
       <h2 className={styles.h2}>4. Intellectual Property</h2>
-      <p>
+      <p  className={styles.p}>
         All content, branding, design, and features on the MakiaOne platform are the intellectual property of WebNinjaz Technologies Pvt. Ltd. 
         and may not be copied or reused without prior written permission.
       </p>
 
       <h2 className={styles.h2}>5. Third-Party Links</h2>
-      <p>
+      <p  className={styles.p}>
         Our platform may contain links to third-party websites. We are not responsible for the content, privacy policies, or practices of those websites.
       </p>
 
       <h2 className={styles.h2}>6. Termination</h2>
-      <p>
+      <p  className={styles.p}>
         We reserve the right to suspend or terminate your account if any terms are violated or suspicious activity is detected.
       </p>
 
       <h2 className={styles.h2}>7. Changes to Terms</h2>
-      <p>
+      <p  className={styles.p}>
         We may update these terms periodically. Continued use of the platform indicates your agreement with any modified terms.
       </p>
     </div>

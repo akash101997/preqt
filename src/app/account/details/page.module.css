@@ -53,15 +53,18 @@
 
 }
 .hr_header{
-    background: rgba(229, 231, 235,);
-    text-decoration: solid;
-    margin-top: 24px;
+     border: none;
+   background-color: rgba(229, 231, 235,1) ;
+   height: 1px;
+    margin-top: 10px;
     width: 865px;
 
 }
 .hr{
-    background: rgba(229, 231, 235,);
-    text-decoration: solid;
+
+      border: none;
+   background-color: rgba(229, 231, 235,1) ;
+   height: 1px;
     margin-top: 24px;
     width: 835px;
     
@@ -94,8 +97,6 @@
 }
 
 
-
-
 .email{
      margin-top  : 12px;
        height: 60px;
@@ -107,6 +108,7 @@
 
 .Link{
     position: relative;
+    text-decoration: underline;
     top: -50px;
     left: -20px;
     color: rgba(177, 140, 7, 1);

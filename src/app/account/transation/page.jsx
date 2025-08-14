@@ -162,7 +162,7 @@ export default function page() {
   return (
     <div className={styles.container}>
       <h2 className={styles.heading}>Transactions</h2>
-      <hr />
+      <hr className={styles.hr} />
       <div className={styles.table}>
         <div className={`${styles.row} ${styles.header}`}>
           <div>Deal Name</div>

@@ -11,13 +11,16 @@
 
 .heading {
   font-size: 28px;
-  font-weight: 300;
-  margin-bottom: 5px;
+  font-weight: 100;
+  
   color: rgba(31, 41, 55, 1);
 }
 .hr{
-   margin-top: 30px;
+   margin-top: 25px;
   margin-bottom: 30px;
+  background-color: rgba(229, 231, 235, 1);
+  height: 1px;
+  border: none;
 }
 
 .date {
@@ -32,25 +35,38 @@
 
 .intro {
   font-weight: bold;
+  color: rgba(31, 41, 55, 1);
   font-size: 16px;
   margin-top: 10px;
 }
 
 .text {
   margin-bottom: 20px;
+  color: rgba(75, 85, 99, 1);
+  font-size: 14px;
 }
 
 .h2 {
   margin-top: 20px;
-  font-size: 16px;
+   color: rgba(31, 41, 55, 1);
+  font-size: 15px;
   font-weight: bold;
+}
+.p{
+    font-size: 14px;
+    color: rgba(75, 85, 99, 1);
+  
 }
 
 .ul {
   padding-left: 20px;
   list-style-type: disc;
+  font-size: 14px;
+    color: rgba(75, 85, 99, 1);
 }
 
 .li {
+  font-size: 14px;
   margin-bottom: 5px;
+    color: rgba(75, 85, 99, 1);
 }

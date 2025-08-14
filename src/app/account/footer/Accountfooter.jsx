@@ -9,9 +9,9 @@ export default function Home() {
           Get the <span>Maikia One</span> App and keep in touch around the clock!
         </h2>
         <ul className={styles.ul}>
-          <li>✅ Monitor your investments in real-time.</li>
-          <li>✅ Receive tailored deal suggestions.</li>
-          <li>✅ Get real-time updates and alerts.</li>
+          <li><img className={styles.check_icon} src="/acconutfooter/tick-icon.svg" alt="" /><span> Monitor your investments in real-time.</span></li>
+          <li><img className={styles.check_icon} src="/acconutfooter/tick-icon.svg" alt="" /><span> Receive tailored deal suggestions.</span></li>
+          <li><img  className={styles.check_icon}src="/acconutfooter/tick-icon.svg" alt="" /><span> Get real-time updates and alerts.</span></li>
         </ul>
       </div>
 
@@ -27,7 +27,7 @@ export default function Home() {
           <a className={styles.applestore} href="#">
             <Image src="/acconutfooter/applestore.png" alt="Download on App Store" width={150} height={50} />
           </a>
-          <a className={styles.playstore}  href="#">
+          <a className={styles.playstore} href="#">
             <Image src="/acconutfooter/playstore.png" alt="Download on Google Play" width={150} height={50} />
           </a>
         </div>
