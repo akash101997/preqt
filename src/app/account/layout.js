@@ -23,9 +23,7 @@ export default function layout({ children }) {
         <div className={styles.mainaccount_layout}>
           <NavBar />
           <div className={styles.account_layout}>
-            <div className={styles.sidenav}>
               <Sidenav />
-            </div>
             <div>
               {children}
             </div>

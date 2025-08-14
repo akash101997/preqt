@@ -14,6 +14,8 @@
   font-size: 22px;
   font-weight: 500;
   margin-bottom: 8px;
+  color: (31, 41, 55, 1);
+  
 }
 
 .divider {
@@ -40,8 +42,8 @@ margin-top: 30px;
 }
 
 .docName {
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 300;
 }
 
 .emailBtn {
@@ -50,9 +52,9 @@ margin-top: 30px;
   gap: 6px;
   background: none;
   border: none;
-  color: #b8860b;
-  font-size: 14px;
-  font-weight: 550;
+  color: rgba(177, 140, 7, 1);
+  font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
 }
 
