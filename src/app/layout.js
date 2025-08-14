@@ -1,6 +1,9 @@
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 import Head from "next/head";
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +27,13 @@ export default function RootLayout({ children }) {
       <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5?styles=103500,103510,103513,103511,103506,103508,103502,103504" rel="stylesheet"/>
 
                               
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+  integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+  crossorigin="anonymous"
+/>
+  
       </Head>
                 
       <body

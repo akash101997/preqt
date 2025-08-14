@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    margin: 0 auto;
 }
 .DealsTalkHeading{
     font-weight: 100;
@@ -23,187 +24,162 @@
 .DealsTalkCardContainer{
     height: 500px;
     width: 1020px;
+    margin: 0 auto;
     display: flex;
     gap:24px;
     /* border: 1px solid black; */
+    align-items: center;
+    justify-content: center;
 }
-.cardContainer1{
-    height: 468px;
-    width: 320px;
-    border: 1px solid #E2E8F0;
+/* Card 1 Container - Fixed responsive version */
+.cardContainer1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 15px;
+    width: 370px;
+    max-width: 100%;
+    height: 468px;
+    border: 1px solid #E2E8F0;
     border-radius: 20px;
+    padding: 16px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    cursor: pointer;
+    gap: 16px;
 }
-.cardInnerSections{
-    width: 300px;
-    height: 280px;
+
+.cardInnerSections {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    /* border: 1px solid black; */
 }
-.cardIPOsection{
+
+.cardIPOsection {
     display: flex;
-    width: 160px;
-    height: 25px;
     gap: 10px;
-    /* border: 1px solid black; */
+    flex-wrap: wrap;
 }
-.IPOheading{
-    width: 70px;
+
+.IPOheading {
+    padding: 0 10px;
     height: 25px;
-    border: 1px solid #ECECF0;
-    border-radius: 6px;
-    padding-right: 10px;
-    padding-left: 10px;
     background-color: #ECECF0;
+    border-radius: 6px;
     display: flex;
-    gap: 10px;
+    align-items: center;
     justify-content: center;
 }
-.HeadingContent{
-    width: 50px;
-    height: 25px;
+
+.HeadingContent {
     font-size: 10px;
-    line-height: 25px;
-    letter-spacing: 0%;
+    font-weight: 500;
+    white-space: nowrap;
 }
-.AnthemSection{
-    /* width: 340px; */
-    height: 32px;
+
+.AnthemSection {
     display: flex;
-    gap: 20px;
-    /* border: 1px solid black; */
-    
+    align-items: center;
+    gap: 12px;
 }
-.anthemPicture{
+.anthemPicture {
     width: 30px;
     height: 30px;
-    color: #FFFFFF;
+    object-fit: contain;
 }
-.anthemHeading{
-    font-size: 12px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    font-weight: bold;
+.anthemHeading {
+    font-size: 13px;
+    font-weight: 600;
     color: #1F2937;
-    height: 17px;
-    text-align: center;
-    margin-top: 7px;
 }
-.dealCardContent{
-    width: 280px;
-    height: 35px;
-    font-size: 15px;
-    font-weight: lighter;
-    line-height: 100%;
-    letter-spacing: 0%;
-    /* border: 1px solid black; */
+
+.dealCardContent {
+    font-size: 14px;
     color: #6B7280;
+    line-height: 1.4;
 }
-.revenueMainContainer{
+
+/* Revenue Sections */
+.revenueMainContainer {
     display: flex;
     flex-direction: column;
     gap: 14px;
 }
-.revenueSection{
-    width: 280px;
-    height: 36px;
+.revenueSection {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 8px;
+    flex-wrap: wrap;
 }
-.Revenue{
+
+.Revenue {
+    min-width: 90px;
     display: flex;
     flex-direction: column;
-    width: 123.3px;
-    height: 36px;
-    gap: 4px;
+    gap: 2px;
 }
-.revenuHeading{
+.revenuHeading {
     font-size: 12px;
-    font-weight: 400;
-    line-height: 16px;
-    letter-spacing: 0%;
     color: #6B7280;
 }
-.priceInRupee{
-    font-weight: 500;
+.priceInRupee {
     font-size: 13px;
-    line-height: 16px;
-    letter-spacing: 0%;
-    height: 16px;
+    font-weight: 500;
+    color: #1F2937;
+    word-break: break-word;
+}
 
-}
-.cagrSection{
-    width: 340px;
-    height: 36px;
+.merchantMainContainer {
     display: flex;
+    flex-wrap: wrap;
 }
-.merchantMainContainer{
-    width: 340px;
+.merchantBanker {
+    padding: 0 12px;
     height: 30px;
     display: flex;
-    gap: 10px;
-}
-.merchantBanker{
-    width: 186px;
-    height: 30px;
-    display: flex;
-    border: 1px solid #44319745;
-    border-radius: 40px;
-    padding-right: 10px;
-    padding-left: 10px;
-    gap: 10px;
-
-}
-.bankMerchant{
-    font-size: 11px;
-    line-height: 100%;
-    font-weight: bold;
-    color: #000000;
-    text-align: center;
-    margin-top: 10px;
-}
-.cardFooterMainContainer{
-    display: flex;
-    flex-direction: column;
-    height: 40px;
-    gap: 50px;
-    border-top: 1px solid #E2E8F0;
-}
-.QandA{
-    height: 24px;
-    display: flex;
-    gap: 80px;
-    margin-top: 10px;
     align-items: center;
+    border-radius: 40px;
+    border: 1px solid rgba(68, 49, 151, 0.27);
 }
-.QandAstats{
+.bankMerchant {
+    font-size: 11px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* Footer */
+.cardFooterMainContainer {
+    border-top: 1px solid #E2E8F0;
+    padding-top: 10px;
+}
+.QandA {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.QandAstats {
     font-size: 12px;
-    line-height: 18px;
-    font-weight: normal;
     color: #C9A74E;
+    flex: 1;
 }
-.usersIcons{
-    width: auto;
-    height: 24px;
+.usersIcons {
     display: flex;
 }
-.userImages{
+.userImages {
     width: 24px;
     height: 24px;
-    border: 1px solid #FFFFFF;
-    border-radius: 100px;
-    margin-left: -11px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    margin-left: -8px;
+}
+.userImages:first-child {
+    margin-left: 0;
 }
 
 /* card 2 */
 .card2Container {
-    width: 327px;
+    width: 300px;
     height: 468px;
     background-color: #1e1e1e;
     display: flex;
@@ -327,25 +303,42 @@
     border-radius: 50%;
     margin-left: -8px;
 }
+.starImage{
+    width: 49px;
+    height: 49px;
+    position: absolute;
+    top: 1px;
+    left: 250px;
+}
 
-.crousel{
-    width: 36px;
-    height: 36px;
-    border: 1px solid #E5E7EB ;
-    border-radius:50px;
+.crousel {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #E5E7EB;
+    border-radius: 50%;
     display: flex;
-    padding: 6px;
-    gap:10px;
-    margin-top: 200px;
-    margin-left: -15px;
+    align-items: center;     /* centers the arrow vertically */
+    justify-content: center; /* centers the arrow horizontally */
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+     /* keeps vertical placement flexible */
+    margin-left: -10px;
 }
-.crouselRight{
-    width: 6px;
-    height: 12px;
-    justify-content: center;
-    margin-left: 2px;
-    margin-top: 5px;
+
+.crousel:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    transform: scale(1.05);
 }
+
+.crouselRight {
+    width: 8px;    /* slightly bigger arrow */
+    height: 14px;
+    object-fit: contain;
+}
+
 
 /* progress bar in cards*/
 .progressContainer{
@@ -404,3 +397,298 @@
     align-items: center;
     color: #C9A74E;
 }
+
+
+/* Tablet and Small Desktop (768px to 1024px) */
+
+@media (max-width: 1024px) {
+    .DealsTalkMainContainer {
+        width: 100%;
+        height: auto;
+        gap: 30px;
+        padding: 0 20px;
+    }
+    
+    .DealsTalkHeading {
+        width: 100%;
+        font-size: 18px;
+        height: auto;
+    }
+    
+    .DealsTalkCardContainer {
+        width: 100%;
+        height: auto;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .cardContainer1,
+    .card2Container {
+        width: 300px;
+        height: auto;
+        min-height: 400px;
+    }
+    
+    .cardInnerSections {
+        width: 100%;
+        height: auto;
+    }
+    
+    .revenueSection {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .Revenue {
+        width: 100px;
+    }
+    
+    .merchantMainContainer {
+        width: 100%;
+    }
+    
+    .QandA {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .crousel {
+        display: none;
+    }
+}
+
+/* Mobile Landscape (481px to 768px) */
+
+@media (max-width: 768px) {
+    .DealsTalkMainContainer {
+        padding: 0 16px;
+        gap: 24px;
+    }
+    
+    .DealsTalkHeading {
+        font-size: 16px;
+        text-align: center;
+    }
+    
+    .DealsTalkCardContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+    
+    .cardContainer1,
+    .card2Container {
+        width: 100%;
+        max-width: 350px;
+        padding: 12px;
+    }
+    
+    .cardIPOsection,
+    .card2IPOsection {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .IPOheading,
+    .card2IPOtag {
+        width: auto;
+        padding: 4px 8px;
+    }
+    
+    .AnthemSection,
+    .card2CompanySection {
+        gap: 12px;
+    }
+    
+    .anthemHeading,
+    .card2CompanyName {
+        font-size: 11px;
+    }
+    
+    .dealCardContent,
+    .card2Description {
+        font-size: 13px;
+        line-height: 1.3;
+    }
+    
+    .revenueSection,
+    .card2StatsRow {
+        flex-direction: column;
+        gap: 8px;
+        height: auto;
+    }
+    
+    .Revenue,
+    .card2Stat {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .merchantBanker {
+        width: auto;
+        padding: 6px 12px;
+    }
+    
+    .QandA,
+    .card2QandA {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+    
+    .promoter {
+        gap: 8px;
+        height: auto;
+    }
+    
+    .Strong,
+    .monetization {
+        max-width: 120px;
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+}
+
+/* Mobile Portrait (320px to 480px) */
+
+@media (max-width: 480px) {
+    .DealsTalkMainContainer {
+        padding: 0 12px;
+        gap: 20px;
+    }
+    
+    .DealsTalkHeading {
+        font-size: 14px;
+    }
+    
+    .DealsTalkCardContainer {
+        gap: 12px;
+    }
+    
+    .cardContainer1,
+    .card2Container {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .IPOheading,
+    .card2IPOtag {
+        padding: 2px 6px;
+    }
+    
+    .HeadingContent,
+    .card2IPOtext {
+        font-size: 8px;
+    }
+    
+    .anthemPicture,
+    .card2CompanyLogo {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .anthemHeading,
+    .card2CompanyName {
+        font-size: 10px;
+    }
+    
+    .dealCardContent,
+    .card2Description {
+        font-size: 12px;
+        line-height: 1.2;
+    }
+    
+    .revenuHeading,
+    .card2StatHeading {
+        font-size: 10px;
+    }
+    
+    .priceInRupee,
+    .card2StatValue {
+        font-size: 11px;
+    }
+    
+    .bankMerchant {
+        font-size: 9px;
+    }
+    
+    .QandAstats,
+    .card2QandAStats {
+        font-size: 10px;
+    }
+    
+    .userImages,
+    .card2UserImage {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .progressContainer {
+        max-width: 100%;
+    }
+    
+    .PriceIncr,
+    .PricePercent {
+        font-size: 10px;
+    }
+    
+    .Strong,
+    .monetization {
+        max-width: 100px;
+        font-size: 9px;
+        padding: 3px 6px;
+    }
+}
+
+/* Very Small Screens (below 320px) */
+
+@media (max-width: 320px) {
+    .DealsTalkMainContainer {
+        padding: 0 8px;
+        gap: 16px;
+    }
+    
+    .DealsTalkHeading {
+        font-size: 12px;
+    }
+    
+    .cardContainer1,
+    .card2Container {
+        padding: 8px;
+    }
+    
+    .HeadingContent,
+    .card2IPOtext {
+        font-size: 7px;
+    }
+    
+    .anthemHeading,
+    .card2CompanyName {
+        font-size: 9px;
+    }
+    
+    .dealCardContent,
+    .card2Description {
+        font-size: 11px;
+    }
+    
+    .revenuHeading,
+    .card2StatHeading {
+        font-size: 9px;
+    }
+    
+    .priceInRupee,
+    .card2StatValue {
+        font-size: 10px;
+    }
+    
+    .Strong,
+    .monetization {
+        font-size: 8px;
+        padding: 2px 4px;
+    }
+}
+    

@@ -1,8 +1,10 @@
+"use client"
 import styles from './heroSection.module.css'
 import LetsHearFromThem from '../LetsHearFromThem/LetsHearFromThem'
 import DealsTalk from '../DealsTalk/DealsTalk'
 import MarketSentiment from '../MarketSentiment/MarketSentiment'
 import OurMobileApp from '../OurMobileApp/OurMobileApp'
+import { useState } from 'react'
 
 export default function HeroSection() {
     return (
