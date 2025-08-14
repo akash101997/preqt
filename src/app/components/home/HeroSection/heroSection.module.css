@@ -3,6 +3,9 @@
     min-height: 1170px;
     /* use min-height instead of fixed height */
     width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    overflow-x: hidden;
     padding: 30px 16px;
     gap: 40px;
     background-color: #FFFFFF;
@@ -28,4 +31,97 @@
 
 .superMainDiv {
     width: 100%;
+}
+
+/* Existing CSS remains unchanged above */
+
+/* Large Desktop (1440px+) */
+
+/* Tablet and Small Desktop (768px to 1024px) */
+/* @media (max-width: 1024px) {
+    .heroMainContainer {
+        gap: 30px;
+        padding: 25px 12px;
+        min-height: 900px;
+    }
+    
+    .heroFrame {
+        gap: 40px;
+        min-height: 800px;
+    }
+    
+    .mainDiv {
+        padding: 0 16px;
+    }
+    
+    .MarketSentimentComponent {
+        flex: 0 0 auto;
+        max-width: 350px;
+    }
+} */
+
+/* Mobile Landscape and Small Tablets (481px to 768px) */
+@media (max-width: 768px) {
+    .heroMainContainer {
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px 12px;
+        min-height: auto;
+        align-items: center;
+    }
+    
+    .heroFrame {
+        width: 100%;
+        gap: 30px;
+        min-height: auto;
+    }
+    
+    .mainDiv {
+        padding: 0 12px;
+    }
+    
+    .MarketSentimentComponent {
+        width: 100%;
+        max-width: 500px;
+        order: -1; /* Place MarketSentiment at top on mobile */
+    }
+}
+
+/* Mobile Portrait (320px to 480px) */
+@media (max-width: 480px) {
+    .heroMainContainer {
+        gap: 20px;
+        padding: 16px 8px;
+        flex-direction: column;
+    }
+    
+    .heroFrame {
+        gap: 24px;
+        width: 100%;
+    }
+    
+    .mainDiv {
+        padding: 0 8px;
+    }
+    
+    .MarketSentimentComponent {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Very Small Screens (below 320px) */
+@media (max-width: 320px) {
+    .heroMainContainer {
+        gap: 16px;
+        padding: 12px 6px;
+    }
+    
+    .heroFrame {
+        gap: 20px;
+    }
+    
+    .mainDiv {
+        padding: 0 6px;
+    }
 }

@@ -41,7 +41,7 @@ export default function MarketSentiment() {
                             <p className={styles.greedText}>Greed</p>
                             <p className={styles.CurrentSentement}>Current Sentiment</p>
                         </div>
-                        <p className={styles.highMomentum}>High momentum, cautious entry advised.</p>
+                        <i className={styles.highMomentum}>High momentum, cautious entry advised.</i>
                     </div>
                 </div>
             </div>

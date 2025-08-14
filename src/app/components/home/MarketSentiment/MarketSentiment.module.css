@@ -9,9 +9,11 @@
     padding: 20px;
     border-radius: 24px;
 
-    overflow-y: auto;           /* enable internal scrolling */
-    scrollbar-width: none; 
+    overflow-y: auto;
+    /* enable internal scrolling */
+    scrollbar-width: none;
 }
+
 .MarketSentimentMainContainer::-webkit-scrollbar {
     display: none;            
 }
@@ -344,7 +346,8 @@
     gap: 6px;
     align-items: center;
 }
-.ShareButton{
+
+.ShareButton {
     display: flex;
     max-width: 75px;
     max-height: 40px;
@@ -353,49 +356,56 @@
 }
 
 /* ---------------------------------------------- */
-.ColorGraph{
+.ColorGraph {
     display: flex;
     flex-direction: column;
     gap: 16px;
-max-width: 350px;
+    max-width: 350px;
 }
-.MainColorGraphDiv{
+
+.MainColorGraphDiv {
     max-width: 350px;
     display: flex;
     border-radius: 100px;
     /* border: 1px solid black; */
-
+    padding-left: 10px;
 }
-.GreenColor1{
-    width: 77px;
+
+.GreenColor1 {
+    width: 90px;
     height: 16px;
-   border-top-left-radius:100px;
-   border-bottom-left-radius:100px;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
     background-color: #3FD146;
 }
-.greenColor2{
-    width: 77px;
+
+.greenColor2 {
+    width: 90px;
     height: 16px;
     background-color: #8CE249;
 }
-.yellowColor{
-    width: 77px;
+
+.yellowColor {
+    width: 90px;
     height: 16px;
     background-color: #EFD933;
 }
-.OrangeColor{
-     width: 77px;
+
+.OrangeColor {
+    width: 90px;
     height: 16px;
     background-color: #EDA635;
 }
-.lastColor{
-     width: 77px;
+
+.lastColor {
+    width: 90px;
     height: 16px;
     background-color: #E82D48;
-     border-top-right-radius:100px;
-   border-bottom-right-radius:100px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
 }
-.ColorLevelMainContainer{
+
+.ColorLevelMainContainer {
     max-width: 350px;
     height: 24px;
     display: flex;
@@ -403,8 +413,11 @@ max-width: 350px;
     align-items: center;
     position: relative;
     top: -12px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
-.ExtremeFear{
+
+.ExtremeFear {
     /* width: 77px; */
     height: 24px;
     font-size: 10px;
@@ -418,9 +431,354 @@ max-width: 350px;
     /* margin-left: 5px; */
 }
 
-.PinScaleImage{
+.PinScaleImage {
     position: relative;
     right: 100px;
     width: 18px;
     height: 35px;
 }
+
+/* Base styles (already provided above) */
+
+/* Large Desktop (1440px+) */
+/*
+@media (min-width: 1440px) {
+    .ColorGraph {
+        max-width: 350px;
+        gap: 16px;
+    }
+    
+    .MainColorGraphDiv {
+        max-width: 350px;
+        height: 24px;
+    }
+    
+    .GreenColor1, .greenColor2, .yellowColor, .OrangeColor, .lastColor {
+        height: 24px;
+    }
+    
+    .ColorLevelMainContainer {
+        max-width: 350px;
+        top: -10px;
+    }
+    
+    .ExtremeFear {
+        font-size: 10px;
+    }
+    
+    .PinScaleImage {
+        right: 90px;
+        width: 18px;
+        height: 35px;
+    }
+    
+    .MarketSentimentInnerContainer {
+        max-width: 350px;
+    }
+}
+*/
+/* Tablet and Small Desktop (768px to 1024px) */
+@media (max-width: 1024px) {
+    .ColorGraph {
+        max-width: 300px;
+        gap: 12px;
+    }
+    
+    .MainColorGraphDiv {
+        max-width: 300px;
+        height: 20px;
+    }
+    
+    .GreenColor1, .greenColor2, .yellowColor, .OrangeColor, .lastColor {
+        height: 20px;
+    }
+    
+    .ColorLevelMainContainer {
+        max-width: 300px;
+        top: -8px;
+        padding: 0 6px;
+    }
+    
+    .ExtremeFear {
+        font-size: 9px;
+    }
+    
+    .PinScaleImage {
+        right: 70px;
+        width: 16px;
+        height: 32px;
+    }
+    
+    .MarketSentimentInnerContainer {
+        max-width: 300px;
+        padding: 0 12px;
+    }
+}
+
+/* Mobile Landscape (481px to 768px) */
+@media (max-width: 768px) {
+    .ColorGraph {
+        max-width: 280px;
+        gap: 10px;
+    }
+    
+    .MainColorGraphDiv {
+        max-width: 280px;
+        height: 18px;
+    }
+    
+    .GreenColor1, .greenColor2, .yellowColor, .OrangeColor, .lastColor {
+        height: 18px;
+    }
+    
+    .ColorLevelMainContainer {
+        max-width: 280px;
+        top: -6px;
+        padding: 0 4px;
+    }
+    
+    .ExtremeFear {
+        font-size: 8px;
+    }
+    
+    .PinScaleImage {
+        right: 60px;
+        width: 14px;
+        height: 28px;
+    }
+    
+    .MarketSentimentInnerContainer {
+        max-width: 280px;
+        padding: 0 8px;
+    }
+    .LikeBtnContainer,
+    .commentBtnContainer {
+        padding: 6px 2px;
+        gap: 4px;
+        max-width: 60px;
+    }
+    
+    .ShareButton {
+        padding: 6px 2px;
+        gap: 4px;
+        max-width: 40px;
+    }
+    
+    .likesCount,
+    .commentsCount {
+        font-size: 12px;
+    }
+    
+    .likeImage {
+        max-width: 16px;
+        max-height: 16px;
+    }
+}
+
+/* Mobile Portrait (320px to 480px) */
+@media (max-width: 480px) {
+    .ColorGraph {
+        max-width: 240px;
+        gap: 8px;
+    }
+    
+    .MainColorGraphDiv {
+        max-width: 240px;
+        height: 16px;
+    }
+    
+    .GreenColor1, .greenColor2, .yellowColor, .OrangeColor, .lastColor {
+        height: 16px;
+    }
+    
+    .ColorLevelMainContainer {
+        max-width: 240px;
+        top: -4px;
+        padding: 0 2px;
+    }
+    
+    .ExtremeFear {
+        font-size: 7px;
+    }
+    
+    .PinScaleImage {
+        right: 50px;
+        width: 12px;
+        height: 24px;
+    }
+    
+    .MarketSentimentInnerContainer {
+        max-width: 240px;
+        padding: 0 6px;
+    }
+    .highMomentum{
+        margin-left: 80px;
+    }
+    .LikeBtnContainer {
+        padding: 4px 2px;
+        gap: 3px;
+        max-width: 50px;
+        min-width: 40px;
+    }
+    
+    .likesCount {
+        font-size: 11px;
+        text-indent: -9999px; /* Hide original text */
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* Hide the word "Likes" - keep only numbers */
+    .likesCount::after {
+        content: '';
+    }
+    
+    .likesCount {
+        font-size: 11px;
+        text-indent: -9999px; /* Hide original text */
+        position: relative;
+    }
+    
+    .likesCount::before {
+        content: '1,260'; /* Show only the number */
+        position: absolute;
+        left: 0; /* ✅ Fixed: was 9999px */
+        top: 0;
+        text-indent: 0;
+        font-size: 11px;
+        color: #878A8C;
+        line-height: 17px;
+    }
+    
+    /* Comment section - show only icon and number */
+    .commentBtnContainer {
+        padding: 4px 2px;
+        gap: 3px;
+        max-width: 50px;
+        min-width: 40px;
+    }
+    
+    .commentsCount {
+        font-size: 11px;
+        max-width: 30px;
+        text-indent: -9999px;
+        position: relative;
+    }
+    
+    .commentsCount::before {
+        content: '360'; /* Show only the number */
+        position: absolute;
+        left: 0; /* ✅ Fixed: was 9999px */
+        top: 0;
+        text-indent: 0;
+        font-size: 11px;
+        color: #878A8C;
+        line-height: 17px;
+    }
+    
+    /* Share button - hide text completely */
+    .ShareButton {
+        padding: 4px 2px;
+        gap: 2px;
+        max-width: 30px;
+        min-width: 24px;
+        justify-content: center;
+    }
+    
+    .ShareButton .commentsCount {
+        display: none;
+    }
+    
+    /* Make icons smaller */
+    .likeImage {
+        max-width: 14px;
+        max-height: 14px;
+    }
+    
+    /* Adjust container spacing */
+    .LikeAndCommentContainer {
+        gap: 16px;
+        max-width: 120px;
+    }
+    
+    .LikeCommentAndShare {
+        padding: 2px 12px;
+        gap: 8px;
+    }
+}
+
+/* Very Small Screens (below 320px) */
+@media (max-width: 320px) {
+    .ColorGraph {
+        max-width: 200px;
+        gap: 6px;
+    }
+    
+    .MainColorGraphDiv {
+        max-width: 200px;
+        height: 14px;
+    }
+    
+    .GreenColor1, .greenColor2, .yellowColor, .OrangeColor, .lastColor {
+        height: 14px;
+    }
+    
+    .ColorLevelMainContainer {
+        max-width: 200px;
+        top: -2px;
+        padding: 0 1px;
+    }
+    
+    .ExtremeFear {
+        font-size: 6px;
+    }
+    
+    .PinScaleImage {
+        right: 40px;
+        width: 10px;
+        height: 20px;
+    }
+    
+    .MarketSentimentInnerContainer {
+        max-width: 200px;
+        padding: 0 4px;
+    }
+    .LikeBtnContainer,
+    .commentBtnContainer {
+        padding: 3px 1px;
+        gap: 2px;
+        max-width: 40px;
+        min-width: 32px;
+    }
+    
+    .ShareButton {
+        padding: 3px 1px;
+        max-width: 24px;
+        min-width: 20px;
+    }
+    
+    .likesCount::before {
+        font-size: 10px;
+    }
+    
+    .commentsCount::before {
+        font-size: 10px;
+    }
+    
+    .likeImage {
+        max-width: 12px;
+        max-height: 12px;
+    }
+    
+    .LikeAndCommentContainer {
+        gap: 4px;
+        max-width: 90px;
+    }
+    
+    .LikeCommentAndShare {
+        padding: 2px 8px;
+        gap: 6px;
+    }
+}
+

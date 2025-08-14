@@ -1,14 +1,16 @@
 import styles from "./DealsTalk.module.css"
 
 export default function DealsTalk() {
+
     return (
-        <section className={styles.DealsTalkMainContainer}>
+
+        <section className={styles.DealsTalkMainContainer} >
             <div className={styles.DealsTalkHeading}>Deals People are <span className={styles.SpanDealsTalkHeading}>Talking About </span></div>
 
             {/* cards */}
-            <div className={styles.DealsTalkCardContainer}>
+            <div className={styles.DealsTalkCardContainer} >
                 {/* card 1 */}
-                <div className={styles.cardContainer1}>
+                < div className={styles.cardContainer1} >
                     <div className={styles.cardInnerSections}>
                         <article className={styles.cardIPOsection}>
                             <div className={styles.IPOheading}>
@@ -70,7 +72,7 @@ export default function DealsTalk() {
                     </div>
 
                     {/* card footer */}
-                    <div className={styles.cardFooterMainContainer}>
+                    <div className={styles.cardFooterMainContainer} >
                         <div className={styles.QandA}>
                             <div className={styles.QandAstats}>23 Q&A answered in last 3 days </div>
 
@@ -82,10 +84,10 @@ export default function DealsTalk() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div >
 
                 {/* card 2 */}
-                <div className={styles.card2Container}>
+                < div className={styles.card2Container} >
                     <div className={styles.card2InnerSections}>
                         {/* IPO Section */}
                         <article className={styles.card2IPOsection}>
@@ -161,7 +163,6 @@ export default function DealsTalk() {
                             <div className={styles.monetization}><p>Clear Monetization</p></div>
                             <div className={styles.monetization}><p>Fund Participating</p></div>
                         </div>
-                        
                     </div>
 
                     {/* Footer */}
@@ -178,10 +179,12 @@ export default function DealsTalk() {
                             </div>
                         </div>
                     </div>
-                </div>
+
+                    <img src="/assets/pictures/star.svg" alt=""  className={styles.starImage}/>
+                </div >
 
                 {/* card 3 */}
-                <div className={styles.card2Container}>
+                < div className={styles.card2Container} >
                     <div className={styles.card2InnerSections}>
                         {/* IPO Section */}
                         <article className={styles.card2IPOsection}>
@@ -249,7 +252,7 @@ export default function DealsTalk() {
                             <div className={styles.monetization}><p>Clear Monetization</p></div>
                             <div className={styles.monetization}><p>Fund Participating</p></div>
                         </div>
-                        
+
                     </div>
 
                     {/* Footer */}
@@ -266,13 +269,15 @@ export default function DealsTalk() {
                             </div>
                         </div>
                     </div>
-                </div>
+
+                    <img src="/assets/pictures/star.svg" alt=""  className={styles.starImage}/>
+                </div >
 
                 {/* crousel */}
-                <div className={styles.crousel}>
-                    <img src="/assets/pictures/crousel.png" alt=""  className={styles.crouselRight}/>
-                </div>
-            </div>
-        </section>
+                < div className={styles.crousel} >
+                    <img src="/assets/pictures/crousel.png" alt="" className={styles.crouselRight} />
+                </div >
+            </div >
+        </section >
     )
 }

@@ -9,19 +9,19 @@ export default function NavBar() {
             <div className={styles.navigationButtonContainer}>
                 <div className={styles.navigationButton}>
                     <a className={styles.HomeNavButton} href='/'>
-                        <img src="/assets/pictures/home_icon.svg" alt="home" className={styles.HomeIconImage} />
+                        <img src="/assets/pictures/home.svg" alt="home" className={styles.HomeIconImage} />
                         <p className={styles.home}>Home</p>
                     </a>
                     <a className={styles.HomeNavButton}>
-                        <img src="/assets/pictures/wallet-money.png" alt="" className={styles.HomeIconImage} />
+                        <img src="/assets/pictures/Transactions.svg" alt="" className={styles.HomeIconImage} />
                         <p className={styles.home}>Deals</p>
                     </a>
                     <a className={styles.HomeNavButton}>
-                        <img src="/assets/pictures/people.png" alt="" className={styles.HomeIconImage} />
+                        <img src="/assets/pictures/people.svg" alt="" className={styles.HomeIconImage} />
                         <p className={styles.home}>Community</p>
                     </a>
                     <a className={styles.HomeNavButton}>
-                        <img src="/assets/pictures/events.png" alt="" className={styles.HomeIconImage} />
+                        <img src="/assets/pictures/events.svg" alt="" className={styles.HomeIconImage} />
                         <p className={styles.home}>Events</p>
                     </a>
                 </div>

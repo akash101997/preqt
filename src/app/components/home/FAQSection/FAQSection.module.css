@@ -1,9 +1,9 @@
-/* Root container (1920x919 with 400px side padding on large screens) */
+
 .mainContainer {
   /* Figma: width: 1920; height: 919; padding: 80px 400px; */
   width: 100%;
-  max-height: 919px;
-  padding: 80px 300px;
+  /* max-height: 919px; */
+  padding: 150px 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +14,7 @@
 /* Card (1120x759, radius 30, padding 40, gradient) */
 .card {
   /* width: 100%; */
-  /* max-width: 1120px; */
+  min-width: 1120px;
   min-height: 759px;
   display: flex;
   flex-direction: column;
@@ -79,7 +79,7 @@
   display: flex;
   align-items: center;
   min-height: 40px; /* exact Figma height */
-  padding: 0 20px;
+  /* padding: 0 20px; */
   gap: 12px;
 }
 
@@ -107,14 +107,14 @@
 .answerWrap {
   max-height: 0;
   overflow: hidden;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   color: #111827;
   transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
 .open .answerWrap { 
   max-height: 150px;
-  padding: 20px;
+  /* padding: 20px; */
  }
 
 /* Answer typography */
@@ -127,24 +127,243 @@
   color: #6B7280;
 }
 
-/* Responsiveness to keep 100% width while honoring Figma look */
-/* @media (max-width: 1440px) {
-  .mainContainer { padding: 80px 200px; }
+/* Each item has a 40px header row height with dark gray bg like screenshot */
+.qaItem {
+  width: 100%;
+  /* color: #ffffff; */
+  border-radius: 8px;
+  overflow: visible; /* Change from hidden to visible to show the line */
+  cursor: pointer;
+  user-select: none;
+  transition: box-shadow 0.2s ease;
+  position: relative;
+  margin-bottom: 16px;
 }
 
+/* Add horizontal line using pseudo-element */
+.qaItem::after {
+  content: '';
+  position: absolute;
+  bottom: -8px; /* Position the line 8px below the item */
+  left: 0;
+  width: 100%; /* Full width as specified (1040px will be constrained by container) */
+  height: 1px;
+  background-color: #E2E8F0;
+  opacity: 1;
+}
+
+/* Remove line from the last item */
+.qaItem:last-child::after {
+  display: none;
+}
+
+/* Remove margin from last item */
+.qaItem:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Large Desktop (1440px+) */
+/* Tablet and Small Desktop (768px to 1024px) */
 @media (max-width: 1024px) {
-  .mainContainer { padding: 60px 120px; }
-  .card { padding: 32px; }
+  .mainContainer {
+    padding: 60px 100px;
+    max-height: none;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 900px;
+    padding: 32px;
+    gap: 32px;
+    min-height: auto;
+  }
+  
+  .headingWrap {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .heading {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+  
+  .qaList {
+    max-width: 100%;
+    min-height: auto;
+    gap: 12px;
+  }
+  
+  .question {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  
+  .answer {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .open .answerWrap {
+    max-height: 200px;
+  }
 }
 
+/* Mobile Landscape (481px to 768px) */
 @media (max-width: 768px) {
-  .mainContainer { padding: 40px 20px; min-height: auto; }
-  .card { border-radius: 20px; padding: 24px; gap: 24px; }
-  .headingWrap { height: auto; }
-  .heading { font-size: 28px; }
+  .mainContainer {
+    padding: 40px 30px;
+    max-height: none;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 20px;
+    padding: 24px;
+    gap: 24px;
+    min-height: auto;
+  }
+  
+  .headingWrap {
+    height: auto;
+    padding: 0 10px;
+  }
+  
+  .heading {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+  
+  .qaList {
+    gap: 10px;
+  }
+  
+  .qaRow {
+    padding: 0 16px;
+    min-height: 48px; /* Larger touch target */
+    gap: 8px;
+  }
+  
+  .question {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .chevron {
+    font-size: 12px;
+  }
+  
+  .answerWrap {
+    padding: 0 16px;
+  }
+  
+  .open .answerWrap {
+    padding: 16px;
+    max-height: 250px;
+  }
+  
+  .answer {
+    font-size: 13px;
+    line-height: 1.5;
+  }
 }
 
+/* Mobile Portrait (320px to 480px) */
 @media (max-width: 480px) {
-  .heading { font-size: 24px; }
-  .question { font-size: 13px; }
-} */
+  .mainContainer {
+    padding: 20px 16px;
+  }
+  
+  .card {
+    border-radius: 16px;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .headingWrap {
+    padding: 0 8px;
+  }
+  
+  .heading {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  
+  .qaList {
+    gap: 8px;
+  }
+  
+  .qaRow {
+    padding: 0 12px;
+    min-height: 44px;
+    gap: 6px;
+  }
+  
+  .question {
+    font-size: 13px;
+    line-height: 1.3;
+  }
+  
+  .chevron {
+    font-size: 11px;
+  }
+  
+  .answerWrap {
+    padding: 0 12px;
+  }
+  
+  .open .answerWrap {
+    padding: 12px;
+    max-height: 300px; /* More space for mobile reading */
+  }
+  
+  .answer {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+}
+
+/* Very Small Screens (below 320px) */
+@media (max-width: 320px) {
+  .mainContainer {
+    padding: 16px 12px;
+  }
+  
+  .card {
+    padding: 16px;
+    gap: 16px;
+    border-radius: 12px;
+  }
+  
+  .heading {
+    font-size: 16px;
+  }
+  
+  .qaRow {
+    padding: 0 10px;
+    min-height: 40px;
+  }
+  
+  .question {
+    font-size: 12px;
+  }
+  
+  .chevron {
+    font-size: 10px;
+  }
+  
+  .answerWrap {
+    padding: 0 10px;
+  }
+  
+  .open .answerWrap {
+    padding: 10px;
+  }
+  
+  .answer {
+    font-size: 11px;
+  }
+}
+
