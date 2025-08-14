@@ -8,7 +8,7 @@
 
                 <div className={styles.navigationButtonContainer}>
                     <div className={styles.navigationButton}>
-                        <Link className={styles.HomeNavButton} href='/deal-details'>
+                        <Link className={styles.HomeNavButton} href='/'>
                             <img src="/assets/pictures/home.svg" alt="home" className={styles.HomeIconImage} />
                             <p className={styles.home}>Home</p>
                         </Link>
