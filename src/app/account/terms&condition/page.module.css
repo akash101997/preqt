@@ -1,8 +1,8 @@
 .container {
-  /* max-width: 800px; */
-  width: 936px;
+  max-width: 936px;
+  width: 100%;
   background-color: rgba(255, 255, 255, 1);
-  margin: 60px auto;
+  margin: 0px auto;
   padding: 34px;
   border-radius: 24px;
   color: #333;
@@ -10,8 +10,8 @@
 }
 
 .heading {
-  font-size: 28px;
-  font-weight: 100;
+  font-size: 32px;
+  font-weight: 300;
   
   color: rgba(31, 41, 55, 1);
 }
@@ -26,6 +26,7 @@
 .date {
   color: rgba(107, 114, 128, 1);
   font-size: 14px;
+  font-weight: 400;
   margin-bottom: 20px;
 }
 
@@ -37,6 +38,7 @@
   font-weight: bold;
   color: rgba(31, 41, 55, 1);
   font-size: 16px;
+  font-weight: 700;
   margin-top: 10px;
 }
 
@@ -44,16 +46,18 @@
   margin-bottom: 20px;
   color: rgba(75, 85, 99, 1);
   font-size: 14px;
+  font-weight: 400;
 }
 
 .h2 {
   margin-top: 20px;
    color: rgba(31, 41, 55, 1);
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 700;
 }
 .p{
     font-size: 14px;
+    font-weight: 400;
     color: rgba(75, 85, 99, 1);
   
 }
@@ -69,4 +73,88 @@
   font-size: 14px;
   margin-bottom: 5px;
     color: rgba(75, 85, 99, 1);
+}
+@media (max-width: 1024px) {
+  .container {
+    padding: 20px;
+  }
+}
+
+
+/* @media (max-width: 1024px) {
+  .container {
+    padding: 20px;
+  }
+  .heading {
+    font-size: 1.75rem;
+  }
+} */
+/* 
+@media (max-width: 768px) {
+  .container {
+    margin: 20px auto;
+    padding: 16px;
+  }
+  .heading {
+    font-size: 1.5rem;
+  }
+  .intro, .h2 {
+    font-size: 0.95rem;
+  }
+} */
+
+/* @media (max-width: 480px) {
+  .container {
+    border-radius: 12px;
+    padding: 12px;
+  }
+  .heading {
+    font-size: 1.25rem;
+  }
+  .intro, .h2 {
+    font-size: 0.9rem;
+  }
+  .text, .p, .li, .date {
+    font-size: 0.8rem;
+  }
+}
+  .heading {
+    font-size: 1.75rem;
+  }
+} */
+
+@media (max-width: 768px) {
+  .container {
+    margin: 20px auto;
+    padding: 16px;
+  }
+  .heading {
+    font-size: 1.5rem;
+  }
+  .intro, .h2 {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    border-radius: 12px;
+    padding: 12px;
+  }
+  .heading {
+    font-size: 20px;
+    font-weight: 300;
+
+  }
+  .intro, .h2 {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .text, .p, .li, .date {
+    font-size: 14px;
+    font-weight: 400;
+    flex-wrap: wrap;
+
+  }
 }

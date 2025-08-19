@@ -11,7 +11,7 @@ export default function page() {
   return (
     <div className={styles.container}>
       <h2 className={styles.heading}>My Documents</h2>
-      <hr className={styles.divider} />
+   <div  className={styles.divider}></div> 
 
       <div className={styles.list}>
         {documents.map((doc, idx) => (

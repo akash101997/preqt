@@ -1,9 +1,10 @@
 .container {
   /* max-width: 700px; */
   width: 936px;
-  height: 720px;
+  height: 791px;
   background-color: #fdfdfd;
-  margin: 60px auto;
+  /* margin: 0px auto; */
+  margin-top: 60px;
   border-radius: 24px;
   padding:  32px;
 
@@ -11,8 +12,8 @@
 }
 
 .heading {
-  font-size: 22px;
-  font-weight: 500;
+  font-size: 32px;
+  font-weight: 300;
   margin-bottom: 8px;
   color: (31, 41, 55, 1);
   
@@ -42,8 +43,8 @@ margin-top: 30px;
 }
 
 .docName {
-  font-size: 14px;
-  font-weight: 300;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .emailBtn {
@@ -54,7 +55,8 @@ margin-top: 30px;
   border: none;
   color: rgba(177, 140, 7, 1);
   font-size: 16px;
-  font-weight: 500;
+  font-style: medium  ;
+  font-weight: 400;
   cursor: pointer;
 }
 
