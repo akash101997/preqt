@@ -10,6 +10,7 @@
     overflow: hidden;
     /* justify-content: center; */;
     /* align-items: center; */
+    height: 95vh;
 }
 
 .headingMainContainer {
@@ -17,9 +18,9 @@
     flex-direction: column;
     /* max-width: 1680px; */
     height: 150px;
-    padding-top: 26px;
+    padding-top: 5%;
     padding-bottom: 26px;
-    gap: 12px;
+    /* gap: 12px; */
     /* border: 1px solid black; */
     align-items: center;
     justify-content: center;
@@ -101,7 +102,7 @@
 
 .leftText {
     font-family: Onest;
-    font-weight: 600;
+    font-weight: 500;
     /* font-style: SemiBold; */
     font-size: 45px;
     line-height: 122%;
@@ -138,6 +139,41 @@
     transition: transform 0.8s ease, opacity 0.8s ease;
     top: 100px;
 }
+/* Persistent hover styles */
+.MountainImage.hovered {
+    transform: translateY(150px);
+    filter: blur(0);
+    z-index: 2;
+}
+
+.PhoneImage.hovered {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    z-index: 1;
+}
+
+.leftText.hovered {
+    transform: translateY(0);
+    left: -80px;
+    opacity: 1;
+}
+
+.storeButtons.hovered {
+    transform: translateY(0);
+    right: -80px;
+    opacity: 1;
+}
+
+/* Remove the original :hover styles from .imageWrapper */
+.imageWrapper:hover .MountainImage,
+.imageWrapper:hover .PhoneImage,
+.imageWrapper:hover .leftText,
+.imageWrapper:hover .storeButtons {
+    /* This will now be handled by the .hovered class */
+    transform: none;
+    opacity: initial;
+    filter: initial;
+}
 
 
 /* Hover effect */
@@ -167,7 +203,7 @@
 }
 
 /* Large Desktop (1440px+) */
-@media (min-width: 1440px) {
+/* @media (min-width: 1440px) {
     .OurMobileAppMainConatiner {
         padding: 40px 150px 150px 150px;
         gap: 80px;
@@ -190,7 +226,7 @@
     .storeButtons {
         width: 200px;
     }
-}
+} */
 
 /* Tablet and Small Desktop (768px to 1024px) */
 @media (max-width: 1024px) {
@@ -334,6 +370,7 @@
     .OurMobileAppMainConatiner {
         padding: 16px 20px 40px 20px;
         gap: 20px;
+        height: 153vh;
     }
     
     .headingMainContainer {
@@ -426,6 +463,7 @@
     .OurMobileAppMainConatiner {
         padding: 12px 16px 30px 16px;
         gap: 16px;
+        height: 133vh;
     }
     
     .earlyAccessHeading {

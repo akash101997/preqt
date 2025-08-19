@@ -1,0 +1,284 @@
+.postsMainContainer{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    /* border: 1px solid black; */
+}
+.IndividualPostContainer{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #00000014;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    gap: 8px;
+}
+.logoAndTime{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 3%;
+    padding-left: 3%;
+    align-items: center;
+}
+.preqtLogoContainer{
+    display: flex;
+    gap: 9px;
+    /* border: 1px solid black; */
+    height: 8vh;
+    align-items: center;
+}
+.PreqtLogoHeading{
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -0.03em;
+    margin: 0;
+}
+.timeContent{
+    font-size: 12px;
+    letter-spacing: -0.03em;
+    font-weight:500;
+    color: #6B7280;
+    margin: 0;
+}
+.postsAndDescriptionContainer{
+    display: flex;
+    flex-direction: column;
+    padding-right: 3%;
+    padding-left: 3%;
+    gap: 12px;
+    justify-content: center;
+    /* align-items: center; */
+}
+.postDescription{
+    font-size: 14px;
+    /* font-weight: 500; */
+    letter-spacing: 0%;
+    margin: 0;
+    color: #1F2937;
+    font-style: normal;
+}
+.postImage{
+    width: 100%;
+    max-height: 400px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+.LCScontainer{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 3%;
+    padding-left: 3%;
+    align-items: center;
+    margin-bottom: 2%;
+    /* border: 1px solid black; */
+}
+.likeAndComment{
+    display: flex;
+    gap:14px;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+.likeContainer{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+}
+.likesCount{
+    margin: 0;
+    font-size: 12px;
+    color: #64748B;
+    font-weight: 400;
+}
+.IndividualPostContainer2{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #00000014;
+    gap: 8px;
+}
+.votingContainer{
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    padding-top: 3%;
+    padding-bottom: 3%;
+    gap: 15px;
+    border: 1px solid #00000014;
+}
+.votingDescription{
+    display: flex;
+    flex-direction: column;
+}
+.TimeContainer{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.timerClockAndHoursLeft{
+    display: flex;
+    gap: 4px;
+}
+.HoursLeft{
+    font-size: 14px;
+    letter-spacing: -0.03em;
+    margin: 0;
+    color: #EF4444;
+    font-weight: 500;
+}
+.votingQuestionWithOptions{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* align-items: center; */
+    padding-left: 3%;
+    padding-right: 3%;
+}
+.VotingQuestion{
+    font-size: 14px;
+    font-weight: 500;
+    color: #1F2937;
+   
+    width: 93%;
+}
+.Question{
+    text-align: left;
+     margin: 0;
+}
+.pollContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.pollOption {
+  position: relative;
+  margin-bottom: 12px;
+  border: 2px solid #e5e5e5;
+  border-radius: 12px;
+  background: #f9f9f9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.pollOption:hover {
+  border-color: #d1a946;
+  background: #fefdf8;
+}
+
+.pollOption.selected {
+  border-color: #d1a946;
+  background: #fefdf8;
+}
+
+.pollOption.voted {
+  cursor: default;
+}
+
+.optionContent {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.radioButton {
+  position: relative;
+  margin-right: 12px;
+}
+
+.radioButton input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.customRadio {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #B59131;
+  border-radius: 50%;
+  background: white;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.radioButton input[type="radio"]:checked + .customRadio {
+  background: #d1a946;
+}
+
+.radioButton input[type="radio"]:checked + .customRadio::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+}
+
+.optionLabel {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  user-select: none;
+}
+
+.percentage {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-left: 12px;
+}
+
+.progressBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #F6F3EB;
+  border-radius: 10px;
+  z-index: 1;
+  transition: width 0.6s ease;
+}
+
+.pollFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 4px;
+}
+
+.votingText {
+  font-size: 14px;
+  color: #6B7280;
+  font-weight: 400;
+}
+
+.totalVotes {
+  font-size: 14px;
+  color: #1F2937;
+  font-weight: 500;
+}
+.votingContainer2{
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    padding-top: 3%;
+    padding-bottom: 3%;
+    gap: 15px;
+    border: 1px solid #00000014;
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+

@@ -1,0 +1,16 @@
+.postDealMainContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 3% 6% 8% 6%;
+    gap: 24px;
+    /* border: 1px solid black; */
+}
+.postDealInnerContainer{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* border: 1px solid black; */
+}
