@@ -81,7 +81,7 @@ export default function Footer() {
 
                 </div>
 
-                <hr className={styles.hrLine}/>
+                <div className={styles.hrLine}></div>
                 {/* lower div container cc */}
                 <div className={styles.CopyWriteContent}>© 2025 Pr.eqt. Private Ltd. | Powered by Passion, Driven by Discovery.</div>
             </div>

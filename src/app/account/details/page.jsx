@@ -35,7 +35,7 @@ useEffect(() => {
       />
           </div>
       </div>
-        <hr className={styles.hr_header} />
+        <div className={styles.hr_header}></div> 
         <section className={styles.details_section}>
       
         
@@ -44,8 +44,7 @@ useEffect(() => {
           <div className={styles.heading}>Name</div>
           <div className={styles.value}>Anjali Mishra</div>
           </div>
-          <hr  className={styles.hr}/>
-
+          <div  className={styles.hr}></div>
 
           
          <div className={styles.email}>
@@ -59,7 +58,7 @@ useEffect(() => {
 
           </div>
 
-          <hr className={styles.hr} />
+          <div className={styles.hr}></div> 
 
           
          <div className={styles.mobile}>
@@ -72,7 +71,7 @@ useEffect(() => {
       />
           </div>
 
-          <hr className={styles.hr} />
+          <div className={styles.hr}></div> 
 
 
           
@@ -80,7 +79,7 @@ useEffect(() => {
           <div className={styles.heading}>Inverstor Type</div>
           <div className={styles.value}>Anjali Mishra</div>
           </div>
-          <hr  className={styles.hr} />
+          <div className={styles.hr}></div> 
 
 
           
@@ -88,7 +87,7 @@ useEffect(() => {
           <div className={styles.heading}>Organization</div>
           <div className={styles.value}>WebNinjaz Technoogies Pvt Ltd</div>
           </div>
-          <hr  className={styles.hr} />
+          <div className={styles.hr}></div> 
 
              <div className={styles.location}>
           <div className={styles.heading}>Location</div>

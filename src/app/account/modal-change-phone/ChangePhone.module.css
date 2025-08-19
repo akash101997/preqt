@@ -47,13 +47,13 @@
 }
 
 .title {
-  font-size: 22px;
-  font-weight: 100;
+  font-size: 20px;
+  font-weight: 300;
   margin-bottom: 5px;
 }
 
 .subtitle {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   color: rgba(31, 41, 55, 1);
   margin-bottom: 15px;
@@ -71,7 +71,7 @@
   top: 9px;
   left: 13px;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   background-color: rgba(255, 255, 255, 1);
 }
 
@@ -99,7 +99,8 @@
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 16px;
 }
 
 .sendBtn:hover {

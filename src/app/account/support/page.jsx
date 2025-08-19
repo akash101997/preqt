@@ -8,7 +8,7 @@ export default function page() {
       <p className={styles.subtitle}>
         Fill out the form below and we'll get back to you as soon as possible
       </p>
-      <hr className={styles.hr} />
+      <div className={styles.hr}></div> 
 
      <div className={styles.formContainer }> 
       <form className={styles.form}>

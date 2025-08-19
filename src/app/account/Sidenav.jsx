@@ -89,12 +89,15 @@ export default function Sidenav() {
 
 
         </ul>
-
-        <hr className={styles.hr} />
+        <div className={styles.logout_section}>
+               <div className={styles.hr}></div> 
 
         <div className={styles.logout} >
+           {/* <div className={styles.hr}></div>  */}
+    
           <img className={styles.icon} src='/account_sidenav/login.svg' alt='' />
           <span className={styles.span}>Log Out</span>
+        </div>
         </div>
 
       </div>

@@ -6,6 +6,7 @@ align-items: center;
   background-color: #f9f4e8;
   flex-wrap: wrap;
   height: 361px;
+  /* z-index: -1; */
 }
 
 .left {
@@ -20,7 +21,9 @@ margin: 0 auto;
 
 .left .h2 {
   width: 800px;
+  font-style: thin;
   font-size: 34px;
+  font-weight: 200;
   font-weight: 100;
   color: #1c1c1c;
 

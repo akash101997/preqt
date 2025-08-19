@@ -4,7 +4,7 @@ export default function page() {
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>Terms & Conditions</h1>
-      <hr  className={styles.hr} />
+      <div  className={styles.hr}></div> 
       <p className={styles.date}>Effective Date: <span>July 2025</span></p>
 
       <p className={styles.intro}>

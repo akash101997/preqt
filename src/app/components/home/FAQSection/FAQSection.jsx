@@ -18,6 +18,7 @@ const faqData = [
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);
+  
 
   return (
     <section className={styles.mainContainer}>

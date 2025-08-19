@@ -21,14 +21,20 @@ export default function EditDetails({ isOpen, onClose }) {
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
-        <button className={styles.closeBtn} onClick={onClose}>
-          ×
-        </button>
+        <div className={styles.headar}>
+       
         <h3 className={styles.title}>Edit Account Detail</h3>
-        <hr />
 
+         <button className={styles.closeBtn} onClick={onClose}>
+          <img src="/otp modal/x.svg" alt="" />
+        </button>
+        
+</div>
+ <div className={styles.line}></div>
         {/* First Name */}
+        <div className={styles.main}>
         <div className={styles.inputGroup}>
+         
           <label className={styles.label}>First Name</label>
           <input
             type="text"
@@ -43,7 +49,7 @@ export default function EditDetails({ isOpen, onClose }) {
         <div className={styles.inputGroup}>
           <label className={styles.label}>Last Name</label>
           <input
-            className={styles.radioBtn}
+            
             type="text"
             name="lastName"
             placeholder="Enter your last name"
@@ -58,7 +64,7 @@ export default function EditDetails({ isOpen, onClose }) {
           <div className={styles.radioGroup}>
             <label >
               <input
-                className={styles.input}
+                className={styles.radioBtn}
                 type="radio"
                 name="investorType"
                 value="Retail Investor"
@@ -121,6 +127,7 @@ export default function EditDetails({ isOpen, onClose }) {
 
         {/* Save Button */}
         <button className={styles.saveBtn}>Save</button>
+        </div>
       </div>
     </div>
   );
