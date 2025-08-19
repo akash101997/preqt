@@ -1,25 +1,29 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import FAQSection from "@/app/components/home/FAQSection/FAQSection";
 
 import "./namesection.css";
 
 import NavBar from "@/app/common/navBar/NavBar";
 import Footer from "@/app/common/navBar/Footer";
-
-import AskAiSection from "../ask-ai-section/Ask-ai-section";
-import Bod from "../directors-section/bod";
-import Pitchdeck from "../pitch-deck-section/pitchdeck";
+import Customnavbar from "../customnavbarsection/customnavbar";
+import AskAiSection from "../ask-ai-section/Ask-ai-section";  
 import Featured from "../why-featured-section/why";
 import Shares from "../shares-section/shares";
-import Customcarousel from "../custom-carousel/customcarousel";
-import About from "../about-section/about";
-import Questions from "../questions-section/questions";
+import Customcarousel from "../customnavbarsection/overview/custom-carousel/customcarousel";
+// import Questions from "../questions-section/questions";
 import Valuation from "../valuation-section/valuation";
-import Lastcarousel from "../lastcarousel/lastcarousel";
+import Lastcarousel from "../customnavbarsection/overview/lastcarousel/lastcarousel";
 
-const Namedetailsection = () => {
-   const steps = [
+const   Namedetailsection = () => {
+  const [bellactive, setBellactive] = useState(false);
+  const[isAskAiActive, setIsAskAiActive] = useState(false); 
+  const handleAskAI = (flag) =>{
+    setIsAskAiActive(flag);
+  }
+
+  const steps = [
     { label: "IPO Open Date", date: "Wed, Jul 30, 2025", completed: true },
     { label: "IPO Close Date", date: "Wed, Jul 30, 2025", completed: true },
     {
@@ -52,13 +56,14 @@ const Namedetailsection = () => {
       number: "05",
     },
   ];
+
   return (
     <div className="main-container">
       <NavBar />
       <div className="subcontainer">
         <section className="topbar">
-          <Link href='/'>
-          <span className="home">Home</span>
+          <Link href="/">
+            <span className="home">Home</span>
           </Link>
           <span>
             <svg
@@ -79,11 +84,10 @@ const Namedetailsection = () => {
           <span className="dea">Exclusive Deal</span>
         </section>
         <section className="mob-topbar">
-          <Link href='/'>
+          <Link href="/">
             <div>
               <svg
-                width="10"
-                height="10"
+               
                 viewBox="0 0 8 14"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -99,49 +103,73 @@ const Namedetailsection = () => {
               <span className="dea">Exclusive Deal</span>
             </div>
           </Link>
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g clipPath="url(#clip0_672_11789)">
-              <path
-                d="M10.252 21C10.4275 21.304 10.68 21.5565 10.984 21.732C11.288 21.9075 11.6329 21.9999 11.984 21.9999C12.335 21.9999 12.6799 21.9075 12.9839 21.732C13.2879 21.5565 13.5404 21.304 13.716 21"
-                stroke="#B59131"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M14.9844 8H20.9844"
-                stroke="#B59131"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M17.9844 5V11"
-                stroke="#B59131"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M19.9867 14.4641C20.2143 14.767 20.4608 15.0552 20.7247 15.3271C20.8552 15.4704 20.9411 15.6485 20.9722 15.8398C21.0032 16.0311 20.978 16.2273 20.8996 16.4046C20.8212 16.5818 20.693 16.7324 20.5306 16.8382C20.3682 16.9439 20.1785 17.0001 19.9847 17.0001H3.98473C3.79093 17.0001 3.60129 16.9439 3.43887 16.8382C3.27644 16.7324 3.14824 16.5818 3.06984 16.4046C2.99145 16.2273 2.96624 16.0311 2.99729 15.8398C3.02834 15.6485 3.11431 15.4704 3.24473 15.3271C4.57473 13.9561 5.98473 12.4991 5.98473 8.00005C5.98485 6.97103 6.24962 5.95933 6.75359 5.06217C7.25756 4.16502 7.9838 3.41255 8.86253 2.87708C9.74125 2.34161 10.7429 2.04114 11.7713 2.00453C12.7997 1.96792 13.8202 2.19642 14.7347 2.66805"
-                stroke="#B59131"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </g>
-            <defs>
-              <clipPath id="clip0_672_11789">
-                <rect width="24" height="24" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
+             <div 
+                className="bell-icon"
+                onClick={() => setBellactive(!bellactive)}>
+                  {!bellactive ? (
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10.252 21C10.4275 21.304 10.68 21.5565 10.984 21.732C11.288 21.9075 11.6329 21.9999 11.984 21.9999C12.335 21.9999 12.6799 21.9075 12.9839 21.732C13.2879 21.5565 13.5404 21.304 13.716 21"
+                        stroke="#C9A74E"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M14.9844 8H20.9844"
+                        stroke="#C9A74E"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M17.9844 5V11"
+                        stroke="#C9A74E"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M19.9867 14.4643C20.2143 14.7672 20.4608 15.0554 20.7247 15.3273C20.8552 15.4706 20.9411 15.6488 20.9722 15.8401C21.0032 16.0314 20.978 16.2276 20.8996 16.4048C20.8212 16.582 20.693 16.7327 20.5306 16.8384C20.3682 16.9441 20.1785 17.0004 19.9847 17.0003H3.98473C3.79093 17.0004 3.60129 16.9441 3.43887 16.8384C3.27644 16.7327 3.14824 16.582 3.06984 16.4048C2.99145 16.2276 2.96624 16.0314 2.99729 15.8401C3.02834 15.6488 3.11431 15.4706 3.24473 15.3273C4.57473 13.9563 5.98473 12.4993 5.98473 8.0003C5.98485 6.97127 6.24962 5.95958 6.75359 5.06242C7.25756 4.16526 7.9838 3.41279 8.86253 2.87732C9.74125 2.34186 10.7429 2.04138 11.7713 2.00477C12.7997 1.96817 13.8202 2.19666 14.7347 2.6683"
+                        stroke="#C9A74E"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  ) : (
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M21.9839 10.8812C21.4319 10.8812 20.984 10.4333 20.984 9.88127C20.984 7.07628 19.892 4.44029 17.9089 2.45616C17.518 2.06523 17.518 1.43333 17.9089 1.04222C18.2999 0.651291 18.9319 0.651291 19.3229 1.04222C21.684 3.40318 22.9839 6.54234 22.9839 9.88127C22.9839 10.4333 22.536 10.8812 21.9839 10.8812Z"
+                        fill="#C9A74E"
+                      />
+                      <path
+                        d="M1.98431 10.8812C1.43243 10.8812 0.984375 10.4333 0.984375 9.88127C0.984375 6.54234 2.28442 3.40318 4.64539 1.04222C5.03632 0.651291 5.6684 0.651291 6.05933 1.04222C6.45044 1.43333 6.45044 2.06523 6.05933 2.45616C4.07629 4.43919 2.98444 7.07628 2.98444 9.88127C2.98444 10.4333 2.53638 10.8812 1.98431 10.8812Z"
+                        fill="#C9A74E"
+                      />
+                      <path
+                        d="M21.3621 16.9131C19.85 15.635 18.983 13.767 18.983 11.788V9C18.983 5.48108 16.369 2.56805 12.983 2.08008V0.999939C12.983 0.44696 12.5349 0 11.983 0C11.431 0 10.9829 0.44696 10.9829 0.999939V2.08008C7.59601 2.56805 4.98291 5.48108 4.98291 9V11.788C4.98291 13.767 4.11591 15.635 2.59503 16.921C2.20593 17.254 1.98291 17.738 1.98291 18.2499C1.98291 19.2151 2.76788 20.0001 3.73303 20.0001H20.233C21.198 20.0001 21.983 19.2151 21.983 18.2499C21.983 17.738 21.7599 17.254 21.3621 16.9131Z"
+                        fill="#C9A74E"
+                      />
+                      <path
+                        d="M11.985 24C13.796 24 15.311 22.7089 15.6591 21H8.31104C8.65894 22.7089 10.174 24 11.985 24Z"
+                        fill="#C9A74E"
+                      />
+                    </svg>
+                  )}
+                </div>
         </section>
 
         <div className="body-maincontainer">
@@ -157,42 +185,73 @@ const Namedetailsection = () => {
                   <img src="/assets/pictures/parthElectrical.png" alt="" />
                   <span>Parth Electricals & Engineering Limited</span>
                 </div>
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.252 21C10.4275 21.304 10.68 21.5565 10.984 21.732C11.288 21.9075 11.6329 21.9999 11.984 21.9999C12.335 21.9999 12.6799 21.9075 12.9839 21.732C13.2879 21.5565 13.5404 21.304 13.716 21"
-                    stroke="#C9A74E"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M14.9844 8H20.9844"
-                    stroke="#C9A74E"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M17.9844 5V11"
-                    stroke="#C9A74E"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M19.9867 14.4643C20.2143 14.7672 20.4608 15.0554 20.7247 15.3273C20.8552 15.4706 20.9411 15.6488 20.9722 15.8401C21.0032 16.0314 20.978 16.2276 20.8996 16.4048C20.8212 16.582 20.693 16.7327 20.5306 16.8384C20.3682 16.9441 20.1785 17.0004 19.9847 17.0003H3.98473C3.79093 17.0004 3.60129 16.9441 3.43887 16.8384C3.27644 16.7327 3.14824 16.582 3.06984 16.4048C2.99145 16.2276 2.96624 16.0314 2.99729 15.8401C3.02834 15.6488 3.11431 15.4706 3.24473 15.3273C4.57473 13.9563 5.98473 12.4993 5.98473 8.0003C5.98485 6.97127 6.24962 5.95958 6.75359 5.06242C7.25756 4.16526 7.9838 3.41279 8.86253 2.87732C9.74125 2.34186 10.7429 2.04138 11.7713 2.00477C12.7997 1.96817 13.8202 2.19666 14.7347 2.6683"
-                    stroke="#C9A74E"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <div 
+                className="bell-icon"
+                onClick={() => setBellactive(!bellactive)}>
+                  {!bellactive ? (
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10.252 21C10.4275 21.304 10.68 21.5565 10.984 21.732C11.288 21.9075 11.6329 21.9999 11.984 21.9999C12.335 21.9999 12.6799 21.9075 12.9839 21.732C13.2879 21.5565 13.5404 21.304 13.716 21"
+                        stroke="#C9A74E"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M14.9844 8H20.9844"
+                        stroke="#C9A74E"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M17.9844 5V11"
+                        stroke="#C9A74E"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M19.9867 14.4643C20.2143 14.7672 20.4608 15.0554 20.7247 15.3273C20.8552 15.4706 20.9411 15.6488 20.9722 15.8401C21.0032 16.0314 20.978 16.2276 20.8996 16.4048C20.8212 16.582 20.693 16.7327 20.5306 16.8384C20.3682 16.9441 20.1785 17.0004 19.9847 17.0003H3.98473C3.79093 17.0004 3.60129 16.9441 3.43887 16.8384C3.27644 16.7327 3.14824 16.582 3.06984 16.4048C2.99145 16.2276 2.96624 16.0314 2.99729 15.8401C3.02834 15.6488 3.11431 15.4706 3.24473 15.3273C4.57473 13.9563 5.98473 12.4993 5.98473 8.0003C5.98485 6.97127 6.24962 5.95958 6.75359 5.06242C7.25756 4.16526 7.9838 3.41279 8.86253 2.87732C9.74125 2.34186 10.7429 2.04138 11.7713 2.00477C12.7997 1.96817 13.8202 2.19666 14.7347 2.6683"
+                        stroke="#C9A74E"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  ) : (
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M21.9839 10.8812C21.4319 10.8812 20.984 10.4333 20.984 9.88127C20.984 7.07628 19.892 4.44029 17.9089 2.45616C17.518 2.06523 17.518 1.43333 17.9089 1.04222C18.2999 0.651291 18.9319 0.651291 19.3229 1.04222C21.684 3.40318 22.9839 6.54234 22.9839 9.88127C22.9839 10.4333 22.536 10.8812 21.9839 10.8812Z"
+                        fill="#C9A74E"
+                      />
+                      <path
+                        d="M1.98431 10.8812C1.43243 10.8812 0.984375 10.4333 0.984375 9.88127C0.984375 6.54234 2.28442 3.40318 4.64539 1.04222C5.03632 0.651291 5.6684 0.651291 6.05933 1.04222C6.45044 1.43333 6.45044 2.06523 6.05933 2.45616C4.07629 4.43919 2.98444 7.07628 2.98444 9.88127C2.98444 10.4333 2.53638 10.8812 1.98431 10.8812Z"
+                        fill="#C9A74E"
+                      />
+                      <path
+                        d="M21.3621 16.9131C19.85 15.635 18.983 13.767 18.983 11.788V9C18.983 5.48108 16.369 2.56805 12.983 2.08008V0.999939C12.983 0.44696 12.5349 0 11.983 0C11.431 0 10.9829 0.44696 10.9829 0.999939V2.08008C7.59601 2.56805 4.98291 5.48108 4.98291 9V11.788C4.98291 13.767 4.11591 15.635 2.59503 16.921C2.20593 17.254 1.98291 17.738 1.98291 18.2499C1.98291 19.2151 2.76788 20.0001 3.73303 20.0001H20.233C21.198 20.0001 21.983 19.2151 21.983 18.2499C21.983 17.738 21.7599 17.254 21.3621 16.9131Z"
+                        fill="#C9A74E"
+                      />
+                      <path
+                        d="M11.985 24C13.796 24 15.311 22.7089 15.6591 21H8.31104C8.65894 22.7089 10.174 24 11.985 24Z"
+                        fill="#C9A74E"
+                      />
+                    </svg>
+                  )}
+                </div>
               </section>
 
               <section className="body-section3">
@@ -215,11 +274,7 @@ const Namedetailsection = () => {
                 </span>
               </section>
 
-              <section className="body-section4">
-                <button>Strong promoter </button>
-                <button>Clear Monetization</button>
-                <button>Fund Participating</button>
-              </section>
+         
 
               <div className="ask-ai-mob-div">
                 <button className="ask-ai-button">
@@ -247,18 +302,11 @@ const Namedetailsection = () => {
                 </button>
               </div>
 
-              <svg
-                className="mid-svg"
-                width="732"
-                height="1"
-                viewBox="0 0 732 1"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <line y1="0.5" x2="732" y2="0.5" stroke="#E2E8F0" />
-              </svg>
+              
 
-              <Valuation />
+           
+
+              <Valuation isAskAiActive={isAskAiActive} />
 
               <Shares />
               <div className="ipo-timeline-section mobile-ipo-timeline-section">
@@ -354,16 +402,12 @@ const Namedetailsection = () => {
             <Featured />
 
             <div className="secondhalf">
-              <Customcarousel />
-
-              <About />
-
-              <Pitchdeck />
-
-              <Bod />
+              {/* <Customcarousel /> */}
+             
+             <Customnavbar />
 
               {/* <Gallerycarousel /> */}
-              <Lastcarousel />
+              {/* <Lastcarousel /> */}
               {/* <div className="carousel-container">
                 <h3>Company Gallery</h3>
                 <Carousel interval={3000} fade>
@@ -398,10 +442,11 @@ const Namedetailsection = () => {
             </div>
           </section>
 
-          <AskAiSection />
+          <AskAiSection isAskAiActive={isAskAiActive} handleAskAI={handleAskAI} />
         </div>
       </div>
-      <Questions />
+      {/* <Questions /> */}
+      <FAQSection />
       <Footer />
     </div>
   );

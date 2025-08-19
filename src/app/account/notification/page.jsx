@@ -19,7 +19,7 @@ export default function NotificationPreference() {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Notification Preference</h2>
-      <hr className={styles.divider} />
+      <div className={styles.divider}></div> 
 
       <div
         className={styles.item}

@@ -11,7 +11,7 @@ export default function ChangePhon({ isOpen, onClose }) {
         <button className={styles.closeBtn} onClick={onClose}><img src="/otp modal/x.svg" alt="" /></button>
         <h3 className={styles.title}>Change Mobile Number</h3>
         </div>
-        <hr  className={styles.hr}/>
+        <div  className={styles.hr}></div>
         <div className={styles.main_div}>
         <p className={styles.subtitle}>Enter the new Mobile you would like to use</p>
         

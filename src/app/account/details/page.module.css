@@ -7,12 +7,12 @@
     border-radius: 24px;
     padding: 32px;
     margin-top: 60px;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
     /* margin-bottom: 60px; */
 
 }
 .h1{
- font-weight: lighter;
+ font-weight: 300;
  font-size: 32px;
  margin-bottom: 20px;
  
@@ -82,6 +82,8 @@
      margin-top  : 24px;
      margin-bottom: 24px;
      font-size: 16px;
+     font-style: medium;
+     font-weight: 500;
      color: rgba(107, 114, 128, 1);
     background-color: rgba(255, 255, 255, 1);
 
@@ -89,7 +91,7 @@
 .value{
     margin-top: 24px;
      margin-bottom: 24px;
-
+font-style: medium;
     font-size: 20px;
     color: rgba(30, 41, 59, 1);
     background-color: rgba(255, 255, 255, 1);
@@ -108,7 +110,9 @@
 
 .Link{
     position: relative;
+    font-style: medium;
     text-decoration: underline;
+    text-underline-offset: 4px;
     top: -50px;
     left: -20px;
     color: rgba(177, 140, 7, 1);
@@ -144,4 +148,48 @@
 .location{
     margin-top  : 12px;
       height: 60px;
+}
+
+/* @media (max-width: 1024px) {
+  .main_container {
+    padding: 20px;
+  }
+  .h1 {
+    font-size: 1.75rem;
+  }
+} */
+
+@media (max-width: 768px) {
+  .main_container {
+    margin: 20px auto;
+    padding: 16px;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .h1 {
+    font-size: 1.5rem;
+  }
+  .value {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main_container {
+    border-radius: 12px;
+    padding: 12px;
+  }
+  .h1 {
+    font-size: 1.25rem;
+  }
+  .edit_icon {
+    height: 36px;
+    width: 36px;
+  }
+  .value {
+    font-size: 1rem;
+  }
 }

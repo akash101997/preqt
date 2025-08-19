@@ -4,7 +4,7 @@ export default function page() {
   return (
     <div className={styles.container}>
       <h2 className={styles.heading}>Privacy Policy</h2>
-      <hr className={styles.hr}/>
+      <div className={styles.hr}></div>
 
       <section className={styles.section}>
         <h3>1. Data Collection</h3>

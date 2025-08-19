@@ -1,0 +1,228 @@
+.Fundamentals-body-div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.Fundamentals-body-section1-item {
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.show-more-btn {
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.fundamentals-container .accordion-item:first-child {
+  border-top: none;
+}
+.fundamentals-container .accordion-button{
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 300;
+  font-family: Helvetica;
+
+}
+.fundamentals-container .accordion-button:not(.collapsed) {
+  background-color: transparent;
+  border: none;
+  color: black;
+}
+.fundamentals-container .accordion-button:focus {
+  box-shadow: none;
+}
+.Fundamentals-body-div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* space between cards */
+}
+
+.Fundamentals-body-section1-item {
+  background: #fff; /* just for clarity */
+  padding: 12px;
+  border-radius: 8px;
+}
+.Fundamentals-body-section1-item p {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #6b7280;
+  font-family: Helvetica;
+}
+
+.Fundamentals-body-section1-item h6 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  color: #1f2937;
+  font-family: Helvetica;
+}
+
+.Fundamentals-body-section1-item h5 {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+  color: #6b7280;
+  font-family: Helvetica;
+}
+
+.Fundamentals-body-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Fundamentals-body-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Fundamentals-body-head h3 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1f2937;
+  font-family: Helvetica;
+}
+
+.Fundamentals-body-head p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1f2937;
+  font-family: Helvetica;
+}
+
+.Fundamentals-body-section1-item {
+  background: linear-gradient(180deg, #f3f4f6, #ffffff);
+}
+
+.chart-timeline-section {
+  display: flex;
+  gap: 10px;
+}
+
+.Fundamentals-piechart {
+  background: linear-gradient(180deg, #f3f4f6, #ffffff);
+  width: 50%;
+  padding: 14px 16px;
+  border-radius: 15px;
+}
+
+.piechart-center-text {
+  font-size: 18px;
+  font-weight: bold;
+  fill: #4a4a4a; /* For text color */
+  font-family: "Roboto", sans-serif;
+}
+
+.Fundamentals-timeline {
+  background: linear-gradient(180deg, #f3f4f6, #ffffff);
+  width: 50%;
+  padding: 14px 16px;
+  border-radius: 15px;
+}
+.timeline-body svg {
+  width: 12px;
+  height: 12px;
+  margin: 5px 0px 0px 0px;
+}
+
+.show-more-btn {
+  color: #b18c07;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: Helvetica;
+}
+.show-more-btn-div {
+  background-color: transparent;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 10px 0px 20px 0px;
+}
+.Fundamentals-timeline h2 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1f2937;
+  font-family: Helvetica;
+}
+.Fundamentals-timeline h2 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #888888;
+  font-family: Helvetica;
+  font-style: italic;
+}
+
+.timeline-body {
+position: relative;
+      padding: 15px 0px;
+}
+.linesvg1{
+   position: absolute;
+    left: 6px;
+    top: 26px;
+    transform: translateX(-50%);
+    height: 60px !important;
+    width: 52px !important;
+    z-index: 1;
+}
+.linesvg2{
+   position: absolute;
+    left: 6px;
+    top: 40%;
+    transform: translateX(-50%);
+    height: 60px !important;
+    width: 52px !important;
+    z-index: 1;
+}
+.legend-item{
+  display: flex;
+ 
+}
+.legend-item .dot{
+     width: 12px;
+    height: 12px;
+ 
+}
+
+.legend-item .label{
+  width: 60%;
+  display: flex;
+  margin-left: 20px;
+  font-size: 14px;
+  color: #4B5563;
+  font-weight: 400;
+  font-family: Helvetica;
+ 
+}
+.legend-item .value{
+  width: 30%;
+   font-size: 14px;
+  color: #1F2937;
+  font-weight: 500;
+  font-family: Helvetica;
+ 
+}
+
+
+.timeline-body div {
+  display: flex;
+  gap: 20px;
+   
+}
+
+.timeline-body div div {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
