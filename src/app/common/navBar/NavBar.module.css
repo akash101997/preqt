@@ -39,20 +39,34 @@
   border-radius: 20px;
   font-size: 16px;
 }
+/* Hover effect (light gray, keep original colors) */
 .HomeNavButton:hover {
+  background-color: #f1f1f1; /* light gray */
   border-radius: 100px;
-  background-image: linear-gradient(to bottom right, #fff2d0, #8e6b0f);
 }
+
 .HomeNavButton:hover .HomeIconImage {
-  filter: brightness(0) invert(1); /* turns it white */
+  filter: none; /* keep original icon color */
 }
+
 .HomeNavButton:hover .home {
-  color: white;
+  color: #64748b; /* keep original text color */
 }
+
+/* Active effect (gradient + white text/icons) */
 .HomeNavButton.active {
   border-radius: 100px;
   background-image: linear-gradient(to bottom right, #fff2d0, #8e6b0f);
 }
+
+.HomeNavButton.active .HomeIconImage {
+  filter: brightness(0) invert(1); /* white icons */
+}
+
+.HomeNavButton.active .home {
+  color: white;
+}
+
 
 .navRightSection {
   display: flex;

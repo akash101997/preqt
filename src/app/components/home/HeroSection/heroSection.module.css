@@ -3,14 +3,14 @@
     min-height: 1170px;
     /* use min-height instead of fixed height */
     width: 100%;
-    max-width: 1920px;
+    /* max-width: 1920px; */
     margin: 0 auto;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     padding: 30px 16px;
     gap: 40px;
     background-color: #FFFFFF;
     box-sizing: border-box;
-    justify-content: center;
+    justify-content: center;    
 }
 
 .heroFrame {
@@ -23,7 +23,7 @@
 
 .mainDiv {
     width: 100%;
-    max-width: 1920px;
+    /* max-width: 1920px; */
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
@@ -33,32 +33,6 @@
     width: 100%;
 }
 
-/* Existing CSS remains unchanged above */
-
-/* Large Desktop (1440px+) */
-
-/* Tablet and Small Desktop (768px to 1024px) */
-/* @media (max-width: 1024px) {
-    .heroMainContainer {
-        gap: 30px;
-        padding: 25px 12px;
-        min-height: 900px;
-    }
-    
-    .heroFrame {
-        gap: 40px;
-        min-height: 800px;
-    }
-    
-    .mainDiv {
-        padding: 0 16px;
-    }
-    
-    .MarketSentimentComponent {
-        flex: 0 0 auto;
-        max-width: 350px;
-    }
-} */
 
 /* Mobile Landscape and Small Tablets (481px to 768px) */
 @media (max-width: 768px) {

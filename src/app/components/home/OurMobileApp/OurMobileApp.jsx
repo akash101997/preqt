@@ -1,6 +1,17 @@
+"use client"
 import styles from "./OurMobileApp.module.css"
+import { useState } from "react";
 
 export default function OurMobileApp() {
+
+    const [hasHovered, setHasHovered] = useState(false);
+
+    const handleHover = () => {
+        if (!hasHovered) {
+            setHasHovered(true);
+        }
+    };
+
     return (
         <section className={styles.OurMobileAppMainConatiner}>
             {/* heading div */}
@@ -10,19 +21,19 @@ export default function OurMobileApp() {
             </div>
 
             {/* picture div */}
-            <div className={styles.imageWrapper}>
+            <div className={styles.imageWrapper} onMouseEnter={handleHover}>
                 <div className={styles.imageGroup}>
-                    <img src="/assets/pictures/mountain.png" alt="" className={styles.MountainImage} />
-                    <img src="/assets/pictures/phone.png" alt="" className={styles.PhoneImage} />
+                    <img src="/assets/pictures/mountain.png" alt="" className={`${styles.MountainImage} ${hasHovered ? styles.hovered : ''}`}  />
+                    <img src="/assets/pictures/phone.png" alt="" className={`${styles.PhoneImage} ${hasHovered ? styles.hovered : ''}`} />
                 </div>
 
                 {/* app */}
-                <div className={styles.leftText}>
+                <div className={`${styles.leftText} ${hasHovered ? styles.hovered : ''}`}>
                     Get exclusive app-only deals and manage your trips on the go.
                 </div>
 
                 {/* app details */}
-                <div className={styles.storeButtons}>
+                <div className={`${styles.storeButtons} ${hasHovered ? styles.hovered : ''}`}>
                     <img src="/assets/pictures/Play_Store.png" alt="Play Store" />
                     <img src="/assets/pictures/App_Store.png" alt="App Store" />
                 </div>

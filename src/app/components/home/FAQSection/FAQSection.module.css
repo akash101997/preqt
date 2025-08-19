@@ -1,20 +1,19 @@
 
 .mainContainer {
-  /* Figma: width: 1920; height: 919; padding: 80px 400px; */
   width: 100%;
   /* max-height: 919px; */
-  padding: 150px 300px;
+  padding: 10% 10%;
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  background: #ffffff;overflow-x: scroll;
+  background: #ffffff;
 }
 
 /* Card (1120x759, radius 30, padding 40, gradient) */
 .card {
   /* width: 100%; */
-  min-width: 1120px;
+  max-width: 1120px;
   min-height: 759px;
   display: flex;
   flex-direction: column;
@@ -23,13 +22,13 @@
   padding: 40px;
   box-sizing: border-box;
   border-radius: 30px;
-  background: linear-gradient(180deg, #F3F4F6 0%, #FFFFFF 100%);
+  background: linear-gradient(180deg, #F5F1E4 0%, #FFFFFF 100%);
 }
 
 /* Heading wrap (1040 wide, center) */
 .headingWrap {
   width: 100%;
-  max-width: 1040px;
+  /* max-width: 1040px; */
   height: 39px;
   display: flex;
   align-items: center;
@@ -52,7 +51,7 @@
 /* QA list container (1040 wide, gap 16) */
 .qaList {
   width: 100%;
-  max-width: 1040px;
+  /* max-width: 1040px; */
   min-height: 600px;
   display: flex;
   flex-direction: column;
@@ -274,6 +273,8 @@
 @media (max-width: 480px) {
   .mainContainer {
     padding: 20px 16px;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
   
   .card {

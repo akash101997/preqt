@@ -116,51 +116,6 @@ export default function MarketSentiment() {
                     </div>
                 </div>
 
-
-             
-                <div className={styles.prqtPostConatiner}>
-                    {/* logo and Time Div */}
-                    <div className={styles.logoAndTimeDiv}>
-                        <div className={styles.LogoNew}>
-                            <img src="/assets/pictures/pqtLogo2.png" alt="" className={styles.NewLogoImg} />
-
-                            <p className={styles.preqtLogoText}>Preqt</p>
-                        </div>
-                        <div className={styles.DateAndTime}>
-                            <p className={styles.DateAndTimeText}>12:30 PM · Apr 21, 2021</p>
-                        </div>
-                    </div>
-
-                    {/* post description */}
-                    <div className={styles.postDescriptionMainContainer}>
-                        <div className={styles.PostDescriptionHeading}>🚀 It’s Official! Join Us for the Launch of Anthem Bioscience’s IPO with preqt</div>
-                        <img src="/assets/pictures/preqtCandidImage.png" alt="" className={styles.preqtCandidImage} />
-                    </div>
-
-                    {/* like Comment And Share */}
-                    <div className={styles.LikeCommentAndShare}>
-                        {/* like and comment div */}
-                        <div className={styles.LikeAndCommentContainer}>
-                            {/* like */}
-                            <div className={styles.LikeBtnContainer}>
-                                <img src="/assets/pictures/like.png" alt="" className={styles.likeImage} />
-                                <p className={styles.likesCount}>1,260 Likes</p>
-                            </div>
-
-                            {/* comment */}
-                            <div className={styles.commentBtnContainer}>
-                                <img src="/assets/pictures/comment.png" alt="" className={styles.likeImage} />
-                                <p className={styles.commentsCount}>360 comments</p>
-                            </div>
-                        </div>
-
-                        {/* share div */}
-                        <div className={styles.ShareButton}>
-                            <img src="/assets/pictures/share.png" alt="" className={styles.likeImage} />
-                            <p className={styles.commentsCount}>Share</p>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </section>
