@@ -1,6 +1,7 @@
 .bod-section img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
 }
 .bod-section .header {
   display: flex;
@@ -9,8 +10,9 @@
   gap: 25px;
 }
 
-.accordion-collapse {
+.bod-section .accordion-collapse {
   /* transition: height 0.6s ease-in-out; */
+  max-height: none;
 }
 
 .bod-section section {
@@ -50,7 +52,23 @@
   gap: 20px;
 }
 .bod-section .accordion-body {
+  border-top: 1px solid #e5e7eb;
   padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+.bod-section .accordion-body button {
+  background-color: #b59131;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 10px;
+  padding: 13px 0px;
+  border: none;
 }
 .bod-section .accordion-button:focus {
   box-shadow: none;
@@ -76,19 +94,18 @@
     padding: 20px 12px;
     gap: 0;
   }
-.bod-section .accordion-button {
+  .bod-section .accordion-button {
     gap: 8px;
   }
   .bod-section .accordion-button.collapsed {
     padding: 5px 0px;
   }
-  .bod-section .accordion-button:not(.collapsed){
-        padding: 5px 0px;
+  .bod-section .accordion-button:not(.collapsed) {
+    padding: 5px 0px;
   }
-
 }
 @media (min-width: 401px) and (max-width: 900px) {
-  .bod-section{
+  .bod-section {
     padding: 12px 15px;
     gap: 0;
   }

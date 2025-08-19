@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Carousel } from "react-bootstrap";
 
-const CustomCarousel = () => {
+const LastCarousel = () => {
   const images = [
-    "/assets/pictures/userImage1.png",
-    "/assets/pictures/userImage1.png",
-    "/assets/pictures/userImage1.png",
-    "/assets/pictures/userImage1.png"
+    "/assets/pictures/final.png",
+    "/assets/pictures/final.png",
+    "/assets/pictures/final.png",
+    "/assets/pictures/final.png"
   ];
 
   const [index, setIndex] = useState(0);
@@ -106,4 +106,4 @@ const CustomCarousel = () => {
   );
 };
 
-export default CustomCarousel;
+export default LastCarousel;

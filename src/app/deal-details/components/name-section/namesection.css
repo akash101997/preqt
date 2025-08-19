@@ -6,24 +6,28 @@
   align-items: center;
   background-color: #ececf0;
 }
-.mob-topbar a,.topbar a{
+.mob-topbar a,
+.topbar a {
   color: black;
   text-decoration: none;
 }
-
+.bell-icon:hover {
+  cursor: pointer;
+}
 .topbar {
   display: flex;
   gap: 10px;
-  padding: 20px 10px;
+  padding: 20px 0px;
 }
 
 .subcontainer {
-  width: 85%;
+  width: 70%;
 }
 
 .body-maincontainer {
   display: flex;
   gap: 20px;
+  width: 100%;
 }
 
 .topbar span {
@@ -34,21 +38,25 @@
 
 .body {
   background-color: rgb(234, 234, 234);
-  width: 64%;
+  width: 62%;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
+.righ-section {
+  width: 38%;
+}
 
 .ask-ai-section {
-  width: 35%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   background: white;
-  padding: 25px 25px;
+  padding: 25px 15px;
   height: fit-content;
   gap: 30px;
+  border-radius: 15px;
 }
 
 .ask-ai-section1 {
@@ -67,6 +75,10 @@
   line-height: 24px;
   font-family: Arial, Helvetica, sans-serif;
   border: none;
+}
+
+.ask-ai-button:hover{
+  cursor: pointer;
 }
 .ask-ai-button {
   padding: 10px 30px;
@@ -109,7 +121,7 @@
   gap: 10px;
   justify-content: space-between;
 }
-.ask-ai-mob-div{
+.ask-ai-mob-div {
   display: none;
 }
 
@@ -117,7 +129,7 @@
   width: fit-content;
   height: 50px;
 }
-.body-section2 div{
+.body-section2 div {
   display: flex;
   gap: 10px;
   align-items: center;
@@ -240,7 +252,7 @@
   padding: 15px 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0px;
 }
 .others h6 {
   font-weight: 400;
@@ -491,7 +503,13 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 .lastcarousel {
-  padding: 0px 10px;
+  padding: 20px 22px 20px 26px ;
+  background: linear-gradient(180deg, #f3f4f6, white);
+  border-radius: 20px;
+}
+
+.lastcarousel .carousel-inner{
+  border-radius: 20px;
 }
 
 .customcars.lastcarousel img {
@@ -525,14 +543,22 @@
   font-size: 24px;
   font-weight: bold;
   color: #fff;
+
+
 }
 .secondhalf {
   background-color: white;
-  padding: 30px;
+  padding: 0px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  border-radius: 15px;
+  border-radius: 32px;
+}
+.overview-container{
+      padding: 0px 30px;
+      display: flex;
+      flex-direction: column;
+      gap:20px;
 }
 
 .customcars.carousel-text {
@@ -567,7 +593,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 30px 30px;
+  padding: 30px 15px;
   border-radius: 15px;
 }
 
@@ -580,9 +606,70 @@
   padding-left: 10px;
 }
 
+
+.pitch-deck .image-container {
+  position: relative;
+  display: inline-block;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
 .pitch-deck img {
   max-width: 100%;
+  display: block;
+  transition: filter 0.3s ease;
 }
+
+/* Blur image on hover */
+.pitch-deck .image-container:hover img {
+  filter: blur(2px);
+}
+
+/* Overlay container */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show overlay on hover */
+.pitch-deck .image-container:hover .overlay {
+  opacity: 1;
+}
+.pitch-overlay-btn{
+  padding: 13px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background-color: transparent;
+  border :1px solid white;
+  color: white;
+  border-radius: 100px;
+}
+
+/* Button styling */
+.overlay-btn {
+  background: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+
 
 #bod-accordion button {
   display: flex;
@@ -611,30 +698,53 @@
   font-weight: 300;
   line-height: 28px;
 }
-
 .image-stack {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  
+  background: #f4eddc;
+  padding: 10px 10px;
+  border-radius: 22px;
+}
+
+.image-stack div{
+  width: 15%;
 }
 
 .image-stack .s1 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:Helvetica;
   font-size: 16px;
   font-weight: 300;
   line-height: 16px;
   color: #1f2937;
+  width: 75%;
+  
+}
+
+.image-stack div img {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 18px;
+  border-radius: 50%;
+  border: 0px solid white;
+  object-fit: cover;
+  margin-left: -20px;
+  background: transparent;
+  margin-left: -10px;
+  
 }
 
 .image-stack img {
+  width: -moz-fit-content;
   width: fit-content;
-  height: 40px;
+  height: 30px;
   border-radius: 50%;
-  border: 3px solid white;
+  border: 0px solid white;
   object-fit: cover;
   margin-left: -20px;
-  box-shadow: 0 0 0 2px #fff;
   background: transparent;
+  margin-left: -10px;
+  transform: rotate(270deg);
 }
 
 .image-stack img:first-child {
@@ -716,6 +826,7 @@
 }
 
 @media (max-width: 400px) {
+
   .lastcarousel h3 {
     font-size: 16px;
   }
@@ -752,7 +863,10 @@
   .mob-topbar {
     display: flex;
     justify-content: space-between;
-    padding: 16px 8px;
+    padding: 16px 10px;
+  }
+  .body-section4 section{
+    padding: 0px !important;
   }
 
   .why-subsection div svg {
@@ -811,7 +925,7 @@
   }
 
   .body-section4 {
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
   .progress-container-heading span {
     font-size: 12px;
@@ -972,8 +1086,12 @@
   }
 
   .mob-topbar div svg {
-    height: 10px !important;
-    width: 10px !important;
+    height: 12px;
+    width: 12px ;
+  }
+   .mob-topbar .bell-icon svg {
+    height: 25px;
+    width: 25px ;
   }
   .customcars .nav-tabs {
     gap: 10px;
@@ -1060,7 +1178,7 @@
     height: 10px !important;
     width: 10px !important;
   }
-  .mob-topbar div span{
+  .mob-topbar div span {
     font-size: 14px;
   }
   .mob-topbar div svg {
@@ -1113,7 +1231,7 @@
   }
 
   .body-section4 {
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
   .progress-container-heading span {
     font-size: 12px;
@@ -1260,18 +1378,18 @@
   .body1-buttons span {
     font-size: 12px;
   }
-      .body-section4 button {
-        font-size: 14px;
-        font-weight: 300;
-        padding: 6px 10px;
-    }
+  .body-section4 button {
+    font-size: 14px;
+    font-weight: 300;
+    padding: 6px 10px;
+  }
 
   .body-section2 span {
     font-size: 14px;
   }
 
   .body-section4 {
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
   .progress-container-heading span {
     font-size: 14px;
@@ -1302,7 +1420,7 @@
   .mid-svg {
     width: 100%;
   }
-  
+
   .shares-section svg {
     width: 75px;
   }
@@ -1349,7 +1467,6 @@
     height: 35px;
     width: 35px;
   }
-
 
   .why-section section {
     padding: 10px 0px;

@@ -1,0 +1,74 @@
+.body-section4 section{
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    padding: 0px 15px;
+}
+
+.body-section4 .bank-sec{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.body-section4 .bank-sec section{
+    width: fit-content !important;
+}
+
+.body-section4 p{
+    color: #6B7280;
+        font-weight: 400;
+    font-family: Helvetica;
+    line-height: 28px;
+    font-size: 12px;
+    margin: 0;
+}
+
+.body-section4 h6{
+    color: #1F2937;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Helvetica;
+    line-height: 28px;
+}
+
+.subs1-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30% !important;
+    background-color: #F3F4F6;
+        border-radius: 10px;
+    padding: 15px 16px;
+}
+
+.smallcard-section-subcontainer{
+    display: flex;
+        gap: 21px;
+}
+
+.subs1-top div{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+
+}
+
+.smallcard-section-subcontainer-div{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.drhp{
+    color: #B59131 !important;
+    display: flex;
+}
+
+.drhp svg{
+    margin: 0 10px;
+height: 24px;
+width: 24px;
+}
