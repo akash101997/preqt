@@ -24,7 +24,7 @@ export default function layout({ children }) {
           <NavBar />
           <div className={styles.account_layout}>
               <Sidenav />
-            <div>
+            <div style={{width:'936px',marginTop:"60px"}}>
               {children}
             </div>
           </div>

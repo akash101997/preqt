@@ -1,11 +1,12 @@
-.container {
-  width: 936px;
+ /* .container {
+  
+  max-width: 100%;
   padding: 2rem;
   font-family:  'Helvetica Neue', sans-serif;
   border-radius: 24px;
   background-color: #fdfdfd;
   margin-top: 60px;
-  /* margin-bottom: 60px; */
+  
 }
 
 .heading {
@@ -14,7 +15,7 @@
   font-weight: 300;
 
   margin-bottom: 25px;
-  /* margin-bottom: 1.5rem; */
+  
 }
 .hr{
   border: none;
@@ -30,7 +31,8 @@
   font-weight: 500;
   font-size: 14px;
   overflow: hidden;
-  width: 879px;
+  max-width: 100%;
+  
   margin-top: 20px;
 }
 
@@ -45,7 +47,7 @@
   color: rgba(30, 41, 59, 1);
   line-height: 10px;
   
-  /* place-items: center; */
+
   
 
 }
@@ -95,4 +97,12 @@
   text-align: center;
   font-weight: 500;
 }
+  */
 
+  .TransactionComponent{
+
+    max-width: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 32px;
+    border-radius: 24px;
+  }

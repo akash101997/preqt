@@ -20,7 +20,7 @@ margin: 0 auto;
 }
 
 .left .h2 {
-  width: 800px;
+  max-width: 100%;
   font-style: thin;
   font-size: 34px;
   font-weight: 200;
@@ -52,7 +52,7 @@ margin: 0 auto;
   flex-direction: column;
   align-items: center;
   flex: 1;
-  width: 300px;
+  /* width: 300px; */
   /* min-width: 300px; */
   margin-top: 2rem;
   
@@ -61,18 +61,18 @@ margin: 0 auto;
 .qrImage {
 position: relative;
 z-index: 1;
-top: 58px;
+top: 38px;
   border-radius: 12px;
   margin-bottom: 1rem;
 }
 
-.buttons {
+/* .buttons {
   display: flex;
   gap: 1rem;
   z-index: 1;
   
-}
-.applestore{
+} */
+/* .applestore{
     position :relative;
     top: -35px;
     left: -20px;
@@ -84,4 +84,63 @@ top: 58px;
     top: -35px;
     left: 20px;
 
+} */
+
+/* 📱 Mobile (max-width: 768px) */
+@media(max-width:480px){
+    .container {
+      width: 100%;
+    flex-direction: column; 
+    /* text-align: center; */
+    height: auto;
+    padding: 32px 16px;
+
+
+
+}
+.left {
+
+  text-align: left;
+  
+  /* margin-bottom: 10px;  */
+
+
+}
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    flex-direction: column; /* stack vertically */
+    text-align: center;
+    height: auto;
+  }
+
+  .left .h2 {
+    font-size: 1.5rem;
+  }
+
+  .left li {
+    font-size: 0.9rem;
+  }
+
+  .right {
+    margin-top: 1rem;
+  }
+}
+
+/* 💻 Large Screens (min-width: 1200px) */
+@media (max-width: 1024px) {
+  .container{
+    width: 100%;
+  }
+
+  .left .h2 {
+    margin-left: 15px;
+    font-size: 2.5rem;
+  }
+
+  .qrImage {
+    max-width: 396px;
+  }
 }

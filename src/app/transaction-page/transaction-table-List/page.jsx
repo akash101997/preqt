@@ -8,7 +8,7 @@ export default function page() {
     
 
     <div className={styles.TransactionsTable}> 
-      <TransactionsTable/>
+      {/* <TransactionsTable/> */}
     </div>
   )
 }
