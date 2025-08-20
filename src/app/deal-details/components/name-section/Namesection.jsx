@@ -11,12 +11,10 @@ import Customnavbar from "../customnavbarsection/customnavbar";
 import AskAiSection from "../ask-ai-section/Ask-ai-section";  
 import Featured from "../why-featured-section/why";
 import Shares from "../shares-section/shares";
-import Customcarousel from "../customnavbarsection/overview/custom-carousel/customcarousel";
 // import Questions from "../questions-section/questions";
 import Valuation from "../valuation-section/valuation";
-import Lastcarousel from "../customnavbarsection/overview/lastcarousel/lastcarousel";
 
-const   Namedetailsection = () => {
+const Namedetailsection = () => {
   const [bellactive, setBellactive] = useState(false);
   const[isAskAiActive, setIsAskAiActive] = useState(false); 
   const handleAskAI = (flag) =>{

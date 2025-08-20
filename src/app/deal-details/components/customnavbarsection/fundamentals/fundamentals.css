@@ -3,6 +3,15 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
+.fundamentals-container{
+      border-radius: 20px;
+    padding: 0px 20px 20px 20px;
+}
+.fundamentals-container .accordion-item{
+  border-left: none;
+  border-right: none;
+  /* --bs-accordion-border-color:transparent */
+}
 
 .Fundamentals-body-section1-item {
   background: #fff;
@@ -21,12 +30,11 @@
 .fundamentals-container .accordion-item:first-child {
   border-top: none;
 }
-.fundamentals-container .accordion-button{
+.fundamentals-container .accordion-button {
   font-size: 20px;
   line-height: 28px;
   font-weight: 300;
   font-family: Helvetica;
-
 }
 .fundamentals-container .accordion-button:not(.collapsed) {
   background-color: transparent;
@@ -164,61 +172,55 @@
 }
 
 .timeline-body {
-position: relative;
-      padding: 15px 0px;
+  position: relative;
+  padding: 15px 0px;
 }
-.linesvg1{
-   position: absolute;
-    left: 6px;
-    top: 26px;
-    transform: translateX(-50%);
-    height: 60px !important;
-    width: 52px !important;
-    z-index: 1;
+.linesvg1 {
+  position: absolute;
+  left: 6px;
+  top: 26px;
+  transform: translateX(-50%);
+  height: 60px !important;
+  width: 52px !important;
+  z-index: 1;
 }
-.linesvg2{
-   position: absolute;
-    left: 6px;
-    top: 40%;
-    transform: translateX(-50%);
-    height: 60px !important;
-    width: 52px !important;
-    z-index: 1;
+.linesvg2 {
+  position: absolute;
+  left: 6px;
+  top: 40%;
+  transform: translateX(-50%);
+  height: 60px !important;
+  width: 52px !important;
+  z-index: 1;
 }
-.legend-item{
+.legend-item {
   display: flex;
- 
 }
-.legend-item .dot{
-     width: 12px;
-    height: 12px;
- 
+.legend-item .dot {
+  width: 12px;
+  height: 12px;
 }
 
-.legend-item .label{
+.legend-item .label {
   width: 60%;
   display: flex;
   margin-left: 20px;
   font-size: 14px;
-  color: #4B5563;
+  color: #4b5563;
   font-weight: 400;
   font-family: Helvetica;
- 
 }
-.legend-item .value{
+.legend-item .value {
   width: 30%;
-   font-size: 14px;
-  color: #1F2937;
+  font-size: 14px;
+  color: #1f2937;
   font-weight: 500;
   font-family: Helvetica;
- 
 }
-
 
 .timeline-body div {
   display: flex;
   gap: 20px;
-   
 }
 
 .timeline-body div div {
@@ -226,3 +228,127 @@ position: relative;
   flex-direction: column;
   gap: 0px;
 }
+
+.ipo-objective-container {
+  border-radius: 20px;
+  padding: 0px;
+gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ipo-objective-container-section svg {
+  width: 40px;
+  height: 40px;
+}
+.ipo-objective-container-section h1 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #1f2937;
+  font-family: Helvetica;
+  margin: 0;
+}
+.ipo-objective-container-section h2 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #1f2937;
+  font-family: Helvetica;
+}
+.ipo-objective-container-section div {
+  border-left: 1px solid #6b7280;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ipo-objective-container-section p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #6b7280;
+  font-family: Helvetica;
+  margin-bottom: 0;
+}
+
+.ipo-objective-container-section p svg {
+  height: 2px;
+  width: 20px;
+}
+
+
+.ipo-objective-container-section{
+  padding: 22px 20px;
+    background: linear-gradient(180deg, #f3f4f6, #ffffff);
+border-radius: 24px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.ipo-objective-container-section li{
+    font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #6B7280;
+  font-family: Helvetica;
+  margin-bottom: 0;
+} 
+
+/*  */
+.ipo-notes-container-section div {
+  border-left: 1px solid #6b7280;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ipo-notes-container-section p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #6b7280;
+  font-family: Helvetica;
+  margin-bottom: 0;
+}
+
+.ipo-notes-container-section p svg {
+  height: 2px;
+  width: 20px;
+}
+
+
+.ipo-notes-container-section{
+  padding: 22px 20px;
+    background: linear-gradient(180deg, #f3f4f6, #ffffff);
+border-radius: 24px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.ipo-notes-container-section li{
+    font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #6B7280;
+  font-family: Helvetica;
+  margin-bottom: 0;
+} 
+
+.ipo-objective-container-section p{
+  font-style: italic;
+}
+
+.ipo-documents-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ipo-documents-container div{
+  display: flex;
+  padding: 16px 20px;
+  gap: 10px;
+  justify-content: space-between;
+  background-color: #F1EEFF;
+  border-radius: 12px;
+} 
