@@ -4,12 +4,12 @@
   border-radius: 10px;
   max-width: 600px; */
    /* border: 1px solid rgb(235, 233, 233); */
-    width: 936px;
+    max-width: 936px;
     height: 791px;
-      background-color: #fdfdfd;
+    background-color: #fdfdfd;
     border-radius: 24px;
     padding: 32px;
-    margin-top: 60px;
+    /* margin-top: 60px; */
   /* margin-bottom: 60px; */
 }
 
@@ -83,4 +83,41 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(20px);
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+    
+  }
+
+  .title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .item {
+    font-size: 13px;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 18px;
+  }
+
+  .switch {
+    width: 38px;
+    height: 20px;
+  }
+
+  .slider:before {
+    height: 16px;
+    width: 16px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(18px);
+  }
 }

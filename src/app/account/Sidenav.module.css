@@ -1,11 +1,10 @@
 .account_details {
   font-family: Helvetica, sans-serif;
   display: flex;
-  /* gap: 24px; */
-  /* height: 100%; */
+  
   border-radius: 24px;
   margin-top: 60px;
-  /* margin-bottom: 60px; */
+  
   justify-content: center;
   background-color: rgba(255, 255, 255, 1);
   font-family: helvetica;
@@ -22,7 +21,7 @@
 .sidebar {
    position: relative;
   width: 320px;
-  /* height: 700px; */
+
   background: (255, 255, 255, 1);
   padding: 20px;
 
@@ -85,7 +84,7 @@
   border-radius: 30px;
   transition: background 0.3s ease;
   cursor: pointer;
-  /* margin-bottom: 8px; */
+
 }
 
 .item:hover {
@@ -94,16 +93,11 @@
 }
 
 .active {
-  /* background: rgba(201, 167, 78, 1); */
+
   color:  rgba(107, 114, 128, 1);
 
 }
-/* .hr{
-  margin-top: 25px;
-  border: none;
-  background-color: rgba(229, 231, 235, 1);
-  height: 1px;
-} */
+
 
 .icon,
 .user_icon {
@@ -113,8 +107,7 @@
 
 }
 .logout_section{
-  /* position: relative; */
-  /* bottom: 0px; */
+
 }
 
 .logout {
@@ -133,8 +126,8 @@
     width: 280px;
 }
 .hr{
-  /* position: absolute;
-  bottom: 30px; */
+
+ 
   margin-top: 25px;
   border: none;
    background-color: rgba(229, 231, 235, 1); 
@@ -159,5 +152,113 @@
 }
 .item :hover{
   color:rgba(255, 255, 255, 1) ;
-  /* filter: invert(50%) sepia(100%) hue-rotate(200deg); */
+ 
 }
+
+
+
+
+
+
+/* 
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px; 
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+  padding: 20px;
+}
+
+
+.show {
+  left: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 999;
+}
+
+
+.toggleBtn {
+  background: #c9a74e;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.profile {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background: #c9a74e;
+  color: white;
+  border-radius: 50%;
+  line-height: 60px;
+  margin: 0 auto 10px;
+  font-weight: bold;
+}
+
+.id {
+  font-size: 12px;
+  color: gray;
+}
+
+.name {
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+
+.nav {
+  list-style: none;
+  padding: 0;
+}
+
+.item {
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.item:hover {
+  background: #f5f5f5;
+}
+
+
+.logout_section {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hr {
+  height: 1px;
+  background: #eee;
+  margin-bottom: 10px;
+} */

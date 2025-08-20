@@ -1,14 +1,25 @@
 .container {
-  width: 70%;
+  width: 50%;
+  font-family:  'Helvetica Neue', sans-serif;
   margin: 0 auto;
+  display: contents;
   padding: 30px;
+    
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .heading {
+    color: rgba(31, 41, 55, 1);
   font-size: 32px;
-  font-weight: 700;
-  font-style: bold;
-  margin-bottom: 20px;
+  font-weight: 300;
+
+}
+.hr{
+  border: none;
+  background-color:rgba(229, 231, 235, 1) ;
+  height: 1px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .grid {
@@ -18,10 +29,10 @@
 }
 
 .card {
-  background: #fff;
+
   padding: 16px;
   border-radius: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border: 1px solid rgba(229, 231, 235, 1);
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -86,13 +97,15 @@
   font-weight: 400;
   color: rgba(107, 114, 128, 1);
   display: block;
-  margin-bottom: 4px;
+  /* margin-bottom: 4px; */
 }
 .details p{
   font-size: 13px;
   font-weight: 500;
  color:  rgba(31, 41, 55, 1);
+ margin: unset;
 }
+
 
 .buttons {
   display: flex;
@@ -101,9 +114,10 @@
 }
 
 .buttons button {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(68, 49, 151, 0.27);
   padding: 10px;
+  font-style: medium;
   border-radius: 40px;
   font-size: 12px;
   color: rgba(0, 0, 0, 1);
@@ -127,4 +141,60 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+/* 📱 Mobile view */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .heading {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* sab card ek line me */
+  }
+
+  .details {
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .buttons {
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .buttons button {
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    width: 100%;
+  }
+}
+
+/* 📱 Chhoti devices (500px se kam) */
+@media (max-width: 425px) {
+  .heading {
+    font-size: 20px;
+  }
+  .card {
+
+  border: none;
+   box-shadow: 1px 1px 8px rgba(117, 117, 117, 0.3);
+  display: flex;
+  flex-direction: column;
+  
+}
+  .description {
+    font-size: 14px;
+  }
+  .company {
+    font-size: 13px;
+  }
+
 }

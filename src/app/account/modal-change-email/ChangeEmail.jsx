@@ -23,6 +23,6 @@ export default function ChangeEmail({ isOpen, onClose }) {
         <button className={styles.sendBtn}>Send OTP</button>
           </div>
       </div>
-    </div>
-  );
+    </div>
+  );
 }

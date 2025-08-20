@@ -1,12 +1,12 @@
 
 
 .main_container{
-    width: 936px;
+    max-width: 936px;
     /* height: 850px; */
     background-color: rgba(255, 255, 255, 1);
     border-radius: 24px;
     padding: 32px;
-    margin-top: 60px;
+    /* margin-top: 60px; */
   /* margin-bottom: 60px; */
     /* margin-bottom: 60px; */
 
@@ -57,7 +57,7 @@
    background-color: rgba(229, 231, 235,1) ;
    height: 1px;
     margin-top: 10px;
-    width: 865px;
+    max-width: 865px;
 
 }
 .hr{
@@ -66,8 +66,7 @@
    background-color: rgba(229, 231, 235,1) ;
    height: 1px;
     margin-top: 24px;
-    width: 835px;
-    
+     max-width: 865px;
     
 }
 
@@ -159,26 +158,41 @@ font-style: medium;
   }
 } */
 
-@media (max-width: 768px) {
+/* 📱 Tablet screens */
+@media (max-width: 1024px) {
   .main_container {
-    margin: 20px auto;
-    padding: 16px;
-  }
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    padding: 20px;
   }
   .h1 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
   .value {
     font-size: 1.1rem;
   }
 }
 
+/* 📱 Mobile screens */
+@media (max-width: 768px) {
+  .main_container {
+    padding: 16px;
+  }
+  .header {
+    /* flex-direction: column;
+    align-items: flex-start; */
+    gap: 12px;
+  }
+  .h1 {
+    font-size: 1.5rem;
+  }
+  .value {
+    font-size: 1rem;
+  }
+}
+
+/* 📱 Small mobile */
 @media (max-width: 480px) {
   .main_container {
+  
     border-radius: 12px;
     padding: 12px;
   }
@@ -189,7 +203,32 @@ font-style: medium;
     height: 36px;
     width: 36px;
   }
+  .details_section{
+    border: none;
+  }
   .value {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+  .edit_icon{
+    height: 44px;
+    width: 44px;
+   background-color: none;
+     text-decoration: underline;       /* underline enable karega */
+  text-underline-offset: 5px;
+    color: rgba(181, 145, 49, 1);
+      justify-content: center;
+     display: flex;
+     margin-bottom:20px ;
+    align-items: center;
+
+}
+  .edit_icon img,
+  .edit_icon svg {
+    display: none;
+  }
+
+  /* Text ko manually set karo */
+  .edit_icon::after {
+    content: "Edit";
   }
 }

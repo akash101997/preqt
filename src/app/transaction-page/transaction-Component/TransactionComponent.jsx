@@ -2,7 +2,7 @@ import styles from "./Transaction_Component.module.css";
 import Image from "next/image";
 
 export default function TransactionComponent() {
-  const transactions = Array(6).fill({
+  const transactions = Array(4).fill({
     type: "IPO - SME",
     category: "Healthcare",
     img:'/transaction/cardAnthem-image.svg',
@@ -21,7 +21,7 @@ export default function TransactionComponent() {
   return (
     <div className={styles.container}>
       <h2 className={styles.heading}>Transaction List</h2>
-
+  <div className={styles.hr} ></div>
       <div className={styles.grid}>
         {transactions.map((t, index) => (
           <div className={styles.card} key={index}>
@@ -42,26 +42,26 @@ export default function TransactionComponent() {
                 <p>{t.revenue}</p>
               </div>
               <div>
-                <strong>EBITDA</strong>
+                <strong>PAT</strong>
                 <p>{t.ebitda}</p>
               </div>
               <div>
-                <strong>PAT Margin</strong>
+                <strong>PAT multiple</strong>
                 <p>{t.pat}</p>
               </div>
             </div>
 
             <div className={styles.details}>
               <div>
-                <strong>CAGR (last 3Y)</strong>
+                <strong>CAGR Growth (last 3Y)</strong>
                 <p>{t.cagr}</p>
               </div>
               <div>
-                <strong>Price</strong>
+                <strong>ROE</strong>
                 <p>{t.price}</p>
               </div>
               <div>
-                <strong>Issue Closing Date</strong>
+                <strong>Issue Opening Date</strong>
                 <p>{t.issueDate}</p>
               </div>
             </div>
