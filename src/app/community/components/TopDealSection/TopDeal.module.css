@@ -1,0 +1,154 @@
+.TopDealMainContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background-image: linear-gradient(to bottom, #F7F6F2, #FFFFFF00);
+    border-radius: 24px;
+    /* width: 100%; */
+    padding: 6%;
+    position: sticky;
+    top: 0;
+}
+
+.TopDealsHeading {
+    font-size: 20px;
+    color: #1F2937;
+    font-weight: 300;
+    line-height: 25%;
+    letter-spacing: 0%;
+
+}
+
+.AnthemBanner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 24px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 60px 0px #0000000F;
+    width: 100%;
+    padding: 4%;
+}
+
+.AnthemInnerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.headingAndLogoContainer {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.AnthemSection {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+}
+
+.anthemPicture {
+    width: 12%;
+    height: 12%;
+}
+
+.anthemHeading {
+    color: #1F2937;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.anthemDescription {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #6B7280;
+}
+
+.progessMainContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priceInCr {
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #6B7280;
+    margin: 0;
+}
+.percent{
+    font-size: 14px;
+    color: #1F2937;
+    font-weight: bold;
+    /* line-height: 20px; */
+    margin: 0;
+}
+.percentAndProgressBar{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.newDeals {
+    /* border: 1px solid black; */
+    position: relative;
+    top: 2px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+    padding: 16px 12px 16px 12px;
+    background-color: #FFFFFF;
+    align-items: center;
+    box-shadow: 0px 4px 60px 0px #0000000F;
+}
+
+.newDealsHeading {
+    /* max-width: 171px;
+    max-height: 20px; */
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.greenDot {
+    width: 10px;
+    height: 10px;
+    background-color: #16A34A;
+    border-radius: 100px;
+}
+
+.plusDeals {
+    /* max-width: 153px;
+    max-height: 20px; */
+    font-size: 14px;
+    color: #6B7280;
+}
+
+.viewAllBtnContainer {
+    padding: 8px 16px 8px 16px;
+    display: flex;
+    gap: 3px;
+    border-radius: 34778.34px;
+    background-color: #302F2B;
+    align-items: center;
+}
+
+.ViewAllText {
+    color: white;
+    margin: 0;
+}
+
+.upperRightArrow {
+    width: 25px;
+    height: 25px;
+    position: relative;
+}

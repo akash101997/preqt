@@ -22,6 +22,7 @@ export default function home() {
     return (
         <section>
             <NavBar />
+            
             <div className={styles.marqueeSectionContainer}>
                 <div className={styles.marqueeSection}>
                     <div className={styles.marqueeContent} ref={marqueeRef}>

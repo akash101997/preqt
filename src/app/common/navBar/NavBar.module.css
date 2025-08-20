@@ -8,15 +8,18 @@
   padding: 12px 60px 12px 60px;
   align-items: center;
 }
+
 .icons {
   padding: 10px;
   max-width: 100%;
-        width: 48px;
+  width: 48px;
 }
+
 .logo {
   width: 123px;
   height: 38px;
 }
+
 .navigationButtonContainer {
   /* width: 578px; */
   /* height: 60px; */
@@ -26,31 +29,38 @@
   gap: 4px;
   background-color: #ffffff;
 }
+
 .navigationButton {
   display: flex;
   gap: 8px;
 }
+
 .HomeNavButton {
   display: flex;
   align-items: center;
   gap: 12px;
-  text-decoration: none; 
+  text-decoration: none;
   padding: 8px 24px;
   border-radius: 20px;
   font-size: 16px;
+
 }
+
 /* Hover effect (light gray, keep original colors) */
 .HomeNavButton:hover {
-  background-color: #f1f1f1; /* light gray */
+  background-color: #f1f1f1;
+  /* light gray */
   border-radius: 100px;
 }
 
 .HomeNavButton:hover .HomeIconImage {
-  filter: none; /* keep original icon color */
+  filter: none;
+  /* keep original icon color */
 }
 
 .HomeNavButton:hover .home {
-  color: #64748b; /* keep original text color */
+  color: #64748b;
+  /* keep original text color */
 }
 
 /* Active effect (gradient + white text/icons) */
@@ -60,7 +70,8 @@
 }
 
 .HomeNavButton.active .HomeIconImage {
-  filter: brightness(0) invert(1); /* white icons */
+  filter: brightness(0) invert(1);
+  /* white icons */
 }
 
 .HomeNavButton.active .home {
@@ -72,6 +83,7 @@
   display: flex;
   gap: 14px;
 }
+
 .NotificationIconContainer {
   width: fit-content;
   height: 46px;
@@ -80,8 +92,9 @@
   border-radius: 100%;
   background-color: #334155;
 }
+
 .UserIconContainer {
- width: fit-content;
+  width: fit-content;
   height: 46px;
   border-radius: 100%;
   display: flex;
@@ -89,6 +102,7 @@
   text-align: center;
   background-image: linear-gradient(to bottom right, #fff2d0, #8e6b0f);
 }
+
 .HomeIconImage {
   width: 20px;
   height: 19px;
@@ -96,6 +110,7 @@
   /* top: 2.18px;
     left: 2px; */
 }
+
 .home {
   font-size: 16px;
   font-weight: 500;
@@ -107,17 +122,31 @@
 }
 
 .userInitials {
-     width: fit-content;
-    height: fit-content;
-    font-weight: 300;
-    font-size: 17px;
-    line-height: 100%;
-    margin: 0;
-    color: #ffffff;
-    padding: 0px 11px;
+  width: fit-content;
+  height: fit-content;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 100%;
+  margin: 0;
+  color: #ffffff;
+  padding: 0px 11px;
 }
+
 .Link {
   text-decoration: none;
+}
+
+.responsiveNav {
+  display: none;
+}
+
+.sideMenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+  background-color: white;
 }
 
 @media (max-width: 1024px) {
@@ -169,27 +198,147 @@
     gap: 10px;
   }
 
-  .NotificationIconContainer,
-  .UserIconContainer {
-    /* width: 44px;
-        height: 44px; */
-  }
 
   .NotificationIconContainer {
     /* padding: 9px; */
-      width: fit-content;
-  height: 46px;
-  display: flex;
-  /* padding: 11px;*/
-  border-radius: 100%;
-  background-color: #334155;
+    width: fit-content;
+    height: 46px;
+    display: flex;
+    /* padding: 11px;*/
+    border-radius: 100%;
+    background-color: #334155;
   }
 
-.userInitials {
-     width: fit-content;
+  .userInitials {
+    width: fit-content;
     height: fit-content;
     padding: 0px 11px;
+  }
+
+  .responsiveNav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    padding: 5% 4% 4% 4%;
+    z-index: 5;
+  }
+
+  .mainNavContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    align-items: center;
+  }
+
+  .mainContainer {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 8vw;
+    height: 5vh;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 0.5vh;
+    background: #000;
+    border-radius: 2px;
+    width: 8vw;
+  }
+
+  .logoImg {
+    width: 32vw;
+    height: 6vh;
+  }
+
+  .sideMenu.active {
+    display: block;
+    opacity: 1;
+    /* height: 100vh; */
+    /* transition: width 0.3s ease-in-out; */
+    z-index: 1;
+    background-color: white;
+    /* transform: translateX(0); */
+    width: 70%;
+    height: 100vh;
+  }
+
+  .openedSideMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5% 4% 3% 2%;
+    width: 60%;
+    color: #FFFFFF;
+    height: 100%;
+  }
+
+  .menuContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 60vw;
+  }
+
+  .logoAndCrossBtnContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 70vw;
+    /* height: 100vh; */
+    align-items: center;
+  }
+
+  .homeNavButton {
+    display: flex;
+    padding: 12px 24px 12px 24px;
+    gap: 12px;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .homebtn {
+    font-size: 16px;
+    font-weight: 500;
+    color: #6B7280;
+  }
+
+  .logoImg2 {
+    width: 41vw;
+    height: 8vh;
+    padding: 12px 24px 12px 24px;
+  }
+
+  .logoutContainerDiv {
+    display: flex;
+    gap: 12px;
+    padding: 12px 24px 12px 24px;
+  }
+
+  .logout {
+    color: #6B7280;
+    font-size: 14px;
+  }
+
+  .homeNavButton:hover {
+    background-color: #C9A74E;
+    border-radius: 100px;
+  }
+
+  .homeNavButton:hover img {
+    filter: brightness(0) invert(1);
+    /* Makes SVG white */
+  }
+  .homeNavButton:hover .homebtn {
+    color: white;
 }
+
 }
 
 /* ✅ NEW: Mobile 375px and similar screens - ICONS ONLY */
@@ -197,10 +346,11 @@
   .mainContainer {
     padding: 8px 12px;
   }
+
   .icons {
     max-width: 100%;
     max-width: 100%;
-        width: 42px;
+    width: 42px;
   }
 
   .logo {
@@ -218,14 +368,16 @@
   }
 
   .HomeNavButton {
-    padding: 6px 8px; 
-    gap: 0; 
-    min-width: 32px; 
+    padding: 6px 8px;
+    gap: 0;
+    min-width: 32px;
     justify-content: center;
+    width: 100%;
+
   }
 
   .home {
-    display: none; 
+    display: none;
   }
 
   .HomeIconImage {
@@ -233,23 +385,24 @@
     height: 17px;
     /* top: 0;
         left: 0; */
-    position: static; /* Remove relative positioning */
+    position: static;
+    /* Remove relative positioning */
   }
 
   .navRightSection {
     gap: 6px;
   }
 
- 
+
 
   .NotificationIconContainer {
     /* padding: 6px; */
-      width: fit-content;
-  height: 46px;
-  display: flex;
-  /* padding: 11px;*/
-  border-radius: 100%;
-  background-color: #334155;
+    width: fit-content;
+    height: 46px;
+    display: flex;
+    /* padding: 11px;*/
+    border-radius: 100%;
+    background-color: #334155;
   }
 
   .userInitials {
