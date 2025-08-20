@@ -1,16 +1,38 @@
-.postDealMainContainer{
+.postDealMainContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
     padding: 3% 6% 8% 6%;
     gap: 24px;
     /* border: 1px solid black; */
+    align-items: center;
 }
-.postDealInnerContainer{
+
+.postDealInnerContainer {
     width: 90%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     gap: 20px;
-    /* border: 1px solid black; */
+    /* flex-wrap: wrap; */
+}
+
+.TopDealContainer {
+    position: sticky;
+    top: 0;
+}
+
+@media (max-width: 1024px) {
+    .TopDealContainer {
+        display: none;
+    }
+
+    .postDealMainContainer {
+        padding: 0;
+    }
+}
+@media (max-width: 640px){
+    .postDealInnerContainer{
+        width: 100%;
+    }
 }
