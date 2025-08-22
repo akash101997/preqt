@@ -20,7 +20,7 @@ export default function TransactionComponent() {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.heading}>Transaction List</h2>
+      <h2 className={styles.heading}>Transaction </h2>
   <div className={styles.hr} ></div>
       <div className={styles.grid}>
         {transactions.map((t, index) => (

@@ -2,6 +2,7 @@
 
 .main_container{
     max-width: 936px;
+    /* border: 1px solid red; */
     /* height: 850px; */
     background-color: rgba(255, 255, 255, 1);
     border-radius: 24px;
@@ -43,10 +44,12 @@
 }
 
 .details_section{
+  /* width: 100%; */
     border: 1px solid rgba(229, 231, 235, 1);
     border-radius: 20px;
-    height: 670px;
-    padding-left: 24px;
+    height: 690px;
+    /* padding: 24px; */
+   padding: 0px 24px;
     margin-top: 24px;
     background-color: rgba(255, 255, 255, 1);
     
@@ -56,7 +59,7 @@
      border: none;
    background-color: rgba(229, 231, 235,1) ;
    height: 1px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     max-width: 865px;
 
 }
@@ -65,30 +68,32 @@
       border: none;
    background-color: rgba(229, 231, 235,1) ;
    height: 1px;
-    margin-top: 24px;
+    /* margin-top: 24px; */
      max-width: 865px;
     
 }
 
 
 .name{
+  
     
     /* border: 1px solid red; */
-    height: 60px;
+    /* height: 60px; */
     background-color: rgba(255, 255, 255, 1);
 }
 .heading{
-     margin-top  : 24px;
-     margin-bottom: 24px;
+     /* margin-top  : 24px; */
+     /* margin-bottom: 24px; */
+      margin: 24px 0px 13px 0px;
      font-size: 16px;
      font-style: medium;
-     font-weight: 500;
+     font-weight: 400;
      color: rgba(107, 114, 128, 1);
     background-color: rgba(255, 255, 255, 1);
 
 }
 .value{
-    margin-top: 24px;
+    /* margin-top: 24px; */
      margin-bottom: 24px;
 font-style: medium;
     font-size: 20px;
@@ -96,11 +101,17 @@ font-style: medium;
     background-color: rgba(255, 255, 255, 1);
 
 }
+.emailChange{
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
 
 
 .email{
-     margin-top  : 12px;
-       height: 60px;
+     /* margin-top  : 12px; */
+       /* height: 60px; */
     background-color: rgba(255, 255, 255, 1);
 
 }
@@ -112,7 +123,7 @@ font-style: medium;
     font-style: medium;
     text-decoration: underline;
     text-underline-offset: 4px;
-    top: -50px;
+    top: -18px;
     left: -20px;
     color: rgba(177, 140, 7, 1);
     align-items: center;
@@ -122,31 +133,38 @@ font-style: medium;
 
 }
 
+.mobileChange{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 
 .mobile{
-   margin-top  : 12px;
-     height: 60px;
+   /* margin-top  : 12px; */
+     /* height: 60px; */
+     display: inline;
+     align-items: center;
     background-color: rgba(255, 255, 255, 1);
 
 }
 
 
 .investor{
-    margin-top  : 24px;
-      height: 60px;
+    /* margin-top  : 24px; */
+      /* height: 60px; */
 }
 
 .organization{
-  margin-top  : 12px;
-    height: 60px;
+  /* margin-top  : 12px; */
+    /* height: 60px; */
 }
 
 
 
 .location{
-    margin-top  : 12px;
-      height: 60px;
+    /* margin-top  : 12px; */
+      /* height: 60px; */
 }
 
 /* @media (max-width: 1024px) {
@@ -192,17 +210,18 @@ font-style: medium;
 /* 📱 Small mobile */
 @media (max-width: 480px) {
   .main_container {
-  
     border-radius: 12px;
     padding: 12px;
+   
   }
   .h1 {
     font-size: 1.25rem;
+    display: none;
   }
-  .edit_icon {
+  /* .edit_icon {
     height: 36px;
     width: 36px;
-  }
+  } */
   .details_section{
     border: none;
   }
@@ -210,25 +229,7 @@ font-style: medium;
     font-size: 0.95rem;
   }
   .edit_icon{
-    height: 44px;
-    width: 44px;
-   background-color: none;
-     text-decoration: underline;       /* underline enable karega */
-  text-underline-offset: 5px;
-    color: rgba(181, 145, 49, 1);
-      justify-content: center;
-     display: flex;
-     margin-bottom:20px ;
-    align-items: center;
-
-}
-  .edit_icon img,
-  .edit_icon svg {
     display: none;
   }
-
-  /* Text ko manually set karo */
-  .edit_icon::after {
-    content: "Edit";
-  }
+ 
 }
