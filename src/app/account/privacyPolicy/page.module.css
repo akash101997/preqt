@@ -91,6 +91,7 @@
 @media (max-width: 480px) {
   .heading {
     font-size: 20px;
+    display: none;
     text-align: center; /* chhoti screen pe center */
   }
 

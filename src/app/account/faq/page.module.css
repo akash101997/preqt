@@ -31,8 +31,8 @@
 }
 
 .question {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 400;
   margin: 0;
   color: rgba(31, 41, 55, 1);
   
@@ -52,10 +52,11 @@
 .answer {
   /* border: 1px solid red; */
   /* width: 850px; */
+  letter-spacing: 0cap;
   font-size: 14px;
-  font-weight: 400 ;
-  color: rgba(107, 114, 128, 1);
-  margin-top: 6px;
+  font-weight: 300 ;
+  color: rgb(123, 130, 143);
+  margin-top: 3px;
   line-height: 1.5;
 }
 
@@ -80,6 +81,7 @@
 @media (max-width: 480px) {
   .heading {
     font-size: 20px;
+    display: none;
   }
 
   .questionRow {

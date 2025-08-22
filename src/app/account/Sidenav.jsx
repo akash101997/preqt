@@ -11,15 +11,17 @@ export default function Sidenav() {
   return (
 
     <div className={styles.account_details}>
+
       <div className={styles.sidebar}>
         <div className={styles.profile}>
           <div className={styles.avatar}>AM</div>
-          <div className={styles.id}>CL273874</div>
-          <div className={styles.name}>Anjali Mishra</div>
+          <div className={styles.avatardetails}>
+            <div className={styles.id}>CL273874</div>
+            <div className={styles.name}>Anjali Mishra</div>
+          </div>
         </div>
 
         <ul className={styles.nav} >
-
           <li className={styles.item} onClick={() => router.push('/account/details')}>
             <div className={styles.user_icon}> <svg width="24" height="24" viewBox="0 0 24 24" fill="rgba(201, 167, 78, 1)" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.4" d="M21.0901 21.5C21.0901 21.78 20.8701 22 20.5901 22H3.41016C3.13016 22 2.91016 21.78 2.91016 21.5C2.91016 17.36 6.99015 14 12.0002 14C13.0302 14 14.0302 14.14 14.9502 14.41C14.3602 15.11 14.0002 16.02 14.0002 17C14.0002 17.75 14.2101 18.46 14.5801 19.06C14.7801 19.4 15.0401 19.71 15.3401 19.97C16.0401 20.61 16.9702 21 18.0002 21C19.1202 21 20.1302 20.54 20.8502 19.8C21.0102 20.34 21.0901 20.91 21.0901 21.5Z" fill="rgba(201, 167, 78, 1)" />
@@ -28,76 +30,101 @@ export default function Sidenav() {
             </svg>
             </div>
 
-            <span>Account Details</span>
+            <div className={styles.responsive_btn}>
+              <span>Account Details</span>
+              <button className={styles.rightarrow}><img className={styles.arrowimg} src="/account_sidenav/chevron-right-arrow.svg" alt="" /></button>
+            </div>
           </li>
+          <div className={styles.line}></div>
 
 
           <li className={styles.item} onClick={() => router.push('/account/transation')}>
             <img className={styles.icon} src='/account_sidenav/transation.svg' alt='' />
-            {/* <Link href={'/account/transation'} className={styles.Link}>  */}
-            <span className={styles.span}> Transactions</span>
-            {/* </Link> */}
+            <div className={styles.responsive_btn}>
+              <span>Transactions</span>
+              <button className={styles.rightarrow}><img className={styles.arrowimg} src="/account_sidenav/chevron-right-arrow.svg" alt="" /></button>
+            </div>
+
+
           </li>
 
+          <div className={styles.line}></div>
 
           <li className={styles.item} onClick={() => router.push('/account/support')}>
             <img className={styles.icon} src='/account_sidenav/24-support.svg' alt='' />
+            <div className={styles.responsive_btn}>
+              <span>Support</span>
+              <button className={styles.rightarrow}><img className={styles.arrowimg} src="/account_sidenav/chevron-right-arrow.svg" alt="" /></button>
+            </div>
 
-            <span className={styles.span}>Support</span>
 
           </li>
 
-
+          <div className={styles.line}></div>
           <li className={styles.item} onClick={() => router.push('/account/notification')}>
             <img className={styles.icon} src='/account_sidenav/notification.svg' alt='' />
+            <div className={styles.responsive_btn}>
+              <span>Notification preference</span>
+              <button className={styles.rightarrow}><img className={styles.arrowimg} src="/account_sidenav/chevron-right-arrow.svg" alt="" /></button>
+            </div>
 
-            <span className={styles.span}>Notification preference</span>
 
 
           </li>
 
-
+          <div className={styles.line}></div>
           <li className={styles.item} onClick={() => router.push('/account/terms&condition')}>
             <img className={styles.icon} src='/account_sidenav/terms_condition.svg' alt='' />
-
-            <span className={styles.span}>Terms & Conditions</span>
-
+            <div className={styles.responsive_btn}>
+              <span>Terms & Conditions</span>
+              <button className={styles.rightarrow}><img className={styles.arrowimg} src="/account_sidenav/chevron-right-arrow.svg" alt="" /></button>
+            </div>
           </li>
-
+          <div className={styles.line}></div>
 
           <li className={styles.item} onClick={() => router.push('/account/faq')}>
             <img className={styles.icon} src='/account_sidenav/faq.svg' alt='' />
+            <div className={styles.responsive_btn}>
+              <span>Frequently Asked Questions</span>
+              <button className={styles.rightarrow}><img className={styles.arrowimg} src="/account_sidenav/chevron-right-arrow.svg" alt="" /></button>
+            </div>
 
-            <span className={styles.span}>Frequently Asked Questions</span>
 
           </li>
-
+          <div className={styles.line}></div>
 
           <li className={styles.item} onClick={() => router.push('/account/privacyPolicy')}>
             <img className={styles.icon} src='/account_sidenav/privacy_policy.svg' alt='' />
-            <span className={styles.span}>Privacy Policy</span>
+            <div className={styles.responsive_btn}>
+              <span>Privacy Policy</span>
+              <button className={styles.rightarrow}><img className={styles.arrowimg} src="/account_sidenav/chevron-right-arrow.svg" alt="" /></button>
+            </div>
+
 
           </li>
 
-
+          <div className={styles.line}></div>
           <li className={styles.item} onClick={() => router.push('/account/my-document')}>
             <img className={styles.icon} src='/account_sidenav/my-documents.svg' alt='' />
+            <div className={styles.responsive_btn}>
+              <span>My documents</span>
+              <button className={styles.rightarrow}><img className={styles.arrowimg} src="/account_sidenav/chevron-right-arrow.svg" alt="" /></button>
+            </div>
 
-            <span className={styles.span}>My documents</span>
 
           </li>
-
+          <div className={styles.line}></div>
 
         </ul>
         <div className={styles.logout_section}>
-               <div className={styles.hr}></div> 
+          <div className={styles.hr}></div>
 
-        <div className={styles.logout} >
-           {/* <div className={styles.hr}></div>  */}
-    
-          <img className={styles.icon} src='/account_sidenav/login.svg' alt='' />
-          <span className={styles.span}>Log Out</span>
-        </div>
+          <div className={styles.logout} >
+            {/* <div className={styles.hr}></div>  */}
+
+            <img className={styles.icon} src='/account_sidenav/login.svg' alt='' />
+            <span className={styles.span}>Log Out</span>
+          </div>
         </div>
 
       </div>
