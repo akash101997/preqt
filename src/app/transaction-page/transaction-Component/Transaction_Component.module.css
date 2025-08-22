@@ -1,22 +1,23 @@
 .container {
   width: 50%;
-  font-family:  'Helvetica Neue', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
   margin: 0 auto;
   display: contents;
   padding: 30px;
-    
+
   background-color: rgba(255, 255, 255, 1);
 }
 
 .heading {
-    color: rgba(31, 41, 55, 1);
+  color: rgba(31, 41, 55, 1);
   font-size: 32px;
   font-weight: 300;
 
 }
-.hr{
+
+.hr {
   border: none;
-  background-color:rgba(229, 231, 235, 1) ;
+  background-color: rgba(229, 231, 235, 1);
   height: 1px;
   margin-top: 20px;
   margin-bottom: 30px;
@@ -47,25 +48,27 @@
   background: rgba(236, 236, 240, 1);
   color: rgba(36, 36, 36, 1);
   /* width: 28px; */
-  padding:9px 13px;
+  padding: 9px 13px;
   border-radius: 8px;
-  font-style: medium;
-  font-size: 12px;
   font-weight: 500;
+  font-size: 12px;
 
 }
-  /* .companyLogo{
+
+/* .companyLogo{
     display: flex;
     flex-direction: column;
   } */
 
-  .img ,.company{
-    display: inline-block;
-    
-  }
-  .img{
-    margin-right: 10px;
-  }
+.img,
+.company {
+  display: inline-block;
+
+}
+
+.img {
+  margin-right: 10px;
+}
 
 
 .company {
@@ -102,11 +105,12 @@
   display: block;
   /* margin-bottom: 4px; */
 }
-.details p{
+
+.details p {
   font-size: 13px;
   font-weight: 400;
- color:  rgba(31, 41, 55, 1);
- margin: unset;
+  color: rgba(31, 41, 55, 1);
+  margin: unset;
 }
 
 
@@ -120,12 +124,12 @@
   background: rgba(255, 255, 255, 1);
   border: 1px solid rgba(68, 49, 151, 0.27);
   padding: 6px 12px;
-  font-style: medium;
+  font-weight: 500;
   border-radius: 40px;
   font-size: 12px;
   color: rgba(0, 0, 0, 1);
   font-weight: 400;
-  
+
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -137,7 +141,7 @@
 .statusBox {
   background: rgba(181, 145, 49, 0.13);
   /* border: 1px solid #ddd; */
-  padding:12px;
+  padding: 12px;
   border-radius: 12px;
   font-size: 13px;
   color: #333;
@@ -145,6 +149,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 /* 📱 Mobile view */
 @media (max-width: 768px) {
   .container {
@@ -158,7 +163,8 @@
   }
 
   .grid {
-    grid-template-columns: 1fr; /* sab card ek line me */
+    grid-template-columns: 1fr;
+    /* sab card ek line me */
   }
 
   .details {
@@ -185,17 +191,20 @@
   .heading {
     font-size: 20px;
   }
+
   .card {
 
-  border: none;
-   box-shadow: 1px 1px 8px rgba(117, 117, 117, 0.3);
-  display: flex;
-  flex-direction: column;
-  
-}
+    border: none;
+    box-shadow: 1px 1px 8px rgba(117, 117, 117, 0.3);
+    display: flex;
+    flex-direction: column;
+
+  }
+
   .description {
     font-size: 14px;
   }
+
   .company {
     font-size: 13px;
   }

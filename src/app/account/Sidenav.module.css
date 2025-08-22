@@ -1,10 +1,10 @@
 .account_details {
   font-family: Helvetica, sans-serif;
   display: flex;
-  
+
   border-radius: 24px;
   /* margin-top: 60px; */
-  
+
   justify-content: center;
   background-color: rgba(255, 255, 255, 1);
   font-family: helvetica;
@@ -19,10 +19,10 @@
 
 
 .sidebar {
-   position: relative;
+  position: relative;
   min-width: 320px;
 
-  background: (255, 255, 255, 1);
+  background: rgba(255, 255, 255, 1);
   padding: 20px;
 
   border-radius: 12px;
@@ -50,7 +50,6 @@
   justify-content: center;
   font-size: 40px;
   font-weight: 500;
-  font-style: medium;
   border: 7px solid rgba(255, 255, 255, 1);
   margin: 0px auto 10px;
 }
@@ -77,7 +76,7 @@
   display: flex;
   font-size: 14px;
   font-weight: 400;
- font-style: medium;
+  font-weight: 500;
   align-items: center;
   padding: 12px 16px;
   color: rgba(107, 114, 128, 1);
@@ -89,12 +88,12 @@
 
 .item:hover {
   background: rgba(201, 167, 78, 1);
-  color:rgba(255, 255, 255, 1)  ;
+  color: rgba(255, 255, 255, 1);
 }
 
 .active {
 
-  color:  rgba(107, 114, 128, 1);
+  color: rgba(107, 114, 128, 1);
 
 }
 
@@ -103,12 +102,11 @@
 .user_icon {
 
   margin-right: 10px;
-  
+
 
 }
-.logout_section{
 
-}
+.logout_section {}
 
 .logout {
   position: absolute;
@@ -122,24 +120,27 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-      text-align: start;
-    width: 280px;
+  text-align: start;
+  width: 280px;
 }
-.hr{
+
+.hr {
 
   margin-top: 25px;
   border: none;
-   background-color: rgba(229, 231, 235, 1); 
-  height: 1px; 
+  background-color: rgba(229, 231, 235, 1);
+  height: 1px;
 }
-.line{
-   display: none;
+
+.line {
+  display: none;
   margin-top: 5px;
   border: none;
-   background-color: rgba(229, 231, 235, 1); 
-  height: 1px; 
+  background-color: rgba(229, 231, 235, 1);
+  height: 1px;
 }
-.responsive_btn{
+
+.responsive_btn {
   width: 90%;
   justify-content: space-between;
   flex-direction: row;
@@ -149,16 +150,17 @@
 }
 
 .rightarrow {
-border: none;
-outline: none;
-display: flex;
-justify-content: flex-end;
-align-items: center;
-background: none;
-/* display: none; */
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: none;
+  /* display: none; */
 
 }
-.rightarrow .arrowimg{
+
+.rightarrow .arrowimg {
   height: 18px;
   text-align: right;
   display: none;
@@ -167,7 +169,7 @@ background: none;
 
 .logout:hover {
   background: rgba(201, 167, 78, 1);
-  color:rgba(255, 255, 255, 1) ;
+  color: rgba(255, 255, 255, 1);
 
 
 }
@@ -175,39 +177,43 @@ background: none;
 .item .span:hover {
   background: rgba(201, 167, 78, 1);
   transition: background 0.3s ease;
-  color:rgba(255, 255, 255, 1) ;
+  color: rgba(255, 255, 255, 1);
 }
 
 .user_icon:hover {
   color: aliceblue;
 }
-.item :hover{
-  color:rgba(255, 255, 255, 1) ;
- 
+
+.item :hover {
+  color: rgba(255, 255, 255, 1);
+
 }
 
 @media (max-width: 480px) {
-  .account_details{
-   /* background:linear-gradient(to buttom ,rgba(243, 244, 246, 1),rgba(243, 244, 246, 0)); */
-  
-    width: 100%;
-  
-  }
-  .sidebar{
-  background: linear-gradient(to buttom, rgb(211, 135, 135) 0%, rgba(243, 244, 246, 1) 100%);
+  .account_details {
+    /* background:linear-gradient(to buttom ,rgba(243, 244, 246, 1),rgba(243, 244, 246, 0)); */
 
-   /* background-color: aquamarine; */
-    /* background:linear-gradient(to buttom ,rgb(142, 142, 143),rgba(5, 41, 112, 0) ); */
+    width: 100%;
+
+  }
+
+  .sidebar {
+    background: linear-gradient(to bottom, rgb(211, 135, 135) 0%, rgba(243, 244, 246, 1) 100%);
+
+    /* background-color: aquamarine; */
+    /* background:linear-gradient(to bottom ,rgb(142, 142, 143),rgba(5, 41, 112, 0) ); */
     width: 100%;
   }
-  .profile{
-     display: flex;
+
+  .profile {
+    display: flex;
     flex-direction: row;
-    
+
     align-items: center;
 
   }
-  .avatar{
+
+  .avatar {
     height: 80px;
     width: 80px;
     font-size: 27px;
@@ -215,17 +221,20 @@ background: none;
     margin: auto 20px;
     border: 4px solid white;
   }
-  .avatardetails{
+
+  .avatardetails {
     margin-left: -10px;
   }
-  .rightarrow .arrowimg{
+
+  .rightarrow .arrowimg {
     display: block;
   }
-  .line{
+
+  .line {
     display: block;
   }
-  .hr{
+
+  .hr {
     display: none;
   }
 }
-

@@ -6,22 +6,22 @@
   /* margin: 0px auto; */
   /* margin-top: 60px; */
   border-radius: 24px;
-  padding:  32px;
+  padding: 32px;
 
-  box-shadow: rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
 }
 
 .heading {
   font-size: 32px;
   font-weight: 300;
   margin-bottom: 8px;
-  color: (31, 41, 55, 1);
-  
+  color: rgba(31, 41, 55, 1);
+
 }
 
 .divider {
   border: none;
-margin-top: 30px;
+  margin-top: 30px;
   border-bottom: 1px solid #ddd;
   margin-bottom: 20px;
 }
@@ -55,7 +55,6 @@ margin-top: 30px;
   border: none;
   color: rgba(177, 140, 7, 1);
   font-size: 16px;
-  font-style: medium  ;
   font-weight: 400;
   cursor: pointer;
 }
@@ -67,6 +66,7 @@ margin-top: 30px;
 .icon {
   font-size: 16px;
 }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
   .container {

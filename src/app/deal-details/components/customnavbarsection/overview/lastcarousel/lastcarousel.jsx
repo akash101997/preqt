@@ -17,7 +17,7 @@ const LastCarousel = () => {
       setIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [images]);
 
   return (
     <div className="custom-carousel-wrapper lastcarousel">
