@@ -29,8 +29,9 @@ export default function layout({ children }) {
 
 
   const getTitle = () => {
+    if (pathname === "/account") return "My Account";
     if (pathname === "/account/details") return "Account Details";
-    if (pathname === "/account/transation") return "Transaction";
+    if (pathname === "/account/transation") return "Transactions";
     if (pathname === "/account/support") return "Support";
     if (pathname === "/account/notification") return "Notification Preference";
     if (pathname === "/account/terms&condition") return "Terms & Conditions";
@@ -53,13 +54,18 @@ export default function layout({ children }) {
       <div className={styles.navbar}>
         <NavBar />
       </div>
-      <div className={styles.headar_button}>Home  profile</div>
+      <div className={styles.headar_button}>
+        {/* <Link href="">Home</Link>
+        <Link href="">Profile</Link> */}
+
+      
+      </div>
       <div className={styles.arrow}>
         <Link className={styles.Link} href="/account"><img src="/account_sidenav/arrow icon.svg" alt="" />
         <span className={styles.arrow_heading}>{getTitle()}</span></Link>
 
         <div className={styles.edit_icon}>
-          <a className={styles.a} onClick={() => setShowEditModal(true)}><div className={styles.responsive_edit_icon}>Edit</div></a>
+          <Link href="" className={styles.a} onClick={() => setShowEditModal(true)}><div className={styles.responsive_edit_icon}>Edit</div></Link>
           <EditDetails
             isOpen={showeditModal}
             onClose={() => setShowEditModal(false)}

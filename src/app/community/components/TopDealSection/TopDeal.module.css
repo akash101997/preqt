@@ -1,16 +1,18 @@
 .TopDealMainContainer {
     display: flex;
+    width: 460px;
     flex-direction: column;
-    gap: 24px;
+    gap: 14px;
     background-image: linear-gradient(to bottom, #F7F6F2, #FFFFFF00);
     border-radius: 24px;
     /* width: 100%; */
-    padding: 6%;
+    padding: 4%;
     position: sticky;
     top: 0;
 }
 
 .TopDealsHeading {
+    padding: 10px;
     font-size: 20px;
     color: #1F2937;
     font-weight: 300;

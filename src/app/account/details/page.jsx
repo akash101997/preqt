@@ -35,8 +35,19 @@ export default function page() {
           />
         </div>
       </div>
+ <div className={styles.responsive_user_details}>
+          <div className={styles.avatar}>AM</div>
+          <div className={styles.avatardetails}>
+            <div className={styles.id}>CL273874</div>
+            <div className={styles.name}>Anjali Mishra</div>
+          </div>
+        </div>
+
+
       <div className={styles.hr_header}></div>
       <section className={styles.details_section}>
+
+ 
 
 
 
@@ -45,6 +56,9 @@ export default function page() {
           <div className={styles.value}>Anjali Mishra</div>
         </div>
         <div className={styles.hr}></div>
+
+       
+
 
 
         <div className={styles.email}>

@@ -21,10 +21,9 @@
 .sidebar {
   position: relative;
   min-width: 320px;
-
   background: rgba(255, 255, 255, 1);
   padding: 20px;
-
+ min-height: 791px;
   border-radius: 12px;
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
@@ -74,9 +73,9 @@
 
 .item {
   display: flex;
-  font-size: 14px;
+  font-size: 15px;
 
-  font-weight: 500;
+  font-weight: 400;
   align-items: center;
   padding: 12px 16px;
   color: rgba(107, 114, 128, 1);
@@ -106,17 +105,16 @@
 
 }
 
-.logout_section {}
 
 .logout {
   position: absolute;
   bottom: 12px;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 400;
   margin-top: 40px;
   padding: 12px 16px;
   border-radius: 30px;
-  color: rgba(107, 114, 128, 1);
+  color:  rgba(107, 114, 128, 1);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -198,7 +196,8 @@
   }
 
   .sidebar {
-    background: linear-gradient(to bottom, rgb(211, 135, 135) 0%, rgba(243, 244, 246, 1) 100%);
+    min-height: 660px;
+    /* background: linear-gradient(to bottom, rgb(211, 135, 135) 0%, rgba(243, 244, 246, 1) 100%); */
 
     /* background-color: aquamarine; */
     /* background:linear-gradient(to bottom ,rgb(142, 142, 143),rgba(5, 41, 112, 0) ); */

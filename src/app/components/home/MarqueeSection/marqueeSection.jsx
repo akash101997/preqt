@@ -34,7 +34,7 @@ const MarqueeSection = () => {
                             <div className={styles.NiftySection}>
                                 BANK Nifty 50
                                 <span className={styles.NiftyPoints}>22,419.60</span>
-                                <span className={styles.spanedNiftySection}>-93.90 (0.42%)</span>
+                                <span className={styles.spanedNiftySections}>-93.90 (0.42%)</span>
                             </div>
                         </div>
 
@@ -58,7 +58,7 @@ const MarqueeSection = () => {
                             <div className={styles.NiftySection}>
                                 mid cap nifty
                                 <span className={styles.NiftyPoints}>22,419.60</span>
-                                <span className={styles.spanedNiftySection}>-93.90 (0.42%)</span>
+                                <span className={styles.spanedNiftySections}>-93.90 (0.42%)</span>
                             </div>
                         </div>
 
@@ -75,7 +75,7 @@ const MarqueeSection = () => {
                             <div className={styles.NiftySection}>
                                 BANK Nifty 50
                                 <span className={styles.NiftyPoints}>22,419.60</span>
-                                <span className={styles.spanedNiftySection}>-93.90 (0.42%)</span>
+                                <span className={styles.spanedNiftySections}>-93.90 (0.42%)</span>
                             </div>
                         </div>
 
@@ -91,7 +91,7 @@ const MarqueeSection = () => {
                             <div className={styles.NiftySection}>
                                 finnifty
                                 <span className={styles.NiftyPoints}>22,419.60</span>
-                                <span className={styles.spanedNiftySection}>-93.90 (0.42%)</span>
+                                <span className={styles.spanedNiftySections}>-93.90 (0.42%)</span>
                             </div>
                         </div>
 
