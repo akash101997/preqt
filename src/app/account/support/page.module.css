@@ -5,7 +5,7 @@
   background-color: rgba(255, 255, 255, 1);
   
   padding: 32px;
-  height: 791px;
+  height: 731px;
     /* margin-top: 60px; */
     /* margin-bottom: 60px; */
 }
@@ -36,8 +36,8 @@
 .formContainer{
   border: 1px solid rgba(229, 231, 235, 1);
   margin-top: 24px;
-  height: 558px;
-  padding: 24px;
+  height: 538px;
+  padding:0px 24px;
   border-radius: 20px;
 }
 

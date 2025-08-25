@@ -1,9 +1,10 @@
 .account_layout{
   max-width: 100%;
+  
   /* margin-top: 60px; */
   /* margin-bottom: 60px; */
   display: flex;
-  gap: 24px;
+  gap: 12px;
   justify-content: center;
   /* align-items: center; */
   padding-bottom: 60px;
@@ -13,13 +14,20 @@
 .headar_button{
   background-color:rgba(249, 250, 251, 1) ;
    /* margin-left: 20px; */
-  
+  padding: 20px 60px;
+ 
   font-size: 20px;
   font-weight: 400;
   height: 72px;
-  max-width: 100%;
+  /* max-width: 100%; */
 
 }
+
+.headar_button a{
+ text-decoration: none;
+  color: rgb(12, 12, 12) ;
+}
+
 .Link{
   text-decoration: none;
     color:rgba(36, 36, 36, 1) ;;
@@ -64,7 +72,7 @@ padding: 20px 16px;
   .responsive_edit_icon
   {
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration-color:rgba(181, 145, 49, 1) ;
   color: rgba(181, 145, 49, 1);
   font-size: 14px;
   }
