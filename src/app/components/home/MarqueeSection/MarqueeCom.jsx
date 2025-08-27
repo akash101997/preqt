@@ -1,9 +1,10 @@
 "use client"
 // import React from 'react'
+
 import styles from './marqueeSection.module.css'
 import React, { useEffect, useRef } from "react";
 
-const MarqueeSection = () => {
+const MarqueeCom = () => {
 
     const marqueeRef = useRef();
     
@@ -109,4 +110,4 @@ const MarqueeSection = () => {
     )
 }
 
-export default MarqueeSection;
+export default MarqueeCom;

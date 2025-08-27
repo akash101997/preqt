@@ -10,6 +10,7 @@
 .marqueeSection {
     min-height: 32px;
     overflow: hidden;
+      white-space: nowrap;
     width: 100%;
 }
 
@@ -17,23 +18,13 @@
     display: flex;
     align-items: center;
     gap: 80px;
-    /* white-space: nowrap; */
-    /* animation: marqueeScroll var(--marquee-duration, 15s) linear infinite; */
-    animation: marquee 10s linear infinite;
+    animation: marquee 12s linear infinite;
     animation-iteration-count: infinite;
     animation-timing-function: ease-out;
     width:100%;
 }
 
-/* Infinite scroll animation */
-/* @keyframes marqueeScroll {
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(var(--marquee-distance, -50%));
-    }
-} */
+
  @keyframes marquee {
   0%   { transform: translateX(0%); }
   100% { transform: translateX(-100%); }

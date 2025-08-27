@@ -1,10 +1,10 @@
 .account_details {
   font-family: Helvetica, sans-serif;
   display: flex;
-
+/* max-height: 941px; */
   border-radius: 24px;
   /* margin-top: 60px; */
-
+ position: sticky;
   justify-content: center;
   background-color: rgba(255, 255, 255, 1);
   font-family: helvetica;
@@ -23,7 +23,7 @@
   min-width: 320px;
   background: rgba(255, 255, 255, 1);
   padding: 20px;
- min-height: 791px;
+ min-height: 843px;
   border-radius: 12px;
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
@@ -74,7 +74,6 @@
 .item {
   display: flex;
   font-size: 15px;
-
   font-weight: 400;
   align-items: center;
   padding: 12px 16px;
@@ -84,8 +83,20 @@
   cursor: pointer;
 
 }
+.item span{
+  margin-left: 10px;
+}
+.item .user_icon{
+  color: #b89027;
+}
 
-.item:hover {
+/* .item .user_icon:hover{
+  color: rgba(255, 255, 255, 1); */
+
+
+
+.item:hover,
+.item .user_icon:hover {
   background: rgba(201, 167, 78, 1);
   color: rgba(255, 255, 255, 1);
 }
@@ -97,13 +108,10 @@
 }
 
 
-.icon,
-.user_icon {
 
+/* .user_icon {
   margin-right: 10px;
-
-
-}
+} */
 
 
 .logout {
@@ -111,7 +119,7 @@
   bottom: 12px;
   font-size: 15px;
   font-weight: 400;
-  margin-top: 40px;
+  margin-top: 10px;
   padding: 12px 16px;
   border-radius: 30px;
   color:  rgba(107, 114, 128, 1);
@@ -129,6 +137,15 @@
   background-color: rgba(229, 231, 235, 1);
   height: 1px;
 }
+.lagout_hr{  
+  position: relative;
+  bottom: -120px;
+  /* margin-top: 25px; */
+  border: none;
+  background-color: rgba(229, 231, 235, 1);
+  height: 1px;
+  
+}
 
 .line {
   display: none;
@@ -140,7 +157,6 @@
 
 .responsive_btn {
   width: 90%;
-  justify-content: space-between;
   flex-direction: row;
   display: flex;
   align-items: center;
@@ -172,20 +188,22 @@
 
 }
 
-.item .span:hover {
+/* .item .span:hover {
   background: rgba(201, 167, 78, 1);
   transition: background 0.3s ease;
   color: rgba(255, 255, 255, 1);
+} */
+
+.item:hover,
+.item:focus-within {
+  color: white; /* svg + text become white */
+}
+.item:hover svg path{
+  fill:white;
 }
 
-.user_icon:hover {
-  color: aliceblue;
-}
 
-.item :hover {
-  color: rgba(255, 255, 255, 1);
 
-}
 
 @media (max-width: 480px) {
   .account_details {
@@ -235,5 +253,10 @@
 
   .hr {
     display: none;
+  }
+  .responsive_btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
