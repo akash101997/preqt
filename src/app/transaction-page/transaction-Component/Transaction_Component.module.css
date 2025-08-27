@@ -4,7 +4,7 @@
   margin: 0 auto;
   display: contents;
   padding: 30px;
-
+ /* height: 36px; */
   background-color: rgba(255, 255, 255, 1);
 }
 
@@ -48,7 +48,7 @@
   background: rgba(236, 236, 240, 1);
   color: rgba(36, 36, 36, 1);
   /* width: 28px; */
-  padding: 9px 13px;
+  padding: 6px 13px;
   border-radius: 8px;
   font-weight: 500;
   font-size: 12px;
@@ -187,7 +187,7 @@
 }
 
 /* 📱 Chhoti devices (500px se kam) */
-@media (max-width: 425px) {
+@media (max-width: 480px) {
   .heading {
     font-size: 20px;
   }

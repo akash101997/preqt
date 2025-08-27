@@ -50,7 +50,13 @@ export default function Otp({ onClose }) {
                 maxLength="1"
                 value={digit}
                 onChange={(e) => handleChange(e.target.value, index)}
+                  onKeyDown={(e) => {
+                 if (e.key === "Backspace" && !otp[index] && index > 0) {
+                 document.getElementById(`otp-${index - 1}`).focus();
+                 }
+  }}
               />
+              
             ))}
           </div>
           <div className={styles.timer}>

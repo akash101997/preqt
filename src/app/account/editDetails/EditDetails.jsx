@@ -66,6 +66,7 @@ export default function EditDetails({ isOpen, onClose }) {
               <input
                 className={styles.radioBtn}
                 type="radio"
+                style={{ accentColor: " rgba(177, 140, 7, 1)" }} 
                 name="investorType"
                 value="Retail Investor"
                 checked={form.investorType === "Retail Investor"}
@@ -77,6 +78,8 @@ export default function EditDetails({ isOpen, onClose }) {
               <input
                 className={styles.radioBtn}
                 type="radio"
+                style={{ accentColor: " rgba(177, 140, 7, 1)" }} 
+
                 name="investorType"
                 value="UHNI"
                 checked={form.investorType === "UHNI"}
@@ -89,6 +92,7 @@ export default function EditDetails({ isOpen, onClose }) {
 
                   className={styles.radioBtn}
                 type="radio"
+                style={{ accentColor: " rgba(177, 140, 7, 1)" }} 
                 name="investorType"
                 value="Family Office"
                 checked={form.investorType === "Family Office"}

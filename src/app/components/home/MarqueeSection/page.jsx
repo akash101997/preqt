@@ -1,8 +1,9 @@
 import React from 'react'
-import Details_Com from './Detalis_Com'
+import MarqueeCom from './Marqueecom'
+impo
 
 export default function page() {
   return (
-    <div><Details_Com/></div>
+    <div><MarqueeCom/></div>
   )
 }
