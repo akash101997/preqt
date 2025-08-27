@@ -6,7 +6,6 @@ import FAQSection from "./FAQSection/FAQSection";
 import Footer from "../../common/navBar/Footer";
 import MarqueeCom from "./MarqueeSection/MarqueeCom";
 // import React, { useEffect, useRef } from "react";
-// import MarqueeCom from "./MarqueeSection/Marqueecom";
 
 export default function home() {
 

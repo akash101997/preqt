@@ -3,14 +3,14 @@ import PostDealcontainer from './components/PostDealContainer/PostDealcontainer'
 import Footer from '../common/navBar/Footer'
 
 import React from 'react'
-import MarqueeSection from '../components/home/MarqueeSection/MarqueeCom'
+import MarqueeCom from '../components/home/MarqueeSection/MarqueeCom'
 
 const community = () => {
   return (
     
     <div>
       <NavBar />
-      <MarqueeSection/>
+      <MarqueeCom/>
       <PostDealcontainer/>
       <Footer/>
     </div>
