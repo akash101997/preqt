@@ -1,7 +1,7 @@
 "use client"
 // import React from 'react'
 
-import styles from './MarqueeSection.module.css'
+import styles from './marqueeSection.module.css'
 import React, { useEffect, useRef } from "react";
 
 const MarqueeCom = () => {
