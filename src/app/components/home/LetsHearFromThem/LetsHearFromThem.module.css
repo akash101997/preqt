@@ -78,7 +78,7 @@
 }
 
 .testimonialvideo2{
-    width: 180px;
+    width: 240px;
     height: 300px;
     /* border: 1px solid black; */
     display: flex;
@@ -87,7 +87,7 @@
     border-bottom-left-radius: 20px;
 }
 .videoTitle2{
-    width: 150px;
+    width: 160px;
     height: 165px;
     position: relative;
     top: 35px;

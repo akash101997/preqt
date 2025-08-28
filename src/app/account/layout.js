@@ -45,57 +45,24 @@ export default function layout({ children }) {
 
     return "My Account";
   };
-
-
-  
-
-
   return (
-
-
-
-    <div className={styles.mainaccount_layout}>
-      
-
-
+    <div className={styles.mainaccount_layout}> 
       <div className={styles.navbar}>
         <NavBar />
       </div>
       <div className={styles.headar_button}>
-        {/* <Link href="">Home</Link>
-        <Link href="">Profile</Link> */}
-        
-       
-
         <BreadCrumbs/>
-      
       </div>
       <div className={styles.arrow}>
-        {/* <Link className={styles.Link} href="/account"><img src="/account_sidenav/arrow icon.svg" alt="" />
-        <span className={styles.arrow_heading}>{getTitle()}</span></Link> */}
-
-
-          <button  className={styles.menuBtn}
-        onClick={() => setSidebarOpen(!sidebaropen)}
-      >
-        ☰
-      </button>
-
-      <div className={`${styles.sidebars} ${sidebaropen ? styles.sidebaropen : ""}`}>
-        <Sidenav/>
-                </div>
-           {sidebaropen && (
-        <div
-          className={styles.overlays}
-          onClick={() => setSidebarOpen(false)}
-        ></div>
-      )}
-
-        <div className={styles.edit_icon}>
-
-
+        <div>
           
-          {/* <Link href="" className={styles.a} onClick={() => setShowEditModal(true)}><div className={styles.responsive_edit_icon}>Edit</div></Link> */}
+        <Link className={styles.Link} href="/account"><img src="/account_sidenav/arrow icon.svg" alt="" />
+       </Link> <span className={styles.arrow_heading}>{getTitle()}</span>
+       </div>
+        <div className={styles.edit_icon}>   
+            {pathname === "/account/details" && (   
+          <Link href="" className={styles.a} onClick={() => setShowEditModal(true)}><div className={styles.responsive_edit_icon}>Edit</div></Link>
+            )}
           <EditDetails
             isOpen={showeditModal}
             onClose={() => setShowEditModal(false)}
@@ -103,17 +70,14 @@ export default function layout({ children }) {
         </div>
       </div>
       <div className={styles.account_layout}>
-
-      
-
-        <div className={styles.sidebar}>  <Sidenav/></div>          
-      
-
-
-  
-        <div style={{ maxWidth: '936px', width: '100%',height:'843px', overflow:'scroll',scrollbarWidth:'none' }}>
-       
-
+        <div className={styles.sidebar}>  <Sidenav/></div>            
+        <div style={{
+           maxWidth: '936px',
+            width: '100%',
+            height:'843px',
+             overflow:'scroll',
+             scrollbarWidth:'none'
+              }}>
           {children}
         </div>
       </div>

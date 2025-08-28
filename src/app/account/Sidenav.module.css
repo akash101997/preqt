@@ -181,12 +181,15 @@
 }
 
 
-.logout:hover {
-  background: rgba(201, 167, 78, 1);
-  color: rgba(255, 255, 255, 1);
-
-
+.logout:hover svg path{
+ fill: white;
+ margin-right: 10px;
 }
+.logout:hover{
+  color: white;
+  background-color: rgba(201, 167, 78, 1);
+}
+
 
 /* .item .span:hover {
   background: rgba(201, 167, 78, 1);
@@ -202,6 +205,10 @@
   fill:white;
 }
 
+.span{
+  margin-left: 10px;
+}
+
 
 
 
@@ -211,6 +218,9 @@
 
     width: 100%;
 
+  }
+  .item:hover{
+    display: none;
   }
 
   .sidebar {

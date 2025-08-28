@@ -13,7 +13,6 @@ export default function NavBar() {
     const toggleMenu = () => {
         setMenuOpen(!menuOpen)
     }
-
     useEffect(() => {
         if (menuOpen) {
             // Prevent background scroll when menu is open
@@ -36,9 +35,7 @@ export default function NavBar() {
                 <article className={styles.mainNavContainer}>
                     {/* hamburger */}
                     <div className={`${styles.hamburger} ${menuOpen ? styles.active : ''}`} onClick={toggleMenu}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        ☰
                     </div>
 
                     {/* logo */}
@@ -57,16 +54,23 @@ export default function NavBar() {
                 <div className={styles.openedSideMenu}>
                     {/* menu */}
                     <div className={styles.menuContainer}>
-                        {/* logo and X button */}
-                        <div className={styles.logoAndCrossBtnContainer}>
-                            {/* logo */}
-                            <img src="/assets/pictures/logo.png" alt="logo" className={styles.logoImg2} />
-
-                            {/* cross btn */}
+                        
                             <img src="/assets/pictures/crossBtn.svg" alt="" />
-                        </div>
+                        {/* logo and X button */}
+                     
 
-                        <Link className={styles.homeNavButton} href='/'>
+                       <div className={styles.menuContainer_main} >
+
+            
+        <div className={styles.profile}>
+          <div className={styles.avatar}>AM</div>
+          <div className={styles.avatardetails}>
+            <div className={styles.id}>CL273874</div>
+            <div className={styles.name}>Anjali Mishra</div>
+          </div>
+        </div>
+
+                         <Link className={styles.homeNavButton} href='/'>
                             <img src="/assets/pictures/home.svg" alt="" />
                             <div className={styles.homebtn}>Home</div>
                         </Link>
@@ -82,24 +86,24 @@ export default function NavBar() {
                             <img src="/assets/pictures/events.svg" alt="" />
                             <div className={styles.homebtn}>Events</div>
                         </Link>
-                        <Link className={styles.homeNavButton} href={'/account/details'}>
+                        <Link className={styles.homeNavButton} href={'/account'}>
                             <img src="/assets/pictures/account.svg" alt="" />
                             <div className={styles.homebtn}>Account</div>
-                        </Link>
+                        </Link></div>
 
                     </div>
 
                     {/* logout */}
                     <div className={styles.logoutContainerDiv}>
-                         <img src="/assets/pictures/login.svg" alt="" />
-                         <div className={styles.logout}>Log Out</div>
+                        <img src="/assets/pictures/login.svg" alt="" />
+                        <div className={styles.logout}>Log Out</div>
                     </div>
 
                 </div>
             </nav>
 
             <section className={styles.mainContainer}>
-                <img src="/assets/pictures/logo.png" alt="logo" className={styles.logo} />
+               <Link href='/'> <img src="/assets/pictures/logo.png" alt="logo" className={styles.logo} /></Link>
 
                 <div className={styles.navigationButtonContainer}>
                     <div className={styles.navigationButton}>

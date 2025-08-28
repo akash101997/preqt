@@ -38,44 +38,49 @@
 .HomeNavButton {
   display: flex;
   align-items: center;
+  letter-spacing: 0.3px;
   gap: 12px;
   text-decoration: none;
   padding: 8px 24px;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   font-size: 16px;
 
 }
 
 /* Hover effect (light gray, keep original colors) */
 .HomeNavButton:hover {
-  background-color: #f1f1f1;
+  
   /* light gray */
-  border-radius: 100px;
 }
 
 .HomeNavButton:hover .HomeIconImage {
-  filter: none;
+    filter: brightness(0) saturate(100%) invert(49%) sepia(91%) saturate(594%) hue-rotate(12deg) brightness(91%) contrast(91%);
   /* keep original icon color */
 }
 
 .HomeNavButton:hover .home {
-  color: #64748b;
+  color: #B59131;
   /* keep original text color */
 }
 
 /* Active effect (gradient + white text/icons) */
 .HomeNavButton.active {
-  border-radius: 100px;
-  background-image: linear-gradient(to bottom right, #fff2d0, #8e6b0f);
+  
+    border-bottom: 3px solid #B59131; 
+  /* background-image: linear-gradient(to bottom right, #fff2d0, #8e6b0f); */
 }
 
 .HomeNavButton.active .HomeIconImage {
-  filter: brightness(0) invert(1);
-  /* white icons */
+  /* filter: brightness(0) invert(1); */
+   filter: brightness(0) saturate(100%) invert(49%) sepia(91%) saturate(594%) hue-rotate(12deg) brightness(91%) contrast(91%);
+  
 }
 
 .HomeNavButton.active .home {
-  color: white;
+  color: #B59131;
+  /* text-decoration: underline;
+  text-underline-offset:6px ;
+  text-decoration-thickness: 2px; */
 }
 
 
@@ -174,11 +179,12 @@
   .mainContainer {
     padding: 12px 20px;
   }
-
-  .logo {
-    width: 120px;
-    height: 38px;
+  .menuContainer img{
+    height: 30px;
+    width: 30px;
   }
+
+
 
   .navigationButton {
     gap: 8px;
@@ -237,6 +243,8 @@
   }
 
   .hamburger {
+    font-size: 35px;
+    font-weight: 300;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -271,6 +279,7 @@
   }
 
   .openedSideMenu {
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -281,19 +290,66 @@
   }
 
   .menuContainer {
+   
+
     display: flex;
     flex-direction: column;
     gap: 32px;
     width: 60vw;
   }
+  .menuContainer_main{
+     /* border: 1px solid red; */
+     margin: 60px auto;
+     width: 55vw;
 
-  .logoAndCrossBtnContainer {
-    display: flex;
-    justify-content: space-between;
-    width: 70vw;
-    /* height: 100vh; */
-    align-items: center;
   }
+  
+
+  .profile {
+    background: linear-gradient(to bottom , #F3F4F6,#FFFFFF);
+    display: flex;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    flex-direction: row;
+    padding: 10px;
+    align-items: center;
+
+  }
+
+  .avatar {
+    height: 80px;
+    width: 80px;
+     background: #b89027;
+  color: white;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius:50% ;
+  justify-content: center;
+    font-size: 27px;
+    font-weight: 500;
+    margin: auto 20px;
+    border: 4px solid white;
+  }
+
+  .avatardetails {
+    margin-left: -10px;
+  }
+  .avatardetails .id {
+  font-weight: 500;
+  font-size: 20px;
+  color: rgba(31, 41, 55, 1);
+}
+
+.avatardetails .name {
+  color: rgba(107, 114, 128, 1);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+
+
 
   .homeNavButton {
     display: flex;
@@ -336,13 +392,13 @@
     /* Makes SVG white */
   }
   .homeNavButton:hover .homebtn {
-    color: white;
+    color:#B59131;
 }
 
 }
 
 /* ✅ NEW: Mobile 375px and similar screens - ICONS ONLY */
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .mainContainer {
     padding: 8px 12px;
   }
