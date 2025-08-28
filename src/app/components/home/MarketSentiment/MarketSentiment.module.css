@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     /* height: 1050px; */
-    max-width: 400px;
+    max-width: 550px;
     /* border: 1px solid black; */
     background-color: #F7F6F2;
     gap: 32px;
@@ -54,7 +54,7 @@
     font-size: 15px;
     line-height: 28px;
     color: #1F2937;
-    font-weight: lighter;
+    font-weight: 200;
 }
 
 .colorsGraph {
@@ -112,7 +112,28 @@
     background-color: #FFFFFF;
     align-items: center;
 
+      animation: shadowRotate 2s linear infinite;
 }
+
+@keyframes shadowRotate {
+  0% {
+    box-shadow: 2px 0px 2px #C9A74E;
+  }
+  25% {
+    box-shadow: 0px 2px 2px #C9A74E;
+  }
+  50% {
+    box-shadow: -2px 0px 2px #C9A74E;
+  }
+  75% {
+    box-shadow: 0px -2px 2px #C9A74E;
+  }
+  100% {
+    box-shadow: 2px 0px 2px #C9A74E;
+  }
+}
+
+
 
 .newDealsHeading {
     max-width: 171px;
@@ -123,11 +144,25 @@
 }
 
 .greenDot {
-    width: 10px;
-    height: 10px;
-    background-color: #16A34A;
-    border-radius: 100px;
+     width: 10px;
+  height: 10px;
+  background-color: #16A34A;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+  animation: blink 1.5s infinite;
 }
+
+@keyframes blink {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+    opacity: 0.8;
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 1);
+    opacity: 1;
+  }
+}
+
 
 .plusDeals {
     max-width: 153px;
@@ -179,7 +214,7 @@
     max-height: 24px;
     font-size: 15px;
     line-height: 24px;
-    font-weight: lighter;
+    font-weight: 200;
     color: #000000;
 }
 

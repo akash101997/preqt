@@ -25,7 +25,7 @@ const MarqueeCom = () => {
                         {/* First set of items */}
                         <div className={styles.marqueeItem}>
                             <div className={styles.NiftySection}>
-                                Nifty 50
+                                <p>Nifty 50</p>
                                 <span className={styles.NiftyPoints}>22,419.60</span>
                                 <span className={styles.spanedNiftySection}>-93.90 (0.42%)</span>
                             </div>
@@ -33,7 +33,7 @@ const MarqueeCom = () => {
 
                         <div className={styles.marqueeItem}>
                             <div className={styles.NiftySection}>
-                                BANK Nifty 50
+                               <p> BANK Nifty 50</p>
                                 <span className={styles.NiftyPoints}>22,419.60</span>
                                 <span className={styles.spanedNiftySections}>-93.90 (0.42%)</span>
                             </div>
@@ -41,7 +41,7 @@ const MarqueeCom = () => {
 
                         <div className={styles.marqueeItem}>
                             <div className={styles.NiftySection}>
-                                sensex
+                               <p> sensex</p>
                                 <span className={styles.NiftyPoints}>22,419.60</span>
                                 <span className={styles.spanedNiftySection}>-93.90 (0.42%)</span>
                             </div>
@@ -49,7 +49,7 @@ const MarqueeCom = () => {
 
                         <div className={styles.marqueeItem}>
                             <div className={styles.NiftySection}>
-                                finnifty
+                                <p>finnifty</p>
                                 <span className={styles.NiftyPoints}>22,419.60</span>
                                 <span className={styles.spanedNiftySection}>-93.90 (0.42%)</span>
                             </div>
@@ -57,7 +57,7 @@ const MarqueeCom = () => {
 
                         <div className={styles.marqueeItem}>
                             <div className={styles.NiftySection}>
-                                mid cap nifty
+                                <p>mid cap nifty</p>
                                 <span className={styles.NiftyPoints}>22,419.60</span>
                                 <span className={styles.spanedNiftySections}>-93.90 (0.42%)</span>
                             </div>
@@ -66,7 +66,7 @@ const MarqueeCom = () => {
                         {/* Duplicate set for seamless loop */}
                         <div className={styles.marqueeItem}>
                             <div className={styles.NiftySection}>
-                                Nifty 50
+                               <p> Nifty 50</p>
                                 <span className={styles.NiftyPoints}>22,419.60</span>
                                 <span className={styles.spanedNiftySection}>-93.90 (0.42%)</span>
                             </div>
@@ -74,7 +74,7 @@ const MarqueeCom = () => {
 
                         <div className={styles.marqueeItem}>
                             <div className={styles.NiftySection}>
-                                BANK Nifty 50
+                               <p> BANK Nifty 50</p>
                                 <span className={styles.NiftyPoints}>22,419.60</span>
                                 <span className={styles.spanedNiftySections}>-93.90 (0.42%)</span>
                             </div>
@@ -82,7 +82,7 @@ const MarqueeCom = () => {
 
                         <div className={styles.marqueeItem}>
                             <div className={styles.NiftySection}>
-                                sensex
+                                <p>sensex</p>
                                 <span className={styles.NiftyPoints}>22,419.60</span>
                                 <span className={styles.spanedNiftySection}>-93.90 (0.42%)</span>
                             </div>
@@ -90,7 +90,7 @@ const MarqueeCom = () => {
 
                         <div className={styles.marqueeItem}>
                             <div className={styles.NiftySection}>
-                                finnifty
+                               <p> finnifty</p>
                                 <span className={styles.NiftyPoints}>22,419.60</span>
                                 <span className={styles.spanedNiftySections}>-93.90 (0.42%)</span>
                             </div>
@@ -98,7 +98,7 @@ const MarqueeCom = () => {
 
                         <div className={styles.marqueeItem}>
                             <div className={styles.NiftySection}>
-                                mid cap nifty
+                                <p> mid cap nifty</p>
                                 <span className={styles.NiftyPoints}>22,419.60</span>
                                 <span className={styles.spanedNiftySection}>-93.90 (0.42%)</span>
                             </div>

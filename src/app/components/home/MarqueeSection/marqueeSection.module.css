@@ -36,19 +36,21 @@
     flex-shrink: 0;
 }
 
-.NiftySection {
+.NiftySection p{
     display: inline-flex;
     align-items: center;
     gap: 5px;
+    margin: 0;
     width: max-content;
     color: #6B7280;
     font-family: 'Inter';
     font-weight: 400;
+    font-size: 12px;
     text-transform: uppercase;
 }
 
 .NiftyPoints {
-    font-weight: bold;
+    font-weight: 700;
     font-size: 12px;
     margin-left: 5px;
     color: #111827;
