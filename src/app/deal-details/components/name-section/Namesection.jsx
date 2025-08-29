@@ -5,6 +5,7 @@ import FAQSection from "@/app/components/home/FAQSection/FAQSection";
 
 import "./namesection.css";
 
+import Accountfooter from '@/app/account/footer/Accountfooter'
 import NavBar from "@/app/common/navBar/NavBar";
 import Footer from "@/app/common/navBar/Footer";
 import Customnavbar from "../customnavbarsection/customnavbar";
@@ -445,6 +446,7 @@ const Namedetailsection = () => {
       </div>
       {/* <Questions /> */}
       <FAQSection />
+      <Accountfooter/>
       <Footer />
     </div>
   );
