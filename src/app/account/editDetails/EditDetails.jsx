@@ -1,8 +1,13 @@
 "use client";
+import ChangePhone from "../modal-change-phone/ChangePhone";
+import ChangeEmail from "../modal-change-email/ChangeEmail";
 import styles from "./page.module.css";
 import { useState } from "react";
 
 export default function EditDetails({ isOpen, onClose }) {
+
+   const [showphoneModal, setShowPhoneModal] = useState(false);
+    const [showemailModal, setShowEmailModal] = useState(false);
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -57,6 +62,38 @@ export default function EditDetails({ isOpen, onClose }) {
             onChange={handleChange}
           />
         </div>
+
+
+       <div className={styles.form_details}> <div className={styles.email}>
+          <div className={styles.heading}>Email</div>
+          <div className={styles.emailChange}>
+          <div className={styles.value}>anjli.mishra@example.com</div>
+          <a className={styles.Link} onClick={() => setShowEmailModal(true)}>change </a>
+          <ChangeEmail
+            isOpen={showemailModal}
+            onClose={() => setShowEmailModal(false)}
+          />
+          </div>
+
+        </div>
+
+        <div className={styles.hr}></div>
+
+
+        <div className={styles.mobile}>
+          <div className={styles.heading}>Mobile Number</div>
+          <div className={styles.mobileChange}>
+          <div className={styles.value}>68234034022</div>
+          <a className={styles.Link} onClick={() => setShowPhoneModal(true)}>change </a>
+          <ChangePhone      
+            isOpen={showphoneModal}
+            onClose={() => setShowPhoneModal(false)}
+          />
+          </div>
+        </div></div>
+
+        <div className={styles.hr}></div>
+
 
         {/* Investor Type */}
         <div className={styles.inputGroup}>

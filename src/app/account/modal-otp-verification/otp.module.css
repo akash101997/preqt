@@ -135,3 +135,23 @@
 .continueBtn:hover{
     background-color: rgba(201, 167, 78, 1) ;
 }
+
+@media(max-width:480px){
+  .overlay{
+      position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 0;
+
+  }
+  .modal{
+  border-radius:32px 32px 0px 0px;
+    
+      /* border-bottom-left-radius: none;
+  border-bottom-right-radius: none; */
+  }
+  
+}

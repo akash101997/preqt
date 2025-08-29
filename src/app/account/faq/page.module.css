@@ -1,10 +1,12 @@
 .container {
   max-width: 936px;
+  height: 843px;
+
   /* margin: 60px auto; */
   /* margin-top: 60px; */
   padding: 32px;
   border-radius: 24px;
-    background-color: #fdfdfd;
+    background-color: #FFFFFF;
 }
 
 .heading {
@@ -15,7 +17,6 @@
 
 .divider {
   border-bottom: 1px solid #ddd;
-
   margin-bottom: 20px;
 }
 

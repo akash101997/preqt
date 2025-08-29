@@ -395,8 +395,8 @@ const AiIpoOverview = () => {
 
         <section className="main-other">
           <section className="others">
-            <h6>Merchant Banker Appointed</h6>
-            <span>Axis Capital</span>
+            <h6>Company Website</h6>
+            <span> <a href="">www.zylutech.in</a></span>
           </section>
         </section>
       </section>

@@ -1,7 +1,7 @@
 .testimonailMainContainer{
     display: flex;
     flex-direction: column;
-    height: 360px;
+    height: 451px;
     /* max-width: 1020px;
     width: 100%; */
 
@@ -15,21 +15,21 @@
     width: 100%;
     font-family: Helvetica;
     font-size: 25px;
-    font-weight: 300;
+    font-weight: 200;
     line-height: 36.26px;
     letter-spacing: 0%;
     color: #1F2937;
 }
 .videoTestimonialSection{
-    height: 300px;
+    height: 393px;
     width: 100%;
     gap: 20px;
     /* width: 100%; */
-    overflow-x: auto;
+    /* overflow-x: auto; */
     /* border: 1px solid black; */
     display: flex;
-
-    overflow-y: auto;           /* enable internal scrolling */
+ overflow: scroll;
+    /* overflow-y: auto;          */
     scrollbar-width: none; 
 }
 .videoTestimonialSection::-webkit-scrollbar {
@@ -37,7 +37,8 @@
 }
 .testimonialCard{
     width: 450px;
-    /* height: 300px; */
+
+    height: 393px;
     /* border: 1px solid black; */
     border-radius: 0 25.9px 25.9px 25.9px;
     background-color: #F7F6F2;
@@ -79,19 +80,23 @@
 
 .testimonialvideo2{
     width: 240px;
-    height: 300px;
+    height: 393px;
     /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     object-fit: cover;
     border-bottom-left-radius: 20px;
 }
+.titleContainer{
+    /* height: 393px; */
+    width: 260px;
+}
 .videoTitle2{
-    width: 160px;
+    width: 163px;
     height: 165px;
     position: relative;
     top: 35px;
-    font-size: 20px;
+    font-size: 27px;
     line-height: 100%;
     letter-spacing: 0%;
     color: #000000;
@@ -102,7 +107,7 @@
     width: 105px;
     height: 44px;
     position: relative;
-    top: 60px;
+    top: 150px;
     left: 21px;
 }
 .spanTitleBy2{

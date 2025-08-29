@@ -38,7 +38,7 @@
 .formContainer{
   border: 1px solid rgba(229, 231, 235, 1);
   margin-top: 24px;
-  height: 538px;
+  height: 638px;
   padding:0px 24px;
   border-radius: 20px;
 }
@@ -91,7 +91,7 @@
   border-radius: 6px;
   padding: 15px;
   font-size: 13px;
-  height: 310px;
+  height: 410px;
   resize: none;
   outline: none;
 }

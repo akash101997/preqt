@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Ipotimeline = ({ handleAskAI}) => {
@@ -174,6 +175,14 @@ const Ipotimeline = ({ handleAskAI}) => {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="view-details-btn">
+            <div className="left-div">
+               <div className="greenDot"></div>
+            <p>we have 15+ new deals</p>
+            </div>
+            <Link className="link" href="">View All Deals</Link>
+
           </div>
         </div>
       </div>

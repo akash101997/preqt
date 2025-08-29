@@ -16,7 +16,7 @@
   border-radius: 24px;
   width: 500px;
   position: relative;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);  
 }
 .headar{
  padding: 26px;
@@ -113,4 +113,24 @@
   
   
 
+}
+@media(max-width:480px){
+  .overlay{
+   max-width:  500px;
+      position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 0;
+
+  }
+  .modal{
+  border-radius:32px 32px 0px 0px;
+    
+      /* border-bottom-left-radius: none;
+  border-bottom-right-radius: none; */
+  }
+  
 }

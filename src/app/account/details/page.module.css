@@ -3,7 +3,7 @@
   /* border: 1px solid red; */
   /* height: 850px; */
   background-color: rgba(255, 255, 255, 1);
-  border-radius: 24px;
+  border-radius: 54px;
   padding: 32px;
   
 
@@ -21,7 +21,7 @@
   height: 44px;
   width: 44px;
   border-radius: 50%;
-  background-color: rgba(243, 244, 246, 1);
+  background-color: #EBEBE5;
   justify-content: center;
   display: flex;
   margin-bottom: 20px;
@@ -108,8 +108,7 @@
 .emailChange {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-
+  align-items: center; 
 }
 
 

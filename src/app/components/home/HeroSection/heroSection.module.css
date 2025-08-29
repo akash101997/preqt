@@ -10,7 +10,8 @@
     gap: 0px;
     background-color: #FFFFFF;
     box-sizing: border-box;
-    justify-content: space-evenly;    
+    gap: 20px;
+    justify-content: center;    
 }
 
 .heroFrame {

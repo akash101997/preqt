@@ -12,23 +12,22 @@
 }
 .DealsTalkHeading{
     font-weight: 100;
-    font-size: 20px;
+    font-size: 32px;
     line-height: 100%;
     letter-spacing: 0%;
     text-transform: capitalize;
-    width: 340px;
+    width: 540px;
     height: 38px;
     letter-spacing: 0;
     color: #1F2937;
 }
 .SpanDealsTalkHeading{
-    font-weight: 600;
+    font-weight: 300;
 }
 
 .DealsTalkCardContainer{
     height: 500px;
-    /* max-width: 1020px; */
-    /* margin: 0 auto; */
+
     display: flex;
     gap:24px;
     /* border: 1px solid black; */
