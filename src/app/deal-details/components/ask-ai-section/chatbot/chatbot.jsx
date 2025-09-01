@@ -20,7 +20,7 @@ const Chatbot = ({ handleAskAI })=> {
             stroke="black"
             strokeWidth="2"
             strokeLinecap="round"
-            strokeLinejoin="round"
+            strokeLinejoin="round" 
           />
           <path
             d="M19 12H5"

@@ -91,7 +91,7 @@ const Ipotimeline = ({ handleAskAI ,handleQuesAns}) => {
               alt="gif"
             />
           </span>
-        </button>
+        </button> 
 
         <div className="ipo-timeline-section">
           <h3>IPO Timeline</h3>
