@@ -16,7 +16,7 @@
 .marqueeContent {
     display: flex;
     align-items: center;
-    gap: 80px;
+    gap: 50px;
     width: 100%;
     /* Animation will be applied via JavaScript after content loads */
 }

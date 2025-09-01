@@ -10,7 +10,7 @@ export default function Footer() {
                 <div className={styles.upperFooter}>
                     {/* left logo part */}
                     <article>
-                        <img src="/assets/pictures/footer_logo.png" alt="" className={styles.footerImage} />
+                        <img src="/assets/pictures/footer_logo.svg" alt="" className={styles.footerImage} />
                     </article>
 
                     {/* right content part */}

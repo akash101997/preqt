@@ -1,56 +1,264 @@
 "use client";
 import styles from "./DealsTalk.module.css";
-import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React, { useRef } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export default function DealsTalk() {
+    const swiperRef = useRef(null);
 
     // Custom arrow components
-    const NextArrow = ({ onClick }) => (
-        <div className={styles.customNextArrow} onClick={onClick}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 18L15 12L9 6" stroke="#1e90ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-        </div>
-    );
-
-    const PrevArrow = ({ onClick }) => (
-        <div className={styles.customPrevArrow} onClick={onClick}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 18L9 12L15 6" stroke="#1e90ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-        </div>
-    );
-
-    // In your component file
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        nextArrow: <NextArrow />,
-        // prevArrow: <PrevArrow />,
-        // arrows: true,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
+    const NextArrow = () => (
+        <div 
+            className={styles.customNextArrow} 
+            onClick={() => {
+                if (swiperRef.current && swiperRef.current.swiper) {
+                    swiperRef.current.swiper.slideNext();
                 }
+            }}
+        >
+         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+  <path d="M9 18.168L15 12.168L9 6.16797" stroke="#7E60FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+        </div>
+    );
+
+    const dealsData = [
+        {
+            id: 1,
+            type: "IPO- SME",
+            category: "Healthcare",
+            companyLogo: "/assets/pictures/Anthem.png",
+            companyName: "Anthem Biosciences Ltd",
+            description: "India's leading CRDMO with global clientele and 25%+ YoY revenue growth",
+            stats: {
+                revenue: "₹1,400 Cr",
+                pat: "₹140Cr",
+                patMultiple: "₹1,41 Cr (24.7%)",
+                cagrGrowth: "340%",
+                roe: "₹387 to ₹387",
+                issueDate: "21-05-2026"
             },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    };
+            merchantBanker: "Merchant Banker: Axis Capital"
+        },
+        {
+            id: 2,
+            type: "IPO- SME",
+            category: "Healthcare",
+            companyLogo: "/assets/pictures/parthElectrical.png",
+            companyName: "Parth Electricals & Engineering Limited",
+            description: "India's fastest-growing EV infra player with 2.4x YoY revenue growth",
+            stats: {
+                revenue: "₹2,400 Cr",
+                revenue2: "₹1,400Cr",
+                expectedListing: "1.2 yr",
+                pat: "₹24 Cr",
+                peMultiple: "21.6x"
+            },
+            progress: {
+                current: "1.5 Cr / 2 Cr",
+                percentage: "94%"
+            },
+            tags: ["Strong promoter", "Clear Monetization", "Fund Participating"]
+        },
+        {
+            id: 3,
+            type: "IPO- SME",
+            category: "Healthcare",
+            companyLogo: "/assets/pictures/parthElectrical.png",
+            companyName: "Parth Electricals & Engineering Limited",
+            description: "India's fastest-growing EV infra player with 2.4x YoY revenue growth",
+            stats: {
+                revenue: "₹2,400 Cr",
+                revenue2: "₹1,400Cr",
+                expectedListing: "1.2 yr",
+                pat: "₹24 Cr",
+                peMultiple: "21.6x"
+            },
+            progress: {
+                current: "1.5 Cr / 2 Cr",
+                percentage: "94%"
+            },
+            tags: ["Strong promoter", "Clear Monetization", "Fund Participating"]
+        },
+        {
+            id: 4,
+            type: "IPO- SME",
+            category: "Healthcare",
+            companyLogo: "/assets/pictures/parthElectrical.png",
+            companyName: "Parth Electricals & Engineering Limited",
+            description: "India's fastest-growing EV infra player with 2.4x YoY revenue growth",
+            stats: {
+                revenue: "₹2,400 Cr",
+                revenue2: "₹1,400Cr",
+                expectedListing: "1.2 yr",
+                pat: "₹24 Cr",
+                peMultiple: "21.6x"
+            },
+            progress: {
+                current: "1.5 Cr / 2 Cr",
+                percentage: "94%"
+            },
+            tags: ["Strong promoter", "Clear Monetization", "Fund Participating"]
+        }
+    ];
+
+    const renderCard1 = (deal) => (
+        <div className={styles.cardContainer1}>
+            <div className={styles.cardInnerSections}>
+                <article className={styles.cardIPOsection}>
+                    <div className={styles.IPOheading}>
+                        <p className={styles.HeadingContent}>{deal.type}</p>
+                    </div>
+                    <div className={styles.IPOheading}>
+                        <p className={styles.HeadingContent}>{deal.category}</p>
+                    </div>
+                </article>
+
+                <div className={styles.AnthemSection}>
+                    <img src={deal.companyLogo} alt="" className={styles.anthemPicture} />
+                    <p className={styles.anthemHeading}>{deal.companyName}</p>
+                </div>
+
+                <p className={styles.dealCardContent}>{deal.description}</p>
+
+                <div className={styles.revenueMainContainer}>
+                    <section className={styles.revenueSection}>
+                        <article className={styles.Revenue}>
+                            <p className={styles.revenuHeading}>Revenue</p>
+                            <p className={styles.priceInRupee}>{deal.stats.revenue}</p>
+                        </article>
+                        <article>
+                            <p className={styles.revenuHeading}>PAT</p>
+                            <p className={styles.priceInRupee}>{deal.stats.pat}</p>
+                        </article>
+                        <article>
+                            <p className={styles.revenuHeading}>PAT multiple</p>
+                            <p className={styles.priceInRupee}>{deal.stats.patMultiple}</p>
+                        </article>
+                    </section>
+
+                    <section className={styles.revenueSection}>
+                        <article className={styles.Revenue}>
+                            <p className={styles.revenuHeading}>CAGR Growth 3Y</p>
+                            <p className={styles.priceInRupee}>{deal.stats.cagrGrowth}</p>
+                        </article>
+                        <article>
+                            <p className={styles.revenuHeading}>ROE</p>
+                            <p className={styles.priceInRupee}>{deal.stats.roe}</p>
+                        </article>
+                        <article>
+                            <p className={styles.revenuHeading}>Issue Opening Date</p>
+                            <p className={styles.priceInRupee}>{deal.stats.issueDate}</p>
+                        </article>
+                    </section>
+                </div>
+
+                <section className={styles.merchantMainContainer}>
+                    <div className={styles.merchantBanker}>
+                        <p className={styles.bankMerchant}>{deal.merchantBanker}</p>
+                    </div>
+                </section>
+            </div>
+
+            <div className={styles.cardFooterMainContainer}>
+                <div className={styles.QandA}>
+                    <div className={styles.QandAstats}>23 Q&A answered in last 3 days </div>
+                    <div className={styles.usersIcons}>
+                        <img src="assets/pictures/userImage1.png" alt="" className={styles.userImages} />
+                        <img src="assets/pictures/userImage2.png" alt="" className={styles.userImages} />
+                        <img src="assets/pictures/userImage3.png" alt="" className={styles.userImages} />
+                        <img src="assets/pictures/userImage4.png" alt="" className={styles.userImages} />
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+
+    const renderCard2 = (deal) => (
+        <div className={styles.card2Container}>
+            <div className={styles.card2InnerSections}>
+                <article className={styles.card2IPOsection}>
+                    <div className={styles.card2IPOtag}>
+                        <p className={styles.card2IPOtext}>{deal.type}</p>
+                    </div>
+                    <div className={styles.card2IPOtag}>
+                        <p className={styles.card2IPOtext}>{deal.category}</p>
+                    </div>
+                </article>
+
+                <div className={styles.card2CompanySection}>
+                    <img src={deal.companyLogo} alt="" className={styles.card2CompanyLogo} />
+                    <p className={styles.card2CompanyName}>{deal.companyName}</p>
+                </div>
+
+                <p className={styles.card2Description}>{deal.description}</p>
+
+                <div className={styles.card2StatsContainer}>
+                    <section className={styles.card2StatsRow}>
+                        <article className={styles.card2Stat}>
+                            <p className={styles.card2StatHeading}>Revenue</p>
+                            <p className={styles.card2StatValue}>{deal.stats.revenue}</p>
+                        </article>
+                        <article className={styles.card2Stat}>
+                            <p className={styles.card2StatHeading}>Revenue</p>
+                            <p className={styles.card2StatValue}>{deal.stats.revenue2}</p>
+                        </article>
+                        <article className={styles.card2Stat}>
+                            <p className={styles.card2StatHeading}>Expected listing </p>
+                            <p className={styles.card2StatValue}>{deal.stats.expectedListing}</p>
+                        </article>
+                    </section>
+
+                    <section className={styles.card2StatsRow}>
+                        <article className={styles.card2Stat}>
+                            <p className={styles.card2StatHeading}>PAT</p>
+                            <p className={styles.card2StatValue}>{deal.stats.pat}</p>
+                        </article>
+                        <article className={styles.card2Stat}>
+                            <p className={styles.card2StatHeading}>P/E Multiple</p>
+                            <p className={styles.card2StatValue}>{deal.stats.peMultiple}</p>
+                        </article>
+                    </section>
+                </div>
+
+                <div className={styles.progressContainer}>
+                    <div className={styles.ProgressInPrice}>
+                        <p className={styles.PriceIncr}>{deal.progress.current}</p>
+                        <p className={styles.PricePercent}>{deal.progress.percentage}</p>
+                    </div>
+                    <img src="/assets/pictures/PriceProgressBar.svg" alt="" />
+                </div>
+
+                <div className={styles.promoter}>
+                    {deal.tags.map((tag, index) => (
+                        <div key={index} className={index === 0 ? styles.Strong : styles.monetization}>
+                            <p>{tag}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            <div className={styles.card2Footer}>
+                <div className={styles.card2QandA}>
+                    <div className={styles.card2QandAStats}>23 Q&A answered in last 3 days</div>
+                    <div className={styles.card2UserIcons}>
+                        <img src="assets/pictures/userImage1.png" alt="" className={styles.card2UserImage} />
+                        <img src="assets/pictures/userImage2.png" alt="" className={styles.card2UserImage} />
+                        <img src="assets/pictures/userImage3.png" alt="" className={styles.card2UserImage} />
+                        <img src="assets/pictures/userImage4.png" alt="" className={styles.card2UserImage} />
+                    </div>
+                </div>
+            </div>
+
+            <img src="/assets/pictures/star.svg" alt="" className={styles.starImage} />
+        </div>
+    );
 
     return (
         <section className={styles.DealsTalkMainContainer}>
@@ -59,372 +267,45 @@ export default function DealsTalk() {
             </div>
 
             <div className={styles.carouselWrapper}>
-                <Slider {...settings} className={styles.slider}>
-                    {/* Card 1 */}
-                    <div className={styles.cardContainer1}>
-                        <div className={styles.cardInnerSections}>
-                            <article className={styles.cardIPOsection}>
-                                <div className={styles.IPOheading}>
-                                    <p className={styles.HeadingContent}>IPO- SME</p>
-                                </div>
-                                <div className={styles.IPOheading}>
-                                    <p className={styles.HeadingContent}>Healthcare</p>
-                                </div>
-                            </article>
-
-                            <div className={styles.AnthemSection}>
-                                <img src="/assets/pictures/Anthem.png" alt="" className={styles.anthemPicture} />
-                                <p className={styles.anthemHeading}>Anthem Biosciences Ltd</p>
-                            </div>
-
-                            <p className={styles.dealCardContent}>
-                                India's leading CRDMO with global clientele and 25%+ YoY revenue growth
-                            </p>
-
-                            <div className={styles.revenueMainContainer}>
-                                <section className={styles.revenueSection}>
-                                    <article className={styles.Revenue}>
-                                        <p className={styles.revenuHeading}>Revenue</p>
-                                        <p className={styles.priceInRupee}>₹1,400 Cr</p>
-                                    </article>
-                                    <article>
-                                        <p className={styles.revenuHeading}>PAT</p>
-                                        <p className={styles.priceInRupee}>₹140Cr</p>
-                                    </article>
-                                    <article>
-                                        <p className={styles.revenuHeading}>PAT multiple</p>
-                                        <p className={styles.priceInRupee}>₹1,41 Cr (24.7%)</p>
-                                    </article>
-                                </section>
-
-                                <section className={styles.revenueSection}>
-                                    <article className={styles.Revenue}>
-                                        <p className={styles.revenuHeading}>CAGR Growth 3Y</p>
-                                        <p className={styles.priceInRupee}>340%</p>
-                                    </article>
-                                    <article>
-                                        <p className={styles.revenuHeading}>ROE</p>
-                                        <p className={styles.priceInRupee}>₹387 to ₹387 </p>
-                                    </article>
-                                    <article>
-                                        <p className={styles.revenuHeading}>Issue Opening Date</p>
-                                        <p className={styles.priceInRupee}>21-05-2026</p>
-                                    </article>
-                                </section>
-                            </div>
-
-                            <section className={styles.merchantMainContainer}>
-                                <div className={styles.merchantBanker}>
-                                    <p className={styles.bankMerchant}>Merchant Banker: Axis Capital</p>
-                                </div>
-                            </section>
-                        </div>
-
-                        <div className={styles.cardFooterMainContainer}>
-                            <div className={styles.QandA}>
-                                <div className={styles.QandAstats}>23 Q&A answered in last 3 days </div>
-                                <div className={styles.usersIcons}>
-                                    <img src="assets/pictures/userImage1.png" alt="" className={styles.userImages} />
-                                    <img src="assets/pictures/userImage2.png" alt="" className={styles.userImages} />
-                                    <img src="assets/pictures/userImage3.png" alt="" className={styles.userImages} />
-                                    <img src="assets/pictures/userImage4.png" alt="" className={styles.userImages} />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Add more cards here as needed */}
-                    {/* card 2 */}
-                    < div className={styles.card2Container}>
-                        <div className={styles.card2InnerSections}>
-                            {/* IPO Section */}
-                            <article className={styles.card2IPOsection}>
-                                <div className={styles.card2IPOtag}>
-                                    <p className={styles.card2IPOtext}>IPO- SME</p>
-                                </div>
-                                <div className={styles.card2IPOtag}>
-                                    <p className={styles.card2IPOtext}>Healthcare</p>
-                                </div>
-                            </article>
-
-                            {/* Anthem Section */}
-                            <div className={styles.card2CompanySection}>
-                                <img src="/assets/pictures/parthElectrical.png" alt="" className={styles.card2CompanyLogo} />
-                                <p className={styles.card2CompanyName}>Parth Electricals & Engineering Limited</p>
-                            </div>
-
-                            {/* Card Content */}
-                            <p className={styles.card2Description}>
-                                India’s fastest-growing EV infra player with 2.4x YoY revenue growth
-                            </p>
-
-                            {/* Revenue & ROI */}
-                            <div className={styles.card2StatsContainer}>
-                                <section className={styles.card2StatsRow}>
-                                    <article className={styles.card2Stat}>
-                                        <p className={styles.card2StatHeading}>Revenue</p>
-                                        <p className={styles.card2StatValue}>₹2,400 Cr</p>
-                                    </article>
-                                    <article className={styles.card2Stat}>
-                                        <p className={styles.card2StatHeading}>Revenue</p>
-                                        <p className={styles.card2StatValue}>₹1,400Cr</p>
-                                    </article>
-                                    <article className={styles.card2Stat}>
-                                        <p className={styles.card2StatHeading}>Expected listing </p>
-                                        <p className={styles.card2StatValue}>1.2 yr</p>
-                                    </article>
-                                </section>
-
-                                <section className={styles.card2StatsRow}>
-                                    <article className={styles.card2Stat}>
-                                        <p className={styles.card2StatHeading}>PAT</p>
-                                        <p className={styles.card2StatValue}>₹24 Cr</p>
-                                    </article>
-                                    <article className={styles.card2Stat}>
-                                        <p className={styles.card2StatHeading}>P/E Multiple</p>
-                                        <p className={styles.card2StatValue}>21.6x</p>
-                                    </article>
-                                </section>
-                            </div>
-
-                            {/* Merchant Banker */}
-                            {/* <section className={styles.card2MerchantContainer}>
-                            <div className={styles.card2MerchantTag}>
-                                <p className={styles.card2MerchantText}>
-                                    Merchant Banker: Axis Capital
-                                </p>
-                            </div>
-                        </section> */}
-
-                            <div className={styles.progressContainer}>
-                                <div className={styles.ProgressInPrice}>
-                                    <p className={styles.PriceIncr}>1.5 Cr / 2 Cr</p>
-                                    <p className={styles.PricePercent}>94%</p>
-                                </div>
-
-                                <img src="/assets/pictures/PriceProgressBar.svg" alt="" />
-                            </div>
-
-
-                            <div className={styles.promoter}>
-                                <div className={styles.Strong}><p>Strong promoter</p></div>
-                                <div className={styles.monetization}><p>Clear Monetization</p></div>
-                                <div className={styles.monetization}><p>Fund Participating</p></div>
-                            </div>
-                        </div>
-
-                        {/* Footer */}
-                        <div className={styles.card2Footer}>
-                            <div className={styles.card2QandA}>
-                                <div className={styles.card2QandAStats}>
-                                    23 Q&A answered in last 3 days
-                                </div>
-                                <div className={styles.card2UserIcons}>
-                                    <img src="assets/pictures/userImage1.png" alt="" className={styles.card2UserImage} />
-                                    <img src="assets/pictures/userImage2.png" alt="" className={styles.card2UserImage} />
-                                    <img src="assets/pictures/userImage3.png" alt="" className={styles.card2UserImage} />
-                                    <img src="assets/pictures/userImage4.png" alt="" className={styles.card2UserImage} />
-                                </div>
-                            </div>
-                        </div>
-
-                        <img src="/assets/pictures/star.svg" alt="" className={styles.starImage} />
-                    </div >
-
-                    {/* card 2 */}
-                    < div className={styles.card2Container}>
-                        <div className={styles.card2InnerSections}>
-                            {/* IPO Section */}
-                            <article className={styles.card2IPOsection}>
-                                <div className={styles.card2IPOtag}>
-                                    <p className={styles.card2IPOtext}>IPO- SME</p>
-                                </div>
-                                <div className={styles.card2IPOtag}>
-                                    <p className={styles.card2IPOtext}>Healthcare</p>
-                                </div>
-                            </article>
-
-                            {/* Anthem Section */}
-                            <div className={styles.card2CompanySection}>
-                                <img src="/assets/pictures/parthElectrical.png" alt="" className={styles.card2CompanyLogo} />
-                                <p className={styles.card2CompanyName}>Parth Electricals & Engineering Limited</p>
-                            </div>
-
-                            {/* Card Content */}
-                            <p className={styles.card2Description}>
-                                India’s fastest-growing EV infra player with 2.4x YoY revenue growth
-                            </p>
-
-                            {/* Revenue & ROI */}
-                            <div className={styles.card2StatsContainer}>
-                                <section className={styles.card2StatsRow}>
-                                    <article className={styles.card2Stat}>
-                                        <p className={styles.card2StatHeading}>Revenue</p>
-                                        <p className={styles.card2StatValue}>₹2,400 Cr</p>
-                                    </article>
-                                    <article className={styles.card2Stat}>
-                                        <p className={styles.card2StatHeading}>Revenue</p>
-                                        <p className={styles.card2StatValue}>₹1,400Cr</p>
-                                    </article>
-                                    <article className={styles.card2Stat}>
-                                        <p className={styles.card2StatHeading}>Expected listing </p>
-                                        <p className={styles.card2StatValue}>1.2 yr</p>
-                                    </article>
-                                </section>
-
-                                <section className={styles.card2StatsRow}>
-                                    <article className={styles.card2Stat}>
-                                        <p className={styles.card2StatHeading}>PAT</p>
-                                        <p className={styles.card2StatValue}>₹24 Cr</p>
-                                    </article>
-                                    <article className={styles.card2Stat}>
-                                        <p className={styles.card2StatHeading}>P/E Multiple</p>
-                                        <p className={styles.card2StatValue}>21.6x</p>
-                                    </article>
-                                </section>
-                            </div>
-
-                            {/* Merchant Banker */}
-                            {/* <section className={styles.card2MerchantContainer}>
-                            <div className={styles.card2MerchantTag}>
-                                <p className={styles.card2MerchantText}>
-                                    Merchant Banker: Axis Capital
-                                </p>
-                            </div>
-                        </section> */}
-
-                            <div className={styles.progressContainer}>
-                                <div className={styles.ProgressInPrice}>
-                                    <p className={styles.PriceIncr}>1.5 Cr / 2 Cr</p>
-                                    <p className={styles.PricePercent}>94%</p>
-                                </div>
-
-                                <img src="/assets/pictures/PriceProgressBar.svg" alt="" />
-                            </div>
-
-
-                            <div className={styles.promoter}>
-                                <div className={styles.Strong}><p>Strong promoter</p></div>
-                                <div className={styles.monetization}><p>Clear Monetization</p></div>
-                                <div className={styles.monetization}><p>Fund Participating</p></div>
-                            </div>
-                        </div>
-
-                        {/* Footer */}
-                        <div className={styles.card2Footer}>
-                            <div className={styles.card2QandA}>
-                                <div className={styles.card2QandAStats}>
-                                    23 Q&A answered in last 3 days
-                                </div>
-                                <div className={styles.card2UserIcons}>
-                                    <img src="assets/pictures/userImage1.png" alt="" className={styles.card2UserImage} />
-                                    <img src="assets/pictures/userImage2.png" alt="" className={styles.card2UserImage} />
-                                    <img src="assets/pictures/userImage3.png" alt="" className={styles.card2UserImage} />
-                                    <img src="assets/pictures/userImage4.png" alt="" className={styles.card2UserImage} />
-                                </div>
-                            </div>
-                        </div>
-
-                        <img src="/assets/pictures/star.svg" alt="" className={styles.starImage} />
-                    </div >
-
-                    {/* card 2 */}
-                    < div className={styles.card2Container}>
-                        <div className={styles.card2InnerSections}>
-                            {/* IPO Section */}
-                            <article className={styles.card2IPOsection}>
-                                <div className={styles.card2IPOtag}>
-                                    <p className={styles.card2IPOtext}>IPO- SME</p>
-                                </div>
-                                <div className={styles.card2IPOtag}>
-                                    <p className={styles.card2IPOtext}>Healthcare</p>
-                                </div>
-                            </article>
-
-                            {/* Anthem Section */}
-                            <div className={styles.card2CompanySection}>
-                                <img src="/assets/pictures/parthElectrical.png" alt="" className={styles.card2CompanyLogo} />
-                                <p className={styles.card2CompanyName}>Parth Electricals & Engineering Limited</p>
-                            </div>
-
-                            {/* Card Content */}
-                            <p className={styles.card2Description}>
-                                India’s fastest-growing EV infra player with 2.4x YoY revenue growth
-                            </p>
-
-                            {/* Revenue & ROI */}
-                            <div className={styles.card2StatsContainer}>
-                                <section className={styles.card2StatsRow}>
-                                    <article className={styles.card2Stat}>
-                                        <p className={styles.card2StatHeading}>Revenue</p>
-                                        <p className={styles.card2StatValue}>₹2,400 Cr</p>
-                                    </article>
-                                    <article className={styles.card2Stat}>
-                                        <p className={styles.card2StatHeading}>Revenue</p>
-                                        <p className={styles.card2StatValue}>₹1,400Cr</p>
-                                    </article>
-                                    <article className={styles.card2Stat}>
-                                        <p className={styles.card2StatHeading}>Expected listing </p>
-                                        <p className={styles.card2StatValue}>1.2 yr</p>
-                                    </article>
-                                </section>
-
-                                <section className={styles.card2StatsRow}>
-                                    <article className={styles.card2Stat}>
-                                        <p className={styles.card2StatHeading}>PAT</p>
-                                        <p className={styles.card2StatValue}>₹24 Cr</p>
-                                    </article>
-                                    <article className={styles.card2Stat}>
-                                        <p className={styles.card2StatHeading}>P/E Multiple</p>
-                                        <p className={styles.card2StatValue}>21.6x</p>
-                                    </article>
-                                </section>
-                            </div>
-
-                            {/* Merchant Banker */}
-                            {/* <section className={styles.card2MerchantContainer}>
-                            <div className={styles.card2MerchantTag}>
-                                <p className={styles.card2MerchantText}>
-                                    Merchant Banker: Axis Capital
-                                </p>
-                            </div>
-                        </section> */}
-
-                            <div className={styles.progressContainer}>
-                                <div className={styles.ProgressInPrice}>
-                                    <p className={styles.PriceIncr}>1.5 Cr / 2 Cr</p>
-                                    <p className={styles.PricePercent}>94%</p>
-                                </div>
-
-                                <img src="/assets/pictures/PriceProgressBar.svg" alt="" />
-                            </div>
-
-
-                            <div className={styles.promoter}>
-                                <div className={styles.Strong}><p>Strong promoter</p></div>
-                                <div className={styles.monetization}><p>Clear Monetization</p></div>
-                                <div className={styles.monetization}><p>Fund Participating</p></div>
-                            </div>
-                        </div>
-
-                        {/* Footer */}
-                        <div className={styles.card2Footer}>
-                            <div className={styles.card2QandA}>
-                                <div className={styles.card2QandAStats}>
-                                    23 Q&A answered in last 3 days
-                                </div>
-                                <div className={styles.card2UserIcons}>
-                                    <img src="assets/pictures/userImage1.png" alt="" className={styles.card2UserImage} />
-                                    <img src="assets/pictures/userImage2.png" alt="" className={styles.card2UserImage} />
-                                    <img src="assets/pictures/userImage3.png" alt="" className={styles.card2UserImage} />
-                                    <img src="assets/pictures/userImage4.png" alt="" className={styles.card2UserImage} />
-                                </div>
-                            </div>
-                        </div>
-
-                        <img src="/assets/pictures/star.svg" alt="" className={styles.starImage} />
-                    </div >
-                </Slider>
+                <Swiper
+                    ref={swiperRef}
+                    modules={[Navigation, Pagination, Autoplay]}
+                    spaceBetween={10}
+                    slidesPerView={1}
+                    navigation={false}
+                    pagination={false}
+                    loop={true}
+                    autoplay={{
+                        delay: 5000,
+                        disableOnInteraction: false,
+                    }}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                        1200: {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                    }}
+                    className={styles.dealsSwiper}
+                >
+                    {dealsData.map((deal, index) => (
+                        <SwiperSlide key={deal.id}>
+                            {index === 0 ? renderCard1(deal) : renderCard2(deal)}
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+                <NextArrow />
             </div>
         </section>
     );
