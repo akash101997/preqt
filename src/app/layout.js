@@ -24,8 +24,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Head>
       {/* <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5?styles=103510,103513,103511,103506,103508,103502,103504" rel="stylesheet"/> */}
-      <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5?styles=103500,103510,103513,103511,103506,103508,103502,103504" rel="stylesheet"/>
-
+      <link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet"/>
+      <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>    
                               
   <link
   rel="stylesheet"

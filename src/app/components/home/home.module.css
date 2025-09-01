@@ -41,7 +41,8 @@
     gap: 5px;
     width: max-content;
     color: #6B7280;
-    font-family: 'Inter';
+    /* font-family: 'Inter'; */
+    font-family: "Inter", sans-serif;
     font-weight: 400;
     text-transform: uppercase;
 }
