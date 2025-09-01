@@ -296,6 +296,7 @@ const Nonaiipooverview = () => {
             <h6>Merchant Banker Appointed</h6>
             <span>Axis Capital</span>
           </section>
+                </section>
 
           <section className="others">
             <h6>
@@ -339,7 +340,7 @@ const Nonaiipooverview = () => {
             </h6>
             <a href="">www.zylutech.in</a>
           </section>
-        </section>
+  
       </section>
     </div>
     
