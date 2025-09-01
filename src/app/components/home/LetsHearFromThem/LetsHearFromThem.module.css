@@ -13,12 +13,12 @@
 .headingSection{
     height: 37px;
     width: 100%;
-    font-family: Helvetica;
-    font-size: 25px;
-    font-weight: 200;
-    line-height: 36.26px;
     letter-spacing: 0%;
     color: #1F2937;
+    font-family: "Helvetica Neue";
+    font-size: 25.898px;
+    font-weight: 300;
+    /* line-height: 36.257px; */
 }
 .videoTestimonialSection{
     height: 393px;
@@ -36,7 +36,7 @@
     display: none;              /* hide scrollbar in Chrome/Safari */
 }
 .testimonialCard{
-    width: 450px;
+    /* width: 450px; */
 
     height: 393px;
     /* border: 1px solid black; */
@@ -89,12 +89,20 @@
 }
 .titleContainer{
     /* height: 393px; */
-    width: 260px;
+    width: 100%;
+    display: flex
+    ;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 23px;
+        padding-bottom: 0;
+        padding-top: 35px;
+    
 }
 .videoTitle2{
-    width: 163px;
-    height: 165px;
-    position: relative;
+    /* width: min-content; */
+    /* height: 165px; */
+    /* position: relative; */
     top: 35px;
     font-size: 27px;
     line-height: 100%;
@@ -106,7 +114,7 @@
 .titleBy2{
     width: 105px;
     height: 44px;
-    position: relative;
+    /* position: relative; */
     top: 150px;
     left: 21px;
 }

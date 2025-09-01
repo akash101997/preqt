@@ -12,7 +12,7 @@
 .icons {
   padding: 10px;
   max-width: 100%;
-  width: 48px;
+  width: 52px;
 }
 
 .logo {
@@ -54,8 +54,7 @@
 }
 
 .HomeNavButton:hover .HomeIconImage {
-    filter: brightness(0) saturate(100%) invert(49%) sepia(91%) saturate(594%) hue-rotate(12deg) brightness(91%) contrast(91%);
-  /* keep original icon color */
+  filter: brightness(0) saturate(100%) invert(49%) sepia(91%) saturate(594%) hue-rotate(12deg) brightness(91%) contrast(91%);
 }
 
 .HomeNavButton:hover .home {
@@ -66,14 +65,13 @@
 /* Active effect (gradient + white text/icons) */
 .HomeNavButton.active {
   
-    border-bottom: 3px solid #B59131; 
+  border-bottom: 2px solid  #B59131;
   /* background-image: linear-gradient(to bottom right, #fff2d0, #8e6b0f); */
 }
 
 .HomeNavButton.active .HomeIconImage {
   /* filter: brightness(0) invert(1); */
-   filter: brightness(0) saturate(100%) invert(49%) sepia(91%) saturate(594%) hue-rotate(12deg) brightness(91%) contrast(91%);
-  
+  filter: brightness(0) saturate(100%) invert(49%) sepia(91%) saturate(594%) hue-rotate(12deg) brightness(91%) contrast(91%);
 }
 
 .HomeNavButton.active .home {
@@ -91,18 +89,37 @@
 
 .NotificationIconContainer {
   width: fit-content;
-  height: 46px;
+  height: 52px;
   display: flex;
   /* padding: 11px;*/
   border-radius: 100%;
   background-color: #334155;
+  position: relative;
+}
+
+.notificationBadge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+background-color: #FF6A55;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  min-width: 20px;
 }
 
 .UserIconContainer {
-  width: fit-content;
-  height: 46px;
+  width: 52px;
+  height: 52px;
   border-radius: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
   text-align: center;
   background-image: linear-gradient(to bottom right, #fff2d0, #8e6b0f);

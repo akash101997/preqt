@@ -1,76 +1,106 @@
 "use client"
 import styles from "./LetsHearFromThem.module.css"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export default function LetsHearFromThem() {
+    const testimonials = [
+        {
+            id: 1,
+            video: "/assets/videos/testimonial_video_1.mp4",
+            title: "Pr.eqt Transparency Gave me confidence i needed",
+            name: "Chitanshi",
+            role: "CEO Healthify"
+        },
+        {
+            id: 2,
+            video: "/assets/videos/testimonial_video_2.mp4",
+            title: "Pr.eqt Transparency Gave me confidence i needed",
+            name: "Chitanshi",
+            role: "CEO Healthify"
+        },
+        {
+            id: 3,
+            video: "/assets/videos/testimonial_video_3.mp4",
+            title: "Pr.eqt Transparency Gave me confidence i needed",
+            name: "Chitanshi",
+            role: "CEO Healthify"
+        },
+        {
+            id: 4,
+            video: "/assets/videos/testimonial_video_3.mp4",
+            title: "Pr.eqt Transparency Gave me confidence i needed",
+            name: "Chitanshi",
+            role: "CEO Healthify"
+        }
+    ];
+
     return (
         <section className={styles.testimonailMainContainer}>
-            <div className={styles.headingSection}>Let’s hear from them!</div>
+            <div className={styles.headingSection}>Let's hear from them!</div>
 
             <div className={styles.videoTestimonialSection}>
-                <div className={styles.testimonialCard} onMouseEnter={(e) => {
-                    const video = e.currentTarget.querySelector('video');
-                    video.play();
-                }}
-                    onMouseLeave={(e) => {
-                        const video = e.currentTarget.querySelector('video');
-                        video.pause();
-                    }} >
-                    <video src="/assets/videos/testimonial_video_1.mp4" className={styles.testimonialvideo2} muted></video>
-                    <div className={styles.titleContainer}>
-                        <p className={styles.videoTitle2}>“ Pr.eqt Transparency Gave me confidence i needed”</p>
-                        <p className={styles.titleBy2}>Chitanshi <br />
-                            <span className={styles.spanTitleBy2}> CEO Healthify</span></p>
-                    </div>
-                </div>
-
-                <div className={styles.testimonialCard} onMouseEnter={(e) => {
-                    const video = e.currentTarget.querySelector('video');
-                    video.play();
-                }}
-                    onMouseLeave={(e) => {
-                        const video = e.currentTarget.querySelector('video');
-                        video.pause();
-                    }}>
-                    <video src="/assets/videos/testimonial_video_2.mp4"muted className={styles.testimonialvideo2}></video>
-                    <div className={styles.titleContainer}>
-                        <p className={styles.videoTitle2}>“ Pr.eqt Transparency Gave me confidence i needed”</p>
-                        <p className={styles.titleBy2}>Chitanshi <br />
-                            <span className={styles.spanTitleBy2}> CEO Healthify</span></p>
-                    </div>
-                </div>
-
-                <div className={styles.testimonialCard} onMouseEnter={(e) => {
-                    const video = e.currentTarget.querySelector('video');
-                    video.play();
-                }}
-                    onMouseLeave={(e) => {
-                        const video = e.currentTarget.querySelector('video');
-                        video.pause();
-                    }}>
-                    <video src="/assets/videos/testimonial_video_3.mp4"muted className={styles.testimonialvideo2}></video>
-                    <div className={styles.titleContainer}>
-                        <p className={styles.videoTitle2}>“ Pr.eqt Transparency Gave me confidence i needed”</p>
-                        <p className={styles.titleBy2}>Chitanshi <br />
-                            <span className={styles.spanTitleBy2}> CEO Healthify</span></p>
-                    </div>
-                </div>
-
-                <div className={styles.testimonialCard} onMouseEnter={(e) => {
-                    const video = e.currentTarget.querySelector('video');
-                    video.play();
-                }}
-                    onMouseLeave={(e) => {
-                        const video = e.currentTarget.querySelector('video');
-                        video.pause();
-                    }}>
-                    <video src="/assets/videos/testimonial_video_3.mp4" muted className={styles.testimonialvideo2}></video>
-                    <div className={styles.titleContainer}>
-                        <p className={styles.videoTitle2}>“ Pr.eqt Transparency Gave me confidence i needed”</p>
-                        <p className={styles.titleBy2}>Chitanshi <br />
-                            <span className={styles.spanTitleBy2}> CEO Healthify</span></p>
-                    </div>
-                </div>
-
+                <Swiper
+                    modules={[Navigation, Pagination, Autoplay]}
+                    spaceBetween={20}
+                    slidesPerView={false}
+                    navigation={false}
+                    pagination={false}
+                    autoplay={{
+                        delay: 5000,
+                        disableOnInteraction: false,
+                    }}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 2,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                        },
+                        1024: {
+                            slidesPerView: 2,
+                        },
+                        1200: {
+                            slidesPerView: 2.8,
+                        },
+                    }}
+                    className={styles.testimonialSwiper}
+                >
+                    {testimonials.map((testimonial) => (
+                        <SwiperSlide key={testimonial.id}>
+                            <div 
+                                className={styles.testimonialCard} 
+                                onMouseEnter={(e) => {
+                                    const video = e.currentTarget.querySelector('video');
+                                    if (video) video.play();
+                                }}
+                                onMouseLeave={(e) => {
+                                    const video = e.currentTarget.querySelector('video');
+                                    if (video) video.pause();
+                                }}
+                            >
+                                <video 
+                                    src={testimonial.video} 
+                                    className={styles.testimonialvideo2} 
+                                    muted
+                                    loop
+                                />
+                                <div className={styles.titleContainer}>
+                                    <p className={styles.videoTitle2}>"{testimonial.title}"</p>
+                                    <p className={styles.titleBy2}>
+                                        {testimonial.name} <br />
+                                        <span className={styles.spanTitleBy2}> {testimonial.role}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
         </section>
     )

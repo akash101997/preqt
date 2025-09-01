@@ -39,7 +39,7 @@ export default function NavBar() {
                     </div>
 
                     {/* logo */}
-                    <img src="/assets/pictures/logo.png" alt="logo" className={styles.logoImg} />
+                    <img src="/assets/pictures/logo.svg" alt="logo" className={styles.logoImg} />
 
                     {/* bell icon */}
                     <img src="/assets/pictures/bell.svg" alt="" />
@@ -103,7 +103,7 @@ export default function NavBar() {
             </nav>
 
             <section className={styles.mainContainer}>
-               <Link href='/'> <img src="/assets/pictures/logo.png" alt="logo" className={styles.logo} /></Link>
+               <Link href='/'> <img src="/assets/pictures/logo.svg" alt="logo" className={styles.logo} /></Link>
 
                 <div className={styles.navigationButtonContainer}>
                     <div className={styles.navigationButton}>
@@ -128,7 +128,8 @@ export default function NavBar() {
 
                 <div className={styles.navRightSection}>
                     <div className={styles.NotificationIconContainer}>
-                        <img className={styles.icons} src="/assets/pictures/notification.png" alt="" />
+                        <img className={styles.icons} src="/assets/pictures/notification.svg" alt="" />
+                        <div className={styles.notificationBadge}>2</div>
                     </div>
                     <div className={styles.UserIconContainer}>
                         <Link href={'/account/details'} className={styles.Link}>  <p className={styles.userInitials}>AM</p></Link>
