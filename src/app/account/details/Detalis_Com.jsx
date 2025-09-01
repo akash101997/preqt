@@ -11,7 +11,7 @@ export default function Details_Com() {
   const [showemailModal, setShowEmailModal] = useState(false);
 
   const [showeditModal, setShowEditModal] = useState(false);
-  const [showOtp, setShowOtp] = useState(true);
+  const [showOtp, setShowOtp] = useState(false);
 
   useEffect(() => {
       if (showemailModal || showphoneModal || showeditModal || showOtp) {
@@ -95,7 +95,13 @@ export default function Details_Com() {
 
         <div className={styles.inverstor}>
           <div className={styles.heading}>Inverstor Type</div>
+          <div className={styles.otp}>
           <div className={styles.value}>Anjali Mishra</div>
+          <a className={styles.Link} onClick={() => setShowOtp(true)}>otp</a>
+          <Otp 
+          isOpen={showOtp}
+          onClose={() => setShowOtp(false)}/>
+</div>
         </div>
         <div className={styles.hr}></div>
 
@@ -111,7 +117,7 @@ export default function Details_Com() {
           <div className={styles.heading}>Location</div>
           <div className={styles.value}>c40 ,c block , Sector 58 , noida ,Uttar Pradesh 201301</div>
         </div>
-        {showOtp && <Otp onClose={() => setShowOtp(false)} />}
+    
 
 
       </section>

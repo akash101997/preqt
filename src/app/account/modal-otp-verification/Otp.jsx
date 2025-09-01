@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "./otp.module.css";
 
-export default function Otp({ onClose }) {
+export default function Otp({ isOpen, onClose }) {
+    if (!isOpen) return null;
   const [otp, setOtp] = useState(new Array(6).fill(""));
   const [timer, setTimer] = useState(59);
 

@@ -14,7 +14,7 @@
 }
 
 .title {
-  font-size:300;
+  font-size:32px;
   font-weight: 300;
   margin-bottom: 20px;
 }
@@ -33,6 +33,7 @@
   border-radius: 8px;
   padding: 15px;
   font-size: 16px;
+  font-size: 500;
   margin-bottom: 10px;
   cursor: pointer;
 }

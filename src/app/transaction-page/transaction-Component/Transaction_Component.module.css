@@ -79,7 +79,7 @@
 }
 
 .description {
-  color: rgb(150, 154, 165);
+  color: #6B7280;
   font-size: 16px;
   line-height: 17px;
   font-weight: 300;
@@ -101,7 +101,7 @@
 .details strong {
   font-size: 12px;
   font-weight: 400;
-  color: rgb(150, 154, 165);
+  color:#6B7280;
   display: block;
   /* margin-bottom: 4px; */
 }
@@ -109,7 +109,7 @@
 .details p {
   font-size: 13px;
   font-weight: 400;
-  color: rgba(31, 41, 55, 1);
+  color: #1F2937;
   margin: unset;
 }
 
@@ -122,12 +122,12 @@
 
 .buttons button {
   background: rgba(255, 255, 255, 1);
-  border: 1px solid rgba(68, 49, 151, 0.27);
+  border: 1px solid #44319745;
   padding: 6px 12px;
   font-weight: 500;
   border-radius: 40px;
   font-size: 12px;
-  color: rgba(0, 0, 0, 1);
+  color:#000000;
   font-weight: 400;
 
   cursor: pointer;
@@ -139,11 +139,12 @@
 }
 
 .statusBox {
-  background: rgba(181, 145, 49, 0.13);
+  background: #B5913121;
   /* border: 1px solid #ddd; */
   padding: 12px;
   border-radius: 12px;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 500;
   color: #333;
   display: flex;
   justify-content: space-between;
