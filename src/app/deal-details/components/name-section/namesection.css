@@ -84,6 +84,7 @@
   cursor: pointer;
 }
 .ask-ai-button {
+  max-width: 500px;
   padding: 10px 30px;
   font-size: 16px;
   font-weight: 500;

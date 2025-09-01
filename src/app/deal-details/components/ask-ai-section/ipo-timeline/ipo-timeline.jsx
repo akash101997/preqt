@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const Ipotimeline = ({ handleAskAI}) => {
+const Ipotimeline = ({ handleAskAI ,handleQuesAns}) => {
   const steps = [
     { label: "IPO Open Date", date: "Wed, Jul 30, 2025", completed: true },
     { label: "IPO Close Date", date: "Wed, Jul 30, 2025", completed: true },
@@ -39,10 +39,9 @@ const Ipotimeline = ({ handleAskAI}) => {
     <section className="ask-ai-section">
       <button className="ask-ai-button"
       onClick={() => {
-          handleAskAI(true);
+       handleAskAI &&   handleAskAI(true);
           
         }}
-
       >
         <svg
           width="25"
@@ -70,7 +69,12 @@ const Ipotimeline = ({ handleAskAI}) => {
      
 
       <div className="ask-ai-section2">
-        <div className="image-stack">
+        <button className="image-stack" 
+         onClick={() => {
+       handleQuesAns &&   handleQuesAns(true);
+          
+        }}
+        >
           <>
           <div>
             <img src="/assets/pictures/1.png" alt="" />
@@ -87,7 +91,7 @@ const Ipotimeline = ({ handleAskAI}) => {
               alt="gif"
             />
           </span>
-        </div>
+        </button>
 
         <div className="ipo-timeline-section">
           <h3>IPO Timeline</h3>
