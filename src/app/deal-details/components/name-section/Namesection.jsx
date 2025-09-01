@@ -14,12 +14,17 @@ import Featured from "../why-featured-section/why";
 import Shares from "../shares-section/shares";
 // import Questions from "../questions-section/questions";
 import Valuation from "../valuation-section/valuation";
+import QuesAnsSection from "../ques-ans-section/QuesAnsSection";
 
 const Namedetailsection = () => {
   const [bellactive, setBellactive] = useState(false);
   const[isAskAiActive, setIsAskAiActive] = useState(false); 
+  const[isQuesAnsActive,setIsQuesAnsActive]=useState(false);
   const handleAskAI = (flag) =>{
     setIsAskAiActive(flag);
+  }
+  const handleQuesAns=(flag)=>{
+    setIsQuesAnsActive(flag);
   }
 
   const steps = [
@@ -442,6 +447,8 @@ const Namedetailsection = () => {
           </section>
 
           <AskAiSection isAskAiActive={isAskAiActive} handleAskAI={handleAskAI} />
+          {/* <QuesAnsSection  isQuesAnsActive={isQuesAnsActive} handleQuesAns={handleQuesAns} /> */}
+
         </div>
       </div>
       {/* <Questions /> */}
