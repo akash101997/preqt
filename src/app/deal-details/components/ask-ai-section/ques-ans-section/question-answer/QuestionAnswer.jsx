@@ -1,7 +1,6 @@
 'use client';
 import styles from './QuestionAnswer.module.css';
 
-
 const activities = [
   {
     id: 1,
@@ -33,60 +32,63 @@ const activities = [
   },
 ];
 
-const QuestionAnswer=({handleQuesAns})=> {
+const QuestionAnswer = ({ handleQuesAns, handleAskAI }) => {
   return (
     <div className={styles.container}>
-       <div className={styles.headar}><img className={styles.img} src="/assets/pictures/left-arrow.svg" alt="" />
-        <div className="image-stack"  onClick={() => handleQuesAns(false)}>
-        
-          
+      <div className={styles.headar}>
+        <img 
+          className={styles.img} 
+          src="/assets/pictures/left-arrow.svg" 
+          alt="" 
+          onClick={() => handleQuesAns(false)}
+          style={{ cursor: 'pointer' }}
+        />
+        <div className="image-stack">
           <>
-         
-          <div >
-            <img src="/assets/pictures/1.png" alt="" />
-            <img src="/assets/pictures/1.png" alt="" />
-            <img src="/assets/pictures/1.png" alt="" />
-            <img src="/assets/pictures/1.png" alt="" />
-          </div>
-          <span className="s1">23 Q&A answered in last 3 days </span>
-            </>
-            
-
+            <div>
+              <img src="/assets/pictures/1.png" alt="" />
+              <img src="/assets/pictures/1.png" alt="" />
+              <img src="/assets/pictures/1.png" alt="" />
+              <img src="/assets/pictures/1.png" alt="" />
+            </div>
+            <span className="s1">23 Q&A answered in last 3 days </span>
+          </>
           <span className="s2">
             <img
               src="/assets/pictures/8e3073ca31264b3cb0bd9cb1e07af102b937cb5c.gif"
               alt="gif"
             />
           </span>
-            </div>
         </div>
-      <div className={styles.answerContainer}>
-      <h3 className={styles.title}>Know what people are talking about</h3>
-      <div className={styles.activityList}>
-        {activities.map((item) => (
-          <div key={item.id} className={styles.activityItem}>
-            <div className={`${styles.avatar} ${item.isReply ? styles.replyAvatar : styles.userAvatar}`}>
-              {item.user.charAt(0)}
-            </div>
-            <div>
-              <div className={styles.userName}>{item.user}</div>
-              <div className={styles.time}>{item.time}</div>
-              <div className={styles.message}>{item.message}</div>
-            </div>
-          </div>
-        
-        ))}
       </div>
+      
+      <div className={styles.answerContainer}>
+        <h3 className={styles.title}>Know what people are talking about</h3>
+        <div className={styles.activityList}>
+          {activities.map((item) => (
+            <div key={item.id} className={styles.activityItem}>
+              <div className={`${styles.avatar} ${item.isReply ? styles.replyAvatar : styles.userAvatar}`}>
+                {item.user.charAt(0)}
+              </div>
+              <div>
+                <div className={styles.userName}>{item.user}</div>
+                <div className={styles.time}>{item.time}</div>
+                <div className={styles.message}>{item.message}</div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className={styles.ask_your_ques}>
         <div><input type="text" placeholder='Ask Your Question' /></div>
         <div className={styles.img}><img src="/assets/pictures/send-ques-logo.svg" alt="" /></div>
       </div>
-           <button className="ask-ai-button"
-      onClick={() => {
-       handleAskAI &&   handleAskAI(true);
-          
+      
+      <button 
+        className="ask-ai-button"
+        onClick={() => {
+          handleAskAI && handleAskAI(true);
         }}
       >
         <svg
@@ -111,8 +113,8 @@ const QuestionAnswer=({handleQuesAns})=> {
         </svg>
         Ask AI About This Deal
       </button>
-      
     </div>
   );
 }
+
 export default QuestionAnswer;

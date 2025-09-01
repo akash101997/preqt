@@ -14,7 +14,7 @@ import Featured from "../why-featured-section/why";
 import Shares from "../shares-section/shares";
 // import Questions from "../questions-section/questions";
 import Valuation from "../valuation-section/valuation";
-import QuesAnsSection from "../ques-ans-section/QuesAnsSection";
+import QuesAnsSection from "../ask-ai-section/ques-ans-section/QuesAnsSection";
 
 const Namedetailsection = () => {
   const [bellactive, setBellactive] = useState(false);
