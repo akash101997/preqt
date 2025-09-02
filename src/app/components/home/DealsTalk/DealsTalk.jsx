@@ -1,7 +1,7 @@
 "use client";
 import styles from "./DealsTalk.module.css";
 import React, { useRef } from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper,SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 // Import Swiper styles

@@ -10,17 +10,18 @@
   max-width: 100%;
   margin-bottom: 10px;
   display: flex;
+  gap: 10px;
   /* justify-content: space-between; */
   align-items: center;
 }
 .image-stack {
-  width: 90% !important;
+ width: 100% !important;
   display: flex;
   align-items: center;
   border: 1px solid #B59131;
   background: #f4eddc;
   padding: 10px 10px;
-  
+  justify-content: space-between;
   border-radius: 40px;
 }
 
@@ -174,7 +175,7 @@ justify-content: center;
   cursor: pointer;
 }
 .ask-ai-button {
-  width: 100% !important;
+  width: 100% ;
   padding: 10px 30px;
   font-size: 16px;
   font-weight: 500;

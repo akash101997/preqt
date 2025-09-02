@@ -121,7 +121,7 @@ border: none;
   align-items: center;
   padding: 8px 12px;
   border: 2px solid transparent; /* Needed for gradient border */
-  border-radius: 12px;  /* Rounded corners */
+  border-radius: 24px;  /* Rounded corners */
   background: linear-gradient(#fff, #fff) padding-box, 
               linear-gradient(130deg, #7E60FF, #FF913C) border-box;
   overflow: hidden; /* Ensures SVG doesn’t overflow */
@@ -130,11 +130,13 @@ border: none;
   border: none;
   outline: none;
   flex: 1;
+  padding: 16px;
+  font-style: italic;
   color: #6B7280;
 }
 .chatbot-body-section2 img {
-  width: 30px;
-  height: 30px;
+  width: 48px;
+  height: 48px;
 }
   .chatbot-body-section2 svg {
   width: 20px;

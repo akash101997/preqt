@@ -87,7 +87,8 @@ input:checked + .slider:before {
 }
 @media (max-width: 768px) {
   .container {
-    padding: 16px;
+    border-radius: 0px;
+    padding: 15px;
     
   }
 
@@ -103,10 +104,13 @@ input:checked + .slider:before {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
 
   .title {
     font-size: 18px;
+    display: none;
+  }
+  .divider{
     display: none;
   }
 

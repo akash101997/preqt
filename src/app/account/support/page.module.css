@@ -116,11 +116,19 @@
   background-color: rgba(201, 167, 78, 1);
 }
 
-@media(max-width:480px){
+
+
+@media(max-width:580px){
   .container{
     width: 100%;
+    border-radius: 0px;
+    padding: 15px;
   }
   .title{
     display: none;
+  }
+  .formContainer{
+    border: none;
+    padding:0px;
   }
 }

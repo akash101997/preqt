@@ -34,10 +34,11 @@ export default function NavBar() {
             <div className={styles.responsiveNav}>
                 <article className={styles.mainNavContainer}>
                     {/* hamburger */}
-                    <div className={`${styles.hamburger} ${menuOpen ? styles.active : ''}`} onClick={toggleMenu}>
-                        ☰
+                    <div className={`${styles.hamburger} ${menuOpen ? styles.active : ''}`} onClick={toggleMenu} 
+                     style={{ fontSize: "30px", zIndex: 2000}}
+                    >
+                         {menuOpen ? "✕" : "☰"}
                     </div>
-
                     {/* logo */}
                     <img src="/assets/pictures/logo.svg" alt="logo" className={styles.logoImg} />
 
@@ -46,16 +47,17 @@ export default function NavBar() {
                 </article>
             </div>
 
-            {/* Overlay */}
+       
             {menuOpen && <div className={styles.overlay} onClick={toggleMenu}></div>}
 
             {/* side menu */}
             <nav className={`${styles.sideMenu} ${menuOpen ? styles.active : ''}`} onClick={toggleMenu}>
+                 
                 <div className={styles.openedSideMenu}>
                     {/* menu */}
                     <div className={styles.menuContainer}>
-                        
-                            <img src="/assets/pictures/crossBtn.svg" alt="" />
+                         
+                            {/* <img src="/assets/pictures/crossBtn.svg" alt="" /> */}
                         {/* logo and X button */}
                      
 

@@ -18,7 +18,7 @@ export default function page() {
           <div key={idx} className={styles.documentRow}>
             <span className={styles.docName}>{doc.name}</span>
             <button className={styles.emailBtn}>
-              <img className={styles.icon} src="/account-mydocument/mail-inbox.svg" alt="" />
+              <img className={styles.icon} src="/account-mydocument/mail-inbox.svg" alt="email icon" />
               Email to me
             </button>
           </div>
