@@ -194,13 +194,16 @@
   .value {
     font-size: 1rem;
   }
+  .Link{
+    display: none;
+  }
 }
 
 /* 📱 Small mobile */
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .main_container {
     /* padding: 10px; */
-    height: 859px;
+    /* height: 859px; */
     border-radius: 12px;
     padding: 12px;
 

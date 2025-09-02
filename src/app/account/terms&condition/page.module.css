@@ -39,7 +39,7 @@
   font-weight: bolder;
   color: rgba(31, 41, 55, 1);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
   padding-bottom: 7px;
   margin: unset;
 }
@@ -48,7 +48,7 @@
   margin-bottom: 20px;
   color: rgba(75, 85, 99, 1);
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   font-weight: light;
 }
 
@@ -60,7 +60,7 @@
 }
 .p{
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 400;
     color: rgba(75, 85, 99, 1);
     margin: unset;
   
@@ -75,7 +75,7 @@
 
 .li {
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 5px;
     color: rgba(75, 85, 99, 1);
 }
@@ -86,48 +86,6 @@
 }
 
 
-/* @media (max-width: 1024px) {
-  .container {
-    padding: 20px;
-  }
-  .heading {
-    font-size: 1.75rem;
-  }
-} */
-/* 
-@media (max-width: 768px) {
-  .container {
-    margin: 20px auto;
-    padding: 16px;
-  }
-  .heading {
-    font-size: 1.5rem;
-  }
-  .intro, .h2 {
-    font-size: 0.95rem;
-  }
-} */
-
-/* @media (max-width: 480px) {
-  .container {
-    border-radius: 12px;
-    padding: 12px;
-  }
-  .heading {
-    font-size: 1.25rem;
-  }
-  .intro, .h2 {
-    font-size: 0.9rem;
-  }
-  .text, .p, .li, .date {
-    font-size: 0.8rem;
-  }
-}
-  .heading {
-    font-size: 1.75rem;
-  }
-} */
-
 @media (max-width: 768px) {
   .container {
     margin: 20px auto;
@@ -141,11 +99,11 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .container {
     width: 100%;
-    border-radius: 12px;
-    padding: 12px;
+    border-radius: 0px;
+    padding: 15px;
   }
   .heading {
     font-size: 20px;
@@ -161,6 +119,9 @@
     font-weight: 400;
     flex-wrap: wrap;
 
+  }
+  .hr{
+    display: none;
   }
   .heading{
     display: none;

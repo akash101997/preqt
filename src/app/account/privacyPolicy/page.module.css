@@ -35,14 +35,14 @@
 
 .section h3 {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 8px;
 }
 
 .section p {
   color: rgba(75, 85, 99, 1);
   font-size: 14px;
-  font-weight:300;
+  font-weight:400;
   margin-bottom: 8px;
 }
 
@@ -88,7 +88,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .heading {
     font-size: 20px;
     display: none;
@@ -105,6 +105,11 @@
   }
 
   .container {
-    border-radius: 16px; /* thoda compact */
+    border-radius: 0px;
+    padding: 15px ;
+    
+  }
+  .hr{
+    display: none;
   }
 }

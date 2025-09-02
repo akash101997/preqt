@@ -1,47 +1,33 @@
 .container {
+  position: relative;
   width: 100%;
-  display: flex;
-justify-content: center;
-flex-direction: column; 
-align-items: center;
   background-color: #f9f4e8;
-  flex-wrap: wrap;
-  height: 361px;
-  /* z-index: -1; */
-}
 
-.left {
-
-margin: 0 auto;
-  height: 200px;
-  flex-direction: row;
-  
-  justify-content: center;
   
 }
+ .main_container{
+ display: flex;
+ justify-content: space-evenly;
 
-.left .h2 {
-  max-width: 100%;
-  font-style: thin;
-  font-size: 34px;
-  font-weight: 100;
-  color: #1c1c1c;
+ padding-top: 60px;
+ } 
+ 
 
-}
+
 
 .left .h2 span {
   font-weight: 700;
 }
-
-.left .ul {
+ .left .ul {
   list-style: none;
   padding: 0;
   margin-top: 1rem;
-}
+} 
 
 .left li {
   margin-bottom: 1rem;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 400;
 }
 .check_icon{
   margin-right:10px ;
@@ -49,116 +35,43 @@ margin: 0 auto;
 
 .right {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
-  /* width: 300px; */
-  /* min-width: 300px; */
-  margin-top: 2rem;
-  
+  align-items: end;
 }
 
-.qrImage {
-position: relative;
-z-index: 1;
-top: 38px;
-  border-radius: 12px;
-  margin-bottom: 5px;
-}
-
-/* .buttons {
-  display: flex;
-  gap: 1rem;
-  z-index: 1;
-  
-} */
-/* .applestore{
-    position :relative;
-    top: -35px;
-    left: -20px;
 
 
-}
-.playstore{
-    position :relative;
-    top: -35px;
-    left: 20px;
 
-} */
 
-/* 📱 Mobile (max-width: 768px) */
 @media(max-width:480px){
-    .container {
-      width: 100%;
-    flex-direction: column; 
-    /* text-align: center; */
-    height: auto;
-    padding: 0px 16px;
-    padding-top: 32px;
-
-
-
-}
-.left {
-
-  text-align: left;
-  
-  margin-bottom: 50px; 
-
-
-}
-.qrImage{
-  position: relative;
-  top: 65px;
-
-}
-
-}
-@media (max-width: 768px) {
-  .container {
+  .main_container{
     width: 100%;
-    /* align-items: flex-start; */
-    flex-direction: column; /* stack vertically */
-    /* text-align: center; */
-    height: auto;
   }
-
-  .left .h2 {
-    font-size: 1.5rem;
   
-  }
 
-  .left li {
-    font-size: 0.9rem;
-  }
-
-  .right {
-    margin-top: 1rem;
-  }
-  .qrImage{
-  margin-bottom: 5px;
-
-  }
+} 
+@media (max-width: 768px) {
+  .main_container{
+    width: 100%;
+  display: flex;
+  flex-direction: column;
 }
+ .right{
+  display: flex;
+  justify-content: center;
+ }
+ .left{
+  margin-left: 10px;
+ }
+} 
 
-/* 💻 Large Screens (min-width: 1200px) */
+
 @media (max-width: 1024px) {
   .container{
     width: 100%;
-    flex-direction: column;
-    height: auto;
+    height: 100%;
   }
+   .left{
+  margin-left: 10px;
+ }
 
-  .left .h2 {
-
-    font-size: 2.5rem;
-  }
-
-  .qrImage {
-    max-width: 396px;
-    position: relative;
-     top: 5px; 
-    
-    
-  }
 }

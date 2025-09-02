@@ -1,26 +1,18 @@
 .account_layout{
   max-width: 100%;
-  
-  /* margin-top: 60px; */
-  /* margin-bottom: 60px; */
   display: flex;
   gap: 24px;
-  
   justify-content: center;
-  /* align-items: center; */
   padding-bottom: 60px;
   background-color: rgba(249, 250, 251, 1);
 
 }
 .headar_button{
   background-color:rgba(249, 250, 251, 1) ;
-   /* margin-left: 20px; */
   padding: 20px 315px;
- 
   font-size: 20px;
   font-weight: 400;
   height: 72px;
-  /* max-width: 100%; */
 
 }
 
@@ -74,8 +66,10 @@ padding: 20px 16px;
 
 
 
-@media(max-width: 480px){
+@media(max-width: 580px){
   .account_layout{
+    border-radius: 0px;
+
     /* display: none; */
     
     /* width: 100%; */

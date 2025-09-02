@@ -33,7 +33,7 @@
 
 .question {
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0;
   color: rgba(31, 41, 55, 1);
   
@@ -55,8 +55,8 @@
   /* width: 850px; */
   letter-spacing: 0cap;
   font-size: 14px;
-  font-weight: 300 ;
-  color: rgb(123, 130, 143);
+  font-weight: 400 ;
+  color: #6B7280;
   margin-top: 3px;
   line-height: 1.5;
 }
@@ -75,11 +75,21 @@
   }
 
   .container {
-    padding: 16px;
+    padding: 15px;
   }
 }
 
-@media (max-width: 480px) {
+
+@media (max-width: 580px) {
+.container{
+background-color: #F9FAFB;
+border-radius: 0px;
+padding: 15px;
+
+}
+.divider{
+  display: none;
+}
   .heading {
     font-size: 20px;
     display: none;
