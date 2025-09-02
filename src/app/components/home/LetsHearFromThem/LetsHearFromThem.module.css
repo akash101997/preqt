@@ -1,14 +1,15 @@
 .testimonailMainContainer{
     display: flex;
     flex-direction: column;
-    height: 451px;
+    /* height: 451px; */
     /* max-width: 1020px;
     width: 100%; */
 
-    width: 68vw;
-    max-width: 150vw;
-    margin: 0 auto;
+    /* width: 68vw; */
+    /* max-width: 150vw; */
+    /* margin: 0 auto; */
     gap: 20.72px;
+    padding-bottom: 58px;
 }
 .headingSection{
     height: 37px;
@@ -120,4 +121,26 @@
 }
 .spanTitleBy2{
     color:#6B7280 ;
+}
+
+@media (max-width: 1500px) {
+.videoTitle2{
+    font-size: 24px;
+}
+.testimonialvideo2{
+    width: 200px;
+}
+}
+
+@media (max-width: 1280px) {
+    .videoTitle2{
+        font-size: 20px;
+    }
+    .testimonialvideo2{
+        width: 180px;
+    }
+    }
+
+@media (max-width: 1119px) {
+
 }

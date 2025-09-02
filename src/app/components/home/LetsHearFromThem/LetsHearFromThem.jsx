@@ -51,23 +51,30 @@ export default function LetsHearFromThem() {
                     slidesPerView={false}
                     navigation={false}
                     pagination={false}
-                    autoplay={{
-                        delay: 5000,
-                        disableOnInteraction: false,
-                    }}
+                    autoplay={false}
                     breakpoints={{
                         640: {
-                            slidesPerView: 2,
+                            slidesPerView: 1.2,
                         },
                         768: {
+                            slidesPerView: 1,
+                        },
+                        1025: {
+                            slidesPerView: 1.5,
+                        },
+                        1133: {
                             slidesPerView: 2,
                         },
-                        1024: {
-                            slidesPerView: 2,
+                        1380: {
+                            slidesPerView: 2.2,
                         },
-                        1200: {
+                        1520: {
+                            slidesPerView: 2.4,
+                        },
+                        1730: {
                             slidesPerView: 2.8,
                         },
+                      
                     }}
                     className={styles.testimonialSwiper}
                 >

@@ -45,8 +45,17 @@
   font-weight: 200; /* Thin */
 }
 
-.headingLight { font-weight: 200; }
-.headingBold { font-weight: 700; }
+.headingLight { 
+  color: #1F2937;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 200;
+ }
+.headingBold { 
+  color: #1F2937;
+font-size: 32px;
+font-weight: 700;
+ }
 
 /* QA list container (1040 wide, gap 16) */
 .qaList {
@@ -55,7 +64,7 @@
   min-height: 600px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  /* gap: 16px; */
 }
 
 /* Each item has a 40px header row height with dark gray bg like screenshot */
@@ -80,15 +89,13 @@
   min-height: 40px; /* exact Figma height */
   /* padding: 0 20px; */
   gap: 12px;
+  justify-content: space-between;
 }
 
 .question {
-  flex: 1;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-  vertical-align: middle;
+  color: #1F2937;
+  font-size: 16px;
+  font-weight: 510;
 }
 
 
@@ -119,11 +126,12 @@
 /* Answer typography */
 .answer {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue";
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   color: #6B7280;
+  margin-bottom: 7px;
 }
 
 /* Each item has a 40px header row height with dark gray bg like screenshot */
@@ -191,7 +199,7 @@
   .qaList {
     max-width: 100%;
     min-height: auto;
-    gap: 12px;
+    /* gap: 12px; */
   }
   
   .question {

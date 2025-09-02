@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     /* height: 1050px; */
-    max-width: 550px;
+    /* max-width: 550px; */
     /* border: 1px solid black; */
     background-color: #F7F6F2;
     gap: 32px;
@@ -19,9 +19,9 @@
 }
 
 .MarketSentimentGreed {
-    height: 225px;
+    /* height: 225px; */
     /* max-width: 360px; */
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     background: linear-gradient(to bottom, #FFFFFF, #FFFFFF00);
 
@@ -29,39 +29,38 @@
     align-items: center;
     justify-content: center;
     border-radius: 24px;
+    padding: 16px;
 }
 
 .MarketSentimentInnerContainer {
     display: flex;
     flex-direction: column;
-    max-width: 350px;
-    gap: 16px;
-    height: 193px;
+    /* max-width: 350px; */
+    gap: 18px;
+    /* height: 193px; */
     /* border: 1px solid black; */
 }
 
 .MarketSentimentHeadingContainer {
     display: flex;
-    max-width: 350px;
+    /* max-width: 350px; */
     height: 28px;
     display: flex;
     justify-content: space-between;
 }
 
 .Heading {
-    max-width: 140px;
-    height: 28px;
-    font-size: 15px;
-    line-height: 28px;
     color: #1F2937;
-    font-weight: 200;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 28px;
 }
 
 .colorsGraph {
     width: 350px;
 }
 
-.greed {
+/* .greed {
     width: 100px;
     height: 61px;
     display: flex;
@@ -69,39 +68,41 @@
     gap: 8px;
     position: relative;
     top: 20px;
-}
+} */
 
 .greedText {
-    width: 90px;
-    height: 33px;
+    width: 100%;
+    /* height: 33px; */
     color: #16A34A;
     font-size: 34px;
 }
 
 .CurrentSentement {
-    font-size: 13px;
-    line-height: 20px;
-    letter-spacing: 0%;
-    height: 20px;
-    width: 115px;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .highMomentum {
-    font-size: 12px;
     color: #374151;
-    line-height: 16px;
-    margin-top: 40px;
-    margin-left: 120px;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 500;
+    max-width: 150px;
     text-align: right;
 }
 
 .greedDiv {
     display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding-top: 10px;
+    padding-bottom: 12px;
 }
 
 .newDeals {
-    max-width: 420px;
-    max-height: 76px;
+    /* max-width: 420px;
+    max-height: 76px; */
     /* border: 1px solid black; */
     position: relative;
     top: 2px;
@@ -165,15 +166,14 @@
 
 
 .plusDeals {
-    max-width: 153px;
-    max-height: 20px;
-    font-size: 14px;
     color: #6B7280;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .viewAllBtnContainer {
     max-width: 120px;
-    max-height: 36px;
+    max-height: 40px;
     padding: 8px 16px 8px 16px;
     display: flex;
     gap: 3px;
@@ -193,8 +193,8 @@
 }
 
 .RecentPostContainer {
-    max-width: 420px;
-    max-height: 652px;
+    /* max-width: 420px;
+    max-height: 652px; */
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -204,18 +204,15 @@
 .RecentPostHeader {
     display: flex;
     justify-content: space-between;
-    max-width: 420px;
-    max-height: 24px;
+    /* max-width: 420px;
+    max-height: 24px; */
     /* border: 1px solid black; */
 }
 
 .recentPostsHeading {
-    max-width: 208px;
-    max-height: 24px;
-    font-size: 15px;
-    line-height: 24px;
-    font-weight: 200;
-    color: #000000;
+    color: #000;
+    font-size: 16px;
+    font-weight: 300;
 }
 
 .ExploreStyles {
@@ -230,10 +227,8 @@
 
 .ExploreBtn {
     color: #B59131;
-    font-size: 15px;
-    line-height: 20px;
-    font-size: 500;
-    letter-spacing: 0%;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .arrowImg {
@@ -244,8 +239,8 @@
 .prqtPostConatiner {
     display: flex;
     flex-direction: column;
-    max-width: 420px;
-    height: 908px;
+    /* max-width: 420px; */
+    /* height: 908px; */
     /* border: 1px solid black; */
     background-color: #FFFFFF;
     border-radius: 24px;
@@ -253,8 +248,8 @@
 }
 
 .logoAndTimeDiv {
-    max-width: 420px;
-    max-height: 62px;
+    /* max-width: 420px;
+    max-height: 62px; */
     display: flex;
     justify-content: space-between;
     padding: 10px 16px 10px 16px;
@@ -291,17 +286,15 @@
     max-height: 15px;
 } */
 .DateAndTimeText {
-    max-width: 135px;
-    max-height: 15px;
-    font-size: 12px;
     color: #6B7280;
-    letter-spacing: -3%;
-    line-height: 100%;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: -0.36px;
 }
 
 .postDescriptionMainContainer {
-    max-width: 420px;
-    max-height: 458px;
+    /* max-width: 420px;
+    max-height: 458px; */
     display: flex;
     flex-direction: column;
     padding-right: 16px;
@@ -311,8 +304,8 @@
 }
 
 .PostDescriptionHeading {
-    max-width: 388px;
-    max-height: 40px;
+    /* max-width: 388px;
+    max-height: 40px; */
     display: flex;
     gap: 10px;
     font-size: 16px;
@@ -323,15 +316,16 @@
 }
 
 .preqtCandidImage {
-    max-width: 400px;
-    height: 480px;
+    /* max-width: 400px; */
+    object-fit: cover;
+    height: 408px;
     border-radius: 18px;
 }
 
 .LikeCommentAndShare {
     display: flex;
-    max-width: 420px;
-    max-height: 48px;
+    /* max-width: 420px;
+    max-height: 48px; */
     justify-content: space-between;
     padding: 4px 16px 4px 16px;
     /* border: 1px solid black; */
@@ -402,19 +396,20 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    max-width: 350px;
+    /* max-width: 350px; */
 }
 
 .MainColorGraphDiv {
-    max-width: 350px;
+    /* max-width: 350px; */
     display: flex;
     border-radius: 100px;
     /* border: 1px solid black; */
-    padding-left: 10px;
+    /* padding-left: 10px; */
+    position: relative;
 }
 
 .GreenColor1 {
-    width: 90px;
+    width: 100%;
     height: 16px;
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
@@ -422,25 +417,25 @@
 }
 
 .greenColor2 {
-    width: 90px;
+    width: 100%;
     height: 16px;
     background-color: #8CE249;
 }
 
 .yellowColor {
-    width: 90px;
+    width: 100%;
     height: 16px;
     background-color: #EFD933;
 }
 
 .OrangeColor {
-    width: 90px;
+    width: 100%;
     height: 16px;
     background-color: #EDA635;
 }
 
 .lastColor {
-    width: 90px;
+    width: 100%;
     height: 16px;
     background-color: #E82D48;
     border-top-right-radius: 100px;
@@ -448,36 +443,29 @@
 }
 
 .ColorLevelMainContainer {
-    max-width: 350px;
+    /* max-width: 350px; */
     height: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    top: -12px;
+    top: 5px;
     padding-left: 10px;
     padding-right: 10px;
 }
 
 .ExtremeFear {
-    /* width: 77px; */
-    height: 24px;
-    font-size: 10px;
-    line-height: 24px;
-    letter-spacing: 0%;
     color: #4B5563;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* margin-left: 5px; */
+    font-size: 10px;
+    font-weight: 500;
 }
 
 .PinScaleImage {
-    position: relative;
-    right: 100px;
-    width: 18px;
-    height: 35px;
+    position: absolute;
+    right: 0px;
+    width: 22px;
+    height: 39px;
 }
 
 /* Base styles (already provided above) */
@@ -653,9 +641,7 @@
         max-width: 240px;
         padding: 0 6px;
     }
-    .highMomentum{
-        margin-left: 80px;
-    }
+ 
     .LikeBtnContainer {
         padding: 4px 2px;
         gap: 3px;
@@ -820,7 +806,7 @@
     .LikeAndCommentContainer {
         gap: 25px;
         margin-left: 20px;
-        max-width: 90px;
+        max-width: 100%;
         margin-bottom: 5px;
     }
     

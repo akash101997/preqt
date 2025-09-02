@@ -270,7 +270,7 @@ export default function DealsTalk() {
                 <Swiper
                     ref={swiperRef}
                     modules={[Navigation, Pagination, Autoplay]}
-                    spaceBetween={10}
+                    spaceBetween={20}
                     slidesPerView={1}
                     navigation={false}
                     pagination={false}
@@ -281,21 +281,28 @@ export default function DealsTalk() {
                     }}
                     breakpoints={{
                         640: {
-                            slidesPerView: 2,
-                            spaceBetween: 20,
+                            slidesPerView: 1.2,
                         },
+                        
                         768: {
+                            slidesPerView: 1,
+                        },
+                        1025: {
+                            slidesPerView: 1.5,
+                        },
+                        1133: {
                             slidesPerView: 2,
-                            spaceBetween: 20,
                         },
-                        1024: {
-                            slidesPerView: 3,
-                            spaceBetween: 20,
+                        1380: {
+                            slidesPerView: 2.2,
                         },
-                        1200: {
-                            slidesPerView: 3,
-                            spaceBetween: 20,
+                        1520: {
+                            slidesPerView: 2.4,
                         },
+                        1730: {
+                            slidesPerView: 2.8,
+                        },
+                      
                     }}
                     className={styles.dealsSwiper}
                 >

@@ -8,7 +8,7 @@ export default function MarketSentiment() {
                     {/* heading */}
                     <div className={styles.MarketSentimentHeadingContainer}>
                         <div className={styles.Heading}>Market Sentiment</div>
-                        <img src="/assets/pictures/growGraph.png" alt="" />
+                        <img src="/assets/pictures/growGraph.svg" alt="" />
                     </div>
 
                     {/* graph */}
@@ -21,7 +21,7 @@ export default function MarketSentiment() {
                             <div className={styles.yellowColor}></div>
                             <div className={styles.OrangeColor}></div>
                             <div className={styles.lastColor}></div>
-                            <img src="/assets/pictures/pinScale.png" alt="" className={styles.PinScaleImage} />
+                            <img src="/assets/pictures/pinScale.svg" alt="" className={styles.PinScaleImage} />
                         </div>
 
                         {/* color level */}
