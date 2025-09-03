@@ -24,14 +24,14 @@ export default function home() {
 
     return (
         <section>
-            <NavBar />
+            {/* <NavBar /> */}
             <MarqueeCom/>
             <HeroSection />
             <FAQSection />
             <div className={styles.homeFootermob}>
                 <AnimateAccount/>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </section>
     )
 }

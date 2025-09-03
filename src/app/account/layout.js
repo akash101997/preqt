@@ -48,7 +48,7 @@ export default function layout({ children }) {
   return (
     <div className={styles.mainaccount_layout}> 
       <div className={styles.navbar}>
-        <NavBar />
+        {/* <NavBar /> */}
       </div>
       <div className={styles.headar_button}>
         <BreadCrumbs/>
@@ -82,7 +82,7 @@ export default function layout({ children }) {
         </div>
       </div>
       <Accountfooter />
-      <Footer />
+      {/* <Footer /> */}
     </div>
 
 
