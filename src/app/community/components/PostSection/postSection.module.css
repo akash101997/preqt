@@ -2,16 +2,15 @@
   display: flex;
   flex-direction: column;
   width: 50%;
-  /* border: 1px solid black; */
+  border: 1px solid #00000014;
+  border-radius: 16px;
   /* margin: 0 auto; */
 }
 
 .IndividualPostContainer {
   display: flex;
   flex-direction: column;
-  border: 1px solid #00000014;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  border-bottom: 1px solid #00000014;
   gap: 8px;
 }
 
@@ -58,7 +57,7 @@
 
 .postDescription {
   font-size: 14px;
-  /* font-weight: 500; */
+  font-weight: 500;
   letter-spacing: 0%;
   margin: 0;
   color: #1F2937;
@@ -97,7 +96,7 @@
 }
 
 .likesCount {
-  margin: 0;
+  margin: 2px;
   font-size: 12px;
   color: #64748B;
   font-weight: 400;
@@ -106,7 +105,7 @@
 .IndividualPostContainer2 {
   display: flex;
   flex-direction: column;
-  border: 1px solid #00000014;
+  border-bottom: 1px solid #00000014;
   gap: 8px;
 }
 
@@ -117,7 +116,7 @@
   padding-top: 3%;
   padding-bottom: 3%;
   gap: 15px;
-  border: 1px solid #00000014;
+  border-bottom: 1px solid #00000014;
 }
 
 .votingDescription {
@@ -211,7 +210,7 @@
   margin-right: 12px;
 }
 
-/* .radioButton input[type="radio"] {
+.radioButton input[type="radio"] {
   opacity: 0;
   position: absolute;
   width: 20px;
@@ -221,21 +220,40 @@
 }
 
 .customRadio {
-  display: block;
+  display: flex;
   width: 20px;
   height: 20px;
   border: 2px solid #B59131;
   border-radius: 50%;
-  background: white;
+  /* background: white; */
   position: relative;
+  justify-content: center;
+  align-items: center;
   transition: all 0.3s ease;
 }
+/* .dot{
+   width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #B59131;
+} */
+    .dot {
+      display: none;   
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #B59131;
+    }
+    .dot.show {
+      display: inline-block; 
+    }
 
-.radioButton input[type="radio"]:checked+.customRadio {
-  background: #d1a946;
+
+ .radioButton input[type="radio"]:checked+.dot {
+display: none;
 }
 
-.radioButton input[type="radio"]:checked+.customRadio::after {
+/*.radioButton input[type="radio"]:checked+.customRadio::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -301,7 +319,7 @@
   padding-top: 3%;
   padding-bottom: 3%;
   gap: 15px;
-  border: 1px solid #00000014;
+  /* border-bottom: 1px solid #00000014; */
   border-bottom-right-radius: 16px;
   border-bottom-left-radius: 16px;
 }

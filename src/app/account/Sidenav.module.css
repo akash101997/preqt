@@ -80,6 +80,7 @@
   border-radius: 30px;
   transition: background 0.3s ease;
   cursor: pointer;
+     
 
 }
 .item span{
@@ -126,7 +127,8 @@
   display: flex;
   align-items: center;
   text-align: start;
-  width: 280px;
+  width: 87%;
+   white-space: nowrap;  
 }
 
 .hr {
@@ -219,7 +221,12 @@
 
   }
   .item:hover{
-    display: none;
+    /* display: none; */
+     background-color:white;
+     color: #6B7280; 
+  }
+  .item:hover svg path{
+    fill: #B18C07;
   }
 
   .sidebar {
@@ -261,6 +268,16 @@
   .hr {
     display: none;
   }
+  .logout:hover{
+    /* display: none; */
+    background-color: unset;
+     color: #6B7280;
+  }
+
+  .logout:hover svg path{
+  fill:#B18C07;
+}
+
   .lagout_hr{
     display: none;
   }

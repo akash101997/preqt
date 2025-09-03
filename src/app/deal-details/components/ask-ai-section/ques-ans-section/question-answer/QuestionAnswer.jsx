@@ -81,7 +81,7 @@ const QuestionAnswer = ({ handleQuesAns, handleAskAI }) => {
       </div>
 
       <div className={styles.ask_your_ques}>
-        <div><input type="text" placeholder='Ask Your Question' /></div>
+        <div style={{width:"100%"}}><input type="text" placeholder='Ask Your Question' /></div>
         <div className={styles.img}><img src="/assets/pictures/send-ques-logo.svg" alt="" /></div>
       </div>
       

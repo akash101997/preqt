@@ -7,6 +7,12 @@ const PostSection = () => {
 
   const [selectedOption, setSelectedOption] = useState(null)
   const [hasVoted, setHasVoted] = useState(false)
+    // const [showDot, setShowDot] = useState(false);
+const [dotId , setDotId]=useState(null);
+  // const toggleDot = (id) => {
+  //   // setShowDot(!showDot);
+  //   setDotId(id);
+  // };
 
   const pollData = [
     { id: 1, label: 'Option #1', votes: 2969, percentage: 97 },
@@ -20,13 +26,15 @@ const PostSection = () => {
   const handleVote = (optionId) => {
     if (!hasVoted) {
       setSelectedOption(optionId)
-      setHasVoted(true)
+      // setHasVoted(true)
     }
   }
+
 
   return (
     <div className={Styles.postsMainContainer}>
       {/* post 1 */}
+
       <div className={Styles.IndividualPostContainer}>
 
         {/* post heading and time */}
@@ -73,11 +81,13 @@ const PostSection = () => {
 
           {/* share */}
           <div className={Styles.likeContainer}>
-            <img src="/assets/pictures/share.svg" alt="" />
+            <img src="/assets/pictures/share-logo.svg" alt="" />
             <p className={Styles.likesCount}>Share</p>
           </div>
         </div>
       </div>
+
+
 
       {/* post 2 */}
       <div className={Styles.IndividualPostContainer2}>
@@ -126,11 +136,14 @@ const PostSection = () => {
 
           {/* share */}
           <div className={Styles.likeContainer}>
-            <img src="/assets/pictures/share.svg" alt="" />
+            <img src="/assets/pictures/share-logo.svg" alt="" />
             <p className={Styles.likesCount}>Share</p>
           </div>
         </div>
       </div>
+
+
+
 
       {/* voting options */}
       <div className={Styles.votingContainer}>
@@ -184,7 +197,10 @@ const PostSection = () => {
                         onChange={() => handleVote(option.id)}
                         disabled={hasVoted}
                       />
-                      <span className={Styles.customRadio}></span>
+                      <span className={Styles.customRadio}>
+
+                        
+                      </span>
                     </div>
 
                     <label htmlFor={`option-${option.id}`} className={Styles.optionLabel}>
@@ -236,12 +252,15 @@ const PostSection = () => {
 
           {/* share */}
           <div className={Styles.likeContainer}>
-            <img src="/assets/pictures/share.svg" alt="" />
+            <img src="/assets/pictures/share-logo.svg" alt="" />
             <p className={Styles.likesCount}>Share</p>
           </div>
         </div>
 
       </div>
+
+
+
 
       {/* post 3 */}
       <div className={Styles.IndividualPostContainer2}>
@@ -292,7 +311,7 @@ const PostSection = () => {
 
           {/* share */}
           <div className={Styles.likeContainer}>
-            <img src="/assets/pictures/share.svg" alt="" />
+            <img src="/assets/pictures/share-logo.svg" alt="" />
             <p className={Styles.likesCount}>Share</p>
           </div>
         </div>
@@ -349,7 +368,11 @@ const PostSection = () => {
                         onChange={() => handleVote(option.id)}
                         disabled={hasVoted}
                       />
-                      <span className={Styles.customRadio}></span>
+                      <span className={Styles.customRadio}>
+                        {/* <div className={Styles.dot}></div> */}
+                      {/* <div onClick={()=>toggleDot(option.id)}>w</div> */}
+                    <span className={`${Styles.dot} ${selectedOption=== option.id ? Styles.show : ""}`} ></span>
+                      </span>
                     </div>
 
                     <label htmlFor={`option-${option.id}`} className={Styles.optionLabel}>
@@ -401,7 +424,7 @@ const PostSection = () => {
 
           {/* share */}
           <div className={Styles.likeContainer}>
-            <img src="/assets/pictures/share.svg" alt="" />
+            <img src="/assets/pictures/share-logo.svg" alt="" />
             <p className={Styles.likesCount}>Share</p>
           </div>
         </div>
