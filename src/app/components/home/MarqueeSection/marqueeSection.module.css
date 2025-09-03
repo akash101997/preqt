@@ -77,3 +77,9 @@
 .marqueeContent.animate:hover {
     animation-play-state: paused;
 }
+
+@media (max-width: 480px) {
+    .marqueeSectionContainer{
+     background-color: unset;
+    }
+ }

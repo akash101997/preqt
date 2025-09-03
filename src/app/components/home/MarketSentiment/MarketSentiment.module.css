@@ -376,7 +376,7 @@
 
 .commentBtnContainer {
     display: flex;
-    max-width: 150px;
+    /* max-width: 150px; */
     max-height: 40px;
     padding: 8px 4px 8px 4px;
     gap: 6px;
@@ -385,8 +385,8 @@
 
 .ShareButton {
     display: flex;
-    max-width: 75px;
-    max-height: 40px;
+    /* max-width: 75px;
+    max-height: 40px; */
     padding: 8px 4px 8px 4px;
     gap: 6px;
 }
@@ -408,18 +408,31 @@
     position: relative;
 }
 
+.MarketSentimentDescription{
+    color: #1F2937;
+font-size: 14px;
+font-weight: 300;
+line-height: 20px; /* 142.857% */
+}
+
+.MarketSentimentDescription span{
+color: #16A34A;
+}
+
 .GreenColor1 {
     width: 100%;
     height: 16px;
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
-    background-color: #3FD146;
+    background-color: #E82D48;
+
 }
 
 .greenColor2 {
     width: 100%;
     height: 16px;
-    background-color: #8CE249;
+    background-color: #EDA635;
+
 }
 
 .yellowColor {
@@ -431,13 +444,15 @@
 .OrangeColor {
     width: 100%;
     height: 16px;
-    background-color: #EDA635;
+    background-color: #8CE249;
+
 }
 
 .lastColor {
     width: 100%;
     height: 16px;
-    background-color: #E82D48;
+    background-color: #3FD146;
+
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;
 }
@@ -510,12 +525,12 @@
 /* Tablet and Small Desktop (768px to 1024px) */
 @media (max-width: 1024px) {
     .ColorGraph {
-        max-width: 300px;
+        /* max-width: 300px; */
         gap: 12px;
     }
     
     .MainColorGraphDiv {
-        max-width: 300px;
+        /* max-width: 300px; */
         height: 20px;
     }
     
@@ -524,14 +539,11 @@
     }
     
     .ColorLevelMainContainer {
-        max-width: 300px;
+        /* max-width: 300px; */
         top: -8px;
         padding: 0 6px;
     }
-    
-    .ExtremeFear {
-        font-size: 9px;
-    }
+
     
     .PinScaleImage {
         right: 70px;
@@ -540,7 +552,7 @@
     }
     
     .MarketSentimentInnerContainer {
-        max-width: 300px;
+        /* max-width: 300px; */
         padding: 0 12px;
     }
 }
@@ -548,12 +560,12 @@
 /* Mobile Landscape (481px to 768px) */
 @media (max-width: 768px) {
     .ColorGraph {
-        max-width: 280px;
+        /* max-width: 280px; */
         gap: 10px;
     }
     
     .MainColorGraphDiv {
-        max-width: 280px;
+        /* max-width: 280px; */
         height: 18px;
     }
     
@@ -562,36 +574,34 @@
     }
     
     .ColorLevelMainContainer {
-        max-width: 280px;
-        top: -6px;
-        padding: 0 4px;
+        /* max-width: 280px; */
+        top: 0px;
+        padding: 0px;
     }
     
-    .ExtremeFear {
-        font-size: 8px;
-    }
+
     
     .PinScaleImage {
         right: 60px;
-        width: 14px;
+        width: 16px;
         height: 28px;
     }
     
     .MarketSentimentInnerContainer {
-        max-width: 280px;
+        /* max-width: 280px; */
         padding: 0 8px;
     }
     .LikeBtnContainer,
     .commentBtnContainer {
         padding: 6px 2px;
         gap: 4px;
-        max-width: 60px;
+        /* max-width: 60px; */
     }
     
     .ShareButton {
         padding: 6px 2px;
         gap: 4px;
-        max-width: 40px;
+        /* max-width: 40px; */
     }
     
     .likesCount,
@@ -607,13 +617,30 @@
 
 /* Mobile Portrait (320px to 480px) */
 @media (max-width: 480px) {
+    .MarketSentimentMainContainer{
+        padding: 0;
+        background-color: unset;
+        border-radius: 0;
+
+    }
+    .MarketSentimentGreed{
+        padding: 0;
+        background: unset;
+        border-radius: 0;
+    }
+    .newDeals{
+        display: none;
+    }
+    .RecentPostContainer{
+        display: none;
+    }
     .ColorGraph {
-        max-width: 240px;
+        /* max-width: 240px; */
         gap: 8px;
     }
     
     .MainColorGraphDiv {
-        max-width: 240px;
+        /* max-width: 240px; */
         height: 16px;
     }
     
@@ -622,13 +649,16 @@
     }
     
     .ColorLevelMainContainer {
-        max-width: 240px;
+        /* max-width: 240px; */
         top: -4px;
         padding: 0 2px;
     }
     
     .ExtremeFear {
-        font-size: 7px;
+        font-size: 10px;
+    }
+    .greedDiv{
+        padding: 0;
     }
     
     .PinScaleImage {
@@ -638,8 +668,9 @@
     }
     
     .MarketSentimentInnerContainer {
-        max-width: 240px;
-        padding: 0 6px;
+        /* max-width: 240px; */
+        padding: 0;
+        padding-top: 15px;
     }
  
     .LikeBtnContainer {
@@ -686,13 +717,13 @@
     .commentBtnContainer {
         padding: 4px 2px;
         gap: 3px;
-        max-width: 50px;
-        min-width: 40px;
+        /* max-width: 50px; */
+        /* min-width: 40px; */
     }
     
     .commentsCount {
         font-size: 11px;
-        max-width: 30px;
+        /* max-width: 30px; */
         text-indent: -9999px;
         position: relative;
     }
@@ -712,8 +743,8 @@
     .ShareButton {
         padding: 4px 2px;
         gap: 2px;
-        max-width: 30px;
-        min-width: 24px;
+        /* max-width: 30px;
+        min-width: 24px; */
         justify-content: center;
     }
     
@@ -742,12 +773,12 @@
 /* Very Small Screens (below 320px) */
 @media (max-width: 320px) {
     .ColorGraph {
-        max-width: 200px;
+        /* max-width: 200px; */
         gap: 6px;
     }
     
     .MainColorGraphDiv {
-        max-width: 200px;
+        /* max-width: 200px; */
         height: 14px;
     }
     
@@ -756,7 +787,7 @@
     }
     
     .ColorLevelMainContainer {
-        max-width: 200px;
+        /* max-width: 200px; */
         top: -2px;
         padding: 0 1px;
     }
@@ -772,7 +803,7 @@
     }
     
     .MarketSentimentInnerContainer {
-        max-width: 200px;
+        /* max-width: 200px; */
         padding: 0 4px;
     }
     .LikeBtnContainer,
@@ -785,9 +816,9 @@
     
     .ShareButton {
         padding: 3px 1px;
-        max-width: 24px;
-        min-width: 20px;
-        margin-right: 20px;
+        /* max-width: 24px;
+        min-width: 20px; */
+        /* margin-right: 20px; */
     }
     
     .likesCount::before {

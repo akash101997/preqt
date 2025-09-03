@@ -141,6 +141,34 @@
     }
     }
 
-@media (max-width: 1119px) {
+@media (max-width: 480px) {
+.headingSection{
+    font-size: 20px;
+    height: unset;
+}
+.testimonailMainContainer{
+    padding: 0;
+    gap: 16px;
+    padding-bottom: 32px;
+}
+.testimonialCard{
+    height: 304px;
+}
+
+.testimonialvideo2{
+    width: 186px;
+    height: 304px;
+}
+.videoTitle2{
+    font-size: 21px;
+}
+.titleBy2{
+    width: unset;
+    font-size: 14px;
+    margin-bottom: 13px;
+}
+.videoTestimonialSection{
+    height: unset;
+}
 
 }

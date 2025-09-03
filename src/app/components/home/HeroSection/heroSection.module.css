@@ -92,7 +92,7 @@
 
 
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 .midlrow{
     flex-direction: column;
 }
@@ -102,5 +102,17 @@
 .leftclm{
     max-width: 100%;
 }
+.mainDiv {
+    padding: 0 16px;
+    /* padding-right: 0; */
+}
+}
 
+@media (max-width: 480px) {
+.heroMainContaine{
+    padding: 0;
+}
+.heroMainContainer{
+    background-color: unset;
+}
 }

@@ -2,7 +2,7 @@
     height: 710px;
     /* max-width: 1920px; */
     background-color: #F7F6F2;
-    padding: 20px 120px 127px 120px;
+    padding: 20px 60px 127px 60px;
     display: flex;
     flex-direction: column;
     /* border: 1px solid black; */
@@ -233,6 +233,32 @@
     }
 } */
 
+
+@media (max-width: 1585px) {
+.leftText{
+    font-size: 38px;
+    max-width: 440px;
+}
+}
+@media (max-width: 1370px) {
+    .leftText{
+    font-size: 32px;
+    max-width: 300px;
+}
+.OurApp{
+    font-size: 76px;
+}
+.earlyAccessHeading{
+    font-size: 22px;
+}
+}
+@media (max-width: 1120px) {
+    .PhoneImage{
+    max-width: 255px;
+    }
+}
+
+
 /* Tablet and Small Desktop (768px to 1024px) */
 @media (max-width: 1024px) {
     .OurMobileAppMainConatiner {
@@ -266,17 +292,16 @@
     }
     
     .PhoneImage {
-        height: 600px;
-        width: 220px;
-        bottom: -80px;
+        /* height: 600px;
+        width: 220px; */
+        /* bottom: -80px; */
     }
     
     .leftText {
-        font-size: 32px;
-        width: 400px;
+        font-size: 24px;
         height: auto;
-        left: -60px;
         top: 60px;
+        max-width: 220px;
     }
     
     .storeButtons {
@@ -286,13 +311,19 @@
         top: 80px;
     }
     
-    .imageWrapper:hover .leftText {
+    /* .imageWrapper:hover .leftText {
         left: -60px;
     }
     
     .imageWrapper:hover .storeButtons {
         right: -60px;
-    }
+    } */
+}
+
+@media (max-width: 820px) {
+.OurMobileAppMainConatiner{
+    padding: 40px 20px 80px 20px;
+}
 }
 
 /* Mobile Landscape (481px to 768px) */
@@ -311,6 +342,9 @@
         font-size: 18px;
         max-width: 400px;
         text-align: center;
+    }
+    .OurMobileAppMainConatiner{
+        display: none;
     }
     
     .OurApp {

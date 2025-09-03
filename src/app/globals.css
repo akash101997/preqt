@@ -27,3 +27,13 @@
   height: 100%;
   /* adjust if your content is bigger */
 }
+
+.carouselWrapper .swiper-slide{
+  height: auto;
+}
+
+@media (max-width: 480px) {
+ body{
+  background-color: #F9FAFB !important;
+ }
+}
