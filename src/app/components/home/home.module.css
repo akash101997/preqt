@@ -69,3 +69,14 @@
 .marqueeContent:hover {
     animation-play-state: paused;
 }
+
+.homeFootermob{
+    display: none ;
+}
+
+@media (max-width: 768px) {
+    .homeFootermob{
+        display: block;
+    }
+}
+

@@ -29,7 +29,9 @@ export default function HeroSection() {
                   
                 </section>
             </div>
+            
             <OurMobileApp />
+            
             
         </div>
 

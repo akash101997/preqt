@@ -43,17 +43,20 @@ export default function NavBar() {
                     <img src="/assets/pictures/logo.svg" alt="logo" className={styles.logoImg} />
 
                     {/* bell icon */}
-                    <img src="/assets/pictures/bell.svg" alt="" />
+                    <div className={styles.NotificationIconContainermob}>
+                        <img src="/assets/pictures/bell.svg" alt="" />
+                        <div className={styles.notificationBadge}>1</div>
+                    </div>
                 </article>
             </div>
 
        
-            {menuOpen && <div className={styles.overlay} onClick={toggleMenu}></div>}
+            <div className={`${styles.overlay} ${menuOpen ? styles.active : ''}`} onClick={toggleMenu}></div>
 
             {/* side menu */}
-            <nav className={`${styles.sideMenu} ${menuOpen ? styles.active : ''}`} onClick={toggleMenu}>
+            <nav className={`${styles.sideMenu} ${menuOpen ? styles.active : ''}`}>
                  
-                <div className={styles.openedSideMenu}>
+                <div className={styles.openedSideMenu} onClick={(e) => e.stopPropagation()}>
                     {/* menu */}
                     <div className={styles.menuContainer}>
                          

@@ -1,10 +1,11 @@
 "use client"
 import styles from "./OurMobileApp.module.css"
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function OurMobileApp() {
 
     const [hasHovered, setHasHovered] = useState(false);
+    const sectionRef = useRef(null);
 
     const handleHover = () => {
         if (!hasHovered) {
@@ -12,8 +13,27 @@ export default function OurMobileApp() {
         }
     };
 
+    useEffect(() => {
+        if (!sectionRef.current) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setHasHovered(true);
+                        observer.disconnect();
+                    }
+                });
+            },
+            { threshold: 0.9 }
+        );
+
+        observer.observe(sectionRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <section className={styles.OurMobileAppMainConatiner}>
+        <section className={styles.OurMobileAppMainConatiner} ref={sectionRef}>
             {/* heading div */}
             <div className={styles.headingMainContainer}>
                 <p className={styles.earlyAccessHeading}>Gain early access to tomorrow’s leaders</p>

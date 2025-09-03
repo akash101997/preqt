@@ -53,10 +53,19 @@ export default function LetsHearFromThem() {
                     pagination={false}
                     autoplay={false}
                     breakpoints={{
-                        640: {
+                        0: {
+                            slidesPerView: 1,
+                        },
+                        400:{
                             slidesPerView: 1.2,
                         },
-                        768: {
+                        480: {
+                            slidesPerView: 1.2,
+                        },
+                        640: {
+                            slidesPerView: 1.5,
+                        },
+                        769: {
                             slidesPerView: 1,
                         },
                         1025: {

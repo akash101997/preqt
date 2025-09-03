@@ -10,7 +10,7 @@ export default function MarketSentiment() {
                         <div className={styles.Heading}>Market Sentiment</div>
                         <img src="/assets/pictures/growGraph.svg" alt="" />
                     </div>
-
+                    <p className={styles.MarketSentimentDescription}>MMI is in the <span>greed zone</span>. It suggests that investors are acting greedy in the market, but the action to be taken depends on the MMI trajectory.</p>
                     {/* graph */}
                     <div className={styles.ColorGraph}>
                         {/* <img src="/assets/pictures/colors.png" alt="" className={styles.colorsGraph} /> */}

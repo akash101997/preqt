@@ -5,6 +5,8 @@ import HeroSection from "./HeroSection/HeroSection";
 import FAQSection from "./FAQSection/FAQSection";
 import Footer from "../../common/navBar/Footer";
 import MarqueeCom from "./MarqueeSection/MarqueeCom";
+import Home from "@/app/account/footer/Accountfooter";
+import AnimateAccount from "@/app/account/footer/AnimateAccount";
 // import React, { useEffect, useRef } from "react";
 
 export default function home() {
@@ -26,6 +28,9 @@ export default function home() {
             <MarqueeCom/>
             <HeroSection />
             <FAQSection />
+            <div className={styles.homeFootermob}>
+                <AnimateAccount/>
+            </div>
             <Footer />
         </section>
     )

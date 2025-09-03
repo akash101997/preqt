@@ -23,7 +23,7 @@ export default function DealsTalk() {
             }}
         >
          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-  <path d="M9 18.168L15 12.168L9 6.16797" stroke="#7E60FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M9 18.168L15 12.168L9 6.16797" stroke="#7E60FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
         </div>
     );
@@ -266,7 +266,7 @@ export default function DealsTalk() {
                 Deals People are <span className={styles.SpanDealsTalkHeading}>Talking About </span>
             </div>
 
-            <div className={styles.carouselWrapper}>
+            <div className={`${styles.carouselWrapper} carouselWrapper`}>
                 <Swiper
                     ref={swiperRef}
                     modules={[Navigation, Pagination, Autoplay]}
@@ -275,16 +275,21 @@ export default function DealsTalk() {
                     navigation={false}
                     pagination={false}
                     loop={true}
-                    autoplay={{
-                        delay: 5000,
-                        disableOnInteraction: false,
-                    }}
+                    autoplay={false}
                     breakpoints={{
-                        640: {
+                        0: {
+                            slidesPerView: 1,
+                        },
+                        400:{
                             slidesPerView: 1.2,
                         },
-                        
-                        768: {
+                        480: {
+                            slidesPerView: 1.2,
+                        },
+                        640: {
+                            slidesPerView: 1.5,
+                        },
+                        769: {
                             slidesPerView: 1,
                         },
                         1025: {
