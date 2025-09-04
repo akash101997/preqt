@@ -83,7 +83,7 @@ export default function NavBar() {
                             <img src="/assets/pictures/Deals.svg" alt="" />
                             <div className={styles.homebtn}>Deals</div>
                         </Link>
-                        <Link className={styles.homeNavButton} href='https://pre-equity-community.vercel.app/community'>
+                        <Link className={styles.homeNavButton} target='_blank' href='https://pre-equity-community.vercel.app/community'>
                             <img src="/assets/pictures/community.svg" alt="" />
                             <div className={styles.homebtn}>Community</div>
                         </Link>
@@ -120,7 +120,7 @@ export default function NavBar() {
                             <img src="/assets/pictures/Transactions.svg" alt="" className={styles.HomeIconImage} />
                             <p className={styles.home}>Deals</p>
                         </Link>
-                        <Link href='https://pre-equity-community.vercel.app/community' className={`${styles.HomeNavButton} ${pathname === "https://pre-equity-community.vercel.app/community" ? styles.active : ""}`}>
+                        <Link href='https://pre-equity-community.vercel.app/community' target='_blank' className={`${styles.HomeNavButton} ${pathname === "https://pre-equity-community.vercel.app/community" ? styles.active : ""}`}>
                             <img src="/assets/pictures/people.svg" alt="" className={styles.HomeIconImage} />
                             <p className={styles.home}>Community</p>
                         </Link>
