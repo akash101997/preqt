@@ -98,7 +98,7 @@ export default function NavBar() {
                             <img src="/assets/pictures/home.svg" alt="" />
                             <div className={styles.homebtn}>Home</div>
                         </Link>
-                        <Link className={styles.homeNavButton} href='/deal-details'>
+                        <Link className={styles.homeNavButton} href='/deals'>
                             <img src="/assets/pictures/Deals.svg" alt="" />
                             <div className={styles.homebtn}>Deals</div>
                         </Link>
@@ -135,7 +135,7 @@ export default function NavBar() {
                             <img src="/assets/pictures/home.svg" alt="home" className={styles.HomeIconImage} />
                             <p className={styles.home}>Home</p>
                         </Link>
-                        <Link href='/deal-details' className={`${styles.HomeNavButton} ${pathname === "/deal-details" ? styles.active : ""}`} >
+                        <Link href='/deals' className={`${styles.HomeNavButton} ${pathname === "/deals" ? styles.active : ""}`} >
                             <img src="/assets/pictures/Transactions.svg" alt="" className={styles.HomeIconImage} />
                             <p className={styles.home}>Deals</p>
                         </Link>
