@@ -9,10 +9,10 @@ const community = () => {
   return (
     
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <MarqueeCom/>
       <PostDealcontainer/>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   )
 }

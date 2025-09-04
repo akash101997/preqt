@@ -21,7 +21,9 @@
 }
 
 .subcontainer {
-  width: 70%;
+  width: 100%;
+    max-width: 1326px;
+    padding: 0 16px;
 }
 
 .body-maincontainer {

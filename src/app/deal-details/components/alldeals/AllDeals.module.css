@@ -1,0 +1,14 @@
+
+.DealsTalkMainContainer{
+    height: 100% !important;
+    width: 100%;
+    max-width: 1326px !important;
+    margin: auto;
+    padding: 60px 16px;
+}
+
+.cardLink{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}

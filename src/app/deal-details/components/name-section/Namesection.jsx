@@ -1,13 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import FAQSection from "@/app/components/home/FAQSection/FAQSection";
 
 import "./namesection.css";
 
 import Accountfooter from '@/app/account/footer/Accountfooter'
-import NavBar from "@/app/common/navBar/NavBar";
-import Footer from "@/app/common/navBar/Footer";
 import Customnavbar from "../customnavbarsection/customnavbar";
 import AskAiSection from "../ask-ai-section/Ask-ai-section";  
 import Featured from "../why-featured-section/why";
@@ -26,6 +25,43 @@ const Namedetailsection = () => {
   const handleQuesAns=(flag)=>{
     setIsQuesAnsActive(flag);
   }
+
+  // Read dealId from URL and map to known deals (fallback-safe)
+  const searchParams = useSearchParams();
+  const dealId = searchParams?.get("dealId");
+
+  const dealsIndex = {
+    "1": {
+      id: 1,
+      type: "IPO- SME",
+      sector: "Healthcare",
+      logo: "/assets/pictures/Anthem.png",
+      name: "Anthem Biosciences Ltd",
+    },
+    "2": {
+      id: 2,
+      type: "Pre IPO- SME",
+      sector: "Electrical engineering",
+      logo: "/assets/pictures/parthElectrical.png",
+      name: "Parth Electricals & Engineering Limited",
+    },
+    "3": {
+      id: 3,
+      type: "IPO- SME",
+      sector: "Healthcare",
+      logo: "/assets/pictures/parthElectrical.png",
+      name: "Parth Electricals & Engineering Limited",
+    },
+    "4": {
+      id: 4,
+      type: "IPO- SME",
+      sector: "Healthcare",
+      logo: "/assets/pictures/parthElectrical.png",
+      name: "Parth Electricals & Engineering Limited",
+    },
+  };
+
+  const activeDeal = dealsIndex[dealId ?? "2"] ?? dealsIndex["2"]; // default to 2 to match current content
 
   const steps = [
     { label: "IPO Open Date", date: "Wed, Jul 30, 2025", completed: true },
@@ -63,7 +99,6 @@ const Namedetailsection = () => {
 
   return (
     <div className="main-container">
-      <NavBar />
       <div className="subcontainer">
         <section className="topbar">
           <Link href="/">
@@ -180,14 +215,14 @@ const Namedetailsection = () => {
           <section className="body">
             <div className="firsthalf">
               <section className="body1-buttons">
-                <span>Pre IPO- SME</span>
-                <span>Electrical engineering </span>
+                <span>{activeDeal.type}</span>
+                <span>{activeDeal.sector} </span>
               </section>
 
               <section className="body-section2">
                 <div>
-                  <img src="/assets/pictures/parthElectrical.png" alt="" />
-                  <span>Parth Electricals & Engineering Limited</span>
+                  <img src={activeDeal.logo} alt="" />
+                  <span>{activeDeal.name}</span>
                 </div>
                 <div 
                 className="bell-icon"
@@ -306,10 +341,6 @@ const Namedetailsection = () => {
                 </button>
               </div>
 
-              
-
-           
-
               <Valuation isAskAiActive={isAskAiActive} />
 
               <Shares />
@@ -359,37 +390,6 @@ const Namedetailsection = () => {
                             </defs>
                           </svg>
                         ) : (
-                          // <svg className=" not-completed"
-                          //   width="26"
-                          //   height="26"
-                          //   viewBox="0 0 26 26"
-                          //   fill="none"
-                          //   xmlns="http://www.w3.org/2000/svg"
-                          // >
-                          //   <g clipPath="url(#clip0_2675_7512)">
-                          //     <circle
-                          //       cx="12.8029"
-                          //       cy="12.8029"
-                          //       r="12.0028"
-                          //       fill="white"
-                          //       stroke="#B59131"
-                          //       strokeWidth="1.60037"
-                          //     />
-                          //   </g>
-                          //   <path
-                          //     d="M10.0645 15.7173L17.7799 8.00195L18.8043 9.02639L10.0645 17.7662L6.00098 13.7039L7.02541 12.6794L10.0645 15.7173Z"
-                          //     fill="black"
-                          //   />
-                          //   <defs>
-                          //     <clipPath id="clip0_2675_7512">
-                          //       <rect
-                          //         width="25.6059"
-                          //         height="25.6059"
-                          //         fill="white"
-                          //       />
-                          //     </clipPath>
-                          //   </defs>
-                          // </svg>
                           <span className="step-num">{step.number}</span>
                         )}
                       </div>
@@ -406,43 +406,7 @@ const Namedetailsection = () => {
             <Featured />
 
             <div className="secondhalf">
-              {/* <Customcarousel /> */}
-             
              <Customnavbar />
-
-              {/* <Gallerycarousel /> */}
-              {/* <Lastcarousel /> */}
-              {/* <div className="carousel-container">
-                <h3>Company Gallery</h3>
-                <Carousel interval={3000} fade>
-                  <Carousel.Item>
-                    <img
-                      className="d-block w-100 carousel-image"
-                      src="assets/pictures/final.png"
-                      alt="First slide"
-                    />
-               
-                  </Carousel.Item>
-
-                  <Carousel.Item>
-                    <img
-                      className="d-block w-100 carousel-image"
-                        src="assets/pictures/userImage3.png"
-                      alt="Second slide"
-                    />
-                    
-                  </Carousel.Item>
-
-                  <Carousel.Item>
-                    <img
-                      className="d-block w-100 carousel-image"
-                        src="assets/pictures/userImage4.png"
-                      alt="Third slide"
-                    />
-                   
-                  </Carousel.Item>
-                </Carousel>
-              </div> */}
             </div>
           </section>
 
@@ -454,7 +418,6 @@ const Namedetailsection = () => {
       {/* <Questions /> */}
       <FAQSection />
       <Accountfooter/>
-      <Footer />
     </div>
   );
 };

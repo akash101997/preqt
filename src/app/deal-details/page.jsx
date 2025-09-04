@@ -1,14 +1,19 @@
 
 import React from 'react'
 import Namedetailsection from './components/name-section/Namesection' 
+import AllDeals from './components/alldeals/AllDeals'
 
-
-const page = () => {
+const Page = ({ searchParams }) => {
+  const dealId = searchParams?.dealId;
   return (
-    <div >
-      <Namedetailsection/>
+    <div>
+      {dealId ? (
+        <Namedetailsection />
+      ) : (
+        <AllDeals />
+      )}
     </div>
   )
 }
 
-export default page
+export default Page
