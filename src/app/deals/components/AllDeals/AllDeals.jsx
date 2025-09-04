@@ -88,7 +88,7 @@ export default function AllDeals() {
     ];
 
     const renderCard1 = (deal) => (
-        <Link href={`/deal-details?dealId=${deal.id}`} className={stylesdeals.cardLink}>
+        <Link href={`/deals?dealId=${deal.id}`} className={stylesdeals.cardLink}>
             <div className={styles.cardContainer1}>
                 <div className={styles.cardInnerSections}>
                     <article className={styles.cardIPOsection}>
@@ -162,7 +162,7 @@ export default function AllDeals() {
     );
 
     const renderCard2 = (deal) => (
-        <Link href={`/deal-details?dealId=${deal.id}`} className={stylesdeals.cardLink}>
+        <Link href={`/deals?dealId=${deal.id}`} className={stylesdeals.cardLink}>
             <div className={styles.card2Container}>
                 <div className={styles.card2InnerSections}>
                     <article className={styles.card2IPOsection}>
