@@ -94,26 +94,26 @@ export default function NavBar() {
                                 </div>
                             </div>
 
-                            <Link className={styles.homeNavButton} href='https://pre-equity.vercel.app/'>
-                                <img src="/assets/pictures/home.svg" alt="" />
-                                <div className={styles.homebtn}>Home</div>
-                            </Link>
-                            <Link className={styles.homeNavButton} href='https://pre-equity.vercel.app/deals'>
-                                <img src="/assets/pictures/Deals.svg" alt="" />
-                                <div className={styles.homebtn}>Deals</div>
-                            </Link>
-                            <Link className={styles.homeNavButton} href='/community'>
-                                <img src="/assets/pictures/community.svg" alt="" />
-                                <div className={styles.homebtn}>Community</div>
-                            </Link>
-                            <Link className={styles.homeNavButton} href='https://pre-equity.vercel.app/events'>
-                                <img src="/assets/pictures/events.svg" alt="" />
-                                <div className={styles.homebtn}>Events</div>
-                            </Link>
-                            <Link className={styles.homeNavButton} href='https://pre-equity.vercel.app/account'>
-                                <img src="/assets/pictures/account.svg" alt="" />
-                                <div className={styles.homebtn}>Account</div>
-                            </Link></div>
+                            <Link className={styles.homeNavButton} href='/'>
+                            <img src="/assets/pictures/home.svg" alt="" />
+                            <div className={styles.homebtn}>Home</div>
+                        </Link>
+                        <Link className={styles.homeNavButton} href='/deal-details'>
+                            <img src="/assets/pictures/Deals.svg" alt="" />
+                            <div className={styles.homebtn}>Deals</div>
+                        </Link>
+                        <Link className={styles.homeNavButton} target='_blank' href='https://pre-equity-community.vercel.app/community'>
+                            <img src="/assets/pictures/community.svg" alt="" />
+                            <div className={styles.homebtn}>Community</div>
+                        </Link>
+                        <Link className={styles.homeNavButton} href='/events'>
+                            <img src="/assets/pictures/events.svg" alt="" />
+                            <div className={styles.homebtn}>Events</div>
+                        </Link>
+                        <Link className={styles.homeNavButton} href={'/account'}>
+                            <img src="/assets/pictures/account.svg" alt="" />
+                            <div className={styles.homebtn}>Account</div>
+                        </Link></div>
 
                     </div>
 
@@ -127,23 +127,23 @@ export default function NavBar() {
             </nav>
 
             <section className={styles.mainContainer}>
-                <Link href='/'> <img src="/assets/pictures/logo.svg" alt="logo" className={styles.logo} /></Link>
+               <Link href='/'> <img src="/assets/pictures/logo.svg" alt="logo" className={styles.logo} /></Link>
 
                 <div className={styles.navigationButtonContainer}>
                     <div className={styles.navigationButton}>
-                        <Link className={`${styles.HomeNavButton} ${pathname === "https://pre-equity.vercel.app/" ? styles.active : ""}`} href='https://pre-equity.vercel.app/'>
+                        <Link className={`${styles.HomeNavButton} ${pathname === "/" ? styles.active : ""}`} href='/'>
                             <img src="/assets/pictures/home.svg" alt="home" className={styles.HomeIconImage} />
                             <p className={styles.home}>Home</p>
                         </Link>
-                        <Link href='https://pre-equity.vercel.app/deals' className={`${styles.HomeNavButton} ${pathname === "https://pre-equity.vercel.app/deals" ? styles.active : ""}`} >
+                        <Link href='/deal-details' className={`${styles.HomeNavButton} ${pathname === "/deal-details" ? styles.active : ""}`} >
                             <img src="/assets/pictures/Transactions.svg" alt="" className={styles.HomeIconImage} />
                             <p className={styles.home}>Deals</p>
                         </Link>
-                        <Link href='/community' className={`${styles.HomeNavButton} ${pathname === "/community" ? styles.active : ""}`}>
+                        <Link href='https://pre-equity-community.vercel.app/community' target='_blank' className={`${styles.HomeNavButton} ${pathname === "https://pre-equity-community.vercel.app/community" ? styles.active : ""}`}>
                             <img src="/assets/pictures/people.svg" alt="" className={styles.HomeIconImage} />
                             <p className={styles.home}>Community</p>
                         </Link>
-                        <Link href='https://pre-equity.vercel.app/events' className={`${styles.HomeNavButton} ${pathname === "https://pre-equity.vercel.app/events" ? styles.active : ""}`}>
+                        <Link href='/events' className={`${styles.HomeNavButton} ${pathname === "/events" ? styles.active : ""}`}>
                             <img src="/assets/pictures/events.svg" alt="" className={styles.HomeIconImage} />
                             <p className={styles.home}>Events</p>
                         </Link>
@@ -156,7 +156,7 @@ export default function NavBar() {
                         <div className={styles.notificationBadge}>2</div>
                     </div>
                     <div className={styles.UserIconContainer}>
-                        <Link href={'https://pre-equity.vercel.app/account/details'} className={styles.Link}>  <p className={styles.userInitials}>AM</p></Link>
+                        <Link href={'/account/details'} className={styles.Link}>  <p className={styles.userInitials}>AM</p></Link>
                     </div>
                 </div>
             </section>
