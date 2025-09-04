@@ -1,7 +1,7 @@
 
 import React from 'react'
 import Namedetailsection from './components/name-section/Namesection' 
-import AllDeals from './components/alldeals/AllDeals'
+import AllDeals from './components/AllDeals/AllDeals';
 
 const Page = ({ searchParams }) => {
   const dealId = searchParams?.dealId;
