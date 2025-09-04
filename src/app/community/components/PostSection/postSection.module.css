@@ -1,14 +1,16 @@
 .postsMainContainer {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
   border: 1px solid #00000014;
   border-radius: 16px;
+  max-width: 660px;
   /* margin: 0 auto; */
 }
 
 .IndividualPostContainer {
   display: flex;
+  padding: 14px 10px;
   flex-direction: column;
   border-bottom: 1px solid #00000014;
   gap: 8px;
@@ -48,8 +50,8 @@
 .postsAndDescriptionContainer {
   display: flex;
   flex-direction: column;
-  padding-right: 3%;
-  padding-left: 3%;
+  padding-right: 1%;
+  padding-left: 1%;
   gap: 12px;
   justify-content: center;
   /* align-items: center; */
@@ -77,12 +79,14 @@
   padding-right: 3%;
   padding-left: 3%;
   align-items: center;
-  margin-bottom: 2%;
+  /* margin-bottom: 2%; */
   /* border: 1px solid black; */
 }
 
 .likeAndComment {
   display: flex;
+  font-size: 14px;
+  font-weight: 400;
   gap: 14px;
   align-items: center;
   /* border: 1px solid black; */
@@ -90,6 +94,8 @@
 
 .likeContainer {
   display: flex;
+  font-size: 12px;
+  font-weight: 400;
   gap: 4px;
   align-items: center;
   justify-content: center;
@@ -105,6 +111,7 @@
 .IndividualPostContainer2 {
   display: flex;
   flex-direction: column;
+    padding: 14px 10px;
   border-bottom: 1px solid #00000014;
   gap: 8px;
 }
@@ -112,9 +119,10 @@
 .votingContainer {
   display: flex;
   flex-direction: column;
+  padding: 14px 10px;
   /* width: 100%; */
-  padding-top: 3%;
-  padding-bottom: 3%;
+  /* padding-top: 3%;
+  padding-bottom: 3%; */
   gap: 15px;
   border-bottom: 1px solid #00000014;
 }
@@ -175,21 +183,21 @@
 .pollOption {
   position: relative;
   margin-bottom: 12px;
-  border: 2px solid #e5e5e5;
+  /* border: 2px solid #e5e5e5; */
   border-radius: 12px;
-  background: #f9f9f9;
+  /* background: #f9f9f9; */
   cursor: pointer;
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
   overflow: hidden;
 }
 
 .pollOption:hover {
-  border-color: #d1a946;
+  border:2px solid #d1a946;
   background: #fefdf8;
 }
 
 .pollOption.selected {
-  border-color: #d1a946;
+  border:2px solid #d1a946;
   background: #fefdf8;
 }
 
@@ -313,11 +321,12 @@ display: none;
 }
 
 .votingContainer2 {
+    padding: 14px 10px;
   display: flex;
   flex-direction: column;
   /* width: 100%; */
-  padding-top: 3%;
-  padding-bottom: 3%;
+  /* padding-top: 3%;
+  padding-bottom: 3%; */
   gap: 15px;
   /* border-bottom: 1px solid #00000014; */
   border-bottom-right-radius: 16px;
@@ -327,6 +336,7 @@ display: none;
 @media (max-width: 640px) {
   .postsMainContainer {
     width: 100%;
+      padding: 14px 10px;
     /* full width on mobile */
     /* padding: 0 10px; */
     /* small side padding */
@@ -345,12 +355,12 @@ display: none;
   }
 
   .postImage {
-    max-height: 250px;
+    max-height: 500px;
     /* shrink image for small devices */
   }
 
   .likesCount {
-    font-size: 10px;
+    font-size: 14px;
   }
 
   .optionLabel,

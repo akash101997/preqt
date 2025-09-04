@@ -198,7 +198,9 @@ const [dotId , setDotId]=useState(null);
                         disabled={hasVoted}
                       />
                       <span className={Styles.customRadio}>
-
+                           {/* <div className={Styles.dot}></div> 
+                       <div onClick={()=>toggleDot(option.id)}>w</div>  */}
+                      <span className={`${Styles.dot} ${selectedOption=== option.id ? Styles.show : ""}`} ></span>
                         
                       </span>
                     </div>
