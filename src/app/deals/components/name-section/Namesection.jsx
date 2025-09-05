@@ -37,6 +37,7 @@ const Namedetailsection = () => {
       sector: "Healthcare",
       logo: "/assets/pictures/Anthem.png",
       name: "Anthem Biosciences Ltd",
+      deal: "public"
     },
     "2": {
       id: 2,
@@ -44,6 +45,7 @@ const Namedetailsection = () => {
       sector: "Electrical engineering",
       logo: "/assets/pictures/parthElectrical.png",
       name: "Parth Electricals & Engineering Limited",
+      deal: "private"
     },
     "3": {
       id: 3,
@@ -51,6 +53,7 @@ const Namedetailsection = () => {
       sector: "Healthcare",
       logo: "/assets/pictures/parthElectrical.png",
       name: "Parth Electricals & Engineering Limited",
+      deal: "private"
     },
     "4": {
       id: 4,
@@ -58,10 +61,14 @@ const Namedetailsection = () => {
       sector: "Healthcare",
       logo: "/assets/pictures/parthElectrical.png",
       name: "Parth Electricals & Engineering Limited",
+      deal: "private"
     },
   };
 
   const activeDeal = dealsIndex[dealId ?? "2"] ?? dealsIndex["2"]; // default to 2 to match current content
+  
+  // Determine if this is a private deal for theme switching
+  const isPrivateDeal = activeDeal.deal === "private";
 
   const steps = [
     { label: "IPO Open Date", date: "Wed, Jul 30, 2025", completed: true },
@@ -98,7 +105,7 @@ const Namedetailsection = () => {
   ];
 
   return (
-    <div className="main-container">
+    <div className={`main-container ${isPrivateDeal ? 'private-deal-theme' : ''}`}>
       <div className="subcontainer">
         <section className="topbar">
           <Link href="/">
@@ -416,8 +423,12 @@ const Namedetailsection = () => {
         </div>
       </div>
       {/* <Questions /> */}
-      <FAQSection />
-      <Accountfooter/>
+      <div className="faq-section">
+        <FAQSection />
+      </div>
+      <div className="account-footer">
+        <Accountfooter/>
+      </div>
     </div>
   );
 };

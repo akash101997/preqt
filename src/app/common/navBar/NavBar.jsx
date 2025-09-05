@@ -1,12 +1,24 @@
 "use client"
 import styles from './NavBar.module.css'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useSearchParams } from 'next/navigation'
 import React, { useState, useEffect } from 'react'
 
 export default function NavBar() {
 
     const pathname = usePathname();
+    const searchParams = useSearchParams();
+    const dealId = searchParams?.get("dealId");
+    
+    // Define deals data to check if deal is private
+    const dealsData = {
+        "1": { deal: "public" },
+        "2": { deal: "private" },
+        "3": { deal: "private" },
+        "4": { deal: "private" }
+    };
+    
+    const isPrivateDeal = dealId && dealsData[dealId]?.deal === "private";
 
     const [menuOpen, setMenuOpen] = useState(false)
 
@@ -50,7 +62,7 @@ export default function NavBar() {
                         )}
                     </div>
                     {/* logo */}
-                    <img src="/assets/pictures/logo.svg" alt="logo" className={styles.logoImg} />
+                    <img src={isPrivateDeal ? "/assets/pictures/private-logo.svg" : "/assets/pictures/logo.svg"} alt="logo" className={styles.logoImg} />
 
                     {/* bell icon */}
                     <div className={styles.NotificationIconContainermob}>
@@ -126,8 +138,8 @@ export default function NavBar() {
                 </div>
             </nav>
 
-            <section className={styles.mainContainer}>
-               <Link href='/'> <img src="/assets/pictures/logo.svg" alt="logo" className={styles.logo} /></Link>
+            <section className={`${styles.mainContainer} ${isPrivateDeal ? styles.privateDealTheme : ''}`}>
+               <Link href='/'> <img src={isPrivateDeal ? "/assets/pictures/private-logo.svg" : "/assets/pictures/logo.svg"} alt="logo" className={styles.logo} /></Link>
 
                 <div className={styles.navigationButtonContainer}>
                     <div className={styles.navigationButton}>

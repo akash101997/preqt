@@ -1564,3 +1564,267 @@ color: #b18c07;
     padding: 15px 10px;
   }
 }
+
+/* Private Deal Theme Styles */
+.private-deal-theme {
+  background-color: #000 !important;
+  color: white !important;
+}
+.private-deal-theme .overview-container {
+  background-color: #1a1a1a !important;
+  color: white !important;
+}
+
+.private-deal-theme .topbar,
+.private-deal-theme .mob-topbar {
+  background-color: #000000 !important;
+  padding: 20px 0px !important;
+  margin: 0 !important;
+}
+
+.private-deal-theme .subcontainer {
+  background-color: #000000 !important;
+}
+
+/* Hide FAQSection and Accountfooter on private deal theme */
+.private-deal-theme .faq-section,
+.private-deal-theme .account-footer {
+  display: none !important;
+}
+
+.private-deal-theme .body {
+  background: #000 !important;
+
+  color: white !important;
+}
+
+.private-deal-theme .firsthalf {
+  background: #171717 !important;
+  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
+  color: white !important;
+}
+.first-navbar .navigation-tabs{
+  background: #171717 !important;
+  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
+}
+
+.private-deal-theme .secondhalf {
+  background: #171717 !important;
+  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
+  color: white !important;
+}
+
+.private-deal-theme .body-section2 span {
+  color: white !important;
+}
+
+.private-deal-theme .body-section3 span {
+  color: white !important;
+}
+
+.private-deal-theme .body1-buttons span {
+  background-color: #404040 !important;
+  color: white !important;
+}
+
+.private-deal-theme .topbar span,
+.private-deal-theme .mob-topbar span {
+  color: white !important;
+}
+
+.private-deal-theme .home {
+  color: #cccccc !important;
+}
+
+.private-deal-theme .dea {
+  color: white !important;
+}
+
+.private-deal-theme .ask-ai-section {
+  background-color: #2d2d2d !important;
+  color: white !important;
+}
+
+.private-deal-theme .shares-card {
+  background-color: #2d2d2d !important;
+  color: white !important;
+  border-color: #404040 !important;
+}
+
+.private-deal-theme .why-section {
+  background: #171717 !important;
+  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
+  color: white !important;
+}
+
+.private-deal-theme .why-section h2 {
+  color: white !important;
+}
+
+.private-deal-theme .why-subsection div {
+  background: linear-gradient(to bottom, rgba(45, 45, 45, 0.8), rgba(40, 40, 40, 0.6)) !important;
+  color: white !important;
+}
+
+.private-deal-theme .why-subsection div h4 {
+  color: white !important;
+}
+
+.private-deal-theme .customcars {
+  background: #171717 !important;
+  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
+  color: white !important;
+}
+
+.private-deal-theme .customcars .nav-item button {
+  background-color: #2d2d2d !important;
+  color: #cccccc !important;
+  border: 1px solid #404040 !important;
+}
+
+.private-deal-theme .customcars .nav-item button:hover {
+  background-color: #b18c07 !important;
+  color: white !important;
+}
+
+.private-deal-theme .lastcarousel {
+    background: #09090B !important;
+
+  color: white !important;
+}
+
+.private-deal-theme .lastcarousel h3 {
+  color: white !important;
+}
+
+.private-deal-theme .about-section {
+  background: #09090B !important;
+  color: white !important;
+}
+
+.private-deal-theme .about-section h4,
+.private-deal-theme .about-section p {
+  color: white !important;
+}
+
+.private-deal-theme .pitch-deck {
+    background: #09090B !important;
+
+  color: white !important;
+}
+
+.private-deal-theme .pitch-deck h4 {
+  color: white !important;
+}
+
+.private-deal-theme .bod-section {
+    background: #09090B !important;
+
+  color: white !important;
+}
+
+.private-deal-theme .bod-section h4 {
+  color: white !important;
+}
+
+.private-deal-theme .questions-section {
+  background-color: #2d2d2d !important;
+  color: white !important;
+}
+
+.private-deal-theme .questions-section h4,
+.private-deal-theme .questions-section span {
+  color: white !important;
+}
+
+.private-deal-theme .timeline {
+  background-color: #404040 !important;
+  border-color: #666666 !important;
+}
+
+.private-deal-theme .timeline-content .label,
+.private-deal-theme .timeline-content .date {
+  color: white !important;
+}
+
+.private-deal-theme .step-num {
+  background: #404040 !important;
+  border-color: #666666 !important;
+  color: white !important;
+}
+
+.private-deal-theme .top section {
+  background-color: #404040 !important;
+  color: white !important;
+}
+
+.private-deal-theme .others {
+  color: white !important;
+}
+
+.private-deal-theme .others h6 {
+  color: #878787 !important;
+}
+
+.private-deal-theme .others span {
+  color: white !important;
+}
+
+.private-deal-theme .others a {
+  color: #b18c07 !important;
+}
+
+.private-deal-theme .label-title {
+  color: #cccccc !important;
+}
+
+.private-deal-theme .label-value {
+  color: white !important;
+}
+
+.private-deal-theme .progress-container-heading {
+  color: #cccccc !important;
+}
+
+.private-deal-theme .progress-container-heading span {
+  color: white !important;
+}
+
+.private-deal-theme .smallcards-section span {
+  color: white !important;
+}
+
+.private-deal-theme .image-stack {
+  background: #404040 !important;
+  border-color: #b18c07 !important;
+  color: white !important;
+}
+
+.private-deal-theme .image-stack .s1 {
+  color: white !important;
+}
+
+.private-deal-theme .view-details-btn {
+  background-color: #404040 !important;
+  color: white !important;
+}
+
+.private-deal-theme .view-details-btn .link {
+  color: #b18c07 !important;
+}
+
+.private-deal-theme .accordion-button {
+  /* background-color: #2d2d2d !important; */
+  color: white !important;
+  border-color: #404040 !important;
+}
+
+.private-deal-theme .accordion-button:not(.collapsed) {
+  background-color: #404040 !important;
+  color: white !important;
+}
+
+.private-deal-theme .accordion-body {
+  background-color: #2d2d2d !important;
+  color: white !important;
+}
