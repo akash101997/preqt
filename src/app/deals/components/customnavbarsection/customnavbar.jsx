@@ -3,13 +3,14 @@ import { Tab, Tabs, Fade } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Overview from "./overview/overview";
 import Fundamentals from "./fundamentals/fundamentals";
-import Industry from "./industry/industry";
 import Keyfinancials from "./keyfinancials/keyfinancials";
 import Shareholdings from "./shareholdings/shareholdings";
 import "./customnavbar.css";
+import Industry from "./industry/industry";
 
 const Customnavbar = () => {
   const [key, setKey] = useState("Overview");
+  console.log("Industry component is:", Industry);
 
   return (
     <div className="first-navbar">
@@ -29,7 +30,7 @@ const Customnavbar = () => {
           <Fundamentals />
         </Tab>
         <Tab eventKey="Industry" title="Industry">
-          <Industry />
+          <Industry/>
         </Tab>
         <Tab eventKey="Key Financials" title="Key Financials">
           <Keyfinancials />
@@ -38,6 +39,7 @@ const Customnavbar = () => {
           <Shareholdings />
         </Tab>
       </Tabs>
+      
     </div>
   );
 };

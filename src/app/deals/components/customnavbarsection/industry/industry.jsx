@@ -1,92 +1,133 @@
-import React from 'react'
-import styles from './industry.module.css'
+import React, { useState } from 'react';
+import styles from './industry.module.css';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const Industry = () => {
+  // 🔹 States for dropdown open/close
+  const [showGrowth, setShowGrowth] = useState(false);
+  const [showPolicy, setShowPolicy] = useState(false);
+  const [showPeer, setShowPeer] = useState(false);
+
+  // 🔹 Dummy Data
+  const growthOpportunities = [
+    {
+      title: "Expansion of Technological Capabilities",
+      description: "Investing in biotransformation, flow chemistry, and advanced pharmaceutical technologies."
+    },
+    {
+      title: "Capacity Expansion",
+      description: "Increasing manufacturing capacity to 425 kL for custom synthesis and 182 kL for fermentation by FY26."
+    },
+    {
+      title: "Global Market Penetration",
+      description: "Expanding client base in regulated markets like the U.S. and Europe."
+    },
+    {
+      title: "Specialty Ingredients Portfolio",
+      description: "Focusing on biosimilars, probiotics, enzymes, and high-potent APIs to capitalize on niche markets."
+    }
+  ];
+
+  const governmentPolicies = [
+    "National Biotechnology Development Strategy (NBDS) 2021–2025",
+    "PLI Scheme for Pharmaceuticals",
+    "Regulatory Harmonization",
+    "Bio-RIDE Scheme"
+  ];
+
+  const peerComparison = [
+    { metric: "Revenue (₹ Cr)", anthem: "1,844.6", syngene: "3,642.4" },
+    { metric: "Net Profit (₹ Cr)", anthem: "451.3", syngene: "367.3" },
+    { metric: "EBITDA Margin", anthem: "36.8%", syngene: "28.6%" },
+    { metric: "ROE", anthem: "20.8%", syngene: "10.5%" },
+    { metric: "ROCE", anthem: "27.6%", syngene: "13.5%" },
+    { metric: "P/E Ratio", anthem: "66.9–70.6", syngene: "53.3" }
+  ];
+
   return (
-    <div>
-        {/* <section className={styles.growthSection}>
-      <h2 className={styles.growthHeading}>Growth Opportunities</h2>
-
-      <div className={styles.item}>
-        <h3>Expansion of Technological Capabilities:</h3>
-        <p>Investing in biotransformation, flow chemistry, and advanced pharmaceutical technologies.</p>
-      </div>
-
-      <div className={styles.growthItem}>
-        <h3>Capacity Expansion</h3>
-        <p>Increasing manufacturing capacity to 425 kL for custom synthesis and 182 kL for fermentation by FY26.</p>
-      </div>
-
-      <div className={styles.growthItem}>
-        <h3>Global Market Penetration:</h3>
-        <p>Expanding client base in regulated markets like the U.S. and Europe.</p>
-      </div>
-
-      <div className={styles.growthItem}>
-        <h3>Specialty Ingredients Portfolio</h3>
-        <p>Focusing on biosimilars, probiotics, enzymes, and high-potent APIs to capitalize on niche markets.</p>
-      </div>
-    </section>
-        <section className={styles.policySection}>
-      <h2 className={styles.policyHeading}>Government Policy Support</h2>
-      <ul className={styles.policyList}>
-        <li>National Biotechnology Development Strategy (NBDS) 2021–2025</li>
-        <li>PLI Scheme for Pharmaceuticals</li>
-        <li>Regulatory Harmonization</li>
-        <li>Bio-RIDE Scheme</li>
-      </ul>
-    </section>
+    <div className={styles.industryContainer}>
+      {/* Growth Opportunities Section */}
+      <section className={styles.growthSection}>
+        <h2 
+          className={styles.growthHeading} 
+          onClick={() => setShowGrowth(!showGrowth)}
+          style={{cursor: "pointer"}}
+        >
+          Growth Opportunities {showGrowth ? <ChevronUp/> : <ChevronDown />}
+        </h2>
+        {showGrowth && (
+          <div>
+            {growthOpportunities.map((item, index) => (
+              <div key={index} className={styles.growthItem}>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+      <hr />
 
 
+      {/* Government Policy Section */}
+      <section className={styles.policySection}>
+        <h2 
+          className={styles.policyHeading} 
+          onClick={() => setShowPolicy(!showPolicy)}
+          style={{cursor: "pointer"}}
+        >
+          Government Policy Support {showPolicy ? <ChevronUp/> : <ChevronDown />}
+        </h2>
+        {showPolicy && (
+          <ul className={styles.policyList}>
+            {governmentPolicies.map((policy, index) => (
+              <li key={index}>{policy}</li>
+            ))}
+          </ul>
+        )}
+      </section>
+      <hr />
 
-        <section className={styles.peerSection}>
-      <h2 className={styles.PeerHeading}>Peer Comparison</h2>
+      {/* Peer Comparison Section */}
+      <section className={styles.peerSection}>
+        <h2 
+          className={styles.PeerHeading} 
+          onClick={() => setShowPeer(!showPeer)}
+          style={{cursor: "pointer"}}
+        >
+          Peer Comparison {showPeer ? <ChevronUp/> : <ChevronDown />}
+        </h2>
+        {showPeer && (
+          <table className={styles.PeerTable}>
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th><div className={styles.tableHeading}><span>Anthem Biosciences</span><img src="/assets/pictures/anthem-logo.svg" alt="" /></div></th>
+                <th><div className={styles.tableHeading}><span>Syngene International</span><img src="/assets/pictures/syngene-logo.svg" alt="" /></div></th>
+                <th><div className={styles.tableHeading}><span>Syngene International</span><img src="/assets/pictures/syngene-logo.svg" alt="" /></div></th>
+                <th><div className={styles.tableHeading}><span>Syngene International</span><img src="/assets/pictures/syngene-logo.svg" alt="" /></div></th>
 
-      <table className={styles.PeerTable}>
-        <thead>
-          <tr>
-            <th>Metric</th>
-            <th>Anthem Biosciences</th>
-            <th>Syngene International</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Revenue (₹ Cr)</td>
-            <td>1,844.6</td>
-            <td>3,642.4</td>
-          </tr>
-          <tr>
-            <td>Net Profit (₹ Cr)</td>
-            <td>451.3</td>
-            <td>367.3</td>
-          </tr>
-          <tr>
-            <td>EBITDA Margin</td>
-            <td>36.8%</td>
-            <td>28.6%</td>
-          </tr>
-          <tr>
-            <td>ROE</td>
-            <td>20.8%</td>
-            <td>10.5%</td>
-          </tr>
-          <tr>
-            <td>ROCE</td>
-            <td>27.6%</td>
-            <td>13.5%</td>
-          </tr>
-          <tr>
-            <td>P/E Ratio</td>
-            <td>66.9–70.6</td>
-            <td>53.3</td>
-          </tr>
-        </tbody>
-      </table>
-    </section> */}
+              </tr>
+            </thead>
+            <tbody>
+              {peerComparison.map((row, index) => (
+                <tr key={index}>
+                  <td>{row.metric}</td>
+                  <td>{row.anthem}</td>
+                  <td>{row.syngene}</td>
+                  <td>{row.syngene}</td>
+                  <td>{row.syngene}</td>
 
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </section>
+      <hr />
     </div>
-  )
-}
+  );
+};
 
-export default Industry
+export default Industry;
+ 

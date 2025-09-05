@@ -1,9 +1,10 @@
 'use client';
-import styles from '@/app/deals/components/ask-ai-section/ques-ans-section/question-answer/QuestionAnswer.module.css';
+import styles from './PrivateQuestion.module.css'
 
 const activities = [
   {
     id: 1,
+    // logo:"/assets/pictures/ques-ans-user-logo.svg",
     user: "R/uifjdkdsc",
     time: "20 Mar 2021 at 05:15 PM",
     message: "I'm concerned about the security of my funds. How do I know my investment will be safe on your platform?",
@@ -11,6 +12,7 @@ const activities = [
   },
   {
     id: 2,
+    //  logo:"/assets/pictures/ques-ans-user-logo.svg",
     user: "RoadShows",
     time: "20 Mar 2021 at 05:15 PM",
     message: "Our platform is fully compliant with all local and international regulations, ensuring that your investment is both secure and legally protected.",
@@ -18,13 +20,15 @@ const activities = [
   },
   {
     id: 3,
-    user: "Emmanuel Rodes",
+    //  logo:"/assets/pictures/ques-ans-user-logo.svg",
+    user: "Fmmanuel Rodes",
     time: "20 Mar 2021 at 05:15 PM",
     message: "I'm concerned about the security of my funds. How do I know my investment will be safe on your platform?",
     isReply: false,
   },
   {
     id: 4,
+    // logo:"/assets/pictures/ques-ans-user-logo.svg",
     user: "RoadShows",
     time: "20 Mar 2021 at 05:15 PM",
     message: "Our platform is fully compliant with all local and international regulations, ensuring that your investment is both secure and legally protected.",
@@ -32,18 +36,18 @@ const activities = [
   },
 ];
 
-const QuestionAnswer = ({ handleQuesAns, handleAskAI }) => {
+const PrivateQuestion = () => {
   return (
     <div className={styles.container}>
       <div className={styles.headar}>
         <img 
           className={styles.img} 
-          src="/assets/pictures/left-arrow.svg" 
+          src="/assets/pictures/left-arrow-white.svg" 
           alt="" 
           onClick={() => handleQuesAns(false)}
           style={{ cursor: 'pointer' }}
         />
-        <div className="image-stack">
+        <div className={styles.imageStack}>
           <>
             <div>
               <img src="/assets/pictures/1.png" alt="" />
@@ -51,9 +55,9 @@ const QuestionAnswer = ({ handleQuesAns, handleAskAI }) => {
               <img src="/assets/pictures/1.png" alt="" />
               <img src="/assets/pictures/1.png" alt="" />
             </div>
-            <span className="s1">23 Q&A answered in last 3 days </span>
+            <span className={styles.s1}>23 Q&A answered in last 3 days </span>
           </>
-          <span className="s2">
+          <span className={styles.s2}>
             <img
               src="/assets/pictures/8e3073ca31264b3cb0bd9cb1e07af102b937cb5c.gif"
               alt="gif"
@@ -63,6 +67,7 @@ const QuestionAnswer = ({ handleQuesAns, handleAskAI }) => {
       </div>
       
       <div className={styles.answerContainer}>
+       
         <h3 className={styles.title}>Know what people are talking about</h3>
         <div className={styles.activityList}>
           {activities.map((item) => (
@@ -71,8 +76,10 @@ const QuestionAnswer = ({ handleQuesAns, handleAskAI }) => {
                 {item.user.charAt(0)}
               </div>
               <div>
+              <div className={styles.userDetails}>  
                 <div className={styles.userName}>{item.user}</div>
-                <div className={styles.time}>{item.time}</div>
+                {/* <div className={styles.logo}>{item.logo}</div> */}
+                <div className={styles.time}>{item.time}</div></div>
                 <div className={styles.message}>{item.message}</div>
               </div>
             </div>
@@ -86,7 +93,7 @@ const QuestionAnswer = ({ handleQuesAns, handleAskAI }) => {
       </div>
       
       <button 
-        className="ask-ai-button"
+        className={styles.AskAiButton}
         onClick={() => {
           handleAskAI && handleAskAI(true);
         }}
@@ -117,4 +124,4 @@ const QuestionAnswer = ({ handleQuesAns, handleAskAI }) => {
   );
 }
 
-export default QuestionAnswer;
+export default PrivateQuestion;
