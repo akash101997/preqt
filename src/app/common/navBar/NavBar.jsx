@@ -100,7 +100,7 @@ export default function NavBar() {
 
                                     <div className={styles.arrow}>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <path d="M7.5 15L12.5 10L7.5 5" stroke="#4B5563" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M7.5 15L12.5 10L7.5 5" stroke="#4B5563" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
                                     </div>
                                 </div>
