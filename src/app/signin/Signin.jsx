@@ -28,6 +28,7 @@ const Signin = () => {
         <p className={styles.subtitle}>Sign in to your Preqt Account</p>
 
         <form className={styles.form} onSubmit={handleSubmit}>
+          <div className={styles.formGroup}>
           <label className={styles.label} htmlFor="email">Email Address</label>
           <input
             id="email"
@@ -36,8 +37,9 @@ const Signin = () => {
             placeholder="Enter your email Address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            autoComplete="email"
-          />
+              autoComplete="email"
+            />
+          </div>
 
           <button type="submit" className={`${styles.button} ${!isValidEmail ? styles.buttonDisabled : ''}`} disabled={!isValidEmail}>
             Send OTP
