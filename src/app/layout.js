@@ -5,8 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import Head from "next/head";
-import Footer from "./common/navBar/Footer";
-import NavBar from "./common/navBar/NavBar";
+import ClientChrome from "./ClientChrome";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -43,13 +42,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable}`}
       >
-        <NavBar />
-          <div>
-            {children}
-            </div>
-
-            <Footer/>
-     
+        <ClientChrome>
+          {children}
+        </ClientChrome>
       </body>
     </html>
   );
