@@ -2,7 +2,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { Suspense } from "react";
 
 import Head from "next/head";
 import ClientChrome from "./ClientChrome";
@@ -42,9 +42,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable}`}
       >
-        <ClientChrome>
-          {children}
-        </ClientChrome>
+        <Suspense fallback={<div>Loading...</div>}>
+          <ClientChrome>
+            {children}
+          </ClientChrome>
+        </Suspense>
       </body>
     </html>
   );
