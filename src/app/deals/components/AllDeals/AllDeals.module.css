@@ -12,3 +12,17 @@
     color: inherit;
     display: block;
 }
+
+/* Private Deal Theme for AllDeals */
+.privateDealTheme {
+    background-color: #000000 !important;
+    color: white !important;
+}
+
+.privateDealTheme .DealsTalkHeading {
+    color: white !important;
+}
+
+.privateDealTheme .SpanDealsTalkHeading {
+    color: #B59131 !important;
+}

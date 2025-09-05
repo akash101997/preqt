@@ -3,14 +3,29 @@ import styles from "./DealsTalk.module.css";
 import React, { useRef } from "react";
 import { Swiper,SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
+import Link from "next/link";
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-export default function DealsTalk() {
+function DealsTalkContent() {
     const swiperRef = useRef(null);
+    const searchParams = useSearchParams();
+    const dealId = searchParams?.get("dealId");
+    
+    // Define deals data to check if deal is private
+    const dealsConfig = {
+        "1": { deal: "public" },
+        "2": { deal: "private" },
+        "3": { deal: "private" },
+        "4": { deal: "private" }
+    };
+    
+    const isPrivateDeal = dealId && dealsConfig[dealId]?.deal === "private";
 
     // Custom arrow components
     const NextArrow = () => (
@@ -44,7 +59,8 @@ export default function DealsTalk() {
                 roe: "₹387 to ₹387",
                 issueDate: "21-05-2026"
             },
-            merchantBanker: "Merchant Banker: Axis Capital"
+            merchantBanker: "Merchant Banker: Axis Capital",
+            deal: "public"
         },
         {
             id: 2,
@@ -64,7 +80,8 @@ export default function DealsTalk() {
                 current: "1.5 Cr / 2 Cr",
                 percentage: "94%"
             },
-            tags: ["Strong promoter", "Clear Monetization", "Fund Participating"]
+            tags: ["Strong promoter", "Clear Monetization", "Fund Participating"],
+            deal: "private"
         },
         {
             id: 3,
@@ -84,7 +101,8 @@ export default function DealsTalk() {
                 current: "1.5 Cr / 2 Cr",
                 percentage: "94%"
             },
-            tags: ["Strong promoter", "Clear Monetization", "Fund Participating"]
+            tags: ["Strong promoter", "Clear Monetization", "Fund Participating"],
+            deal: "private"
         },
         {
             id: 4,
@@ -104,11 +122,13 @@ export default function DealsTalk() {
                 current: "1.5 Cr / 2 Cr",
                 percentage: "94%"
             },
-            tags: ["Strong promoter", "Clear Monetization", "Fund Participating"]
+            tags: ["Strong promoter", "Clear Monetization", "Fund Participating"],
+            deal: "private"
         }
     ];
 
     const renderCard1 = (deal) => (
+        <Link href={`/deals?dealId=${deal.id}`} className={styles.cardLink}>
                     <div className={styles.cardContainer1}>
                         <div className={styles.cardInnerSections}>
                             <article className={styles.cardIPOsection}>
@@ -178,10 +198,12 @@ export default function DealsTalk() {
                             </div>
                         </div>
                     </div>
+        </Link>
     );
 
     const renderCard2 = (deal) => (
-        <div className={styles.card2Container}>
+        <Link href={`/deals?dealId=${deal.id}`} className={styles.cardLink}>
+            <div className={styles.card2Container}>
                         <div className={styles.card2InnerSections}>
                             <article className={styles.card2IPOsection}>
                                 <div className={styles.card2IPOtag}>
@@ -258,10 +280,11 @@ export default function DealsTalk() {
 
                         <img src="/assets/pictures/star.svg" alt="" className={styles.starImage} />
                                 </div>
+        </Link>
     );
 
     return (
-        <section className={styles.DealsTalkMainContainer}>
+        <section className={`${styles.DealsTalkMainContainer} ${isPrivateDeal ? styles.privateDealTheme : ''}`}>
             <div className={styles.DealsTalkHeading}>
                 Deals People are <span className={styles.SpanDealsTalkHeading}>Talking About </span>
                             </div>
@@ -320,5 +343,13 @@ export default function DealsTalk() {
                 <NextArrow />
             </div>
         </section>
+    );
+}
+
+export default function DealsTalk() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <DealsTalkContent />
+        </Suspense>
     );
 }

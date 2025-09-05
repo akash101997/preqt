@@ -2,10 +2,24 @@
 import styles from "../../../components/home/DealsTalk/DealsTalk.module.css";
 import stylesdeals from "./AllDeals.module.css";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 import React from "react";
 
-export default function AllDeals() {
+function AllDealsContent() {
+    const searchParams = useSearchParams();
+    const dealId = searchParams?.get("dealId");
+    
+    // Define deals data to check if deal is private
+    const dealsConfig = {
+        "1": { deal: "public" },
+        "2": { deal: "private" },
+        "3": { deal: "private" },
+        "4": { deal: "private" }
+    };
+    
+    const isPrivateDeal = dealId && dealsConfig[dealId]?.deal === "private";
 
     const dealsData = [
         {
@@ -23,7 +37,8 @@ export default function AllDeals() {
                 roe: "₹387 to ₹387",
                 issueDate: "21-05-2026"
             },
-            merchantBanker: "Merchant Banker: Axis Capital"
+            merchantBanker: "Merchant Banker: Axis Capital",
+            deal: "public"
         },
         {
             id: 2,
@@ -43,7 +58,8 @@ export default function AllDeals() {
                 current: "1.5 Cr / 2 Cr",
                 percentage: "94%"
             },
-            tags: ["Strong promoter", "Clear Monetization", "Fund Participating"]
+            tags: ["Strong promoter", "Clear Monetization", "Fund Participating"],
+            deal: "private"
         },
         {
             id: 3,
@@ -63,7 +79,9 @@ export default function AllDeals() {
                 current: "1.5 Cr / 2 Cr",
                 percentage: "94%"
             },
-            tags: ["Strong promoter", "Clear Monetization", "Fund Participating"]
+            tags: ["Strong promoter", "Clear Monetization", "Fund Participating"],
+            deal: "private"
+
         },
         {
             id: 4,
@@ -83,7 +101,9 @@ export default function AllDeals() {
                 current: "1.5 Cr / 2 Cr",
                 percentage: "94%"
             },
-            tags: ["Strong promoter", "Clear Monetization", "Fund Participating"]
+            tags: ["Strong promoter", "Clear Monetization", "Fund Participating"],
+            deal: "private"
+
         }
     ];
 
@@ -244,7 +264,7 @@ export default function AllDeals() {
     );
 
     return (
-        <section className={`${styles.DealsTalkMainContainer} ${stylesdeals.DealsTalkMainContainer}`} >
+        <section className={`${styles.DealsTalkMainContainer} ${stylesdeals.DealsTalkMainContainer} ${isPrivateDeal ? stylesdeals.privateDealTheme : ''}`} >
             <div className={styles.DealsTalkHeading}>
                 Deals People are <span className={styles.SpanDealsTalkHeading}>Talking About </span>
             </div>
@@ -259,5 +279,13 @@ export default function AllDeals() {
                 </div>
             </div>
         </section>
+    );
+}
+
+export default function AllDeals() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <AllDealsContent />
+        </Suspense>
     );
 }

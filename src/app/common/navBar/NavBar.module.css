@@ -643,3 +643,25 @@ font-weight: 500;
     margin: 0;
   }
 }
+
+/* Private Deal Theme for dealId=2 */
+.privateDealTheme {
+  background-color: #000000 !important;
+  border-bottom: 1px solid #333333 !important;
+}
+
+.privateDealTheme .navigationButtonContainer {
+  background-color: #000000 !important;
+}
+
+.privateDealTheme .home {
+  color: #CBD5E1 !important;
+}
+
+.privateDealTheme .HomeNavButton:hover .home {
+  color: #B59131 !important;
+}
+
+.privateDealTheme .HomeNavButton.active .home {
+  color: #B59131 !important;
+}
