@@ -2,23 +2,27 @@
   import React, { useState } from "react";
   import styles from "./Calculator.module.css"
   import { CircleMinus, CirclePlus, Sidebar,  } from "lucide-react";
-  import Ipotimeline from "@/app/deals/components/ask-ai-section/ipo-timeline/ipo-timeline";
   import Link from "next/link";
 import PrivateQuestion from "../private-questions/PrivateQuestion";
+import Chatbot from "@/app/deals/components/ask-ai-section/chatbot/chatbot";
+import { useRouter } from "next/navigation";
 
-  const Calculator = () => {
+  const Calculator = ({onBack,handleAskAI}) => {
+    const router = useRouter();
     const [lots, setLots] = useState(4); // default value
     const pricePerLot = 1000000; // ₹10,00,000
     const sharesPerLot = 1200;
 
      const [showQnA, setShowQnA] = useState(false);
-       if (showQnA) {
-    return <PrivateQuestion onBack={() => setShowQnA(false)} />;
-  }
-
-
-
+    //    if (showQnA) {
+   // return <PrivateQuestion onBack={() => setShowQnA(false)} />;
   
+    const [showchatbot, setShowChatBot] = useState(false);
+    //    if (showchatbot) {
+    // return <Chatbot/>;
+    
+  
+
 
 
     const handleIncrement = () => setLots(lots + 1);
@@ -27,7 +31,16 @@ import PrivateQuestion from "../private-questions/PrivateQuestion";
     };
 
     return (
+
       <div className={styles.card}>
+
+       {showQnA ? (
+        <PrivateQuestion onBack={() => setShowQnA(false)} />
+      ) : showchatbot ? (
+        <Chatbot onBack={()=>setShowChatBot(false)} />
+      ) : (
+
+<>
         {/* Minimum Investment */}
         <div className={styles.minInvestment}>
         <div className={styles.div}> 
@@ -62,7 +75,8 @@ import PrivateQuestion from "../private-questions/PrivateQuestion";
         {/* <Sidebar/>
         <Ipotimeline/> */}
 
-    <button className={styles.askAiButton}>
+    <button className={styles.askAiButton} onClick={() =>setShowChatBot(true)}>
+                    
           <svg
             width="25"
             height="24"
@@ -114,7 +128,12 @@ import PrivateQuestion from "../private-questions/PrivateQuestion";
             </span>
           </button> 
         </div>
+</>
+
+      )};
+      
       </div>
+        
       
     );
   };

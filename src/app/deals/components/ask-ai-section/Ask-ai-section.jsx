@@ -6,15 +6,23 @@ import { useState } from "react";
 
 const AskAiSection = ({ onData, handleAskAI, isAskAiActive = false }) => {
   const [showQuesAns, setShowQuesAns] = useState(false);
+    const [showchatbot, setShowChatBot] = useState(false);
 
   const handleQuesAns = (value) => {
     setShowQuesAns(value);
   };
 
+//   const handleBack = () => {
+//     console.log("back pressed")
+// setShowChatBot(false)
+//   }
+
   return (
     <div className="righ-section">
       {isAskAiActive ? (
-        <Chatbot handleAskAI={handleAskAI} />
+        <Chatbot 
+        onBack={handleAskAI} 
+        />
       ) : showQuesAns ? (
         <QuestionAnswer handleQuesAns={handleQuesAns} handleAskAI={handleAskAI} />
       ) : (
