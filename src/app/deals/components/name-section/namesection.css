@@ -1666,6 +1666,15 @@ color: #b18c07;
   color: white !important;
 }
 
+.private-deal-theme .why-subsection div svg path{
+   fill: white;
+ 
+}
+.private-deal-theme .why-subsection div svg .path{
+fill: #C9A74E;
+}
+
+
 .private-deal-theme .why-subsection div h4 {
   color: white !important;
 }

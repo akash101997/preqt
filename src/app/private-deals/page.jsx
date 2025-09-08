@@ -6,8 +6,8 @@ import PrivateQuestion from './components/private-questions/PrivateQuestion'
 export default function page() {
   return (
     <div>
-        <Calculator/>
-        <PrivateQuestion/>
+        {/* <Calculator/>
+        <PrivateQuestion/> */}
     </div>
   )
 }

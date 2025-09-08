@@ -14,6 +14,7 @@ import Shares from "../shares-section/shares";
 // import Questions from "../questions-section/questions";
 import Valuation from "../valuation-section/valuation";
 import QuesAnsSection from "../ask-ai-section/ques-ans-section/QuesAnsSection";
+import Calculator from "@/app/private-deals/components/calculator/Calculator";
 
 const Namedetailsection = () => {
   const [bellactive, setBellactive] = useState(false);
@@ -70,6 +71,10 @@ const Namedetailsection = () => {
   // Determine if this is a private deal for theme switching
   const isPrivateDeal = activeDeal.deal === "private";
 
+
+
+
+
   const steps = [
     { label: "IPO Open Date", date: "Wed, Jul 30, 2025", completed: true },
     { label: "IPO Close Date", date: "Wed, Jul 30, 2025", completed: true },
@@ -103,6 +108,7 @@ const Namedetailsection = () => {
       number: "05",
     },
   ];
+
 
   return (
     <div className={`main-container ${isPrivateDeal ? 'private-deal-theme' : ''}`}>
@@ -416,8 +422,13 @@ const Namedetailsection = () => {
              <Customnavbar />
             </div>
           </section>
+              {isPrivateDeal ? (
+  <Calculator isAskAiActive={isAskAiActive} handleAskAI={handleAskAI}/>  // private deal ke liye
+) : (
+  <AskAiSection isAskAiActive={isAskAiActive} handleAskAI={handleAskAI} />
+)}
 
-          <AskAiSection isAskAiActive={isAskAiActive} handleAskAI={handleAskAI} />
+          {/* <AskAiSection isAskAiActive={isAskAiActive} handleAskAI={handleAskAI} /> */}
           {/* <QuesAnsSection  isQuesAnsActive={isQuesAnsActive} handleQuesAns={handleQuesAns} /> */}
 
         </div>

@@ -107,7 +107,7 @@ function AllDealsContent() {
         }
     ];
 
-    const renderCard1 = (deal) => (
+   const renderCard1 = (deal) => (
         <Link href={`/deals?dealId=${deal.id}`} className={stylesdeals.cardLink}>
             <div className={styles.cardContainer1}>
                 <div className={styles.cardInnerSections}>
@@ -246,9 +246,9 @@ function AllDealsContent() {
                     </div>
                 </div>
 
-                <div className={styles.card2Footer}>
+                 <div className={styles.card2Footer}>
                     <div className={styles.card2QandA}>
-                        <div className={styles.card2QandAStats}>23 Q&A answered in last 3 days</div>
+                        <div className={styles.card2QandAStats}>23 Q&A answered in last 3 days akash</div>
                         <div className={styles.card2UserIcons}>
                             <img src="assets/pictures/userImage1.png" alt="" className={styles.card2UserImage} />
                             <img src="assets/pictures/userImage2.png" alt="" className={styles.card2UserImage} />
@@ -256,12 +256,12 @@ function AllDealsContent() {
                             <img src="assets/pictures/userImage4.png" alt="" className={styles.card2UserImage} />
                         </div>
                     </div>
-                </div>
+                </div> 
 
                 <img src="/assets/pictures/star.svg" alt="" className={styles.starImage} />
             </div>
         </Link>
-    );
+   );
 
     return (
         <section className={`${styles.DealsTalkMainContainer} ${stylesdeals.DealsTalkMainContainer} ${isPrivateDeal ? stylesdeals.privateDealTheme : ''}`} >
@@ -288,4 +288,4 @@ export default function AllDeals() {
             <AllDealsContent />
         </Suspense>
     );
-}
+} 
