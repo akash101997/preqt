@@ -39,7 +39,7 @@ const Ipotimeline = ({ handleAskAI ,handleQuesAns}) => {
     <section className="ask-ai-section">
       <button className="ask-ai-button"
       onClick={() => {
-       handleAskAI &&   handleAskAI(true);
+      handleAskAI(true);
           
         }}
       >

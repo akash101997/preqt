@@ -1,7 +1,9 @@
-import React from "react";
+'use client'
+import React, { useState } from "react";
 import "./chatbot.css";
 
-const Chatbot = ({ handleAskAI })=> {
+const Chatbot = ({onBack })=> {
+    // const [showchatbot, setShowChatBot] = useState(false);
   const defaultquestions = [
     "What’s the valuation and revenue of this company?",
     "Who are the backers of this IPO?",
@@ -13,7 +15,8 @@ const Chatbot = ({ handleAskAI })=> {
     <div className="chatbot-maincontainer">
       <section className="chatbot-head">
         <svg
-        onClick={() => handleAskAI(false)}
+        onClick={() => {onBack(false)}}
+        // {() => handleAskAI(false)}
         viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M12 19L5 12L12 5"
