@@ -1,4 +1,6 @@
 'use client';
+
+
 import styles from './PrivateQuestion.module.css'
 
 const activities = [
@@ -36,15 +38,19 @@ const activities = [
   },
 ];
 
-const PrivateQuestion = () => {
+const PrivateQuestion = ({onBack}) => {
+  
   return (
     <div className={styles.container}>
       <div className={styles.headar}>
         <img 
+        // onClick={handleAskAI(false)}
           className={styles.img} 
           src="/assets/pictures/left-arrow-white.svg" 
           alt="" 
-          onClick={() => handleQuesAns(false)}
+          onClick={onBack}
+          // onClick={()=>router.back()}
+          // onClick={() => handleQuesAns(false)}
           style={{ cursor: 'pointer' }}
         />
         <div className={styles.imageStack}>
@@ -94,9 +100,9 @@ const PrivateQuestion = () => {
       
       <button 
         className={styles.AskAiButton}
-        onClick={() => {
-          handleAskAI && handleAskAI(true);
-        }}
+        // onClick={() => {
+        //   handleAskAI && handleAskAI(true);
+        // }}
       >
         <svg
           width="25"
