@@ -1,5 +1,62 @@
- @import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
-              
+ /* @import url('https://fonts.cdnfonts.com/css/helvetica-neue-55'); */
+ 
+ /* Local Helvetica font faces (WOFF) */
+ @font-face {
+   font-family: 'Helvetica';
+   src: url('/assets/helvetica-255/Helvetica.woff') format('woff');
+   font-weight: 400;
+   font-style: normal;
+   font-display: swap;
+ }
+ 
+ @font-face {
+   font-family: 'Helvetica';
+   src: url('/assets/helvetica-255/Helvetica-Bold.woff') format('woff');
+   font-weight: 700;
+   font-style: normal;
+   font-display: swap;
+ }
+ 
+ @font-face {
+   font-family: 'Helvetica';
+   src: url('/assets/helvetica-255/Helvetica-Oblique.woff') format('woff');
+   font-weight: 400;
+   font-style: italic;
+   font-display: swap;
+ }
+ 
+ @font-face {
+   font-family: 'Helvetica';
+   src: url('/assets/helvetica-255/Helvetica-BoldOblique.woff') format('woff');
+   font-weight: 700;
+   font-style: italic;
+   font-display: swap;
+ }
+ 
+ @font-face {
+   font-family: 'Helvetica Light';
+   src: url('/assets/helvetica-255/helvetica-light-587ebe5a59211.woff') format('woff');
+   font-weight: 300;
+   font-style: normal;
+   font-display: swap;
+ }
+ 
+ @font-face {
+   font-family: 'Helvetica Compressed';
+   src: url('/assets/helvetica-255/helvetica-compressed-5871d14b6903a.woff') format('woff');
+   font-weight: 400;
+   font-style: normal;
+   font-display: swap;
+ }
+ 
+ @font-face {
+   font-family: 'Helvetica Rounded Bold';
+   src: url('/assets/helvetica-255/helvetica-rounded-bold-5871d05ead8de.woff') format('woff');
+   font-weight: 700;
+   font-style: normal;
+   font-display: swap;
+ }
+ 
  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&display=swap');
  
@@ -7,11 +64,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 body{
-  font-family: 'Helvetica Neue', sans-serif;
-
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 .no-scroll {
