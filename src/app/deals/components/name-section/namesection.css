@@ -1621,6 +1621,13 @@ color: #b18c07;
 .private-deal-theme .body-section3 span {
   color: white !important;
 }
+.private-deal-theme .body-section3 svg path{
+  fill: white;
+}
+.private-deal-theme .valuation-container svg {
+  
+
+}
 
 .private-deal-theme .body1-buttons span {
   background-color: #404040 !important;
@@ -1776,6 +1783,10 @@ fill: #C9A74E;
 .private-deal-theme .others h6 {
   color: #878787 !important;
 }
+.private-deal-theme .others h6 svg path{
+  stroke: white !important   ;
+  
+}
 
 .private-deal-theme .others span {
   color: white !important;
@@ -1801,8 +1812,16 @@ fill: #C9A74E;
   color: white !important;
 }
 
+.private-deal-theme .smallcard-section-subcontainer-div{
+  width: 100% !important;
+}
+
 .private-deal-theme .smallcards-section span {
   color: white !important;
+  
+}
+.private-deal-theme .smallcard-section-subcontainer .subs1-top{
+  display: none;
 }
 
 .private-deal-theme .image-stack {

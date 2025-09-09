@@ -22,7 +22,7 @@ import { useRouter } from "next/navigation";
     // return <Chatbot/>;
     
   
-
+  
 
 
     const handleIncrement = () => setLots(lots + 1);

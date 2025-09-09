@@ -76,7 +76,7 @@ const AiIpoOverview = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <line y1="0.5" x2="732" y2="0.5" stroke="#E2E8F0" />
+        <line y1="0.5" x2="732" y2="0.5" stroke="#4f5050ff" />
       </svg>
 
       <section className="smallcards-section">
