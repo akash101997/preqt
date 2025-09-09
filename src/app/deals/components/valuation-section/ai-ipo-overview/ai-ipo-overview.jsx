@@ -1,7 +1,7 @@
 import React from "react";
 import "./ai-ipo-overview.css";
 
-const AiIpoOverview = () => {
+const gitAiIpoOverview = () => {
   return (
     <div className="valuation-container">
       <section className="body-section4">
