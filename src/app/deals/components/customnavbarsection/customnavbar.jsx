@@ -7,6 +7,7 @@ import Keyfinancials from "./keyfinancials/keyfinancials";
 import Shareholdings from "./shareholdings/shareholdings";
 import "./customnavbar.css";
 import Industry from "./industry/industry";
+import Business from "./business/Business";
 
 const Customnavbar = () => {
   const [key, setKey] = useState("Overview");
@@ -25,6 +26,9 @@ const Customnavbar = () => {
       >
         <Tab eventKey="Overview" title="Overview">
           <Overview />
+        </Tab>
+        <Tab eventKey="Business" title="Business">
+          <Business/>
         </Tab>
         <Tab eventKey="Fundamentals" title="Fundamentals">
           <Fundamentals />
