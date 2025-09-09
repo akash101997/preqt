@@ -438,7 +438,7 @@ const AiIpoOverview = () => {
         </section>
     
     </div>
-  );
+  )
 };
 
 export default AiIpoOverview;
