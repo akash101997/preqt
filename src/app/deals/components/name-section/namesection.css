@@ -1711,9 +1711,11 @@ fill: #C9A74E;
   color: white !important;
 }
 
-.private-deal-theme .about-section h4,
-.private-deal-theme .about-section p {
+.private-deal-theme .about-section h4 {
   color: white !important;
+}
+.private-deal-theme .about-section p{
+  color:#6B7280 !important;
 }
 
 .private-deal-theme .pitch-deck {
@@ -1836,4 +1838,8 @@ fill: #C9A74E;
 .private-deal-theme .accordion-body {
   background-color: #2d2d2d !important;
   color: white !important;
+}
+
+.private-deal-theme .custom-carousel-prev{
+ background-color: #27272A;  
 }

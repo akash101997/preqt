@@ -1,7 +1,7 @@
 import React from "react";
 import "./ai-ipo-overview.css";
 
-const gitAiIpoOverview = () => {
+const AiIpoOverview = () => {
   return (
     <div className="valuation-container">
       <section className="body-section4">
@@ -438,7 +438,7 @@ const gitAiIpoOverview = () => {
         </section>
     
     </div>
-  );
+  )
 };
 
 export default AiIpoOverview;
