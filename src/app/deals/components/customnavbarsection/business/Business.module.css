@@ -1,14 +1,15 @@
 .container {
   background-color: #FFFFFF;
   color: #1F2937;
-  padding: 24px;
+  padding:0px 24px 24px 24px ;
   border-radius: 12px;
   /* font-family: Arial, sans-serif; */
 }
 
 .title {
-  font-size: 20;
+  font-size: 20px;
   font-weight: 300;
+  margin: 0;
 }
 
 
@@ -20,6 +21,8 @@
 }
 
 .header {
+  /* border: 1px solid red; */
+ margin: 30px 0px 20px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,8 +39,10 @@
 
 
 .products {
+  
   display: flex;
   gap: 12px;
+  /* padding: 10px 0px; */
   margin-top: 1rem;
 }
 
@@ -56,23 +61,47 @@
   font-size: 14px;
   font-weight: 400;
   color: #64748b;
+  padding: 10px 0px;
+  margin: 0;
+  /* gap: 10px; */
+  /* border: 1px solid red; */
+
 
 }
 
-.strong {
-  color: #1F2937;
+ .strong {
+  display: inline-block;
+  color:#64748b;
   font-size: 14px;
   font-weight: 400;
+  margin: 10px 0px;
+}
+
+.ul{
+   padding: 0;
+  margin: 0;
+
 }
 
 .ul li {
   font-size: 14px;
   font-weight: 400;
   color: #64748b;
-  gap: 12px;
+  padding: 5px 0px ;
+  list-style: none;
+  
 
 }
 
+.ul .list{
+    font-size: 14px;
+  font-weight: 400;
+  color: #64748b;
+  padding: 5px 0px ;
+  list-style: disc;
+  margin-left: 25px;
+  
+}
 
 .highlight {
   color: #B59131;
@@ -102,3 +131,23 @@
 
 
 /* ==============================================Add Private deal css =========================================================== */
+.privateDeal {
+    background: #171717 !important ;
+    color: #FFFFFF !important;
+}
+
+
+.privateDeal .products{
+  background-color: #171717 !important;
+}
+.privateDeal .strong{
+  color: #9CA3AF !important;
+}
+.privateDeal .ul li, 
+.privateDeal .p{
+  color: #D4D4D8 !important;
+}
+.privateDeal .clientCard{
+  background-color: #FFFFFF !important;
+  color: #171717 !important;
+}
