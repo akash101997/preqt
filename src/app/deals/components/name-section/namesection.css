@@ -280,6 +280,7 @@
 }
 
 .shares-card {
+  /* max-width: 40%; */
   background: white;
   border-radius: 12px;
   padding: 20px;
@@ -328,6 +329,7 @@
 }
 
 .labels {
+  max-width: 75%;
   display: flex;
   justify-content: space-between;
 }
@@ -336,6 +338,9 @@
   display: flex;
   align-items: center;
   gap: 8px;
+}
+.label-item p{
+  margin: 0px;
 }
 
 .dot {
@@ -1603,7 +1608,7 @@ color: #b18c07;
   box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
   color: white !important;
 }
-.first-navbar .navigation-tabs{
+.private-deal-theme .first-navbar .navigation-tabs{
   background: #171717 !important;
   box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
 }
