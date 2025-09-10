@@ -1,80 +1,157 @@
 .privateDealDetails {
     display: flex;
     gap: 2rem;
-    padding: 2rem;
-  }
-  
-  .respectedDetails {
-    flex: 3;
-  }
-  
-  .section {
+}
+
+.respectedDetails {
+    flex: 2;
+}
+
+.section {
     margin-bottom: 4rem;
-    padding: 2rem;
-    background: #111;
-    border-radius: 12px;
-    color: white;
-  }
-  .section:last-child {
+    /* padding: 2rem; */
+    border-radius: 32px;
+    background: #171717;
+    
+    /* Base Shadow */
+    box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06);
+}
+
+.section:last-child {
     margin-bottom: 0 !important;
-  }
-  
-  .respectedMenu {
+}
+
+.section h2{
+    color: var(--White-White, #FFF);
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-transform: capitalize;
+padding: 20px 0 0 30px ;
+}
+
+.respectedMenu {
     flex: 1;
     position: sticky;
-    top: 10px; /* adjust depending on header */
+    top: 30px;
     align-self: flex-start;
     height: fit-content;
-  }
-  
-  .respectedMenu ul {
+}
+
+.respectedMenu ul {
     list-style: none;
     padding: 0;
-    padding-left: 32px;
+    padding-left: 42px;
     margin: 0;
     position: relative;
-  }
-  
-  /* Gray vertical track */
-  .respectedMenu ul::before {
+}
+
+
+.respectedMenu ul::before {
     content: "";
     position: absolute;
     top: 0;
-    left: 0.5rem; /* adjust to align with text */
+    left: 0.5rem;
     width: 6px;
     border-radius: 100px;
     background: #27272A;
     height: 100%;
     z-index: -1;
-  }
-  
-  /* Yellow moving indicator */
-  .respectedMenu ul::after {
+}
+
+.respectedMenu ul::after {
     content: "";
     position: absolute;
     top: var(--indicator-top, 0);
     left: 0.5rem;
-    width: 4px;
+    width: 6px;
     height: var(--indicator-height, 40px);
-    border-radius: 2px;
-    background: #facc15;
-    box-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
-    transition: top 0.25s ease, height 0.25s ease; /* smooth jump */
-  }
-  
-  .respectedMenu li {
+    border-radius: 3px;
+    background: #fff;
+    border-radius: 100px;
+    /* mimic SVG glow layering */
+    box-shadow:
+        0 0 10px 0px #facc15,
+        /* outer glow (matches stdDeviation=20) */
+        0 0 30px 0px #facc15,
+        /* medium blur (matches stdDeviation=15) */
+        0 0 30px 0px #facc15,
+        /* duplicate like your SVG layers */
+        0 0 10px 0px #facc15;
+    /* tight inner glow (stdDeviation=2) */
+
+    transition: top 0.25s ease, height 0.25s ease;
+}
+
+
+
+.respectedMenu li {
     padding: 10px 0;
     cursor: pointer;
-    color: #aaa;
+    color: #A1A1AA;
+    /* font-family: "Helvetica Neue"; */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: capitalize;
     transition: color 0.3s, font-weight 0.3s;
+    margin-bottom: 12px;
+}
+
+.respectedMenu li:last-child{
+    margin-bottom: 0;
+}
+
+
+
+/* keyframes: webkit + standard */
+@-webkit-keyframes glow {
+    from {
+      text-shadow:
+        0 0 3px rgba(255,255,255,1),
+        0 0 6px rgba(250,204,21,0.9),
+        0 0 12px rgba(250,204,21,0.6),
+        0 0 18px rgba(250,204,21,0.4);
+    }
+    to {
+      text-shadow:
+        0 0 6px rgba(255,255,255,1),
+        0 0 12px rgba(250,204,21,1),
+        0 0 18px rgba(250,204,21,0.8),
+        0 0 28px rgba(250,204,21,0.6);
+    }
   }
   
-  .respectedMenu li:hover {
-    color: #facc15;
+  @keyframes glow {
+    from {
+      text-shadow:
+        0 0 3px rgba(255,255,255,1),
+        0 0 6px rgba(250,204,21,0.9),
+        0 0 12px rgba(250,204,21,0.6),
+        0 0 18px rgba(250,204,21,0.4);
+    }
+    to {
+      text-shadow:
+        0 0 6px rgba(255,255,255,1),
+        0 0 12px rgba(250,204,21,1),
+        0 0 18px rgba(250,204,21,0.8),
+        0 0 28px rgba(250,204,21,0.6);
+    }
   }
   
+  /* active menu item with pulsing glow */
   .respectedMenu li.active {
-    color: #facc15;
-    font-weight: bold;
+    color: #fff;                 /* text color */
+    /* font-weight: 400; */
+    display: inline-block;         /* keeps text-shadow crisp on some browsers */
+    /* -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility; */
+    will-change: text-shadow;
+  
+    /* provide both prefixed and standard animation properties */
+    -webkit-animation: glow 1.2s ease-in-out infinite alternate;
+    animation: glow 1.2s ease-in-out infinite alternate;
   }
   

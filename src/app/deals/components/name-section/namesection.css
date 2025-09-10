@@ -593,7 +593,7 @@
 
 .about-section {
   background: linear-gradient(180deg, #f3f4f6, white);
-  padding: 30px 30px;
+  padding: 24px;
   border-radius: 10px;
 }
 .mobile-ipo-timeline-section {
@@ -1579,7 +1579,7 @@ color: #b18c07;
     background-position: top center;
 }
 .private-deal-theme .overview-container {
-  background-color: #1a1a1a !important;
+  background-color: #171717 !important;
   color: white !important;
 }
 
@@ -1703,7 +1703,7 @@ fill: #C9A74E;
 
 .private-deal-theme .customcars {
   background: #171717 !important;
-  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
+  /* box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important; */
   color: white !important;
 }
 
