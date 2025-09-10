@@ -1,0 +1,80 @@
+.privateDealDetails {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .respectedDetails {
+    flex: 3;
+  }
+  
+  .section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: #111;
+    border-radius: 12px;
+    color: white;
+  }
+  .section:last-child {
+    margin-bottom: 0 !important;
+  }
+  
+  .respectedMenu {
+    flex: 1;
+    position: sticky;
+    top: 10px; /* adjust depending on header */
+    align-self: flex-start;
+    height: fit-content;
+  }
+  
+  .respectedMenu ul {
+    list-style: none;
+    padding: 0;
+    padding-left: 32px;
+    margin: 0;
+    position: relative;
+  }
+  
+  /* Gray vertical track */
+  .respectedMenu ul::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0.5rem; /* adjust to align with text */
+    width: 6px;
+    border-radius: 100px;
+    background: #27272A;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  /* Yellow moving indicator */
+  .respectedMenu ul::after {
+    content: "";
+    position: absolute;
+    top: var(--indicator-top, 0);
+    left: 0.5rem;
+    width: 4px;
+    height: var(--indicator-height, 40px);
+    border-radius: 2px;
+    background: #facc15;
+    box-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
+    transition: top 0.25s ease, height 0.25s ease; /* smooth jump */
+  }
+  
+  .respectedMenu li {
+    padding: 10px 0;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.3s, font-weight 0.3s;
+  }
+  
+  .respectedMenu li:hover {
+    color: #facc15;
+  }
+  
+  .respectedMenu li.active {
+    color: #facc15;
+    font-weight: bold;
+  }
+  
