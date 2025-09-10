@@ -51,6 +51,12 @@ font-weight: 300;
 .peerSection {
  font-size: 20px;
 font-weight: 300;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+    
 }
 
 .PeerHeading {
@@ -58,11 +64,14 @@ font-weight: 300;
   /* margin-bottom: 1rem; */
   font-weight: 300;
   color: #1F2937;
+  /* position: fixed; */
 }
 
 .PeerTable {
   width: 100%;
-  border-collapse: collapse;     
+  border-collapse: collapse;   
+
+
 }
 
 .PeerTable th{
@@ -73,6 +82,7 @@ font-weight: 300;
   padding-left: 10px;
    border-right: 2px solid #F3F4F6;
   /* justify-content: center;  */
+  /* position: fixed; */
 
 }
 .PeerTable th:last-child{
@@ -115,3 +125,9 @@ font-weight: 300;
   background: #f5f5f5;
   font-weight: bold;
 } */
+
+@media (max-width:1200px){
+  .peerSection{
+    cursor: grab; 
+  }
+}
