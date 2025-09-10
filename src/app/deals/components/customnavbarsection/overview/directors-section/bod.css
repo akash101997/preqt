@@ -50,6 +50,7 @@
 .bod-section .accordion-button {
   display: flex;
   gap: 20px;
+  color: #9CA3AF;
 }
 .bod-section .accordion-body {
   border-top: 1px solid #e5e7eb;
@@ -78,6 +79,15 @@
   background: transparent !important;
   border: none;
 }
+/* .bod-section .accordion-button {
+  background-color: #FFFFFF;
+  border: none;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+} */
+
 
 @media (max-width: 400px) {
   .bod-section h6 {
