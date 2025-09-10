@@ -1,13 +1,14 @@
 .container {
-  background-color:#FFFFFF;
+  background-color: #FFFFFF;
   color: #1F2937;
   padding: 24px;
   border-radius: 12px;
   /* font-family: Arial, sans-serif; */
 }
-.title{
-    font-size: 20;
-    font-weight: 300;
+
+.title {
+  font-size: 20;
+  font-weight: 300;
 }
 
 
@@ -24,13 +25,13 @@
   align-items: center;
   /* padding: 1rem; */
   cursor: pointer;
-  
+
 }
 
-.hr{
-    /* border: none; */
-    height: 1px;
-    background-color: #F3F4F6;
+.hr {
+  /* border: none; */
+  height: 1px;
+  background-color: #F3F4F6;
 }
 
 
@@ -41,7 +42,7 @@
 }
 
 .card {
-    
+
   text-align: center;
   flex: 1;
 }
@@ -51,23 +52,24 @@
   margin-bottom: 0.5rem;
 } */
 
- .p{
-    font-size: 14px;
-    font-weight: 400;
-     color: #64748b;
+.p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #64748b;
 
 }
-.strong{
-    color: #1F2937;
-     font-size: 14px;
-    font-weight: 400;
+
+.strong {
+  color: #1F2937;
+  font-size: 14px;
+  font-weight: 400;
 }
 
-.ul li{
-        font-size: 14px;
-    font-weight: 400;
-     color: #64748b;
-     gap: 12px;
+.ul li {
+  font-size: 14px;
+  font-weight: 400;
+  color: #64748b;
+  gap: 12px;
 
 }
 
@@ -78,23 +80,25 @@
 }
 
 .clients {
- display: flex;
+  display: flex;
   gap: 2rem;
-  margin-top: 1rem; 
+  margin-top: 1rem;
 }
 
 .clientCard {
-   
-width: 368px;
-height: 115px;
-background-color:rgb(245, 245, 245);
-flex-direction: column;
-gap: 10px;
-font-size: 18px;
-font-weight: 300;
-border-radius: 12px;
-display: flex;
-align-items: center;
-justify-content: center;
+
+  width: 368px;
+  height: 115px;
+  background-color: rgb(245, 245, 245);
+  flex-direction: column;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 300;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+
+/* ==============================================Add Private deal css =========================================================== */

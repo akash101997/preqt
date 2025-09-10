@@ -73,9 +73,6 @@ const Namedetailsection = () => {
   const isPrivateDeal = activeDeal.deal === "private";
 
 
-
-
-
   const steps = [
     { label: "IPO Open Date", date: "Wed, Jul 30, 2025", completed: true },
     { label: "IPO Close Date", date: "Wed, Jul 30, 2025", completed: true },

@@ -3,11 +3,23 @@ import React, { useState } from "react";
 import styles from "./Business.module.css";
 import Image from "next/image";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 
 const Business = () => {
+
+  const searchParams = useSearchParams();
+  const dealId = searchParams?.get("dealId");
+  const dealsIndex = {
+    "2": { deal: "private" }, // default
+  };
+  const activeDeal = dealsIndex[dealId ?? "2"] ?? dealsIndex["2"]; // default to 2 to match current content
+
+  // Determine if this is a private deal for theme switching
+  const isPrivateDeal = activeDeal.deal === "private";
+
   // 🔹 Reusable dropdown component inside the same file
   const Dropdown = ({ title, children }) => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
 
     return (
       <div className={styles.dropdown}>
@@ -24,7 +36,9 @@ const Business = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${isPrivateDeal ? styles.privateDeal : "" }`}
+    >
       {/* Title */}
       {/* <h2 className={styles.heading}>Business</h2> */}
 
@@ -43,7 +57,7 @@ const Business = () => {
         </div>
       </Dropdown>
 
-      <hr  className={styles.hr}/>
+      <hr className={styles.hr} />
 
       {/* Geographical Presence */}
       <Dropdown title="Geographical Presence">
@@ -70,7 +84,7 @@ const Business = () => {
           Its product portfolio includes APIs, probiotics, enzymes, peptides, nutritional actives, and biosimilars.
         </p>
       </Dropdown>
-       <hr  className={styles.hr}/>
+      <hr className={styles.hr} />
 
       {/* Business Model */}
       <Dropdown title="Business Model">
@@ -79,7 +93,7 @@ const Business = () => {
           providing contract research, development, and manufacturing services to pharmaceutical, biotech, and other companies.
         </p>
       </Dropdown>
-       <hr  className={styles.hr}/>
+      <hr className={styles.hr} />
 
       {/* Sales Channel */}
       <Dropdown title="Sales Channel">
@@ -90,7 +104,7 @@ const Business = () => {
           <li>Online or offline presence</li>
         </ul>
       </Dropdown>
-       <hr  className={styles.hr}/>
+      <hr className={styles.hr} />
 
       {/* Clients */}
       <Dropdown title="Clients">
@@ -101,11 +115,11 @@ const Business = () => {
           </div>
           <div className={styles.clientCard}>
             <Image src="/deals/Rectangle -bayer-Ag.png" alt="Bayer AG" width={53} height={53} />
-             Bayer AG
+            Bayer AG
           </div>
         </div>
       </Dropdown>
-       <hr  className={styles.hr}/>
+      <hr className={styles.hr} />
     </div>
   );
 };
