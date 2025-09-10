@@ -19,6 +19,11 @@
     color: white !important;
 }
 
+.privateDealTheme::after{
+    content: url('/blackBgEllipse.png');
+
+}
+
 .privateDealTheme .DealsTalkHeading {
     color: white !important;
 }

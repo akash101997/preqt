@@ -1574,6 +1574,9 @@ color: #b18c07;
 .private-deal-theme {
   background-color: #000 !important;
   color: white !important;
+    background-image: url('/blackBgEllipse.png') !important;
+    background-repeat: no-repeat;
+    background-position: top center;
 }
 .private-deal-theme .overview-container {
   background-color: #1a1a1a !important;
@@ -1582,14 +1585,14 @@ color: #b18c07;
 
 .private-deal-theme .topbar,
 .private-deal-theme .mob-topbar {
-  background-color: #000000 !important;
+  /* background-color: #000000 !important; */
   padding: 20px 0px !important;
   margin: 0 !important;
 }
 
-.private-deal-theme .subcontainer {
+/* .private-deal-theme .subcontainer {
   background-color: #000000 !important;
-}
+} */
 
 /* Hide FAQSection and Accountfooter on private deal theme */
 .private-deal-theme .faq-section,
@@ -1598,26 +1601,27 @@ color: #b18c07;
 }
 
 .private-deal-theme .body {
-  background: #000 !important;
-
+  background: #171717 !important;
+  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
   color: white !important;
 }
 
 .private-deal-theme .firsthalf {
   background: #171717 !important;
-  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
+ 
   color: white !important;
+  padding: 24px !important;
 }
-.private-deal-theme .first-navbar .navigation-tabs{
+/* .first-navbar .navigation-tabs{
   background: #171717 !important;
   box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
-}
+} */
 
-.private-deal-theme .secondhalf {
+/* .private-deal-theme .secondhalf {
   background: #171717 !important;
   box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
   color: white !important;
-}
+} */
 
 .private-deal-theme .body-section2 span {
   color: white !important;
@@ -1628,10 +1632,6 @@ color: #b18c07;
 }
 .private-deal-theme .body-section3 svg path{
   fill: white;
-}
-.private-deal-theme .valuation-container svg {
-  
-
 }
 
 .private-deal-theme .body1-buttons span {
