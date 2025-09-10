@@ -2,7 +2,8 @@ import React from 'react'
 
 const Shares = () => {
   return (
-    <div> <div className="shares-card">
+   <>
+      <div className="shares-card">
               {/* Progress Bar */}
               <div className="progress-container">
                 <div className="progress-fill new-shares"></div>
@@ -65,7 +66,8 @@ const Shares = () => {
                   </div>
                 </div>
               </div>
-            </div></div>
+            </div>
+            </>
   )
 }
 

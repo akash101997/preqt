@@ -42,7 +42,7 @@
 .body {
   background-color: rgb(234, 234, 234);
   width: 62%;
-  border-radius: 10px;
+  border-radius: 24px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -187,7 +187,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  border-radius: 15px;
+  border-radius: 24px;
 }
 
 .valuation-container .progress-fill {
@@ -282,7 +282,7 @@
 .shares-card {
   /* max-width: 40%; */
   background: white;
-  border-radius: 12px;
+  border-radius: 24px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   border: 1px solid #eee;
@@ -395,7 +395,7 @@
 }
 
 .why-section {  
-  border-radius: 15px;
+  border-radius: 24px;
   padding: 15px 30px;
   background: linear-gradient(45deg, #ffffff, #ffffff);
 }
@@ -1601,7 +1601,7 @@ color: #b18c07;
 }
 
 .private-deal-theme .body {
-  background: #171717 !important;
+  background: #000000 !important;
   box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
   color: white !important;
 }
@@ -1658,15 +1658,24 @@ color: #b18c07;
 }
 
 .private-deal-theme .shares-card {
-  background-color: #2d2d2d !important;
+  background:#09090B !important;
   color: white !important;
-  border-color: #404040 !important;
+  border-color: #FFDE3C !important;
+  box-shadow: 0px 1px 16px -8px #FFDE3C !important;
 }
+
+.private-deal-theme .shares-section svg line {
+   stroke:#878787 !important;
+}
+
 
 .private-deal-theme .why-section {
   background: #171717 !important;
   box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
   color: white !important;
+}
+.private-deal-theme .why-section section{
+  padding: 0px;
 }
 
 .private-deal-theme .why-section h2 {
@@ -1674,7 +1683,8 @@ color: #b18c07;
 }
 
 .private-deal-theme .why-subsection div {
-  background: linear-gradient(to bottom, rgba(45, 45, 45, 0.8), rgba(40, 40, 40, 0.6)) !important;
+  background: linear-gradient(to bottom, #000000 0%, #00000000 70%) !important;
+  
   color: white !important;
 }
 
@@ -1802,7 +1812,7 @@ fill: #C9A74E;
 }
 
 .private-deal-theme .label-title {
-  color: #cccccc !important;
+  color: #878787 !important;
 }
 
 .private-deal-theme .label-value {
