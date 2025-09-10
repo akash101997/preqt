@@ -98,10 +98,10 @@ const Business = () => {
       {/* Sales Channel */}
       <Dropdown title="Sales Channel">
         <ul className={styles.ul}>
-          <li>Direct B2B sales (corporates, industrial clients)</li>
-          <li>Government or public sector tenders</li>
-          <li>Channel partners/distributors</li>
-          <li>Online or offline presence</li>
+          <li className={styles.list}>Direct B2B sales (corporates, industrial clients)</li>
+          <li className={styles.list}>Government or public sector tenders</li>
+          <li className={styles.list}>Channel partners/distributors</li>
+          <li className={styles.list}>Online or offline presence</li>
         </ul>
       </Dropdown>
       <hr className={styles.hr} />
