@@ -1721,7 +1721,7 @@ fill: #C9A74E;
 }
 
 .private-deal-theme .lastcarousel {
-    background: #09090B !important;
+    background: #27272A !important;
 
   color: white !important;
 }
@@ -1867,7 +1867,7 @@ fill: #C9A74E;
 }
 
 .private-deal-theme .accordion-button:not(.collapsed) {
-  background-color: #404040 !important;
+  background-color: none !important;
   color: white !important;
 }
 

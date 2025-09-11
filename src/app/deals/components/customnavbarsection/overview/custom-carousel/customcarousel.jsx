@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./customcarousel.css";
 import { Carousel } from "react-bootstrap";
 
-const FirstCarousel = () => {
+const FirstCarousel = ({isPrivateDeal}) => {
   const [index, setIndex] = useState(0);
 
   // Mixed list: images + YouTube video
