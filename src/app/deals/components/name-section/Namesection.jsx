@@ -437,7 +437,7 @@ const Namedetailsection = () => {
         </div>
 
         {isPrivateDeal && (
-          <PrivateDealDetails/>
+          <PrivateDealDetails isPrivateDeal = {isPrivateDeal}/>
         )}
       </div>
       {/* <Questions /> */}

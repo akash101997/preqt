@@ -22,12 +22,14 @@ const sectionComponents = {
   industry: Industry,
 };
 
-export default function PrivateDealDetails() {
+export default function PrivateDealDetails({isPrivateDeal}) {
   const [activeSection, setActiveSection] = useState(sections[0].id);
   const sectionRefs = useRef({});
   const rafRef = useRef(null);
   const manualScrollRef = useRef(false);
   const manualTimeoutRef = useRef(null);
+
+  console.log("This is Private deal", isPrivateDeal);
 
   // helper: compute trigger offset (the vertical line where we consider a section "at top")
   const getTriggerOffset = () => {
@@ -146,7 +148,7 @@ export default function PrivateDealDetails() {
               className={styles.section}
             >
                 <h2 className={styles.detailslabel}>{section.label}</h2>
-              {Component ? <Component /> : <p>Missing component for {section.label}</p>}
+              {Component ? <Component isPrivateDeal = {isPrivateDeal}/> : <p>Missing component for {section.label}</p>}
             </div>
           );
         })}
