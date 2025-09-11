@@ -8,11 +8,11 @@ import About from "./about-section/about";
 import UtilisationFunds from "./utilisation-of-funds/UtilisationFunds.module";
 import { useSearchParams } from "next/navigation";
 
-const Overview = () => {
-  const searchParams = useSearchParams();
-  const dealId = searchParams?.get("dealId");
-  console.log("This is the dealid",dealId);
-  const isPrivateDeal = ["2", "3", "4"].includes(dealId);
+const Overview = ({isPrivateDeal}) => {
+  // const searchParams = useSearchParams();
+  // const dealId = searchParams?.get("dealId");
+  // console.log("This is the dealid",dealId);
+  // const isPrivateDeal = ["2", "3", "4"].includes(dealId);
   return (
     <div className="overview-container">
       
