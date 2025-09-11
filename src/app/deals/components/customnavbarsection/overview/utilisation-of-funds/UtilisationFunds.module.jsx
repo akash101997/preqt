@@ -2,9 +2,7 @@
 import React from "react";
 import styles from "./UtilisationFunds.module.css";
 
-export default function UtilisationFunds() {
-
-
+export default function UtilisationFunds({isPrivateDeal}) {
 
   const data = [
     {
@@ -25,7 +23,7 @@ export default function UtilisationFunds() {
   ];
 
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${isPrivateDeal? styles.privateDeal: ''}`}>
       <h3 className={styles.heading}>Utilisation of Funds</h3>
       <div className={styles.table}>
         <div className={styles.rowHeader}>

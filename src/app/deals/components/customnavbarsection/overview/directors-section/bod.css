@@ -1,122 +1,141 @@
-.bod-section img {
+.bod-section {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 24px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.bod-section h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.bod-item {
+  /* background: #ffffff; */
+  border-radius: 12px;
+  margin-bottom: 12px;
+  /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.08); */
+  overflow: hidden;
+}
+
+.dropdown-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.our-directors img {
+  border-radius: 100px;
   width: 40px;
   height: 40px;
-  border-radius: 100%;
 }
-.bod-section .header {
+
+.our-directors {
   display: flex;
-  border: none;
-  background: transparent;
-  gap: 25px;
+  align-items: center;
+  gap: 12px;
 }
 
-.bod-section .accordion-collapse {
-  /* transition: height 0.6s ease-in-out; */
-  max-height: none;
-}
+.our-directors h6 {
+  color: var(--Gray-800, #1F2937);
 
-.bod-section section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.bod-section .accordion {
-  --bs-accordion-bg: transparent !important;
-}
-
-.bod-section h6 {
-  font-weight: 500;
   font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
   line-height: 24px;
-  font-family: Helvetica;
-}
-
-.bod-section p {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  font-family: Helvetica;
-  color: #6b7280;
+  /* 150% */
   margin: 0;
 }
-.bod-section .accordion-button:not(.collapsed) {
-  background: transparent;
-  padding: 10px 10px;
+
+.our-directors p {
+  color: var(--Gray-500, #6B7280);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  /* 142.857% */
+  margin: 0;
+  text-align: left;
 }
-.bod-section .accordion-button.collapsed {
-  padding: 10px 10px;
+
+.arrow-icon {
+  display: inline-flex;
+  transition: transform 0.3s ease;
 }
-.bod-section .accordion-button {
+
+.arrow-icon.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-body {
+ 
+  border-top: 1px solid #E5E7EB;
+}
+
+.dropdown-body p {
+  color: var(--Gray-500, #6B7280);
+
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px; 
+  margin-bottom: 16px;
+}
+
+.bg-head{
+  color: var(--Gray-800, #1F2937);
+font-size: 20px;
+font-style: normal;
+font-weight: 300;
+line-height: 28px; /* 140% */
+margin-bottom: 8px;
+padding-top: 12px;
+}
+
+.dropdown-body button {
   display: flex;
-  gap: 20px;
-  color: #9CA3AF;
-}
-.bod-section .accordion-body {
-  border-top: 1px solid #e5e7eb;
-  padding: 10px 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: center;
-}
-.bod-section .accordion-body button {
-  background-color: #b59131;
-  border-radius: 100px;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  color: white;
-  gap: 10px;
-  padding: 13px 0px;
+  justify-content: center;
+  gap: 8px;
+  background: #c9a74e;
+  color: #FFF;
+  text-align: center;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
   border: none;
-}
-.bod-section .accordion-button:focus {
-  box-shadow: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  width: 100%;
 }
 
-.bod-section .accordion-item {
-  background: transparent !important;
-  border: none;
+
+/* =============================================================================Private deal css   ============================================================ */
+
+
+.private-bod-section .our-directors h6{
+  color: var(--White-White, #FFF);
+font-family: "Helvetica Neue";
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */
+
 }
-/* .bod-section .accordion-button {
-  background-color: #FFFFFF;
-  border: none;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-} */
 
-
-@media (max-width: 400px) {
-  .bod-section h6 {
-    font-size: 14px;
-  }
-  .bod-section p {
-    font-size: 10px;
-  }
-
-  .bod-section .accordion-body {
-    font-size: 10px;
-  }
-  .bod-section {
-    padding: 20px 12px;
-    gap: 0;
-  }
-  .bod-section .accordion-button {
-    gap: 8px;
-  }
-  .bod-section .accordion-button.collapsed {
-    padding: 5px 0px;
-  }
-  .bod-section .accordion-button:not(.collapsed) {
-    padding: 5px 0px;
-  }
-}
-@media (min-width: 401px) and (max-width: 900px) {
-  .bod-section {
-    padding: 12px 15px;
-    gap: 0;
-  }
+.private-bod-section .bg-head{
+  color: #FFF;
 }

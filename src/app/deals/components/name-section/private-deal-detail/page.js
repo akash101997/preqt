@@ -145,7 +145,7 @@ export default function PrivateDealDetails() {
               ref={(el) => (sectionRefs.current[section.id] = el)}
               className={styles.section}
             >
-                <h2>{section.label}</h2>
+                <h2 className={styles.detailslabel}>{section.label}</h2>
               {Component ? <Component /> : <p>Missing component for {section.label}</p>}
             </div>
           );
