@@ -1,0 +1,118 @@
+.container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  /* font-family: Arial, sans-serif; */
+  color: #222;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 300;
+  /* margin-bottom: 1.5rem;*/
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+.section h3{
+  position: relative;
+  top: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+}
+
+
+.progressBar {
+  background: #f0f0f0;
+  border-radius: 6px;
+  height: 16px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+.fill {
+  background: linear-gradient(90deg, #c5a100, #e0c868);
+  height: 100%;
+  border-radius: 6px;
+}
+
+.progressLabel {
+  text-align: right;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 0.3rem;
+  color: #817E7E;
+}
+.progressLabel strong{
+  color: #000000
+}
+
+.table {
+  margin-top: 2rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1F2937;
+  background: #f9f9f9;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.subHeader {
+  background:#F8F5EE;
+  padding: 0.6rem 1rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1F2937;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #E2E8F0;
+    font-size: 12px;
+    color: #6B7280;
+  font-weight: 400;
+}
+
+.square {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: #B59131;
+  margin-right: 8px;
+  border-radius: 2px;
+}
+
+.totalRow {
+  background: #F3F4F6;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1F2937;
+}
+
+.grandTotal {
+  background: #000;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+.tableData{
+  width: 200px;
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: space-between;
+
+}
+.tableData span{
+  /* text-align: right; */
+}

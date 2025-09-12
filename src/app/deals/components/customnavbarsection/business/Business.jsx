@@ -65,31 +65,13 @@ const Business = ({ isPrivateDeal }) => {
       <Dropdown title="Products & services">
         <div className={styles.products}>
           <div className={styles.card}>
-            <Image
-              src="/deals/human-nutriation.png"
-              alt="Human Nutrition"
-              width={238}
-              height={360}
-              className={styles.cardImage}
-            />
+            <Image src="/deals/human-nutriation.png" alt="Human Nutrition" width={242} height={360} className={styles.cardImage} />
           </div>
           <div className={styles.card}>
-            <Image
-              src="/deals/industrials-products.png"
-              alt="Industrial Products"
-              width={238}
-              height={360}
-              className={styles.cardImage}
-            />
+            <Image src="/deals/industrials-products.png" alt="Industrial Products" width={242} height={360} className={styles.cardImage} />
           </div>
           <div className={styles.card}>
-            <Image
-              src="/deals/animals-health.png"
-              alt="Animal Health"
-              width={238}
-              height={360}
-              className={styles.cardImage}
-            />
+            <Image src="/deals/animals-health.png" alt="Animal Health" width={242} height={360} className={styles.cardImage} />
           </div>
         </div>
       </Dropdown>

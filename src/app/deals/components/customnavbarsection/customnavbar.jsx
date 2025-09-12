@@ -4,10 +4,11 @@ import { useState, useEffect } from "react";
 import Overview from "./overview/overview";
 import Fundamentals from "./fundamentals/fundamentals";
 import Keyfinancials from "./keyfinancials/keyfinancials";
-import Shareholdings from "./shareholdings/shareholdings";
+// import Shareholdings from "./industry/shareholdings/shareholdings";
 import "./customnavbar.css";
 import Industry from "./industry/industry";
 import Business from "./business/Business";
+import Shareholding from "./fundraise/Shareholding";
 
 const Customnavbar = () => {
   const [key, setKey] = useState("Overview");
@@ -39,8 +40,8 @@ const Customnavbar = () => {
         <Tab eventKey="Key Financials" title="Key Financials">
           <Keyfinancials />
         </Tab>
-        <Tab eventKey="Shareholdings" title="Shareholdings">
-          <Shareholdings />
+        <Tab eventKey="Fundraise/Future Plans" title="Fundraise/Future Plans">
+          <Shareholding />
         </Tab>
       </Tabs>
       

@@ -51,15 +51,16 @@
 .products {
   
   display: flex;
-  gap: 12px;
+  gap: 18px;
   /* padding: 10px 0px; */
   margin-top: 1rem;
 }
 
 .card {
-
-  text-align: center;
-  flex: 1;
+ max-width: 100%;
+ object-fit: cover;
+ /* text-align: center; */
+  /* flex: 1; */
 }
 
 /* .cardImage {
