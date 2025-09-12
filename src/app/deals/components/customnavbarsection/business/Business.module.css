@@ -22,7 +22,7 @@
 
 .header {
   /* border: 1px solid red; */
- margin: 30px 0px 20px 0px;
+ /* margin: 30px 0px 20px 0px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,6 +35,16 @@
   /* border: none; */
   height: 1px;
   background-color: #F3F4F6;
+}
+
+.content {
+  padding: 12px 0;
+  /* Don't fix height or overflow here */
+}
+
+.collapse,
+.collapsing {
+  transition: height 0.35s ease; /* Bootstrap default */
 }
 
 
@@ -128,6 +138,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.iconWrapper {
+  display: inline-flex;
+  transition: transform 0.3s ease;
+}
+
+.iconWrapper.open {
+  transform: rotate(180deg);
 }
 
 
