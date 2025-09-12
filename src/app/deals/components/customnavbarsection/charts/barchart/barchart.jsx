@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import styles from  './barchart.module.css';
 import {
   ComposedChart,
   Bar,
@@ -27,7 +28,7 @@ const Barchart = () => {
         margin={{ top: 0, right: 30, left: 30, bottom: 20 }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="year" />
+        <XAxis dataKey="year" color="#E2E8F0" />
 
         {/* Left Y-axis for Revenue */}
         <YAxis
@@ -61,11 +62,39 @@ const Barchart = () => {
         <Tooltip />
         
         <Legend
-  verticalAlign="bottom"  // position at the bottom
-  align="center"          // center horizontally
-  iconType="circle"       // circle icon like in your screenshot
-  wrapperStyle={{ paddingTop: 10 }} // optional spacing from chart
+  verticalAlign="bottom"
+  align="center"
+  iconType="circle"
+  wrapperStyle={{ paddingTop: 10 }}
+  content={(props) => {
+    const { payload } = props;
+    return (
+      <ul style={{ display: "flex", justifyContent: "center", gap: "20px", listStyle: "none", padding: 0 }}>
+        {payload.map((entry, index) => (
+          <li key={`item-${index}`} style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+            {/* Custom legend icon color */}
+            <span
+              style={{
+                display: "inline-block",
+                width: 12,
+                height: 12,
+                borderRadius: "50%",
+                background:
+                entry.dataKey === "revenue"
+                  ? "linear-gradient(180deg, #B59131 0%, #E6CF93 100%)" // gradient for revenue
+                  : entry.dataKey === "ebitda"
+                  ? "#443197" // solid purple for EBITDA
+                  : "#16A34A", // solid green for PAT
+            }}
+            />
+            <span style={{ color: "#000" }}>{entry.value}</span> {/* text color remains same */}
+          </li>
+        ))}
+      </ul>
+    );
+  }}
 />
+
 
         {/* Revenue Bars */}
         <Bar
@@ -73,6 +102,7 @@ const Barchart = () => {
           dataKey="revenue"
           barSize={60}
           fill="url(#goldGradient)"
+          radius={[6, 6, 0, 0]}
         >
           <LabelList
             dataKey="revenue"
@@ -103,11 +133,12 @@ const Barchart = () => {
 
         {/* Gradient for Bar */}
         <defs>
-          <linearGradient id="goldGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#d4af37" />
-            <stop offset="100%" stopColor="#b8860b" />
-          </linearGradient>
-        </defs>
+  <linearGradient id="goldGradient" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stopColor="rgba(181, 145, 49, 1)" />
+    <stop offset="100%" stopColor="rgba(230, 207, 147, 1)" />
+  </linearGradient>
+</defs>
+
       </ComposedChart>
     </ResponsiveContainer>
   );
