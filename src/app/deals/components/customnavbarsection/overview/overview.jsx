@@ -7,6 +7,7 @@ import Pitchdeck from "./pitch-deck-section/pitchdeck";
 import About from "./about-section/about";
 import UtilisationFunds from "./utilisation-of-funds/UtilisationFunds.module";
 import { useSearchParams } from "next/navigation";
+import Shareholding from "../fundraise/Shareholding";
 
 const Overview = ({isPrivateDeal}) => {
   // const searchParams = useSearchParams();
@@ -22,6 +23,7 @@ const Overview = ({isPrivateDeal}) => {
       <Bod isPrivateDeal = {isPrivateDeal}/>
       <LastCarousel isPrivateDeal = {isPrivateDeal}/>
       <UtilisationFunds isPrivateDeal = {isPrivateDeal}/>
+  
     </div>
   );
 };
