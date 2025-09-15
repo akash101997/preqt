@@ -4,9 +4,9 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const Industry = () => {
   // 🔹 States for dropdown open/close
-  const [showGrowth, setShowGrowth] = useState(false);
-  const [showPolicy, setShowPolicy] = useState(false);
-  const [showPeer, setShowPeer] = useState(false);
+  const [showGrowth, setShowGrowth] = useState(true);
+  const [showPolicy, setShowPolicy] = useState(true);
+  const [showPeer, setShowPeer] = useState(true);
 
   // 🔹 Dummy Data
   const growthOpportunities = [
@@ -48,13 +48,13 @@ const Industry = () => {
     <div className={styles.industryContainer}>
       {/* Growth Opportunities Section */}
       <section className={styles.growthSection}>
-        <h2 
-          className={styles.growthHeading} 
+        <h2
+          className={styles.growthHeading}
           onClick={() => setShowGrowth(!showGrowth)}
-          style={{cursor: "pointer"}}
+          style={{ cursor: "pointer" }}
         >
-          <div>Growth Opportunities </div> 
-         <div> {showGrowth ? <ChevronUp size={20}/> : <ChevronDown  size={20}/>}</div>
+          <div>Growth Opportunities </div>
+          <div> {showGrowth ? <ChevronUp size={20} /> : <ChevronDown size={20} />}</div>
         </h2>
         {showGrowth && (
           <div>
@@ -72,17 +72,17 @@ const Industry = () => {
 
       {/* Government Policy Section */}
       <section className={styles.policySection}>
-        <h2 
-          className={styles.policyHeading} 
+        <h2
+          className={styles.policyHeading}
           onClick={() => setShowPolicy(!showPolicy)}
-          style={{cursor: "pointer"}}
+          style={{ cursor: "pointer" }}
         >
-         
-   <div>Government Policy Support  </div>
-  <div>{showPolicy ? <ChevronUp/> : <ChevronDown />}</div>     
-    </h2>     
-          
-       
+
+          <div>Government Policy Support  </div>
+          <div>{showPolicy ? <ChevronUp /> : <ChevronDown />}</div>
+        </h2>
+
+
         {showPolicy && (
           <ul className={styles.policyList}>
             {governmentPolicies.map((policy, index) => (
@@ -95,13 +95,13 @@ const Industry = () => {
 
       {/* Peer Comparison Section */}
       <section className={styles.peerSection}>
-        <h2 
-          className={styles.PeerHeading} 
+        <h2
+          className={styles.PeerHeading}
           onClick={() => setShowPeer(!showPeer)}
-          style={{cursor: "pointer"}}
+          style={{ cursor: "pointer" }}
         >
-          <div>Peer Comparison </div> 
-          <div>{showPeer ? <ChevronUp/> : <ChevronDown />}</div>
+          <div>Peer Comparison </div>
+          <div>{showPeer ? <ChevronUp /> : <ChevronDown />}</div>
         </h2>
         {showPeer && (
           <table className={styles.PeerTable}>
@@ -136,4 +136,3 @@ const Industry = () => {
 };
 
 export default Industry;
- 

@@ -1622,6 +1622,9 @@ color: #b18c07;
 .private-deal-theme .account-footer {
   display: none !important;
 }
+.account-footer{
+  width: 100%;
+}
 
 .private-deal-theme .body {
   background: #000000 !important;

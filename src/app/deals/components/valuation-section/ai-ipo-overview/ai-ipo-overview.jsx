@@ -7,20 +7,20 @@ const AiIpoOverview = () => {
       <section className="body-section4">
         <section>
           <p>Minimum Investment</p>
-          <h6>₹14,820 / 26 Shares</h6>
+          <h6 className="mb-0">₹14,820 / 26 Shares</h6>
         </section>
 
         <section className="bank-sec">
           <section>
             <p>Merchant Banker</p>
-            <h6>Axis Capital </h6>
+            <h6 className="mb-0">Axis Capital </h6>
           </section>
           <img src="/assets/pictures/bankimg.png" alt="" />
         </section>
 
         <section>
           <p>IPO Doc</p>
-          <h6 className="drhp">
+          <h6 className="drhp mb-0">
             DRHP/RHP
             <svg
               
@@ -68,16 +68,7 @@ const AiIpoOverview = () => {
         </section>
       </section>
 
-      <svg
-        className="mid-svg"
-        width="732"
-        height="1"
-        viewBox="0 0 732 1"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <line y1="0.5" x2="732" y2="0.5" stroke="#4f5050ff" />
-      </svg>
+     <div className="seperator"></div>
 
       <section className="smallcards-section">
         <div className="smallcard-section-subcontainer">
