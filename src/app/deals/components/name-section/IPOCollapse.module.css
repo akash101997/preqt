@@ -1,0 +1,20 @@
+.ipocollapseBtn{
+display: flex;
+align-items: center;
+justify-content: space-between;
+border: none;
+background: transparent;
+width: 100%;
+}
+
+.ipocollapseright{
+    display: flex;
+    align-items: center;
+}
+.smallTextP{
+    color: var(--Gray-500, #6B7280);
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 16px; /* 133.333% */
+}

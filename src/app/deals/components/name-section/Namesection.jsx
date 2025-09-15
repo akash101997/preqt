@@ -16,6 +16,7 @@ import Valuation from "../valuation-section/valuation";
 import QuesAnsSection from "../ask-ai-section/ques-ans-section/QuesAnsSection";
 import Calculator from "@/app/private-deals/components/calculator/Calculator";
 import PrivateDealDetails from "./private-deal-detail/page";
+import IPOCollapse from "./IPOCollapse";
 
 const Namedetailsection = () => {
   const [bellactive, setBellactive] = useState(false);
@@ -323,6 +324,8 @@ const Namedetailsection = () => {
                   better margins.
                 </span>
               </section>
+
+              <IPOCollapse/>
 
 
 

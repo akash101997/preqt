@@ -117,8 +117,13 @@
 
 .body1-buttons span {
   background-color: #ececf0;
-  padding: 6px 20px;
+  padding: 3px 20px;
   border-radius: 7px;
+  color: #242424;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 28px; /* 233.333% */
 }
 
 .body-section2 {
