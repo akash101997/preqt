@@ -57,6 +57,7 @@
 
 .key-financials-container .accordion-button:not(.collapsed) {
   background-color: transparent;
+
 }
 
 .key-financials-container .accordion-button:focus {
@@ -230,7 +231,9 @@
   cursor: pointer;
 }
 
-.accordion-body {
+.accordion-body {border-radius: 16px;
+  padding: 24px 32px;
+
   margin-top: 14px;
   display: flex;
   flex-direction: column;
@@ -289,4 +292,30 @@
   color: #dc2626;
   /* red */
   font-weight: 500;
+}
+
+.private-deal .key-financials-container .Accordion.Header,
+.private-deal .metric-block h4,
+.private-deal .accordion-item button {
+  color: #9CA3AF !important; /* Heading gray */
+}
+
+/* Value color */
+.private-deal .section-header h3,
+.private-deal .financial-container h2,
+.private-deal .section-body h2,
+.private-deal .financial-performance .accordion-body h2,
+.private-deal .financial-performance .accordion-body section p,
+.private-deal .s22 strong,
+.private-deal .metric-block p{
+  color: white !important; /* Value text white */
+  
+}
+
+/* Graph / Border color */
+.private-deal .accordion-item,
+.private-deal .metric-block,
+.private-deal .section {
+  border-color: #374151 !important; /* Dark Slate border */
+
 }
