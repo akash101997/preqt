@@ -6,21 +6,23 @@ import { Collapse, Tabs, Tab, Fade } from "react-bootstrap";
 import "./keyfinancials.css";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import DebtBarChart from "../charts/DebtBarchart";
+import { useSearchParams } from "next/navigation";
 
 const Keyfinancials = () => {
+  const searchParams = useSearchParams();
+  const dealId = searchParams?.get("dealId");
+
   const [key, setKey] = useState("Return on Equity (ROE)");
 
-  const data = [
-    { year: "2022", growth: -21.8, revenue: 38.5, ebitda: "0%", pat: 0, peratio: 0, roa: 0, roe: 0, roce: 0, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
-    { year: "2023", growth: 25.5, revenue: 65.7, ebitda: "0%", pat: 0, peratio: 0, roa: 0, roe: 0, roce: 0, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
-    { year: "2024", growth: 31.8, revenue: 87.2, ebitda: "0%", pat: 0, peratio: 0, roa: 0, roe: 0, roce: 0, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
+  const data = dealId == "2" ? [
+    { year: "2024", growth: 0, revenue: 66.3, ebitda: "7.9%", pat: "2.1%", peratio: 0, roa: 0, roe: 0, roce: 0, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
+    { year: "2025", growth: 0, revenue: 101.4, ebitda: "13.1%", pat: "6.9%", peratio: 10.7, roa: 0, roe: 0, roce: 0, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
+  ] : [
+    { year: "2023", growth: 32.2, revenue: 76.9, ebitda: "12.2 (15.8%)", pat: "2.1 (2.7%)", peratio: 0, roa: 0, roe: 30.1, roce: 13.1, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
+    { year: "2024", growth: 2.5, revenue: 78.8, ebitda: "13.6 (17.3%)", pat: "1.4 (1.7%)", peratio: 0, roa: 0, roe: 15.8, roce: 12.4, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
+    { year: "2025", growth: 19.5, revenue: 94.1, ebitda: "24.9 (26.5%)", pat: "11.5 (12%)", peratio: 0, roa: 0, roe: 75.9, roce: 25.3, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
   ];
 
-  const returnonequitydata = [
-    { year: "2022", growth: -21.8 },
-    { year: "2023", growth: 25.5 },
-    { year: "2024", growth: 31.8 },
-  ];
 
   // Track open/close state for each main section
   const [openStates, setOpenStates] = useState({
@@ -68,7 +70,7 @@ const Keyfinancials = () => {
         </div>
         <Collapse in={openStates.financialTrends}>
           <div className="section-body">
-            <h2 style={{marginBottom:'20px'}}>Revenue growth with EBITDA and PAT margins</h2>
+            <h2 style={{ marginBottom: '20px' }}>Revenue growth with EBITDA and PAT margins</h2>
             <Barchart />
           </div>
         </Collapse>
@@ -119,7 +121,7 @@ const Keyfinancials = () => {
                         </span>
 
                         <span className={item.growth < 0 ? "negative" : "positive"}>
-                          {item.growth}
+                          {item.growth == 0 ? "-" : item.growth + "%"}
                         </span>
                       </p>
                     </div>
@@ -130,15 +132,15 @@ const Keyfinancials = () => {
                       <p>
                         <span>EBITDA (Cr){" "}</span>
 
-                        <span className="positive">
-                          {item.ebitda} ({item.ebitdaPercent})
+                        <span className={item.ebitda < 0 ? "negative" : "positive"}>
+                          {item.ebitda == 0 ? "-" : item.ebitda}
                         </span>
                       </p>
                       <p>
                         <span> PAT (Cr){" "}</span>
 
-                        <span className="positive">
-                          {item.pat} ({item.patPercent})
+                        <span className={item.pat < 0 ? "negative" : "positive"}>
+                          {item.pat == 0 ? "-" : item.pat}
                         </span>
                       </p>
                     </div>
@@ -147,41 +149,41 @@ const Keyfinancials = () => {
                     <div className="metric-block">
 
                       <h4>Valuation</h4>
-                      <p>P/E Ratio <span>{item.pe}</span></p>
+                      <p><span>P/E Ratio</span> <span className={item.peratio < 0 ? "negative" : "positive"}>{item.peratio == 0 ? "-" : item.peratio + "x"}</span></p>
                     </div>
 
                     {/* Returns on Capital */}
                     <div className="metric-block">
                       <h4>Returns on Capital</h4>
-                      <p> <span>ROA</span>  <span className={item.roa < 0 ? "negative" : "positive"}>{item.roa}%</span></p>
-                      <p> <span>ROE</span> <span className={item.roe < 0 ? "negative" : "positive"}>{item.roe}%</span></p>
-                      <p> <span>ROCE</span> <span className="positive">{item.roce}%</span></p>
+                      <p> <span>ROA</span>  <span className={item.roa < 0 ? "negative" : "positive"}>{item.roa == 0 ? "-" : item.roa + "%"}</span></p>
+                      <p> <span>ROE</span> <span className={item.roe < 0 ? "negative" : "positive"}>{item.roe == 0 ? "-" : item.roe + "%"}</span></p>
+                      <p> <span>ROCE</span> <span className="positive">{item.roce == 0 ? "-" : item.roce + "%"}</span></p>
                     </div>
 
                     <div className="metric-block">
 
                       <h4>Leverage & Coverage</h4>
-                      <p>Debt-to-Equity Ratio <span>{item.pe}</span></p>
-                      <p>Interest Coverage Ratio</p>
+                      <p><span>Debt-to-Equity Ratio</span> <span className={item.debttoequity < 0 ? "negative" : "positive"}>-</span></p>
+                      <p><span>Interest Coverage Ratio</span> <span className={item.interestcoverage < 0 ? "negative" : "positive"}>-</span></p>
                     </div>
 
                     <div className="metric-block">
                       <h4>Working Capital</h4>
-                      <p>Debtor Days <span></span></p>
-                      <p>Creditor Days <span></span></p>
-                      <p>Inventory Days <span></span></p>
+                      <p><span>Debtor Days</span> <span className={item.debtordays < 0 ? "negative" : "positive"}>-</span></p>
+                      <p><span>Creditor Days</span> <span className={item.creditordays < 0 ? "negative" : "positive"}>-</span></p>
+                      <p><span>Inventory Days</span> <span className={item.inventorydays < 0 ? "negative" : "positive"}>-</span></p>
                     </div>
 
                     <div className="metric-block">
                       <h4>Asset Efficiency</h4>
-                      <p>Long-term Funds to Fixed Assets<span></span></p>
-                     
+                      <p><span>Long-term Funds to Fixed Assets</span><span className={item.longtermfundstofixed < 0 ? "negative" : "positive"}>-</span></p>
+
                     </div>
 
                     <div className="metric-block">
                       <h4>Liquidity</h4>
-                      <p>COGS (% of Revenue)<span></span></p>
-                     
+                      <p><span>COGS (% of Revenue)</span> <span className={item.cogs < 0 ? "negative" : "positive"}>-</span></p>
+
                     </div>
                   </div>
                 </Collapse>
@@ -212,10 +214,10 @@ const Keyfinancials = () => {
               unmountOnExit
             >
               <Tab eventKey="Return on Equity (ROE)" title="Return on Equity (ROE)">
-                <PurpleBarchart chartData={returnonequitydata} />
+                <PurpleBarchart isPrivate={dealId == "2"} />
               </Tab>
               <Tab eventKey="Debt to Equity" title="Debt to Equity">
-               <DebtBarChart/>
+                <DebtBarChart isPrivate={dealId == "2"} />
               </Tab>
             </Tabs>
           </div>

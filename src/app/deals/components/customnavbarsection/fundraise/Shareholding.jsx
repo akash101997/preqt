@@ -1,10 +1,14 @@
+"use client";
 // components/Shareholding.js
 import { useEffect, useState } from "react";
 import Fundamentals from "../fundamentals/fundamentals";
 import styles from "./Shareholding.module.css";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 
 export default function Shareholding() {
+  const searchParams = useSearchParams();
+  const dealId = searchParams?.get("dealId");
   const [showshareholding, setshowshareholding] = useState(true);
   const [preprogressbar, setPreprogressbar] = useState(0);
   const [postprogressbar, setPostprogressbar] = useState(0);
@@ -165,12 +169,12 @@ export default function Shareholding() {
                 <span>100%</span>
               </div>
             </div>
-                  </div>
+          </div>
         </>
       )}
 
-            <Fundamentals />
-      
+      <Fundamentals />
+
     </div>
   );
 }
