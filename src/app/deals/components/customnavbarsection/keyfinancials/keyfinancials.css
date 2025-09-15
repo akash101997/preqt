@@ -67,14 +67,14 @@
   padding: 20px 20px;
 }
 
-.key-financials-container .accordion-item {
+/* .key-financials-container .accordion-item {
   border-left: none;
   border-right: none;
 }
 
 .key-financials-container .accordion-item:first-child {
   border-top: none;
-}
+} */
 
 .key-financials-container .accordion-item button {
   font-size: 20px;
@@ -120,23 +120,20 @@
   padding: 20px 0px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 8px;
 
 }
 
 
 
 .financial-performance .accordion-body span {
-
   display: flex;
   flex-direction: column;
   gap: 10px;
 
 }
 
-.key-financials-container .accordion-body {
-  padding: 10px 0px;
-}
+
 
 .s22 {
     display: flex;
@@ -154,12 +151,11 @@
 
 .financial-tabs {
   background-color: #F1F5F9 !important;
-  padding: 10px 20px 10px 20px;
+  padding: 4px;
   width: fit-content;
-  border-radius: 20px;
+  border-radius: 8px !important;
   align-items: center;
   display: flex;
-  gap: 10px;
 }
 
 .financial-tabs button {
@@ -189,7 +185,7 @@
 .financial-tabs .nav-link.active {
   color: black !important;
   background-color: white !important;
-  border-radius: 10px !important;
+  border-radius: 8px !important;
 
   border: none !important;
 }
@@ -203,10 +199,21 @@
 .accordion-item {
   border-radius: 16px;
   border: 1px solid var(--Slate-200, #E2E8F0);
-  background: var(--White, #FFF);
   box-shadow: 0 10px 15px -3px rgba(100, 78, 229, 0.10), 0 4px 6px -4px rgba(100, 78, 229, 0.10);
-  margin-bottom: 12px;
-  padding: 15px;
+  margin-bottom: 24px;
+  padding: 24px;
+}
+
+.accordion-item:not(:first-child){
+  border-top: 1px solid var(--Slate-200, #E2E8F0);
+}
+.accordion-item:first-of-type{
+  border-top-left-radius:16px;
+  border-top-right-radius:16px
+}
+.accordion-item:last-of-type{
+  border-bottom-right-radius:16px;
+  border-bottom-left-radius:16px;
 }
 
 .accordion-header {
@@ -220,9 +227,13 @@
   margin-top: 14px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  /* gap: 16px; */
 }
-
+.revenue-count{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
 .metric-block {
   border-top: 1px solid #e5ebf0;
   padding-top: 12px;
@@ -254,6 +265,7 @@
   font-weight: 500;
   line-height: 24px;
   /* 150% */
+  margin-bottom: 0;
 }
 
 .metric-block p span {

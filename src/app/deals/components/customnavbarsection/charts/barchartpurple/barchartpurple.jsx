@@ -24,7 +24,7 @@ export default function PurpleBarchart({ chartData }) {
             ticks={[-40, -20, 0, 20, 40]}
           />
           <Tooltip formatter={(value) => `${value}%`} />
-          <Bar dataKey="growth" fill="#a23df1" radius={[5, 5, 0, 0]}>
+          <Bar dataKey="growth" fill="#E4C575" radius={[5, 5, 0, 0]}>
             <LabelList
               dataKey="growth"
               position="top"

@@ -3,15 +3,18 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
 import Overview from "../../customnavbarsection/overview/overview";
 import Business from "../../customnavbarsection/business/Business";
-import Fundamentals from "../../customnavbarsection/fundamentals/fundamentals";
 import Industry from "../../customnavbarsection/industry/industry";
 import Keyfinancials from "../../customnavbarsection/keyfinancials/keyfinancials";
+import Shareholding from "../../customnavbarsection/fundraise/Shareholding";
+import Documentation from "../../customnavbarsection/documentation/page";
 
 const sections = [
   { id: "overview", label: "Overview" },
   { id: "business", label: "Business" },
   { id: "financial", label: "Financial Highlights" },
   { id: "industry", label: "Industry Overview" },
+  {id: "fundraise", label: "Fundraise/Future Plans"},
+  {id: "documentation", label: "Documentation"}
   // add more if needed
 ];
 
@@ -20,6 +23,8 @@ const sectionComponents = {
   business: Business,
   financial: Keyfinancials,
   industry: Industry,
+  fundraise: Shareholding,
+  documentation: Documentation
 };
 
 export default function PrivateDealDetails({isPrivateDeal}) {

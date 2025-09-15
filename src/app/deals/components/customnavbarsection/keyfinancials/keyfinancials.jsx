@@ -7,12 +7,12 @@ import "./keyfinancials.css";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 const Keyfinancials = () => {
-  const [key, setKey] = useState("Overview");
+  const [key, setKey] = useState("Return on Equity (ROE)");
 
   const data = [
-    { year: "2022", growth: -21.8, revenue: 38.5, ebitda: 0, pat: 0, peratio: 0, roa: 0, roe: 0, roce: 0, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
-    { year: "2023", growth: 25.5, revenue: 65.7, ebitda: 0, pat: 0, peratio: 0, roa: 0, roe: 0, roce: 0, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
-    { year: "2024", growth: 31.8, revenue: 87.2, ebitda: 0, pat: 0, peratio: 0, roa: 0, roe: 0, roce: 0, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
+    { year: "2022", growth: -21.8, revenue: 38.5, ebitda: "0%", pat: 0, peratio: 0, roa: 0, roe: 0, roce: 0, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
+    { year: "2023", growth: 25.5, revenue: 65.7, ebitda: "0%", pat: 0, peratio: 0, roa: 0, roe: 0, roce: 0, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
+    { year: "2024", growth: 31.8, revenue: 87.2, ebitda: "0%", pat: 0, peratio: 0, roa: 0, roe: 0, roce: 0, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
   ];
 
   const returnonequitydata = [
@@ -93,12 +93,17 @@ const Keyfinancials = () => {
                   onClick={() => toggleYear(item.year)}
                 >
                   <span>{item.year}</span>
-                  <span className="s22">
-                    Revenue (Cr) <strong>{item.revenue.toFixed(2)}</strong>
-                  </span>
-                  <span className="arrow">
-                    {nestedOpen[item.year] ? <ChevronUp /> : <ChevronDown />}
-                  </span>
+                  <div className="revenue-count">
+                    <span className="s22">
+                      Revenue (Cr) <span><svg xmlns="http://www.w3.org/2000/svg" width="8" height="9" viewBox="0 0 8 9" fill="none">
+                        <circle cx="4" cy="4.5" r="4" fill="#CBD5E1" />
+                      </svg></span> <strong>{item.revenue.toFixed(2)}</strong>
+                    </span>
+                    <span className="arrow">
+                      {nestedOpen[item.year] ? <ChevronUp /> : <ChevronDown />}
+                    </span>
+                  </div>
+
                 </div>
 
                 {/* Nested accordion body */}
@@ -109,9 +114,9 @@ const Keyfinancials = () => {
                       <h4>Top-line Growth</h4>
                       <p>
                         <span>
-                        Growth (%)
+                          Growth (%)
                         </span>
-                        
+
                         <span className={item.growth < 0 ? "negative" : "positive"}>
                           {item.growth}
                         </span>
@@ -123,14 +128,14 @@ const Keyfinancials = () => {
                       <h4>Earnings</h4>
                       <p>
                         <span>EBITDA (Cr){" "}</span>
-                        
+
                         <span className="positive">
                           {item.ebitda} ({item.ebitdaPercent})
                         </span>
                       </p>
                       <p>
                         <span> PAT (Cr){" "}</span>
-                       
+
                         <span className="positive">
                           {item.pat} ({item.patPercent})
                         </span>
@@ -139,7 +144,7 @@ const Keyfinancials = () => {
 
                     {/* Valuation */}
                     <div className="metric-block">
-                      
+
                       <h4>Valuation</h4>
                       <p>P/E Ratio <span>{item.pe}</span></p>
                     </div>
@@ -150,6 +155,32 @@ const Keyfinancials = () => {
                       <p> <span>ROA</span>  <span className={item.roa < 0 ? "negative" : "positive"}>{item.roa}%</span></p>
                       <p> <span>ROE</span> <span className={item.roe < 0 ? "negative" : "positive"}>{item.roe}%</span></p>
                       <p> <span>ROCE</span> <span className="positive">{item.roce}%</span></p>
+                    </div>
+
+                    <div className="metric-block">
+
+                      <h4>Leverage & Coverage</h4>
+                      <p>Debt-to-Equity Ratio <span>{item.pe}</span></p>
+                      <p>Interest Coverage Ratio</p>
+                    </div>
+
+                    <div className="metric-block">
+                      <h4>Working Capital</h4>
+                      <p>Debtor Days <span></span></p>
+                      <p>Creditor Days <span></span></p>
+                      <p>Inventory Days <span></span></p>
+                    </div>
+
+                    <div className="metric-block">
+                      <h4>Asset Efficiency</h4>
+                      <p>Long-term Funds to Fixed Assets<span></span></p>
+                     
+                    </div>
+
+                    <div className="metric-block">
+                      <h4>Liquidity</h4>
+                      <p>COGS (% of Revenue)<span></span></p>
+                     
                     </div>
                   </div>
                 </Collapse>
