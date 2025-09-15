@@ -1,9 +1,21 @@
 // components/Shareholding.js
+import { useEffect, useState } from "react";
 import Fundamentals from "../fundamentals/fundamentals";
-import ProgressBar from "./progress-bar/ProgressBar";
+// import ProgressBar from "./progress-bar/ProgressBar";
 import styles from "./Shareholding.module.css";
 
 export default function Shareholding() {
+ const [preprogressbar ,setPreprogressbar]=useState(0);
+
+ const [postprogressbar ,setPostprogressbar]=useState(0);
+
+
+  useEffect(() => {
+    setTimeout(() => setPreprogressbar(30), 100); // delay for smooth effect
+    setTimeout(() => setPostprogressbar(72), 100);
+  }, []);
+
+
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Shareholding</h2>
@@ -13,11 +25,12 @@ export default function Shareholding() {
         <h3>Pre-issue shareholding</h3>
         <p className={styles.progressLabel}>
           Promoter Holding <br /> 
-          <strong>82.8%</strong>
+          <strong>{preprogressbar}%</strong>
         </p> 
         <div className={styles.progressBar}>
          {/* <div style={{ padding: "2rem", maxWidth: "500px" }}>  <ProgressBar percentage={22.8} label="Pre-Issue Promoter Holding" /></div> */}
-          <div className={styles.fill} style={{ width: "82.8%" }}></div>
+          <div className={styles.actualprecentage} style={{ width: `${preprogressbar}%` }}></div>
+          <div className={styles.remaingpercentage} style={{ width: ` ${100-preprogressbar}%` }}></div>
         </div>
        
       </div>
@@ -26,10 +39,11 @@ export default function Shareholding() {
       <div className={styles.section}>
         <h3>Post-Issue Shareholding</h3>
          <p className={styles.progressLabel}>
-          Promoter Holding <br /> <strong>64.0%</strong>
+          Promoter Holding <br /> <strong>{postprogressbar}%</strong>
         </p>
         <div className={styles.progressBar}>
-          <div className={styles.fill} style={{ width: "64%" }}></div>
+          <div className={styles.actualprecentage} style={{ width: `${postprogressbar}%` }}></div>
+           <div className={styles.remaingpercentage} style={{ width: ` ${100-postprogressbar}%` }}></div>
         </div>
        
       </div>

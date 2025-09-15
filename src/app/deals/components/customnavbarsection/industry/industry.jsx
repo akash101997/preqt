@@ -53,7 +53,8 @@ const Industry = () => {
           onClick={() => setShowGrowth(!showGrowth)}
           style={{cursor: "pointer"}}
         >
-          Growth Opportunities {showGrowth ? <ChevronUp/> : <ChevronDown />}
+          <div>Growth Opportunities </div> 
+         <div> {showGrowth ? <ChevronUp/> : <ChevronDown />}</div>
         </h2>
         {showGrowth && (
           <div>
@@ -76,8 +77,12 @@ const Industry = () => {
           onClick={() => setShowPolicy(!showPolicy)}
           style={{cursor: "pointer"}}
         >
-          Government Policy Support {showPolicy ? <ChevronUp/> : <ChevronDown />}
-        </h2>
+         
+   <div>Government Policy Support  </div>
+  <div>{showPolicy ? <ChevronUp/> : <ChevronDown />}</div>     
+    </h2>     
+          
+       
         {showPolicy && (
           <ul className={styles.policyList}>
             {governmentPolicies.map((policy, index) => (
@@ -95,7 +100,8 @@ const Industry = () => {
           onClick={() => setShowPeer(!showPeer)}
           style={{cursor: "pointer"}}
         >
-          Peer Comparison {showPeer ? <ChevronUp/> : <ChevronDown />}
+          <div>Peer Comparison </div> 
+          <div>{showPeer ? <ChevronUp/> : <ChevronDown />}</div>
         </h2>
         {showPeer && (
           <table className={styles.PeerTable}>

@@ -139,12 +139,12 @@
 }
 
 .s22 {
-  display: flex;
-  gap: 12px;
-  color: #6B7280;
-  font-family: Helvetica;
-  /* this is just a comment */
-/* another change */
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    gap: 12px;
+    color:#4B5563;
+    /* font-family: Helvetica; */
 }
 
 .s22 strong {
