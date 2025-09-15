@@ -31,13 +31,13 @@ const Customnavbar = () => {
         <Tab eventKey="Business" title="Business">
           <Business/>
         </Tab>
-        <Tab eventKey="Fundamentals" title="Fundamentals">
+        {/* <Tab eventKey="Fundamentals" title="Fundamentals">
           <Fundamentals />
-        </Tab>
-        <Tab eventKey="Industry" title="Industry">
+        </Tab> */}
+        <Tab eventKey="Industry Overview" title="Industry Overview">
           <Industry/>
         </Tab>
-        <Tab eventKey="Key Financials" title="Key Financials">
+        <Tab eventKey="Financia Highlights" title="Financial Highlights">
           <Keyfinancials />
         </Tab>
         <Tab eventKey="Fundraise/Future Plans" title="Fundraise/Future Plans">

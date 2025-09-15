@@ -23,20 +23,29 @@
   color: #000000;
 }
 
-
 .progressBar {
-  background: #f0f0f0;
+  display: flex;
+  gap: 4px;
   border-radius: 6px;
-  height: 16px;
+  height: 24px;
   overflow: hidden;
   margin: 0.5rem 0;
 }
 
-.fill {
-  background: linear-gradient(90deg, #c5a100, #e0c868);
+.actualprecentage {
+  background: #B59131 !important;
   height: 100%;
   border-radius: 6px;
+  transition: width 0.8s ease-in-out; /* 👈 must include 'width' */
 }
+
+.remaingpercentage {
+  background: #D1BD56 !important;
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.8s ease-in-out; /* 👈 must include 'width' */
+}
+
 
 .progressLabel {
   text-align: right;
