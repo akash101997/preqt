@@ -6,15 +6,81 @@ border: none;
 background: transparent;
 width: 100%;
 }
+.ipocollapseleft{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+}
 
 .ipocollapseright{
     display: flex;
     align-items: center;
+    max-width: 180px;
+    width: 100%;
+    justify-content: space-between;
 }
-.smallTextP{
+.smallText{
     color: var(--Gray-500, #6B7280);
 font-size: 12px;
 font-style: normal;
 font-weight: 400;
 line-height: 16px; /* 133.333% */
+text-align: left;
 }
+.ipocollapserightInner{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-start;
+}
+.ipoCollapsetable {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #e5e7eb; /* light grey border */
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  
+  /* Header */
+  .ipoCollapsetable thead th {
+    font-weight: 600;
+    color: #6b7280; /* grey text */
+    padding: 12px 16px;
+    text-align: left;
+  }
+  
+  /* Rows */
+  .ipoCollapsetable tbody td {
+    padding: 14px 16px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 15px;
+  }
+  
+  /* Alternate row background */
+  .ipoCollapsetable tbody tr:nth-child(odd) td {
+    background-color: #f9fafb;
+  }
+  
+  .ipoCollapsetable tbody tr:nth-child(even) td {
+    background-color: #ffffff;
+  }
+  
+  /* First row top corners */
+  .ipoCollapsetable thead th:first-child {
+    border-top-left-radius: 12px;
+  }
+  .ipoCollapsetable thead th:last-child {
+    border-top-right-radius: 12px;
+  }
+  
+  /* Last row bottom corners */
+  .ipoCollapsetable tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+  }
+  .ipoCollapsetable tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+  }
+  
