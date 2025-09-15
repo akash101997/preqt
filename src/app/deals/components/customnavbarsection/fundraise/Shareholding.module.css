@@ -1,14 +1,20 @@
 .container {
   background: #fff;
-  padding: 2rem;
+  padding: 32px;
   border-radius: 10px;
   /* font-family: Arial, sans-serif; */
   color: #222;
 }
 
 .title {
+  padding: 20px;
+  padding-bottom: 0;
   font-size: 20px;
   font-weight: 300;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   /* margin-bottom: 1.5rem;*/
 }
 
