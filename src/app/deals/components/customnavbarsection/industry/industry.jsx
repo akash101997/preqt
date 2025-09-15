@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './industry.module.css';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { hevronDown, ChevronUp } from 'lucide-react';
 
 const Industry = () => {
   // 🔹 States for dropdown open/close
@@ -59,11 +59,11 @@ const Industry = () => {
 
         </h2>
         {showGrowth && (
-          <div>
+          <div > 
             {growthOpportunities.map((item, index) => (
               <div key={index} className={styles.growthItem}>
                 <h3>{item.title}</h3>
-                <p>{item.description}</p>
+                <p className={styles.p}>{item.description}</p>
               </div>
             ))}
           </div>
@@ -79,12 +79,12 @@ const Industry = () => {
           onClick={() => setShowPolicy(!showPolicy)}
           style={{ cursor: "pointer" }}
         >
-
-          <div>Government Policy Support  </div>
-          <div>{showPolicy ? <ChevronUp /> : <ChevronDown />}</div>
-        </h2>
-
-
+         
+   <div>Government Policy Support  </div>
+  <div>{showPolicy ? <ChevronUp size={20}/> : <ChevronDown size={20}/>}</div>     
+    </h2>     
+          
+       
         {showPolicy && (
           <ul className={styles.policyList}>
             {governmentPolicies.map((policy, index) => (
@@ -102,18 +102,18 @@ const Industry = () => {
           onClick={() => setShowPeer(!showPeer)}
           style={{ cursor: "pointer" }}
         >
-          <div>Peer Comparison </div>
-          <div>{showPeer ? <ChevronUp /> : <ChevronDown />}</div>
+          <div>Peer Comparison </div> 
+          <div>{showPeer ? <ChevronUp size={20}/> : <ChevronDown size={20}/>}</div>
         </h2>
         {showPeer && (
           <table className={styles.PeerTable}>
             <thead>
               <tr>
                 <th>Metric</th>
-                <th><div className={styles.tableHeading}><span>Anthem Biosciences</span><img src="/assets/pictures/anthem-logo.svg" alt="" /></div></th>
-                <th><div className={styles.tableHeading}><span>Syngene International</span><img src="/assets/pictures/syngene-logo.svg" alt="" /></div></th>
-                <th><div className={styles.tableHeading}><span>Syngene International</span><img src="/assets/pictures/syngene-logo.svg" alt="" /></div></th>
-                <th><div className={styles.tableHeading}><span>Syngene International</span><img src="/assets/pictures/syngene-logo.svg" alt="" /></div></th>
+                <th><div className={styles.tableHeading}><span>Anthem <br /> Biosciences</span><img src="/assets/pictures/anthem-logo.svg" alt="" /></div></th>
+                <th><div className={styles.tableHeading}><span>Syngene  <br /> International</span><img src="/assets/pictures/syngene-logo.svg" alt="" /></div></th>
+                <th><div className={styles.tableHeading}><span>Syngene  <br /> International</span><img src="/assets/pictures/syngene-logo.svg" alt="" /></div></th>
+                <th><div className={styles.tableHeading}><span>Syngene <br />  International</span><img src="/assets/pictures/syngene-logo.svg" alt="" /></div></th>
 
               </tr>
             </thead>
