@@ -2,16 +2,20 @@ import React, { useState } from "react";
 import "./customcarousel.css";
 import { Carousel } from "react-bootstrap";
 
-const FirstCarousel = ({isPrivateDeal}) => {
+const FirstCarousel = ({ isPrivateDeal }) => {
   const [index, setIndex] = useState(0);
 
   // Mixed list: images + YouTube video
-  const media = [
-    "https://www.youtube.com/watch?v=7wtfhZwyrcc&list=RD7wtfhZwyrcc&start_radio=1",
-    "https://www.youtube.com/watch?v=7wtfhZwyrcc&list=RD7wtfhZwyrcc&start_radio=1",
-    "https://www.youtube.com/watch?v=7wtfhZwyrcc&list=RD7wtfhZwyrcc&start_radio=1", // example YouTube link
-    "https://www.youtube.com/watch?v=7wtfhZwyrcc&list=RD7wtfhZwyrcc&start_radio=1",
-  ];
+  const media = isPrivateDeal ? [
+    "/assets/pictures/hrv-overview.png",
+    "/assets/pictures/hrv-overview-1.png",
+    "/assets/pictures/hrv-overview-2.png",
+    "/assets/pictures/hrv-overview-2.png"
+  ] : ["/assets/pictures/ashwini-container.png",]
+  // "https://www.youtube.com/watch?v=7wtfhZwyrcc&list=RD7wtfhZwyrcc&start_radio=1",
+  // "https://www.youtube.com/watch?v=7wtfhZwyrcc&list=RD7wtfhZwyrcc&start_radio=1",
+  // "https://www.youtube.com/watch?v=7wtfhZwyrcc&list=RD7wtfhZwyrcc&start_radio=1", // example YouTube link
+  // "https://www.youtube.com/watch?v=7wtfhZwyrcc&list=RD7wtfhZwyrcc&start_radio=1",
 
   // helper: convert youtube link → embed format
   const getYoutubeEmbedUrl = (url) => {
@@ -27,7 +31,7 @@ const FirstCarousel = ({isPrivateDeal}) => {
     <div className="customcars">
       <Carousel
         activeIndex={index}
-        onSelect={() => {}}
+        onSelect={() => { }}
         controls={false}
         indicators={false}
         interval={null}
@@ -50,7 +54,7 @@ const FirstCarousel = ({isPrivateDeal}) => {
                 </div>
               ) : (
                 <img
-                  className="d-block w-100"
+                  className={`d-block w-100 carouselImages`}
                   src={item}
                   alt={`Slide ${i + 1}`}
                   style={{ height: "fit-content", objectFit: "contain" }}

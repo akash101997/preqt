@@ -2,33 +2,82 @@ import React, { useState } from "react";
 import "./bod.css";
 import { Collapse } from "react-bootstrap";
 import { ChevronDown, ChevronUp, CloudOff } from "lucide-react";
+import Link from "next/link";
 
-const directors = [
+const directorsPrivate = [
   {
     id: 1,
-    name: "Jigneshkumar Gordhanbhai Patel",
-    role: "Managing Director & CEO",
-    desc: "Jigneshkumar is one of the promoters. Holds a B.E. in Electrical Engineering from BVM Engineering College. Associated since incorporation. Oversees supervision, risk assessment, and business development. He played a key role in product and market expansion.",
-    img: "/assets/pictures/userImage1.png",
+    name: "Sagar Sachdev",
+    role: "Executive Director",
+    desc: "Sagar Sachdev is a protean and dexterous personality, equally skilled at designing smart cities powered by renewable energy, coding software, or experimenting in the kitchen. His curiosity and love for meeting new people make him adaptable and approachable. A renewable energy professional with a strong interest in economics, he also enjoys drawing, adventure sports, and reading. Above all, he is someone you can rely on to tackle any problem and find the right solution.",
+    img: "/assets/pictures/sagar.png",
+    link: "https://www.linkedin.com/in/sagarsachdev/"
   },
   {
     id: 2,
-    name: "Another Director",
-    role: "CFO",
-    desc: "Responsible for finance and growth strategies. Experienced in corporate governance and compliance.",
-    img: "/assets/pictures/userImage1.png",
-  },
-  {
-    id: 3,
-    name: "Third Director",
-    role: "COO",
-    desc: "Manages day-to-day operations and business expansion.",
-    img: "/assets/pictures/userImage1.png",
+    name: "Rishabh Aggarwal",
+    role: "Managing Director",
+    desc: "Rishabh Aggarwal is a first-generation entrepreneur and renewable energy leader, combining an engineering background with business acumen to drive India’s transition to clean energy. As the founder of HVR Solar, he has scaled the company from the ground up, developed innovative solar solutions, and built strategic partnerships that accelerate access to sustainable, affordable power. Passionate about clean tech, sustainability, and green innovation, he is committed to shaping a future where renewable energy powers progress.",
+    img: "/assets/pictures/rishabh.png",
+    link: "https://www.linkedin.com/in/rishabhaggarwal-hvr/"
   },
 ];
 
+const directorsPublic = [
+  {
+    id: 1,
+    name: "Mr. Bhaskar Kisan Pawar ",
+    role: "Whole-time Director",
+    desc: "Mr. Bhaskar Kisan Pawar, aged 59, is the Executive Director and Promoter of Ashwini Container Movers Limited with over 35 years of experience in logistics and transportation. A commerce graduate from the University of Poona with a Government Diploma in Co-operation and Accountancy, he has been associated with the company since its incorporation in 2012 and was appointed Whole-time Director in December 2024. Holding 48.60% of the pre-issue equity share capital, he plays a pivotal role in driving the company’s growth and strategic direction. In addition, he also serves as a Director of Milecraft International India Private Limited.",
+    img: "/assets/pictures/bhaskar.png",
+    link: ""
+  },
+  {
+    id: 2,
+    name: "Mr. Govind Janabhau Sable",
+    role: "Managing Director",
+    desc: "Mr. Govind Janabhau Sable, aged 47, is the Managing Director and Promoter of Ashwini Container Movers Limited with 27 years of expertise in operations and logistics management. A commerce graduate from the University of Pune, he has been associated with the company since its incorporation in 2012 and took charge as Managing Director in December 2024. Holding 48.60% of the pre-issue equity share capital, he plays a key role in steering the company’s operational efficiency and strategic growth. He also serves as a Director of Milecraft International India Private Limited.",
+    img: "/assets/pictures/govind.png",
+    link: ""
+  },
+  {
+    id: 3,
+    name: "Mr. Sainath Bhaskar Pawar",
+    role: "Independent Director",
+    desc: "Mr. Sainath Bhaskar Pawar, aged 32, is a Whole-Time Director of Ashwini Container Movers Limited, appointed on April 29, 2024, for a five-year term. With a B.E. in Computer Engineering from the University of Mumbai and a Diploma in Computer Engineering from the Maharashtra State Board of Technical Education, he brings 5 years of expertise in technology integration and sales management. Residing in Mumbai, he is recognized as a dynamic professional with a forward-looking vision for growth and innovation. Alongside his role in ACMPL, he also serves as a Director at BGS Logistics Private Limited.",
+    img: "/assets/pictures/default.png",
+    link: ""
+  },
+  {
+    id: 4,
+    name: "Ms. Kalpana Mogal Nikam",
+    role: "Independent Director",
+    desc: "Ms. Kalpana Mogal Nikam, aged 42, is an Independent Director of Ashwini Container Movers Limited, appointed on December 16, 2024, for a five-year term. She holds a B.Com from the University of Mumbai and an MBA in Finance from the National Institute of Management, bringing with her a decade of rich experience in the field of finance. Residing in Thane, Maharashtra, she contributes her expertise as a Non-Executive Director, guiding the company with financial oversight and governance. In addition to her role at ACMPL, she also serves as a Director at Asterix Composites & Polymers Private Limited.",
+    img: "/assets/pictures/default.png",
+    link: ""
+  },
+  {
+    id: 4,
+    name: "Mr. Keyur Atul Shah ",
+    role: "Independent Director",
+    desc: "Mr. Keyur Atul Shah, aged 31, is an Independent Director of Ashwini Container Movers Limited, appointed on December 16, 2024, for a five-year term. A commerce graduate from the University of Mumbai, he brings his professional background and insights to provide independent oversight and strategic guidance to the company.",
+    img: "/assets/pictures/default.png",
+    link: ""
+  },
+  {
+    id: 4,
+    name: "Ms. Namrata Uday Jage",
+    role: "Independent Director",
+    desc: "Ms. Namrata Uday Jage, aged 32, is also an Independent Director, appointed on December 16, 2024, for a five-year term. A Chartered Accountant from ICAI with 9 years of experience in the field of finance, she contributes her expertise in governance and financial management. In addition to her role at ACMPL, she serves as a Director at Nutrifyme Super Foods Private Limited.",
+    img: "/assets/pictures/default.png",
+    link: ""
+  },
+]
+
 const Bod = ({ isPrivateDeal }) => {
   const [openItems, setOpenItems] = useState([]);
+
+  const directors = isPrivateDeal ? directorsPrivate : directorsPublic
 
   const toggleItem = (id) => {
     setOpenItems((prev) =>
@@ -50,17 +99,17 @@ const Bod = ({ isPrivateDeal }) => {
               onClick={() => toggleItem(director.id)}
             >
               <div className="our-directors">
-              <img src={director.img} alt={director.name} />
-              <section>
-                <h6>{director.name}</h6>
-                <p>{director.role}</p>
-              </section>
+                <img src={director.img} alt={director.name} />
+                <section>
+                  <h6>{director.name}</h6>
+                  <p>{director.role}</p>
+                </section>
               </div>
-             
+
               <span
                 className={`arrow-icon ${openItems.includes(director.id) ? "open" : ""}`}
               >
-                <ChevronDown width={32} height={20}  color={isPrivateDeal ? "white" : "black"}  />
+                <ChevronDown width={32} height={20} color={isPrivateDeal ? "white" : "black"} />
               </span>
             </button>
 
@@ -69,7 +118,7 @@ const Bod = ({ isPrivateDeal }) => {
                 <h6 className="bg-head">Background</h6>
                 <p>{director.desc}</p>
                 <button>
-                  <svg
+                  <Link href={director.link} target="_blank" style={{ color: 'white', display: 'flex', alignItems: 'center', gap: '5px' }}> <svg
                     width="15"
                     height="14"
                     viewBox="0 0 16 16"
@@ -95,8 +144,8 @@ const Bod = ({ isPrivateDeal }) => {
                         <rect width="16" height="16" fill="white" />
                       </clipPath>
                     </defs>
-                  </svg>
-                  View on LinkedIn
+                  </svg>View on LinkedIn</Link>
+
                 </button>
               </div>
             </Collapse>

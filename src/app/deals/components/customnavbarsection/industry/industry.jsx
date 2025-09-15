@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './industry.module.css';
+import { hevronDown, ChevronUp, ChevronDown } from 'lucide-react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const Industry = () => {

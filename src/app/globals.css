@@ -3,7 +3,7 @@
  /* Local Helvetica Neue font faces (WOFF) */
  @font-face {
    font-family: 'Helvetica Neue';
-   src: url('/public/assets/helvetica-neue-5/HelveticaNeueRoman.woff') format('woff'); 
+   src: url('/public/assets/helvetica-neue-5/HelveticaNeueRoman.woff') format('woff');
    font-weight: 400;
    font-style: normal;
    font-display: swap;
@@ -131,43 +131,135 @@
 
  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&display=swap');
- 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-}
-body{
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-}
 
-.no-scroll {
-  overflow: hidden;
-}
-
-.bod-section .accordion-collapse {
-  height: 0%;
-  max-height: 200px;
-  opacity: 1 !important;
-  overflow: hidden;
-  transition: all 1s ease;
-
-}
-
-.bod-section .accordion-collapse.show {
-  height: 100%;
-  /* adjust if your content is bigger */
-}
-
-.carouselWrapper .swiper-slide{
-  height: auto;
-}
-
-@media (max-width: 480px) {
- body{
-  background-color: #F9FAFB !important;
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Helvetica Neue', Arial, sans-serif;
+   font-family: 'Helvetica Neue', Arial, sans-serif;
  }
-}
+
+ body {
+   font-family: 'Helvetica Neue', Arial, sans-serif;
+   font-family: 'Helvetica Neue', Arial, sans-serif;
+ }
+
+ .no-scroll {
+   overflow: hidden;
+ }
+
+ .bod-section .accordion-collapse {
+   height: 0%;
+   max-height: 200px;
+   opacity: 1 !important;
+   overflow: hidden;
+   transition: all 1s ease;
+
+ }
+
+ .bod-section .accordion-collapse.show {
+   height: 100%;
+   /* adjust if your content is bigger */
+ }
+
+ .carouselWrapper .swiper-slide {
+   height: auto;
+ }
+
+ @media (max-width: 480px) {
+   body {
+     background-color: #F9FAFB !important;
+   }
+ }
+
+ /* Default (desktop/tablet) */
+ .success-interest-modal .modal-dialog {
+   max-width: 500px;
+   margin: 1.75rem auto;
+ }
+
+ .success-interest-modal .modal-content {
+   background: #000;
+   border-radius: 24px;
+   border: none;
+   text-align: center;
+   color: white;
+   padding: 2rem 1.5rem;
+ }
+
+ .success-image img {
+   display: block;
+   margin: 0 auto;
+   max-width: 80%;
+   /* shrink automatically */
+   height: auto;
+ }
+
+ .success-modal-content h3 {
+   font-size: 24px;
+   margin-bottom: 10px;
+ }
+
+ .success-modal-content p {
+   margin-bottom: unset;
+   font-size: 14px;
+   line-height: 1.4;
+ }
+
+ .text-secondary {
+   word-break: break-all;
+ }
+
+ /* ✅ Tablet screens */
+ @media (max-width: 768px) {
+   .success-interest-modal .modal-dialog {
+     max-width: 90%;
+     margin: 1rem auto;
+   }
+
+   .success-modal-content h3 {
+     font-size: 20px;
+   }
+
+   .success-modal-content p {
+     font-size: 13px;
+   }
+
+   .success-interest-modal .modal-content {
+     padding: 1.5rem 1rem;
+   }
+ }
+
+ /* ✅ Mobile screens */
+ @media (max-width: 480px) {
+   .success-image img {
+     width: 100px;
+     height: 100px;
+   }
+
+   .success-interest-modal .modal-dialog {
+     width: 100%;
+     max-width: 100%;
+     margin: 0;
+   }
+
+   .success-interest-modal .modal-content {
+     margin: auto;
+     border-radius: 16px;
+     padding: 1rem;
+   }
+
+   .success-image img {
+     max-width: 65%;
+     /* smaller image on mobile */
+   }
+
+   .success-modal-content h3 {
+     font-size: 18px;
+   }
+
+   .success-modal-content p {
+     font-size: 12px;
+   }
+ }
