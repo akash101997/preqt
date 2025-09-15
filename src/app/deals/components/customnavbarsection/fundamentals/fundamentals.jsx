@@ -3,7 +3,7 @@ import "./fundamentals.css";
 import { useState, useEffect } from "react";
 import Piechart from "../charts/piechart";
 import { Collapse } from "react-bootstrap";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 // import Accordion from "react-bootstrap/Accordion";
 
 const Fundamentals = ({ isPrivateDeal }) => {
@@ -41,10 +41,18 @@ const Fundamentals = ({ isPrivateDeal }) => {
           <h3 className="title">{title}</h3>
   
           <span
-            className={`iconWrapper ${isOpen ? "open" : ""}`}
+            className={`iconWrapper ${isOpen ? "open" : ""}`}>
+               
+          {isOpen ? (
+            <ChevronUp size={24} color={isPrivateDeal ? "white" : "black"} />
+          ) : (
+              <ChevronDown size={24} color={isPrivateDeal ? "white" : "black"} />
+          
+          )}
+    
 
-          >
-            <ChevronDown size={30} color={isPrivateDeal ? "white" : "black"} />
+          
+          
           </span>
         </div>
   

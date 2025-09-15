@@ -139,6 +139,9 @@
     display: flex;
     font-size: 14px;
     font-weight: 500;
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
     gap: 12px;
     color:#4B5563;
     align-items: center;

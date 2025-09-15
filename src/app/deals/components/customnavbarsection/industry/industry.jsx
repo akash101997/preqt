@@ -4,9 +4,9 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const Industry = () => {
   // 🔹 States for dropdown open/close
-  const [showGrowth, setShowGrowth] = useState(true);
-  const [showPolicy, setShowPolicy] = useState(true);
-  const [showPeer, setShowPeer] = useState(true);
+  const [showGrowth, setShowGrowth] = useState(false);
+  const [showPolicy, setShowPolicy] = useState(false);
+  const [showPeer, setShowPeer] = useState(false);
 
   // 🔹 Dummy Data
   const growthOpportunities = [
@@ -54,7 +54,7 @@ const Industry = () => {
           style={{cursor: "pointer"}}
         >
           <div>Growth Opportunities </div> 
-         <div> {showGrowth ? <ChevronUp/> : <ChevronDown />}</div>
+         <div> {showGrowth ? <ChevronUp size={20}/> : <ChevronDown  size={20}/>}</div>
         </h2>
         {showGrowth && (
           <div>
