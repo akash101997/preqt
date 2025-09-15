@@ -153,6 +153,16 @@ line-height: 28px; /* 233.333% */
   line-height: 28px;
   font-style: bold;
 }
+.svg-icons-button{
+  display: flex;
+  gap: 20px;
+  align-items: center
+}
+
+.share-button{
+  border: none;
+  background: transparent;
+}
 
 .body-section3 {
   display: flex;
