@@ -143,3 +143,12 @@ border: none;
   height: 24px;
   background-image: url('/assets/pictures/Button-Hover.png');
 }
+.private-deal{
+  background-color: #171717 !important;
+}
+
+.chatbot-maincontainer.privateDeal{
+  background: #000;
+  color: #fff;
+}
+
