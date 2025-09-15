@@ -255,7 +255,7 @@ const Namedetailsection = () => {
                 </button>
               </div>
 
-              <Valuation  />
+              <Valuation  isPrivateDeal={isPrivateDeal}/>
 
               <Shares />
               <div className="ipo-timeline-section mobile-ipo-timeline-section">
