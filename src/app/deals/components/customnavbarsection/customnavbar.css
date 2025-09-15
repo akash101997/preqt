@@ -1,5 +1,7 @@
 .first-navbar {
   width: 100%;
+  margin: 0 auto;
+  /* justify-content: center; */
 }
 .first-navbar .navigation-tabs {
   margin: 10px 0px 0px 0px !important;
@@ -13,6 +15,7 @@
   white-space: nowrap;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  
 }
 #carousel-tabs::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
@@ -45,4 +48,5 @@
   background-color: #b18c07;
   border-radius: 100px;
   padding: 12px 20px;
+  /* object-fit: cover; */
 }
