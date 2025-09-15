@@ -5,6 +5,7 @@ import PurpleBarchart from "../charts/barchartpurple/barchartpurple";
 import { Collapse, Tabs, Tab, Fade } from "react-bootstrap";
 import "./keyfinancials.css";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import DebtBarChart from "../charts/DebtBarchart";
 
 const Keyfinancials = () => {
   const [key, setKey] = useState("Return on Equity (ROE)");
@@ -67,7 +68,7 @@ const Keyfinancials = () => {
         </div>
         <Collapse in={openStates.financialTrends}>
           <div className="section-body">
-            <h2>Revenue growth with EBITDA and PAT margins</h2>
+            <h2 style={{marginBottom:'20px'}}>Revenue growth with EBITDA and PAT margins</h2>
             <Barchart />
           </div>
         </Collapse>
@@ -214,7 +215,7 @@ const Keyfinancials = () => {
                 <PurpleBarchart chartData={returnonequitydata} />
               </Tab>
               <Tab eventKey="Debt to Equity" title="Debt to Equity">
-                <p>tab2</p>
+               <DebtBarChart/>
               </Tab>
             </Tabs>
           </div>
@@ -222,7 +223,7 @@ const Keyfinancials = () => {
       </div>
 
       {/* Documents */}
-      <div className="section">
+      {/* <div className="section">
         <div
           className="section-header"
           onClick={() => toggleSection("documents")}
@@ -232,10 +233,10 @@ const Keyfinancials = () => {
         </div>
         <Collapse in={openStates.documents}>
           <div className="section-body">
-            {/* your documents content */}
+           
           </div>
         </Collapse>
-      </div>
+      </div> */}
     </div>
   );
 };

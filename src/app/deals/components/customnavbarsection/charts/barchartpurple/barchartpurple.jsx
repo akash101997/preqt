@@ -16,12 +16,33 @@ export default function PurpleBarchart({ chartData }) {
     <div style={{ width: "100%", height: 300 }}>
       <ResponsiveContainer>
         <BarChart data={chartData} barSize={50}>
-          <CartesianGrid vertical={false} strokeDasharray="3 3" />
-          <XAxis dataKey="year" />
+          <CartesianGrid strokeDasharray="3 3"
+            vertical={false}
+            stroke="#e5e7eb" />
+          <XAxis dataKey="year"
+            tick={{
+              fill: "var(--Gray-500, #374151)", // text color
+              fontSize: 14,
+              fontStyle: "normal",
+              fontWeight: 500,
+              letterSpacing: -0.56,
+
+            }}
+            axisLine={{ stroke: "#E2E8F0" }}
+            tickLine={{ stroke: "#E2E8F0" }} />
           <YAxis
             tickFormatter={(value) => `${value}%`}
             domain={[-40, 40]} // You can make this dynamic later
-            ticks={[-40, -20, 0, 20, 40]}
+            tick={{
+              fill: "var(--Gray-500, #6B7280)", // text color
+              fontSize: 14,
+              fontStyle: "normal",
+              fontWeight: 500,
+              letterSpacing: -0.56,
+              // aligns right
+            }}
+            axisLine={{ stroke: "#E2E8F0" }}
+            tickLine={{ stroke: "#E2E8F0" }}
           />
           <Tooltip formatter={(value) => `${value}%`} />
           <Bar dataKey="growth" fill="#E4C575" radius={[5, 5, 0, 0]}>
