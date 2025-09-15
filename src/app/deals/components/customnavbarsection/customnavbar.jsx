@@ -9,10 +9,11 @@ import "./customnavbar.css";
 import Industry from "./industry/industry";
 import Business from "./business/Business";
 import Shareholding from "./fundraise/Shareholding";
+import Documentation from "./documentation/page";
 
 const Customnavbar = () => {
   const [key, setKey] = useState("Overview");
-  console.log("Industry component is:", Industry);
+  // console.log("Industry component is:", Industry);
 
   return (
     <div className="first-navbar">
@@ -42,6 +43,9 @@ const Customnavbar = () => {
         </Tab>
         <Tab eventKey="Fundraise/Future Plans" title="Fundraise/Future Plans">
           <Shareholding />
+        </Tab> 
+        <Tab eventKey="Documentation" title="Documentation">
+          <Documentation/>
         </Tab>
       </Tabs>
       

@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import Fundamentals from "../fundamentals/fundamentals";
 // import ProgressBar from "./progress-bar/ProgressBar";
 import styles from "./Shareholding.module.css";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 export default function Shareholding() {
+  const [showshareholding ,setshowshareholding]=useState(true);
  const [preprogressbar ,setPreprogressbar]=useState(0);
 
  const [postprogressbar ,setPostprogressbar]=useState(0);
@@ -19,6 +21,10 @@ export default function Shareholding() {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Shareholding</h2>
+      <div> {showshareholding ? <ChevronUp/> : <ChevronDown/>}</div>
+      
+
+
 
       {/* Pre-Issue */}
       <div className={styles.section}>
