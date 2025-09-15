@@ -12,6 +12,7 @@ function OtpPageContent() {
   const email = params.get("email") || "";
   const [otp, setOtp] = useState("");
   const [seconds, setSeconds] = useState(60);
+  const [canResend, setCanResend] = useState(false);
 
   useEffect(() => {
     if (seconds <= 0) return;
@@ -19,6 +20,14 @@ function OtpPageContent() {
     return () => clearTimeout(t);
   }, [seconds]);
 
+  useEffect(() => {
+    if (seconds <= 0) {
+      setCanResend(true);
+      return;
+    }
+    const t = setTimeout(() => setSeconds(seconds - 1), 1000);
+    return () => clearTimeout(t);
+  }, [seconds]);
   const isValidOtp = useMemo(() => /^\d{6}$/.test(otp), [otp]);
 
   const handleProceed = async (e) => {
@@ -46,17 +55,89 @@ function OtpPageContent() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       // const data = await response.json();
+
       const token = data?.data?.data?.accessToken;
-      Cookies.set("accessToken", token, {
-        path: "/",
-        // secure: process.env.NODE_ENV === "production",
-        // sameSite: "strict",
-        expires: 7, // Expires in 7 days
-      });
+      const investor = data?.data?.data?.investor;
+      // Cookies.set("accessToken", token, {
+      //   path: "/",
+
+      //   expires: 7,
+      // });
+      // Cookies.set("investor", investor, {
+      //   path: "/",
+
+      //   expires: 7,
+      // });
+      localStorage.removeItem("registerFormData");
+
+      if (token) {
+        Cookies.set("accessToken", token, {
+          path: "/",
+          expires: 7,
+        });
+      }
+
+      if (investor) {
+        const simplifiedInvestor = {
+          id: investor.id,
+          name: investor.full_name,
+          username: investor.user_name,
+          email: investor.email,
+          emailVerified: investor.email_verification_status,
+          phone: investor.phone_number,
+          type: investor.investor_type,
+          organization: investor.organization,
+          designation: investor.designation,
+          location: investor.location,
+        };
+
+        Cookies.set("investor", JSON.stringify(simplifiedInvestor), {
+          path: "/",
+          expires: 7,
+          raw: true,
+        });
+      }
+
+      // if (investor) {
+      //   Cookies.set("investor", JSON.stringify(investor), {
+      //     path: "/",
+      //     expires: 7,
+      //     raw: true,
+      //   });
+      // }
 
       window.location.replace("/");
     } catch (error) {
       console.error("Login error:", error);
+    }
+  };
+
+  const handleResendOtp = async () => {
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_USER_BASE}investor/api/investor/resend-email-otp`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        toast.error(data.message || "Failed to resend OTP. Please try again.");
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      // Reset timer and hide resend button
+      setSeconds(60);
+      setCanResend(false);
+      toast.success("OTP has been resent to your email");
+    } catch (error) {
+      console.error("Resend OTP error:", error);
     }
   };
 
@@ -102,18 +183,37 @@ function OtpPageContent() {
             pattern="[0-9]*"
             maxLength={6}
             className={styles.input}
-            placeholder="____"
+            placeholder="______"
             value={otp}
             onChange={(e) => setOtp(e.target.value.replace(/[^0-9]/g, ""))}
           />
         </div>
 
         <div className={styles.resendRow}>
-          Resend OTP in{" "}
+          {/* Resend OTP in{" "}
           <span className={styles.timer}>
             00:{String(seconds).padStart(2, "0")}
           </span>{" "}
-          seconds
+          seconds */}
+          {canResend ? (
+            <div className={styles.resendButtonDiv}>
+              <span
+                // type="button"
+                className={styles.resendButton}
+                onClick={handleResendOtp}
+              >
+                Resend OTP
+              </span>
+            </div>
+          ) : (
+            <>
+              Resend OTP in{" "}
+              <span className={styles.timer}>
+                00:{String(seconds).padStart(2, "0")}
+              </span>{" "}
+              seconds
+            </>
+          )}
         </div>
 
         <button
