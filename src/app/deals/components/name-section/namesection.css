@@ -1779,7 +1779,23 @@ fill: #C9A74E;
 .private-deal-theme .pitch-deck h4 {
   color: white !important;
 }
+.private-qualities{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 
+.private-qualities span{
+  border-radius: 40px;
+border: 1px solid rgba(255, 255, 255, 0.10);
+padding: 0 10px;
+color: var(--Primary-color, #C9A74E);
+text-align: center;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px; /* 200% */
+}
 .private-deal-theme .bod-section {
     background: #27272A !important;
 
