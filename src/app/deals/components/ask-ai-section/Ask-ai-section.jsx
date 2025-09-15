@@ -4,7 +4,7 @@ import Ipotimeline from "./ipo-timeline/ipo-timeline";
 import QuestionAnswer from "./ques-ans-section/question-answer/QuestionAnswer";
 import { useState } from "react";
 
-const AskAiSection = ({ onData, handleAskAI, isAskAiActive = false }) => {
+const AskAiSection = ({ isPrivateDeal,onData, handleAskAI, isAskAiActive = false }) => {
   const [showQuesAns, setShowQuesAns] = useState(false);
     const [showchatbot, setShowChatBot] = useState(false);
 

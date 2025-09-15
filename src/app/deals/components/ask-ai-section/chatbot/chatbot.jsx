@@ -12,7 +12,9 @@ const Chatbot = ({onBack , isPrivateDeal })=> {
   ];
 
   return (
-    <div className="chatbot-maincontainer">
+    // <div className="chatbot-maincontainer">
+        <div className={`chatbot-maincontainer ${isPrivateDeal ? "private-deal" : ""}`}>
+
       <section className="chatbot-head">
         <svg
         onClick={() => {onBack(false)}}
