@@ -133,7 +133,7 @@ const Namedetailsection = () => {
               />
             </svg>
           </span>
-          <span className="dea">Private Deal</span>
+          <span className="dea">{isPrivateDeal ? "Private Deal" : "Exclusive Deal"} </span>
         </section>
         <section className="mob-topbar">
           <Link href="/">
@@ -247,7 +247,7 @@ const Namedetailsection = () => {
                 </button>
               </div>
 
-              <Valuation isAskAiActive={isAskAiActive} />
+              <Valuation  />
 
               <Shares />
               <div className="ipo-timeline-section mobile-ipo-timeline-section">

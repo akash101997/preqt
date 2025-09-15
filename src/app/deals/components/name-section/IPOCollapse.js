@@ -17,18 +17,17 @@ const IPOCollapse = () => {
             >
                 <div className={styles.ipocollapseleft}>
                     <small className={styles.smallText}>Issue Price</small>
-                    <h5 >₹237 to ₹255 <small className={styles.smll}>per share</small></h5>
+                    <h5 className={styles.largeText}>₹237 to ₹255 <small className={styles.smll}>per share</small></h5>
                 </div>
                 <div className={styles.ipocollapseright}>
                     <div className={styles.ipocollapserightInner}> 
                         <small className={styles.smallText}>Lot Size</small>
-                        <h5>58 Shares</h5>
+                        <h5 className={styles.largeText}>58 Shares</h5>
                     </div>
                     {open ? <ChevronUp /> : <ChevronDown />}
                 </div>
 
             </button>
-
 
             <Collapse in={open}>
                 <div>
