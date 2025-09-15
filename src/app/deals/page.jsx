@@ -1,19 +1,16 @@
+"use client";
 
-import React from 'react'
-import Namedetailsection from './components/name-section/Namesection' 
-import AllDeals from './components/AllDeals/AllDeals';
+import { useSearchParams } from "next/navigation";
+import Namedetailsection from "./components/name-section/Namesection";
+import AllDeals from "./components/AllDeals/AllDeals";
 
-const Page = ({ searchParams }) => {
-  const dealId = searchParams?.dealId;
+export default function Page() {
+  const searchParams = useSearchParams();
+  const dealId = searchParams.get("dealId");
+
   return (
     <div>
-      {dealId ? (
-        <Namedetailsection />
-      ) : (
-        <AllDeals />
-      )}
+      {dealId ? <Namedetailsection /> : <AllDeals />}
     </div>
-  )
+  );
 }
-
-export default Page
