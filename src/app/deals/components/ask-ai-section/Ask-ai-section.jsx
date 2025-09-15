@@ -12,16 +12,20 @@ const AskAiSection = ({ isPrivateDeal,onData, handleAskAI, isAskAiActive = false
     setShowQuesAns(value);
   };
 
+  console.log("This is the Ai section Check for Is private deal", isPrivateDeal);
+
 //   const handleBack = () => {
 //     console.log("back pressed")
 // setShowChatBot(false)
 //   }
 
   return (
-    <div className="righ-section">
+    // <div className="righ-section">
+    <div className={`righ-section ${isPrivateDeal ? "private-deal" : ""}`}>
       {isAskAiActive ? (
         <Chatbot 
         onBack={handleAskAI} 
+        isPrivateDeal={isPrivateDeal}
         />
       ) : showQuesAns ? (
         <QuestionAnswer handleQuesAns={handleQuesAns} handleAskAI={handleAskAI} />

@@ -1,7 +1,7 @@
 .chatbot-head {
   display: flex;
   padding: 15px 0px 5px 0px;
-  border-bottom: 1px solid #E5E7EB;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .chatbot-head svg {
@@ -62,7 +62,7 @@
 
 .chatbot-body-section1 {
   padding: 25px 0px;
-    width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -87,43 +87,41 @@
   padding: 10px 15px;
 }
 
-.chatbot-body section{
-    width: 100%;
+.chatbot-body section {
+  width: 100%;
 }
 .chatbot-body input {
-border: none;
+  border: none;
   font-size: 14px;
   font-family: Helvetica;
   width: 90%;
   padding: 6px 0px;
-
 }
 .chatbot-body input:focus-visible {
   outline: none;
 }
 
-.chatbot-body-section2{
-    display: flex;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 20px; /* Rounded corners */
-    border: 4px solid transparent; /* Make it thick enough */
-    border-image: linear-gradient(180deg, #f7ce00, #9e3cff) 1; /* Gradient border */
-    align-items: center;
-    padding: 10px;
-    background: white; /* Optional if needed */
+.chatbot-body-section2 {
+  display: flex;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px; /* Rounded corners */
+  border: 4px solid transparent; /* Make it thick enough */
+  border-image: linear-gradient(180deg, #f7ce00, #9e3cff) 1; /* Gradient border */
+  align-items: center;
+  padding: 10px;
+  background: white; /* Optional if needed */
 }
-
 
 .chatbot-body-section2 {
   display: flex;
   align-items: center;
   padding: 8px 12px;
   border: 2px solid transparent; /* Needed for gradient border */
-  border-radius: 24px;  /* Rounded corners */
-  background: linear-gradient(#fff, #fff) padding-box, 
-              linear-gradient(130deg, #7E60FF, #FF913C) border-box;
+  border-radius: 24px; /* Rounded corners */
+  background: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(130deg, #7e60ff, #ff913c) border-box;
   overflow: hidden; /* Ensures SVG doesn’t overflow */
 }
 .chatbot-body-section2 input {
@@ -132,23 +130,26 @@ border: none;
   flex: 1;
   padding: 16px;
   font-style: italic;
-  color: #6B7280;
+  color: #6b7280;
 }
 .chatbot-body-section2 img {
   width: 48px;
   height: 48px;
 }
-  .chatbot-body-section2 svg {
+.chatbot-body-section2 svg {
   width: 20px;
   height: 24px;
-  background-image: url('/assets/pictures/Button-Hover.png');
+  background-image: url("/assets/pictures/Button-Hover.png");
 }
-.private-deal{
+.private-deal {
   background-color: #171717 !important;
 }
 
-.chatbot-maincontainer.privateDeal{
+.private-deal .chatbot-maincontainer {
   background: #000;
   color: #fff;
 }
 
+.private-deal .chatbot-head h2 {
+  color: white !important;
+}

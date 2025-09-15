@@ -11,6 +11,8 @@ const Chatbot = ({onBack , isPrivateDeal })=> {
     "What’s the estimated return if I invest ₹50,000?",
   ];
 
+  console.log("Private Deal Has reached ",isPrivateDeal)
+
   return (
     // <div className="chatbot-maincontainer">
         <div className={`chatbot-maincontainer ${isPrivateDeal ? "private-deal" : ""}`}>

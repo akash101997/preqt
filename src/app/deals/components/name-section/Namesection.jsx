@@ -318,16 +318,25 @@ const Namedetailsection = () => {
           </section>
 
 
-          {isPrivateDeal ? (
+          {/* {isPrivateDeal ? (
             <div>
               <Calculator isAskAiActive={isAskAiActive} handleAskAI={handleAskAI} />
             </div>
           ) : (
-            <AskAiSection isAskAiActive={isAskAiActive} handleAskAI={handleAskAI} />
-          )}
+            <AskAiSection    isPrivateDeal={isPrivateDeal}  isAskAiActive={isAskAiActive} handleAskAI={handleAskAI} />
+          )} */}
 
-          {/* <AskAiSection isAskAiActive={isAskAiActive} handleAskAI={handleAskAI} /> */}
-          {/* <QuesAnsSection  isQuesAnsActive={isQuesAnsActive} handleQuesAns={handleQuesAns} /> */}
+          {isPrivateDeal ? (
+  <div>
+    <Calculator isAskAiActive={isAskAiActive} handleAskAI={handleAskAI} />
+  </div>
+) : (
+  <AskAiSection 
+    isPrivateDeal={isPrivateDeal}   // 👈 now AskAiSection gets it
+    isAskAiActive={isAskAiActive} 
+    handleAskAI={handleAskAI} 
+  />
+)}
 
         </div>
 
