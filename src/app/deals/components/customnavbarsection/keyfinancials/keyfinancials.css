@@ -141,6 +141,7 @@
     font-weight: 500;
     gap: 12px;
     color:#4B5563;
+    align-items: center;
     /* font-family: Helvetica; */
 }
 
@@ -156,6 +157,7 @@
   border-radius: 8px !important;
   align-items: center;
   display: flex;
+  margin-bottom: 16px;
 }
 
 .financial-tabs button {
@@ -165,6 +167,8 @@
   color: #64748B;
   line-height: 16px;
   padding: 5px 10px 5px 10px !important;
+  border: none !important;
+ 
 }
 
 /* .financial-tabs .nav-item:hover{
@@ -176,7 +180,7 @@
 
 .financial-tabs .nav-item button:hover {
   color: black;
-  background-color: white !important;
+  background-color: transparent;
   border-radius: 10px !important;
 
   border: none !important;
