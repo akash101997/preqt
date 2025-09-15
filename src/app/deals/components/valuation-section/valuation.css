@@ -11,3 +11,95 @@
   width: 100%;
   overflow: hidden;
 }
+
+.investmentCard {
+  background: #111; 
+  padding: 16px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.investmentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.label {
+  font-size: 14px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.subtext {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.docSection {
+  text-align: right;
+}
+
+.docLabel {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.docLink {
+  text-decoration: none;
+  color: #fbbf24; /* gold/yellow */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.progressWrapper {
+  margin-top: 12px;
+  position: relative;
+}
+.label{
+  color: var(--Gray-500, #6B7280);
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 16px; /* 133.333% */
+}
+.amt{
+  color: var(--White-White, #FFF);
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 28px; /* 140% */
+}
+.amt-suffix{
+  font-size: 14px;
+}
+
+.progress {
+  height: 8px;
+  background: #333;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #FFD89E 0%, #B88609 100%); 
+  border-radius: 30px;
+  height: 100%;
+}
+
+.progressPercent {
+  position: absolute;
+  right: 0;
+  top: -20px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
