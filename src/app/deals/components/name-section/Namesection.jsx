@@ -217,7 +217,15 @@ const Namedetailsection = () => {
                 </span>
               </section>
 
-              <IPOCollapse/>
+              {isPrivateDeal? <>
+              <div className="private-qualities">
+                <span>Strong promoter </span>
+                <span>Clear Monetization</span>
+                <span>Fund Participating</span>
+              </div>
+              </> : ""}
+
+              <IPOCollapse isPrivateDeal = {isPrivateDeal}/>
 
 
 

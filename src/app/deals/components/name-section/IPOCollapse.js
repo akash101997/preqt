@@ -1,22 +1,20 @@
 import { ChevronDown, ChevronUp } from "lucide-react";
 import React, { useState } from "react";
-import { Card, Button, Collapse, Table } from "react-bootstrap";
+import { Collapse, Table } from "react-bootstrap";
 import styles from './IPOCollapse.module.css'
 
-const IPOCollapse = () => {
+const IPOCollapse = ({isPrivateDeal}) => {
     const [open, setOpen] = useState(true);
 
     return (
-        <div className={styles.ipocllapseWrapper}>
-
-
+        <div className={`${isPrivateDeal ? styles.privateipo : ''} ${styles.ipocllapseWrapper || ''}`}>
             <button
                 onClick={() => setOpen(!open)}
                 aria-expanded={open}
                 className={styles.ipocollapseBtn}
             >
                 <div className={styles.ipocollapseleft}>
-                    <small className={styles.smallText}>Issue Price</small>
+                    <small className={styles.smallText}>{isPrivateDeal ? "Per Share Price" : "Issue Price"} </small>
                     <h5 className={styles.largeText}>₹237 to ₹255 <small className={styles.smll}>per share</small></h5>
                 </div>
                 <div className={styles.ipocollapseright}>
@@ -24,7 +22,7 @@ const IPOCollapse = () => {
                         <small className={styles.smallText}>Lot Size</small>
                         <h5 className={styles.largeText}>58 Shares</h5>
                     </div>
-                    {open ? <ChevronUp /> : <ChevronDown />}
+                    {open ? <ChevronUp color={isPrivateDeal ? "white" : "black"}/> : <ChevronDown color={isPrivateDeal ? "white" : "black"}/>}
                 </div>
 
             </button>
