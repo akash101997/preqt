@@ -41,7 +41,7 @@ const Business = ({ isPrivateDeal }) => {
           <span
             className={`${styles.iconWrapper} ${isOpen ? styles.open : ""}`}
           >
-            <ChevronDown size={30} color={isPrivateDeal ? "white" : "black"} />
+            <ChevronDown size={24} color={isPrivateDeal ? "white" : "black"} />
           </span>
         </div>
   

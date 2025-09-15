@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import "./chatbot.css";
 
-const Chatbot = ({onBack })=> {
+const Chatbot = ({onBack , isPrivateDeal })=> {
     // const [showchatbot, setShowChatBot] = useState(false);
   const defaultquestions = [
     "What’s the valuation and revenue of this company?",
