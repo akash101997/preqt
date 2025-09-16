@@ -6,16 +6,92 @@ import styles from "./Shareholding.module.css";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 
-export default function Shareholding({isPrivateDeal}) {
+const privateData = [
+  {
+    id: 1,
+    name: "Sagar Sachdev",
+    pre_issue: "2%",
+    post_issue: "1.60%"
+  },
+  {
+    id: 2,
+    name: "Rishabh Aggarwal",
+    pre_issue: "48%",
+    post_issue: "38.40%"
+  },
+  {
+    id: 3,
+    name: "Harsh Agarwal",
+    pre_issue: "50%",
+    post_issue: "40.00%"
+  }
+];
+
+const publicData = [
+  {
+    id: 1,
+    name: "Bhaskar Kisshan Pawar",
+    pre_issue: "48.60%",
+    post_issue: "32.40%"
+  },
+  {
+    id: 2,
+    name: "Govind Janabau Sable",
+    pre_issue: "48.60%",
+    post_issue: "32.40%"
+  },
+  {
+    id: 3,
+    name: "Sainath Bhaskar Pawar",
+    pre_issue: "0.40%",
+    post_issue: "0.27%"
+  },
+  {
+    id: 4,
+    name: "Sujata Govind Sable",
+    pre_issue: "0.60%",
+    post_issue: "0.40%"
+  },
+  {
+    id: 5,
+    name: "Sairaj Govind Sable",
+    pre_issue: "0.60%",
+    post_issue: "0.40%"
+  },
+  {
+    id: 6,
+    name: "Sunita Bhaskar Pawar",
+    pre_issue: "0.40%",
+    post_issue: "0.27%"
+  },
+  {
+    id: 7,
+    name: "Shweta Sainath Pawar",
+    pre_issue: "0.40%",
+    post_issue: "0.27%"
+  },
+  {
+    id: 8,
+    name: "Sanjay Balu Gunjal",
+    pre_issue: "0.40%",
+    post_issue: "0.27%"
+  }
+];
+
+
+
+export default function Shareholding({ isPrivateDeal }) {
   const searchParams = useSearchParams();
   const dealId = searchParams?.get("dealId");
   const [showshareholding, setshowshareholding] = useState(true);
   const [preprogressbar, setPreprogressbar] = useState(0);
   const [postprogressbar, setPostprogressbar] = useState(0);
 
+  const data = isPrivateDeal ? privateData : publicData;
+
   useEffect(() => {
-    setTimeout(() => setPreprogressbar(30), 100); // delay for smooth effect
-    setTimeout(() => setPostprogressbar(72), 100);
+    setTimeout(() => setPreprogressbar(isPrivateDeal ? 100 : 100), 100); // delay for smooth effect
+    setTimeout(() => setPostprogressbar(isPrivateDeal ? 80 : 66.68), 100);
   }, []);
 
   return (
@@ -26,7 +102,7 @@ export default function Shareholding({isPrivateDeal}) {
         style={{ cursor: "pointer" }}
       >
         <div>Shareholding</div>
-        <div>{showshareholding ? <ChevronUp color={isPrivateDeal ? "white" : "black"} /> : <ChevronDown color={isPrivateDeal ? "white" : "black"}/>}</div>
+        <div>{showshareholding ? <ChevronUp color={isPrivateDeal ? "white" : "black"} /> : <ChevronDown color={isPrivateDeal ? "white" : "black"} />}</div>
       </h2>
 
       {showshareholding && (
@@ -80,93 +156,41 @@ export default function Shareholding({isPrivateDeal}) {
 
             {/* Promoters */}
             <div className={styles.subHeader}>Promoters</div>
-            <div className={styles.row}>
+            {data.map((single) => (<div className={styles.row} key={single.id}>
               <span>
-                <span className={styles.square}></span> Jigneshkumar Gordhanbhai
-                Patel
+                <span className={styles.square}></span> {single.name}
               </span>
               <div className={styles.tableData}>
-                <span>69.6%</span>
-                <span>69.6%</span>
+                <span>{single.pre_issue}</span>
+                <span>{single.post_issue}</span>
               </div>
-            </div>
-
-            <div className={styles.row}>
-              <span>
-                <span className={styles.square}></span> Jemini Jigneshkumar
-                Patel
-              </span>
-              <div className={styles.tableData}>
-                <span>10.2%</span>
-                <span>10.2%</span>
-              </div>
-            </div>
+            </div>))}
 
             <div className={`${styles.row} ${styles.totalRow}`}>
               <span>Total Promoter Holding</span>
               <div className={styles.tableData}>
-                <span>64%</span>
-                <span>64%</span>
+                <span>100%</span>
+                <span>{isPrivateDeal ? "80%" : "66.68%"}</span>
               </div>
             </div>
 
             {/* Additional Shareholders */}
-            <div className={styles.subHeader}>Additional Shareholders</div>
-            <div className={styles.row}>
-              <span>
-                <span className={styles.square}></span> Indur Thakurdas
-                Jaisinghani
-              </span>
-              <div className={styles.tableData}>
-                <span>69.6%</span>
-                <span>69.6%</span>
-              </div>
-            </div>
+            {!isPrivateDeal && <div className={styles.subHeader}>Additional Shareholders</div>}
 
-            <div className={styles.row}>
-              <span>
-                <span className={styles.square}></span> Myraa Varun Raheja
-              </span>
-              <div className={styles.tableData}>
-                <span>69.6%</span>
-                <span>69.6%</span>
-              </div>
-            </div>
-
-            <div className={styles.row}>
-              <span>
-                <span className={styles.square}></span> Public
-              </span>
-              <div className={styles.tableData}>
-                <span>69.6%</span>
-                <span>69.6%</span>
-              </div>
-            </div>
-
-            <div className={styles.row}>
-              <span>
-                <span className={styles.square}></span> Ajay T Jaisinghani
-              </span>
-              <div className={styles.tableData}>
-                <span>69.6%</span>
-                <span>69.6%</span>
-              </div>
-            </div>
-
-            <div className={`${styles.row} ${styles.totalRow}`}>
+            {!isPrivateDeal && <div className={`${styles.row} ${styles.totalRow}`}>
               <span>Total Additional Holding</span>
               <div className={styles.tableData}>
-                <span>35.9%</span>
-                <span>35.9%</span>
+                <span>-</span>
+                <span>-</span>
               </div>
             </div>
-
+            }
             {/* Grand Total */}
             <div className={`${styles.row} ${styles.grandTotal}`}>
               <span>Total Shareholding</span>
               <div className={styles.tableData}>
                 <span>100%</span>
-                <span>100%</span>
+                <span>{isPrivateDeal ? "-" : "66.68%"}</span>
               </div>
             </div>
           </div>
@@ -175,7 +199,7 @@ export default function Shareholding({isPrivateDeal}) {
 
       {!isPrivateDeal && (<Fundamentals />)}
 
-      
+
 
     </div>
   );
