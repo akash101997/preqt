@@ -11,7 +11,7 @@ import Business from "./business/Business";
 import Shareholding from "./fundraise/Shareholding";
 import Documentation from "./documentation/page";
 
-const Customnavbar = () => {
+const Customnavbar = ({isPrivateDeal}) => {
   const [key, setKey] = useState("Overview");
   // console.log("Industry component is:", Industry);
 
@@ -27,25 +27,25 @@ const Customnavbar = () => {
         unmountOnExit
       >
         <Tab eventKey="Overview" title="Overview">
-          <Overview />
+          <Overview isPrivateDeal = {isPrivateDeal}/>
         </Tab>
         <Tab eventKey="Business" title="Business">
-          <Business/>
+          <Business isPrivateDeal={isPrivateDeal}/>
         </Tab>
         {/* <Tab eventKey="Fundamentals" title="Fundamentals">
           <Fundamentals />
         </Tab> */}
         <Tab eventKey="Industry Overview" title="Industry Overview">
-          <Industry/>
+          <Industry isPrivateDeal={isPrivateDeal}/>
         </Tab>
         <Tab eventKey="Financia Highlights" title="Financial Highlights">
-          <Keyfinancials />
+          <Keyfinancials isPrivateDeal = {isPrivateDeal}/>
         </Tab>
         <Tab eventKey="Fundraise/Future Plans" title="Fundraise/Future Plans">
-          <Shareholding />
+          <Shareholding isPrivateDeal={isPrivateDeal}/>
         </Tab> 
         <Tab eventKey="Documentation" title="Documentation">
-          <Documentation/>
+          <Documentation isPrivateDeal={isPrivateDeal}/>
         </Tab>
       </Tabs>
       

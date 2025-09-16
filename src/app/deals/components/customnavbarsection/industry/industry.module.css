@@ -283,3 +283,12 @@ padding: 16px 0px;
   }
 }
 }
+
+@media(max-width:920px){
+  .privateIndustryContainer{
+    padding: 0 24px;
+    
+  }
+
+
+}
