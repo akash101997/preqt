@@ -188,8 +188,7 @@ export default function NavBar() {
               </Link>
               <Link
                 className={styles.homeNavButton}
-                target="_blank"
-                href="https://pre-equity-community.vercel.app/community"
+                href="/community"
               >
                 <img src="/assets/pictures/community.svg" alt="" />
                 <div className={styles.homebtn}>Community</div>
@@ -214,9 +213,8 @@ export default function NavBar() {
       </nav>
 
       <section
-        className={`${styles.mainContainer} ${
-          isPrivateDeal ? styles.privateDealTheme : ""
-        }`}
+        className={`${styles.mainContainer} ${isPrivateDeal ? styles.privateDealTheme : ""
+          }`}
       >
         <Link href="/">
           {" "}
@@ -234,9 +232,8 @@ export default function NavBar() {
         <div className={styles.navigationButtonContainer}>
           <div className={styles.navigationButton}>
             <Link
-              className={`${styles.HomeNavButton} ${
-                pathname === "/" ? styles.active : ""
-              }`}
+              className={`${styles.HomeNavButton} ${pathname === "/" ? styles.active : ""
+                }`}
               href="/"
             >
               <img
@@ -248,9 +245,8 @@ export default function NavBar() {
             </Link>
             <Link
               href="/deals"
-              className={`${styles.HomeNavButton} ${
-                pathname === "/deals" ? styles.active : ""
-              }`}
+              className={`${styles.HomeNavButton} ${pathname === "/deals" ? styles.active : ""
+                }`}
             >
               <img
                 src="/assets/pictures/Transactions.svg"
@@ -260,13 +256,11 @@ export default function NavBar() {
               <p className={styles.home}>Deals</p>
             </Link>
             <Link
-              href="https://pre-equity-community.vercel.app/community"
-              target="_blank"
-              className={`${styles.HomeNavButton} ${
-                pathname === "https://pre-equity-community.vercel.app/community"
-                  ? styles.active
-                  : ""
-              }`}
+              href="/community"
+              className={`${styles.HomeNavButton} ${pathname === "/community"
+                ? styles.active
+                : ""
+                }`}
             >
               <img
                 src="/assets/pictures/people.svg"
@@ -277,9 +271,8 @@ export default function NavBar() {
             </Link>
             <Link
               href="/events"
-              className={`${styles.HomeNavButton} ${
-                pathname === "/events" ? styles.active : ""
-              }`}
+              className={`${styles.HomeNavButton} ${pathname === "/events" ? styles.active : ""
+                }`}
             >
               <img
                 src="/assets/pictures/events.svg"

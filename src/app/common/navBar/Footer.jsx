@@ -22,7 +22,7 @@ export default function Footer() {
                             <article className={styles.quickLinkOptions}>
                                 <a href="/deals" className={styles.quickLinks}>All Deals</a>
                                 <a href="/events" className={styles.quickLinks}>Events</a>
-                                <a href="https://pre-equity-community.vercel.app/community" target="_blank" className={styles.quickLinks}>Community</a>
+                                <a href="/community" className={styles.quickLinks}>Community</a>
                                 <a href="/blogs" className={styles.quickLinks}>Blogs</a>
                                 <a href="/contact-us" className={styles.quickLinks}>Contact Us</a>
                                 <a href="/careers" className={styles.quickLinks}>Careers</a>
