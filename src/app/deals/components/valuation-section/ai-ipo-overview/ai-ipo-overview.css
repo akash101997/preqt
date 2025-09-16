@@ -77,6 +77,10 @@ justify-content: space-between;
     color: #6B7280;
 }
 
+.data{
+    color: #878787 !important;
+}
+
 .drhp{
     color: #B59131 !important;
     display: flex;

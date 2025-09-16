@@ -132,37 +132,40 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
             <section className="subs top">
               <section>
                 <div>
-                  <span>Valuation</span>
+                  <span className="data">Valuation</span>
                  
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><Valuation/></span>
                 </div>
-                <span>{isPrivateDeal ? "₹75 Cr" : "-"}</span>
+                <span style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "₹75 Cr" : "-"}</span>
               </section>
 
               <section>
                 <div>
-                  <span>Revenue </span>
+                  <span className="data">Revenue </span>
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><RevenueIcon/></span>
                 </div>
-                <span style={{color:"#000000" , fontWeight:"500"}}>{isPrivateDeal ? "₹101.4 Cr FY25" : "₹94.1 Cr FY25"}</span>
+                <span style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "₹101.4 Cr FY25" : "₹94.1 Cr FY25"}</span>
               </section>
             </section>
 
             <section className="subs top">
               <section>
                 <div>
-                  <span>PAT</span>
+                  <span className="data">PAT</span>
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><PatIcon/></span>
                 </div>
-                <span style={{color:"#000000" , fontWeight:"500"}}>{isPrivateDeal ? "₹7.0 Cr" : "₹11.5 Cr"}</span>
+             <span style={{ color: isPrivateDeal ? "white" : "#000000" }}>
+  {isPrivateDeal ? "₹7.0 Cr" : "₹11.5 Cr"}
+</span>
               </section>
 
+{/* {color:"#000000" , fontWeight:"500"} */}
               <section>
                 <div>
-                  <span>P/E Multiple</span>
+                  <span >{isPrivateDeal ? <span className="data">P/E Multiple</span>:<span className="data">Issue Size</span>}</span>
                  <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><PeMultiple/></span>
                 </div>
-                <span>{isPrivateDeal ? "10.7x" : "-"}</span>
+                <span style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "10.7x" : "66-67.5 cr"}</span>
               </section>
             </section>
           </div>

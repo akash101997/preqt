@@ -51,7 +51,7 @@ const Namedetailsection = () => {
     "1": {
       id: 1,
       type: "Pre IPO- SME",
-      sector: "Healthcare",
+      sector: "Logistics",
       logo: "/assets/pictures/acmpl.svg",
       name: "Ashwini Container Movers Limited (ACMPL)",
       deal: "public",
