@@ -285,6 +285,7 @@ line-height: 28px; /* 233.333% */
 }
 
 .others span {
+
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
@@ -292,7 +293,12 @@ line-height: 28px; /* 233.333% */
 }
 
 .others svg {
+
   margin-right: 10px;
+}
+.others a{
+  font-weight: 700;
+color: #B59131;
 }
 
 .shares-card {
@@ -300,26 +306,26 @@ line-height: 28px; /* 233.333% */
   background: white;
   border-radius: 24px;
   padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  border: 1px solid #eee;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); */
   display: flex;
   flex-direction: column;
   gap: 20px;
   position: relative;
-  border: 1px solid transparent;
+  border: 1px solid #8E6B0F;
   /* background-image: linear-gradient(white, white), linear-gradient(90deg, #b46ff2, #ffa500); */
-  background-origin: border-box;
-  background-clip: content-box, border-box;
+  /* background-origin: border-box; */
+
 }
 
 .shares-card .progress-container {
-  height: 18px;
+  height:24px;
+  border-radius: 100px;
 }
 
 .progress-container {
   height: 10px;
   background-color: #f5f5f5;
-  border-radius: 20px;
+  border-radius: 100px;
   display: flex;
   overflow: hidden;
 }
@@ -329,11 +335,11 @@ line-height: 28px; /* 233.333% */
 }
 
 .new-shares {
-  background-color: #e4c575 !important; /* light gold */
+  background-color: #E0BA20 !important; /* light gold */
 }
 
 .old-shares {
-  background-color: #b18c07 !important; /* dark gold */
+  background-color: #977731 !important; /* dark gold */
 }
 
 .total-shares {
@@ -345,7 +351,8 @@ line-height: 28px; /* 233.333% */
 .labels {
   max-width: 75%;
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
+  justify-content: start;
 }
 
 .label-item {
@@ -358,18 +365,18 @@ line-height: 28px; /* 233.333% */
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
   display: inline-block;
 }
 
 .new-shares-dot {
-  background-color: #e4c469;
+  background-color: #a07600;
 }
 
 .old-shares-dot {
-  background-color: #a07600;
+  background-color: #e4c469;
 }
 
 .label-title {
@@ -917,6 +924,7 @@ color: #b18c07;
   text-align: center;
 }
 .shares-header h5{
+  color: #000000;
   font-size: 14px;
   font-weight: 400;
 }
