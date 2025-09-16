@@ -6,7 +6,7 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 
 
-const Industry = () => {
+const Industry = ({isPrivateDeal}) => {
   const searchParams = useSearchParams();
   const dealId = searchParams?.get("dealId");
   // 🔹 States for dropdown open/close
@@ -61,8 +61,10 @@ const Industry = () => {
     ];
 
   return (
-    <div className={styles.industryContainer}>
-      {dealId == "2" && <section className={styles.peerSection}>
+    <div className={isPrivateDeal? styles.privateIndustryContainer: styles.industryContainer}>
+      {dealId == "2" && 
+      <>
+      <section className={styles.peerSection}>
         <h2
           className={styles.PeerHeading}
           onClick={() => setShowPeer(!showPeer)}
@@ -97,7 +99,9 @@ const Industry = () => {
             </tbody>
           </table>
         )}
-      </section>}
+      </section>
+      <hr/>
+      </>}
       {/* Growth Opportunities Section */}
       <section className={styles.growthSection}>
         <h2
@@ -149,7 +153,9 @@ const Industry = () => {
       <hr />
 
       {/* Peer Comparison Section */}
-      {dealId != "2" && <section className={styles.peerSection}>
+      {dealId != "2" &&
+      <>
+       <section className={styles.peerSection}>
         <h2
           className={styles.PeerHeading}
           onClick={() => setShowPeer(!showPeer)}
@@ -179,8 +185,11 @@ const Industry = () => {
             </tbody>
           </table>
         )}
-      </section>}
-      <hr />
+      </section>
+      <hr/>
+      </>
+      }
+     
     </div>
   );
 };

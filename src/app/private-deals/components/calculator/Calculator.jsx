@@ -10,7 +10,7 @@ import ShowInterestModal from "./ShowInterestModal";
 import Cookies from "js-cookie";
 import { toast } from "react-toastify";
 
-const Calculator = ({ onBack, handleAskAI }) => {
+const Calculator = ({ onBack, handleAskAI, isPrivateDeal}) => {
 
   const searchParams = useSearchParams();
   const dealId = searchParams?.get("dealId");
@@ -86,7 +86,7 @@ const Calculator = ({ onBack, handleAskAI }) => {
       {showQnA ? (
         <PrivateQuestion onBack={() => setShowQnA(false)} />
       ) : showchatbot ? (
-        <Chatbot onBack={() => setShowChatBot(false)} />
+        <Chatbot onBack={() => setShowChatBot(false)} isPrivateDeal={isPrivateDeal}/>
       ) : (
 
         <>

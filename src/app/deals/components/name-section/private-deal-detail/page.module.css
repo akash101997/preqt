@@ -1,10 +1,11 @@
 .privateDealDetails {
     display: flex;
     gap: 2rem;
+    padding-bottom: 3rem;
 }
 
 .respectedDetails {
-    flex: 2;
+    width: 62%;
 }
 
 .section {

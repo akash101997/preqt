@@ -1,21 +1,21 @@
 import React from "react";
 import "./ai-ipo-overview.css";
 
-const AiIpoOverview = () => {
+const AiIpoOverview = ({ isPrivateDeal = false }) => {
   return (
     <div className="valuation-container">
-      <section className="body-section4">
+      {!isPrivateDeal && <><section section className="body-section4" >
         <section>
           <p>Minimum Investment</p>
-          <h6 className="mb-0">₹14,820 / 26 Shares</h6>
+          <h6 className="mb-0">-</h6>
         </section>
 
         <section className="bank-sec">
           <section>
             <p>Merchant Banker</p>
-            <h6 className="mb-0">Axis Capital </h6>
+            <h6 className="mb-0">Corporate Professionals</h6>
           </section>
-          <img src="/assets/pictures/bankimg.png" alt="" />
+          <img src="/assets/pictures/corporate.svg" alt="" />
         </section>
 
         <section>
@@ -23,7 +23,7 @@ const AiIpoOverview = () => {
           <h6 className="drhp mb-0">
             DRHP/RHP
             <svg
-              
+
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -67,8 +67,10 @@ const AiIpoOverview = () => {
           </h6>
         </section>
       </section>
-
-     <div className="seperator"></div>
+        <div className="seperator"></div>
+      </>
+      }
+      {isPrivateDeal && <div style={{ marginBottom: '10px' }}></div>}
 
       <section className="smallcards-section">
         <div className="smallcard-section-subcontainer">
@@ -108,8 +110,7 @@ const AiIpoOverview = () => {
             </div>
 
             <h6>
-              16 May 2025 <br />
-              to 16 Jun 2025{" "}
+              -
             </h6>
           </section>
           <div className="smallcard-section-subcontainer-div">
@@ -148,7 +149,7 @@ const AiIpoOverview = () => {
                     />
                   </svg>
                 </div>
-                <span>₹3,200 Cr</span>
+                <span>{isPrivateDeal ? "₹75 Cr" : "-"}</span>
               </section>
 
               <section>
@@ -199,7 +200,7 @@ const AiIpoOverview = () => {
                     />
                   </svg>
                 </div>
-                <span>₹980 Cr</span>
+                <span>{isPrivateDeal ? "101.4 Cr FY25" : "₹94.1 Cr FY25"}</span>
               </section>
             </section>
 
@@ -236,7 +237,7 @@ const AiIpoOverview = () => {
                     </defs>
                   </svg>
                 </div>
-                <span>₹122 Cr</span>
+                <span>{isPrivateDeal ? "₹7.0 Cr" : "₹11.5 Cr"}</span>
               </section>
 
               <section>
@@ -292,7 +293,7 @@ const AiIpoOverview = () => {
                     </defs>
                   </svg>
                 </div>
-                <span>21.6x</span>
+                <span>{isPrivateDeal ? "10.7x" : "-"}</span>
               </section>
             </section>
           </div>
@@ -313,7 +314,7 @@ const AiIpoOverview = () => {
         <section className="main-other">
           <section className="others">
             <h6>Lot Size </h6>
-            <span>26 shares</span>
+            <span>-</span>
           </section>
 
           <section className="others">
@@ -324,40 +325,55 @@ const AiIpoOverview = () => {
 
         <section className="main-other">
           <section className="others">
-            <h6>PAT (FY23)</h6>
-            <span>₹122 Cr</span>
+            <h6>PAT (FY25)</h6>
+            <span>₹11.5 Cr</span>
           </section>
 
           <section className="others">
             <h6>PAT Margin</h6>
-            <span>12.4%</span>
+            <span>5.1%</span>
           </section>
         </section>
 
         <section className="main-other">
           <section className="others">
             <h6>P/E Multiple</h6>
-            <span>21.6x</span>
+            <span>-</span>
           </section>
 
           <section className="others">
-            <h6>CAGR Growth 3Y</h6>
-            <span>₹3,200 Cr</span>
+            <h6>EBITDA</h6>
+            <span>-</span>
           </section>
         </section>
 
         <section className="main-other">
+
           <section className="others">
-            <h6>ROE</h6>
-            <span>₹980 Cr</span>
+            <h6>CAGR Growth 3Y</h6>
+            <span>17% ( FY'22-FY'25)</span>
           </section>
 
           <section className="others">
-            <h6>ROCE</h6>
-            <span>₹600 Cr</span>
+            <h6>ROE</h6>
+            <span>75.9%(FY'25)</span>
           </section>
         </section>
 
+        <section className="main-other">
+
+          <section className="others">
+            <h6>ROCE</h6>
+            <span>25.3%(FY'25)</span>
+          </section>
+
+
+          <section className="others">
+            <h6>Price to Book Value</h6>
+            <span>-</span>
+          </section>
+
+        </section >
         <section className="main-other">
           <section className="others">
             <h6>Debt/Equity</h6>
@@ -378,13 +394,8 @@ const AiIpoOverview = () => {
             </span>
           </section>
 
-          <section className="others">
-            <h6>Price to Book Value</h6>
-            <span>Promoters – 62%, Others – 38%</span>
-          </section>
-        </section>
 
-      <section className="others">
+          <section className="others">
             <h6>
               <svg
                 width="18"
@@ -427,8 +438,9 @@ const AiIpoOverview = () => {
             <a href="">www.zylutech.in</a>
           </section>
         </section>
-    
-    </div>
+      </section >
+
+    </div >
   )
 };
 
