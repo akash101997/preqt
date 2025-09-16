@@ -6,7 +6,6 @@ export function middleware(request) {
   const isAuthenticated = Boolean(token);
   const verifyOtp = request.cookies.get("verifyOtp")?.value == "true";
 
-  // Secure paths (all require authentication, including "/")
   const securePaths = [
     "/",
     "/account",
