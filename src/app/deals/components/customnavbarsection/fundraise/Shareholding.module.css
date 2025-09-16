@@ -131,3 +131,45 @@
 .tableData span{
   /* text-align: right; */
 }
+
+/* =============================Private deal Shareholding   ========================================== */
+
+.privateContainer{
+  background: none;
+  padding: 32px !important;
+  border-radius: 10px !important;
+}
+
+.privateContainer .section h3{
+color: white;
+}
+
+.privateContainer .progressLabel strong{
+  color: white;
+}
+
+.privateContainer .header{
+  background-color: #171717;
+  color: white;
+  border-bottom: 1px solid #3F3F46;
+}
+
+.privateContainer .subHeader{
+  background-color: #000;
+  color: white;
+  border-bottom: 1px solid #3F3F46;
+}
+
+.privateContainer .totalRow{
+  background-color: #3F3F46;
+  color: white;
+  border-bottom: 1px solid #3F3F46 !important;
+}
+.privateContainer .row{
+  color: white;
+  border-bottom: 1px solid #3F3F46 !important;
+}
+
+.privateContainer .table{
+  border: 1px solid #3F3F46;
+}
