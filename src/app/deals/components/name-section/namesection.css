@@ -580,8 +580,7 @@ color: #B59131;
 
 }
 .secondhalf {
-  background-color: white;
-  padding: 0px;
+  padding: 10px 0;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -1845,7 +1844,7 @@ line-height: 28px; /* 200% */
 }
 
 .private-deal-theme .top section {
-  background-color: #404040 !important;
+  background-color: #1D1D1D !important;
   color: white !important;
 }
 

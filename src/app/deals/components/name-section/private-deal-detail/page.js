@@ -241,7 +241,7 @@ export default function PrivateDealDetails({ isPrivateDeal }) {
   }, []);
 
   return (
-    <div className={styles.privateDealDetails}>
+    <div className={isPrivateDeal? styles.privateDealDetails :styles.publicDealDetails}>
       {/* Left Content */}
       <div className={styles.respectedDetails}>
         {sections.map((section) => {

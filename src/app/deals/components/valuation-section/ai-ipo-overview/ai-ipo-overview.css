@@ -54,7 +54,7 @@
 }
 
 .subs1-topp{
-    background-color: #404040;
+    background-color: #1D1D1D;
     width: 50% !important;
 }
 .smallcard-section-subcontainer{
@@ -86,4 +86,24 @@ justify-content: space-between;
     margin: 0 10px;
 height: 24px;
 width: 24px;
+}
+
+.valuation-bg{
+    background-color: #3F3F3F;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.valuation-bg-light{
+    background-color: white;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

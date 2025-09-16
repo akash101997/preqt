@@ -349,9 +349,9 @@ const Namedetailsection = () => {
         </div>
       </div>
       {/* <Questions /> */}
-      <div className="faq-section">
+      {/* <div className="faq-section">
         <FAQSection />
-      </div>
+      </div> */}
       <div className="account-footer">
         <Accountfooter />
       </div>
