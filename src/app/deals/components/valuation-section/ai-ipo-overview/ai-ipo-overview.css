@@ -1,3 +1,7 @@
+.body-section4{
+    gap: 80px;
+}
+
 .body-section4 section{
     display: flex;
     width: 30%;
@@ -32,13 +36,14 @@
 
 .body-section4 h6{
     color: #1F2937;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 500;
     font-family: Helvetica;
     line-height: 28px;
 }
 
 .subs1-top, .subs1-topp{
+    color: #6B7280;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -47,6 +52,7 @@
         border-radius: 10px;
     padding: 15px 16px;
 }
+
 .subs1-topp{
     background-color: #404040;
     width: 50% !important;
@@ -68,6 +74,7 @@ justify-content: space-between;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    color: #6B7280;
 }
 
 .drhp{

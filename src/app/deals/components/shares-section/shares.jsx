@@ -71,7 +71,7 @@ const Shares = () => {
               <p className="label-value">30L</p>
             </div> :
               <div>
-                <p className="label-title">New Issue Shares</p>
+                <p className="label-title">Outstanding Shares (Pre-Issue)</p>
                 <p className="label-value">1Cr</p>
               </div>}
           </div>

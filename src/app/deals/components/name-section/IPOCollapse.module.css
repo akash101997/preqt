@@ -78,7 +78,7 @@
 }
 
 /* Rows */
-.ipoCollapsetable tbody td {
+.ipoCollapsetable tbody td {        
     padding: 6px 16px;
     border-top: 1px solid #e5e7eb;
     color: var(--Gray-800, #1F2937);
