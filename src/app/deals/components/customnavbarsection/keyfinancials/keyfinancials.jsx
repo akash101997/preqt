@@ -1,4 +1,4 @@
-"use client";
+  "use client";
 import React, { useState } from "react";
 import Barchart from "../charts/barchart/barchart";
 import PurpleBarchart from "../charts/barchartpurple/barchartpurple";
@@ -8,9 +8,11 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import DebtBarChart from "../charts/DebtBarchart";
 import { useSearchParams } from "next/navigation";
 
+
 const Keyfinancials = () => {
   const searchParams = useSearchParams();
   const dealId = searchParams?.get("dealId");
+
 
   const [key, setKey] = useState("Return on Equity (ROE)");
 
@@ -55,9 +57,11 @@ const Keyfinancials = () => {
       [year]: !prev[year],
     }));
   };
-
+ console.log("guvjkhygfcfg", isPrivateDeal);
   return (
-    <div className="key-financials-container">
+    // <div className="key-financials-container">
+    <div  className={`key-financials-container ${isPrivateDeal ? "private-deal" : ""}`}>
+
 
       {/* Financial Trends */}
       <div className="section">

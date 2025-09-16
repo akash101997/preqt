@@ -1,8 +1,10 @@
 "use client"
 import React, { useState } from 'react';
 import styles from './industry.module.css';
+
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
+
 
 const Industry = () => {
   const searchParams = useSearchParams();
