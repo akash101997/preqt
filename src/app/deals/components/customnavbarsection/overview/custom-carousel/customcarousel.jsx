@@ -8,14 +8,7 @@ const FirstCarousel = ({ isPrivateDeal }) => {
   // Mixed list: images + YouTube video
   const media = isPrivateDeal ? [
     "/assets/pictures/hrv-overview.png",
-    "/assets/pictures/hrv-overview-1.png",
-    "/assets/pictures/hrv-overview-2.png",
-    "/assets/pictures/hrv-overview-2.png"
   ] : ["/assets/pictures/ashwini-container.png",]
-  // "https://www.youtube.com/watch?v=7wtfhZwyrcc&list=RD7wtfhZwyrcc&start_radio=1",
-  // "https://www.youtube.com/watch?v=7wtfhZwyrcc&list=RD7wtfhZwyrcc&start_radio=1",
-  // "https://www.youtube.com/watch?v=7wtfhZwyrcc&list=RD7wtfhZwyrcc&start_radio=1", // example YouTube link
-  // "https://www.youtube.com/watch?v=7wtfhZwyrcc&list=RD7wtfhZwyrcc&start_radio=1",
 
   // helper: convert youtube link → embed format
   const getYoutubeEmbedUrl = (url) => {

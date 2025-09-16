@@ -10,7 +10,7 @@ import React from "react";
 function AllDealsContent() {
     const searchParams = useSearchParams();
     const dealId = searchParams?.get("dealId");
-    
+
     // Define deals data to check if deal is private
     const dealsConfig = {
         "1": { deal: "public" },
@@ -18,96 +18,52 @@ function AllDealsContent() {
         "3": { deal: "private" },
         "4": { deal: "private" }
     };
-    
+
     const isPrivateDeal = dealId && dealsConfig[dealId]?.deal === "private";
 
     const dealsData = [
         {
             id: 1,
-            type: "IPO- SME",
-            category: "Healthcare",
-            companyLogo: "/assets/pictures/Anthem.png",
-            companyName: "Anthem Biosciences Ltd",
-            description: "India's leading CRDMO with global clientele and 25%+ YoY revenue growth",
+            type: "Pre IPO- SME",
+            category: "Logistics",
+            companyLogo: "/assets/pictures/acmpl.svg",
+            companyName: "Ashwini Container Movers Limited (ACMPL)",
+            description: "Ashwini Container Movers Limited is a commercial/container transport & logistics company headquartered in Navi Mumbai.",
             stats: {
-                revenue: "₹1,400 Cr",
-                pat: "₹140Cr",
-                patMultiple: "₹1,41 Cr (24.7%)",
-                cagrGrowth: "340%",
-                roe: "₹387 to ₹387",
+                revenue: "₹94.1Cr",
+                pat: "₹11.5 Cr",
+                patMultiple: "₹11.5 Cr",
+                cagrGrowth: "17% ( FY'22-FY'25)",
+                roe: "75.9%(FY'25)",
                 issueDate: "21-05-2026"
             },
-            merchantBanker: "Merchant Banker: Axis Capital",
+            merchantBanker: "Corporate Professionals",
             deal: "public"
         },
         {
             id: 2,
-            type: "IPO- SME",
-            category: "Healthcare",
-            companyLogo: "/assets/pictures/parthElectrical.png",
-            companyName: "Parth Electricals & Engineering Limited",
-            description: "India's fastest-growing EV infra player with 2.4x YoY revenue growth",
+            type: "Pre IPO- SME",
+            category: "Solar Energy",
+            companyLogo: "/assets/pictures/hvr.svg",
+            companyName: "HVR Solar Pvt Ltd",
+            description: "India’s leading solar module manufacturer powering the green revolution.",
             stats: {
-                revenue: "₹2,400 Cr",
-                revenue2: "₹1,400Cr",
-                expectedListing: "1.2 yr",
-                pat: "₹24 Cr",
-                peMultiple: "21.6x"
+                revenue: "₹75 Cr",
+                revenue2: "₹101 Cr",
+                expectedListing: "-",
+                pat: "7.0 Cr",
+                peMultiple: "10.7x"
             },
             progress: {
-                current: "1.5 Cr / 2 Cr",
+                current: "0Cr / 15Cr",
                 percentage: "94%"
             },
             tags: ["Strong promoter", "Clear Monetization", "Fund Participating"],
             deal: "private"
         },
-        {
-            id: 3,
-            type: "IPO- SME",
-            category: "Healthcare",
-            companyLogo: "/assets/pictures/parthElectrical.png",
-            companyName: "Parth Electricals & Engineering Limited",
-            description: "India's fastest-growing EV infra player with 2.4x YoY revenue growth",
-            stats: {
-                revenue: "₹2,400 Cr",
-                revenue2: "₹1,400Cr",
-                expectedListing: "1.2 yr",
-                pat: "₹24 Cr",
-                peMultiple: "21.6x"
-            },
-            progress: {
-                current: "1.5 Cr / 2 Cr",
-                percentage: "94%"
-            },
-            tags: ["Strong promoter", "Clear Monetization", "Fund Participating"],
-            deal: "private"
-
-        },
-        {
-            id: 4,
-            type: "IPO- SME",
-            category: "Healthcare",
-            companyLogo: "/assets/pictures/parthElectrical.png",
-            companyName: "Parth Electricals & Engineering Limited",
-            description: "India's fastest-growing EV infra player with 2.4x YoY revenue growth",
-            stats: {
-                revenue: "₹2,400 Cr",
-                revenue2: "₹1,400Cr",
-                expectedListing: "1.2 yr",
-                pat: "₹24 Cr",
-                peMultiple: "21.6x"
-            },
-            progress: {
-                current: "1.5 Cr / 2 Cr",
-                percentage: "94%"
-            },
-            tags: ["Strong promoter", "Clear Monetization", "Fund Participating"],
-            deal: "private"
-
-        }
     ];
 
-   const renderCard1 = (deal) => (
+    const renderCard1 = (deal) => (
         <Link href={`/deals?dealId=${deal.id}`} className={stylesdeals.cardLink}>
             <div className={styles.cardContainer1}>
                 <div className={styles.cardInnerSections}>
@@ -246,7 +202,7 @@ function AllDealsContent() {
                     </div>
                 </div>
 
-                 <div className={styles.card2Footer}>
+                <div className={styles.card2Footer}>
                     <div className={styles.card2QandA}>
                         <div className={styles.card2QandAStats}>23 Q&A answered in last 3 days akash</div>
                         <div className={styles.card2UserIcons}>
@@ -256,12 +212,12 @@ function AllDealsContent() {
                             <img src="assets/pictures/userImage4.png" alt="" className={styles.card2UserImage} />
                         </div>
                     </div>
-                </div> 
+                </div>
 
                 <img src="/assets/pictures/star.svg" alt="" className={styles.starImage} />
             </div>
         </Link>
-   );
+    );
 
     return (
         <section className={`${styles.DealsTalkMainContainer} ${stylesdeals.DealsTalkMainContainer} ${isPrivateDeal ? stylesdeals.privateDealTheme : ''}`} >

@@ -1,12 +1,22 @@
+"use client"
+import { useSearchParams } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import { Carousel } from "react-bootstrap";
 
 const LastCarousel = () => {
-  const images = [
-    "/assets/pictures/final.png",
-    "/assets/pictures/final.png",
-    "/assets/pictures/final.png",
-    "/assets/pictures/final.png"
+
+  const searchParams = useSearchParams();
+  const dealId = searchParams?.get("dealId");
+
+  const images = dealId == "2" ? [
+    "/assets/pictures/hrv-overview-1.png",
+    "/assets/pictures/hrv-overview-2.png",
+    "/assets/pictures/hrv-overview-2.png"
+  ] : [
+    "/assets/pictures/ashwini-1.png",
+    "/assets/pictures/ashwini-2.png",
+    "/assets/pictures/ashwini-3.png",
+    "/assets/pictures/ashwini-4.png",
   ];
 
   const [index, setIndex] = useState(0);
@@ -24,7 +34,7 @@ const LastCarousel = () => {
       <h3>Company Gallery</h3>
       <Carousel
         activeIndex={index}
-        onSelect={() => {}}
+        onSelect={() => { }}
         controls={false}
         indicators={false}
         interval={null} // disable default auto-slide since we handle it manually

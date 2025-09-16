@@ -17,7 +17,7 @@ const data = [
     { year: "2024", value: 0 },
 ];
 
-const DebtBarChart = () => {
+const DebtBarChart = ({isPrivate= false}) => {
     return (
         <ResponsiveContainer width="100%" height={300}>
             <BarChart data={data} barSize={60}>

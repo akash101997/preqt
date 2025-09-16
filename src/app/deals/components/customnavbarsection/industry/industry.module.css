@@ -120,6 +120,9 @@ padding: 16px 0px;
   display: flex;
   align-items: center;
 }
+.tableHeading span{
+  word-break: break-all;
+}
 .PeerTable th span {
   display: inline-block;
   width: 100px;

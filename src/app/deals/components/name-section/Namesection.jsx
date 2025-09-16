@@ -37,35 +37,21 @@ const Namedetailsection = () => {
   const dealsIndex = {
     "1": {
       id: 1,
-      type: "IPO- SME",
+      type: "Pre IPO- SME",
       sector: "Healthcare",
-      logo: "/assets/pictures/Anthem.png",
-      name: "Anthem Biosciences Ltd",
-      deal: "public"
+      logo: "/assets/pictures/acmpl.svg",
+      name: "Ashwini Container Movers Limited (ACMPL)",
+      deal: "public",
+      description: "Ashwini Container Movers Limited is a commercial/container transport & logistics company headquartered in Navi Mumbai.",
     },
     "2": {
       id: 2,
       type: "Pre IPO- SME",
-      sector: "Electrical engineering",
-      logo: "/assets/pictures/parthElectrical.png",
-      name: "Parth Electricals & Engineering Limited",
-      deal: "private"
-    },
-    "3": {
-      id: 3,
-      type: "IPO- SME",
-      sector: "Healthcare",
-      logo: "/assets/pictures/parthElectrical.png",
-      name: "Parth Electricals & Engineering Limited",
-      deal: "private"
-    },
-    "4": {
-      id: 4,
-      type: "IPO- SME",
-      sector: "Healthcare",
-      logo: "/assets/pictures/parthElectrical.png",
-      name: "Parth Electricals & Engineering Limited",
-      deal: "private"
+      sector: "Solar Energy",
+      logo: "/assets/pictures/hvr.svg",
+      name: "HVR Solar Pvt Ltd",
+      deal: "private",
+      description: "India’s leading solar module manufacturer powering the green revolution.",
     },
   };
 
@@ -160,9 +146,9 @@ const Namedetailsection = () => {
             className="bell-icon"
             onClick={() => setBellactive(!bellactive)}>
             {!bellactive ? (
-             <Bellactive/>
+              <Bellactive />
             ) : (
-            <BellOff/>
+              <BellOff />
             )}
           </div>
         </section>
@@ -182,18 +168,18 @@ const Namedetailsection = () => {
                 </div>
                 <div className='svg-icons-button'>
                   <button className="share-button">
-                    <ShareIcon/>
+                    <ShareIcon />
                   </button>
-                <div
-                  className="bell-icon"
-                  onClick={() => setBellactive(!bellactive)}>
-                  {!bellactive ? (
-                    
-                    <Bellactive/>
-                  ) : (
-                   <BellOff/>
-                  )}
-                </div>
+                  <div
+                    className="bell-icon"
+                    onClick={() => setBellactive(!bellactive)}>
+                    {!bellactive ? (
+
+                      <Bellactive />
+                    ) : (
+                      <BellOff />
+                    )}
+                  </div>
                 </div>
               </section>
 
@@ -212,20 +198,19 @@ const Namedetailsection = () => {
                 </svg>
 
                 <span>
-                  This company reminds us of Delhivery 3 years ago — but with
-                  better margins.
+                  {activeDeal.description}
                 </span>
               </section>
 
-              {isPrivateDeal? <>
-              <div className="private-qualities">
-                <span>Strong promoter </span>
-                <span>Clear Monetization</span>
-                <span>Fund Participating</span>
-              </div>
+              {isPrivateDeal ? <>
+                <div className="private-qualities">
+                  <span>Strong promoter </span>
+                  <span>Clear Monetization</span>
+                  <span>Fund Participating</span>
+                </div>
               </> : ""}
 
-              <IPOCollapse isPrivateDeal = {isPrivateDeal}/>
+              <IPOCollapse isPrivateDeal={isPrivateDeal} />
 
 
 
@@ -255,7 +240,7 @@ const Namedetailsection = () => {
                 </button>
               </div>
 
-              <Valuation  isPrivateDeal={isPrivateDeal}/>
+              <Valuation isPrivateDeal={isPrivateDeal} />
 
               <Shares />
               <div className="ipo-timeline-section mobile-ipo-timeline-section">
@@ -335,21 +320,21 @@ const Namedetailsection = () => {
           )} */}
 
           {isPrivateDeal ? (
-  <div>
-    <Calculator isAskAiActive={isAskAiActive} handleAskAI={handleAskAI} />
-  </div>
-) : (
-  <AskAiSection 
-    isPrivateDeal={isPrivateDeal}   // 👈 now AskAiSection gets it
-    isAskAiActive={isAskAiActive} 
-    handleAskAI={handleAskAI} 
-  />
-)}
+            <div>
+              <Calculator isAskAiActive={isAskAiActive} handleAskAI={handleAskAI} />
+            </div>
+          ) : (
+            <AskAiSection
+              isPrivateDeal={isPrivateDeal}   // 👈 now AskAiSection gets it
+              isAskAiActive={isAskAiActive}
+              handleAskAI={handleAskAI}
+            />
+          )}
 
         </div>
 
         {isPrivateDeal && (
-          <PrivateDealDetails isPrivateDeal = {isPrivateDeal}/>
+          <PrivateDealDetails isPrivateDeal={isPrivateDeal} />
         )}
       </div>
       {/* <Questions /> */}
