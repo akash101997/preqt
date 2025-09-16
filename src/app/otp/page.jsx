@@ -54,27 +54,14 @@ function OtpPageContent() {
         toast.error(data.message || "Something went wrong. Please try again.");
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      // const data = await response.json();
 
       const token = data?.data?.data?.accessToken;
       const investor = data?.data?.data?.investor;
-      // Cookies.set("accessToken", token, {
-      //   path: "/",
 
-      //   expires: 7,
-      // });
-      // Cookies.set("investor", investor, {
-      //   path: "/",
-
-      //   expires: 7,
-      // });
       localStorage.removeItem("registerFormData");
 
       if (token) {
-        Cookies.set("accessToken", token, {
-          path: "/",
-          expires: 7,
-        });
+        Cookies.set("accessToken", token);
       }
 
       if (investor) {
@@ -91,21 +78,9 @@ function OtpPageContent() {
           location: investor.location,
         };
 
-        Cookies.set("investor", JSON.stringify(simplifiedInvestor), {
-          path: "/",
-          expires: 7,
-          raw: true,
-        });
+        Cookies.set("investor", JSON.stringify(simplifiedInvestor));
       }
-
-      // if (investor) {
-      //   Cookies.set("investor", JSON.stringify(investor), {
-      //     path: "/",
-      //     expires: 7,
-      //     raw: true,
-      //   });
-      // }
-
+      Cookies.remove("verifyOtp")
       window.location.replace("/");
     } catch (error) {
       console.error("Login error:", error);
@@ -218,9 +193,8 @@ function OtpPageContent() {
 
         <button
           type="submit"
-          className={`${styles.button} ${
-            !isValidOtp ? styles.buttonDisabled : ""
-          }`}
+          className={`${styles.button} ${!isValidOtp ? styles.buttonDisabled : ""
+            }`}
           disabled={!isValidOtp}
         >
           Proceed

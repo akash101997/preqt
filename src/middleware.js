@@ -2,8 +2,9 @@ import { NextResponse } from "next/server";
 
 export function middleware(request) {
   const { pathname, origin } = request.nextUrl;
-  const token = request.cookies.get("accessToken");
+  const token = request.cookies.get("accessToken")?.value;
   const isAuthenticated = Boolean(token);
+  const verifyOtp = request.cookies.get("verifyOtp")?.value == "true";
 
   // Secure paths (all require authentication, including "/")
   const securePaths = [
@@ -30,7 +31,9 @@ export function middleware(request) {
     "/reset-password",
   ];
 
-  // Rule 1: If authenticated and trying to access signin/signup → redirect to "/"
+  if (!verifyOtp && pathname == "/otp") {
+    return NextResponse.redirect(new URL("/signin", origin));
+  }
   if (
     isAuthenticated &&
     (pathname === "/signin" ||
@@ -79,5 +82,6 @@ export const config = {
     "/private-deals/:path*",
     "/transaction-page/:path*",
     "/events",
+    "/otp"
   ],
 };

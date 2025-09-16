@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./Signin.module.css";
 import { toast } from "react-toastify";
+import Cookies from "js-cookie";
 
 const Signin = () => {
   const router = useRouter();
@@ -36,10 +37,7 @@ const Signin = () => {
         toast.error(data.message || "Something went wrong. Please try again.");
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-
-      // if (response.status === 200) {
-      //   router.replace(`/otp?email=${encodeURIComponent(email)}`);
-      // }
+      Cookies.set("verifyOtp", true)
       router.replace(`/otp?email=${encodeURIComponent(email)}`);
     } catch (error) {
       console.error("Login error:", error);
@@ -76,9 +74,8 @@ const Signin = () => {
 
           <button
             type="submit"
-            className={`${styles.button} ${
-              !isValidEmail ? styles.buttonDisabled : ""
-            }`}
+            className={`${styles.button} ${!isValidEmail ? styles.buttonDisabled : ""
+              }`}
             disabled={!isValidEmail}
           >
             Send OTP

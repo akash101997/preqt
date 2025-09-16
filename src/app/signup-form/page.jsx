@@ -4,6 +4,7 @@ import { useState, Suspense, useEffect } from "react";
 import { useMultiStepContext } from "../utils/MultiStepContext";
 import styles from "./signup-form.module.css";
 import { toast } from "react-toastify";
+import Cookies from "js-cookie";
 
 function SignupFormPageContent() {
   const router = useRouter();
@@ -57,7 +58,7 @@ function SignupFormPageContent() {
       const result = await response.json();
       console.log("Registration successful:", result);
       toast.success("Registration successful:");
-
+      Cookies.set("verifyOtp", true)
       router.push(`/otp?email=${encodeURIComponent(registerFormData.email)}`);
     } catch (error) {
       console.error("Registration failed:", error);
@@ -164,9 +165,8 @@ function SignupFormPageContent() {
 
         <button
           type="submit"
-          className={`${styles.button} ${
-            !isValid || isSubmitting ? styles.buttonDisabled : ""
-          }`}
+          className={`${styles.button} ${!isValid || isSubmitting ? styles.buttonDisabled : ""
+            }`}
           disabled={!isValid || isSubmitting}
         >
           {isSubmitting ? "Submitting..." : "Continue"}
