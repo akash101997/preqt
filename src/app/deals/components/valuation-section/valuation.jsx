@@ -11,28 +11,28 @@ const Valuation = ({ isPrivateDeal }) => {
 
 
   return <div>
-    {isPrivateDeal && <div classname="investmentCard">
-      <div classname="investmentHeader">
+    {isPrivateDeal && <div className="investmentCard">
+      <div className="investmentHeader">
         <div>
-          <p classname="label">Minimum Investment</p>
-          <h2 classname="amt">₹20 lac <span classname="amt-suffix">/ 10,000 Lots</span></h2>
-          <p classname="subtext">0 Cr / 15 Cr</p>
+          <p className="label">Minimum Investment</p>
+          <h2 className="amt">₹20 lac <span className="amt-suffix">/ 10,000 Lots</span></h2>
+          <p className="subtext">0 Cr / 15 Cr</p>
         </div>
 
-        <div classname="docSection">
-          <p classname="docLabel">IPO Doc</p>
-          <a href="#" classname="docLink">
-            <span classname="docText">DRHP/RHP</span>
+        <div className="docSection">
+          <p className="docLabel">IPO Doc</p>
+          <a href="#" className="docLink">
+            <span className="docText">DRHP/RHP</span>
             <span><Drhp /></span>
           </a>
         </div>
       </div>
 
-      <div classname="progressWrapper">
-        <div classname="progress">
-          <div classname="progress-bar" style={{ width: "94%" }}></div>
+      <div className="progressWrapper">
+        <div className="progress">
+          <div className="progress-bar" style={{ width: "94%" }}></div>
         </div>
-        <span classname="progressPercent">94%</span>
+        <span className="progressPercent">94%</span>
       </div>
     </div>}
     <AiIpoOverview isPrivateDeal={isPrivateDeal} />

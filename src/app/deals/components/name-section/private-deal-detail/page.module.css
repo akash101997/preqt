@@ -10,11 +10,8 @@
 
 .section {
     margin-bottom: 4rem;
-    /* padding: 2rem; */
     border-radius: 32px;
     background: #171717;
-
-    /* Base Shadow */
     box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06);
 }
 
@@ -81,7 +78,6 @@
         /* duplicate like your SVG layers */
         0 0 10px 0px #facc15;
     /* tight inner glow (stdDeviation=2) */
-
     transition: top 0.25s ease, height 0.25s ease;
 }
 
@@ -158,4 +154,45 @@
     /* provide both prefixed and standard animation properties */
     -webkit-animation: glow 1.2s ease-in-out infinite alternate;
     animation: glow 1.2s ease-in-out infinite alternate;
+}
+
+
+.publicDealDetails{
+    display: flex;
+    gap: 2rem;
+    padding-bottom: 3rem;
+}
+.publicDealDetails .section{
+    background-color: white;
+    box-shadow: none;
+   
+}
+
+.publicDealDetails .detailslabel{
+    color: #000;
+}
+
+.publicDealDetails .respectedMenu li{
+    color: #A1A1AA;
+}
+
+.publicDealDetails .respectedDetails li.active{
+    color: #C9A74E;
+}
+
+.publicDealDetails .respectedMenu ul::before{
+    background-color: #E4E4E7;
+}
+
+.publicDealDetails .respectedMenu ul::after{
+    background-color: #C9A74E;
+    box-shadow: none;
+}
+
+.publicDealDetails .respectedMenu li.active{
+    color: #C9A74E;
+    -webkit-animation: none;
+    animation: none;
+    text-shadow: none;
+    will-change: auto;
 }
