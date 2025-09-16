@@ -9,10 +9,9 @@ import DebtBarChart from "../charts/DebtBarchart";
 import { useSearchParams } from "next/navigation";
 
 
-const Keyfinancials = ({isPrivateDeal}) => {
+const Keyfinancials = ({ isPrivateDeal = false }) => {
   const searchParams = useSearchParams();
   const dealId = searchParams?.get("dealId");
-  const isPrivateDeal = dealId == "2";
 
   const [key, setKey] = useState("Return on Equity (ROE)");
 

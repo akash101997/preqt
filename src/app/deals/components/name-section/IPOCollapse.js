@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Collapse, Table } from "react-bootstrap";
 import styles from './IPOCollapse.module.css'
 
-const IPOCollapse = ({isPrivateDeal}) => {
+const IPOCollapse = ({ isPrivateDeal }) => {
     const [open, setOpen] = useState(true);
 
     return (
@@ -15,14 +15,14 @@ const IPOCollapse = ({isPrivateDeal}) => {
             >
                 <div className={styles.ipocollapseleft}>
                     <small className={styles.smallText}>{isPrivateDeal ? "Per Share Price" : "Issue Price"} </small>
-                    <h5 className={styles.largeText}>₹237 to ₹255 <small className={styles.smll}>per share</small></h5>
+                    {isPrivateDeal ? <h5 className={styles.largeText}>₹237 to ₹255 <small className={styles.smll}>per share</small></h5> : <h5>-</h5>}
                 </div>
                 <div className={styles.ipocollapseright}>
-                    <div className={styles.ipocollapserightInner}> 
+                    <div className={styles.ipocollapserightInner}>
                         <small className={styles.smallText}>Lot Size</small>
-                        <h5 className={styles.largeText}>58 Shares</h5>
+                        {isPrivateDeal ? <h5 className={styles.largeText}>10,000 Shares</h5> : <h5>-</h5>}
                     </div>
-                    {open ? <ChevronUp color={isPrivateDeal ? "white" : "black"}/> : <ChevronDown color={isPrivateDeal ? "white" : "black"}/>}
+                    {open ? <ChevronUp color={isPrivateDeal ? "white" : "black"} /> : <ChevronDown color={isPrivateDeal ? "white" : "black"} />}
                 </div>
 
             </button>
@@ -39,15 +39,15 @@ const IPOCollapse = ({isPrivateDeal}) => {
                         <tbody>
                             <tr>
                                 <td className="text-start">Overall</td>
-                                <td className="text-end">₹242.7 Cr</td>
+                                <td className="text-end">{isPrivateDeal ? "₹15 Cr" : '-'}</td>
                             </tr>
                             <tr>
                                 <td className="text-start">Fresh Issue</td>
-                                <td className="text-end">₹215.9 Cr</td>
+                                <td className="text-end">{isPrivateDeal ? "₹7.5 L" : "₹50 L"}</td>
                             </tr>
                             <tr>
                                 <td className="text-start">Offer for sale</td>
-                                <td className="text-end">₹25.5 Cr</td>
+                                <td className="text-end">-</td>
                             </tr>
                         </tbody>
                     </Table>
