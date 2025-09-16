@@ -537,7 +537,7 @@ color: #B59131;
 }
 .lastcarousel {
   padding: 20px 22px 20px 26px ;
-  background: linear-gradient(180deg, #f3f4f6, white);
+  background: linear-gradient(180deg, #FDF9EE, #EEF2FD00);
   border-radius: 20px;
 }
 
@@ -804,6 +804,10 @@ color: #B59131;
   justify-content: space-between;
 }
 
+.timeline-content .label{
+  color: #000000;
+  font-size: 14px;
+}
 .timeline {
 
   background-color: #F9FAFB;
@@ -834,6 +838,9 @@ border-radius: 16px;
 
 
 .view-details-btn p{
+  font-size: 16px;
+  font-weight: 500;
+  color: #6B7280;
   margin: unset;  
 }
 .view-details-btn .link{
@@ -1134,7 +1141,7 @@ color: #b18c07;
   }
   .body-section2 div {
     display: flex;
-    gap: 10px;
+    gap: 17px;
   }
 
   .why-subsection div h4 {

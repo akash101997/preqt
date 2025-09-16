@@ -144,7 +144,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                   <span>Revenue </span>
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><RevenueIcon/></span>
                 </div>
-                <span>{isPrivateDeal ? "₹101.4 Cr FY25" : "₹94.1 Cr FY25"}</span>
+                <span style={{color:"#000000" , fontWeight:"500"}}>{isPrivateDeal ? "₹101.4 Cr FY25" : "₹94.1 Cr FY25"}</span>
               </section>
             </section>
 
@@ -154,7 +154,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                   <span>PAT</span>
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><PatIcon/></span>
                 </div>
-                <span>{isPrivateDeal ? "₹7.0 Cr" : "₹11.5 Cr"}</span>
+                <span style={{color:"#000000" , fontWeight:"500"}}>{isPrivateDeal ? "₹7.0 Cr" : "₹11.5 Cr"}</span>
               </section>
 
               <section>

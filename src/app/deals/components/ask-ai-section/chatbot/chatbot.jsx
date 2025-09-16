@@ -11,14 +11,14 @@ const Chatbot = ({onBack , isPrivateDeal })=> {
     "What’s the estimated return if I invest ₹50,000?",
   ];
 
-  console.log("Private Deal Has reached chatbot",isPrivateDeal)
+  // console.log("Private Deal Has reached chatbot",isPrivateDeal)
 
   return (
     // <div className="chatbot-maincontainer">
         <div className={`chatbot-maincontainer ${isPrivateDeal ? "private-deal" : ""}`}>
 
       <section className="chatbot-head">
-        <svg
+        <svg className="arrow"
         onClick={() => {onBack(false)}}
         // {() => handleAskAI(false)}
         viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,7 @@ const Chatbot = ({onBack , isPrivateDeal })=> {
           />
         </svg>
         <h2>
-          Makia AI Assistant{" "}
+          Preqt AI Assistant{" "}
           <svg
             width="24"
             height="24"
@@ -64,7 +64,7 @@ const Chatbot = ({onBack , isPrivateDeal })=> {
 
       <section className="chatbot-body">
         <section className="chatbot-body-section1">
-          <h2>Chat About This Deal</h2>
+          <h2>Discuss This Deal with Your Personal AI Assistant</h2>
           <p>Ask anything about this Pre-IPO Deal</p>
         </section>
         <section className="default-chatbot-data">
