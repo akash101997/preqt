@@ -45,7 +45,16 @@ export default function PrivateDealDetails({ isPrivateDeal }) {
     return 100;
   };
 
-  // normal scroll handler (used for manual scroll)
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setIsMobile(window.innerWidth < 980);
+  //   };
+  //   handleResize(); 
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
+
+ 
   useEffect(() => {
     const handleScroll = () => {
       if (manualScrollRef.current) return; // locked during programmatic smooth scroll

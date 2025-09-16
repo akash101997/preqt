@@ -5,7 +5,9 @@ import Image from "next/image";
 const AiIpoOverview = ({ isPrivateDeal = false }) => {
   return (
     <div className="valuation-container">
-      {!isPrivateDeal && <><section section className="body-section4" >
+      {!isPrivateDeal && 
+      <>
+      <section className="body-section4" >
         <section>
           <p>Minimum Investment</p>
           <h6 className="mb-0">-</h6>
@@ -79,7 +81,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
             <section className="subs1-topp">
               <div>
                 <p>Listing timeline</p>
-                <Image src={"/assets/pictures/listing-timeline.svg"} height={40} width={40} />
+                <Image src={"/assets/pictures/listing-timeline.svg"} height={40} width={40} alt={'The asset match'}/>
               </div>
 
               <h6>

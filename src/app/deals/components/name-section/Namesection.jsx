@@ -23,6 +23,19 @@ const Namedetailsection = () => {
   const [bellactive, setBellactive] = useState(false);
   const [isAskAiActive, setIsAskAiActive] = useState(false);
   const [isQuesAnsActive, setIsQuesAnsActive] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.innerWidth < 920;
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 920);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const handleAskAI = (flag) => {
     setIsAskAiActive(flag);
   }
@@ -302,11 +315,7 @@ const Namedetailsection = () => {
             </div>
 
             <Featured />
-            {!isPrivateDeal && (
-              <div className="secondhalf">
-                <Customnavbar isPrivateDeal={isPrivateDeal}/>
-              </div>
-            )}
+
 
           </section>
 
@@ -321,7 +330,7 @@ const Namedetailsection = () => {
 
           {isPrivateDeal ? (
             <div>
-              <Calculator isAskAiActive={isAskAiActive} handleAskAI={handleAskAI} isPrivateDeal={isPrivateDeal}/>
+              <Calculator isAskAiActive={isAskAiActive} handleAskAI={handleAskAI} isPrivateDeal={isPrivateDeal} />
             </div>
           ) : (
             <AskAiSection
@@ -332,10 +341,12 @@ const Namedetailsection = () => {
           )}
 
         </div>
+        <div className="secondhalf">
+          {isMobile ? (
+            <Customnavbar isPrivateDeal={isPrivateDeal} />
 
-        {isPrivateDeal && (
-          <PrivateDealDetails isPrivateDeal={isPrivateDeal} />
-        )}
+          ) : <PrivateDealDetails isPrivateDeal={isPrivateDeal} />}
+        </div>
       </div>
       {/* <Questions /> */}
       <div className="faq-section">
