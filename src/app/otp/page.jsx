@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState, Suspense } from "react";
 import styles from "./otp.module.css";
 import { toast } from "react-toastify";
 import Cookies from "js-cookie";
+import Loader from "../components/Loader";
 
 function OtpPageContent() {
   const params = useSearchParams();
@@ -206,7 +207,7 @@ function OtpPageContent() {
 
 export default function OtpPage() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loader />}>
       <OtpPageContent />
     </Suspense>
   );

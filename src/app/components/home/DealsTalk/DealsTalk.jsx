@@ -11,6 +11,7 @@ import Link from "next/link";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import Loader from "../../Loader";
 
 function DealsTalkContent() {
     const swiperRef = useRef(null);
@@ -306,7 +307,7 @@ function DealsTalkContent() {
 
 export default function DealsTalk() {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loader />}>
             <DealsTalkContent />
         </Suspense>
     );

@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import Head from "next/head";
 import ClientChrome from "./ClientChrome";
+import Loader from "./components/Loader";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -44,7 +45,7 @@ export default function RootLayout({ children }) {
       </Head>
 
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loader />}>
           <MultiStepProvider>
             <ClientChrome>{children}</ClientChrome>
           </MultiStepProvider>

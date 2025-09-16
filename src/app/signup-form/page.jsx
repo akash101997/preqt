@@ -5,6 +5,7 @@ import { useMultiStepContext } from "../utils/MultiStepContext";
 import styles from "./signup-form.module.css";
 import { toast } from "react-toastify";
 import Cookies from "js-cookie";
+import Loader from "../components/Loader";
 
 function SignupFormPageContent() {
   const router = useRouter();
@@ -178,7 +179,7 @@ function SignupFormPageContent() {
 
 export default function SignupFormPage() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loader />}>
       <SignupFormPageContent />
     </Suspense>
   );

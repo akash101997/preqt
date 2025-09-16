@@ -1,4 +1,5 @@
 "use client";
+import Loader from "@/app/components/Loader";
 import styles from "../../../components/home/DealsTalk/DealsTalk.module.css";
 import stylesdeals from "./AllDeals.module.css";
 import Link from "next/link";
@@ -240,7 +241,7 @@ function AllDealsContent() {
 
 export default function AllDeals() {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loader />}>
             <AllDealsContent />
         </Suspense>
     );

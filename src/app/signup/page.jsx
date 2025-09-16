@@ -3,6 +3,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState, Suspense } from "react";
 import { useMultiStepContext } from "@/app/utils/MultiStepContext";
 import styles from "./onboarding.module.css";
+import Loader from "../components/Loader";
 
 const investorTypes = [
   "Retail Investor",
@@ -70,9 +71,8 @@ function OnboardingPageContent() {
           <button
             key={type}
             type="button"
-            className={`${styles.option} ${
-              selected === type ? styles.active : ""
-            }`}
+            className={`${styles.option} ${selected === type ? styles.active : ""
+              }`}
             onClick={() => setSelected(type)}
           >
             <span className={styles.radioOuter}>
@@ -95,7 +95,7 @@ function OnboardingPageContent() {
 
 export default function OnboardingPage() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loader />}>
       <OnboardingPageContent />
     </Suspense>
   );
