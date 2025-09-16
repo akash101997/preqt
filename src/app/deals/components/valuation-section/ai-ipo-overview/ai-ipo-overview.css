@@ -38,7 +38,7 @@
     line-height: 28px;
 }
 
-.subs1-top{
+.subs1-top, .subs1-topp{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -47,13 +47,16 @@
         border-radius: 10px;
     padding: 15px 16px;
 }
-
+.subs1-topp{
+    background-color: #404040;
+    width: 50% !important;
+}
 .smallcard-section-subcontainer{
     display: flex;
         gap: 21px;
 }
 
-.subs1-top div{
+.subs1-top div, .subs1-topp div{
 display: flex;
 flex-direction: row;
 justify-content: space-between;

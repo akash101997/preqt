@@ -11,7 +11,6 @@ const Valuation = ({ isPrivateDeal }) => {
 
 
   return <div>
-
     {isPrivateDeal && <div class="investmentCard">
       <div class="investmentHeader">
         <div>

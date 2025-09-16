@@ -12,10 +12,17 @@ const Shares = () => {
     <>
       <div className="shares-card">
         {/* Progress Bar */}
-        <div className="progress-container">
-          <div className="progress-fill new-shares"></div>
-          <div className="progress-fill old-shares"></div>
+        <div className='shares-header'>
+          <h5>Total Shares Post Issue</h5>
+          {isPrivateDeal ? <h5>Pre-Issue Shareholding : Promoters – 100%, Others – 0%</h5> : <h5>Pre-Issue Shareholding : Promoters – 62%, Others – 38%</h5>}
         </div>
+        {isPrivateDeal ? <div className="progress-container">
+          <div className="progress-fill new-shares" style={{ width: "80%" }}></div>
+          <div className="progress-fill old-shares" style={{ width: "20%" }}></div>
+        </div> : <div className="progress-container">
+          <div className="progress-fill new-shares" style={{ width: "66%" }}></div>
+          <div className="progress-fill old-shares" style={{ width: "34%" }}></div>
+        </div>}
 
         <div className="shares-section">
           <svg
@@ -35,7 +42,7 @@ const Shares = () => {
             <line y1="7.5" x2="286" y2="7.5" stroke="#E5E7EB" />
           </svg>
 
-          <span className="total-shares">12.4 Cr shares</span>
+          <span className="total-shares">{isPrivateDeal ? "37.5 L shares" : "1.5 Cr shares"}</span>
 
           <svg
             width="287"
@@ -59,18 +66,25 @@ const Shares = () => {
         <div className="labels">
           <div className="label-item">
             <span className="dot new-shares-dot"></span>
-            <div>
-              <p className="label-title">New Issue Shares</p>
-              <p className="label-value">2.4 Cr shares</p>
-            </div>
+            {isPrivateDeal ? <div>
+              <p className="label-title">Outstanding Shares (Pre-Issue)</p>
+              <p className="label-value">30L</p>
+            </div> :
+              <div>
+                <p className="label-title">New Issue Shares</p>
+                <p className="label-value">1Cr</p>
+              </div>}
           </div>
 
           <div className="label-item">
             <span className="dot old-shares-dot"></span>
-            <div>
-              <p className="label-title">Share o/s Before Issue</p>
-              <p className="label-value">10 Cr shares</p>
-            </div>
+            {isPrivateDeal ? <div>
+              <p className="label-title">New Issue Shares</p>
+              <p className="label-value">7.5L</p>
+            </div> : <div>
+              <p className="label-title">New Issue Shares</p>
+              <p className="label-value">50L</p>
+            </div>}
           </div>
         </div>
       </div>

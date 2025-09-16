@@ -330,12 +330,10 @@ line-height: 28px; /* 233.333% */
 
 .new-shares {
   background-color: #e4c575 !important; /* light gold */
-  width: 20%; /* 2.4 Cr of 12.4 Cr */
 }
 
 .old-shares {
   background-color: #b18c07 !important; /* dark gold */
-  width: 80%;
 }
 
 .total-shares {
@@ -915,7 +913,13 @@ color: #b18c07;
 .topbar {
   display: flex;
 }
-
+.shares-header {
+  text-align: center;
+}
+.shares-header h5{
+  font-size: 14px;
+  font-weight: 400;
+}
 @media (max-width: 400px) {
 
   .lastcarousel h3 {
