@@ -4,7 +4,7 @@ const Featured = () => {
   return (
     
         <section className="why-section">
-              <h2>Why This is Featured on MakiaOne</h2>
+              <h2>Why This is Featured on Preqt</h2>
               <section>
                 <div className="why-subsection">
                   <div>

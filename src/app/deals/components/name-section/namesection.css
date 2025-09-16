@@ -994,7 +994,7 @@ color: #b18c07;
   }
   .subcontainer {
     width: 100%;
-    background-color: #ebebeb;
+    /* background-color: #ebebeb; */
   }
   .body-maincontainer {
     flex-direction: column;
@@ -1314,7 +1314,7 @@ color: #b18c07;
   }
   .subcontainer {
     width: 100%;
-    background-color: #ebebeb;
+    /* background-color: #ebebeb; */
   }
   .body-maincontainer {
     flex-direction: column;
@@ -1472,10 +1472,7 @@ color: #b18c07;
   .topbar span {
     font-size: 12px;
   }
-  .subcontainer {
-    width: 100%;
-    background-color: #ebebeb;
-  }
+
   .body-maincontainer {
     flex-direction: column;
   }
@@ -1624,6 +1621,7 @@ color: #b18c07;
 .private-deal-theme .overview-container {
   background-color: #171717 !important;
   color: white !important;
+  border-radius: 32px;
 }
 
 .private-deal-theme .topbar,
