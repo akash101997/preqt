@@ -9,7 +9,7 @@ import DebtBarChart from "../charts/DebtBarchart";
 import { useSearchParams } from "next/navigation";
 
 
-const Keyfinancials = () => {
+const Keyfinancials = ({isPrivateDeal}) => {
   const searchParams = useSearchParams();
   const dealId = searchParams?.get("dealId");
 

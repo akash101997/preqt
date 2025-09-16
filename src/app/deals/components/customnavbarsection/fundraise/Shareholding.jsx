@@ -6,7 +6,7 @@ import styles from "./Shareholding.module.css";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 
-export default function Shareholding() {
+export default function Shareholding({isPrivateDeal}) {
   const searchParams = useSearchParams();
   const dealId = searchParams?.get("dealId");
   const [showshareholding, setshowshareholding] = useState(true);
@@ -19,14 +19,14 @@ export default function Shareholding() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className={isPrivateDeal ? styles.privateContainer : styles.container}>
       <h2
         className={styles.title}
         onClick={() => setshowshareholding(!showshareholding)}
         style={{ cursor: "pointer" }}
       >
         <div>Shareholding</div>
-        <div>{showshareholding ? <ChevronUp /> : <ChevronDown />}</div>
+        <div>{showshareholding ? <ChevronUp color={isPrivateDeal ? "white" : "black"} /> : <ChevronDown color={isPrivateDeal ? "white" : "black"}/>}</div>
       </h2>
 
       {showshareholding && (
@@ -173,7 +173,9 @@ export default function Shareholding() {
         </>
       )}
 
-      <Fundamentals />
+      {!isPrivateDeal && (<Fundamentals />)}
+
+      
 
     </div>
   );

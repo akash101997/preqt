@@ -304,7 +304,7 @@ const Namedetailsection = () => {
             <Featured />
             {!isPrivateDeal && (
               <div className="secondhalf">
-                <Customnavbar />
+                <Customnavbar isPrivateDeal={isPrivateDeal}/>
               </div>
             )}
 
@@ -321,7 +321,7 @@ const Namedetailsection = () => {
 
           {isPrivateDeal ? (
             <div>
-              <Calculator isAskAiActive={isAskAiActive} handleAskAI={handleAskAI} />
+              <Calculator isAskAiActive={isAskAiActive} handleAskAI={handleAskAI} isPrivateDeal={isPrivateDeal}/>
             </div>
           ) : (
             <AskAiSection

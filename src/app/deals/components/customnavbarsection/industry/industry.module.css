@@ -144,6 +144,57 @@ padding: 16px 0px;
   border-right: 2px solid #b18c07;
 }
 
+
+.privateIndustryContainer{
+  padding: 32px;
+}
+
+.privateIndustryContainer .PeerHeading{
+  color: white;
+}
+.privateIndustryContainer .PeerTable th{
+  color: white;
+}
+
+.privateIndustryContainer .PeerTable th:first-child,
+.privateIndustryContainer .PeerTable td:first-child {
+  background-color: #2e2e2e; /* grey */
+  color: #fff; /* adjust as needed */
+
+}
+
+/* Black right side */
+.privateIndustryContainer .PeerTable th:not(:first-child),
+.privateIndustryContainer .PeerTable td:not(:first-child) {
+  background-color: #0f0f0f !important; /* black */
+  border-right: 0px;
+  
+  
+}
+
+/* Golden border line between Metric & Companies */
+.privateIndustryContainer .PeerTable th:first-child,
+.privateIndustryContainer .PeerTable td:first-child {
+  border-right: 2px solid #c9a23f; /* golden border */
+}
+
+.privateIndustryContainer .growthHeading{
+  color: white;
+}
+
+.privateIndustryContainer  .growthItem h3,
+.privateIndustryContainer  .growthItem p
+{
+  color: white;
+}
+
+.privateIndustryContainer .policyHeading{
+  color: white;
+}
+.privateIndustryContainer .policyList{
+  color: white;
+}
+
 /* .PeerTable th {
   background: #f5f5f5;
   font-weight: bold;
