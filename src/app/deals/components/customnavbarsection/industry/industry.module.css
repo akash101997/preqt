@@ -1,7 +1,12 @@
 .industryContainer {
   padding: 32px;
 }
+.industryContainer {
+  padding: 32px;
+}
 .growthSection {
+  font-size: 20px;
+  font-weight: 300;
   font-size: 20px;
   font-weight: 300;
 }
@@ -10,11 +15,16 @@
   padding: 16px 0px;
   /* border: 1px solid; */
 
+  padding: 16px 0px;
+  /* border: 1px solid; */
+
   display: flex;
+  justify-content: space-between;
   justify-content: space-between;
   font-size: 20px;
   /* margin-bottom: 1rem; */
   font-weight: 300;
+  color: #1f2937;
   color: #1f2937;
 }
 
@@ -29,9 +39,23 @@
 
 .growthItem h3 {
   padding: 4px 0px;
+  padding: 10px 0px;
+  /* border: 1px solid; */
+  font-size: 20px;
+  font-weight: 300;
+  color: #1f2937;
+  margin-bottom: 5px;
+}
+
+.growthItem h3 {
+  padding: 4px 0px;
   font-size: 14px;
   font-weight: 400;
   color: #64748b;
+  color: #64748b;
+}
+.growthItem .p {
+  padding: 4px 0px;
 }
 .growthItem .p {
   padding: 4px 0px;
@@ -43,8 +67,15 @@
   margin: 0;
   padding: 0;
 }
+.p {
+  margin: 0;
+  padding: 0;
+}
 
 .policySection {
+  /* padding: 16px 0px; */
+  font-size: 20px;
+  font-weight: 300;
   /* padding: 16px 0px; */
   font-size: 20px;
   font-weight: 300;
@@ -55,15 +86,28 @@
   display: flex;
   justify-content: space-between;
   font-size: 20px;
+  padding: 16px 0px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
   /* margin-bottom: 1rem; */
   font-weight: 300;
+  color: #1f2937;
   color: #1f2937;
 }
 
 .policyList {
   padding-left: 20px;
 
+  padding-left: 20px;
+
   list-style-type: disc;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000000;
+}
+.policyList li{
+ margin: 4px 0px;
   font-size: 14px;
   font-weight: 400;
   color: #000000;
@@ -76,6 +120,9 @@
   padding: 16px 0px;
   font-size: 20px;
   font-weight: 300;
+  padding: 16px 0px;
+  font-size: 20px;
+  font-weight: 300;
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;
@@ -84,11 +131,15 @@
 
 .PeerHeading {
 padding: 16px 0px;
+padding: 16px 0px;
   display: flex;
+  justify-content: space-between;
+  font-size: 20px;
   justify-content: space-between;
   font-size: 20px;
   /* margin-bottom: 1rem; */
   font-weight: 300;
+  color: #1f2937;
   color: #1f2937;
   /* position: fixed; */
 }
@@ -96,18 +147,25 @@ padding: 16px 0px;
 .PeerTable {
   width: 100%;
   border-collapse: collapse;
+  border-collapse: collapse;
 }
 
+.PeerTable th {
+  margin-bottom: 10px;
+}
 .PeerTable th {
   margin-bottom: 10px;
   font-size: 14px;
   font-weight: 400;
   color: #000000;
+  color: #000000;
   padding-left: 10px;
+  border-right: 2px solid #f3f4f6;
   border-right: 2px solid #f3f4f6;
   /* justify-content: center;  */
   /* position: fixed; */
 }
+
 .PeerTable th:last-child {
   border-right: none;
 }
@@ -115,7 +173,14 @@ padding: 16px 0px;
 .PeerTable th:first-child {
   border-right: 2px solid #b18c07;
 }
+.PeerTable th:first-child {
+  border-right: 2px solid #b18c07;
+}
 
+
+.tableHeading {
+  display: flex;
+}
 .tableHeading {
   display: flex;
   align-items: center;
@@ -135,10 +200,18 @@ padding: 16px 0px;
   font-weight: 400;
   color: #8a8a8a;
   border-right: 2px solid #f3f4f6;
+  color: #8a8a8a;
+  border-right: 2px solid #f3f4f6;
   padding-left: 10px;
 }
 .PeerTable td:last-child {
   border-right: none;
+}
+.PeerTable td:last-child {
+  border-right: none;
+}
+.PeerTable td:first-child {
+  border-right: 2px solid #b18c07;
 }
 .PeerTable td:first-child {
   border-right: 2px solid #b18c07;
@@ -204,4 +277,9 @@ padding: 16px 0px;
   .peerSection {
     cursor: grab;
   }
+@media (max-width: 1200px) {
+  .peerSection {
+    cursor: grab;
+  }
+}
 }

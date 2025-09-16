@@ -120,6 +120,7 @@ const Industry = ({isPrivateDeal}) => {
               <div key={index} className={styles.growthItem}>
                 <h3>{item.title}</h3>
                 <p className={styles.p}>{item.description}</p>
+                <p className={styles.p}>{item.description}</p>
               </div>
             ))}
           </div>
