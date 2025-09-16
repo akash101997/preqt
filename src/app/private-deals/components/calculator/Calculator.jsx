@@ -153,9 +153,9 @@ const Calculator = ({ onBack, handleAskAI, isPrivateDeal}) => {
             <div className={styles.viewDetailsBtn}>
               <div className={styles.leftDiv}>
                 <div className={styles.greenDot}></div>
-                <p>we have 15+ new deals</p>
+                <p>we have 1+ new deals</p>
               </div>
-              <Link className={styles.link} href="">View All Deals</Link>
+              <Link className={styles.link} href="/deals">View All Deals</Link>
 
             </div>
             <button className={styles.imageStack} onClick={() => setShowQnA(true)} >

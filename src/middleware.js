@@ -21,8 +21,6 @@ export function middleware(request) {
     "/events",
   ];
   // Debug authentication status
-  console.log("Token exists:", !!token);
-  console.log("isAuthenticated:", isAuthenticated);
 
   // Public paths (always accessible)
   const publicPaths = [
@@ -40,8 +38,16 @@ export function middleware(request) {
       pathname.startsWith("/forget-password") ||
       pathname.startsWith("/reset-password"))
   ) {
-    return NextResponse.redirect(new URL("/", origin));
+    return NextResponse.redirect(new URL("/deals", origin));
   }
+
+  if (
+    isAuthenticated &&
+    (pathname === "/")
+  ) {
+    return NextResponse.redirect(new URL("/deals", origin));
+  }
+
 
   // Rule 2: If NOT authenticated and trying to access secure paths → redirect to /signin
   const isAccessingSecurePath = securePaths.some((path) => {

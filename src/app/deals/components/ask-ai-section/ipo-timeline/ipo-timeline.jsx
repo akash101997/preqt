@@ -183,9 +183,9 @@ const Ipotimeline = ({ handleAskAI ,handleQuesAns}) => {
           <div className="view-details-btn">
             <div className="left-div">
                <div className="greenDot"></div>
-            <p>we have 15+ new deals</p>
+            <p>we have 1+ new deals</p>
             </div>
-            <Link className="link" href="">View All Deals</Link>
+            <Link className="link" href="/deals">View All Deals</Link>
 
           </div>
         </div>
