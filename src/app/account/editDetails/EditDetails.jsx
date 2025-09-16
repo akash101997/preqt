@@ -31,7 +31,7 @@ export default function EditDetails({ isOpen, onClose }) {
         <h3 className={styles.title}>Edit Account Detail</h3>
 
          <button className={styles.closeBtn} onClick={onClose}>
-          <img src="/otp modal/x.svg" alt="" />
+          <img src="/otp modal/cross-close.svg" alt="" />
         </button>
         
 </div>
