@@ -9,7 +9,7 @@ import DebtBarChart from "../charts/DebtBarchart";
 import { useSearchParams } from "next/navigation";
 
 
-const Keyfinancials = () => {
+const Keyfinancials = ({isPrivateDeal}) => {
   const searchParams = useSearchParams();
   const dealId = searchParams?.get("dealId");
 
@@ -57,7 +57,7 @@ const Keyfinancials = () => {
       [year]: !prev[year],
     }));
   };
- console.log("guvjkhygfcfg", isPrivateDeal);
+//  console.log("guvjkhygfcfg", isPrivateDeal);
   return (
     // <div className="key-financials-container">
     <div  className={`key-financials-container ${isPrivateDeal ? "private-deal" : ""}`}>

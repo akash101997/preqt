@@ -13,28 +13,28 @@ const Valuation = ({isPrivateDeal}) => {
   return <div>
     {isPrivateDeal ?
       <>
-        <div class="investmentCard">
-          <div class="investmentHeader">
+        <div className="investmentCard">
+          <div className="investmentHeader">
             <div>
-              <p class="label">Minimum Investment</p>
-              <h2 class="amt">₹ 1 lac <span class="amt-suffix">/ Lots</span></h2>
-              <p class="subtext">0 Cr / 15 Cr</p>
+              <p className="label">Minimum Investment</p>
+              <h2 className ="amt">₹ 1 lac <span className="amt-suffix">/ Lots</span></h2>
+              <p className="subtext">0 Cr / 15 Cr</p>
             </div>
 
-            <div class="docSection">
-              <p class="docLabel">IPO Doc</p>
-              <a href="#" class="docLink">
-                <span class="docText">DRHP/RHP</span>
+            <div className="docSection">
+              <p className="docLabel">IPO Doc</p>
+              <a href="#" className="docLink">
+                <span className="docText">DRHP/RHP</span>
                 <span><Drhp/></span>
               </a>
             </div>
           </div>
 
-          <div class="progressWrapper">
-            <div class="progress">
-              <div class="progress-bar" style={{width:"94%"}}></div>
+          <div className="progressWrapper">
+            <div className="progress">
+              <div className="progress-bar" style={{width:"94%"}}></div>
             </div>
-            <span class="progressPercent">94%</span>
+            <span className="progressPercent">94%</span>
           </div>
         </div>
 
