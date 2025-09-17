@@ -63,7 +63,6 @@
 .buttons button {
   border: 1px solid #505050;
   border-radius: 100%;
-  background: white;
   width: 40px;
   height: 40px;
   display: flex;

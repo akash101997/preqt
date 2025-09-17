@@ -221,4 +221,11 @@ color: #b18c07;
 }
 
 
+@media(max-width:920px){
+.card{
+  display: none;
+}
+}
+
+
 

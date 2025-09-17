@@ -13,7 +13,6 @@
 }
 
 .investmentCard {
-  background: #111; 
   padding: 16px;
   border-radius: 8px;
   color: #fff;
@@ -36,9 +35,17 @@
   font-size: 22px;
 }
 
+.progressStack{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
 .subtext {
   font-size: 14px;
   color: #6b7280;
+  margin-bottom: 2px;
 }
 
 .docSection {
@@ -49,12 +56,16 @@
   font-size: 12px;
   color: #9ca3af;
   margin: 0;
+  text-align: left;
 }
 
 .docLink {
   text-decoration: none;
-  color: #fbbf24; /* gold/yellow */
-  font-weight: bold;
+  color: var(--Golden-gradient, #B59131);
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px; /* 140% */
   display: flex;
   align-items: center;
   gap: 6px;
@@ -96,10 +107,10 @@ line-height: 28px; /* 140% */
 }
 
 .progressPercent {
-  position: absolute;
-  right: 0;
-  top: -20px;
-  font-weight: bold;
-  font-size: 14px;
+  color: var(--White-White, #FFF);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 125% */
 }
 

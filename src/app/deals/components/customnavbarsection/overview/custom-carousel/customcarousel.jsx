@@ -58,7 +58,7 @@ const FirstCarousel = ({ isPrivateDeal }) => {
         })}
       </Carousel>
 
-      <div className="d-flex mt-3 buttons justify-content-center align-items-center lastbtns">
+      <div className="d-flex buttons justify-content-center align-items-center lastbtns">
         {/* Prev */}
         <button
           className="custom-carousel-prev"

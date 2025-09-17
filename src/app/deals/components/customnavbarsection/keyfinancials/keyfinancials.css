@@ -261,7 +261,7 @@ line-height: 16px; /* 114.286% */
 }
 
 .accordion-body {border-radius: 16px;
-  padding: 24px 32px;
+  /* padding: 24px 32px; */
 
   margin-top: 14px;
   display: flex;
@@ -288,7 +288,7 @@ line-height: 16px; /* 114.286% */
 }
 
 .metric-block:first-child {
-  border-top: none;
+  /* border-top: none; */
   padding-top: 0;
 }
 
@@ -341,10 +341,14 @@ line-height: 16px; /* 114.286% */
   
 }
 
+.private-deal .s22{
+color: #9CA3AF;
+}
+
 /* Graph / Border color */
 .private-deal .accordion-item,
 .private-deal .metric-block,
 .private-deal .section {
-  border-color: #374151 !important; /* Dark Slate border */
+  border-color: #3F3F46 !important; /* Dark Slate border */
 
 }

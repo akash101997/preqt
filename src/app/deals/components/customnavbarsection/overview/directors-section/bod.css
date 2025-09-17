@@ -30,6 +30,7 @@
   border: none;
   outline: none;
   cursor: pointer;
+  padding-bottom: 24px;
   transition: background 0.2s ease;
 }
 
