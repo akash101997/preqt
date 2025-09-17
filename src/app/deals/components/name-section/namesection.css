@@ -112,6 +112,7 @@
 }
 
 .body1-buttons {
+  /* background: linear-gradient(to left , #FFF2D0 ,#8E6B0F); */
   display: flex;
   gap: 15px;
 }
@@ -120,7 +121,11 @@
     background: linear-gradient(to right , #f5e3b7 ,#8E6B0F);
 color: #ffffff;
   padding:3px 20px;
+    background: linear-gradient(to left  ,#8E6B0F, #f5e4bb);
+  padding: 3px 15px;
+      letter-spacing: 0.2px;
   border-radius: 7px;
+  color:#FFFFFF;
 font-size: 12px;
 font-style: normal;
 font-weight: 500;
@@ -133,6 +138,7 @@ line-height: 28px; /* 233.333% */
   display: flex;
   align-items: center;
   gap: 10px;
+  color: #1F2937;
   justify-content: space-between;
 }
 .ask-ai-mob-div {
