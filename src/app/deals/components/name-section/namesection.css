@@ -459,7 +459,7 @@ color: #B59131;
 
 .why-section h2 {
   padding: 10px 0px;
-  color: var(--White-White, #FFF);
+  color: var(--White-White, #000);
 font-size: 20px;
 font-style: normal;
 font-weight: 300;
@@ -474,7 +474,7 @@ margin-bottom: 16px;
   justify-content: center;
   align-items: center;
   padding: 40px 12px 24px 12px;
- background: linear-gradient(to bottom, rgba(253, 249, 238, 0.5)1%, rgba(238, 242, 253, 0.2))100%;
+  background: linear-gradient(180deg, #FDF9EE 0%, rgba(238, 242, 253, 0.00) 100%);
 
   text-align: center;
   position: relative;
@@ -516,7 +516,7 @@ margin-bottom: 16px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 30px 0px;
+  /* padding: 30px 0px; */
 }
 
 .navbar-nav {
@@ -981,6 +981,24 @@ color: #b18c07;
   color: #FFF;
 
    /* 142.857% */
+}
+
+.private-deal-theme .why-section h2{
+  color: white;
+}
+
+@media(max-width:1024px){
+  .body-maincontainer{
+    gap: 15px;
+  }
+  .body{
+    width: 56%;
+  }
+}
+@media(max-width:920px){
+  .body{
+    width: 100%;
+  }
 }
 @media (max-width: 400px) {
 
@@ -2010,12 +2028,15 @@ line-height: 28px; /* 200% */
   background-color: #27272A;
 }
 
+
+
 .private-deal-theme .custom-carousel-prev{
  background-color: #27272A;  
+ border: 1px solid #505050;
 }
 
 .private-deal-theme .custom-carousel-next{
   background-color: #27272A;  
-  
+  border: 1px solid #505050;
 }
 

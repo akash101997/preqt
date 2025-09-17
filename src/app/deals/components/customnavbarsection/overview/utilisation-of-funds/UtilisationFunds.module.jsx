@@ -7,17 +7,17 @@ export default function UtilisationFunds({ isPrivateDeal }) {
   const data = [
     {
       label: "Capital Expenditure",
-      color: "#9A7B4F",
+      color: "#927127",
       amount: "-",
     },
     {
       label: "Working Capital",
-      color: "#E0DDF1",
+      color: "#E8E7EE",
       amount: "-",
     },
     {
       label: "General corporate purposes",
-      color: "#E5D68A",
+      color: "#D1BD56",
       amount: "-",
     },
   ];

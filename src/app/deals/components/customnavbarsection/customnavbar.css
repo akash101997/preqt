@@ -44,9 +44,12 @@
 }
 .first-navbar .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
-  color: white;
-  background-color: #b18c07;
+  color: var(--Black, #000);
+text-align: center;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 16px; 
   border-radius: 100px;
   padding: 12px 20px;
-  /* object-fit: cover; */
 }

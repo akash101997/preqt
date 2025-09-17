@@ -7,8 +7,6 @@ import { useSearchParams } from "next/navigation";
 import { Collapse } from "react-bootstrap";
 
 const Business = ({ isPrivateDeal }) => {
-
-
   const [openStates, setOpenStates] = useState({
     "Products & services": true,
     "Geographical Presence": true,
@@ -45,7 +43,7 @@ const Business = ({ isPrivateDeal }) => {
           </span>
         </div>
 
-        {/* Collapse wrapper */}
+      
         <Collapse in={isOpen}>
           <div id={`collapse-${title}`}>
 
@@ -62,7 +60,7 @@ const Business = ({ isPrivateDeal }) => {
       className={`${styles.container} ${isPrivateDeal ? styles.privateDeal : ""
         }`}
     >
-      {isPrivateDeal && <Dropdown title="Products & services">
+      {isPrivateDeal ? <Dropdown title="Products & services">
         <div className={styles.products}>
           <div className={styles.card}>
             <Image src="/assets/pictures/private-product-service-1.png" alt="Human Nutrition" width={242} height={360} className={styles.cardImage} />
@@ -71,9 +69,18 @@ const Business = ({ isPrivateDeal }) => {
             <Image src="/assets/pictures/private-product-service-2.png" alt="Industrial Products" width={242} height={360} className={styles.cardImage} />
           </div>
         </div>
-      </Dropdown>}
-
-      {isPrivateDeal && <hr className={styles.hr} />}
+      </Dropdown>
+      :
+      <Dropdown title="Products & services">
+        <div className={styles.products}>
+          <div className={styles.card}>
+            <Image src="/assets/pictures/public-deals-product.png" alt="Human Nutrition" width={242} height={360} className={styles.cardImage} />
+          </div>
+         
+        </div>
+      </Dropdown>
+      }
+       <hr className={styles.hr} />
 
       <Dropdown title="Geographical Presence">
         <p className={styles.p}>

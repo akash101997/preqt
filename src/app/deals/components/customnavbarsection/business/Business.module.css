@@ -1,7 +1,7 @@
   .container {
   background-color: #FFFFFF;
   color: #1F2937;
-  padding:0px 24px 24px 24px ;
+  padding:24px 24px 24px 24px ;
   border-radius: 32px;
   /* font-family: Arial, sans-serif; */
 }
@@ -35,12 +35,9 @@
   /* border: none; */
   height: 1px;
   background-color: #F3F4F6;
+  opacity: 0.1;
 }
 
-.content {
-  padding: 12px 0;
-  /* Don't fix height or overflow here */
-}
 
 .collapse,
 .collapsing {
@@ -50,14 +47,13 @@
 
 .products {
   display: grid;
-  gap: 18px; 
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
+  gap: 18px;
+  grid-template-columns: repeat(3, 1fr); /* default: 1 column (mobile) */
   margin-top: 1rem;
+  margin-bottom: 24px;
 }
 
 .card {
-  
   width: 100%;
   height: auto; 
 }
@@ -77,13 +73,9 @@
 .p {
   font-size: 14px;
   font-weight: 400;
-  color: #64748b;
+  color: #000;
   padding: 10px 0px;
   margin: 0;
-  /* gap: 10px; */
-  /* border: 1px solid red; */
-
-
 }
 
  .strong {
