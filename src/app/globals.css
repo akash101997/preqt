@@ -263,3 +263,17 @@
      font-size: 12px;
    }
  }
+
+ .log-out-modal .modal-header,
+ .log-out-modal .modal-footer {
+   border-bottom: unset;
+   border-top: unset;
+ }
+
+ .log-out-modal .btn-close:focus {
+   box-shadow: none !important;
+ }
+
+  .log-out-modal .btn-close:focus-visible {
+   outline: none !important;
+ }

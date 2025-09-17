@@ -83,7 +83,7 @@
   color: #1f2937;
   font-size: 14px;
   font-weight: 500;
-  position: absolute;
+  /* position: absolute; */
   left: 12px;
   top: -10px;
   background: #fff;
@@ -99,6 +99,29 @@
   font-size: 16px;
   letter-spacing: 12px;
 }
+
+.otpInputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: auto;
+  justify-content: center;
+}
+
+.otpInputs input {
+  max-height: 50px;
+  width: 100%;
+  width: 50px;
+  border-radius: 5px;
+  padding: 10px 17px;
+  border: 1px solid #E5E7EB
+}
+
+.otpInputs input:focus-visible {
+  outline: none;
+  border-color: #97999c;
+}
+
 
 .resendRow {
   margin: 24px 0;
@@ -206,5 +229,9 @@
   .button {
     height: 40px;
     font-size: 14px;
+  }
+  .otpInputs input{
+    max-width: 40px;
+    padding: 10px 14px;
   }
 }

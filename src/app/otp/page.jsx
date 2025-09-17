@@ -1,7 +1,6 @@
 "use client";
 import { useSearchParams, useRouter } from "next/navigation";
-
-import { useEffect, useMemo, useState, Suspense } from "react";
+import { useEffect, useMemo, useRef, useState, Suspense } from "react";
 import styles from "./otp.module.css";
 import { toast } from "react-toastify";
 import Cookies from "js-cookie";
@@ -11,16 +10,13 @@ function OtpPageContent() {
   const params = useSearchParams();
   const router = useRouter();
   const email = params.get("email") || "";
-  const [otp, setOtp] = useState("");
+  const [otp, setOtp] = useState(new Array(6).fill(""));
+  const inputRefs = useRef([]);
+
   const [seconds, setSeconds] = useState(60);
   const [canResend, setCanResend] = useState(false);
 
-  useEffect(() => {
-    if (seconds <= 0) return;
-    const t = setTimeout(() => setSeconds(seconds - 1), 1000);
-    return () => clearTimeout(t);
-  }, [seconds]);
-
+  // countdown
   useEffect(() => {
     if (seconds <= 0) {
       setCanResend(true);
@@ -29,23 +25,61 @@ function OtpPageContent() {
     const t = setTimeout(() => setSeconds(seconds - 1), 1000);
     return () => clearTimeout(t);
   }, [seconds]);
-  const isValidOtp = useMemo(() => /^\d{6}$/.test(otp), [otp]);
+
+  const isValidOtp = useMemo(() => otp.every((digit) => /^\d$/.test(digit)), [otp]);
+
+  const handleChange = (value, index) => {
+    if (!/^\d?$/.test(value)) return; // allow only single digit
+
+    const newOtp = [...otp];
+    newOtp[index] = value;
+    setOtp(newOtp);
+
+    // move to next input
+    if (value && index < 5) {
+      inputRefs.current[index + 1].focus();
+    }
+  };
+
+  const handleKeyDown = (e, index) => {
+    if (e.key === "Backspace" && !otp[index] && index > 0) {
+      inputRefs.current[index - 1].focus();
+    }
+  };
+
+  const handlePaste = (e) => {
+    e.preventDefault();
+    const pasteData = e.clipboardData.getData("text").replace(/\D/g, ""); // only digits
+    if (!pasteData) return;
+
+    const newOtp = [...otp];
+    for (let i = 0; i < 6; i++) {
+      newOtp[i] = pasteData[i] || "";
+    }
+    setOtp(newOtp);
+
+    // move focus to last filled input
+    const lastIndex = Math.min(pasteData.length, 6) - 1;
+    if (lastIndex >= 0 && inputRefs.current[lastIndex]) {
+      inputRefs.current[lastIndex].focus();
+    }
+  };
 
   const handleProceed = async (e) => {
     e.preventDefault();
     if (!isValidOtp) return;
 
+    const otpString = otp.join("");
+
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_USER_BASE}investor/api/investor/verify-email-otp
-`,
+        `${process.env.NEXT_PUBLIC_USER_BASE}investor/api/investor/verify-email-otp`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          _retry: true,
-          body: JSON.stringify({ email, otp }),
+          body: JSON.stringify({ email, otp: otpString }),
         }
       );
 
@@ -78,10 +112,9 @@ function OtpPageContent() {
           designation: investor.designation,
           location: investor.location,
         };
-
         Cookies.set("investor", JSON.stringify(simplifiedInvestor));
       }
-      Cookies.remove("verifyOtp")
+      Cookies.remove("verifyOtp");
       window.location.replace("/");
     } catch (error) {
       console.error("Login error:", error);
@@ -108,7 +141,6 @@ function OtpPageContent() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      // Reset timer and hide resend button
       setSeconds(60);
       setCanResend(false);
       toast.success("OTP has been resent to your email");
@@ -125,6 +157,7 @@ function OtpPageContent() {
         onClick={() => router.back()}
         aria-label="Go back"
       >
+        {/* Back Arrow */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -138,46 +171,34 @@ function OtpPageContent() {
           />
         </svg>
       </button>
-      <img
-        src="/assets/pictures/logo.svg"
-        alt="Preqt Logo"
-        className={styles.logo}
-      />
+      <img src="/assets/pictures/logo.svg" alt="Preqt Logo" className={styles.logo} />
       <h1 className={styles.title}>Enter OTP To Verify</h1>
-      <p className={styles.subtitle}>
-        Enter 6 digit OTP sent to you on {email}
-      </p>
+      <p className={styles.subtitle}>Enter 6 digit OTP sent to you on {email}</p>
 
       <form className={styles.form} onSubmit={handleProceed}>
         <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="otp">
-            OTP
-          </label>
-          <input
-            id="otp"
-            inputMode="numeric"
-            pattern="[0-9]*"
-            maxLength={6}
-            className={styles.input}
-            placeholder="______"
-            value={otp}
-            onChange={(e) => setOtp(e.target.value.replace(/[^0-9]/g, ""))}
-          />
+          <div className={styles.otpInputs}>
+            {otp.map((digit, i) => (
+              <input
+                key={i}
+                type="text"
+                inputMode="numeric"
+                maxLength={1}
+                value={digit}
+                onChange={(e) => handleChange(e.target.value, i)}
+                onKeyDown={(e) => handleKeyDown(e, i)}
+                onPaste={handlePaste} // ✅ paste support
+                ref={(el) => (inputRefs.current[i] = el)}
+                className={styles.otpInput}
+              />
+            ))}
+          </div>
         </div>
 
         <div className={styles.resendRow}>
-          {/* Resend OTP in{" "}
-          <span className={styles.timer}>
-            00:{String(seconds).padStart(2, "0")}
-          </span>{" "}
-          seconds */}
           {canResend ? (
             <div className={styles.resendButtonDiv}>
-              <span
-                // type="button"
-                className={styles.resendButton}
-                onClick={handleResendOtp}
-              >
+              <span className={styles.resendButton} onClick={handleResendOtp}>
                 Resend OTP
               </span>
             </div>
@@ -194,8 +215,7 @@ function OtpPageContent() {
 
         <button
           type="submit"
-          className={`${styles.button} ${!isValidOtp ? styles.buttonDisabled : ""
-            }`}
+          className={`${styles.button} ${!isValidOtp ? styles.buttonDisabled : ""}`}
           disabled={!isValidOtp}
         >
           Proceed
