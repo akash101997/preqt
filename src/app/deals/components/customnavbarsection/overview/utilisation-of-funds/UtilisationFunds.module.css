@@ -42,7 +42,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color:#817E7E;
+  color: #817E7E;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 22.4px */
 }
 
 .colorBox {
