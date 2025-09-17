@@ -1,8 +1,10 @@
 .body-section4{
+    margin-top: 20px;
     display: flex;
     gap: 80px;
     /* justify-content: space-around; */
     align-items: center;
+
      
 }
 
@@ -22,7 +24,7 @@
 .body-section4 .bank-sec{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
 }
 
@@ -120,4 +122,116 @@ width: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+@media(max-width:550px){
+  .smallcard-section-subcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .subs1-topp div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   width: 100%;
+  }
+  /* .main-other :nth-child(2){
+    text-align: right;
+  }
+   .main-other :nth-child(1){
+    text-align: left;
+  } */
+   /* .main-other{
+     display: flex;
+  justify-content: left;
+   } */
+
+   .main-other {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* spacing between rows */
+}
+
+.others {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* left + right */
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+ 
+}
+
+
+
+
+@media(max-width:1330px){
+    .body-section4{
+    
+      display: flex;
+    justify-content: center;
+      flex-direction: column;
+      /* align-items: start; */
+      /* padding: 20px; */
+      gap: 20px;
+    }
+
+
+     .body-section4 section{
+        background-color: #F3F4F6;
+        border-radius: 12px;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+
+     }
+
+    .bank.det {
+         margin: 0 auto;
+    
+    }
+    .bank-det-value{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bank-det-value img{
+
+        margin: 0px 20px 10px ;
+    }
+
+    .ipoDoc p,
+    .ipoDoc h6,
+    .ipoDoc{
+
+        margin: 0px auto;
+    
+    }
+}
+
+@media(min-width:1330px){
+    .body-section4 :nth-of-type(3) {
+  margin-left: 40px;
+}
+ .bank-det-value{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+     .bank-det-value img{
+
+        margin: 0px 20px 10px ;
+    }
+
+
 }
