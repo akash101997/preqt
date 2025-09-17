@@ -192,9 +192,7 @@ line-height: 28px; /* 233.333% */
   display: flex;
 
 }
-.body-section4 :nth-of-type(3) {
-  margin-left: 40px;
-}
+
 
 .body-section4 button {
   padding: 8px 16px;
