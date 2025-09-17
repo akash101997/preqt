@@ -15,7 +15,7 @@ const Valuation = ({ isPrivateDeal }) => {
       <div className="investmentHeader">
         <div>
           <p className="label">Minimum Investment</p>
-          <h2 className="amt">₹20 lac <span className="amt-suffix">/ 10,000 Lots</span></h2>
+          <h2 className="amt">₹20 lac <span className="amt-suffix"> 10,000 Lots</span></h2>
         
         </div>
 

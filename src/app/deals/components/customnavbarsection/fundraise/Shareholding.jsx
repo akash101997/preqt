@@ -31,49 +31,49 @@ const publicData = [
   {
     id: 1,
     name: "Bhaskar Kisshan Pawar",
-    pre_issue: "48.60%",
-    post_issue: "32.40%"
+    pre_issue: "48.6%",
+    post_issue: "32.4%"
   },
   {
     id: 2,
     name: "Govind Janabau Sable",
-    pre_issue: "48.60%",
-    post_issue: "32.40%"
+    pre_issue: "48.6%",
+    post_issue: "32.4%"
   },
   {
     id: 3,
     name: "Sainath Bhaskar Pawar",
-    pre_issue: "0.40%",
+    pre_issue: "0.4%",
     post_issue: "0.27%"
   },
   {
     id: 4,
     name: "Sujata Govind Sable",
-    pre_issue: "0.60%",
-    post_issue: "0.40%"
+    pre_issue: "0.6%",
+    post_issue: "0.4%"
   },
   {
     id: 5,
     name: "Sairaj Govind Sable",
-    pre_issue: "0.60%",
-    post_issue: "0.40%"
+    pre_issue: "0.6%",
+    post_issue: "0.4%"
   },
   {
     id: 6,
     name: "Sunita Bhaskar Pawar",
-    pre_issue: "0.40%",
+    pre_issue: "0.4%",
     post_issue: "0.27%"
   },
   {
     id: 7,
     name: "Shweta Sainath Pawar",
-    pre_issue: "0.40%",
+    pre_issue: "0.4%",
     post_issue: "0.27%"
   },
   {
     id: 8,
     name: "Sanjay Balu Gunjal",
-    pre_issue: "0.40%",
+    pre_issue: "0.4%",
     post_issue: "0.27%"
   }
 ];

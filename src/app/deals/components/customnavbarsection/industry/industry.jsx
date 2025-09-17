@@ -52,8 +52,8 @@ const Industry = ({isPrivateDeal}) => {
   ] :
     [
       { metric: "Revenue (₹ Cr)", premium: "288.2", pranik: "104.7" },
-      { metric: "Net Profit (₹ Cr)", premium: "15.6", pranik: "6.4" },
-      { metric: "EBITDA Margin", premium: "8.3%", pranik: "11.30%" },
+      { metric: "Net Profit (₹ Cr)", premium: "15.7", pranik: "6.4" },
+      { metric: "EBITDA Margin", premium: "8.4%", pranik: "11.30%" },
       { metric: "ROE", premium: "17.60%", pranik: "17%", },
       { metric: "ROCE", premium: "17.60%", pranik: "18.30%" },
       { metric: "P/E Ratio", premium: "-", pranik: "-" },
@@ -169,8 +169,8 @@ const Industry = ({isPrivateDeal}) => {
             <thead>
               <tr>
                 <th>Metric</th>
-                <th><div className={styles.tableHeading}><span>Solex Energy</span><img src="/assets/pictures/premium.svg" alt="" /></div></th>
-                <th><div className={styles.tableHeading}><span>Servotac <br />Renewable<br /> Power</span><img src="/assets/pictures/pranik.svg" alt="" /></div></th>
+                <th><div className={styles.tableHeading}><span>Premium Roadlines</span><img src="/assets/pictures/premium.svg" alt="" /></div></th>
+                <th><div className={styles.tableHeading}><span>Pranik Logistics</span><img src="/assets/pictures/pranik.svg" alt="" /></div></th>
 
               </tr>
             </thead>
