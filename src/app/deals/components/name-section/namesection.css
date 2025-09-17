@@ -999,6 +999,9 @@ color: #b18c07;
   .body{
     width: 100%;
   }
+  .ask-ai-section{
+    display: none;
+  }
 }
 @media (max-width: 400px) {
 

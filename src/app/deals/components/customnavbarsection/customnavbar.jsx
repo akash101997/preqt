@@ -1,24 +1,34 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Tab, Tabs, Fade } from "react-bootstrap";
-import { useState, useEffect } from "react";
 import Overview from "./overview/overview";
 import Fundamentals from "./fundamentals/fundamentals";
 import Keyfinancials from "./keyfinancials/keyfinancials";
-// import Shareholdings from "./industry/shareholdings/shareholdings";
-import "./customnavbar.css";
 import Industry from "./industry/industry";
 import Business from "./business/Business";
 import Shareholding from "./fundraise/Shareholding";
 import Documentation from "./documentation/page";
+import "./customnavbar.css";
 
-const Customnavbar = ({isPrivateDeal}) => {
+const Customnavbar = ({ isPrivateDeal }) => {
   const [key, setKey] = useState("Overview");
-  // console.log("Industry component is:", Industry);
+  const tabsRef = useRef(null);
+
+  useEffect(() => {
+    const activeTab = tabsRef.current?.querySelector(".nav-link.active");
+    if (activeTab) {
+      activeTab.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
+  }, [key]);
 
   return (
     <div className="first-navbar">
       <Tabs
         id="carousel-tabs"
+        ref={tabsRef}
         activeKey={key}
         onSelect={(k) => setKey(k)}
         className="navigation-tabs"
@@ -27,28 +37,24 @@ const Customnavbar = ({isPrivateDeal}) => {
         unmountOnExit
       >
         <Tab eventKey="Overview" title="Overview">
-          <Overview isPrivateDeal = {isPrivateDeal}/>
+          <Overview isPrivateDeal={isPrivateDeal} />
         </Tab>
         <Tab eventKey="Business" title="Business">
-          <Business isPrivateDeal={isPrivateDeal}/>
+          <Business isPrivateDeal={isPrivateDeal} />
         </Tab>
-        {/* <Tab eventKey="Fundamentals" title="Fundamentals">
-          <Fundamentals />
-        </Tab> */}
         <Tab eventKey="Industry Overview" title="Industry Overview">
-          <Industry isPrivateDeal={isPrivateDeal}/>
+          <Industry isPrivateDeal={isPrivateDeal} />
         </Tab>
         <Tab eventKey="Financia Highlights" title="Financial Highlights">
-          <Keyfinancials isPrivateDeal = {isPrivateDeal}/>
+          <Keyfinancials isPrivateDeal={isPrivateDeal} />
         </Tab>
         <Tab eventKey="Fundraise/Future Plans" title="Fundraise/Future Plans">
-          <Shareholding isPrivateDeal={isPrivateDeal}/>
-        </Tab> 
+          <Shareholding isPrivateDeal={isPrivateDeal} />
+        </Tab>
         <Tab eventKey="Documentation" title="Documentation">
-          <Documentation isPrivateDeal={isPrivateDeal}/>
+          <Documentation isPrivateDeal={isPrivateDeal} />
         </Tab>
       </Tabs>
-      
     </div>
   );
 };
