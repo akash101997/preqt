@@ -16,6 +16,7 @@ import Cookies from "js-cookie";
 
 // import { useRouter } from 'next/router';
 import { usePathname, useRouter } from "next/navigation";
+import LogoutModal from "../components/LogoutModal";
 // import { FaUser, FaMoneyCheckAlt, FaBell, FaFileAlt, FaQuestionCircle, FaFileSignature, FaSignOutAlt, FaHeadset } from 'react-icons/fa';
 
 export default function Sidenav() {
@@ -23,6 +24,7 @@ export default function Sidenav() {
   const [fullName, setFullName] = useState("");
   const [id, setId] = useState("");
   const router = useRouter();
+  const [showLogout, setShowLogout] = useState(false)
 
   useEffect(() => {
     const investorStr = Cookies.get("investor");
@@ -97,7 +99,7 @@ export default function Sidenav() {
           </li> */}
           <div className={styles.line}></div>
 
-          <li id={styles.support}      
+          <li id={styles.support}
             className={styles.item}
             onClick={() => router.push("/account/support")}
           >
@@ -185,7 +187,7 @@ export default function Sidenav() {
                 />
               </button>
             </div>
-        </li>
+          </li>
           <div className={styles.line}></div>
 
           {/*   <li
@@ -210,7 +212,7 @@ export default function Sidenav() {
         <div className={styles.logout_section}>
           <div className={styles.lagout_hr}></div>
 
-          <div className={styles.logout}>
+          <div className={styles.logout} onClick={() => { setShowLogout(true) }}>
             {/* <div className={styles.hr}></div>  */}
             <Logout_svg className={styles.UserSvg} />
 
@@ -218,6 +220,14 @@ export default function Sidenav() {
           </div>
         </div>
       </div>
+
+      {showLogout && <LogoutModal
+        show={showLogout}
+        onClose={() => setShowLogout(false)}
+        onLogout={() => {
+          Cookies.remove("accessToken"); router.push("/signin")
+        }}
+      />}
     </div>
   );
 }
