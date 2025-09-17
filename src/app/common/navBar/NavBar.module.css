@@ -343,7 +343,7 @@ background-color: #FF6A55;
     opacity: 1;
     /* height: 100vh; */
     /* transition: width 0.3s ease-in-out; */
-    z-index: 30;
+    z-index: 99999;
     background-color: white;
     /* transform: translateX(0); */
     width: 100%;

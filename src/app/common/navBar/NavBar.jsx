@@ -210,7 +210,7 @@ export default function NavBar() {
           </div>
 
           {/* logout */}
-          <div className={styles.logoutContainerDiv} onClick={() => { setShowLogout(true) }}>
+          <div className={styles.logoutContainerDiv} onClick={() => { setMenuOpen(false); setShowLogout(true) }}>
             <img src="/assets/pictures/login.svg" alt="" />
             <div className={styles.logout}>Log Out</div>
           </div>
