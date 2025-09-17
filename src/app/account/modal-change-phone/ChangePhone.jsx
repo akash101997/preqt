@@ -8,7 +8,7 @@ export default function ChangePhon({ isOpen, onClose }) {
     <div className={styles.overlay}>
       <div className={styles.modal}>
         <div className={styles.headar}> 
-        <button className={styles.closeBtn} onClick={onClose}><img src="/otp modal/x.svg" alt="" /></button>
+        <button className={styles.closeBtn} onClick={onClose}><img src="/otp modal/cross-close.svg" alt="" /></button>
         <h3 className={styles.title}>Change Mobile Number</h3>
         </div>
         <div  className={styles.hr}></div>

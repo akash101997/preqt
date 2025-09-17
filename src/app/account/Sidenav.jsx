@@ -78,7 +78,8 @@ export default function Sidenav() {
           </li>
           <div className={styles.line}></div>
 
-          <li
+          {/* <li
+           id={styles.Transactions} 
             className={styles.item}
             onClick={() => router.push("/account/transation")}
           >
@@ -93,10 +94,10 @@ export default function Sidenav() {
                 />
               </button>
             </div>
-          </li>
+          </li> */}
           <div className={styles.line}></div>
 
-          <li
+          <li id={styles.support}      
             className={styles.item}
             onClick={() => router.push("/account/support")}
           >
@@ -114,11 +115,11 @@ export default function Sidenav() {
           </li>
           <div className={styles.line}></div>
 
-          <li
+          {/* <li
             className={styles.item}
             onClick={() => router.push("/account/notification")}
           >
-            {/* <img className={styles.icon} src='/account_sidenav/notification.svg' alt='' /> */}
+    
             <Notification_perference_svg className={styles.UserSvg} />
             <div className={styles.responsive_btn}>
               <span>Notification preference</span>
@@ -130,7 +131,7 @@ export default function Sidenav() {
                 />
               </button>
             </div>
-          </li>
+          </li> */}
           <div className={styles.line}></div>
 
           <li
@@ -184,10 +185,10 @@ export default function Sidenav() {
                 />
               </button>
             </div>
-          </li>
+        </li>
           <div className={styles.line}></div>
 
-          <li
+          {/*   <li
             className={styles.item}
             onClick={() => router.push("/account/my-document")}
           >
@@ -202,7 +203,7 @@ export default function Sidenav() {
                 />
               </button>
             </div>
-          </li>
+          </li> */}
           <div className={styles.line}></div>
         </ul>
 

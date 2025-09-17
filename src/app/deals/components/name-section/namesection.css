@@ -119,7 +119,7 @@
 .body1-buttons span {
     background: linear-gradient(to right , #f5e3b7 ,#8E6B0F);
 color: #ffffff;
-  padding: 3px 20px;
+  padding:3px 20px;
   border-radius: 7px;
 font-size: 12px;
 font-style: normal;
@@ -127,6 +127,7 @@ font-weight: 500;
 letter-spacing: 0.2px;
 line-height: 28px; /* 233.333% */
 }
+
 
 .body-section2 {
   display: flex;
@@ -1684,9 +1685,9 @@ color: #b18c07;
   fill: white;
 }
 
-.private-deal-theme .body1-buttons span {
-  background-color: #404040 !important;
-  color: white !important;
+.private-deal-theme .body1-buttons span{
+  background:#FFF3D733 !important;
+  color: #ffff !important;
 }
 
 .private-deal-theme .topbar span,
@@ -1781,7 +1782,7 @@ fill: #C9A74E;
 }
 
 .private-deal-theme .about-section {
-  background: #09090B !important;
+  background: #27272A !important;
   color: white !important;
 }
 
@@ -1789,7 +1790,7 @@ fill: #C9A74E;
   color: white !important;
 }
 .private-deal-theme .about-section p{
-  color:#6B7280 !important;
+  color:#D1D5DB !important;
 }
 
 .private-deal-theme .pitch-deck {
@@ -1943,5 +1944,8 @@ line-height: 28px; /* 200% */
 }
 
 .private-deal-theme .custom-carousel-prev{
- background-color: #27272A;  
+ background-color: #2B2B2B!important;  
+}
+.private-deal-theme .custom-carousel-next{
+  background-color: #2B2B2B !important;
 }

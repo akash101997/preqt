@@ -130,8 +130,9 @@ export default function NavBar() {
             <img src="/assets/pictures/bell.svg" alt="" />
             <div className={styles.notificationBadge}>1</div>
           </div>
+         
         </article>
-      </div>
+      </div> 
 
       <div
         className={`${styles.overlay} ${menuOpen ? styles.active : ""}`}
@@ -285,14 +286,14 @@ export default function NavBar() {
         </div>
 
         <div className={styles.navRightSection}>
-          <div className={styles.NotificationIconContainer}>
+          {/* <div className={styles.NotificationIconContainer}>
             <img
               className={styles.icons}
               src="/assets/pictures/notification.svg"
               alt=""
             />
             <div className={styles.notificationBadge}>2</div>
-          </div>
+          </div> */}
           <div className={styles.UserIconContainer}>
             <Link href={"/account/details"} className={styles.Link}>
               {" "}
