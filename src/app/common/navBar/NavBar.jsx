@@ -2,10 +2,8 @@
 import styles from "./NavBar.module.css";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
-import LogoutModal from "@/app/components/LogoutModal";
 import LogoutModal from "@/app/components/LogoutModal";
 
 export default function NavBar() {
@@ -13,9 +11,6 @@ export default function NavBar() {
   const searchParams = useSearchParams();
   const dealId = searchParams?.get("dealId");
   const [shortName, setShortName] = useState("");
-  const router = useRouter();
-  const [showLogout, setShowLogout] = useState(false)
-
   const router = useRouter();
   const [showLogout, setShowLogout] = useState(false)
 
@@ -140,9 +135,7 @@ export default function NavBar() {
             <div className={styles.notificationBadge}>1</div>
           </div>
 
-
         </article>
-      </div>
       </div>
 
       <div
@@ -222,7 +215,6 @@ export default function NavBar() {
             <div className={styles.logout}>Log Out</div>
           </div>
         </div>
-      </nav >
       </nav >
 
       <section
@@ -314,13 +306,6 @@ export default function NavBar() {
           </div>
         </div>
       </section>
-      {showLogout && <LogoutModal
-        show={showLogout}
-        onClose={() => setShowLogout(false)}
-        onLogout={() => {
-          Cookies.remove("accessToken"); router.push("/signin")
-        }}
-      />}
       {showLogout && <LogoutModal
         show={showLogout}
         onClose={() => setShowLogout(false)}

@@ -1,10 +1,9 @@
-.first-navbar {
-  width: 100%;
-  margin: 0 auto;
-  /* justify-content: center; */
+.first-navbar{
+  background-color: #fff;
 }
 .first-navbar .navigation-tabs {
   margin: 10px 0px 0px 0px !important;
+  
   padding: 10px 10px;
   display: flex;
   justify-content: space-evenly;
@@ -15,41 +14,64 @@
   white-space: nowrap;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  
 }
+
 #carousel-tabs::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
+  
 }
 
 .first-navbar .navigation-tabs li {
   border: none;
   box-shadow: none;
   --bs-nav-tabs-border-width: none;
-  border-radius: 100px;
 }
 
-/* .first-navbar .navigation-tabs .nav-item:hover {
-  background-color: transparent;
-} */
-
+/* .first-navbar .navigation-tabs .nav-item:hover { background-color: transparent; } */
 .first-navbar .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link {
-  padding: 12px 20px;
-  color: #6b7280;
-  border-radius: 100px;
-  font-weight: 500;
-  font-size: 16px;
-  font-family: Helvetica;
+  color: var(--Golden-gradient, #64748B);
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
   line-height: 20px;
+  padding: 8px 10px;
+ 
 }
+
 .first-navbar .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
-  color: var(--Black, #000);
-text-align: center;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 16px; 
-  border-radius: 100px;
-  padding: 12px 20px;
+  color: var(--Golden-gradient, #B59131);
+  text-align: center;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+ 
+  padding: 8px 10px;
+  border-bottom: 2px solid #B59131;
+  border-radius: none !important;
+  background-color: transparent;
+}
+
+.first-navbar .nav-tabs .nav-link {
+  position: relative;
+  transition: color 0.3s ease; /* smooth color change */
+}
+
+.first-navbar .nav-tabs .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #b59131;
+  transition: width 0.3s ease;
+}
+
+.first-navbar .nav-tabs .nav-link.active::after {
+  width: 100%; /* animate underline */
 }
