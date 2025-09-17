@@ -73,7 +73,7 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
         <Collapse in={openStates.financialTrends}>
           <div className="section-body">
             <h2 style={{ marginBottom: '20px' }}>Revenue growth with EBITDA and PAT margins</h2>
-            <Barchart />
+            <Barchart isPrivateDeal = {isPrivateDeal} />
           </div>
         </Collapse>
       </div>

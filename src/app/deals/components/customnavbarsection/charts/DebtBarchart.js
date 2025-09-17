@@ -17,14 +17,14 @@ const data = [
     { year: "2024", value: 0 },
 ];
 
-const DebtBarChart = ({isPrivate= false}) => {
+const DebtBarChart = ({ isPrivate = false }) => {
     return (
         <ResponsiveContainer width="100%" height={300}>
             <BarChart data={data} barSize={60}>
                 <CartesianGrid
                     strokeDasharray="3 3"
                     vertical={false}
-                    stroke="#e5e7eb" // light gray grid lines
+                    stroke={isPrivate ? "#374151" : "#E2E8F0"}
                 />
                 <XAxis
                     dataKey="year"
@@ -34,10 +34,10 @@ const DebtBarChart = ({isPrivate= false}) => {
                         fontStyle: "normal",
                         fontWeight: 500,
                         letterSpacing: -0.56,
-                        
+
                     }}
-                    axisLine={{ stroke: "#E2E8F0" }}
-                    tickLine={{ stroke: "#E2E8F0" }}
+                    axisLine={{ stroke: isPrivate ? "#374151" : "#E2E8F0" }}
+                    tickLine={{ stroke: isPrivate ? "#374151" : "#E2E8F0" }}
                 />
                 <YAxis
                     domain={[0, 1.4]}
@@ -47,10 +47,10 @@ const DebtBarChart = ({isPrivate= false}) => {
                         fontStyle: "normal",
                         fontWeight: 500,
                         letterSpacing: -0.56,
-                         // aligns right
+                        // aligns right
                     }}
-                    axisLine={{ stroke: "#E2E8F0" }}
-                    tickLine={{ stroke: "#E2E8F0" }}
+                    axisLine={{ stroke: isPrivate ? "#374151" : "#E2E8F0" }}
+                    tickLine={{ stroke: isPrivate ? "#374151" : "#E2E8F0" }}
                 />
                 <Tooltip cursor={{ fill: "transparent" }} />
                 <Bar

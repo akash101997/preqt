@@ -11,14 +11,12 @@
 }
 
 .FooterInnerDiv {
-    /* max-width: 1800px; */
-    /* max-height: 309px; */
     width: 100%;
     max-width: 1800px;
     display: flex;
     flex-direction: column;
     gap: 24px;
-    /* border: 1px solid white; */
+   
 }
 
 .upperFooter {
@@ -36,7 +34,7 @@
 .footerRightPart {
     /* max-width: 1457px; */
     flex: 1;
-    max-height: 239px;
+    /* max-height: 239px; */
     display: flex;
     justify-content: space-between;
     /* border: 1px solid wheat; */
