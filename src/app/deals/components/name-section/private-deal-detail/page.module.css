@@ -196,3 +196,9 @@
     text-shadow: none;
     will-change: auto;
 }
+
+@media(max-width: 1024px){
+    .respectedDetails{
+        width: 70%;
+    }
+}

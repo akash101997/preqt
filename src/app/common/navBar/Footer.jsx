@@ -1,3 +1,4 @@
+import Image from "next/image"
 import styles from "./Footer.module.css"
 
 export default function Footer() {
@@ -8,9 +9,9 @@ export default function Footer() {
             <div className={styles.FooterInnerDiv}>
                 {/* upper div container */}
                 <div className={styles.upperFooter}>
-                    {/* left logo part */}
+                   
                     <article>
-                        <img src="/assets/pictures/footer_logo.svg" alt="" className={styles.footerImage} />
+                    <Image src={'/footer-icon.svg'} width={153} height={50} alt={'Footer Image'}/>
                     </article>
 
                     {/* right content part */}

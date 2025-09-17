@@ -7,8 +7,6 @@ const Piechart = ({ centerContent }) => {
     { name: "Debt Repayment", value: 30 },
     { name: "Capex", value: 50 },
 
-
-
   ];
   const text = []
   const COLORS = ["#D1BD56", "#927127", "#10100f"];
