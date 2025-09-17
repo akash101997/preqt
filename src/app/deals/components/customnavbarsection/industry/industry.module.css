@@ -1,5 +1,6 @@
 .industryContainer {
   padding: 32px;
+  padding-top: 0;
 }
 .industryContainer {
   padding: 32px;
@@ -220,6 +221,7 @@ padding: 16px 0px;
 
 .privateIndustryContainer{
   padding: 32px;
+  padding-top: 0;
 }
 
 .privateIndustryContainer .PeerHeading{

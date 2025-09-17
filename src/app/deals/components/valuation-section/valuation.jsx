@@ -16,7 +16,7 @@ const Valuation = ({ isPrivateDeal }) => {
         <div>
           <p className="label">Minimum Investment</p>
           <h2 className="amt">₹20 lac <span className="amt-suffix">/ 10,000 Lots</span></h2>
-          <p className="subtext">0 Cr / 15 Cr</p>
+        
         </div>
 
         <div className="docSection">
@@ -29,10 +29,16 @@ const Valuation = ({ isPrivateDeal }) => {
       </div>
 
       <div className="progressWrapper">
+      <div className="progressStack">
+        <p className="subtext">0 Cr / 15 Cr</p>
+        <span className="progressPercent">94%</span>
+        </div>
         <div className="progress">
+          
           <div className="progress-bar" style={{ width: "94%" }}></div>
         </div>
-        <span className="progressPercent">94%</span>
+       
+        
       </div>
     </div>}
     <AiIpoOverview isPrivateDeal={isPrivateDeal} />

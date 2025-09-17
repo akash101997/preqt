@@ -29,10 +29,6 @@ const Calculator = ({ onBack, handleAskAI, isPrivateDeal}) => {
   //    if (showchatbot) {
   // return <Chatbot/>;
 
-
-
-
-
   const handleIncrement = () => setLots(lots + 1);
   const handleDecrement = () => {
     if (lots > 1) setLots(lots - 1);
