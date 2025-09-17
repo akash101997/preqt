@@ -1037,11 +1037,14 @@ color: #b18c07;
   .topbar {
     display: none;
   }
+ 
   .mob-topbar {
+    font-size: 16px !important;
     display: flex;
     justify-content: space-between;
     padding: 16px 10px;
   }
+   
   .body-section4 section{
     padding: 0px !important;
   }
@@ -1264,9 +1267,11 @@ color: #b18c07;
   }
 
   .mob-topbar div svg {
+   
     height: 12px;
     width: 12px ;
   }
+  
    .mob-topbar .bell-icon svg {
     height: 25px;
     width: 25px ;
@@ -1332,6 +1337,7 @@ color: #b18c07;
     justify-content: center;
   }
   .ask-ai-mob-div button {
+    height: 52px;
     font-size: 15px;
     font-weight: 500;
     padding: 6px 10px;
@@ -1343,13 +1349,14 @@ color: #b18c07;
     padding: 10px 5px;
   }
   .mob-topbar {
-    display: flex;
+    font-size: 16px !important;
+     display: flex;
     justify-content: space-between;
     padding: 8px 10px;
   }
   .mob-topbar div {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     align-items: center;
   }
   .ss {
@@ -1357,11 +1364,11 @@ color: #b18c07;
     width: 10px !important;
   }
   .mob-topbar div span {
-    font-size: 14px;
+    
   }
   .mob-topbar div svg {
-    width: 14px !important;
-    height: 14px !important;
+    width: 20px !important;
+    height: 20px !important;
   }
   .mob-topbar svg {
     height: 24px !important;
@@ -1373,6 +1380,12 @@ color: #b18c07;
 
   .topbar {
     display: none;
+  }
+  .private-qualities span{
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
   }
 
   .secondhalf {
@@ -1559,9 +1572,7 @@ color: #b18c07;
     padding: 6px 10px;
   }
 
-  .body-section2 span {
-    font-size: 14px;
-  }
+ 
 
   .body-section4 {
     justify-content: space-between;
@@ -1714,7 +1725,7 @@ color: #b18c07;
 }
 
 .private-deal-theme .body {
-  background: #000000 !important;
+  background: #171717 !important;
   box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
   color: white !important;
 }
@@ -1756,6 +1767,9 @@ color: #b18c07;
 .private-deal-theme .mob-topbar span {
   color: white !important;
 }
+.private-deal-theme .mob-topbar div path{
+ stroke: #FFFFFF !important;
+  }
 
 .private-deal-theme .home {
   color: #cccccc !important;
@@ -1769,6 +1783,9 @@ color: #b18c07;
   background-color: #2d2d2d !important;
   color: white !important;
 }
+.private-deal-theme .ask-ai-button{
+  background: #0000000F;
+} 
 
 .private-deal-theme .shares-card {
   border-radius: 12px;

@@ -290,14 +290,14 @@ export default function NavBar() {
         </div>
 
         <div className={styles.navRightSection}>
-          {/* <div className={styles.NotificationIconContainer}>
+          <div className={styles.NotificationIconContainer}>
             <img
               className={styles.icons}
               src="/assets/pictures/notification.svg"
               alt=""
             />
             <div className={styles.notificationBadge}>2</div>
-          </div> */}
+          </div>
           <div className={styles.UserIconContainer}>
             <Link href={"/account/details"} className={styles.Link}>
               {" "}

@@ -221,6 +221,8 @@ background-color: #FF6A55;
 
 
 
+
+
   .navigationButton {
     gap: 8px;
     display: none;
@@ -257,13 +259,18 @@ background-color: #FF6A55;
   }
 
   .responsiveNav {
+  
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
     justify-content: center;
     padding: 24px 16px;
+
     z-index: 5;
+  }
+  .privateDealTheme .responsiveNav{
+     padding: 24px 16px 0px 24px ;
   }
 
   .mainNavContainer {
@@ -548,7 +555,8 @@ font-weight: 500;
 
 @media (max-width: 480px) {
  .responsiveNav{
-  background-color: white;
+  /* padding-bottom: 0; */
+  /* background-color: white; */
  }
 }
 
@@ -665,3 +673,6 @@ font-weight: 500;
 .privateDealTheme .HomeNavButton.active .home {
   color: #B59131 !important;
 }
+
+  
+
