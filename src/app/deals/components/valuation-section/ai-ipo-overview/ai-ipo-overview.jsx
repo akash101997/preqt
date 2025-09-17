@@ -15,14 +15,17 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
         </section>
 
         <section className="bank-sec">
-          <section>
+          <section className="bank-det">
             <p>Merchant Banker</p>
-            <h6 className="mb-0">Corporate Professionals</h6>
+           <div className="bank-det-value">
+             <h6 className="mb-0">Corporate Professionals</h6>
+             <img src="/assets/pictures/corporate.svg" alt=""  style={{height:"40px" ,width:"40px"}}/>
+           </div>
           </section>
-          <img src="/assets/pictures/corporate.svg" alt="" />
+         
         </section>
 
-        <section>
+        <section className="ipoDoc">
           <p>IPO Doc</p>
           <h6 className="drhp mb-0">
             DRHP/RHP
@@ -155,8 +158,8 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><PatIcon/></span>
                 </div>
              <span style={{ color: isPrivateDeal ? "white" : "#000000" }}>
-  {isPrivateDeal ? "₹7.0 Cr" : "₹11.5 Cr"}
-</span>
+               {isPrivateDeal ? "₹7.0 Cr" : "₹11.5 Cr"}
+              </span>
               </section>
 
 {/* {color:"#000000" , fontWeight:"500"} */}
@@ -170,6 +173,8 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
             </section>
           </div>
         </div>
+
+
 
 
         {isPrivateDeal ? <>
