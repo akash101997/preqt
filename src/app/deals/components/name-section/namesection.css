@@ -850,7 +850,7 @@ margin-bottom: 16px;
    border: 1px solid #8E6B0F ;
   /* border-image: linear-gradient(45deg, #FFF2D0, #8E6B0F) 1; */
   border-radius: 12px;
-  flex-direction: column;
+  flex-direction: column !important;
   gap: 30px;
 }
 .view-details-btn{
@@ -985,6 +985,379 @@ color: #b18c07;
   color: white;
 }
 
+/* Private Deal Theme Styles */
+.private-deal-theme {
+  background-color: #000 !important;
+  color: white !important;
+    background-image: url('/blackBgEllipse.png') !important;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+.private-deal-theme .overview-container {
+  background-color: #171717 !important;
+  color: white !important;
+  border-radius: 32px;
+}
+
+.private-deal-theme .topbar,
+.private-deal-theme .mob-topbar {
+  /* background-color: #000000 !important; */
+  padding: 20px 0px !important;
+  margin: 0 !important;
+}
+
+/* .private-deal-theme .subcontainer {
+  background-color: #000000 !important;
+} */
+
+/* Hide FAQSection and Accountfooter on private deal theme */
+.private-deal-theme .faq-section,
+.private-deal-theme .account-footer {
+  display: none !important;
+}
+.account-footer{
+  width: 100%;
+}
+
+.private-deal-theme .body {
+  background: #000 !important;
+  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
+  color: white !important;
+}
+
+.private-deal-theme .firsthalf {
+  background: #171717 !important;
+ 
+  color: white !important;
+  padding: 24px !important;
+}
+/* .first-navbar .navigation-tabs{
+  background: #171717 !important;
+  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
+} */
+
+/* .private-deal-theme .secondhalf {
+  background: #171717 !important;
+  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
+  color: white !important;
+} */
+
+.private-deal-theme .body-section2 span {
+  color: white !important;
+}
+
+.private-deal-theme .body-section3 span {
+  color: white !important;
+}
+.private-deal-theme .body-section3 svg path{
+  fill: white;
+}
+
+.private-deal-theme .body1-buttons span{
+  background:#FFF3D733 !important;
+  color: #ffff !important;
+}
+
+.private-deal-theme .topbar span,
+.private-deal-theme .mob-topbar span {
+  color: white !important;
+}
+.private-deal-theme .mob-topbar div path{
+ stroke: #FFFFFF !important;
+  }
+
+.private-deal-theme .home {
+  color: #cccccc !important;
+}
+
+.private-deal-theme .dea {
+  color: white !important;
+}
+
+.private-deal-theme .ask-ai-section {
+  background-color: #2d2d2d !important;
+  color: white !important;
+}
+.private-deal-theme .ask-ai-button{
+  background: #0000000F;
+} 
+
+.private-deal-theme .shares-card {
+  border-radius: 12px;
+  border: 1px solid var(--G3, #FFF2D0);
+  background: var(--Gray-950, #030712);
+  box-shadow: 0 4px 6px -4px rgba(100, 78, 229, 0.10);
+   
+   /* box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06); */
+}
+
+.private-deal-theme .shares-section svg line {
+   stroke:#878787 !important;
+}
+
+
+.private-deal-theme .why-section {
+  background: #171717 !important;
+  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
+  color: white !important;
+}
+.private-deal-theme .why-section section{
+  padding: 0px;
+}
+
+.private-deal-theme .why-section h2 {
+  color: white !important;
+}
+
+.private-deal-theme .why-subsection div {
+  background: linear-gradient(to bottom, #000000 0%, #00000000 70%) !important;
+  
+  color: white !important;
+}
+
+.private-deal-theme .why-subsection div svg path{
+   fill: white;
+ 
+}
+.private-deal-theme .why-subsection div svg .path{
+fill: #C9A74E;
+}
+
+
+.private-deal-theme .why-subsection div h4 {
+  color: white !important;
+}
+
+.private-deal-theme .customcars {
+  background: #171717 !important;
+  /* box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important; */
+  color: white !important;
+}
+
+.private-deal-theme .customcars .nav-item button {
+  background-color: #2d2d2d !important;
+  color: #cccccc !important;
+  border: 1px solid #404040 !important;
+}
+
+.private-deal-theme .customcars .nav-item button:hover {
+  background-color: #b18c07 !important;
+  color: white !important;
+}
+
+.private-deal-theme .lastcarousel {
+    background: #27272A !important;
+
+  color: white !important;
+}
+
+.private-deal-theme .lastcarousel h3 {
+  color: white !important;
+}
+
+.private-deal-theme .about-section {
+  background: #27272A !important;
+  color: white !important;
+}
+
+.about-section h4{
+  color: var(--White-White, #1F2937);
+
+font-size: 20px;
+font-style: normal;
+font-weight: 300;
+line-height: 28px; /* 140% */
+}
+
+.about-section p{
+  color: var(--Gray-500, #6B7280);
+
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px; /* 142.857% */
+margin: 0;
+}
+
+.private-deal-theme .about-section h4 {
+  color: white !important;
+}
+.private-deal-theme .about-section p{
+  color:#D1D5DB !important;
+}
+
+.private-deal-theme .pitch-deck {
+    background: #27272A !important;
+
+  color: white !important;
+}
+
+.private-deal-theme .pitch-deck h4 {
+  color: white !important;
+}
+.private-qualities{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  flex-wrap: wrap;
+}
+
+.private-qualities span{
+  border-radius: 40px;
+border: 1px solid rgba(255, 255, 255, 0.10);
+padding: 0 10px;
+color: var(--Primary-color, #C9A74E);
+text-align: center;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px; /* 200% */
+white-space: nowrap;
+}
+.private-deal-theme .bod-section {
+    background: #27272A !important;
+
+  color: #9CA3AF !important;
+}
+
+.private-deal-theme .bod-section h4 {
+  color: white !important;
+}
+
+.private-deal-theme .questions-section {
+  background-color: #2d2d2d !important;
+  color: white !important;
+}
+
+.private-deal-theme .questions-section h4,
+.private-deal-theme .questions-section span {
+  color: white !important;
+}
+
+.private-deal-theme .timeline {
+  background-color: #404040 !important;
+  border-color: #666666 !important;
+}
+
+.private-deal-theme .timeline-content .label,
+.private-deal-theme .timeline-content .date {
+  color: white !important;
+}
+
+.private-deal-theme .step-num {
+  background: #404040 !important;
+  border-color: #666666 !important;
+  color: white !important;
+}
+
+.private-deal-theme .top section {
+  background-color: #1D1D1D !important;
+  color: white !important;
+}
+
+.private-deal-theme .others {
+  color: white !important;
+}
+
+.private-deal-theme .others h6 {
+  color: #878787 !important;
+}
+.private-deal-theme .others h6 svg path{
+  stroke: white !important   ;
+  
+}
+
+.private-deal-theme .others span {
+  color: white !important;
+}
+
+.private-deal-theme .others a {
+  color: #b18c07 !important;
+}
+
+.private-deal-theme .label-title {
+  color: #878787 !important;
+}
+
+.private-deal-theme .label-value {
+  color: white !important;
+}
+
+.private-deal-theme .progress-container-heading {
+  color: #cccccc !important;
+}
+
+.private-deal-theme .progress-container-heading span {
+  color: white !important;
+}
+
+.private-deal-theme .smallcard-section-subcontainer-div{
+  width: 100% !important;
+}
+
+.private-deal-theme .smallcards-section span {
+  color: white ;
+  
+}
+.private-deal-theme .smallcard-section-subcontainer .subs1-top{
+  display: none;
+}
+
+.private-deal-theme .image-stack {
+  background: #404040 !important;
+  border-color: #b18c07 !important;
+  color: white !important;
+}
+
+.private-deal-theme .image-stack .s1 {
+  color: white !important;
+}
+
+.private-deal-theme .view-details-btn {
+  background-color: #404040 !important;
+  color: white !important;
+}
+
+.private-deal-theme .view-details-btn .link {
+  color: #b18c07 !important;
+}
+
+.private-deal-theme .accordion-button {
+  /* background-color: #2d2d2d !important; */
+  color: white !important;
+  border-color: #404040 !important;
+}
+
+.private-deal-theme .accordion-button:not(.collapsed) {
+  background-color: none !important;
+  color: white !important;
+}
+
+.private-deal-theme .accordion-body {
+
+  color: white !important;
+}
+
+.private-deal-theme .accordion-item{
+  background-color: #27272A;
+}
+
+
+
+.private-deal-theme .custom-carousel-prev{
+ background-color: #27272A;  
+ border: 1px solid #505050;
+}
+
+.private-deal-theme .custom-carousel-next{
+  background-color: #27272A;  
+  border: 1px solid #505050;
+}
+
+
+
 @media(max-width:1024px){
   .body-maincontainer{
     gap: 15px;
@@ -1003,8 +1376,21 @@ color: #b18c07;
     display: none;
   }
 }
-@media (max-width: 400px) {
 
+@media(max-width: 768px) {
+   .private-deal-theme{
+    background-size: 50%;
+  }
+}
+@media (max-width: 480px) {
+
+  .subcontainer{
+    padding: 0 10px;
+  }
+
+.private-deal-theme .firsthalf{
+  padding: 15px !important;
+}
   .lastcarousel h3 {
     font-size: 16px;
   }
@@ -1033,10 +1419,13 @@ color: #b18c07;
     padding: 0px 20px;
   }
   .firsthalf {
-    padding: 10px 5px;
+    padding: 20px 16px;
   }
   .topbar {
     display: none;
+  }
+  .overview-container{
+    padding: 0px 15px;
   }
  
   .mob-topbar {
@@ -1047,8 +1436,16 @@ color: #b18c07;
   }
    
   .body-section4 section{
-    padding: 0px !important;
+   text-align: left;
+    padding: 10px !important;
   }
+  .bank-det{
+    padding: 0 !important;
+  }
+.bank-det p{
+  text-align: left;
+}
+
 
   .why-subsection div svg {
     width: 24px;
@@ -1070,12 +1467,15 @@ color: #b18c07;
   }
   .body-maincontainer {
     flex-direction: column;
+    margin-bottom: 10px;
   }
-  .body {
-    width: 100%;
-    padding: 10px 5px;
-    background-color: white;
-  }
+.date{
+  font-size: 13px;
+  text-align: end;
+}
+.timeline-content .label{
+  font-size: 13px;
+}
   .ask-ai-mob-div {
     width: 100%;
     display: flex;
@@ -1093,6 +1493,7 @@ color: #b18c07;
     /* background: linear-gradient(to left , #FFF2D0 ,#8E6B0F); */
     font-size: 12px;
     padding: 5px 10px;
+    line-height: 20px;
   }
   .body-section4 button {
     font-size: 10px;
@@ -1164,13 +1565,14 @@ color: #b18c07;
   .label-value {
     font-size: 12px;
   }
-  .body1-buttons {
-    /* justify-content: space-evenly; */
-  }
+
   .why-section {
     padding: 0px 15px;
     border-radius: 12px;
-    background: linear-gradient(0deg, white, #f4f4f469);
+   
+  }
+  .why-subsection{
+    gap: 20px;
   }
   .why-subsection div {
     padding: 30px 0px;
@@ -1402,11 +1804,7 @@ color: #b18c07;
   .body-maincontainer {
     flex-direction: column;
   }
-  .body {
-    width: 100%;
-    padding: 10px 5px;
-    background-color: white;
-  }
+ 
   .body1-buttons span {
     font-size: 10px;
   }
@@ -1468,8 +1866,7 @@ color: #b18c07;
   .label-value {
     font-size: 12px;
   }
-  .body1-buttons {
-  }
+
   .why-section {
     padding: 0px 15px;
     border-radius: 12px;
@@ -1561,7 +1958,6 @@ color: #b18c07;
   }
   .body {
     width: 100%;
-    padding: 10px 5px;
     background-color: white;
   }
   .body1-buttons span {
@@ -1577,6 +1973,7 @@ color: #b18c07;
 
   .body-section4 {
     justify-content: space-between;
+    gap: 12px !important;
   }
   .progress-container-heading span {
     font-size: 14px;
@@ -1689,374 +2086,5 @@ color: #b18c07;
     font-size: 12px;
     padding: 15px 10px;
   }
-}
-
-/* Private Deal Theme Styles */
-.private-deal-theme {
-  background-color: #000 !important;
-  color: white !important;
-    background-image: url('/blackBgEllipse.png') !important;
-    background-repeat: no-repeat;
-    background-position: top center;
-}
-.private-deal-theme .overview-container {
-  background-color: #171717 !important;
-  color: white !important;
-  border-radius: 32px;
-}
-
-.private-deal-theme .topbar,
-.private-deal-theme .mob-topbar {
-  /* background-color: #000000 !important; */
-  padding: 20px 0px !important;
-  margin: 0 !important;
-}
-
-/* .private-deal-theme .subcontainer {
-  background-color: #000000 !important;
-} */
-
-/* Hide FAQSection and Accountfooter on private deal theme */
-.private-deal-theme .faq-section,
-.private-deal-theme .account-footer {
-  display: none !important;
-}
-.account-footer{
-  width: 100%;
-}
-
-.private-deal-theme .body {
-  background: #171717 !important;
-  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
-  color: white !important;
-}
-
-.private-deal-theme .firsthalf {
-  background: #171717 !important;
- 
-  color: white !important;
-  padding: 24px !important;
-}
-/* .first-navbar .navigation-tabs{
-  background: #171717 !important;
-  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
-} */
-
-/* .private-deal-theme .secondhalf {
-  background: #171717 !important;
-  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
-  color: white !important;
-} */
-
-.private-deal-theme .body-section2 span {
-  color: white !important;
-}
-
-.private-deal-theme .body-section3 span {
-  color: white !important;
-}
-.private-deal-theme .body-section3 svg path{
-  fill: white;
-}
-
-.private-deal-theme .body1-buttons span{
-  background:#FFF3D733 !important;
-  color: #ffff !important;
-}
-
-.private-deal-theme .topbar span,
-.private-deal-theme .mob-topbar span {
-  color: white !important;
-}
-.private-deal-theme .mob-topbar div path{
- stroke: #FFFFFF !important;
-  }
-
-.private-deal-theme .home {
-  color: #cccccc !important;
-}
-
-.private-deal-theme .dea {
-  color: white !important;
-}
-
-.private-deal-theme .ask-ai-section {
-  background-color: #2d2d2d !important;
-  color: white !important;
-}
-.private-deal-theme .ask-ai-button{
-  background: #0000000F;
-} 
-
-.private-deal-theme .shares-card {
-  border-radius: 12px;
-  border: 1px solid var(--G3, #FFF2D0);
-  background: var(--Gray-950, #030712);
-  box-shadow: 0 4px 6px -4px rgba(100, 78, 229, 0.10);
-   
-   /* box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06); */
-}
-
-.private-deal-theme .shares-section svg line {
-   stroke:#878787 !important;
-}
-
-
-.private-deal-theme .why-section {
-  background: #171717 !important;
-  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
-  color: white !important;
-}
-.private-deal-theme .why-section section{
-  padding: 0px;
-}
-
-.private-deal-theme .why-section h2 {
-  color: white !important;
-}
-
-.private-deal-theme .why-subsection div {
-  background: linear-gradient(to bottom, #000000 0%, #00000000 70%) !important;
-  
-  color: white !important;
-}
-
-.private-deal-theme .why-subsection div svg path{
-   fill: white;
- 
-}
-.private-deal-theme .why-subsection div svg .path{
-fill: #C9A74E;
-}
-
-
-.private-deal-theme .why-subsection div h4 {
-  color: white !important;
-}
-
-.private-deal-theme .customcars {
-  background: #171717 !important;
-  /* box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important; */
-  color: white !important;
-}
-
-.private-deal-theme .customcars .nav-item button {
-  background-color: #2d2d2d !important;
-  color: #cccccc !important;
-  border: 1px solid #404040 !important;
-}
-
-.private-deal-theme .customcars .nav-item button:hover {
-  background-color: #b18c07 !important;
-  color: white !important;
-}
-
-.private-deal-theme .lastcarousel {
-    background: #27272A !important;
-
-  color: white !important;
-}
-
-.private-deal-theme .lastcarousel h3 {
-  color: white !important;
-}
-
-.private-deal-theme .about-section {
-  background: #27272A !important;
-  color: white !important;
-}
-
-.about-section h4{
-  color: var(--White-White, #1F2937);
-
-font-size: 20px;
-font-style: normal;
-font-weight: 300;
-line-height: 28px; /* 140% */
-}
-
-.about-section p{
-  color: var(--Gray-500, #6B7280);
-
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 20px; /* 142.857% */
-margin: 0;
-}
-
-.private-deal-theme .about-section h4 {
-  color: white !important;
-}
-.private-deal-theme .about-section p{
-  color:#D1D5DB !important;
-}
-
-.private-deal-theme .pitch-deck {
-    background: #27272A !important;
-
-  color: white !important;
-}
-
-.private-deal-theme .pitch-deck h4 {
-  color: white !important;
-}
-.private-qualities{
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.private-qualities span{
-  border-radius: 40px;
-border: 1px solid rgba(255, 255, 255, 0.10);
-padding: 0 10px;
-color: var(--Primary-color, #C9A74E);
-text-align: center;
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 28px; /* 200% */
-}
-.private-deal-theme .bod-section {
-    background: #27272A !important;
-
-  color: #9CA3AF !important;
-}
-
-.private-deal-theme .bod-section h4 {
-  color: white !important;
-}
-
-.private-deal-theme .questions-section {
-  background-color: #2d2d2d !important;
-  color: white !important;
-}
-
-.private-deal-theme .questions-section h4,
-.private-deal-theme .questions-section span {
-  color: white !important;
-}
-
-.private-deal-theme .timeline {
-  background-color: #404040 !important;
-  border-color: #666666 !important;
-}
-
-.private-deal-theme .timeline-content .label,
-.private-deal-theme .timeline-content .date {
-  color: white !important;
-}
-
-.private-deal-theme .step-num {
-  background: #404040 !important;
-  border-color: #666666 !important;
-  color: white !important;
-}
-
-.private-deal-theme .top section {
-  background-color: #1D1D1D !important;
-  color: white !important;
-}
-
-.private-deal-theme .others {
-  color: white !important;
-}
-
-.private-deal-theme .others h6 {
-  color: #878787 !important;
-}
-.private-deal-theme .others h6 svg path{
-  stroke: white !important   ;
-  
-}
-
-.private-deal-theme .others span {
-  color: white !important;
-}
-
-.private-deal-theme .others a {
-  color: #b18c07 !important;
-}
-
-.private-deal-theme .label-title {
-  color: #878787 !important;
-}
-
-.private-deal-theme .label-value {
-  color: white !important;
-}
-
-.private-deal-theme .progress-container-heading {
-  color: #cccccc !important;
-}
-
-.private-deal-theme .progress-container-heading span {
-  color: white !important;
-}
-
-.private-deal-theme .smallcard-section-subcontainer-div{
-  width: 100% !important;
-}
-
-.private-deal-theme .smallcards-section span {
-  color: white ;
-  
-}
-.private-deal-theme .smallcard-section-subcontainer .subs1-top{
-  display: none;
-}
-
-.private-deal-theme .image-stack {
-  background: #404040 !important;
-  border-color: #b18c07 !important;
-  color: white !important;
-}
-
-.private-deal-theme .image-stack .s1 {
-  color: white !important;
-}
-
-.private-deal-theme .view-details-btn {
-  background-color: #404040 !important;
-  color: white !important;
-}
-
-.private-deal-theme .view-details-btn .link {
-  color: #b18c07 !important;
-}
-
-.private-deal-theme .accordion-button {
-  /* background-color: #2d2d2d !important; */
-  color: white !important;
-  border-color: #404040 !important;
-}
-
-.private-deal-theme .accordion-button:not(.collapsed) {
-  background-color: none !important;
-  color: white !important;
-}
-
-.private-deal-theme .accordion-body {
-
-  color: white !important;
-}
-
-.private-deal-theme .accordion-item{
-  background-color: #27272A;
-}
-
-
-
-.private-deal-theme .custom-carousel-prev{
- background-color: #27272A;  
- border: 1px solid #505050;
-}
-
-.private-deal-theme .custom-carousel-next{
-  background-color: #27272A;  
-  border: 1px solid #505050;
 }
 

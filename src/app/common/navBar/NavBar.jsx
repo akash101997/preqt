@@ -96,21 +96,21 @@ export default function NavBar() {
               >
                 <path
                   d="M4 12.3301H20"
-                  stroke="black"
+                  stroke={isPrivateDeal ? "white" : "black"}
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M4 18.3301H20"
-                  stroke="black"
+                  stroke={isPrivateDeal ? "white" : "black"}
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M4 6.33008H20"
-                  stroke="black"
+                  stroke={isPrivateDeal ? "white" : "black"}
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -131,8 +131,9 @@ export default function NavBar() {
 
           {/* bell icon */}
           <div className={styles.NotificationIconContainermob}>
-            <img src="/assets/pictures/bell.svg" alt="" />
-            <div className={styles.notificationBadge}>1</div>
+            <div></div>
+            {/* <img src="/assets/pictures/bell.svg" alt="" />
+            <div className={styles.notificationBadge}>1</div> */}
           </div>
 
         </article>
@@ -291,12 +292,12 @@ export default function NavBar() {
 
         <div className={styles.navRightSection}>
           <div className={styles.NotificationIconContainer}>
-            <img
+            {/* <img
               className={styles.icons}
               src="/assets/pictures/notification.svg"
               alt=""
-            />
-            <div className={styles.notificationBadge}>2</div>
+            /> */}
+            {/* <div className={styles.notificationBadge}>2</div> */}
           </div>
           <div className={styles.UserIconContainer}>
             <Link href={"/account/details"} className={styles.Link}>

@@ -1,143 +1,245 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ai-ipo-overview.css";
 import Image from "next/image";
-import { PatIcon, PeMultiple, RevenueIcon, Valuation } from "../../name-section/svgicon";
+import { OfferDateIcon, PatIcon, PeMultiple, RevenueIcon, Valuation } from "../../name-section/svgicon";
+import { Collapse } from "react-bootstrap";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 const AiIpoOverview = ({ isPrivateDeal = false }) => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 920);
+    };
+
+    handleResize(); // initial check
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const steps = [
+    { label: "IPO Open Date", date: "Wed, Jul 30, 2025", completed: true },
+    { label: "IPO Close Date", date: "Wed, Jul 30, 2025", completed: true },
+    {
+      label: "Tentative Allotment",
+      date: "Wed, Jul 30, 2025",
+      completed: true,
+    },
+    {
+      label: "Initiation of Refunds",
+      date: "Wed, Jul 30, 2025",
+      completed: false,
+      number: "04",
+    },
+    {
+      label: "Credit of Shares to Demat",
+      date: "Wed, Jul 30, 2025",
+      completed: false,
+      number: "05",
+    },
+    {
+      label: "Tentative Listing Date",
+      date: "Wed, Jul 30, 2025",
+      completed: false,
+      number: "05",
+    },
+    {
+      label: "Cut-off time for UPI mandate confirmation",
+      date: "Wed, Jul 30, 2025",
+      completed: false,
+      number: "05",
+    },
+  ];
+
   return (
     <div className="valuation-container">
-      {!isPrivateDeal && 
-      <>
-      <section className="body-section4" >
-        <section>
-          <p>Minimum Investment</p>
-          <h6 className="mb-0">-</h6>
-        </section>
+      {!isPrivateDeal &&
+        <>
+          <section className="body-section4" >
+            <section>
+              <p>Minimum Investment</p>
+              <h6 className="mb-0">-</h6>
+            </section>
 
-        <section className="bank-sec">
-          <section className="bank-det">
-            <p>Merchant Banker</p>
-           <div className="bank-det-value">
-             <h6 className="mb-0">Corporate Professionals</h6>
-             <img src="/assets/pictures/corporate.svg" alt=""  style={{height:"40px" ,width:"40px"}}/>
-           </div>
+            <section className="bank-sec">
+              <div className="bank-det">
+                <p>Merchant Banker</p>
+                <div className="bank-det-value">
+                  <h6 className="mb-0">Corporate Professionals</h6>
+                  <img src="/assets/pictures/corporate.svg" alt="" style={{ height: "40px", width: "40px" }} />
+                </div>
+              </div>
+
+            </section>
+
+            <section className="ipoDoc">
+              <p>IPO Doc</p>
+              <h6 className="drhp mb-0">
+                DRHP/RHP
+                <svg
+
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V7L15 2Z"
+                    stroke="#B59131"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M14 2V6C14 6.53043 14.2107 7.03914 14.5858 7.41421C14.9609 7.78929 15.4696 8 16 8H20"
+                    stroke="#B59131"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M10 9H8"
+                    stroke="#B59131"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M16 13H8"
+                    stroke="#B59131"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M16 17H8"
+                    stroke="#B59131"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </h6>
+            </section>
           </section>
-         
-        </section>
-
-        <section className="ipoDoc">
-          <p>IPO Doc</p>
-          <h6 className="drhp mb-0">
-            DRHP/RHP
-            <svg
-
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V7L15 2Z"
-                stroke="#B59131"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M14 2V6C14 6.53043 14.2107 7.03914 14.5858 7.41421C14.9609 7.78929 15.4696 8 16 8H20"
-                stroke="#B59131"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M10 9H8"
-                stroke="#B59131"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M16 13H8"
-                stroke="#B59131"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M16 17H8"
-                stroke="#B59131"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </h6>
-        </section>
-      </section>
-        <div className="seperator"></div>
-      </>
+          <div className="seperator"></div>
+        </>
       }
       {isPrivateDeal && <div style={{ marginBottom: '10px' }}></div>}
 
       <section className="smallcards-section">
         <div className="smallcard-section-subcontainer">
-          {isPrivateDeal ?
+          {isPrivateDeal ? (
             <section className="subs1-topp">
               <div>
                 <p>Listing timeline</p>
-                <Image src={"/assets/pictures/listing-timeline.svg"} height={40} width={40} alt={'The asset match'}/>
+                <Image
+                  src={"/assets/pictures/listing-timeline.svg"}
+                  height={40}
+                  width={40}
+                  alt="The asset match"
+                />
               </div>
-
-              <h6>
-                -
-              </h6>
-            </section> :
+              <h6>-</h6>
+            </section>
+          ) : (
             <section className="subs1-top">
-              <div>
-                <p>Offer Date </p>
-                <svg
-                  width="36"
-                  height="36"
-                  viewBox="0 0 36 36"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect width="36" height="36" rx="18" fill="white" />
-                  <path
-                    d="M17 18H19C19.5304 18 20.0391 17.7893 20.4142 17.4142C20.7893 17.0391 21 16.5304 21 16C21 15.4696 20.7893 14.9609 20.4142 14.5858C20.0391 14.2107 19.5304 14 19 14H16C15.4 14 14.9 14.2 14.6 14.6L9 20"
-                    stroke="#6B7280"
-                    strokeWidth="2.66667"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M13 24.0003L14.6 22.6003C14.9 22.2003 15.4 22.0003 16 22.0003H20C21.1 22.0003 22.1 21.6003 22.8 20.8003L27.4 16.4003C27.7859 16.0356 28.0111 15.5326 28.0261 15.0018C28.0411 14.4711 27.8447 13.9562 27.48 13.5703C27.1153 13.1844 26.6123 12.9592 26.0816 12.9442C25.5508 12.9292 25.0359 13.1256 24.65 13.4903L20.45 17.3903"
-                    stroke="#6B7280"
-                    strokeWidth="2.66667"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M8 19L14 25"
-                    stroke="#6B7280"
-                    strokeWidth="2.66667"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
+              {isMobile ? (
+                <>
+                  {/* Dropdown Header */}
+                  <div
+                    className="ipo-dropdownButton"
+                    onClick={() => setOpen(!open)}
+                  >
+                    <div className="ipo-dropdown">
+                      <p>Offer Date</p>
+                      <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><OfferDateIcon /></span>
+                    </div>
+                    <div className="ipo-dropdown">
+                      <h6>Thursday, September 25, 2025</h6>
+                      <span>{open ? <ChevronUp /> : <ChevronDown />}</span>
+                    </div>
 
-              <h6>
-                Thursday, September 25,2025
-              </h6>
-            </section>}
+                  </div>
+
+                  {/* Collapsible Content */}
+                  <Collapse in={open}>
+                    <div>
+                      <div className="timeline">
+                        {steps.map((step, index) => (
+                          <div key={index} className="timeline-step">
+                            <div
+                              className={`timeline-icon ${step.completed ? "completed" : ""}`}
+                            >
+                              {step.completed ? (
+                                <svg
+                                  className="completed"
+                                  width="26"
+                                  height="27"
+                                  viewBox="0 0 26 27"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <g clipPath="url(#clip0_3818_3279)">
+                                    <circle
+                                      cx="12.8029"
+                                      cy="13.4182"
+                                      r="12.0028"
+                                      fill="#B59131"
+                                      stroke="#B59131"
+                                      strokeWidth="1.60037"
+                                    />
+                                  </g>
+                                  <path
+                                    d="M10.0645 16.3326L17.7799 8.61719L18.8043 9.64162L10.0645 18.3814L6.00098 14.3191L7.02541 13.2947L10.0645 16.3326Z"
+                                    fill="white"
+                                  />
+                                  <defs>
+                                    <clipPath id="clip0_3818_3279">
+                                      <rect
+                                        width="25.6059"
+                                        height="25.6059"
+                                        fill="white"
+                                        transform="translate(0 0.615234)"
+                                      />
+                                    </clipPath>
+                                  </defs>
+                                </svg>
+                              ) : (
+                                <span className="step-num">{step.number}</span>
+                              )}
+                            </div>
+                            <div className="timeline-content">
+                              <div className="label">{step.label}</div>
+                              <div className="date">{step.date}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </Collapse>
+
+                </>
+              ) : (
+                <>
+                  <div>
+                    <p>Offer Date</p>
+                    <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><OfferDateIcon /></span>
+                  </div>
+                  <h6>Thursday, September 25, 2025</h6>
+                </>
+              )}
+            </section>
+          )}
           <div className="smallcard-section-subcontainer-div">
             <section className="subs top">
               <section>
                 <div>
                   <span className="data">Valuation</span>
-                 
-                  <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><Valuation/></span>
+
+                  <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><Valuation /></span>
                 </div>
                 <span style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "₹75 Cr" : "-"}</span>
               </section>
@@ -145,7 +247,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
               <section>
                 <div>
                   <span className="data">Revenue (FY25) </span>
-                  <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><RevenueIcon/></span>
+                  <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><RevenueIcon /></span>
                 </div>
                 <span style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "₹101.4 Cr FY25" : "₹94.1 Cr "}</span>
               </section>
@@ -155,18 +257,18 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
               <section>
                 <div>
                   <span className="data">PAT(FY25)</span>
-                  <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><PatIcon/></span>
+                  <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><PatIcon /></span>
                 </div>
-             <span style={{ color: isPrivateDeal ? "white" : "#000000" }}>
-               {isPrivateDeal ? "₹7.0 Cr" : "₹11.5 Cr"}
-              </span>
+                <span style={{ color: isPrivateDeal ? "white" : "#000000" }}>
+                  {isPrivateDeal ? "₹7.0 Cr" : "₹11.5 Cr"}
+                </span>
               </section>
 
-{/* {color:"#000000" , fontWeight:"500"} */}
+              {/* {color:"#000000" , fontWeight:"500"} */}
               <section>
                 <div>
-                  <span >{isPrivateDeal ? <span className="data">P/E Multiple</span>:<span className="data">Issue Size</span>}</span>
-                 <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><PeMultiple/></span>
+                  <span >{isPrivateDeal ? <span className="data">P/E Multiple</span> : <span className="data">Issue Size</span>}</span>
+                  <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><PeMultiple /></span>
                 </div>
                 <span style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "10.7x" : "66-67.5 cr"}</span>
               </section>
