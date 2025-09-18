@@ -130,6 +130,10 @@
   background: linear-gradient(180deg, #f3f4f6, #ffffff);
 }
 
+.fundamentals-container .header{
+  margin-bottom: 12px;
+}
+
 .chart-timeline-section {
   display: flex;
   gap: 10px;
@@ -263,6 +267,37 @@
 gap: 20px;
   display: flex;
   flex-direction: column;
+}
+
+.ipo-objective-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  border-left: 1px solid #e5e7eb; /* vertical line */
+  margin-left: 10px; /* spacing from text */
+}
+
+.ipo-objective-list li {
+  position: relative;
+  padding: 8px 0 8px 20px; /* space for connector */
+  color: #374151;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.ipo-objective-list li::before {
+  content: "";
+  position: absolute;
+  left: -1px;  /* align with vertical border */
+  top: 50%;
+  width: 12px; /* horizontal connector length */
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.ipo-objective-list li:last-child {
+  border-left: none;
 }
 
 .ipo-objective-container-section img {
