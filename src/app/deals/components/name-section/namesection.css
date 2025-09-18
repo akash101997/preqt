@@ -151,7 +151,7 @@ line-height: 28px; /* 233.333% */
 }
 .body-section2 div {
   display: flex;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
 }
 
@@ -184,7 +184,7 @@ line-height: 28px; /* 233.333% */
   font-weight: 400;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 20px;
-  /* font-style: italic; */
+  font-style: italic;
 }
 
 .body-section4 {
@@ -238,7 +238,7 @@ line-height: 28px; /* 233.333% */
 .subs {
   display: flex;
   justify-content: space-between;
-  gap: 15px;
+  gap: 16px;
 }
 
 .subs section {
@@ -262,7 +262,7 @@ line-height: 28px; /* 233.333% */
 .smallcards-section {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 24px;
 }
 
 .smallcards-section section {
@@ -281,7 +281,7 @@ line-height: 28px; /* 233.333% */
 
 .others {
   border-radius: 10px;
-  padding: 15px 16px;
+  padding: 0px 16px;
   display: flex;
   flex-direction: column;
   gap: 0px;
@@ -369,8 +369,11 @@ color: #B59131;
 
 .total-shares {
   text-align: center;
-  font-weight: bold;
-  font-size: 16px;
+  color: var(--Slate-800, #1E293B);
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+  white-space: nowrap;
 }
 
 .labels {
@@ -385,7 +388,7 @@ color: #B59131;
 .label-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 .label-item p{
   margin: 0px;
@@ -407,13 +410,20 @@ color: #B59131;
 }
 
 .label-title {
-  font-size: 14px;
-  color: #64748b;
+  color: var(--Slate-500, #64748B);
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 16px; /* 133.333% */
 }
 
 .label-value {
-  font-weight: bold;
-  font-size: 16px;
+ color: var(--Slate-800, #1E293B);
+font-family: "Helvetica Neue";
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: 20px; /* 142.857% */
 }
 
 .shares-section {
@@ -501,6 +511,7 @@ margin-bottom: 16px;
   border-radius: 14px;
   gap: 24px;
   flex-direction: column;
+  padding-bottom: 0;
 }
 
 .why-subsection div h4 {
@@ -568,8 +579,8 @@ margin-bottom: 16px;
 }
 .lastcarousel {
   padding: 20px 22px 20px 26px ;
-  background: linear-gradient(180deg, #FDF9EE, #EEF2FD00);
-  border-radius: 20px;
+ border-radius: 24px;
+background: linear-gradient(180deg, #F3F4F6 0%, #FFF 100%);
 }
 
 .lastcarousel .carousel-inner{
@@ -622,7 +633,7 @@ margin-bottom: 16px;
       padding: 0px 30px;
       display: flex;
       flex-direction: column;
-      gap:20px;
+      gap:24px;
 }
 
 .customcars.carousel-text {
@@ -671,7 +682,7 @@ margin-bottom: 16px;
 
 .pitch-deck h4 {
   font-family: Helvetica;
-  font-size: 23px;
+  font-size: 20.bod-section h4px;
   font-weight: 200;
   line-height: 28px;
   /* padding-bottom: 10px;
@@ -1682,6 +1693,15 @@ white-space: nowrap;
   .customcars .nav-tabs {
     gap: 10px;
   }
+
+  .customcars{
+    gap: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .overview-container{
+    gap: 10px;
+  }
 }
 
 @media (min-width: 401px) and (max-width: 900px) {
@@ -1766,9 +1786,7 @@ white-space: nowrap;
     height: 10px !important;
     width: 10px !important;
   }
-  .mob-topbar div span {
-    
-  }
+ 
   .mob-topbar div svg {
     width: 20px !important;
     height: 20px !important;
@@ -2014,9 +2032,6 @@ white-space: nowrap;
   }
   .label-value {
     font-size: 12px;
-  }
-  .body1-buttons {
-    /* justify-content: space-evenly; */
   }
   .why-section {
     padding: 0px 15px;

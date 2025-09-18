@@ -73,7 +73,7 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
         <Collapse in={openStates.financialTrends}>
           <div className="section-body">
             <h2 style={{ marginBottom: '20px' }}>Revenue growth with EBITDA and PAT margins</h2>
-            <Barchart isPrivateDeal = {isPrivateDeal} />
+            <Barchart isPrivateDeal={isPrivateDeal} />
           </div>
         </Collapse>
       </div>
@@ -208,20 +208,29 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
           <div className="section-body">
             <Tabs
               id="carousel-tabs"
-              className="financial-tabs"
+              className="financial-tabs customTabs"
               activeKey={key}
               onSelect={(k) => setKey(k)}
               transition={Fade}
               mountOnEnter
               unmountOnExit
             >
-              <Tab eventKey="Return on Equity (ROE)" title="Return on Equity (ROE)">
+              <Tab
+                eventKey="Return on Equity (ROE)"
+                title="Return on Equity (ROE)"
+                tabClassName="customTab"
+              >
                 <PurpleBarchart isPrivate={dealId == "2"} />
               </Tab>
-              <Tab eventKey="Debt to Equity" title="Debt to Equity">
+              <Tab
+                eventKey="Debt to Equity"
+                title="Debt to Equity"
+                tabClassName="customTab"
+              >
                 <DebtBarChart isPrivate={dealId == "2"} />
               </Tab>
             </Tabs>
+
           </div>
         </Collapse>
       </div>
