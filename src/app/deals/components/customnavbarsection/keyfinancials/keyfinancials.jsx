@@ -16,12 +16,12 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
   const [key, setKey] = useState("Return on Equity (ROE)");
 
   const data = dealId == "2" ? [
-    { year: "2024", growth: 0, revenue: 66.3, ebitda: "7.9%", pat: "2.1%", peratio: 0, roa: 0, roe: 0, roce: 0, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
-    { year: "2025", growth: 0, revenue: 101.4, ebitda: "13.1%", pat: "6.9%", peratio: 10.7, roa: 0, roe: 0, roce: 0, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
+    { year: "2024", growth: 52.8 , revenue: 66.3, ebitda: "5.3%", pat: "1.4%", peratio: 0, roa: 3.4, roe: 43.5, roce: 31.6, debttoequity: 9.3, interestcoverage: 1.8, debtordays: 94, inventorydays: 89, currentratio: 0, quickratio: 0, creditordays: 40, longtermfundstofixed: 3.9, cogs: 83.3 },
+    { year: "2025", growth: 52.9, revenue: 101.4, ebitda: "13.3%", pat: "7.0%", peratio: 10.7, roa: 12.3, roe: 68.7, roce: 59.9, debttoequity: 3.0, interestcoverage: 4.3, debtordays: 91, inventorydays: 39, currentratio: 76, quickratio: 0, creditordays: 0, longtermfundstofixed: 4.5, cogs: 79.0 },
   ] : [
-    { year: "2023", growth: 32.2, revenue: 76.9, ebitda: "12.2 (15.8%)", pat: "2.1 (2.7%)", peratio: 0, roa: 0, roe: 30.1, roce: 13.1, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
-    { year: "2024", growth: 2.5, revenue: 78.8, ebitda: "13.6 (17.3%)", pat: "1.4 (1.7%)", peratio: 0, roa: 0, roe: 15.8, roce: 12.4, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
-    { year: "2025", growth: 19.5, revenue: 94.1, ebitda: "24.9 (26.5%)", pat: "11.5 (12%)", peratio: 0, roa: 0, roe: 75.9, roce: 25.3, debttoequity: 0, interestcoverage: 0, debtordays: 0, inventorydays: 0, currentratio: 0, quickratio: 0, creditordays: 0, longtermfundstofixed: 0, cogs: 0 },
+    { year: "2023", growth: 32.2, revenue: 76.9, ebitda: "12.2 (15.8%)", pat: "2.1 (2.7%)", peratio: 0, roa: 5.7, roe: 30.1, roce: 13.7, debttoequity: 5.9, interestcoverage: 2.3, debtordays: 75, inventorydays: 0, currentratio: 0.9, quickratio: 0, creditordays: 30, longtermfundstofixed: 0, cogs: 76.3 },
+    { year: "2024", growth: 2.5, revenue: 78.8, ebitda: "13.6 (17.3%)", pat: "1.4 (1.7%)", peratio: 0, roa: 1.9, roe: 15.8, roce: 12.4, debttoequity: 6.3, interestcoverage: 1.7, debtordays: 80, inventorydays: 0, currentratio: 0.8, quickratio: 0, creditordays: 30, longtermfundstofixed: 80.6, cogs: 74.2 },
+    { year: "2025", growth: 19.5, revenue: 94.1, ebitda: "24.9 ", pat: "11.5", peratio: 0, roa: 12.8, roe: 75.9, roce: 25.3, debttoequity: 3.0, interestcoverage: 3.5, debtordays: 88, inventorydays: 0, currentratio: 1.0, quickratio: 0, creditordays: 41, longtermfundstofixed: 91.0, cogs: 65.6 },
   ];
 
 
@@ -165,26 +165,32 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
                     <div className="metric-block">
 
                       <h4>Leverage & Coverage</h4>
-                      <p><span>Debt-to-Equity Ratio</span> <span className={item.debttoequity < 0 ? "negative" : "positive"}>-</span></p>
-                      <p><span>Interest Coverage Ratio</span> <span className={item.interestcoverage < 0 ? "negative" : "positive"}>-</span></p>
+                      <p><span>Debt-to-Equity Ratio</span> <span className={item.debttoequity < 0 ? "negative" : "positive"}>{item.debttoequity == 0 ? "-" : item.debttoequity + ""}</span></p>
+                      <p><span>Interest Coverage Ratio</span> <span className={item.interestcoverage < 0 ? "negative" : "positive"}>{item.interestcoverage == 0 ? "-" : item.interestcoverage + "x"}</span></p>
                     </div>
 
                     <div className="metric-block">
                       <h4>Working Capital</h4>
-                      <p><span>Debtor Days</span> <span className={item.debtordays < 0 ? "negative" : "positive"}>-</span></p>
-                      <p><span>Creditor Days</span> <span className={item.creditordays < 0 ? "negative" : "positive"}>-</span></p>
-                      <p><span>Inventory Days</span> <span className={item.inventorydays < 0 ? "negative" : "positive"}>-</span></p>
+                      <p><span>Debtor Days</span> <span className={item.debtordays < 0 ? "negative" : "positive"}>{item.debtordays == 0 ? "-" : item.debtordays + ""}</span></p>
+                      <p><span>Creditor Days</span> <span className={item.creditordays < 0 ? "negative" : "positive"}>{item.creditordays == 0 ? "-" : item.creditordays + ""}</span></p>
+                      {/* <p><span>Inventory Days</span> <span className={item.inventorydays < 0 ? "negative" : "positive"}>{item.inventorydays == 0 ? "-" : item.inventorydays + ""}</span></p> */}
                     </div>
 
                     <div className="metric-block">
                       <h4>Asset Efficiency</h4>
-                      <p><span>Long-term Funds to Fixed Assets</span><span className={item.longtermfundstofixed < 0 ? "negative" : "positive"}>-</span></p>
+                      <p><span>Long-term Funds to Fixed Assets</span><span className={item.longtermfundstofixed < 0 ? "negative" : "positive"}>{item.longtermfundstofixed == 0 ? "-" : item.longtermfundstofixed + "%"}</span></p>
 
                     </div>
 
                     <div className="metric-block">
                       <h4>Liquidity</h4>
-                      <p><span>COGS (% of Revenue)</span> <span className={item.cogs < 0 ? "negative" : "positive"}>-</span></p>
+                      <p><span>Currect Ratio</span> <span className={item.currentratio < 0 ? "negative" : "positive"}>{item.currentratio == 0 ? "-" : item.currentratio + ""}</span></p>
+
+                    </div>
+
+                     <div className="metric-block">
+                      <h4>Cost Structure</h4>
+                      <p><span>COGS (% of Revenue)</span> <span className={item.cogs < 0 ? "negative" : "positive"}>{item.cogs == 0 ? "-" : item.cogs + "%"}</span></p>
 
                     </div>
                   </div>

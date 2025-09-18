@@ -10,7 +10,7 @@ const Pitchdeck = () => {
         </div>
 
         <div className="image-container">
-          <img src="/assets/pictures/imagepitchdeck.png" alt="" />
+          <img src="/deals/pitch-deck-new-img.png" alt="" />
 
           <div className="overlay">
             <button className="pitch-overlay-btn">

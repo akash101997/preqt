@@ -118,15 +118,15 @@ const Business = ({ isPrivateDeal }) => {
       <hr className={styles.hr} />
 
       <Dropdown title="Sales Channel">
-        {/* <ul className={styles.ul}>
+        <ul className={styles.ul}>
           <li className={styles.list}>
             Direct B2B sales (corporates, industrial clients)
           </li>
           <li className={styles.list}>Government or public sector tenders</li>
           <li className={styles.list}>Channel partners/distributors</li>
           <li className={styles.list}>Online or offline presence</li>
-        </ul> */}
-        N/A
+        </ul>
+      
       </Dropdown>
 
       <hr className={styles.hr} />
