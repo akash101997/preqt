@@ -243,14 +243,15 @@ padding: 16px 0px;
 .privateIndustryContainer .PeerTable th:first-child,
 .privateIndustryContainer .PeerTable td:first-child {
   background-color: #2e2e2e; /* grey */
-  color: #fff; /* adjust as needed */
+  color: #9CA3AF; /* adjust as needed */
 
 }
 
 /* Black right side */
 .privateIndustryContainer .PeerTable th:not(:first-child),
 .privateIndustryContainer .PeerTable td:not(:first-child) {
-  background-color: #0f0f0f !important; /* black */
+  background-color: #0f0f0f !important; 
+  color: #FFFFFF !important;
   border-right: 0px;
   
   
