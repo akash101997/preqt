@@ -45,10 +45,10 @@ const Industry = ({isPrivateDeal}) => {
   const peerComparison = dealId == "2" ? [
     { metric: "Revenue (₹ Cr)", solex: "662", servotac: "674", alpex: "780", solarium: "230" },
     { metric: "Net Profit (₹ Cr)", solex: "43", servotac: "33", alpex: "83", solarium: "19" },
-    { metric: "EBITDA Margin", solex: "11.6%", servotac: "8.60%", alpex: "16.30%", solarium: "12.20%" },
-    { metric: "ROE", solex: "-", servotac: "-", alpex: "-", solarium: "-" },
-    { metric: "ROCE", solex: "29.9%", servotac: "19.70", alpex: "51.80%", solarium: "20.10%" },
-    { metric: "P/E Ratio", solex: "37.6", servotac: "88.1", alpex: "20.10", solarium: "41.5" },
+    { metric: "EBITDA Margin", solex: "11.6%", servotac: "8.6%", alpex: "16.3%", solarium: "12.2%" },
+    { metric: "ROE", solex: "38.7%", servotac: "17.3%", alpex: "48.1%", solarium: "23.0%" },
+    { metric: "ROCE", solex: "29.9%", servotac: "19.7%", alpex: "51.8%", solarium: "20.1%" },
+    // { metric: "P/E Ratio", solex: "37.6", servotac: "88.1", alpex: "20.10", solarium: "41.5" },
   ] :
     [
       { metric: "Revenue (₹ Cr)", premium: "288.2", pranik: "104.7" },
