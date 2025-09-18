@@ -20,7 +20,7 @@ const IPOCollapse = ({ isPrivateDeal }) => {
                 <div className={styles.ipocollapseright}>
                     <div className={styles.ipocollapserightInner}>
                         <small className={styles.smallText}>Lot Size</small>
-                        {isPrivateDeal ? <h5 className={styles.largeText}>10,000 Shares</h5> : <h5 className={styles.largeText}>10,000 Shares</h5>}
+                        {isPrivateDeal ? <h5 className={styles.largeText}>10,000 Shares</h5> : <h5 className={styles.largeText}>1000 Shares</h5>}
                     </div>
                     {open ? <ChevronUp color={isPrivateDeal ? "white" : "black"} /> : <ChevronDown color={isPrivateDeal ? "white" : "black"} />}
                 </div>

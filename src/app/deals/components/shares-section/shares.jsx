@@ -42,7 +42,7 @@ const Shares = () => {
             <line y1="7.5" x2="286" y2="7.5" stroke="#E5E7EB" />
           </svg>
 
-          <span className="total-shares">{isPrivateDeal ? "37.5 L shares" : "1.5 Cr shares"}</span>
+          <span className="total-shares">{isPrivateDeal ? "37.5 L shares" : "1,50,00,000 Cr shares"}</span>
 
           <svg
             width="287"
@@ -72,7 +72,7 @@ const Shares = () => {
             </div> :
               <div>
                 <p className="label-title">Outstanding Shares (Pre-Issue)</p>
-                <p className="label-value">1Cr</p>
+                <p className="label-value">1,00,00,000</p>
               </div>}
           </div>
 
@@ -83,7 +83,7 @@ const Shares = () => {
               <p className="label-value">7.5L</p>
             </div> : <div>
               <p className="label-title">New Issue Shares</p>
-              <p className="label-value">50L</p>
+              <p className="label-value">50,00,000</p>
             </div>}
           </div>
         </div>

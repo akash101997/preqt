@@ -89,14 +89,14 @@ const Business = ({ isPrivateDeal }) => {
           {isPrivateDeal ? "Sonipat, Haryana" : "Navi Mumbai, Maharashtra"}
         </p>
         <p className={styles.p}>
-          <strong className={styles.strong}>Number of Facilities</strong>
+          <strong className={styles.strong}>Operational footprint</strong>
           <br />
-          {isPrivateDeal ? "As of September 11, 2025, HVR Solar Pvt Ltd operates one manufacturing facility:" : "-"}
+          {isPrivateDeal ? "As of September 11, 2025, HVR Solar Pvt Ltd operates one manufacturing facility:" : "With a strong presence at JNPT and Hazira Ports, the company offers specialised, port-focused container logistics solutions designed for speed, efficiency, and reliability. Its strategic location near JNPT, one of India’s busiest container ports, enables seamless cargo handling, optimized turnaround times, and consistent service delivery, reinforcing its position as a critical link in the supply chain."}
         </p>
         {isPrivateDeal && <ul className={styles.ul}>
           <li>Unit I (Sonipat, Haryana Industrial Area) – Operational with an annual solar module manufacturing capacity of ~50 MW.</li>
         </ul>}
-        <p className={styles.p}>
+        {/* <p className={styles.p}>
           Additionally, the company has earmarked land parcels in Harohalli and
           Hosur for future expansion.
         </p>
@@ -104,7 +104,7 @@ const Business = ({ isPrivateDeal }) => {
           <strong className={styles.strong}>Export Presence</strong>
           <br />
           {isPrivateDeal ? "N/A" : "N/A"}
-        </p>
+        </p> */}
       </Dropdown>
 
       <hr className={styles.hr} />

@@ -128,7 +128,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
               </div>
 
               <h6>
-                -
+                Thursday, September 25,2025
               </h6>
             </section>}
           <div className="smallcard-section-subcontainer-div">
@@ -144,17 +144,17 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
 
               <section>
                 <div>
-                  <span className="data">Revenue </span>
+                  <span className="data">Revenue (FY25) </span>
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><RevenueIcon/></span>
                 </div>
-                <span style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "₹101.4 Cr FY25" : "₹94.1 Cr FY25"}</span>
+                <span style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "₹101.4 Cr FY25" : "₹94.1 Cr "}</span>
               </section>
             </section>
 
             <section className="subs top">
               <section>
                 <div>
-                  <span className="data">PAT</span>
+                  <span className="data">PAT(FY25)</span>
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><PatIcon/></span>
                 </div>
              <span style={{ color: isPrivateDeal ? "white" : "#000000" }}>
@@ -338,7 +338,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
             <section className="main-other">
               <section className="others">
                 <h6>Lot Size </h6>
-                <span>-</span>
+                <span>1000 Shares</span>
               </section>
 
               <section className="others">
@@ -354,8 +354,8 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
               </section>
 
               <section className="others">
-                <h6>PAT Margin</h6>
-                <span>5.1%</span>
+                <h6>PAT Margin (FY25)</h6>
+                <span>12%</span>
               </section>
             </section>
 
@@ -367,28 +367,28 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
 
               <section className="others">
                 <h6>EBITDA</h6>
-                <span>-</span>
+                <span>24.9 Cr FY25</span>
               </section>
             </section>
 
             <section className="main-other">
 
               <section className="others">
-                <h6>CAGR Growth 3Y</h6>
-                <span>17% ( FY'22-FY'25)</span>
+                <h6>CAGR Growth ( FY'22-FY'25)</h6>
+                <span>17% </span>
               </section>
 
               <section className="others">
-                <h6>ROE</h6>
-                <span>75.9%(FY'25)</span>
+                <h6>ROE (FY'25)</h6>
+                <span>75.9%</span>
               </section>
             </section>
 
             <section className="main-other">
 
               <section className="others">
-                <h6>ROCE</h6>
-                <span>25.3%(FY'25)</span>
+                <h6>ROCE (FY'25)</h6>
+                <span>25.3%</span>
               </section>
 
 
@@ -402,7 +402,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
               <section className="others">
                 <h6>Debt/Equity</h6>
                 <span>
-                  <svg
+                  {/* <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
                     height="20"
@@ -414,7 +414,8 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                       fill="white"
                     />
                   </svg>
-                  Yes
+                  Yes */}
+                  3.0 For FY25
                 </span>
               </section>
 
@@ -459,7 +460,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                   </svg>
                   Company Website
                 </h6>
-                <a href="">www.zylutech.in</a>
+                <a href="">ashwinimovers.com</a>
               </section>
             </section>
           </>}
