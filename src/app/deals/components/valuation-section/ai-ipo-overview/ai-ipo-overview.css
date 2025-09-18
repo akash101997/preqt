@@ -3,7 +3,7 @@
     display: flex;
     gap: 80px;
     /* justify-content: space-around; */
-    align-items: center;
+    align-items: flex-start;
 
      
 }
@@ -63,6 +63,10 @@
     color: #6B7280;
 }
 
+.subs1-top{
+    width: 28% !important;
+}
+
 .subs1-topp{
     background-color: #1D1D1D;
     width: 50% !important;
@@ -85,10 +89,16 @@ justify-content: space-between;
     width: 70%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
     color: #6B7280;
 }
-
+.offer-day{
+    color: #242424 ;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
 .data{
     color: #878787 !important;
 }
@@ -96,6 +106,8 @@ justify-content: space-between;
 .drhp{
     color: #B59131 !important;
     display: flex;
+    font-weight: 400 !important;
+    padding-top: 6px;
 }
 
 .drhp svg{
@@ -123,6 +135,12 @@ width: 24px;
     justify-content: center;
     align-items: center;
 }
+
+ .bank-det-value{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
 @media(max-width:550px){
   .smallcard-section-subcontainer{
     display: flex;
@@ -234,15 +252,11 @@ width: 24px;
     .body-section4 :nth-of-type(3) {
   margin-left: 40px;
 }
- .bank-det-value{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+
 
      .bank-det-value img{
 
-        margin: 0px 20px 10px ;
+        margin: 0px 20px 0px ;
     }
 
 

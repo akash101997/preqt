@@ -1,6 +1,6 @@
 
 .DealsTalkMainContainer{
-    height: 100% !important;
+    /* height: 100% !important; */
     width: 100%;
     max-width: 1326px !important;
     margin: auto;
@@ -30,4 +30,13 @@
 
 .privateDealTheme .SpanDealsTalkHeading {
     color: #B59131 !important;
+}
+
+
+@media(max-width:768px) {
+    .DealsTalkMainContainer{
+        padding: 20px 16px;
+    }
+
+    
 }

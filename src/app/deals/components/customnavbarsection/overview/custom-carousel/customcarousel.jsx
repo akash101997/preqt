@@ -86,7 +86,7 @@ const FirstCarousel = ({ isPrivateDeal }) => {
         </button>
 
         {/* Indicators */}
-        <div className="custom-carousel-indicators mx-3 d-flex justify-content-center">
+        <div className="custom-carousel-indicators  d-flex justify-content-center">
           {media.map((_, i) => (
             <span
               key={i}

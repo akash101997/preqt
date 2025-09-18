@@ -80,7 +80,7 @@ const LastCarousel = () => {
         </button>
 
         {/* Indicators */}
-        <div className="custom-carousel-indicators mx-3 d-flex justify-content-center">
+        <div className="custom-carousel-indicators mx-3 d-flex justify-content-center align-items-center ">
           {images.map((_, i) => (
             <span
               key={i}
