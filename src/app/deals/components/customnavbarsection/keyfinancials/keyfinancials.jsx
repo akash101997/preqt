@@ -13,10 +13,15 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
   const searchParams = useSearchParams();
   const dealId = searchParams?.get("dealId");
 
-  const [key, setKey] = useState("Return on Equity (ROE)");
+  const [activeTab, setActiveTab] = useState("ROE");
+
+  const tabs = [
+    { key: "ROE", label: "Return on Equity (ROE)" },
+    { key: "DEBT", label: "Debt to Equity" },
+  ];
 
   const data = dealId == "2" ? [
-    { year: "2024", growth: 52.8 , revenue: 66.3, ebitda: "5.3%", pat: "1.4%", peratio: 0, roa: 3.4, roe: 43.5, roce: 31.6, debttoequity: 9.3, interestcoverage: 1.8, debtordays: 94, inventorydays: 89, currentratio: 0, quickratio: 0, creditordays: 40, longtermfundstofixed: 3.9, cogs: 83.3 },
+    { year: "2024", growth: 52.8, revenue: 66.3, ebitda: "5.3%", pat: "1.4%", peratio: 0, roa: 3.4, roe: 43.5, roce: 31.6, debttoequity: 9.3, interestcoverage: 1.8, debtordays: 94, inventorydays: 89, currentratio: 0, quickratio: 0, creditordays: 40, longtermfundstofixed: 3.9, cogs: 83.3 },
     { year: "2025", growth: 52.9, revenue: 101.4, ebitda: "13.3%", pat: "7.0%", peratio: 10.7, roa: 12.3, roe: 68.7, roce: 59.9, debttoequity: 3.0, interestcoverage: 4.3, debtordays: 91, inventorydays: 39, currentratio: 76, quickratio: 0, creditordays: 0, longtermfundstofixed: 4.5, cogs: 79.0 },
   ] : [
     { year: "2023", growth: 32.2, revenue: 76.9, ebitda: "12.2 (15.8%)", pat: "2.1 (2.7%)", peratio: 0, roa: 5.7, roe: 30.1, roce: 13.7, debttoequity: 5.9, interestcoverage: 2.3, debtordays: 75, inventorydays: 0, currentratio: 0.9, quickratio: 0, creditordays: 30, longtermfundstofixed: 0, cogs: 76.3 },
@@ -188,7 +193,7 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
 
                     </div>
 
-                     <div className="metric-block">
+                    <div className="metric-block">
                       <h4>Cost Structure</h4>
                       <p><span>COGS (% of Revenue)</span> <span className={item.cogs < 0 ? "negative" : "positive"}>{item.cogs == 0 ? "-" : item.cogs + "%"}</span></p>
 
@@ -212,30 +217,27 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
         </div>
         <Collapse in={openStates.financialRatios}>
           <div className="section-body">
-            <Tabs
-              id="carousel-tabs"
-              className="financial-tabs customTabs"
-              activeKey={key}
-              onSelect={(k) => setKey(k)}
-              transition={Fade}
-              mountOnEnter
-              unmountOnExit
-            >
-              <Tab
-                eventKey="Return on Equity (ROE)"
-                title="Return on Equity (ROE)"
-                tabClassName="customTab"
-              >
-                <PurpleBarchart isPrivate={dealId == "2"} />
-              </Tab>
-              <Tab
-                eventKey="Debt to Equity"
-                title="Debt to Equity"
-                tabClassName="customTab"
-              >
-                <DebtBarChart isPrivate={dealId == "2"} />
-              </Tab>
-            </Tabs>
+            <div>
+              {/* Tabs Header */}
+              <div className="customTabs">
+                {tabs.map((tab) => (
+                  <button
+                    key={tab.key}
+                    className={`customTab ${activeTab === tab.key ? "active" : ""
+                      }`}
+                    onClick={() => setActiveTab(tab.key)}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Tabs Content */}
+              <div className="tabContent">
+                {activeTab === "ROE" && <PurpleBarchart isPrivate={dealId == "2"} />}
+                {activeTab === "DEBT" && <DebtBarChart isPrivate={dealId == "2"} />}
+              </div>
+            </div>
 
           </div>
         </Collapse>

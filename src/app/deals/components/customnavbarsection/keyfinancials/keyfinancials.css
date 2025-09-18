@@ -6,6 +6,7 @@
   align-self: stretch;
   cursor: pointer;
   padding: 12px 0;
+  margin-bottom: 12px;
 }
 
 .section-header h3 {
@@ -363,42 +364,62 @@ color: #9CA3AF;
 
 }
 
-/* Container for tabs */
-/* Container for tabs */
 .customTabs {
-  border-bottom: none !important;
   display: inline-flex !important;
-  background: #f8fafc !important; /* light bg */
-  padding: 6px !important;
-  border-radius: 12px !important;
-  gap: 10px !important;
+  background: #F1F5F9 !important;
+  padding: 4px;
+  border-radius: 6px !important;
 }
 
-/* Individual tab */
-.customTabs .customTab a {
-  padding: 8px 16px !important;
+.customTab {
+  padding: 8px 12px !important;
   border-radius: 10px !important;
   background: transparent !important;
-  color: #374151 !important; /* gray-700 */
-  font-weight: 500 !important;
-  font-size: 14px !important;
-  transition: all 0.3s ease !important;
+ color: var(--Slate-500, #64748B);
+text-align: center;
+font-family: "Helvetica Neue";
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 16px; /* 114.286% */
   border: none !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
 }
 
-/* Active tab */
-.customTabs .customTab.active a {
-  background: #ffffff !important;
+
+
+.customTab.active {
+  background: rgba(255, 255, 255, 1) !important;
+  border-radius: 6px !important;
   box-shadow: 0px 2px 6px rgba(0,0,0,0.1) !important;
-  color: #000000 !important;
-  font-weight: 600 !important;
-  transform: translateY(-2px) !important;
+  color: var(--Black, #000);
+text-align: center;
+font-family: "Helvetica Neue";
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 16px; /* 114.286% */
+  transform: translateY(0px) !important;
 }
 
-/* Hover effect */
-.customTabs .customTab a:hover {
-  background: rgba(255, 255, 255, 0.6) !important;
-  color: #111827 !important; /* gray-900 */
+.tabContent {
+  margin-top: 1rem !important;
 }
+
+.private-deal .customTabs{
+  background-color: #3F3F46 !important;
+}
+.private-deal .customTab{
+  color: #D4D4D8 !important;
+}
+ 
+.private-deal .customTab.active{
+background: var(--Zinc-500, #71717A) !important;
+color: #FFF !important;
+/* shadows/shadow-sm */
+box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
 
 
