@@ -274,6 +274,10 @@
    box-shadow: none !important;
  }
 
-  .log-out-modal .btn-close:focus-visible {
+ .log-out-modal .btn-close:focus-visible {
    outline: none !important;
+ }
+
+ .cursor-pointer {
+   cursor: pointer;
  }
