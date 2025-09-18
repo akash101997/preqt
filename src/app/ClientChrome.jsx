@@ -10,9 +10,6 @@ export default function ClientChrome({ children }) {
 
   const hide = pathname === "/signin" || pathname === "/login" || pathname === "/otp" || pathname === "/signup" || pathname === "/signup-form";
 
-  // Check if this is a private deal for black theme
-
-  // Define deals data to check if deal is private
   const dealsData = {
     "1": { deal: "public" },
     "2": { deal: "private" },
@@ -27,14 +24,19 @@ export default function ClientChrome({ children }) {
   }
 
   return (
-    <div className={isPrivateDeal ? "private-deal-theme" : ""}>
+    <div
+      className={isPrivateDeal ? "private-deal-theme" : ""}
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <NavBar />
-      <div>
+      <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
         {children}
       </div>
       <Footer />
     </div>
   );
 }
-
-

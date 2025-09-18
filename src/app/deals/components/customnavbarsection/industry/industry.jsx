@@ -100,7 +100,7 @@ const Industry = ({isPrivateDeal}) => {
           </table>
         )}
       </section>
-      <hr/>
+      <hr className={styles.seperator}/>
       </>}
       {/* Growth Opportunities Section */}
       <section className={styles.growthSection}>
@@ -126,7 +126,7 @@ const Industry = ({isPrivateDeal}) => {
           </div>
         )}
       </section>
-      <hr />
+     <hr className={styles.seperator}/>
 
 
       {/* Government Policy Section */}
@@ -150,7 +150,7 @@ const Industry = ({isPrivateDeal}) => {
           </ul>
         )}
       </section>
-      <hr />
+    <hr className={styles.seperator}/>
 
       {/* Peer Comparison Section */}
       {dealId != "2" &&
@@ -186,7 +186,7 @@ const Industry = ({isPrivateDeal}) => {
           </table>
         )}
       </section>
-      <hr/>
+      <hr className={styles.seperator}/>
       </>
       }
      

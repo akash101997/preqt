@@ -104,6 +104,26 @@ export function Drhp() {
     )
 }
 
+export function OfferDateIcon() {
+  return(
+    <>
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+  <g clip-path="url(#clip0_11144_4332)">
+    <path d="M6 1.83008V4.83008" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12 1.83008V4.83008" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M14.25 3.33008H3.75C2.92157 3.33008 2.25 4.00165 2.25 4.83008V15.3301C2.25 16.1585 2.92157 16.8301 3.75 16.8301H14.25C15.0784 16.8301 15.75 16.1585 15.75 15.3301V4.83008C15.75 4.00165 15.0784 3.33008 14.25 3.33008Z" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M2.25 7.83008H15.75" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M6.75 12.3301L8.25 13.8301L11.25 10.8301" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_11144_4332">
+      <rect width="18" height="18" fill="white" transform="translate(0 0.330078)"/>
+    </clipPath>
+  </defs>
+</svg></>
+  )
+}
+
 export function Valuation() {
   return(
     <>

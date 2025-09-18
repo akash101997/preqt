@@ -144,4 +144,15 @@
     border-bottom: 1px solid rgba(255,255,255,0.12);
   }
 
+
+
+  @media(max-width:480px) {
+    .ipocollapseright{
+        max-width: 140px;
+    }
+    .largeText{
+        font-size: 17px;
+    }
+  }
+
   

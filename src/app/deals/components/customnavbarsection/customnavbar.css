@@ -2,8 +2,6 @@
   background-color: #fff;
 }
 .first-navbar .navigation-tabs {
-  margin: 10px 0px 0px 0px !important;
-  
   padding: 10px 10px;
   display: flex;
   justify-content: space-evenly;
@@ -51,7 +49,7 @@
   line-height: 20px;
  
   padding: 8px 10px;
-  border-bottom: 2px solid #B59131;
+  /* border-bottom: 1px solid #B59131; */
   border-radius: none !important;
   background-color: transparent;
 }
@@ -66,7 +64,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 2px;
+  height: 1px;
   width: 0;
   background-color: #b59131;
   transition: width 0.3s ease;
@@ -74,4 +72,8 @@
 
 .first-navbar .nav-tabs .nav-link.active::after {
   width: 100%; /* animate underline */
+}
+
+.private-deal-theme .first-navbar{
+  background-color: #171717;
 }

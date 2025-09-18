@@ -50,3 +50,9 @@
   background-color: #27272A;
   color: white;
 }
+
+@media(max-width:480px) {
+  .privateContainer{
+    padding: 0 10px;
+  }
+}

@@ -155,11 +155,10 @@ padding: 16px 0px;
   margin-bottom: 10px;
   padding: 8px 10px;
   vertical-align: top;
-}
-
-.tableHeading{
   
 }
+
+
 .PeerTable th {
   margin-bottom: 10px;
   font-size: 14px;
@@ -187,11 +186,9 @@ padding: 16px 0px;
 
 .tableHeading {
   display: flex;
+  align-items: flex-start;
 }
-.tableHeading {
-  display: flex;
-  align-items: center;
-}
+
 .tableHeading span{
   word-break: break-all;
 }
@@ -209,7 +206,8 @@ padding: 16px 0px;
   border-right: 2px solid #f3f4f6;
   color: #8a8a8a;
   border-right: 2px solid #f3f4f6;
-  padding-left: 10px;
+ padding: 10px;
+ padding-top: 0;
 }
 .PeerTable td:last-child {
   border-right: none;
@@ -222,6 +220,11 @@ padding: 16px 0px;
 }
 .PeerTable td:first-child {
   border-right: 2px solid #b18c07;
+}
+
+.seperator{
+  color: #F3F4F6;
+  opacity: 1;
 }
 
 

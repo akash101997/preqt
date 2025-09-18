@@ -115,3 +115,9 @@ line-height: 28px; /* 140% */
   line-height: 20px; /* 125% */
 }
 
+@media(max-width:480px){
+  .valuation-container{
+    gap: 20px;
+  }
+}
+

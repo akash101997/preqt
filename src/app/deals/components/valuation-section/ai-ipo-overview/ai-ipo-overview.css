@@ -130,6 +130,20 @@ width: 24px;
     justify-content: center;
     align-items: center;
   }
+  .subs1-top{
+    width: 100% !important;
+  }
+  .subs1-topp{
+    width: 100% !important;
+  }
+
+  .smallcard-section-subcontainer-div{
+    width: 100% ;
+    gap: 10px;
+  }
+  .subs{
+    gap: 10px;
+  }
   .subs1-topp div{
     display: flex;
     justify-content: space-between;
@@ -232,4 +246,32 @@ width: 24px;
     }
 
 
+}
+
+@media(max-width:920px) {
+    .ipo-dropdownButton{
+        display: flex;
+        flex-direction: column !important;
+        gap: 10px;
+    }
+    .ipo-dropdown{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+}
+
+@media(max-width:480px){
+    .body-section4 h6{
+        font-size: 16px;
+    }
+    .ipoDoc p, .ipoDoc h6{
+        margin: 0;
+
+    }
+
+       .body-section4 section{
+        text-align: left;
+       }
 }

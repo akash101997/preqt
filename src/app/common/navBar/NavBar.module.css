@@ -265,7 +265,7 @@ background-color: #FF6A55;
     flex-direction: column;
     gap: 10px;
     justify-content: center;
-    padding: 24px 16px;
+    padding: 15px 16px;
 
     z-index: 5;
   }
@@ -294,6 +294,11 @@ background-color: #FF6A55;
     /* height: 5vh; */
     cursor: pointer;
   }
+
+ .privateDealTheme .hamburger svg path {
+  stroke: #fff !important;
+  fill: #fff !important;
+}
 
   .hamburger span {
     display: block;
