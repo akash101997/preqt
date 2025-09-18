@@ -1910,7 +1910,11 @@
     width: 30px;
     height: 30px;
   }
- 
+
+  .lastcarousel {
+    padding: 0px 10px;
+  }
+
 
   .ask-ai-mob-div {
     width: 100%;
@@ -1927,8 +1931,7 @@
     border-radius: 10px;
     border: 1px solid;
   }
- 
- 
+
   .mob-topbar div {
     display: flex;
     gap: 20px;
@@ -2080,6 +2083,7 @@
   .label-item {
     align-items: baseline;
   }
+
 
 
   .progress-container-heading {
