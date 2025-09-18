@@ -48,7 +48,7 @@ const Industry = ({isPrivateDeal}) => {
     { metric: "EBITDA Margin", solex: "11.6%", servotac: "8.60%", alpex: "16.30%", solarium: "12.20%" },
     { metric: "ROE", solex: "-", servotac: "-", alpex: "-", solarium: "-" },
     { metric: "ROCE", solex: "29.9%", servotac: "19.70", alpex: "51.80%", solarium: "20.10%" },
-    { metric: "P/E Ratio", solex: "37.60", servotac: "88.10", alpex: "20.10", solarium: "41.5" },
+    { metric: "P/E Ratio", solex: "37.6", servotac: "88.1", alpex: "20.10", solarium: "41.5" },
   ] :
     [
       { metric: "Revenue (₹ Cr)", premium: "288.2", pranik: "104.7" },
@@ -120,7 +120,7 @@ const Industry = ({isPrivateDeal}) => {
               <div key={index} className={styles.growthItem}>
                 <h3>{item.title}</h3>
                 <p className={styles.p}>{item.description}</p>
-                <p className={styles.p}>{item.description}</p>
+                {/* <p className={styles.p}>{item.description}</p> */}
               </div>
             ))}
           </div>

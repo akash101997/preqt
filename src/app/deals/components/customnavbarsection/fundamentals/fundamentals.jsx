@@ -258,7 +258,7 @@ const Fundamentals = ({ isPrivateDeal }) => {
             <div className="Fundamentals-body-head">
               <h3>Fund Allocation</h3>
               <p>
-                Total ₹ <span>-</span>
+                Total ₹ <span>- Cr</span>
               </p>
             </div>
             <Piechart
@@ -562,6 +562,65 @@ const Fundamentals = ({ isPrivateDeal }) => {
              The IPO is for up to 36,50,000 equity shares of F.V of ₹10 each the Exact issue price and overall amount to be raised      are yet to be finalized, will be disclosed in the final Prospectus
               </p>
          </div>
+          </section>
+
+
+         
+          <section className="ipo-objective-container-section">
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"> <g clip-path="url(#clip0_6168_24907)"> <path d="M28.2812 0H11.7188C5.24666 0 0 5.24666 0 11.7188V28.2812C0 34.7533 5.24666 40 11.7188 40H28.2812C34.7533 40 40 34.7533 40 28.2812V11.7188C40 5.24666 34.7533 0 28.2812 0Z" fill="#C9A74E"/> <path d="M35.0391 16.6238L32.0312 17.7285L20 5.69727V21.5105L4.96094 16.6238L15.7234 27.3863L10.7055 34.3035L16.4023 40.0004H28.2812C34.7531 40.0004 40 34.7535 40 28.2816V21.5848L35.0391 16.6238Z" fill="url(#paint0_linear_6168_24907)"/> <path d="M20 5.69727L23.7305 16.3762L35.0391 16.6238L26.0359 23.4715L29.2945 34.3035L20 27.8566L10.7055 34.3035L13.9641 23.4715L4.96094 16.6238L16.2695 16.3762L20 5.69727Z" fill="#E9E3D3"/> <path d="M35.0391 16.6238L20 21.5105L23.7305 16.3762L35.0391 16.6238ZM20 27.8566V21.5105L10.7055 34.3035L20 27.8566ZM20 21.5105L29.2945 34.3035L26.0359 23.4715L20 21.5105ZM16.2695 16.3762L20 21.5105V5.69727L16.2695 16.3762ZM13.9641 23.4715L20 21.5105L4.96094 16.6238L13.9641 23.4715Z" fill="white"/> </g> <defs> <linearGradient id="paint0_linear_6168_24907" x1="9.49688" y1="12.0879" x2="35.2719" y2="37.8637" gradientUnits="userSpaceOnUse"> <stop stop-opacity="0.5"/> <stop offset="1" stop-opacity="0"/> </linearGradient> <clipPath id="clip0_6168_24907"> <rect width="40" height="40" fill="white"/> </clipPath> </defs> </svg>
+            <h1>Credit Rating Outlook</h1>
+             <div>
+              <p>
+                <svg
+                  width="18"
+                  height="2"
+                  viewBox="0 0 18 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 1L17 0.999999"
+                    stroke="#E5E7EB"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              CARE Ratings assigned:
+              </p>
+
+              <p>
+                <svg
+                  width="18"
+                  height="2"
+                  viewBox="0 0 18 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 1L17 0.999999"
+                    stroke="#E5E7EB"
+                    strokeLinecap="round"
+                  />
+                </svg>
+                Long-term bank facilities: CARE BB+; Positive.Short-term: A4+
+              </p>
+
+              <p>
+                <svg
+                  width="18"
+                  height="2"
+                  viewBox="0 0 18 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 1L17 0.999999"
+                    stroke="#E5E7EB"
+                    strokeLinecap="round"
+                  />
+                </svg>
+                Rationale: Moderate financial risk profile and modest scale offset by experienced promoters, growing operations, and a diversified client base.
+              </p>
+            </div>
           </section>
         </div>
       </Dropdown>
