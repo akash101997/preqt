@@ -137,7 +137,7 @@ const Calculator = ({ onBack, handleAskAI, isPrivateDeal }) => {
           Ask AI About This Deal
         </button>}
 
-        {!isMobile && <div className={styles.viewDetailsBtn}>
+        {!isMobile && false && <div className={styles.viewDetailsBtn}>
           <div className={styles.leftDiv}>
             <div className={styles.greenDot}></div>
             <p>we have 1+ new deals</p>

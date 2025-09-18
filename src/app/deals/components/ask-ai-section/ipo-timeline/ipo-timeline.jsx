@@ -1,7 +1,14 @@
+"use client"
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import React from "react";
 
-const Ipotimeline = ({ handleAskAI ,handleQuesAns}) => {
+const Ipotimeline = ({ handleAskAI, handleQuesAns }) => {
+
+  const searchParams = useSearchParams();
+  const dealId = searchParams?.get("dealId");
+
+
   const steps = [
     { label: "IPO Open Date", date: "Wed, Jul 30, 2025", completed: true },
     { label: "IPO Close Date", date: "Wed, Jul 30, 2025", completed: true },
@@ -37,10 +44,10 @@ const Ipotimeline = ({ handleAskAI ,handleQuesAns}) => {
   ];
   return (
     <section className="ask-ai-section">
-      <button className="ask-ai-button"
-      onClick={() => {
-      handleAskAI(true);
-          
+      {dealId == "1" && <button className="ask-ai-button"
+        onClick={() => {
+          handleAskAI(true);
+
         }}
       >
         <svg
@@ -64,26 +71,26 @@ const Ipotimeline = ({ handleAskAI ,handleQuesAns}) => {
           />
         </svg>
         Ask AI About This Deal
-      </button>
+      </button>}
 
-     
+
 
       <div className="ask-ai-section2">
-        <button className="image-stack" 
-         onClick={() => {
-       handleQuesAns &&   handleQuesAns(true);
-          
-        }}
+        {/* <button className="image-stack"
+          onClick={() => {
+            handleQuesAns && handleQuesAns(true);
+
+          }}
         >
           <>
-          <div>
-            <img src="/assets/pictures/1.png" alt="" />
-            <img src="/assets/pictures/1.png" alt="" />
-            <img src="/assets/pictures/1.png" alt="" />
-            <img src="/assets/pictures/1.png" alt="" />
-          </div>
-          <span className="s1">23 Q&A answered in last 3 days </span>
-            </>
+            <div>
+              <img src="/assets/pictures/1.png" alt="" />
+              <img src="/assets/pictures/1.png" alt="" />
+              <img src="/assets/pictures/1.png" alt="" />
+              <img src="/assets/pictures/1.png" alt="" />
+            </div>
+            <span className="s1">23 Q&A answered in last 3 days </span>
+          </>
 
           <span className="s2">
             <img
@@ -91,7 +98,7 @@ const Ipotimeline = ({ handleAskAI ,handleQuesAns}) => {
               alt="gif"
             />
           </span>
-        </button> 
+        </button> */}
 
         <div className="ipo-timeline-section">
           <h3>IPO Timeline</h3>
@@ -100,9 +107,8 @@ const Ipotimeline = ({ handleAskAI ,handleQuesAns}) => {
             {steps.map((step, index) => (
               <div key={index} className="timeline-step">
                 <div
-                  className={`timeline-icon ${
-                    step.completed ? "completed" : ""
-                  }`}
+                  className={`timeline-icon ${step.completed ? "completed" : ""
+                    }`}
                 >
                   {step.completed ? (
                     <svg
@@ -182,8 +188,8 @@ const Ipotimeline = ({ handleAskAI ,handleQuesAns}) => {
           </div>
           <div className="view-details-btn">
             <div className="left-div">
-               <div className="greenDot"></div>
-            <p>We have 1+ new deals</p>
+              <div className="greenDot"></div>
+              <p>We have 1+ new deals</p>
             </div>
             <Link className="link" href="/deals">View All Deals</Link>
 
