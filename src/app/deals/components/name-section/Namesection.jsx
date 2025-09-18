@@ -28,6 +28,10 @@ const Namedetailsection = () => {
     return window.innerWidth < 920;
   });
 
+   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 920);

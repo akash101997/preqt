@@ -177,5 +177,12 @@
 @media(max-width:920px){
   .container{
     padding: 24px;
+    
+  }
+}
+
+@media(max-width:480px){
+  .container{
+    padding-top: 0;
   }
 }
