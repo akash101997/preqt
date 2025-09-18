@@ -8,7 +8,7 @@ export default function Home() {
       <div className={styles.main_container}>
         <div className={styles.left}>
           <h2 className={styles.h2}>
-            Get the <span>Pr.eqt.</span> App and keep in touch around the clock!
+            Get the <span>Preqt</span> App and keep in touch around the clock!
           </h2>
           <ul className={styles.ul}>
             <li><img className={styles.check_icon} src="/acconutfooter/tick-icon.svg" alt="" /><span> Monitor your investments in real-time.</span></li>
