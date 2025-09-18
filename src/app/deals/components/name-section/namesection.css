@@ -1557,7 +1557,10 @@
   }
 
   .lastcarousel {
-    padding: 0px 10px;
+    padding:  10px;
+  }
+  .bod-section{
+    padding-bottom: 0 !important;
   }
 
   .secondhalf {
@@ -1616,7 +1619,7 @@
   }
 
   .body-section2 span {
-    font-size: 20px;
+    font-size: 17px;
     line-height: 28px;
     font-weight: 500;
   }
@@ -1679,6 +1682,9 @@
   .total-shares {
     font-size: 12px;
   }
+  .secondhalf{
+    margin-bottom: 20px;
+  }
 
   .shares-section svg {
     width: 75px;
@@ -1735,7 +1741,7 @@
   }
 
   .body-section3 span {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
     font-weight: 300;
     font-style: normal;
@@ -1909,6 +1915,7 @@
     padding: 0px 10px;
   }
 
+
   .ask-ai-mob-div {
     width: 100%;
     display: flex;
@@ -1923,17 +1930,6 @@
     width: 100%;
     border-radius: 10px;
     border: 1px solid;
-  }
-
-  .firsthalf {
-    padding: 10px 5px;
-  }
-
-  .mob-topbar {
-    font-size: 16px !important;
-    display: flex;
-    justify-content: space-between;
-    padding: 8px 10px;
   }
 
   .mob-topbar div {
@@ -1999,11 +1995,7 @@
     font-weight: 300;
   }
 
-  .body-section2 span {
-    font-size: 20px;
-    line-height: 28px;
-    font-weight: 500;
-  }
+
 
   .body-section4 {
     justify-content: space-between;
@@ -2092,12 +2084,7 @@
     align-items: baseline;
   }
 
-  .body-section3 span {
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 300;
-    font-style: normal;
-  }
+
 
   .progress-container-heading {
     padding: 0px 5px;

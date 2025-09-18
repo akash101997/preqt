@@ -54,5 +54,10 @@
 @media(max-width:480px) {
   .privateContainer{
     padding: 0 10px;
+    padding-bottom: 20px;
+  }
+  .container{
+    padding: 0 10px;
+    padding-bottom: 20px;
   }
 }

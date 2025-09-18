@@ -98,6 +98,7 @@ font-size: 20px;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
+margin-bottom: 0;
 }
 .data{
     color: #878787 !important;
@@ -287,5 +288,12 @@ width: 24px;
 
        .body-section4 section{
         text-align: left;
+       }
+
+       .offer-day{
+        font-size: 16px;
+       }
+       .ipo-dropdown{
+        margin-bottom: 10px;
        }
 }

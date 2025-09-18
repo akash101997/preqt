@@ -300,6 +300,30 @@ padding: 16px 0px;
     padding: 0 24px;
     
   }
-
+.industryContainer{
+    padding: 0 24px;
+  }
 
 }
+
+@media(max-width:480px) {
+  .growthItem{
+    padding: 6px 0;
+    margin-bottom: 0;
+  }
+  .growthHeading{
+    margin-bottom: 0;
+    padding: 10px 0;
+  }
+  .seperator{
+    margin: 10px 0;
+  }
+  .policyHeading{
+    margin-bottom: 0;
+  }
+  .peerSection{
+    padding: 0;
+  }
+}
+
+
