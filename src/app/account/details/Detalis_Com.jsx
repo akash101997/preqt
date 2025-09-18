@@ -39,16 +39,16 @@ export default function Details_Com() {
     <div className={styles.main_container}>
       <div className={styles.header}>
         <h1 className={styles.h1}>Account Details </h1>
-        <div className={styles.edit_icon}>
+        {/* <div className={styles.edit_icon}> */}
           {/* <a className={styles.Link}  onClick={() => setShowEditModal(true)}><img src="/account_images/edit_icon.svg" alt="" /></a>  */}
-          <a className={styles.a} onClick={() => setShowEditModal(true)}>
+          {/* <a className={styles.a} onClick={() => setShowEditModal(true)}>
             <img src="/account_images/edit_icon.svg" alt="" />
           </a>
           <EditDetails
             isOpen={showeditModal}
             onClose={() => setShowEditModal(false)}
           />
-        </div>
+        </div> */}
       </div>
       <div className={styles.responsive_user_details}>
         <div className={styles.avatar}>AM</div>
@@ -70,9 +70,9 @@ export default function Details_Com() {
           <div className={styles.heading}>Email</div>
           <div className={styles.emailChange}>
             <div className={styles.value}>{investor?.email}</div>
-            <a className={styles.Link} onClick={() => setShowEmailModal(true)}>
+            {/* <a className={styles.Link} onClick={() => setShowEmailModal(true)}>
               change{" "}
-            </a>
+            </a> */}
             <ChangeEmail
               isOpen={showemailModal}
               onClose={() => setShowEmailModal(false)}
@@ -86,9 +86,9 @@ export default function Details_Com() {
           <div className={styles.heading}>Mobile Number</div>
           <div className={styles.mobileChange}>
             <div className={styles.value}>{investor?.phone || "N/A"}</div>
-            <a className={styles.Link} onClick={() => setShowPhoneModal(true)}>
+            {/* <a className={styles.Link} onClick={() => setShowPhoneModal(true)}>
               change{" "}
-            </a>
+            </a> */}
             <ChangePhone
               isOpen={showphoneModal}
               onClose={() => setShowPhoneModal(false)}
@@ -102,9 +102,9 @@ export default function Details_Com() {
           <div className={styles.heading}>Inverstor Type</div>
           <div className={styles.otp}>
             <div className={styles.value}>{investor?.type || "N/A"}</div>
-            <a className={styles.Link} onClick={() => setShowOtp(true)}>
+            {/* <a className={styles.Link} onClick={() => setShowOtp(true)}>
               otp
-            </a>
+            </a> */}
             <Otp isOpen={showOtp} onClose={() => setShowOtp(false)} />
           </div>
         </div>

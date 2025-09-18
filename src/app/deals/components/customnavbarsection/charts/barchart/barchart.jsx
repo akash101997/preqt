@@ -22,10 +22,10 @@ const privateData = [
 ];
 const publicData = [
   { year: "FY22", revenue: 58.1, ebitda: 14.07, pat: 1.51 },
-  { year: "FY23", revenue: 76.8, ebitda: 15.83, pat: 2.73 },
-  { year: "FY24", revenue: 76.7, ebitda: 17.32, pat: 1.75 },
-  { year: "FY25", revenue: 94.1, ebitda: 26.48, pat: 12.21 },
-  { year: "Q1FY26", revenue: 26.6, ebitda: 38.87, pat: 17.77 },
+  { year: "FY23", revenue: 76.9, ebitda: 15.80, pat: 2.72 },
+  { year: "FY24", revenue: 78.8, ebitda: 17.32, pat: 1.74 },
+  { year: "FY25", revenue: 94.1, ebitda: 26.48, pat: 11.97 },
+  // { year: "Q1FY26", revenue: 26.6, ebitda: 38.87, pat: 17.77 },
 ]
 const Barchart = ({isPrivateDeal}) => {
   const searchParams = useSearchParams();

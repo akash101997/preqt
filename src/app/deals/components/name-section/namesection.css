@@ -1105,6 +1105,9 @@ color: #b18c07;
 .private-deal-theme .shares-section svg line {
    stroke:#878787 !important;
 }
+.private-deal-theme .total-shares{
+  color: #FFFFFF !important;
+}
 
 
 .private-deal-theme .why-section {

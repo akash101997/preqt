@@ -241,7 +241,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
 
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><Valuation /></span>
                 </div>
-                <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "₹75 Cr" : "-"}</span>
+                <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "INR 75 Cr" : "-"}</span>
               </section>
 
               <section>
@@ -249,7 +249,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                   <span className="data">Revenue (FY25) </span>
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><RevenueIcon /></span>
                 </div>
-                <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "₹101.4 Cr FY25" : "₹94.1 Cr "}</span>
+                <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "INR 101.4 Cr FY25" : "₹94.1 Cr "}</span>
               </section>
             </section>
 
@@ -260,7 +260,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><PatIcon /></span>
                 </div>
                 <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>
-                  {isPrivateDeal ? "₹7.0 Cr" : "₹11.5 Cr"}
+                  {isPrivateDeal ? "INR 7.0 Cr" : "₹11.5 Cr"}
                 </span>
               </section>
 
@@ -270,7 +270,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                   <span >{isPrivateDeal ? <span className="data">P/E Multiple</span> : <span className="data">Issue Size</span>}</span>
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><PeMultiple /></span>
                 </div>
-                <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "10.7x" : "66-67.5 cr"}</span>
+                <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "10.7x" : "66-67.5 Cr"}</span>
               </section>
             </section>
           </div>
@@ -283,7 +283,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
           <section className="main-other">
             <section className="others">
               <h6>Round Size</h6>
-              <span>15 Cr</span>
+              <span>INR 15 Cr</span>
             </section>
 
             <section className="others">
@@ -295,7 +295,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
           <section className="main-other">
             <section className="others">
               <h6>Offer Price</h6>
-              <span>₹200</span>
+              <span>INR 200</span>
             </section>
 
             <section className="others">
@@ -307,12 +307,12 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
           <section className="main-other">
             <section className="others">
               <h6>Sale Type</h6>
-              <span>-</span>
+              <span>Fresh Issue</span>
             </section>
 
             <section className="others">
               <h6>PAT (FY25)</h6>
-              <span>₹7.0 Cr</span>
+              <span>INR 7.0 Cr</span>
             </section>
           </section>
 
@@ -331,49 +331,54 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
 
           <section className="main-other">
             <section className="others">
-              <h6>ROE</h6>
-              <span>-</span>
+              <h6>ROE(FY'25)</h6>
+              <span>68.7%</span>
             </section>
 
             <section className="others">
-              <h6>ROCE</h6>
-              <span>-</span>
+              <h6>ROCE(FY'25)</h6>
+              <span>59.9%</span>
             </section>
           </section>
 
-          <section className="main-other">
-            <section className="others">
+       <section className="main-other">
+               {/* <section className="others">
               <h6>Price to Book Value</h6>
               <span>-</span>
-            </section>
+            </section> */}
 
             <section className="others">
-              <h6>Debt/Equity</h6>
-              <span>-</span>
+              <h6>Debt/Equity(FY'25)</h6>
+              <span>3.0</span>
             </section>
-          </section>
 
-
-          <section className="main-other">
-            <section className="others">
+             <section className="others">
               <h6>Merchant banker appointed</h6>
               <span>-</span>
             </section>
+          </section>
 
-            <section className="others">
+
+          <section className="main-other">
+            {/* <section className="others">
+              <h6>Merchant banker appointed</h6>
+              <span>-</span>
+            </section> */}
+
+            {/* <section className="others">
               <h6>Expecting listing date</h6>
               <span>-</span>
-            </section>
+            </section> */}
           </section>
 
 
 
 
           <section className="main-other">
-            <section className="others">
+            {/* <section className="others">
               <h6>Target valuation</h6>
               <span>-</span>
-            </section>
+            </section> */}
 
             <section className="others">
               <h6>
