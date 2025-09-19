@@ -15,7 +15,7 @@ const IPOCollapse = ({ isPrivateDeal }) => {
             >
                 <div className={styles.ipocollapseleft}>
                     <small className={styles.smallText}>{isPrivateDeal ? "Per Share Price" : "Issue Price"} </small>
-                    {isPrivateDeal ? <h5 className={styles.largeText}>INR 200<small className={styles.smll}> per share</small></h5> : <h5 className={styles.largeText} > ₹128 to ₹135 <small className={styles.smll}>per share</small> </h5>}
+                    {isPrivateDeal ? <h5 className={styles.largeText}>INR 200<small className={styles.smll}> per share</small></h5> : <h5 className={styles.largeText} > INR 128 to INR 135 <small className={styles.smll}>per share</small> </h5>}
                 </div>
                 <div className={styles.ipocollapseright}>
                     <div className={styles.ipocollapserightInner}>

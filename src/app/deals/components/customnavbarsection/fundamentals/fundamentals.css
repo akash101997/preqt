@@ -193,7 +193,11 @@
   line-height: 24px;
   color: #888888;
   font-family: Helvetica;
-  font-style: italic;
+  /* font-style: italic; */
+}
+.ipo-objective-container-section p{
+  /* border: 1px solid red; */
+  max-width: 400px;
 }
 
 .timeline-body {
