@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Featured = () => {
+const Featured = ({isPrivatedeal}) => {
   return (
     
         <section className="why-section">
@@ -32,7 +32,9 @@ const Featured = () => {
                         fill="#C9A74E"
                       />
                     </svg>
-                    <h4>Backed by Sequoia and Lightspeed</h4>
+                    
+                    {isPrivatedeal? <h4> Experienced, Vision-Led Founding Team</h4>:<h4>Knowledge & Experience of  Promotors</h4>}
+                   
                   </div>
                   <div>
                     <svg
@@ -71,7 +73,8 @@ const Featured = () => {
                         fill="#C9A74E"
                       />
                     </svg>
-                    <h4>Fastest growing player in Tier-2 logistics</h4>
+                    {isPrivatedeal? <h4>End-to-End Execution Model</h4>:<h4>Scalable & Flexible  Fleet Model</h4>}
+                    
                   </div>
                 </div>
 
@@ -118,7 +121,8 @@ const Featured = () => {
                       />
                     </svg>
 
-                    <h4>Asset-light + EBITDA positive last 6 quarters</h4>
+                    {isPrivatedeal? <h4>Capacity Expansion and High-Growth Plans</h4>:<h4>Elivia - Vehicle Tracking Technology</h4>}
+              
                   </div>
                   <div>
                     <svg
@@ -174,7 +178,8 @@ const Featured = () => {
                       />
                     </svg>
 
-                    <h4>32 days lock-in period remaining</h4>
+                    {isPrivatedeal? <h4>Diversified Revenue Streams</h4>:<h4>Robust Network</h4>}
+                    
                   </div>
                 </div>
               </section>
