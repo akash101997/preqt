@@ -144,13 +144,29 @@ const Industry = ({isPrivateDeal}) => {
         </h2>
         {showGrowth && (
           <div >
-            {industryDriver.map((item, index) => (
+            {/* {industryDriver.map((item, index) => (
               <div key={index} className={styles.growthItem}>
                 <h3>{item.title}</h3>
-                <p className={styles.p}>{item.description}</p>
-                {/* <p className={styles.p}>{item.description}</p> */}
+                <p className={styles.p}>{item.description.point}</p>
+              
               </div>
-            ))}
+            ))} */}
+
+            {industryDriver.map((item, index) => (
+  <div key={index} className={styles.growthItem}>
+    <h3>{item.title}</h3>
+
+    {Array.isArray(item.description) ? (
+      <ul className={styles.pointList}>
+        {item.description.map((desc, i) => (
+          <li key={i} className={styles.p}>{desc.point}</li>
+        ))}
+      </ul>
+    ) : (
+      <p className={styles.p}>{item.description}</p>
+    )}
+  </div>
+))}
           </div>
         )}
       </section>
@@ -158,7 +174,7 @@ const Industry = ({isPrivateDeal}) => {
 
 
       {/* Government Policy Section */}
-      <section className={styles.policySection}>
+      {/* <section className={styles.policySection}>
         <h2
           className={styles.policyHeading}
           onClick={() => setShowPolicy(!showPolicy)}
@@ -178,7 +194,7 @@ const Industry = ({isPrivateDeal}) => {
           </ul>
         )}
       </section>
-    <hr className={styles.seperator}/>
+    <hr className={styles.seperator}/> */}
 
       {/* Peer Comparison Section */}
       {dealId != "2" &&
