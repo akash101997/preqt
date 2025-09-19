@@ -142,7 +142,7 @@ width: 24px;
         justify-content: center;
         align-items: flex-end;
     }
-@media(max-width:550px){
+@media(max-width:920px){
   .smallcard-section-subcontainer{
     display: flex;
     flex-direction: column;

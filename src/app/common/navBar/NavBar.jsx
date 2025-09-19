@@ -5,12 +5,14 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import LogoutModal from "@/app/components/LogoutModal";
+import Image from "next/image";
 
 export default function NavBar() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const dealId = searchParams?.get("dealId");
   const [shortName, setShortName] = useState("");
+  const [investorName, setInvestorName] = useState("");
   const router = useRouter();
   const [showLogout, setShowLogout] = useState(false)
 
@@ -45,23 +47,29 @@ export default function NavBar() {
     };
   }, [menuOpen]);
 
+
+
+
   useEffect(() => {
     const investorStr = Cookies.get("investor");
     if (investorStr) {
       const investor = JSON.parse(investorStr);
 
       if (investor.name) {
+        // save full name
+        setInvestorName(investor.name);
+
         // generate initials
         const initials = investor.name
           .trim()
           .split(/\s+/)
           .map((n) => n[0].toUpperCase())
           .join("");
-
         setShortName(initials);
       }
     }
   }, []);
+
 
   return (
     <>
@@ -150,18 +158,26 @@ export default function NavBar() {
           className={styles.openedSideMenu}
           onClick={(e) => e.stopPropagation()}
         >
-          {/* menu */}
+         <div>
+           <Image
+                src="/assets/pictures/logo.svg"
+                alt="logo"
+                width={120}   // set width as needed
+                height={40}   // set height as needed
+                priority      // makes sure logo loads fast
+              />
           <div className={styles.menuContainer}>
-            {/* <img src="/assets/pictures/crossBtn.svg" alt="" /> */}
-            {/* logo and X button */}
+           
 
             <div className={styles.menuContainer_main}>
+             
               <div className={styles.profile}>
-                <div className={styles.avatar}>AM</div>
+
+                <div className={styles.avatar}>{shortName}</div>
                 <div className={styles.avatardetails}>
                   <div className={styles.avatardetails_main}>
-                    <div className={styles.id}>CL273874</div>
-                    <div className={styles.name}>Anjali Mishra</div>
+                    {/* <div className={styles.id}>CL273874</div> */}
+                    <div className={styles.name}>{investorName}</div>
                   </div>
 
                   <div className={styles.arrow}>
@@ -208,6 +224,7 @@ export default function NavBar() {
                 <div className={styles.homebtn}>Account</div>
               </Link>
             </div>
+          </div>
           </div>
 
           {/* logout */}

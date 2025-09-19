@@ -74,3 +74,10 @@
  }
 
 }
+
+@media(max-width:480px){
+  .right img{
+    max-width: 350px !important;
+    width: 100% !important;
+  }
+}

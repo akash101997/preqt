@@ -43,6 +43,12 @@ const Namedetailsection = () => {
 
   const isMobile = useMediaQuery({ maxWidth: 920 });
 
+    useEffect(() => {
+    if (isMobile) {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
+  }, [isMobile]);
+
   const handleAskAI = (flag) => {
     setIsAskAiActive(flag);
   }

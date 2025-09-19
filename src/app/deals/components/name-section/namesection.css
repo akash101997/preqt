@@ -1084,6 +1084,8 @@
   width: 100%;
 }
 
+
+
 .private-deal-theme .body {
   background: #000 !important;
   box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06) !important;
@@ -1449,6 +1451,10 @@
     width: 56%;
   }
 
+  .righ-section{
+    width: unset;
+  }
+
 
 }
 
@@ -1462,8 +1468,18 @@
   }
 
   .righ-section {
-    width: 100%;
+    display: none;
   }
+/* .mob-topbar {
+    font-size: 16px !important;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 10px;
+  } */
+
+     .body-section4 section {
+        text-align: left !important;
+    }
 }
 
 @media(max-width: 768px) {
@@ -1537,10 +1553,7 @@
     padding: 16px 10px;
   }
 
-  .body-section4 section {
-    text-align: left;
-    padding: 10px !important;
-  }
+ 
 
   .bank-det {
     padding: 0 !important;
@@ -1567,9 +1580,7 @@
     padding: 10px 5px;
   }
 
-  .topbar span {
-    font-size: 12px;
-  }
+
 
   .subcontainer {
     width: 100%;
@@ -1957,9 +1968,7 @@
     display: none;
   }
 
-  .topbar {
-    display: none;
-  }
+
 
   .private-qualities span {
     font-size: 12px;
@@ -1972,9 +1981,7 @@
     padding: 10px 5px;
   }
 
-  .topbar span {
-    font-size: 12px;
-  }
+
 
   .subcontainer {
     width: 100%;
@@ -2143,9 +2150,7 @@
     padding: 15px 10px;
   }
 
-  .topbar span {
-    font-size: 12px;
-  }
+
 
   .body-maincontainer {
     flex-direction: column;

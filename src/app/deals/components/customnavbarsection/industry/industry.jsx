@@ -65,24 +65,24 @@ const Industry = ({isPrivateDeal}) => {
       },
       {
         title: "Key Market Drivers",
-        description: [
-          {
-            point:
-              "Policy Reforms: Initiatives such as GST have reduced cargo clearance times by 30%, while projects like Sagarmala and Bharatmala are strengthening port and road connectivity.",
-          },
-          {
-            point:
-              "E-commerce Boom: Rapid expansion of e-commerce has led to a 50% surge in logistics demand, fueling growth in last-mile delivery and warehousing solutions.",
-          },
-          {
-            point:
-              "Technological Adoption: Nearly 70% of logistics operations now leverage AI, IoT, and blockchain to improve tracking, visibility, and operational efficiency.",
-          },
-          {
-            point:
-              "Infrastructure Investments: Ongoing developments in freight corridors, road networks, and cold chain logistics are enhancing supply chain resilience and efficiency.",
-          },
-        ],
+        // description: [
+        //   {
+        //     point:
+        //       "Policy Reforms: Initiatives such as GST have reduced cargo clearance times by 30%, while projects like Sagarmala and Bharatmala are strengthening port and road connectivity.",
+        //   },
+        //   {
+        //     point:
+        //       "E-commerce Boom: Rapid expansion of e-commerce has led to a 50% surge in logistics demand, fueling growth in last-mile delivery and warehousing solutions.",
+        //   },
+        //   {
+        //     point:
+        //       "Technological Adoption: Nearly 70% of logistics operations now leverage AI, IoT, and blockchain to improve tracking, visibility, and operational efficiency.",
+        //   },
+        //   {
+        //     point:
+        //       "Infrastructure Investments: Ongoing developments in freight corridors, road networks, and cold chain logistics are enhancing supply chain resilience and efficiency.",
+        //   },
+        // ],
       },
     ];
 
