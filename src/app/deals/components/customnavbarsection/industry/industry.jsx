@@ -14,25 +14,8 @@ const Industry = ({isPrivateDeal}) => {
   const [showPolicy, setShowPolicy] = useState(true);
   const [showPeer, setShowPeer] = useState(true);
 
-  // 🔹 Dummy Data
-  // const growthOpportunities = [
-  //   {
-  //     title: "Favourable Tech",
-  //     description: "-"
-  //   },
-  //   {
-  //     title: "Capacity Expansion",
-  //     description: "-"
-  //   },
-  //   {
-  //     title: "Global Market Penetration",
-  //     description: "-"
-  //   },
-  //   {
-  //     title: "Specialty Ingredients Portfolio",
-  //     description: "-"
-  //   }
-  // ];
+
+
 
   const governmentPolicies = [
     "-"
@@ -59,6 +42,51 @@ const Industry = ({isPrivateDeal}) => {
       { metric: "P/E Ratio", premium: "-", pranik: "-" },
 
     ];
+
+
+     const industryDriver = isPrivateDeal
+  ? [
+      {
+        title: "Favourable Tech",
+        description:
+          "Technological advancements and large-scale manufacturing have transformed the global solar industry, driving module prices down by over 90% in the past decade. This shift has also accelerated the adoption of advanced bifacial and monocrystalline modules, significantly improving both efficiency and affordability worldwide.",
+      },
+      {
+        title: "Geographical Advantage",
+        description:
+          "India receives around 300 sunny days each year. The country also benefits from high solar irradiance levels, averaging between 4 and 7 kWh per square meter per day across most regions.",
+      },
+    ]
+  : [
+      {
+        title: "Market Overview",
+        description:
+          "The Indian logistics sector is projected to expand significantly, rising from USD 24,275.8 million in 2023 to USD 62,021.2 million by 2032, reflecting a CAGR of 12.44%. This growth will be driven by continuous improvements in infrastructure, integration of advanced technologies, and enhanced service quality standards.",
+      },
+      {
+        title: "Key Market Drivers",
+        description: [
+          {
+            point:
+              "Policy Reforms: Initiatives such as GST have reduced cargo clearance times by 30%, while projects like Sagarmala and Bharatmala are strengthening port and road connectivity.",
+          },
+          {
+            point:
+              "E-commerce Boom: Rapid expansion of e-commerce has led to a 50% surge in logistics demand, fueling growth in last-mile delivery and warehousing solutions.",
+          },
+          {
+            point:
+              "Technological Adoption: Nearly 70% of logistics operations now leverage AI, IoT, and blockchain to improve tracking, visibility, and operational efficiency.",
+          },
+          {
+            point:
+              "Infrastructure Investments: Ongoing developments in freight corridors, road networks, and cold chain logistics are enhancing supply chain resilience and efficiency.",
+          },
+        ],
+      },
+    ];
+
+
 
   return (
     <div className={isPrivateDeal? styles.privateIndustryContainer: styles.industryContainer}>
@@ -116,7 +144,7 @@ const Industry = ({isPrivateDeal}) => {
         </h2>
         {showGrowth && (
           <div >
-            {growthOpportunities.map((item, index) => (
+            {industryDriver.map((item, index) => (
               <div key={index} className={styles.growthItem}>
                 <h3>{item.title}</h3>
                 <p className={styles.p}>{item.description}</p>

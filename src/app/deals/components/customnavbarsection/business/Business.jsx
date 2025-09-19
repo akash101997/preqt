@@ -88,7 +88,7 @@ const Business = ({ isPrivateDeal }) => {
           <br />
           {isPrivateDeal ? "Sonipat, Haryana" : "Navi Mumbai, Maharashtra"}
         </p>
-        <p className={styles.p}>
+        <div className={styles.p}>
 
          {isPrivateDeal ?  <strong className={styles.strong}>Number of Facilities</strong>: <strong className={styles.strong}>Operational footprint</strong>}
           <br />
@@ -105,7 +105,7 @@ const Business = ({ isPrivateDeal }) => {
     turnaround times, and consistent service delivery, reinforcing its position as
     a critical link in the supply chain.
   </p>)}
-        </p>
+        </div>
         {isPrivateDeal && <ul className={styles.ul}>
           <li>The Company currently work at a capacity of 75 MW and will scale it up to  375 MW by Dec’25 through the ongoing investment round.</li>
         </ul>}
