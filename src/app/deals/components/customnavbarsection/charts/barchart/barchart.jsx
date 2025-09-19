@@ -35,7 +35,7 @@ const Barchart = ({ isPrivateDeal }) => {
   const data = dealId == "2" ? privateData : publicData;
   const isMobile = useMediaQuery({ maxWidth: 768 });
   return (
-    <ResponsiveContainer width="100%" height={450} padding={{ top: 10, right: 0, left: 0, bottom: 2 }}>
+    <ResponsiveContainer width="100%" height={isMobile ? 350 : 450} padding={{ top: 10, right: 0, left: 0, bottom: 2 }}>
       <ComposedChart
         data={data}
         margin={{ top: 0, right: 5, left: 5, bottom: 20 }}
@@ -71,7 +71,7 @@ const Barchart = ({ isPrivateDeal }) => {
         <YAxis
           yAxisId="right"
           orientation="right"
-          domain={[-4, 12]}
+           domain={['auto', 'auto']} 
           label={{
             value: "Margins (%)",
             angle: 90,
