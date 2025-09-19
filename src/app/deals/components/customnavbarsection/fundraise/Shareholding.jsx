@@ -10,20 +10,20 @@ const privateData = [
   {
     id: 1,
     name: "Sagar Sachdev",
-    pre_issue: "2%",
-    post_issue: "1.60%"
+    pre_issue: "2.0%",
+    post_issue: "1.6%"
   },
   {
     id: 2,
     name: "Rishabh Aggarwal",
-    pre_issue: "48%",
-    post_issue: "38.40%"
+    pre_issue: "48.0%",
+    post_issue: "38.4%"
   },
   {
     id: 3,
     name: "Harsh Agarwal",
-    pre_issue: "50%",
-    post_issue: "40.00%"
+    pre_issue: "50.0%",
+    post_issue: "40.0%"
   }
 ];
 
@@ -91,7 +91,7 @@ export default function Shareholding({ isPrivateDeal }) {
 
   useEffect(() => {
     setTimeout(() => setPreprogressbar(isPrivateDeal ? 100 : 100), 100); // delay for smooth effect
-    setTimeout(() => setPostprogressbar(isPrivateDeal ? 80 : 66.68), 100);
+    setTimeout(() => setPostprogressbar(isPrivateDeal ? 80 : 66.67), 100);
   }, []);
 
   return (
@@ -170,27 +170,38 @@ export default function Shareholding({ isPrivateDeal }) {
               <span>Total Promoter Holding</span>
               <div className={styles.tableData}>
                 <span>100%</span>
-                <span>{isPrivateDeal ? "80%" : "66.68%"}</span>
+                <span>{isPrivateDeal ? "80%" : "66.67%"}</span>
               </div>
             </div>
 
             {/* Additional Shareholders */}
-            {!isPrivateDeal && <div className={styles.subHeader}>Additional Shareholders</div>}
+            {/* {!isPrivateDeal && <div className={styles.subHeader}>Additional Shareholders</div>}q */}
 
-            {!isPrivateDeal && <div className={`${styles.row} ${styles.totalRow}`}>
-              <span>Total Additional Holding</span>
-              <div className={styles.tableData}>
-                <span>-</span>
-                <span>-</span>
-              </div>
-            </div>
-            }
+          <div className={`${styles.publicRow} ${styles.publicTotalRow}`}>
+              <div> <span className={styles.square}></span> 
+  <span>Public</span></div>
+   
+  {isPrivateDeal ? (
+    <div className={styles.publicTableData}>
+     
+      <span>0.0%</span>
+      <span>20.0%</span>
+    </div>
+  ) : (
+    <div className={styles.publicTableData}>
+        {/* <span className={styles.square}></span>  */}
+      <span>0.0%</span>
+      <span>33.33%</span>
+    </div>
+  )}
+</div>
+            
             {/* Grand Total */}
             <div className={`${styles.row} ${styles.grandTotal}`}>
               <span>Total Shareholding</span>
               <div className={styles.tableData}>
                 <span>100%</span>
-                <span>{isPrivateDeal ? "-" : "66.68%"}</span>
+                <span>{isPrivateDeal ? "100%" : "100%"}</span>
               </div>
             </div>
           </div>
