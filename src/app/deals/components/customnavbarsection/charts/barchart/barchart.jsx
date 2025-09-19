@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import styles from './barchart.module.css';
+import { useMediaQuery } from "react-responsive";
 import {
   ComposedChart,
   Bar,
@@ -27,23 +28,26 @@ const publicData = [
   { year: "FY25", revenue: 94.1, ebitda: 26.48, pat: 11.97 },
   // { year: "Q1FY26", revenue: 26.6, ebitda: 38.87, pat: 17.77 },
 ]
-const Barchart = ({isPrivateDeal}) => {
+const Barchart = ({ isPrivateDeal }) => {
   const searchParams = useSearchParams();
   const dealId = searchParams?.get("dealId");
 
   const data = dealId == "2" ? privateData : publicData;
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   return (
     <ResponsiveContainer width="100%" height={450} padding={{ top: 10, right: 0, left: 0, bottom: 2 }}>
       <ComposedChart
         data={data}
-        margin={{ top: 0, right: 30, left: 30, bottom: 20 }}
+        margin={{ top: 0, right: 5, left: 5, bottom: 20 }}
+        barCategoryGap="15%"   // default is ~20–30%
+        barGap={2}
       >
         <CartesianGrid
           strokeDasharray="3 3"
           vertical={false}
           stroke="#E2E8F0" />
 
-        <XAxis dataKey="year"   axisLine={{ stroke: isPrivateDeal ? "#374151" : "#E2E8F0" }}
+        <XAxis dataKey="year" axisLine={{ stroke: isPrivateDeal ? "#374151" : "#E2E8F0" }}
           tickLine={{ stroke: isPrivateDeal ? "#374151" : "#E2E8F0" }} />
 
         {/* Left Y-axis for Revenue */}
@@ -74,13 +78,61 @@ const Barchart = ({isPrivateDeal}) => {
             position: "insideRight",
             style: { textAnchor: "middle", fontSize: 15, paddingLeft: 15 },
           }}
-          tick={{ fontSize: 12 }}
+          tick={{ fontSize: 14 }}
           tickFormatter={(val) => `${val}%`}
           axisLine={{ stroke: isPrivateDeal ? "#374151" : "#E2E8F0" }}
           tickLine={{ stroke: isPrivateDeal ? "#374151" : "#E2E8F0" }}
         />
 
-        <Tooltip />
+        <Tooltip
+          content={({ active, payload, label }) => {
+            if (active && payload && payload.length) {
+              return (
+                <div
+                  style={{
+                    background: "white",
+                    padding: "10px 14px",
+                    borderRadius: "8px",
+                    boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
+                    fontFamily: '"Helvetica Neue", sans-serif',
+                  }}
+                >
+                  <p
+                    style={{
+                      margin: 0,
+                      fontWeight: 600,
+                      fontSize: "14px",
+                      color: "#111827",
+                    }}
+                  >
+                    {label}
+                  </p>
+
+                  {payload.map((entry, index) => (
+                    <p
+                      key={`tooltip-${index}`}
+                      style={{
+                        margin: "4px 0",
+                        fontSize: "12px", // smaller font
+                        textTransform: "uppercase", // 🔥 make uppercase
+                        color:
+                          entry.dataKey === "ebitda"
+                            ? "#4B0082"
+                            : entry.dataKey === "pat"
+                              ? "#008000"
+                              : "#B59131",
+                      }}
+                    >
+                      {`${entry.dataKey} : ${entry.value}`}
+                    </p>
+                  ))}
+                </div>
+              );
+            }
+            return null;
+          }}
+        />
+
 
         <Legend
           verticalAlign="bottom"
@@ -100,14 +152,13 @@ const Barchart = ({isPrivateDeal}) => {
 
             return (
               <ul
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  gap: "30px",
-                  listStyle: "none",
-                  padding: 0,
-                  margin: 0,
-                }}
+                className={styles.legends}
+              // style={{
+              //   display: "flex",
+              //   justifyContent: "center",
+              //   gap: "20px",
+
+              // }}
               >
                 {sortedPayload.map((entry, index) => {
                   const label =
@@ -120,12 +171,7 @@ const Barchart = ({isPrivateDeal}) => {
                   return (
                     <li
                       key={`item-${index}`}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "6px",
-                        position: "relative",
-                      }}
+
                     >
                       {/* Circle color */}
                       <span
@@ -144,13 +190,12 @@ const Barchart = ({isPrivateDeal}) => {
                       />
                       {/* Text style applied */}
                       <span
-                         style={{
+                        style={{
                           color: isPrivateDeal ? "#FFF" : "var(--Gray-700, #374151)", // ✅ conditional color
-                          fontFamily: '"Helvetica Neue", sans-serif',
-                          fontSize: "14px",
-                          fontStyle: "normal",
-                          fontWeight: 500,
-                          lineHeight: "18px",
+                          // fontSize: "14px",
+                          // fontStyle: "normal",
+                          // fontWeight: 500,
+                          // lineHeight: "18px",
                         }}
                       >
                         {label}
@@ -164,7 +209,7 @@ const Barchart = ({isPrivateDeal}) => {
                             width: "1px",
                             height: "16px",
                             background: "#E0E6F0",
-                            marginLeft: "20px",
+                            marginLeft: "15px",
                           }}
                         />
                       )}
@@ -184,7 +229,7 @@ const Barchart = ({isPrivateDeal}) => {
         <Bar
           yAxisId="left"
           dataKey="revenue"
-          barSize={60}
+          barSize={isMobile ? 30 : 60} // 👈 smaller bar on mobile
           fill="url(#goldGradient)"
           radius={[6, 6, 0, 0]}
         >

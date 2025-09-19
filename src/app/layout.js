@@ -50,7 +50,16 @@ export default function RootLayout({ children }) {
             <ClientChrome>{children}</ClientChrome>
           </MultiStepProvider>
         </Suspense>
-        <ToastContainer />
+        <ToastContainer
+         toastClassName="customToast"
+        bodyClassName="customBody"
+        progressClassName="customProgress"
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        draggable />
       </body>
     </html>
   );

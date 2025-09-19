@@ -220,11 +220,17 @@ padding: 16px 0px;
 }
 .PeerTable td:first-child {
   border-right: 2px solid #b18c07;
+  padding-right: 30px;
 }
 
 .seperator{
   color: #F3F4F6;
   opacity: 1;
+}
+
+.privateIndustryContainer .seperator{
+  color: #334155;
+  opacity: 0.6;
 }
 
 
