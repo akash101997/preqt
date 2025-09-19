@@ -21,8 +21,8 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
   ];
 
   const data = dealId == "2" ? [
-    { year: "2024", growth: 52.8, revenue: 66.3, ebitda: "5.3%", pat: "1.4%", peratio: 1.4, roa: 3.4, roe: 43.5, roce: 31.6, debttoequity: 9.3, interestcoverage: 1.8, debtordays: 94, inventorydays: 89, currentratio: 1.5, quickratio: 0, creditordays: 40, longtermfundstofixed: 3.9, cogs: 83.3 },
-    { year: "2025", growth: 52.9, revenue: 101.4, ebitda: "13.3%", pat: "7.0%", peratio: 10.7, roa: 12.3, roe: 68.7, roce: 59.9, debttoequity: 3.0, interestcoverage: 4.3, debtordays: 91, inventorydays: 39, currentratio: 1.5, quickratio: 0, creditordays: 0, longtermfundstofixed: 4.5, cogs: 79.0 },
+    { year: "2024", growth: 52.8, revenue: 66.3, ebitda: "5.3", pat: "1.4", peratio: 1.4, roa: 3.4, roe: 43.5, roce: 31.6, debttoequity: 9.3, interestcoverage: 1.8, debtordays: 94, inventorydays: 89, currentratio: 1.5, quickratio: 0, creditordays: 40, longtermfundstofixed: 3.9, cogs: 83.3 },
+    { year: "2025", growth: 52.9, revenue: 101.4, ebitda: "13.3", pat: "7.0", peratio: 10.7, roa: 12.3, roe: 68.7, roce: 59.9, debttoequity: 3.0, interestcoverage: 4.3, debtordays: 91, inventorydays: 76, currentratio: 1.5, quickratio: 0, creditordays: 39, longtermfundstofixed: 4.5, cogs: 79.0 },
   ] : [
     { year: "2023", growth: 32.2, revenue: 76.9, ebitda: "12.2 (15.8%)", pat: "2.1 (2.7%)", peratio: 0, roa: 5.7, roe: 30.1, roce: 13.7, debttoequity: 5.9, interestcoverage: 2.3, debtordays: 75, inventorydays: 0, currentratio: 0.9, quickratio: 0, creditordays: 30, longtermfundstofixed: 0, cogs: 76.3 },
     { year: "2024", growth: 2.5, revenue: 78.8, ebitda: "13.6 (17.3%)", pat: "1.4 (1.7%)", peratio: 0, roa: 1.9, roe: 15.8, roce: 12.4, debttoequity: 6.3, interestcoverage: 1.7, debtordays: 80, inventorydays: 0, currentratio: 0.8, quickratio: 0, creditordays: 30, longtermfundstofixed: 80.6, cogs: 74.2 },
@@ -41,6 +41,8 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
   // Track open/close state for nested yearly accordions
   const [nestedOpen, setNestedOpen] = useState(() => {
     const sorted = [...data].sort((a, b) => b.year - a.year);
+
+
     const initial = {};
     sorted.forEach((item, index) => {
       initial[item.year] = index === 0; // first year open, rest closed

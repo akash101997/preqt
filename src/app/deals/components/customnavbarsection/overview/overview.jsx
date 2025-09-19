@@ -5,7 +5,7 @@ import LastCarousel from "./lastcarousel/lastcarousel";
 import Bod from "./directors-section/bod";
 import Pitchdeck from "./pitch-deck-section/pitchdeck";
 import About from "./about-section/about";
-import UtilisationFunds from "./utilisation-of-funds/UtilisationFunds.module";
+import UtilisationFunds from "./utilisation-of-funds/UtilisationFunds";
 import { useSearchParams } from "next/navigation";
 import Shareholding from "../fundraise/Shareholding";
 

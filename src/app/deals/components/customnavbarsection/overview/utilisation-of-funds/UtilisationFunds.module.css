@@ -30,6 +30,14 @@
 
   padding-bottom: 6px;
 }
+.text {
+  /* margin-top: 8px; */
+  font-size: 14px;
+  font-weight: 400;
+  color: #9CA3AF;
+  
+  /* line-height: 1.5; */
+}
 
 .row {
   display: flex;

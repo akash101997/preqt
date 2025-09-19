@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Featured = ({isPrivatedeal}) => {
+const Featured = ({isPrivateDeal}) => {
   return (
     
         <section className="why-section">
@@ -33,7 +33,7 @@ const Featured = ({isPrivatedeal}) => {
                       />
                     </svg>
                     
-                    {isPrivatedeal? <h4> Experienced, Vision-Led Founding Team</h4>:<h4>Knowledge & Experience of  Promotors</h4>}
+                    {isPrivateDeal ? <h4> Experienced, Vision-Led Founding Team</h4>:<h4>Knowledge & Experience of  Promotors</h4>}
                    
                   </div>
                   <div>
@@ -73,7 +73,7 @@ const Featured = ({isPrivatedeal}) => {
                         fill="#C9A74E"
                       />
                     </svg>
-                    {isPrivatedeal? <h4>End-to-End Execution Model</h4>:<h4>Scalable & Flexible  Fleet Model</h4>}
+                    {isPrivateDeal? <h4>End-to-End Execution Model</h4>:<h4>Scalable & Flexible  Fleet Model</h4>}
                     
                   </div>
                 </div>
@@ -121,7 +121,7 @@ const Featured = ({isPrivatedeal}) => {
                       />
                     </svg>
 
-                    {isPrivatedeal? <h4>Capacity Expansion and High-Growth Plans</h4>:<h4>Elivia - Vehicle Tracking Technology</h4>}
+                    {isPrivateDeal? <h4>Capacity Expansion and High-Growth Plans</h4>:<h4>Elivia - Vehicle Tracking Technology</h4>}
               
                   </div>
                   <div>
@@ -178,7 +178,7 @@ const Featured = ({isPrivatedeal}) => {
                       />
                     </svg>
 
-                    {isPrivatedeal? <h4>Diversified Revenue Streams</h4>:<h4>Robust Network</h4>}
+                    {isPrivateDeal? <h4>Diversified Revenue Streams</h4>:<h4>Robust Network</h4>}
                     
                   </div>
                 </div>

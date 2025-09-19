@@ -15,24 +15,24 @@ const Industry = ({isPrivateDeal}) => {
   const [showPeer, setShowPeer] = useState(true);
 
   // 🔹 Dummy Data
-  const growthOpportunities = [
-    {
-      title: "Expansion of Technological Capabilities",
-      description: "-"
-    },
-    {
-      title: "Capacity Expansion",
-      description: "-"
-    },
-    {
-      title: "Global Market Penetration",
-      description: "-"
-    },
-    {
-      title: "Specialty Ingredients Portfolio",
-      description: "-"
-    }
-  ];
+  // const growthOpportunities = [
+  //   {
+  //     title: "Favourable Tech",
+  //     description: "-"
+  //   },
+  //   {
+  //     title: "Capacity Expansion",
+  //     description: "-"
+  //   },
+  //   {
+  //     title: "Global Market Penetration",
+  //     description: "-"
+  //   },
+  //   {
+  //     title: "Specialty Ingredients Portfolio",
+  //     description: "-"
+  //   }
+  // ];
 
   const governmentPolicies = [
     "-"
@@ -110,7 +110,7 @@ const Industry = ({isPrivateDeal}) => {
           style={{ cursor: "pointer" }}
         >
 
-          <div>Growth Opportunities </div>
+          {isPrivateDeal ?   <div> Industry Drivers  </div>: <div>Indian Logistic Market</div>}
           <div> {showGrowth ? <ChevronUp size={20} /> : <ChevronDown size={20} />}</div>
 
         </h2>
@@ -137,7 +137,7 @@ const Industry = ({isPrivateDeal}) => {
           style={{ cursor: "pointer" }}
         >
 
-          <div>Government Policy Support  </div>
+         {isPrivateDeal ?   <div> Industry Drivers  </div>: <div>Indian Logistic Market</div>}
           <div>{showPolicy ? <ChevronUp size={20} /> : <ChevronDown size={20} />}</div>
         </h2>
 

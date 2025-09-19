@@ -11,13 +11,21 @@ import {
     LabelList,
 } from "recharts";
 
-const data = [
+
+
+const DebtBarChart = ({ isPrivate = false }) => {
+const data =isPrivate ? [
+    { year: "2022", value: 13.8 },
+    { year: "2023", value: 14.0 },
+    { year: "2024", value: 9.3 },
+    { year: "2024", value: 3.0 },
+
+]:[
     { year: "2022", value: 0 },
     { year: "2023", value: 0 },
     { year: "2024", value: 0 },
 ];
 
-const DebtBarChart = ({ isPrivate = false }) => {
     return (
         <ResponsiveContainer width="100%" height={300}>
             <BarChart data={data} barSize={60}>
