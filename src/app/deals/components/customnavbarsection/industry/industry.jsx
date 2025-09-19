@@ -203,52 +203,53 @@ const Industry = ({ isPrivateDeal }) => {
               </div>
             </h2>
             {showPeer && (
-              <table className={styles.PeerTable}>
-                <thead>
-                  <tr>
-                    <th>Metric</th>
-                    <th>
-                      <div className={styles.tableHeading}>
-                        <span>Solex Energy</span>
-                        <img src="/assets/pictures/solex.svg" alt="" />
-                      </div>
-                    </th>
-                    <th>
-                      <div className={styles.tableHeading}>
-                        <span>
-                          Servotac <br />
-                          Renewable
-                          <br /> Power
-                        </span>
-                        <img src="/assets/pictures/servotac.svg" alt="" />
-                      </div>
-                    </th>
-                    <th>
-                      <div className={styles.tableHeading}>
-                        <span>Alpex Solar</span>
-                        <img src="/assets/pictures/alpex.svg" alt="" />
-                      </div>
-                    </th>
-                    <th>
-                      <div className={styles.tableHeading}>
-                        <span>Solarium</span>
-                        <img src="/assets/pictures/solarium.svg" alt="" />
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {peerComparison.map((row, index) => (
-                    <tr key={index}>
-                      <td>{row.metric}</td>
-                      <td>{row.solex}</td>
-                      <td>{row.servotac}</td>
-                      <td>{row.alpex}</td>
-                      <td>{row.solarium}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+             <div className={styles.tableWrapper}>
+      <table className={styles.PeerTable}>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>
+              <div className={styles.tableHeading}>
+                <span>Solex Energy</span>
+                <img src="/assets/pictures/solex.svg" alt="" />
+              </div>
+            </th>
+            <th>
+              <div className={styles.tableHeading}>
+                <span>
+                  Servotac <br />
+                  Renewable <br /> Power
+                </span>
+                <img src="/assets/pictures/servotac.svg" alt="" />
+              </div>
+            </th>
+            <th>
+              <div className={styles.tableHeading}>
+                <span>Alpex Solar</span>
+                <img src="/assets/pictures/alpex.svg" alt="" />
+              </div>
+            </th>
+            <th>
+              <div className={styles.tableHeading}>
+                <span>Solarium</span>
+                <img src="/assets/pictures/solarium.svg" alt="" />
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {peerComparison.map((row, index) => (
+            <tr key={index}>
+              <td>{row.metric}</td>
+              <td>{row.solex}</td>
+              <td>{row.servotac}</td>
+              <td>{row.alpex}</td>
+              <td>{row.solarium}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
             )}
           </section>
           <hr className={styles.seperator} />
