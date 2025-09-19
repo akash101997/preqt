@@ -13,15 +13,17 @@ import {
 
 export default function PurpleBarchart({ isPrivate = false }) {
   const chartData = isPrivate ? [
-    { year: "2022", growth: -22 },
-    { year: "2023", growth: 24 },
-    { year: "2024", growth: 36 },
+    { year: "2022", growth: 25.3 },
+    { year: "2023", growth: 21.4 },
+    { year: "2024", growth: 43.5},
+    { year: "2025", growth: 68.7},
+
   ] : [
-    { year: "FY22", growth: 14.80 },
-    { year: "FY23", growth: 30.15 },
-    { year: "FY24", growth: 15.83 },
-    { year: "FY25", growth: 75.91 },
-    { year: "Q1FY26", growth: 20.79 },
+    { year: "FY22", growth: 14.8 },
+    { year: "FY23", growth: 30.2 },
+    { year: "FY24", growth: 15.8 },
+    { year: "FY25", growth: 75.9 },
+    // { year: "Q1FY26", growth: 20.79 },
   ];
   return (
     <div style={{ width: "100%", height: 300 }}>
