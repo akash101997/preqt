@@ -23,27 +23,46 @@ export default function UtilisationFunds({ isPrivateDeal }) {
   ];
 
   return (
-    <div className={`${styles.card} ${isPrivateDeal ? styles.privateDeal : ''}`}>
-      <h3 className={styles.heading}>Utilisation of Funds</h3>
-      <div className={styles.table}>
-        <div className={styles.rowHeader}>
+           <div className={`${styles.card} ${isPrivateDeal ? styles.privateDeal : ''}`}>
+              <h3 className={styles.heading}>Utilisation of Funds</h3>
+           <div className={styles.table}>
+              <div className={styles.rowHeader}>
           <span className={styles.colPurpose}>Purpose</span>
-          <span className={styles.colAmount}>INR crores (%)</span>
+          <span className={styles.colAmount}>In (%)</span>
         </div>
 
-        {data.map((item, index) => (
-          <div key={index} className={styles.row}>
-            <div className={styles.purpose}>
-              <span
-                className={styles.colorBox}
-                style={{ backgroundColor: item.color }}
-              ></span>
-              {item.label}
-            </div>
-            <span className={styles.amount}>{item.amount}</span>
-          </div>
-        ))}
-      </div>
-    </div>
+
+          {isPrivateDeal ? (
+           data.map((item, index) => (
+            <div key={index} className={styles.row}>
+           <div className={styles.purpose}>
+            <span
+             className={styles.colorBox}
+            style={{ backgroundColor: item.color }}
+           ></span>
+            {item.label}
+              </div>
+              <span className={styles.amount}>{item.amount}</span>
+             </div>
+              ))
+             ) : (
+                   data.map((item, index) => (
+                   <div key={index} className={styles.row}>
+                   <div className={styles.purpose}>
+                   <span
+                   className={styles.colorBox}
+                   style={{ backgroundColor: item.color }}
+                     ></span>
+                   {item.label}
+                   </div>
+                      <span className={styles.amount}>{item.amount}</span>
+                    </div>
+                  )))
+                      }
+               </div>
+               </div>
+               
+            
+
   );
 }

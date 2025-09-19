@@ -15,7 +15,7 @@ const IPOCollapse = ({ isPrivateDeal }) => {
             >
                 <div className={styles.ipocollapseleft}>
                     <small className={styles.smallText}>{isPrivateDeal ? "Per Share Price" : "Issue Price"} </small>
-                    {isPrivateDeal ? <h5 className={styles.largeText}>₹200<small className={styles.smll}> per share</small></h5> : <h5 className={styles.largeText} > ₹128 to ₹135 <small className={styles.smll}>per share</small> </h5>}
+                    {isPrivateDeal ? <h5 className={styles.largeText}>INR 200<small className={styles.smll}> per share</small></h5> : <h5 className={styles.largeText} > ₹128 to ₹135 <small className={styles.smll}>per share</small> </h5>}
                 </div>
                 <div className={styles.ipocollapseright}>
                     <div className={styles.ipocollapserightInner}>
@@ -39,11 +39,11 @@ const IPOCollapse = ({ isPrivateDeal }) => {
                         <tbody>
                             <tr>
                                 <td className="text-start">Overall</td>
-                                <td className="text-end">{isPrivateDeal ? "₹15 Cr" : '-'}</td>
+                                <td className="text-end">{isPrivateDeal ? "INR 15 Cr" : 'INR 66.0-67.5 Cr'}</td>
                             </tr>
                             <tr>
                                 <td className="text-start">Fresh Issue</td>
-                                <td className="text-end">{isPrivateDeal ? "₹7.5 L" : "₹50 L"}</td>
+                                <td className="text-end">{isPrivateDeal ? "INR 7.5 L" : "INR 66.0-67.5 Cr"}</td>
                             </tr>
                             <tr>
                                 <td className="text-start">Offer for sale</td>

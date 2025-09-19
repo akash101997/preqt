@@ -249,7 +249,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                   <span className="data">Revenue (FY25) </span>
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><RevenueIcon /></span>
                 </div>
-                <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "INR 101.4 Cr FY25" : "₹94.1 Cr "}</span>
+                <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "INR 101.4 Cr" : "₹94.1 Cr "}</span>
               </section>
             </section>
 
@@ -288,7 +288,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
 
             <section className="others">
               <h6>Face Value</h6>
-              <span>-</span>
+              <span>INR 10</span>
             </section>
           </section>
 
@@ -325,7 +325,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
 
             <section className="others">
               <h6>CAGR Growth 3Y</h6>
-              <span>-</span>
+              <span>42.6%</span>
             </section>
           </section>
 
@@ -438,7 +438,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
 
               <section className="others">
                 <h6>Offer Price</h6>
-                <span>₹384</span>
+                <span>INR 384</span>
               </section>
             </section>
 
@@ -450,14 +450,14 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
 
               <section className="others">
                 <h6>Sale Type</h6>
-                <span>Fresh Capital + Offer for Sale</span>
+                <span>Fresh Issue</span>
               </section>
             </section>
 
             <section className="main-other">
               <section className="others">
                 <h6>PAT (FY25)</h6>
-                <span>₹11.5 Cr</span>
+                <span>INR 11.5 Cr</span>
               </section>
 
               <section className="others">
@@ -473,8 +473,8 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
               </section>
 
               <section className="others">
-                <h6>EBITDA</h6>
-                <span>24.9 Cr FY25</span>
+                <h6>EBITDA(FY'25)</h6>
+                <span>INR 24.9 Cr </span>
               </section>
             </section>
 
@@ -499,15 +499,15 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
               </section>
 
 
-              <section className="others">
+              {/* <section className="others">
                 <h6>Price to Book Value</h6>
                 <span>-</span>
-              </section>
+              </section> */}
 
             </section >
             <section className="main-other">
               <section className="others">
-                <h6>Debt/Equity</h6>
+                <h6>Debt/Equity(FY'25)</h6>
                 <span>
                   {/* <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -522,7 +522,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                     />
                   </svg>
                   Yes */}
-                  3.0 For FY25
+                  3.0 
                 </span>
               </section>
 
