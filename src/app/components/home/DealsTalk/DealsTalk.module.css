@@ -1,4 +1,4 @@
-.DealsTalkMainContainer{
+.DealsTalkMainContainer {
     /* max-width: 1020px; */
     /* border: 1px solid black;  */
 
@@ -91,7 +91,8 @@
     opacity: 1;
     background: #7E60FF;
 }
-.DealsTalkHeading{
+
+.DealsTalkHeading {
     font-weight: 200;
     font-size: 32px;
     line-height: 100%;
@@ -102,15 +103,16 @@
     letter-spacing: 0;
     color: #1F2937;
 }
-.SpanDealsTalkHeading{
+
+.SpanDealsTalkHeading {
     font-weight: 400;
 }
 
-.DealsTalkCardContainer{
+.DealsTalkCardContainer {
     height: 500px;
 
     display: flex;
-    gap:24px;
+    gap: 24px;
     /* border: 1px solid black; */
     align-items: center;
     /* justify-content: center; */
@@ -118,15 +120,19 @@
 }
 
 
+    .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive */
+  gap: 20px;
+}
+
+
+
 /* Card 1 Container - Fixed responsive version */
 .cardContainer1 {
     display: flex !important;
     flex-direction: column;
     justify-content: space-between;
-    /* width: 370px; */
-    /* width: 21.5vw; */
-    /* max-width: 410px; */
-    /* height: 468px; */
     border: 1px solid #E2E8F0;
     border-radius: 20px;
     padding: 16px;
@@ -134,6 +140,7 @@
     box-sizing: border-box;
     cursor: pointer;
     gap: 16px;
+    height: inherit;
 }
 
 .cardInnerSections {
@@ -152,7 +159,7 @@
     padding: 0 10px;
     height: 28px;
     border-radius: 6px;
-background: linear-gradient(136deg, #FFF2D0 -8.31%, #8E6B0F 96.65%);    
+    background: linear-gradient(136deg, #FFF2D0 -8.31%, #8E6B0F 96.65%);
     border-radius: 6px;
     display: flex;
     align-items: center;
@@ -171,11 +178,13 @@ background: linear-gradient(136deg, #FFF2D0 -8.31%, #8E6B0F 96.65%);
     align-items: center;
     gap: 12px;
 }
+
 .anthemPicture {
     width: 34px;
     height: 34px;
     object-fit: contain;
 }
+
 .anthemHeading {
     color: #1F2937;
     font-size: 14px;
@@ -195,6 +204,7 @@ background: linear-gradient(136deg, #FFF2D0 -8.31%, #8E6B0F 96.65%);
     flex-direction: column;
     gap: 14px;
 }
+
 .revenueSection {
     display: flex;
     justify-content: space-between;
@@ -208,10 +218,12 @@ background: linear-gradient(136deg, #FFF2D0 -8.31%, #8E6B0F 96.65%);
     flex-direction: column;
     gap: 2px;
 }
+
 .revenuHeading {
     font-size: 12px;
     color: #6B7280;
 }
+
 .priceInRupee {
     font-size: 13px;
     font-weight: 500;
@@ -223,6 +235,7 @@ background: linear-gradient(136deg, #FFF2D0 -8.31%, #8E6B0F 96.65%);
     display: flex;
     flex-wrap: wrap;
 }
+
 .merchantBanker {
     padding: 0 12px;
     height: 30px;
@@ -231,6 +244,7 @@ background: linear-gradient(136deg, #FFF2D0 -8.31%, #8E6B0F 96.65%);
     border-radius: 40px;
     border: 1px solid rgba(68, 49, 151, 0.27);
 }
+
 .bankMerchant {
     font-size: 12px;
     font-weight: 500;
@@ -243,6 +257,7 @@ background: linear-gradient(136deg, #FFF2D0 -8.31%, #8E6B0F 96.65%);
     /* padding-top: 10px; */
     /* margin-top: 28%; */
 }
+
 .QandA {
     display: flex;
     justify-content: space-between;
@@ -251,6 +266,7 @@ background: linear-gradient(136deg, #FFF2D0 -8.31%, #8E6B0F 96.65%);
     flex-wrap: wrap;
     margin-top: 16px;
 }
+
 .QandAstats {
     color: #C9A74E;
     font-size: 12px;
@@ -258,9 +274,11 @@ background: linear-gradient(136deg, #FFF2D0 -8.31%, #8E6B0F 96.65%);
     line-height: 18px;
     /* flex: 1; */
 }
+
 .usersIcons {
     display: flex;
 }
+
 .userImages {
     width: 24px;
     height: 24px;
@@ -268,6 +286,7 @@ background: linear-gradient(136deg, #FFF2D0 -8.31%, #8E6B0F 96.65%);
     border: 1px solid #fff;
     margin-left: -11px;
 }
+
 /* .userImages:first-child {
     margin-left: 0;
 } */
@@ -275,19 +294,16 @@ background: linear-gradient(136deg, #FFF2D0 -8.31%, #8E6B0F 96.65%);
 /* card 2 */
 .card2Container {
     display: flex !important;
-    /* width: 300px; */
-    /* width: 21.5vw; */
-    /* max-width: 410px; */
-    /* height: 468px; */
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 16px;
     gap: 24px;
     color: #f5f5f5;
     border-radius: 20px;
-background-color: #242424;
-backdrop-filter: blur(30px);
+    background-color: #242424;
+    backdrop-filter: blur(30px);
+    max-height: 470px;
+    height: 100%;
 }
 
 /* Inner Section */
@@ -296,41 +312,43 @@ backdrop-filter: blur(30px);
     flex-direction: column;
     gap: 12px;
 }
+
 .DealsTalkMainContainer p {
-  margin: 0; /* override bootstrap only inside DealsTalk */
+    margin: 0;
+    /* override bootstrap only inside DealsTalk */
 }
 
 /* Custom arrow styles */
 .customPrevArrow,
 .customNextArrow {
-  width: 36px;
-  height: 36px;
-  background: white;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  right: -12px !important;
-  border-radius: 100px;
-border: 1px solid #E5E7EB;
-box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06);
+    width: 36px;
+    height: 36px;
+    background: white;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    right: -12px !important;
+    border-radius: 100px;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06);
 }
 
 .customPrevArrow {
-  left: -50px;
+    left: -50px;
 }
 
 .customNextArrow {
-  right: -35px;
+    right: -35px;
 }
 
 .customPrevArrow:hover,
 .customNextArrow:hover {
-  background: #f5f5f5;
+    background: #f5f5f5;
 }
 
 
@@ -339,17 +357,19 @@ box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06);
     display: flex;
     gap: 10px;
 }
+
 .card2IPOtag {
     border: 1px solid #444;
     padding: 0 10px;
     margin-bottom: 0;
     border-radius: 6px;
-background-color: rgba(255, 243, 215, 0.20);
-height: 28px;
-display: flex;
-align-items: center;
-justify-content: center;
+    background-color: rgba(255, 243, 215, 0.20);
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .card2IPOtext {
     color: #FFF;
     font-size: 12px;
@@ -362,11 +382,13 @@ justify-content: center;
     align-items: center;
     gap: 12px;
 }
+
 .card2CompanyLogo {
     width: 34px;
     height: 34px;
     border-radius: 50%;
 }
+
 .card2CompanyName {
     color: #FFF;
     font-family: "Helvetica Neue";
@@ -387,20 +409,24 @@ justify-content: center;
     flex-direction: column;
     gap: 8px;
 }
+
 .card2StatsRow {
     display: flex;
     /* justify-content: space-between; */
     gap: 34px;
 }
+
 .card2Stat {
     display: flex;
     flex-direction: column;
     gap: 2px;
 }
+
 .card2StatHeading {
     font-size: 12px;
     color: rgba(255, 255, 255, 0.50);
 }
+
 .card2StatValue {
     font-size: 13px;
     font-weight: 500;
@@ -411,11 +437,13 @@ justify-content: center;
 .card2MerchantContainer {
     display: flex;
 }
+
 .card2MerchantTag {
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 40px;
     padding: 6px 12px;
 }
+
 .card2MerchantText {
     font-size: 11px;
     font-weight: bold;
@@ -428,20 +456,24 @@ justify-content: center;
     /* padding-top: 10px; */
     /* margin-top: 9%; */
 }
+
 .card2QandA {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 16px;
 }
+
 .card2QandAStats {
     color: #C9A74E;
-font-size: 12px;
-font-weight: 500;
+    font-size: 12px;
+    font-weight: 500;
 }
+
 .card2UserIcons {
     display: flex;
 }
+
 .card2UserImage {
     /* width: 24px; */
     height: 24px;
@@ -449,7 +481,8 @@ font-weight: 500;
     border-radius: 50%;
     margin-left: -8px;
 }
-.starImage{
+
+.starImage {
     width: 49px;
     height: 49px;
     position: absolute;
@@ -463,8 +496,10 @@ font-weight: 500;
     border: 1px solid #E5E7EB;
     border-radius: 100%;
     display: flex;
-    align-items: center;     /* centers the arrow vertically */
-    justify-content: center; /* centers the arrow horizontally */
+    align-items: center;
+    /* centers the arrow vertically */
+    justify-content: center;
+    /* centers the arrow horizontally */
     background-color: #fff;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     cursor: pointer;
@@ -472,7 +507,8 @@ font-weight: 500;
 
     transform: translateY(-50%);
 }
-.crouselWrapper{
+
+.crouselWrapper {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -486,62 +522,69 @@ font-weight: 500;
 }
 
 .crouselRight {
-    width: 8px;    /* slightly bigger arrow */
+    width: 8px;
+    /* slightly bigger arrow */
     height: 14px;
     object-fit: contain;
 }
 
 
 /* progress bar in cards*/
-.progressContainer{
+.progressContainer {
     display: flex;
     flex-direction: column;
     max-width: 378px;
     max-height: 34px;
     gap: 8px;
 }
-.ProgressInPrice{
+
+.ProgressInPrice {
     display: flex;
     justify-content: space-between;
     max-width: 378px;
     max-height: 20px;
 }
-.PriceIncr{
+
+.PriceIncr {
     color: #FFF;
     font-size: 12px;
     font-weight: 500;
 }
-.PricePercent{
+
+.PricePercent {
     color: #FFF;
     font-size: 14px;
     font-weight: 700;
 }
-.promoter{
+
+.promoter {
     display: flex;
     /* width: 378px; */
     height: 70px;
     gap: 10px;
     flex-wrap: wrap;
 }
-.Strong{
+
+.Strong {
     max-width: 152px;
     max-height: 30px;
     border-radius: 40px;
-    border: 1px solid #FFFFFF1A ;
+    border: 1px solid #FFFFFF1A;
     gap: 10px;
     padding-right: 10px;
     padding-left: 10px;
     display: flex;
     align-items: center;
     color: #C9A74E;
-font-size: 12px;
-font-weight: 500;
+    font-size: 12px;
+    font-weight: 500;
 }
-.monetization{
+
+.monetization {
     max-width: 152px;
     max-height: 30px;
     border-radius: 40px;
-    border: 1px solid #FFFFFF1A ;
+    border: 1px solid #FFFFFF1A;
     gap: 10px;
     padding-right: 10px;
     padding-left: 10px;
@@ -549,11 +592,11 @@ font-weight: 500;
     display: flex;
     align-items: center;
     color: #C9A74E;
-font-weight: 500;
+    font-weight: 500;
 
 }
 
-.carouselinner{
+.carouselinner {
     display: flex;
     gap: 10px;
 }
@@ -567,13 +610,13 @@ font-weight: 500;
         gap: 30px;
         padding: 0 20px;
     }
-    
+
     .DealsTalkHeading {
         width: 100%;
         font-size: 18px;
         height: auto;
     }
-    
+
     .DealsTalkCardContainer {
         width: 100%;
         height: auto;
@@ -581,38 +624,34 @@ font-weight: 500;
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .cardContainer1,
-    .card2Container {
-        /* width: 300px; */
-        /* height: auto; */
-        /* min-height: 400px; */
-    }
-    
+    .card2Container {}
+
     .cardInnerSections {
         width: 100%;
         height: auto;
     }
-    
+
     .revenueSection {
         width: 100%;
         flex-wrap: wrap;
         gap: 10px;
     }
-    
+
     .Revenue {
         width: 100px;
     }
-    
+
     .merchantMainContainer {
         width: 100%;
     }
-    
+
     .QandA {
         gap: 20px;
         flex-wrap: wrap;
     }
-    
+
     .crousel {
         display: none;
     }
@@ -622,17 +661,17 @@ font-weight: 500;
 
 @media (max-width: 768px) {
     .DealsTalkMainContainer {
-        padding: 0 ;
+        padding: 0;
         gap: 24px;
     }
-  
-    
+
+
     .DealsTalkCardContainer {
         flex-direction: column;
         align-items: center;
         gap: 16px;
     }
-    
+
     .cardContainer1,
     .card2Container {
         width: 100%;
@@ -640,80 +679,81 @@ font-weight: 500;
         padding: 12px;
         /* height: -webkit-fill-available; */
     }
-    
+
     .cardIPOsection,
     .card2IPOsection {
         flex-wrap: wrap;
         gap: 8px;
     }
-    
+
     .IPOheading,
     .card2IPOtag {
         width: auto;
         padding: 4px 8px;
     }
-    
+
     .AnthemSection,
     .card2CompanySection {
         gap: 12px;
     }
-    
+
     .anthemHeading,
     .card2CompanyName {
         font-size: 11px;
     }
-    
+
     .dealCardContent,
     .card2Description {
         font-size: 13px;
         line-height: 1.3;
     }
-    
+
     .revenueSection,
     .card2StatsRow {
         flex-direction: column;
         gap: 8px;
         height: auto;
     }
-    
+
     .Revenue,
     .card2Stat {
         width: 100%;
         flex-direction: row;
         justify-content: space-between;
     }
-    
+
     .merchantBanker {
         width: auto;
         padding: 6px 12px;
     }
-    
+
     .QandA,
     .card2QandA {
         flex-direction: column;
         gap: 8px;
         align-items: flex-start;
     }
-    
+
     .promoter {
         gap: 8px;
         height: auto;
     }
-    
+
     .Strong,
     .monetization {
         max-width: 120px;
         font-size: 10px;
         padding: 4px 8px;
     }
-    .usersIcons{
+
+    .usersIcons {
         padding-left: 11px;
     }
 
-    .card2UserIcons{
+    .card2UserIcons {
         padding-left: 11px;
     }
-  
+
 }
 
 /* Mobile Portrait (320px to 480px) */
@@ -723,82 +763,82 @@ font-weight: 500;
         padding: 0;
         gap: 20px;
     }
-    
+
     .DealsTalkHeading {
         font-size: 14px;
     }
-    
+
     .DealsTalkCardContainer {
         gap: 12px;
     }
-    
+
     .cardContainer1,
     .card2Container {
         width: 100%;
         padding: 10px;
     }
-    
+
     .IPOheading,
     .card2IPOtag {
         padding: 2px 6px;
     }
-    
+
     /* .HeadingContent,
     .card2IPOtext {
         font-size: 8px;
     } */
-    
+
     .anthemPicture,
     .card2CompanyLogo {
         width: 24px;
         height: 24px;
     }
-    
+
     .anthemHeading,
     .card2CompanyName {
         font-size: 10px;
     }
-    
+
     .dealCardContent,
     .card2Description {
         font-size: 12px;
         line-height: 1.2;
     }
-    
+
     .revenuHeading,
     .card2StatHeading {
         font-size: 10px;
     }
-    
+
     .priceInRupee,
     .card2StatValue {
         font-size: 11px;
     }
-    
+
     .bankMerchant {
         font-size: 9px;
     }
-    
+
     .QandAstats,
     .card2QandAStats {
         font-size: 10px;
     }
-    
+
     .userImages,
     .card2UserImage {
         width: 20px;
         height: 20px;
     }
-    
+
     .progressContainer {
         max-width: 100%;
     }
-    
+
     .PriceIncr,
     .PricePercent {
         font-size: 10px;
     }
-    
+
     .Strong,
     .monetization {
         max-width: 100px;
@@ -814,41 +854,41 @@ font-weight: 500;
         padding: 0;
         gap: 16px;
     }
-    
+
     .DealsTalkHeading {
         font-size: 12px;
     }
-    
+
     .cardContainer1,
     .card2Container {
         padding: 8px;
     }
-    
+
     .HeadingContent,
     .card2IPOtext {
         font-size: 7px;
     }
-    
+
     .anthemHeading,
     .card2CompanyName {
         font-size: 9px;
     }
-    
+
     .dealCardContent,
     .card2Description {
         font-size: 11px;
     }
-    
+
     .revenuHeading,
     .card2StatHeading {
         font-size: 9px;
     }
-    
+
     .priceInRupee,
     .card2StatValue {
         font-size: 10px;
     }
-    
+
     .Strong,
     .monetization {
         font-size: 8px;
@@ -874,5 +914,5 @@ font-weight: 500;
     text-decoration: none;
     color: inherit;
     display: block;
+    height: 100%;
 }
-    

@@ -134,7 +134,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .pageWrapper {
-    padding: 0 12px;
+    padding: 0 30px;
   }
   
   .card {
@@ -178,7 +178,7 @@
 
 @media (max-width: 480px) {
   .pageWrapper {
-    padding: 0 8px;
+    padding: 0 25px;
   }
   
   .card {
