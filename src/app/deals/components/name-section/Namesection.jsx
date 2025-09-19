@@ -296,7 +296,7 @@ const Namedetailsection = () => {
               </div> */}
             </div>
 
-            <Featured />
+            <Featured isPrivateDeal={isPrivateDeal} />
 
 
           </section>
