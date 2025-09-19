@@ -377,7 +377,7 @@ background-color: #FF6A55;
   }
   .menuContainer_main{
      /* border: 1px solid red; */
-     margin: 60px 8px ;
+     margin: 30px 8px ;
      width: 100%;
      max-width: 299px;
 
@@ -463,6 +463,28 @@ font-weight: 500;
     gap: 12px;
     padding: 12px 24px 12px 24px;
   }
+
+  .logoutContainerDiv {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid #e5e7eb; /* light gray border */
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ef4444; /* red text */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.logoutContainerDiv:hover {
+  background: #fee2e2; /* light red background */
+  border-color: #ef4444;
+}
+
+
 
   .logout {
     color: #EF4444;
@@ -645,10 +667,6 @@ font-weight: 500;
   .UserIconContainer {
     /* width: 26px;
         height: 26px; */
-  }
-
-  .NotificationIconContainer {
-    /* padding: 4px; */
   }
 
   .userInitials {
