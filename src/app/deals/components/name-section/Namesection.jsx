@@ -18,27 +18,30 @@ import Calculator from "@/app/private-deals/components/calculator/Calculator";
 import PrivateDealDetails from "./private-deal-detail/page";
 import IPOCollapse from "./IPOCollapse";
 import { Bellactive, BellOff, ShareIcon } from "./svgicon";
+import { useMediaQuery } from "react-responsive";
 
 const Namedetailsection = () => {
   const [bellactive, setBellactive] = useState(false);
   const [isAskAiActive, setIsAskAiActive] = useState(false);
   const [isQuesAnsActive, setIsQuesAnsActive] = useState(false);
-  const [isMobile, setIsMobile] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return window.innerWidth < 920;
-  });
+  // const [isMobile, setIsMobile] = useState(() => {
+  //   if (typeof window === "undefined") return false;
+  //   return window.innerWidth < 920;
+  // });
 
-   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-  }, []);
+  //  useEffect(() => {
+  //   window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  // }, []);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 920);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setIsMobile(window.innerWidth < 920);
+  //   };
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
+
+  const isMobile = useMediaQuery({ maxWidth: 920 });
 
   const handleAskAI = (flag) => {
     setIsAskAiActive(flag);

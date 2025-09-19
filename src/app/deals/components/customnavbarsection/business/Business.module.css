@@ -177,12 +177,19 @@
 @media(max-width:920px){
   .container{
     padding: 24px;
-    
+    padding-top: 10px;
   }
 }
 
-@media(max-width:480px){
+/* @media(max-width:480px){
   .container{
+    padding-top: 10;
+  }
+} */
+
+@media(max-width:480px) {
+  .container{
+    padding: 15px;
     padding-top: 0;
   }
 }

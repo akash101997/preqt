@@ -6,7 +6,7 @@
   align-self: stretch;
   cursor: pointer;
   padding: 12px 0;
-  margin-bottom: 12px;
+  /* margin-bottom: 12px; */
 }
 
 .section-header h3 {
@@ -421,8 +421,16 @@ color: #FFF !important;
 box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
 }
 
+@media(max-width:920px) {
+   .key-financials-container{
+    padding-top: 0;
+  }
+
+}
+
 @media(max-width:480px) {
   .key-financials-container{
+    padding: 15px;
     padding-top: 0;
   }
 

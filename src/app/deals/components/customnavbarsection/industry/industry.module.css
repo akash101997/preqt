@@ -1,10 +1,8 @@
 .industryContainer {
   padding: 32px;
-  padding-top: 0;
+  padding-top: 10px;
 }
-.industryContainer {
-  padding: 32px;
-}
+
 .growthSection {
   font-size: 20px;
   font-weight: 300;
@@ -131,8 +129,6 @@
 }
 
 .PeerHeading {
-padding: 16px 0px;
-padding: 16px 0px;
   display: flex;
   justify-content: space-between;
   font-size: 20px;
@@ -246,6 +242,11 @@ padding: 16px 0px;
   color: white;
 }
 
+.PeerTable th:first-child,
+.PeerTable td:first-child{
+  background-color: #F4F4F4;
+}
+
 .privateIndustryContainer .PeerTable th:first-child,
 .privateIndustryContainer .PeerTable td:first-child {
   background-color: #2e2e2e; /* grey */
@@ -330,6 +331,10 @@ padding: 16px 0px;
   }
   .peerSection{
     padding: 0;
+  }
+  .industryContainer{
+    padding: 15px;
+    padding-top: 0;
   }
 }
 

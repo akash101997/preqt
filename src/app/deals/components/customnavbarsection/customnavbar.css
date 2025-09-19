@@ -1,5 +1,6 @@
 .first-navbar{
   background-color: #fff;
+  width: 100%;
 }
 .first-navbar .navigation-tabs {
   padding: 10px 10px;
@@ -12,6 +13,14 @@
   white-space: nowrap;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #fff;
+}
+
+.private-deal-theme .first-navbar .navigation-tabs{
+  background-color: #171717;
 }
 
 #carousel-tabs::-webkit-scrollbar {
@@ -77,5 +86,28 @@
 .private-deal-theme .first-navbar{
   background-color: #171717;
 }
+
+.tab-content-wrapper {
+  max-height: calc(100vh - 56px);
+  overflow-y: auto;
+
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE 10+ */
+  -ms-overflow-style: none;
+}
+
+/* WebKit browsers (Chrome, Safari, newer Edge) — no space before ::-webkit-scrollbar */
+.tab-content-wrapper::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+@media(max-width: 920px) {
+  .first-navbar{
+    width: 100%;
+  }
+}
+
 
 

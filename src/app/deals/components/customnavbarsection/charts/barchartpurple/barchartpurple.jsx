@@ -48,7 +48,7 @@ export default function PurpleBarchart({ isPrivate = false }) {
             tickLine={{ stroke: isPrivate ? "#374151" : "#E2E8F0" }} />
           <YAxis
             tickFormatter={(value) => `${value}%`}
-            domain={[-40, 40]} // You can make this dynamic later
+            // domain={[-40, 40]} // You can make this dynamic later
             tick={{
               fill: "var(--Gray-500, #6B7280)", // text color
               fontSize: 14,

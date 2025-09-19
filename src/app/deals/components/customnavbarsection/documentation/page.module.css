@@ -138,8 +138,8 @@
   color: white;
 }
 
-@media(max-width:480px) {
-  .privateContainer{
+@media(max-width:920px){
+ .privateContainer{
     padding: 0 10px;
     padding-bottom: 20px;
   }
@@ -147,4 +147,10 @@
     padding: 0 10px;
     padding-bottom: 20px;
   }
+
+  .docWrapper{
+    padding-top: 10px;
+  }
 }
+
+

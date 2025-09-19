@@ -9,7 +9,7 @@
 }
 
 .section {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     border-radius: 32px;
     background: #171717;
     box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06);
@@ -100,8 +100,6 @@
 .respectedMenu li:last-child {
     margin-bottom: 0;
 }
-
-
 
 /* keyframes: webkit + standard */
 @-webkit-keyframes glow {
@@ -200,5 +198,13 @@
 @media(max-width: 1024px){
     .respectedDetails{
         width: 70%;
+    }
+
+
+}
+
+@media(max-width: 920px) {
+    .respectedMenu{
+        display: none;
     }
 }
