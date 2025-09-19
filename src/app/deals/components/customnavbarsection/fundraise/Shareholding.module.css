@@ -99,6 +99,17 @@
     color: #6B7280;
   font-weight: 400;
 }
+.publicRow{
+   display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #E2E8F0;
+    font-size: 12px;
+    color: #6B7280;
+  font-weight: 400;
+
+}
+
 
 .square {
   display: inline-block;
@@ -115,6 +126,12 @@
   font-weight: 500;
   color: #1F2937;
 }
+.publicTotalRow{
+  background:#FFFFFF;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1F2937;
+}
 
 .grandTotal {
   background: #000;
@@ -127,6 +144,12 @@
   display: flex;
   justify-content: space-between;
 
+}
+.publicTableData{
+    width: 200px;
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: space-between;
 }
 .tableData span{
   /* text-align: right; */
@@ -168,6 +191,12 @@ color: white;
 .privateContainer .row{
   color: white;
   border-bottom: 1px solid #3F3F46 !important;
+
+}
+.privateContainer .publicTotalRow{
+background-color:  #000 !important;
+ color: white;
+   border-bottom: 1px solid #3F3F46 !important;
 }
 
 .privateContainer .table{
