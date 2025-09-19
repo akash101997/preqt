@@ -42,7 +42,7 @@ const Shares = () => {
             <line y1="7.5" x2="286" y2="7.5" stroke="#E5E7EB" />
           </svg>
 
-          <span className="total-shares">{isPrivateDeal ? "37,50,000 shares" : "1,50,00,000 Cr shares"}</span>
+          <span className="total-shares">{isPrivateDeal ? "37,50,000 shares" : "1,50,00,000 shares"}</span>
 
           <svg
             width="287"
