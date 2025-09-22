@@ -1,7 +1,7 @@
 "use client";
 import styles from "./NavBar.module.css";
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import LogoutModal from "@/app/components/LogoutModal";
@@ -9,23 +9,26 @@ import Image from "next/image";
 
 export default function NavBar() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const dealId = searchParams?.get("dealId");
+ const router = useRouter();
+
   const [shortName, setShortName] = useState("");
   const [investorName, setInvestorName] = useState("");
-  const router = useRouter();
   const [showLogout, setShowLogout] = useState(false)
 
 
   // Define deals data to check if deal is private
-  const dealsData = {
-    1: { deal: "public" },
-    2: { deal: "private" },
-    3: { deal: "private" },
-    4: { deal: "private" },
+ const dealsData = {
+    "acmpl-deals": { deal: "public" },
+    "hvr-solar-deals": { deal: "private" },
+    // add more slugs here if needed
   };
 
-  const isPrivateDeal = dealId && dealsData[dealId]?.deal === "private";
+ let isPrivateDeal = false;
+  if (pathname.startsWith("/deals/")) {
+    const slug = pathname.split("/deals/")[1];
+    const activeDeal = dealsData[slug];
+    isPrivateDeal = activeDeal?.deal === "private";
+  }
 
   const [menuOpen, setMenuOpen] = useState(false);
 
