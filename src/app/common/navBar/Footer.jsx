@@ -21,12 +21,21 @@ export default function Footer() {
                             <p className={styles.quickLinkHeading}>Quick links</p>
 
                             <article className={styles.quickLinkOptions}>
-                                <a href="/deals" className={styles.quickLinks}>All Deals</a>
+                             <div className={styles.seprate}>
+                                   <a href="/deals" className={styles.quickLinks}>All Deals</a>
                                 <a href="/events" className={styles.quickLinks}>Events</a>
-                                <a href="/community" className={styles.quickLinks}>Community</a>
-                                <a href="/blogs" className={styles.quickLinks}>Blogs</a>
-                                <a href="/contact-us" className={styles.quickLinks}>Contact Us</a>
-                                <a href="/careers" className={styles.quickLinks}>Careers</a>
+                             </div>
+                               <div className={styles.seprate}>
+                                 <a href="/community" className={styles.quickLinks}>Community</a>
+                                {/* <a href="/blogs" className={styles.quickLinks}>Blogs</a> */}
+                                <h4 className={styles.quickLinks}>Blogs</h4>
+                               </div>
+                              <div className={styles.seprate}>
+                                    <h4 className={styles.quickLinks}>Contact Us</h4>
+                                  <h4 className={styles.quickLinks}>Careers</h4>
+                              </div>
+                                {/* <a href="/contact-us" className={styles.quickLinks}>Contact Us</a> */}
+                                {/* <a href="/careers" className={styles.quickLinks}>Careers</a> */}
                             </article>
                         </div>
 

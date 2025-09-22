@@ -178,7 +178,7 @@ export default function Shareholding({ isPrivateDeal }) {
             {/* {!isPrivateDeal && <div className={styles.subHeader}>Additional Shareholders</div>}q */}
 
           <div className={`${styles.publicRow} ${styles.publicTotalRow}`}>
-              <div> <span className={styles.square}></span> 
+              <div> <span className={styles.publicSquare}></span> 
   <span>Public</span></div>
    
   {isPrivateDeal ? (

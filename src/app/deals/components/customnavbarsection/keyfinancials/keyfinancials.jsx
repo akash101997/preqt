@@ -216,8 +216,8 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
                     onClick={() => toggleYear(item.year)}
                   >
                     <span>{item.year}</span>
-                    <div className="revenue-count">
-                      <span className="s22">
+                   <div className="revenue-count">
+                   { item.year !== "2023" && item.year !== "2024" &&  ( <span className="s22">
                         Revenue (Cr){" "}
                         <span>
                           <svg
@@ -231,7 +231,7 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
                           </svg>
                         </span>{" "}
                         <strong>{item.revenue.toFixed(2)}</strong>
-                      </span>
+                      </span>)}
                       <span className="arrow">
                         {nestedOpen[item.year] ? (
                           <ChevronUp />
@@ -241,6 +241,7 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
                       </span>
                     </div>
                   </div>
+                      
 
                   {/* Nested accordion body */}
                   <Collapse in={nestedOpen[item.year]}>
