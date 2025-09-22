@@ -218,7 +218,7 @@ function AllDealsContent() {
                     </div>
                 </div>
 
-                <img src="/assets/pictures/star.svg" alt="" className={styles.starImage} />
+                {/* <img src="/assets/pictures/star.svg" alt="" className={styles.starImage} /> */}
             </div>
         </Link>
     );

@@ -11,7 +11,7 @@ import {
   LabelList,
 } from "recharts";
 
-export default function PurpleBarchart({ isPrivate = false }) {
+export default function PurpleBarchart({ isPrivate }) {
   const chartData = isPrivate ? [
     { year: "FY22", growth: 25.3 },
     { year: "FY23", growth: 21.4 },

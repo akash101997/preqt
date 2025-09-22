@@ -13,7 +13,7 @@ import {
 
 
 
-const DebtBarChart = ({ isPrivate = false }) => {
+const DebtBarChart = ({ isPrivate }) => {
     const data = isPrivate ? [
         { year: "2022", value: 13.8 },
         { year: "2023", value: 14.0 },

@@ -34,7 +34,7 @@ const Barchart = ({ isPrivateDeal }) => {
   const searchParams = useSearchParams();
   const dealId = searchParams?.get("dealId");
 
-  const data = dealId == "2" ? privateData : publicData;
+  const data = isPrivateDeal ? privateData : publicData;
   const isMobile = useMediaQuery({ maxWidth: 768 });
   return (
     <ResponsiveContainer width="100%" height={isMobile ? 350 : 450} padding={{ top: 10, right: 0, left: 0, bottom: 2 }}>
