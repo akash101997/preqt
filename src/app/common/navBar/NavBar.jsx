@@ -205,7 +205,7 @@ export default function NavBar() {
                 <div className={styles.homebtn}>Home</div>
               </Link> */}
               <Link className={styles.homeNavButton} href="/deals">
-                <img src="/assets/pictures/Deals.svg" alt="" />
+                <img src="/deals/deals-menu.svg" alt="deals"/>
                 <div className={styles.homebtn}>Deals</div>
               </Link>
               <Link

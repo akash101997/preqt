@@ -21,7 +21,7 @@ const Pitchdeck = () => {
         </div>
 
         <div className={styles.imageContainer}>
-          <img src="/deals/pitch-deck-new-img.png" alt="" />
+             { isPrivateDeal ?<img src="/deals/pitch-deck-private.png"/>: <img src="/deals/pitch-deck-new-img.png" alt="" />}
 
           <div className={styles.overlay}>
             <button className={styles.pitchOverlayBtn}>

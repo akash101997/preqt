@@ -13,7 +13,7 @@ const Shares = () => {
       <div className="shares-card">
         {/* Progress Bar */}
         <div className='shares-header'>
-           {isPrivateDeal ? <h5>Pre-Issue Shareholding : Promoters – 100%, Others – 0%</h5> : <h5>Pre-Issue Shareholding : Promoters – 62%, Others – 38%</h5>}
+           {isPrivateDeal ? <h5>Pre-Issue Shareholding : Promoters – 100%, Others – 0%</h5> : <h5>Pre-Issue Shareholding : Promoters – 100%, Others – 0%</h5>}
           <h5>Total Shares Post Issue</h5>
          
         </div>
