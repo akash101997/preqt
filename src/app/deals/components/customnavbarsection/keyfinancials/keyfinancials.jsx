@@ -6,11 +6,11 @@ import { Collapse, Tabs, Tab, Fade } from "react-bootstrap";
 import "./keyfinancials.css";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import DebtBarChart from "../charts/DebtBarchart";
-import { useSearchParams } from "next/navigation";
+// import { useSearchParams } from "next/navigation";
 
 const Keyfinancials = ({ isPrivateDeal = false }) => {
-  const searchParams = useSearchParams();
-  const dealId = searchParams?.get("dealId");
+  // const searchParams = useSearchParams();
+  // const dealId = searchParams?.get("dealId");
 
   const [activeTab, setActiveTab] = useState("ROE");
 
@@ -20,7 +20,7 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
   ];
 
   const data =
-    dealId == "2"
+    isPrivateDeal
       ? [
           {
             year: "2024",
@@ -481,10 +481,10 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
               {/* Tabs Content */}
               <div className="tabContent">
                 {activeTab === "ROE" && (
-                  <PurpleBarchart isPrivate={dealId == "2"} />
+                  <PurpleBarchart isPrivate={isPrivateDeal} />
                 )}
                 {activeTab === "DEBT" && (
-                  <DebtBarChart isPrivate={dealId == "2"} />
+                  <DebtBarChart isPrivate={isPrivateDeal} />
                 )}
               </div>
             </div>

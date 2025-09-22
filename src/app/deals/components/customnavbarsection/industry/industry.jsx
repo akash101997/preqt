@@ -3,65 +3,60 @@ import React, { useState } from "react";
 import styles from "./industry.module.css";
 
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { useSearchParams } from "next/navigation";
 
 const Industry = ({ isPrivateDeal }) => {
-  const searchParams = useSearchParams();
-  const dealId = searchParams?.get("dealId");
+
   // 🔹 States for dropdown open/close
   const [showGrowth, setShowGrowth] = useState(true);
   const [showPolicy, setShowPolicy] = useState(true);
   const [showPeer, setShowPeer] = useState(true);
 
 
-  const peerComparison =
-    dealId == "2"
-      ? [
-          {
-            metric: "Revenue (INR Cr)",
-            solex: "662",
-            servotac: "674",
-            alpex: "780",
-            solarium: "230",
-          },
-          {
-            metric: "Net Profit (INR Cr)",
-            solex: "43",
-            servotac: "33",
-            alpex: "83",
-            solarium: "19",
-          },
-          {
-            metric: "EBITDA Margin",
-            solex: "11.6%",
-            servotac: "8.6%",
-            alpex: "16.3%",
-            solarium: "12.2%",
-          },
-          {
-            metric: "ROE",
-            solex: "38.7%",
-            servotac: "17.3%",
-            alpex: "48.1%",
-            solarium: "23.0%",
-          },
-          {
-            metric: "ROCE",
-            solex: "29.9%",
-            servotac: "19.7%",
-            alpex: "51.8%",
-            solarium: "20.1%",
-          },
-          // { metric: "P/E Ratio", solex: "37.6", servotac: "88.1", alpex: "20.10", solarium: "41.5" },
-        ]
-      : [
-          { metric: "Revenue (₹ Cr)", premium: "288.2", pranik: "104.7" },
-          { metric: "Net Profit (₹ Cr)", premium: "15.7", pranik: "6.4" },
-          { metric: "EBITDA Margin", premium: "8.4%", pranik: "11.30%" },
-          { metric: "ROE", premium: "17.6%", pranik: "17%" },
-          { metric: "ROCE", premium: "17.6%", pranik: "18.30%" },
-          // { metric: "P/E Ratio", premium: "-", pranik: "-" },
-        ];
+   const peerComparison = isPrivateDeal
+    ? [
+        {
+          metric: "Revenue (INR Cr)",
+          solex: "662",
+          servotac: "674",
+          alpex: "780",
+          solarium: "230",
+        },
+        {
+          metric: "Net Profit (INR Cr)",
+          solex: "43",
+          servotac: "33",
+          alpex: "83",
+          solarium: "19",
+        },
+        {
+          metric: "EBITDA Margin",
+          solex: "11.6%",
+          servotac: "8.6%",
+          alpex: "16.3%",
+          solarium: "12.2%",
+        },
+        {
+          metric: "ROE",
+          solex: "38.7%",
+          servotac: "17.3%",
+          alpex: "48.1%",
+          solarium: "23.0%",
+        },
+        {
+          metric: "ROCE",
+          solex: "29.9%",
+          servotac: "19.7%",
+          alpex: "51.8%",
+          solarium: "20.1%",
+        },
+      ]
+    : [
+        { metric: "Revenue (₹ Cr)", premium: "288.2", pranik: "104.7" },
+        { metric: "Net Profit (₹ Cr)", premium: "15.7", pranik: "6.4" },
+        { metric: "EBITDA Margin", premium: "8.4%", pranik: "11.30%" },
+        { metric: "ROE", premium: "17.6%", pranik: "17%" },
+        { metric: "ROCE", premium: "17.6%", pranik: "18.30%" },
+      ];
 
   const industryDriver = isPrivateDeal
     ? [
@@ -253,7 +248,7 @@ const Industry = ({ isPrivateDeal }) => {
 
 
 
-     {dealId == "2" && (
+     {isPrivateDeal && (
         <>
           <section className={styles.peerSection}>
             <h2
@@ -321,7 +316,7 @@ const Industry = ({ isPrivateDeal }) => {
 
 
       {/* Peer Comparison Section */}
-      {dealId != "2" && (
+      {!isPrivateDeal && (
         <>
           <section className={styles.peerSection}>
             <h2

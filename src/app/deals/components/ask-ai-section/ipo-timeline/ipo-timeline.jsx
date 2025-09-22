@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import React from "react";
 
-const Ipotimeline = ({ handleAskAI, handleQuesAns }) => {
+const Ipotimeline = ({ handleAskAI, handleQuesAns , isPrivateDeal}) => {
 
   const searchParams = useSearchParams();
   const dealId = searchParams?.get("dealId");
@@ -44,7 +44,7 @@ const Ipotimeline = ({ handleAskAI, handleQuesAns }) => {
   ];
   return (
     <section className="ask-ai-section">
-      {dealId == "1" && <button className="ask-ai-button"
+      {isPrivateDeal && <button className="ask-ai-button"
         onClick={() => {
           handleAskAI(true);
 

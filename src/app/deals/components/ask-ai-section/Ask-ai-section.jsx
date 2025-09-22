@@ -30,7 +30,7 @@ const AskAiSection = ({ isPrivateDeal,onData, handleAskAI, isAskAiActive = false
       ) : showQuesAns ? (
         <QuestionAnswer handleQuesAns={handleQuesAns} handleAskAI={handleAskAI} />
       ) : (
-        <Ipotimeline handleAskAI={handleAskAI} handleQuesAns={handleQuesAns} />
+        <Ipotimeline handleAskAI={handleAskAI} handleQuesAns={handleQuesAns} isPrivateDeal = {isPrivateDeal}/>
       )}
     </div>
   );

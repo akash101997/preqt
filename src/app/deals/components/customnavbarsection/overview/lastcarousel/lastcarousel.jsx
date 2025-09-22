@@ -3,12 +3,12 @@ import { useSearchParams } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import { Carousel } from "react-bootstrap";
 
-const LastCarousel = () => {
+const LastCarousel = ({isPrivateDeal}) => {
 
   const searchParams = useSearchParams();
   const dealId = searchParams?.get("dealId");
 
-  const images = dealId == "2" ? [
+  const images = isPrivateDeal ? [
     "/assets/pictures/hrv-overview-1.png",
     "/assets/pictures/hrv-overview-2.png",
     "/assets/pictures/hrv-overview-2.png"

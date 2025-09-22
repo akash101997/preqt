@@ -1,23 +1,26 @@
 "use client"
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import NavBar from "./common/navBar/NavBar";
 import Footer from "./common/navBar/Footer";
 
 export default function ClientChrome({ children }) {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const dealId = searchParams?.get("dealId");
+ const router = useRouter();
 
   const hide = pathname === "/signin" || pathname === "/login" || pathname === "/otp" || pathname === "/signup" || pathname === "/signup-form";
 
-  const dealsData = {
-    "1": { deal: "public" },
-    "2": { deal: "private" },
-    "3": { deal: "private" },
-    "4": { deal: "private" }
+ const dealsData = {
+    "acmpl-deals": { deal: "public" },
+    "hvr-solar-deals": { deal: "private" },
+    // add more slugs here if needed
   };
 
-  const isPrivateDeal = dealId && dealsData[dealId]?.deal === "private";
+ let isPrivateDeal = false;
+  if (pathname.startsWith("/deals/")) {
+    const slug = pathname.split("/deals/")[1];
+    const activeDeal = dealsData[slug];
+    isPrivateDeal = activeDeal?.deal === "private";
+  }
 
   if (hide) {
     return <>{children}</>;

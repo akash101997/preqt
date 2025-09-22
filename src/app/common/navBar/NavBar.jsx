@@ -248,7 +248,7 @@ export default function NavBar() {
             src={
               isPrivateDeal
                 ? "/private-logo.png"
-                : "/preequity-logo.png"
+                : "/logo.png"
             }
             alt="logo"
             className={styles.logo}
