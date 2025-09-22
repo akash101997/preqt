@@ -420,7 +420,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                 </svg>
                 Company Website
               </h6>
-              <a href="https://hvrsolar.com/" target="_blank">https://hvrsolar.com/</a>
+              <a href="https://hvrsolar.com/" target="_blank">www.hvrsolar.com/</a>
             </section>
           </section>
 
@@ -567,7 +567,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                   </svg>
                   Company Website
                 </h6>
-                <a href="">ashwinimovers.com</a>
+                <a href="">www.ashwinimovers.com</a>
               </section>
             </section>
           </>}
