@@ -14,17 +14,17 @@ import {
 
 
 const DebtBarChart = ({ isPrivate = false }) => {
-const data =isPrivate ? [
-    { year: "2022", value: 13.8 },
-    { year: "2023", value: 14.0 },
-    { year: "2024", value: 9.3 },
-    { year: "2024", value: 3.0 },
+    const data = isPrivate ? [
+        { year: "2022", value: 13.8 },
+        { year: "2023", value: 14.0 },
+        { year: "2024", value: 9.3 },
+        { year: "2024", value: 3.0 },
 
-]:[
-    { year: "2022", value: 0 },
-    { year: "2023", value: 0 },
-    { year: "2024", value: 0 },
-];
+    ] : [
+        { year: "FY'23", value: 5.9 },
+        { year: "FY'24", value: 6.2 },
+        { year: "FY'25", value: 3.0 },
+    ];
 
     return (
         <ResponsiveContainer width="100%" height={300}>
@@ -48,7 +48,7 @@ const data =isPrivate ? [
                     tickLine={{ stroke: isPrivate ? "#374151" : "#E2E8F0" }}
                 />
                 <YAxis
-                    domain={[0, 1.4]}
+                    // domain={[0, 1.4]}
                     tick={{
                         fill: "var(--Gray-500, #6B7280)", // text color
                         fontSize: 14,
@@ -60,7 +60,29 @@ const data =isPrivate ? [
                     axisLine={{ stroke: isPrivate ? "#374151" : "#E2E8F0" }}
                     tickLine={{ stroke: isPrivate ? "#374151" : "#E2E8F0" }}
                 />
-                <Tooltip cursor={{ fill: "transparent" }} />
+              <Tooltip
+                    cursor={{ fill: "transparent" }}
+                    content={({ active, payload, label }) => {
+                        if (active && payload && payload.length) {
+                            return (
+                                <div
+                                    style={{
+                                        background: "#fff",
+                                        padding: "8px 12px",
+                                        border: "1px solid #ccc",
+                                        borderRadius: "6px",
+                                    }}
+                                >
+                                    <p style={{ margin: 0, fontWeight: "600" }}>{label}</p>
+                                    <p style={{ margin: 0, color: "#e6cf93" }}>
+                                        Growth: {payload[0].value}%
+                                    </p>
+                                </div>
+                            );
+                        }
+                        return null;
+                    }}
+                />
                 <Bar
                     dataKey="value"
                     fill="#e6cf93"

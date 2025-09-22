@@ -57,9 +57,31 @@ export default function PurpleBarchart({ isPrivate = false }) {
               // aligns right
             }}
             axisLine={{ stroke: isPrivate ? "#374151" : "#E2E8F0" }}
-            tickLine={{ stroke: isPrivate ? "#374151" : "#E2E8F0" }}
+            tickLine={{ stroke: isPrivate ? "#374151" : "#010408ff" }}
           />
-          <Tooltip formatter={(value) => `${value}%`} cursor = {false}/>
+           <Tooltip
+                             cursor={{ fill: "transparent" }}
+                             content={({ active, payload, label }) => {
+                                 if (active && payload && payload.length) {
+                                     return (
+                                         <div
+                                             style={{
+                                                 background: "#fff",
+                                                 padding: "8px 12px",
+                                                 border: "1px solid #ccc",
+                                                 borderRadius: "6px",
+                                             }}
+                                         >
+                                             <p style={{ margin: 0, fontWeight: "600" }}>{label}</p>
+                                             <p style={{ margin: 0, color: "#e6cf93" }}>
+                                                 Growth: {payload[0].value}%
+                                             </p>
+                                         </div>
+                                     );
+                                 }
+                                 return null;
+                             }}
+                         />
           <Bar dataKey="growth" fill="#E4C575" radius={[5, 5, 0, 0]}>
             <LabelList
               dataKey="growth"
