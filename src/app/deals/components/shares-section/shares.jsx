@@ -13,15 +13,16 @@ const Shares = () => {
       <div className="shares-card">
         {/* Progress Bar */}
         <div className='shares-header'>
+           {isPrivateDeal ? <h5>Pre-Issue Shareholding : Promoters – 100%, Others – 0%</h5> : <h5>Pre-Issue Shareholding : Promoters – 62%, Others – 38%</h5>}
           <h5>Total Shares Post Issue</h5>
-          {isPrivateDeal ? <h5>Pre-Issue Shareholding : Promoters – 100%, Others – 0%</h5> : <h5>Pre-Issue Shareholding : Promoters – 62%, Others – 38%</h5>}
+         
         </div>
         {isPrivateDeal ? <div className="progress-container">
-          <div className="progress-fill new-shares" style={{ width: "80%" }}></div>
-          <div className="progress-fill old-shares" style={{ width: "20%" }}></div>
+          <div className="progress-fill old-shares" style={{ width: "75%" }}></div>
+          <div className="progress-fill new-shares" style={{ width: "25%" }}></div>
         </div> : <div className="progress-container">
-          <div className="progress-fill new-shares" style={{ width: "66%" }}></div>
-          <div className="progress-fill old-shares" style={{ width: "34%" }}></div>
+          <div className="progress-fill old-shares" style={{ width: "66%" }}></div>
+          <div className="progress-fill new-shares" style={{ width: "34%" }}></div>
         </div>}
 
         <div className="shares-section">
