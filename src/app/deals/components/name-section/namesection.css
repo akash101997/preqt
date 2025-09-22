@@ -1494,380 +1494,6 @@
 
 }
 
-@media (max-width: 480px) {
-
-  .subcontainer {
-    padding: 0 10px;
-  }
-
-  .private-deal-theme .firsthalf {
-    padding: 15px !important;
-  }
-
-  .lastcarousel h3 {
-    font-size: 16px;
-  }
-
-  .pitch-deck {
-    padding: 30px 10px;
-  }
-
-  .pitch-deck h4 {
-    padding-left: 0;
-  }
-
-  .customcars .nav-item button {
-    min-height: fit-content;
-    width: fit-content;
-    padding: 10px 10px;
-    font-size: 13px;
-  }
-
-  .mobile-ipo-timeline-section {
-    display: flex !important;
-  }
-
-  .mobile-ipo-timeline-section h3 {
-    font-size: 14px;
-    font-weight: 400;
-  }
-
-  .mobile-ipo-timeline-section .timeline-content {
-    font-size: 14px;
-    font-weight: 400;
-    padding: 0px 20px;
-  }
-
-  .firsthalf {
-    padding: 20px 16px;
-  }
-
-  .topbar {
-    display: none;
-  }
-
-  .overview-container {
-    padding: 0px 15px;
-  }
-
-  .mob-topbar {
-    font-size: 16px !important;
-    display: flex;
-    justify-content: space-between;
-    padding: 16px 10px;
-  }
-
- 
-
-  .bank-det {
-    padding: 0 !important;
-  }
-
-  .bank-det p {
-    text-align: left;
-  }
-
-
-  .why-subsection div svg {
-    width: 24px;
-    height: 24px;
-  }
-
-  .lastcarousel {
-    padding:  10px;
-  }
-  .bod-section{
-    padding-bottom: 0 !important;
-  }
-
-  .secondhalf {
-    padding: 10px 5px;
-  }
-
-
-
-  .subcontainer {
-    width: 100%;
-    /* background-color: #ebebeb; */
-  }
-
-  .body-maincontainer {
-    flex-direction: column;
-    margin-bottom: 10px;
-  }
-
-  .date {
-    font-size: 13px;
-    text-align: end;
-  }
-
-  .timeline-content .label {
-    font-size: 13px;
-  }
-
-  .ask-ai-mob-div {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .ask-ai-mob-div button {
-    font-size: 15px;
-    font-weight: 500;
-    padding: 6px 10px;
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid;
-  }
-
-  .body1-buttons span {
-    /* background: linear-gradient(to left , #FFF2D0 ,#8E6B0F); */
-    font-size: 12px;
-    padding: 5px 10px;
-    line-height: 20px;
-  }
-
-  .body-section4 button {
-    font-size: 10px;
-    padding: 4px 5px;
-    font-weight: 300;
-  }
-
-  .body-section2 span {
-    font-size: 17px;
-    line-height: 28px;
-    font-weight: 500;
-  }
-
-  .body-section4 {
-    justify-content: space-between;
-  }
-
-  .progress-container-heading span {
-    font-size: 12px;
-  }
-
-  .progress-container {
-    height: 12px;
-  }
-
-  .smallcards-section span {
-    font-size: 12px;
-  }
-
-  .smallcards-section svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .body-section2 svg {
-    display: none;
-  }
-
-  .others a {
-    font-size: 12px;
-  }
-
-  .others {
-    padding: 10px 5px;
-    gap: 0;
-  }
-
-  .main-other {
-    gap: 5px;
-  }
-
-  .subs {
-    flex-direction: row;
-  }
-
-  .carousel-item img {
-    /* width: 100%; */
-    border-radius: 20px;
-  }
-
-  .ask-ai-section {
-    display: none;
-  }
-
-  .mid-svg {
-    width: 100%;
-  }
-
-  .total-shares {
-    font-size: 12px;
-  }
-  .secondhalf{
-    margin-bottom: 20px;
-  }
-
-  .shares-section svg {
-    width: 75px;
-  }
-
-  .why-section h2 {
-    padding: 10px 10px;
-    font-size: 14px;
-  }
-
-  .label-value {
-    font-size: 12px;
-  }
-
-  .why-section {
-    padding: 0px 15px;
-    border-radius: 12px;
-
-  }
-
-  .why-subsection {
-    gap: 20px;
-  }
-
-  .why-subsection div {
-    padding: 30px 0px;
-  }
-
-  .top section {
-    padding: 8px 12px;
-  }
-
-  .others h6 {
-    font-size: 12px;
-    margin-bottom: 2px;
-  }
-
-  .label-item div {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .label-item div p {
-    margin: 2px;
-  }
-
-  .label-item {
-    align-items: baseline;
-  }
-
-  .body-section3 svg {
-    height: 55px;
-    width: 55px;
-  }
-
-  .body-section3 span {
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 300;
-    font-style: normal;
-  }
-
-  .progress-container-heading {
-    padding: 0px 5px;
-  }
-
-  .body-section2 img {
-    height: 25px;
-    width: 25px;
-  }
-
-  .body-section2 {
-    align-items: start;
-  }
-
-  .body-section2 div {
-    display: flex;
-    gap: 17px;
-  }
-
-  .why-subsection div h4 {
-    font-size: 12px;
-  }
-
-  .why-section section {
-    padding: 10px 0px;
-  }
-
-  .body {
-    gap: 20px;
-  }
-
-  .about-section h4 {
-    font-size: 14px;
-  }
-
-  .about-section p {
-    font-size: 12px;
-  }
-
-  .label-title {
-    font-size: 12px;
-  }
-
-  .pitch-deck h4 {
-    font-size: 18px;
-  }
-
-  .bod-section h4 {
-    font-size: 18px;
-  }
-
-  .accordion-button {
-    font-size: 14px !important;
-    padding: 5px 5px;
-  }
-
-  .accordion-button:not(.collapsed)::after {
-    height: 5px;
-    width: 5px;
-  }
-
-  .about-section {
-    font-size: 12px;
-    padding: 15px 10px;
-  }
-
-  .mob-topbar div {
-    display: flex;
-    gap: 9px;
-    align-items: center;
-  }
-
-  .ss {
-    height: 10px !important;
-    width: 10px !important;
-  }
-
-  .mob-topbar div svg {
-
-    height: 12px;
-    width: 12px;
-  }
-
-  .mob-topbar .bell-icon svg {
-    height: 25px;
-    width: 25px;
-  }
-
-  .customcars .nav-tabs {
-    gap: 10px;
-  }
-
-  .customcars {
-    gap: 12px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-
-  .overview-container {
-    gap: 10px;
-  }
-
-  .righ-section {
-    width: 100%;
-  }
-}
-
 @media (min-width: 401px) and (max-width: 900px) {
   .lastcarousel h3 {
     font-size: 16px;
@@ -2307,3 +1933,383 @@
     padding: 15px 10px;
   }
 }
+
+@media (max-width: 480px) {
+
+  .subcontainer {
+    padding: 0 10px;
+  }
+
+  .private-deal-theme .firsthalf {
+    padding: 15px !important;
+  }
+
+  .lastcarousel h3 {
+    font-size: 16px;
+  }
+
+  .pitch-deck {
+    padding: 30px 10px;
+  }
+
+  .pitch-deck h4 {
+    padding-left: 0;
+  }
+
+  .customcars .nav-item button {
+    min-height: fit-content;
+    width: fit-content;
+    padding: 10px 10px;
+    font-size: 13px;
+  }
+
+  .mobile-ipo-timeline-section {
+    display: flex !important;
+  }
+
+  .mobile-ipo-timeline-section h3 {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .mobile-ipo-timeline-section .timeline-content {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0px 20px;
+  }
+
+  .firsthalf {
+    padding: 20px 16px;
+  }
+
+  .topbar {
+    display: none;
+  }
+
+  .overview-container {
+    padding: 0px 15px;
+  }
+
+  .mob-topbar {
+    font-size: 16px !important;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 10px;
+  }
+
+ 
+
+  .bank-det {
+    padding: 0 !important;
+  }
+
+  .bank-det p {
+    text-align: left;
+  }
+
+
+  .why-subsection div svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .lastcarousel {
+    padding:  10px;
+  }
+  .bod-section{
+    padding-bottom: 0 !important;
+  }
+
+  .secondhalf {
+    padding: 10px 5px;
+  }
+
+
+
+  .subcontainer {
+    width: 100%;
+    /* background-color: #ebebeb; */
+  }
+
+  .body-maincontainer {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  .date {
+    font-size: 13px;
+    text-align: end;
+  }
+
+  .timeline-content .label {
+    font-size: 13px;
+  }
+
+  .ask-ai-mob-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .ask-ai-mob-div button {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 6px 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid;
+  }
+
+  .body1-buttons span {
+    /* background: linear-gradient(to left , #FFF2D0 ,#8E6B0F); */
+    font-size: 12px;
+    padding: 5px 10px;
+    line-height: 20px;
+  }
+
+  .body-section4 button {
+    font-size: 10px;
+    padding: 4px 5px;
+    font-weight: 300;
+  }
+
+  .body-section2 span {
+    font-size: 17px;
+    line-height: 28px;
+    font-weight: 500;
+  }
+
+  .body-section4 {
+    justify-content: space-between;
+  }
+
+  .progress-container-heading span {
+    font-size: 12px;
+  }
+
+  .progress-container {
+    height: 12px;
+  }
+
+  .smallcards-section span {
+    font-size: 12px;
+  }
+
+  .smallcards-section svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .body-section2 svg {
+    display: none;
+  }
+
+  .others a {
+    font-size: 12px;
+  }
+
+  .others {
+    padding: 10px 5px;
+    gap: 0;
+  }
+
+  .main-other {
+    gap: 5px;
+  }
+
+  .subs {
+    flex-direction: row;
+  }
+
+  .carousel-item img {
+    /* width: 100%; */
+    border-radius: 20px;
+  }
+
+  .ask-ai-section {
+    display: none;
+  }
+
+  .mid-svg {
+    width: 100%;
+  }
+
+  .total-shares {
+    font-size: 12px;
+  }
+  .secondhalf{
+    margin-bottom: 20px;
+  }
+
+  .shares-section svg {
+    width: 75px;
+  }
+
+  .why-section h2 {
+    padding: 10px 10px;
+    font-size: 14px;
+  }
+
+  .label-value {
+    font-size: 12px;
+  }
+
+  .why-section {
+    padding: 0px 15px;
+    border-radius: 12px;
+
+  }
+
+  .why-subsection {
+    gap: 20px;
+  }
+
+  .why-subsection div {
+    padding: 30px 0px;
+  }
+
+  .top section {
+    padding: 8px 12px;
+  }
+
+  .others h6 {
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+
+  .label-item div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .label-item div p {
+    margin: 2px;
+  }
+
+  .label-item {
+    align-items: baseline;
+  }
+
+  .body-section3 svg {
+    height: 55px;
+    width: 55px;
+  }
+
+  .body-section3 span {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .progress-container-heading {
+    padding: 0px 5px;
+  }
+
+  .body-section2 img {
+    height: 25px;
+    width: 25px;
+  }
+
+  .body-section2 {
+    align-items: start;
+  }
+
+  .body-section2 div {
+    display: flex;
+    gap: 17px;
+  }
+
+  .why-subsection div h4 {
+    font-size: 12px;
+  }
+
+  .why-section section {
+    padding: 10px 0px;
+  }
+
+  .body {
+    gap: 20px;
+  }
+
+  .about-section h4 {
+    font-size: 14px;
+  }
+
+  .about-section p {
+    font-size: 12px;
+  }
+
+  .label-title {
+    font-size: 12px;
+  }
+
+  .pitch-deck h4 {
+    font-size: 18px;
+  }
+
+  .bod-section h4 {
+    font-size: 18px;
+  }
+
+  .accordion-button {
+    font-size: 14px !important;
+    padding: 5px 5px;
+  }
+
+  .accordion-button:not(.collapsed)::after {
+    height: 5px;
+    width: 5px;
+  }
+
+  .about-section {
+    font-size: 12px;
+    padding: 15px 10px;
+  }
+
+  .mob-topbar div {
+    display: flex;
+    gap: 9px !important;
+    align-items: center;
+  }
+
+    .mob-topbar div svg{
+      width: 13px !important;
+      height: 13px !important;
+    }
+
+  .ss {
+    height: 10px !important;
+    width: 10px !important;
+  }
+
+  .mob-topbar div svg {
+
+    height: 12px;
+    width: 12px;
+  }
+
+  .mob-topbar .bell-icon svg {
+    height: 25px;
+    width: 25px;
+  }
+
+  .customcars .nav-tabs {
+    gap: 10px;
+  }
+
+  .customcars {
+    gap: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .overview-container {
+    gap: 10px;
+  }
+
+  .righ-section {
+    width: 100%;
+  }
+}
+

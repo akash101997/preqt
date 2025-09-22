@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useParams } from "next/navigation"; 
 import FAQSection from "@/app/components/home/FAQSection/FAQSection";
 
 import "./namesection.css";
@@ -20,27 +20,10 @@ import IPOCollapse from "./IPOCollapse";
 import { Bellactive, BellOff, ShareIcon } from "./svgicon";
 import { useMediaQuery } from "react-responsive";
 
-const Namedetailsection = () => {
+const Namedetailsection = ({ slug }) => {
   const [bellactive, setBellactive] = useState(false);
   const [isAskAiActive, setIsAskAiActive] = useState(false);
   const [isQuesAnsActive, setIsQuesAnsActive] = useState(false);
-  // const [isMobile, setIsMobile] = useState(() => {
-  //   if (typeof window === "undefined") return false;
-  //   return window.innerWidth < 920;
-  // });
-
-  //  useEffect(() => {
-  //   window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-  // }, []);
-
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setIsMobile(window.innerWidth < 920);
-  //   };
-  //   window.addEventListener("resize", handleResize);
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, []);
-
   const isMobile = useMediaQuery({ maxWidth: 920 });
 
     useEffect(() => {
@@ -56,32 +39,32 @@ const Namedetailsection = () => {
     setIsQuesAnsActive(flag);
   }
 
-  // Read dealId from URL and map to known deals (fallback-safe)
-  const searchParams = useSearchParams();
-  const dealId = searchParams?.get("dealId");
 
-  const dealsIndex = {
-    "1": {
+ const dealsIndex = {
+    "acmpl-deals": {
       id: 1,
       type: "Pre IPO- SME",
       sector: "Logistics",
       logo: "/assets/pictures/acmpl.svg",
       name: "Ashwini Container Movers Limited (ACMPL)",
       deal: "public",
-      description: "Ashwini Container Movers Limited is a commercial/container transport & logistics company headquartered in Navi Mumbai.",
+      description:
+        "Ashwini Container Movers Limited is a commercial/container transport & logistics company headquartered in Navi Mumbai.",
     },
-    "2": {
+    "hvr-solar-deals": {
       id: 2,
       type: "Pre IPO- SME",
       sector: "Solar Energy",
       logo: "/assets/pictures/hvr.svg",
       name: "HVR Solar Pvt Ltd",
       deal: "private",
-      description: "India’s leading solar module manufacturer powering the green revolution.",
+      description:
+        "India’s leading solar module manufacturer powering the green revolution.",
     },
   };
 
-  const activeDeal = dealsIndex[dealId ?? "2"] ?? dealsIndex["2"]; // default to 2 to match current content
+
+  const activeDeal = dealsIndex[slug] ?? dealsIndex["hvr-solar-deals"]; // default to 2 to match current content
 
   // Determine if this is a private deal for theme switching
   const isPrivateDeal = activeDeal.deal === "private";

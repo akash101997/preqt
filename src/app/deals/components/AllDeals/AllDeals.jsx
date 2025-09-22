@@ -22,50 +22,53 @@ function AllDealsContent() {
 
     const isPrivateDeal = dealId && dealsConfig[dealId]?.deal === "private";
 
-    const dealsData = [
-        {
-            id: 1,
-            type: "Pre IPO- SME",
-            category: "Logistics",
-            companyLogo: "/assets/pictures/acmpl.svg",
-            companyName: "Ashwini Container Movers Limited (ACMPL)",
-            description: "Ashwini Container Movers Limited is a commercial/container transport & logistics company headquartered in Navi Mumbai.",
-            stats: {
-                revenue: "₹94.1Cr",
-                pat: "₹11.5 Cr",
-                patMultiple: "₹11.5 Cr",
-                cagrGrowth: "17% ( FY'22-FY'25)",
-                roe: "75.9%(FY'25)",
-                issueDate: "21-05-2026"
-            },
-            merchantBanker: "Corporate Professionals",
-            deal: "public"
-        },
-        {
-            id: 2,
-            type: "Pre IPO- SME",
-            category: "Solar Energy",
-            companyLogo: "/assets/pictures/hvr.svg",
-            companyName: "HVR Solar Pvt Ltd",
-            description: "India’s leading solar module manufacturer powering the green revolution.",
-            stats: {
-                revenue: "₹75 Cr",
-                revenue2: "₹101 Cr",
-                expectedListing: "-",
-                pat: "7.0 Cr",
-                peMultiple: "10.7x"
-            },
-            progress: {
-                current: "0Cr / 15Cr",
-                percentage: "94%"
-            },
-            tags: ["Strong promoter", "Clear Monetization", "Fund Participating"],
-            deal: "private"
-        },
-    ];
+  const dealsData = [
+  {
+    id: 1,
+    slug: "acmpl-deals",
+    type: "Pre IPO- SME",
+    category: "Logistics",
+    companyLogo: "/assets/pictures/acmpl.svg",
+    companyName: "Ashwini Container Movers Limited (ACMPL)",
+    description: "Ashwini Container Movers Limited is a commercial/container transport & logistics company headquartered in Navi Mumbai.",
+    stats: {
+      revenue: "₹94.1Cr",
+      pat: "₹11.5 Cr",
+      patMultiple: "₹11.5 Cr",
+      cagrGrowth: "17% ( FY'22-FY'25)",
+      roe: "75.9%(FY'25)",
+      issueDate: "21-05-2026"
+    },
+    merchantBanker: "Corporate Professionals",
+    deal: "public"
+  },
+  {
+    id: 2,
+    slug: "hvr-solar-deals",
+    type: "Pre IPO- SME",
+    category: "Solar Energy",
+    companyLogo: "/assets/pictures/hvr.svg",
+    companyName: "HVR Solar Pvt Ltd",
+    description: "India’s leading solar module manufacturer powering the green revolution.",
+    stats: {
+      revenue: "₹75 Cr",
+      revenue2: "₹101 Cr",
+      expectedListing: "-",
+      pat: "7.0 Cr",
+      peMultiple: "10.7x"
+    },
+    progress: {
+      current: "0Cr / 15Cr",
+      percentage: "94%"
+    },
+    tags: ["Strong promoter", "Clear Monetization", "Fund Participating"],
+    deal: "private"
+  }
+];
+
 
     const renderCard1 = (deal) => (
-        <Link href={`/deals?dealId=${deal.id}`} className={stylesdeals.cardLink}>
+        <Link href={`/deals/${deal.slug}`} className={stylesdeals.cardLink}>
             <div className={styles.cardContainer1}>
                 <div className={styles.cardInnerSections}>
                     <article className={styles.cardIPOsection}>
@@ -139,7 +142,7 @@ function AllDealsContent() {
     );
 
     const renderCard2 = (deal) => (
-        <Link href={`/deals?dealId=${deal.id}`} className={stylesdeals.cardLink}>
+        <Link href={`/deals/${deal.slug}`} className={stylesdeals.cardLink}>
             <div className={styles.card2Container}>
                 <div className={styles.card2InnerSections}>
                     <article className={styles.card2IPOsection}>
