@@ -1,6 +1,7 @@
 import React from "react";
 
-const Pitchdeck = () => {
+const Pitchdeck = ({isPrivateDeal}) => {
+  // console.log("ergergerggerge", isPrivateDeal);
   return (
     <div>
       <section className="pitch-deck">
@@ -10,7 +11,7 @@ const Pitchdeck = () => {
         </div>
 
         <div className="image-container">
-          <img src="/deals/pitch-deck-new-img.png" alt="" />
+        { isPrivateDeal ?<img src="/deals/pitch-deck-private.png"/>: <img src="/deals/pitch-deck-new-img.png" alt="" />}
 
           <div className="overlay">
             <button className="pitch-overlay-btn">
