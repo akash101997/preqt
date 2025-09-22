@@ -119,6 +119,15 @@
   margin-right: 8px;
   border-radius: 2px;
 }
+.publicSquare{
+   display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: #D1BD56;
+  margin-right: 8px;
+  border-radius: 2px;
+
+}
 
 .totalRow {
   background: #F3F4F6;

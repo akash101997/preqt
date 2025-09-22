@@ -6,7 +6,7 @@ export default function UtilisationFunds({ isPrivateDeal }) {
   const data = isPrivateDeal
     ? [
         { label: "Capital Expenditure", color: "#927127", amount: "100%" },
-         {text: "The Company is raising INR 15 Cr through this Pre-IPO round to part-finance a INR 28 Cr investment in a 300 MW facility for high-efficiency solar modules (>500W). Use of Funds: Procurement and commissioning of machinery (partly ordered). This capacity expansion positions the Company to scale production, adopt advanced technology, and meet the rising demand for next-generation solar modules.",},
+        { text: "The Company is raising INR 15 Cr through this Pre-IPO round to part-finance a INR 28 Cr investment in a 300 MW facility for high-efficiency solar modules (>500W). Use of Funds: Procurement and commissioning of machinery (partly ordered). This capacity expansion positions the Company to scale production, adopt advanced technology, and meet the rising demand for next-generation solar modules.",},
         { label: "Working Capital", color: "#E8E7EE", amount: "-" },
         { label: "General corporate purposes", color: "#D1BD56", amount: "-" },
        
