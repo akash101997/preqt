@@ -117,7 +117,7 @@ const Bod = ({ isPrivateDeal }) => {
               <div className="dropdown-body">
                 <h6 className="bg-head">Background</h6>
                 <p>{director.desc}</p>
-                <button>
+               {isPrivateDeal && <button>
                   <Link href={director.link} target="_blank" style={{ color: 'white', display: 'flex', alignItems: 'center', gap: '5px' }}> <svg
                     width="15"
                     height="14"
@@ -146,7 +146,7 @@ const Bod = ({ isPrivateDeal }) => {
                     </defs>
                   </svg>View on LinkedIn</Link>
 
-                </button>
+                </button>}
               </div>
             </Collapse>
           </div>

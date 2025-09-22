@@ -8,7 +8,7 @@ const FirstCarousel = ({ isPrivateDeal }) => {
   // Mixed list: images + YouTube video
   const media = isPrivateDeal ? [
     "/assets/pictures/hrv-overview.png",
-  ] : ["/assets/pictures/ashwini-container.png",]
+  ] : ["/deals/public-overview.png",]
 
   // helper: convert youtube link → embed format
   const getYoutubeEmbedUrl = (url) => {

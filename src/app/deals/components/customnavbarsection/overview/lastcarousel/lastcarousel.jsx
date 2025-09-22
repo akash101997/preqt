@@ -11,9 +11,9 @@ const LastCarousel = ({isPrivateDeal}) => {
   const images = isPrivateDeal ? [
     "/assets/pictures/hrv-overview-1.png",
     "/assets/pictures/hrv-overview-2.png",
-    "/assets/pictures/hrv-overview-2.png"
+    "/assets/pictures/hrv-overview-3.png"
   ] : [
-    "/assets/pictures/ashwini-1.png",
+    "/deals/company-gallary-first-img.png",
     "/assets/pictures/ashwini-2.png",
     "/assets/pictures/ashwini-3.png",
     "/assets/pictures/ashwini-4.png",
@@ -45,7 +45,7 @@ const LastCarousel = ({isPrivateDeal}) => {
               className="d-block w-100"
               src={img}
               alt={`Slide ${i + 1}`}
-              style={{ height: "400px", objectFit: "cover" }}
+              style={{ height: "400px", objectFit: "contain" , objectFit:"cover" }}
             />
           </Carousel.Item>
         ))}
