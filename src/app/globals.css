@@ -168,9 +168,9 @@
  }
 
  @media (max-width: 480px) {
-   body {
+   /* body {
      background-color: #F9FAFB !important;
-   }
+   } */
  }
 
  /* Default (desktop/tablet) */
