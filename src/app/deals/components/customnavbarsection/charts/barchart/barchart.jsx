@@ -17,6 +17,8 @@ import {
 import { useSearchParams } from "next/navigation";
 
 const privateData = [
+  { year: "2022", revenue: 35.0, ebitda: 2.8, pat: 0.9 },
+  { year: "2023", revenue: 43.4, ebitda: 2.6, pat: 1.0 },
   { year: "2024", revenue: 66.3, ebitda: 7.9, pat: 2.1 },
   { year: "2025", revenue: 101.4, ebitda: 13.1, pat: 6.9 },
 

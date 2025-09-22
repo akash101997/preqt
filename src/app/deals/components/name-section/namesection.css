@@ -528,6 +528,10 @@
   position: absolute;
   top: -8px;
 }
+.why-section div img {
+  position: absolute;
+  top: -8px;
+}
 
 .customcars {
   display: flex;
