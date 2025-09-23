@@ -147,7 +147,7 @@ function DealsTalkContent() {
 
                 <div className={styles.cardFooterMainContainer}>
                     <div className={styles.QandA}>
-                        <div className={styles.QandAstats}>23 Q&A answered in last 3 days </div>
+                        <div className={styles.QandAstats}>23 Q&A answered in last 3 days  </div>
                         <div className={styles.usersIcons}>
                             <img src="assets/pictures/userImage1.png" alt="" className={styles.userImages} />
                             <img src="assets/pictures/userImage2.png" alt="" className={styles.userImages} />
