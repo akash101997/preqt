@@ -468,18 +468,13 @@ font-weight: 500;
   gap: 10px;
   background: #fff;
   border: none; /* light gray border */
-  padding: 10px 16px;
+  padding: 10px 24px;
   border-radius: 8px;
   font-size: 15px;
   font-weight: 500;
   color: #ef4444; /* red text */
   cursor: pointer;
- 
 }
-
-
-
-
 
   .logout {
     color: #EF4444;

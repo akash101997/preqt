@@ -356,7 +356,7 @@ const Fundamentals = ({ isPrivateDeal }) => {
 
       <Dropdown title="IPO Objective">
         <div className="ipo-objective-container">
-          <section className="ipo-objective-container-section">
+          <section className="ipoObjectiveSection">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="40"
@@ -417,79 +417,17 @@ const Fundamentals = ({ isPrivateDeal }) => {
                 fill="white"
               />{" "}
             </svg>
+            <h2>Primary Objective</h2>
+            <h3>The company aims to utilize the net proceeds from the IPO for:</h3>
 
-            <h1>Primary Objective</h1>
-            <h2>
-              The company aims to utilize the net proceeds from the IPO for:
-            </h2>
-            <div>
-              <p>
-                <svg
-                  width="18"
-                  height="2"
-                  viewBox="0 0 18 2"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 1L17 0.999999"
-                    stroke="#E5E7EB"
-                    strokeLinecap="round"
-                  />
-                </svg>
-                Repayment and/or pre-payment, in full or part, of certain borrowings availed by the Company – INR 40 crore
-              </p>
-
-              <p>
-                <svg
-                  width="18"
-                  height="2"
-                  viewBox="0 0 18 2"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 1L17 0.999999"
-                    stroke="#E5E7EB"
-                    strokeLinecap="round"
-                  />
-                </svg>
-                Funding capital expenditure requirement of the Company towards purchase of trucks – INR 8 crore     
-              </p>
-
-              {/* <p>
-                <svg
-                  width="18"
-                  height="2"
-                  viewBox="0 0 18 2"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 1L17 0.999999"
-                    stroke="#E5E7EB"
-                    strokeLinecap="round"
-                  />
-                </svg>
-                Repayment of short-term borrowings
-              </p>
-
-              <p>
-                <svg
-                  width="18"
-                  height="2"
-                  viewBox="0 0 18 2"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 1L17 0.999999"
-                    stroke="#E5E7EB"
-                    strokeLinecap="round"
-                  />
-                </svg>
-         </p>*/}
-            </div> 
+            <div className="ipoObjectiveList">
+              <div className="ipoObjectiveItem">
+                <p>Repayment and/or pre-payment, in full or part, of certain borrowings availed by the Company – INR 40 crore</p>
+              </div>
+              <div className="ipoObjectiveItem">
+                <p>Funding capital expenditure requirement of the Company towards purchase of trucks – INR 8 crore</p>
+              </div>
+            </div>
           </section>
           {/* <section className="ipo-objective-container-section">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"> <g clip-path="url(#clip0_6168_24766)"> <path d="M40.0015 20C40.0015 31.0458 31.0473 40 20.0015 40C8.95563 40 0.00146484 31.0458 0.00146484 20C0.00146484 8.95416 8.95563 0 20.0015 0C31.0473 0 40.0015 8.95416 40.0015 20Z" fill="#F9F6ED" /> <path d="M20.001 0C19.7044 0 19.4093 0.00793453 19.1157 0.0204468C29.7505 0.484009 38.2304 9.2511 38.2304 20C38.2304 30.7489 29.7505 39.516 19.1157 39.9792C19.4093 39.9921 19.7044 40 20.001 40C31.0469 40 40.001 31.0458 40.001 20C40.001 8.95416 31.0469 0 20.001 0Z" fill="#E2E3D8" /> <path d="M20.0031 2.0625C19.6698 2.0625 19.3994 2.33258 19.3994 2.66614V3.99945C19.3994 4.3327 19.6698 4.60309 20.0031 4.60309C20.3363 4.60309 20.6067 4.3327 20.6067 3.99945V2.66614C20.6067 2.33258 20.3363 2.0625 20.0031 2.0625Z" fill="#AFAFAF" /> <path d="M31.833 7.31631L30.8903 8.259C30.6544 8.4949 30.6544 8.87698 30.8903 9.11257C31.0081 9.23067 31.1625 9.28957 31.3169 9.28957C31.4714 9.28957 31.6261 9.23067 31.7439 9.11288L32.6866 8.17019C32.9222 7.93429 32.9222 7.55221 32.6866 7.31661C32.4507 7.08071 32.0686 7.08071 31.833 7.31631Z" fill="#AFAFAF" /> <path d="M31.7432 30.8869C31.5076 30.651 31.1255 30.651 30.8896 30.8866C30.654 31.1225 30.654 31.5046 30.8896 31.7405L31.8323 32.6832C31.9501 32.801 32.1048 32.8599 32.2592 32.8599C32.4136 32.8599 32.5681 32.801 32.6859 32.6832C32.9218 32.4476 32.9218 32.0652 32.6859 31.8296L31.7432 30.8869Z" fill="#AFAFAF" /> <path d="M20.0027 35.3965C19.6695 35.3965 19.3994 35.6666 19.3994 36.0001V37.3331C19.3994 37.6667 19.6695 37.9368 20.0027 37.9368C20.3363 37.9368 20.6064 37.6667 20.6064 37.3331V36.0001C20.6064 35.6666 20.3363 35.3965 20.0027 35.3965Z" fill="#AFAFAF" /> <path d="M8.26196 30.8867L7.31927 31.8293C7.08368 32.0649 7.08368 32.4473 7.31927 32.6829C7.43707 32.801 7.5918 32.8599 7.74622 32.8599C7.90063 32.8599 8.05505 32.801 8.17285 32.6832L9.11554 31.7405C9.35144 31.5046 9.35144 31.1226 9.11554 30.8867C8.87994 30.6511 8.49756 30.6511 8.26196 30.8867Z" fill="#AFAFAF" /> <path d="M4.00287 19.3955H2.66956C2.3363 19.3955 2.06592 19.6656 2.06592 19.9988C2.06592 20.3324 2.3363 20.6025 2.66956 20.6025H4.00287C4.33612 20.6025 4.60651 20.3324 4.60651 19.9988C4.60651 19.6656 4.33612 19.3955 4.00287 19.3955Z" fill="#AFAFAF" /> <path d="M8.17285 7.31646C7.93726 7.08086 7.55518 7.08056 7.31927 7.31646C7.08368 7.55206 7.08368 7.93444 7.31927 8.17004L8.26196 9.11272C8.37976 9.23083 8.53448 9.28973 8.6889 9.28973C8.84332 9.28973 8.99774 9.23083 9.11554 9.11272C9.35144 8.87713 9.35144 8.49505 9.11554 8.25915L8.17285 7.31646Z" fill="#AFAFAF" /> <path d="M37.3364 19.3955H36.0031C35.6695 19.3955 35.3994 19.6656 35.3994 19.9991C35.3994 20.3327 35.6695 20.6028 36.0031 20.6028H37.3361C37.6696 20.6028 37.9397 20.3327 37.9397 19.9991C37.94 19.6659 37.6696 19.3955 37.3364 19.3955Z" fill="#AFAFAF" /> <path d="M36.0016 20.0001C36.0016 28.8367 28.8382 36.0001 20.0015 36.0001C11.1649 36.0001 4.00146 28.8367 4.00146 20.0001C4.00146 11.1634 11.1649 4 20.0015 4C28.8382 4 36.0016 11.1634 36.0016 20.0001Z" fill="#C9A74E" /> <path d="M20.0015 25.6359V14.3645C20.0015 13.9553 20.4791 13.7316 20.7937 13.9937L27.5564 19.6291C27.7883 19.8223 27.7883 20.1781 27.5564 20.3713L20.7937 26.0067C20.4791 26.2688 20.0015 26.0451 20.0015 25.6359Z" fill="#F9F6ED" /> <path d="M12.0015 25.6359V14.3645C12.0015 13.9553 12.4788 13.7316 12.7934 13.9937L20.0013 20.0002L12.7934 26.0067C12.4788 26.2688 12.0015 26.0451 12.0015 25.6359Z" fill="#F9F6ED" /> <path d="M20.001 4C19.7038 4 19.409 4.00885 19.1157 4.02472C27.5404 4.48431 34.2305 11.4606 34.2305 20.0001C34.2305 28.5395 27.5404 35.5158 19.1157 35.9754C19.409 35.9916 19.7038 36.0001 20.001 36.0001C28.8377 36.0001 36.0011 28.8367 36.0011 20.0001C36.0011 11.1637 28.8377 4 20.001 4Z" fill="#86681B" /> </g> <defs> <clipPath id="clip0_6168_24766"> <rect width="40" height="40" fill="white" /> </clipPath> </defs> </svg>
@@ -961,7 +899,7 @@ const Fundamentals = ({ isPrivateDeal }) => {
         </div>
       </Dropdown> */}
       <hr className="hr" />
-     
+
       <hr className="hr" />
     </div>
   );
