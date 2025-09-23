@@ -1086,6 +1086,7 @@
 
 .account-footer {
   width: 100%;
+  display: none;
 }
 
 
@@ -1725,10 +1726,7 @@
     padding: 0px 5px;
   }
 
-  .body-section2 img {
-    height: 35px;
-    width: 35px;
-  }
+  
 
   .body-section2 div {
     display: flex;
@@ -1889,11 +1887,7 @@
     padding: 0px 5px;
   }
 
-  .body-section2 img {
-    height: 35px;
-    width: 35px;
-  }
-
+ 
   .why-section section {
     padding: 10px 0px;
   }
@@ -2207,8 +2201,17 @@
   }
 
   .body-section2 img {
-    height: 25px;
-    width: 25px;
+    height: 35px;
+    width: 35px;
+  }
+
+  .body-section3{
+    align-items: flex-start;
+  }
+
+  .body-section3 svg{
+    height: 20px;
+    width: 35px;
   }
 
   .body-section2 {

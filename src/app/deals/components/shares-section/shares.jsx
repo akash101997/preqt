@@ -2,11 +2,13 @@
 import { useSearchParams } from 'next/navigation';
 import React from 'react'
 
-const Shares = () => {
+const Shares = ({isPrivateDeal}) => {
 
-  const searchParams = useSearchParams();
-  const dealId = searchParams?.get("dealId");
-  const isPrivateDeal = dealId === "2";
+  
+
+  // const searchParams = useSearchParams();
+  // const dealId = searchParams?.get("dealId");
+  // const isPrivateDeal = dealId === "2";
 
   return (
     <>

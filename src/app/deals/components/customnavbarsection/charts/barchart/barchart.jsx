@@ -14,7 +14,6 @@ import {
   ResponsiveContainer,
   LabelList,
 } from "recharts";
-import { useSearchParams } from "next/navigation";
 
 const privateData = [
   { year: "2022", revenue: 35.0, ebitda: 2.8, pat: 0.9 },
@@ -31,8 +30,7 @@ const publicData = [
   // { year: "Q1FY26", revenue: 26.6, ebitda: 38.87, pat: 17.77 },
 ]
 const Barchart = ({ isPrivateDeal }) => {
-  const searchParams = useSearchParams();
-  const dealId = searchParams?.get("dealId");
+ 
 
   const data = isPrivateDeal ? privateData : publicData;
   const isMobile = useMediaQuery({ maxWidth: 768 });

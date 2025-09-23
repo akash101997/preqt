@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Fundamentals from "../fundamentals/fundamentals";
 import styles from "./Shareholding.module.css";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { useSearchParams } from "next/navigation";
+
 
 const privateData = [
   {
@@ -81,8 +81,7 @@ const publicData = [
 
 
 export default function Shareholding({ isPrivateDeal }) {
-  const searchParams = useSearchParams();
-  const dealId = searchParams?.get("dealId");
+ 
   const [showshareholding, setshowshareholding] = useState(true);
   const [preprogressbar, setPreprogressbar] = useState(0);
   const [postprogressbar, setPostprogressbar] = useState(0);
