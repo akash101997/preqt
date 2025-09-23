@@ -219,10 +219,6 @@ background-color: #FF6A55;
     width: 24px;
   }
 
-
-
-
-
   .navigationButton {
     gap: 8px;
     display: none;
@@ -465,24 +461,23 @@ font-weight: 500;
   }
 
   .logoutContainerDiv {
+    position: fixed;
+    bottom: 15px;
   display: flex;
   align-items: center;
   gap: 10px;
   background: #fff;
-  border: 1px solid #e5e7eb; /* light gray border */
+  border: none; /* light gray border */
   padding: 10px 16px;
   border-radius: 8px;
   font-size: 15px;
   font-weight: 500;
   color: #ef4444; /* red text */
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+ 
 }
 
-.logoutContainerDiv:hover {
-  background: #fee2e2; /* light red background */
-  border-color: #ef4444;
-}
+
 
 
 
