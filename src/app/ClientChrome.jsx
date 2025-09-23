@@ -7,6 +7,7 @@ import NewFooter from "./common/navBar/new-footer/NewFooter";
 export default function ClientChrome({ children }) {
   const pathname = usePathname();
  const router = useRouter();
+ 
 
   const hide = pathname === "/signin" || pathname === "/login" || pathname === "/otp" || pathname === "/signup" || pathname === "/signup-form";
 
@@ -27,6 +28,7 @@ export default function ClientChrome({ children }) {
     return <>{children}</>;
   }
 
+  // console.log("ddssfsfvfe",isPrivateDeal)
   return (
     <div
       className={isPrivateDeal ? "private-deal-theme" : ""}
@@ -40,8 +42,18 @@ export default function ClientChrome({ children }) {
       <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
         {children}
       </div>
+
+
+    <div className="newNav"   style={{
+    marginBottom: isPrivateDeal ? "110px" : "0px"
+  }}
+>
       <NewFooter/>
-      {/* <Footer /> */}
+  
+
+</div>
+    
+        {/* <Footer /> */}
     </div>
   );
 }

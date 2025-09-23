@@ -35,21 +35,36 @@ export default function UtilisationFunds({ isPrivateDeal }) {
         {/* Table body */}
         {isPrivateDeal
           ? data.map((item, index) => (
-              <React.Fragment key={index}>
-                <div className={styles.row}>
-                  <div className={styles.purpose}>
-                    <span
-                      className={styles.colorBox}
-                      style={{ backgroundColor: item.color }}
-                    ></span>
-                    {item.label}
-                  </div>
-                  <span className={styles.amount}>{item.amount}</span>
-                {item.text && <div className={styles.text}>{item.text}</div>}
+              // <React.Fragment key={index}>
+              //   <div className={styles.row}>
+              //     <div className={styles.purpose}>
+              //       <span
+              //         className={styles.colorBox}
+              //         style={{ backgroundColor: item.color }}
+              //       ></span>
+              //       {item.label}
+              //     </div>
+              //     <span className={styles.amount}>{item.amount}</span>
+              //   {item.text && <div className={styles.text}>{item.text}</div>}
 
-                </div>
+              //   </div>
               
-              </React.Fragment>
+              // </React.Fragment>
+              <React.Fragment key={index}>
+  <div className={styles.row}>
+    <div className={styles.purpose}>
+      <span
+        className={styles.colorBox}
+        style={{ backgroundColor: item.color }}
+      ></span>
+      {item.label}
+    </div>
+    <span className={styles.amount}>{item.amount}</span>
+  </div>
+
+  {item.text && <div className={styles.text}>{item.text}</div>}
+</React.Fragment>
+
             ))
           : data.map((item, index) => (
               <div key={index} className={styles.row}>
