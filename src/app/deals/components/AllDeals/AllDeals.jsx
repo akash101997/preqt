@@ -208,7 +208,7 @@ function AllDealsContent() {
 
                 <div className={styles.card2Footer}>
                     <div className={styles.card2QandA}>
-                        <div className={styles.card2QandAStats}>23 Q&A answered in last 3 days akash</div>
+                        <div className={styles.card2QandAStats}>23 Q&A answered in last 3 days</div>
                         <div className={styles.card2UserIcons}>
                             <img src="assets/pictures/userImage1.png" alt="" className={styles.card2UserImage} />
                             <img src="assets/pictures/userImage2.png" alt="" className={styles.card2UserImage} />
