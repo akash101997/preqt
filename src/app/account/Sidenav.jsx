@@ -97,7 +97,7 @@ export default function Sidenav() {
               </button>
             </div>
           </li> */}
-          <div className={styles.line}></div>
+          {/* <div className={styles.line}></div> */}
 
           <li id={styles.support}
             className={styles.item}
@@ -134,7 +134,7 @@ export default function Sidenav() {
               </button>
             </div>
           </li> */}
-          <div className={styles.line}></div>
+          {/* <div className={styles.line}></div> */}
 
           <li
             className={styles.item}
@@ -206,7 +206,7 @@ export default function Sidenav() {
               </button>
             </div>
           </li> */}
-          <div className={styles.line}></div>
+          {/* <div className={styles.line}></div> */}
         </ul>
 
         <div className={styles.logout_section}>
