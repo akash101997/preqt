@@ -260,10 +260,17 @@
   } */
   .details_section {
     border: none;
+    padding: 0px 12px;
+    height: 100%;
+  }
+
+  .heading{
+    margin: 10px 0px;
   }
 
   .value {
     font-size: 0.95rem;
+    margin-bottom: 12px;
   }
 
   .edit_icon {

@@ -123,6 +123,7 @@
     width: 100%;
     border-radius: 0px;
     padding: 15px;
+    height: 100%;
   }
   .title{
     display: none;
@@ -130,5 +131,9 @@
   .formContainer{
     border: none;
     padding:0px;
+    height: 100%;
+  }
+  .textarea{
+    height: 210px;
   }
 }

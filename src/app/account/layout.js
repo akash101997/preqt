@@ -51,7 +51,7 @@ export default function layout({ children }) {
         {/* <NavBar /> */}
       </div>
       <div className={styles.headar_button}>
-        <BreadCrumbs/>
+        {/* <BreadCrumbs/> */}
       </div>
       <div className={styles.arrow}>
         <div>
@@ -71,17 +71,11 @@ export default function layout({ children }) {
       </div>
       <div className={styles.account_layout}>
         <div className={styles.sidebar}>  <Sidenav/></div>            
-        <div style={{
-           maxWidth: '936px',
-            width: '100%',
-            height:'843px',
-             overflow:'scroll',
-             scrollbarWidth:'none'
-              }}>
+        <div className={styles.accountwrapper}>
           {children}
         </div>
       </div>
-      <Accountfooter />
+      {/* <Accountfooter /> */}
       {/* <Footer /> */}
     </div>
 

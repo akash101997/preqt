@@ -207,22 +207,23 @@ export default function NavBar() {
                 <img src="/assets/pictures/home.svg" alt="" />
                 <div className={styles.homebtn}>Home</div>
               </Link> */}
-              <Link className={styles.homeNavButton} href="/deals">
+              <Link className={styles.homeNavButton} href="/deals" onClick={() => setMenuOpen(false)}>
                 <img src="/deals/deals-menu.svg" alt="deals"/>
                 <div className={styles.homebtn}>Deals</div>
               </Link>
               <Link
                 className={styles.homeNavButton}
                 href="/community"
+                onClick={() => setMenuOpen(false)}
               >
                 <img src="/assets/pictures/community.svg" alt="" />
                 <div className={styles.homebtn}>Community</div>
               </Link>
-              <Link className={styles.homeNavButton} href="/events">
+              <Link className={styles.homeNavButton} href="/events" onClick={() => setMenuOpen(false)}>
                 <img src="/assets/pictures/events.svg" alt="" />
                 <div className={styles.homebtn}>Events</div>
               </Link>
-              <Link className={styles.homeNavButton} href={"/account"}>
+              <Link className={styles.homeNavButton} href={"/account"} onClick={() => setMenuOpen(false)}>
                 <img src="/assets/pictures/account.svg" alt="" />
                 <div className={styles.homebtn}>Account</div>
               </Link>
