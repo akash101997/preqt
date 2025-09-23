@@ -5,10 +5,10 @@ import Footer from '../common/navBar/Footer'
 
 const page = () => {
     return (
-        <div>
+        <>
             <MarqueeCom />
             <CommingSoon />
-        </div>
+        </>
     )
 }
 
