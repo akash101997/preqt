@@ -40,6 +40,7 @@ const Namedetailsection = ({ slug }) => {
   }
 
 
+
  const dealsIndex = {
     "acmpl-deals": {
       id: 1,
@@ -229,7 +230,7 @@ const Namedetailsection = ({ slug }) => {
 
             
 
-              <Shares />
+              <Shares isPrivateDeal = {isPrivateDeal} />
               {/* <div className="ipo-timeline-section mobile-ipo-timeline-section">
                 <h3>IPO Timeline</h3>
 

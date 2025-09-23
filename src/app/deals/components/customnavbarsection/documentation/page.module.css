@@ -140,16 +140,18 @@
 
 @media(max-width:920px){
  .privateContainer{
-    padding: 0 10px;
+    /* padding: 0 10px; */
     padding-bottom: 20px;
   }
   .container{
-    padding: 0 10px;
+    /* padding: 0 10px; */
     padding-bottom: 20px;
   }
 
   .docWrapper{
+    padding: 0 15px;
     padding-top: 10px;
+    padding-bottom: 15px;
   }
 }
 
