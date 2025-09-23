@@ -66,7 +66,7 @@ const Business = ({ isPrivateDeal }) => {
             <Image src="/assets/pictures/private-product-service-1.png" alt="Human Nutrition" width={242} height={360} className={styles.cardImage} />
           </div>
           <div className={styles.card}>
-            <Image src="/assets/pictures/private-product-service-2.png" alt="Industrial Products" width={242} height={360} className={styles.cardImage} />
+            <Image src="/deals/private-Business-EPC.png" alt="EPC-img" width={242} height={360} className={styles.cardImage} />
           </div>
         </div>
       </Dropdown>
