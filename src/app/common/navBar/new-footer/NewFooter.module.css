@@ -50,7 +50,7 @@
 }
 .line{
   height: 0;
-  border: 0.2px solid white;
+  border: 0.px solid white;
   /* height: 1px;
   color: #FFFFFF1A; */
 
@@ -68,6 +68,7 @@
          display: grid;
          justify-items: start;
         grid-template-columns: repeat(auto-fit, minmax(210px, 2fr));
+         gap: 10px;
   }
 }
 
@@ -77,12 +78,14 @@
          display: grid;
          justify-items: start;
         grid-template-columns: repeat(auto-fit, minmax(210px, 2fr));
+        gap: 10px;
   }
   .footer{
-     padding: 24px 16px;
+     padding: 24px 18px;
   }
   .logo{
     place-self:start ;
-    margin: 0;
+    margin-bottom: 10px;
   }
+
 }
