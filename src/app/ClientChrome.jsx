@@ -2,6 +2,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import NavBar from "./common/navBar/NavBar";
 import Footer from "./common/navBar/Footer";
+import NewFooter from "./common/navBar/new-footer/NewFooter";
 
 export default function ClientChrome({ children }) {
   const pathname = usePathname();
@@ -39,7 +40,8 @@ export default function ClientChrome({ children }) {
       <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
         {children}
       </div>
-      <Footer />
+      <NewFooter/>
+      {/* <Footer /> */}
     </div>
   );
 }

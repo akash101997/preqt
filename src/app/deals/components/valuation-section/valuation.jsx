@@ -22,13 +22,13 @@ const Valuation = ({ isPrivateDeal }) => {
 
         </div>
 
-        <div className="docSection">
+        {/* <div className="docSection">
           <p className="docLabel">IPO Doc</p>
           <a href="#" className="docLink">
             <span className="docText">DRHP/RHP</span>
             <span><Drhp /></span>
           </a>
-        </div>
+        </div> */}
       </div>
 
       <div className="progressWrapper">

@@ -130,6 +130,8 @@ const Business = ({ isPrivateDeal }) => {
 
       <hr className={styles.hr} />
 
+     {isPrivateDeal && (
+      <>
       <Dropdown title="Sales Channel">
         <ul className={styles.ul}>
           <li className={styles.list}>
@@ -142,10 +144,15 @@ const Business = ({ isPrivateDeal }) => {
       
       </Dropdown>
 
-      <hr className={styles.hr} />
 
-      <Dropdown title="Clients">
-        {/* <div className={styles.clients}>
+      <hr className={styles.hr} />
+      </>
+      )}
+
+      
+
+     {isPrivateDeal && <Dropdown title="Clients">
+        <div className={styles.clients}>
           <div className={styles.clientCard}>
             <Image
               src="/deals/Rectangle -bayer-Ag.png"
@@ -164,9 +171,8 @@ const Business = ({ isPrivateDeal }) => {
             />
             Bayer AG
           </div>
-        </div> */}
-        N/A
-      </Dropdown>
+        </div>
+      </Dropdown> }
     </div>
   );
 };
