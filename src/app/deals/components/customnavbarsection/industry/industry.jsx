@@ -339,7 +339,7 @@ const Industry = ({ isPrivateDeal }) => {
                       <th>Metric</th>
                       <th>
                         <div className={styles.tableHeading}>
-                          <span>Premium Roadlines</span>
+                          <span>Premium <br/> Roadlines</span>
                           <img src="/assets/pictures/premium.svg" alt="" />
                         </div>
                       </th>

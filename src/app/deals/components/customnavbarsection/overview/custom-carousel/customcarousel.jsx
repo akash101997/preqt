@@ -5,12 +5,12 @@ import { Carousel } from "react-bootstrap";
 const FirstCarousel = ({ isPrivateDeal }) => {
   const [index, setIndex] = useState(0);
 
-  // Mixed list: images + YouTube video
-  const media = isPrivateDeal ? [
-    "/assets/pictures/hrv-overview.png",
-  ] : ["/deals/private-overview.png",]
 
-  // helper: convert youtube link → embed format
+  const media = isPrivateDeal ? [
+    "/deals/private-overview.png",
+  ] : ["/deals/public-overview.png",]
+
+
   const getYoutubeEmbedUrl = (url) => {
     const regExp =
       /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;

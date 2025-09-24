@@ -195,11 +195,15 @@
 .tableHeading {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .tableHeading span{
   word-break: break-all;
+}
+
+.tableHeading img{
+  margin-left: 17px;
 }
 .PeerTable th span {
   display: inline-block;
