@@ -5,22 +5,25 @@ import { ChevronDown, ChevronUp, CloudOff } from "lucide-react";
 import Link from "next/link";
 
 const directorsPrivate = [
-  {
+
+ {
     id: 1,
-    name: "Sagar Sachdev",
-    role: "Executive Director",
-    desc: "Sagar Sachdev is a protean and dexterous personality, equally skilled at designing smart cities powered by renewable energy, coding software, or experimenting in the kitchen. His curiosity and love for meeting new people make him adaptable and approachable. A renewable energy professional with a strong interest in economics, he also enjoys drawing, adventure sports, and reading. Above all, he is someone you can rely on to tackle any problem and find the right solution.",
-    img: "/assets/pictures/sagar.png",
-    link: "https://www.linkedin.com/in/sagarsachdev/"
-  },
-  {
-    id: 2,
     name: "Rishabh Aggarwal",
     role: "Managing Director",
     desc: "Rishabh Aggarwal is a first-generation entrepreneur and renewable energy leader, combining an engineering background with business acumen to drive India’s transition to clean energy. As the founder of HVR Solar, he has scaled the company from the ground up, developed innovative solar solutions, and built strategic partnerships that accelerate access to sustainable, affordable power. Passionate about clean tech, sustainability, and green innovation, he is committed to shaping a future where renewable energy powers progress.",
     img: "/assets/pictures/rishabh.png",
     link: "https://www.linkedin.com/in/rishabhaggarwal-hvr/"
   },
+
+  {
+    id: 2,
+    name: "Sagar Sachdev",
+    role: "Executive Director",
+    desc: "Sagar Sachdev is a protean and dexterous personality, equally skilled at designing smart cities powered by renewable energy, coding software, or experimenting in the kitchen. His curiosity and love for meeting new people make him adaptable and approachable. A renewable energy professional with a strong interest in economics, he also enjoys drawing, adventure sports, and reading. Above all, he is someone you can rely on to tackle any problem and find the right solution.",
+    img: "/assets/pictures/sagar.png",
+    link: "https://www.linkedin.com/in/sagarsachdev/"
+  },
+ 
 ];
 
 const directorsPublic = [

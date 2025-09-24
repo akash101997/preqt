@@ -359,7 +359,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
           </section>
 
 
-          <section className="main-other">
+          {/* <section className="main-other"> */}
             {/* <section className="others">
               <h6>Merchant banker appointed</h6>
               <span>-</span>
@@ -369,7 +369,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
               <h6>Expecting listing date</h6>
               <span>-</span>
             </section> */}
-          </section>
+          {/* </section> */}
 
 
 
@@ -497,34 +497,24 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                 <h6>ROCE (FY'25)</h6>
                 <span>25.3%</span>
               </section>
-
-
-              {/* <section className="others">
-                <h6>Price to Book Value</h6>
-                <span>-</span>
-              </section> */}
-
-            </section >
-            <section className="main-other">
-              <section className="others">
+               <section className="others">
                 <h6>Debt/Equity(FY'25)</h6>
                 <span>
-                  {/* <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                  >
-                    <rect width="24" height="24" rx="7" fill="#4CAF50" />{" "}
-                    <path
-                      d="M9.00039 16.2L4.80039 12L3.40039 13.4L9.00039 19L21.0004 7.00001L19.6004 5.60001L9.00039 16.2Z"
-                      fill="white"
-                    />
-                  </svg>
-                  Yes */}
                   3.0 
                 </span>
               </section>
+
+
+             
+
+            </section >
+            <section className="main-other">
+              {/* <section className="others">
+                <h6>Debt/Equity(FY'25)</h6>
+                <span>
+                  3.0 
+                </span>
+              </section> */}
 
 
               <section className="others">

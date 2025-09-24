@@ -279,7 +279,7 @@
 }
 
 .smallcards-section section {
-  width: 100%;
+  width: 100%;  
 }
 
 .main-other {
@@ -507,7 +507,6 @@
   align-items: center;
   padding: 40px 12px 24px 12px;
   background: linear-gradient(180deg, #FDF9EE 0%, rgba(238, 242, 253, 0.00) 100%);
-
   text-align: center;
   position: relative;
   border-radius: 20px;
@@ -515,10 +514,15 @@
 }
 
 .step-num {
+  display: flex;
+  height: 28px;
+  width: 28px;
+  align-items: center;
+  justify-content: center;
   background: white;
   border: 1px solid #a1aebe;
-  border-radius: 20px;
-  padding: 6px;
+  border-radius: 50%;
+  /* padding: 6px; */
   z-index: 9000;
   position: relative;
   font-size: 12px;
@@ -976,6 +980,27 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+.not-completed {
+  position: relative;
+}
+
+.not-completed::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 28px;
+  /* distance from icon */
+  transform: translateX(-50%);
+  width: 2px;
+  height: 41px;
+  background-image: url("data:image/svg+xml;utf8,<svg width='2' height='41' xmlns='http://www.w3.org/2000/svg'><rect width='2' height='41' fill='%#A1AEBE'/></svg>");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.timeline .timeline-step:last-child .not-completed::after{
+  display: none;
+}
+
 
 .ask-ai-section2 {
   display: flex;
@@ -1485,12 +1510,19 @@
      .body-section4 section {
         text-align: left !important;
     }
+    .step-num {
+  
+  height: 23px;
+  width: 23px;
+  text-align: center;
+  background: white;
+  border: 1px solid #a1aebe;
+  border-radius: 50%;
+  /* padding: 6px; */
+  z-index: 9000;
+  position: relative;
+  font-size: 12px;
 }
-
-@media(max-width: 768px) {
-  .private-deal-theme {
-    background-size: 50%;
-  }
 
 
 }
@@ -1912,6 +1944,8 @@
     font-size: 18px;
   }
 
+  
+
   .accordion-button {
     font-size: 12px !important;
     padding: 5px 5px;
@@ -1927,6 +1961,7 @@
     padding: 15px 10px;
   }
 }
+
 
 @media (max-width: 480px) {
 

@@ -105,7 +105,7 @@ const Ipotimeline = ({ handleAskAI, handleQuesAns , isPrivateDeal}) => {
             {steps.map((step, index) => (
               <div key={index} className="timeline-step">
                 <div
-                  className={`timeline-icon ${step.completed ? "completed" : ""
+                  className={`timeline-icon ${step.completed ? "completed" : "not-completed "
                     }`}
                 >
                   {step.completed ? (
@@ -142,38 +142,39 @@ const Ipotimeline = ({ handleAskAI, handleQuesAns , isPrivateDeal}) => {
                         </clipPath>
                       </defs>
                     </svg>
-                  ) : (
-                    // <svg className=" not-completed"
-                    //   width="26"
-                    //   height="26"
-                    //   viewBox="0 0 26 26"
-                    //   fill="none"
-                    //   xmlns="http://www.w3.org/2000/svg"
-                    // >
-                    //   <g clipPath="url(#clip0_2675_7512)">
-                    //     <circle
-                    //       cx="12.8029"
-                    //       cy="12.8029"
-                    //       r="12.0028"
-                    //       fill="white"
-                    //       stroke="#B59131"
-                    //       strokeWidth="1.60037"
-                    //     />
-                    //   </g>
-                    //   <path
-                    //     d="M10.0645 15.7173L17.7799 8.00195L18.8043 9.02639L10.0645 17.7662L6.00098 13.7039L7.02541 12.6794L10.0645 15.7173Z"
-                    //     fill="black"
-                    //   />
-                    //   <defs>
-                    //     <clipPath id="clip0_2675_7512">
-                    //       <rect
-                    //         width="25.6059"
-                    //         height="25.6059"
-                    //         fill="white"
-                    //       />
-                    //     </clipPath>
-                    //   </defs>
-                    // </svg>
+                   ) :
+                   (
+                  //   <svg className=" not-completed"
+                  //     width="26"
+                  //     height="26"
+                  //     viewBox="0 0 26 26"
+                  //     fill="none"
+                  //     xmlns="http://www.w3.org/2000/svg"
+                  //   >
+                  //     <g clipPath="url(#clip0_2675_7512)">
+                  //       <circle
+                  //         cx="12.8029"
+                  //         cy="12.8029"
+                  //         r="12.0028"
+                  //         fill="white"
+                  //         stroke="#B59131"
+                  //         strokeWidth="1.60037"
+                  //       />
+                  //     </g>
+                  //     <path
+                  //       d="M10.0645 15.7173L17.7799 8.00195L18.8043 9.02639L10.0645 17.7662L6.00098 13.7039L7.02541 12.6794L10.0645 15.7173Z"
+                  //       fill="black"
+                  //     />
+                  //     <defs>
+                  //       <clipPath id="clip0_2675_7512">
+                  //         <rect
+                  //           width="25.6059"
+                  //           height="25.6059"
+                  //           fill="white"
+                  //         />
+                  //       </clipPath>
+                  //     </defs>
+                  //   </svg>
                     <span className="step-num">{step.number}</span>
                   )}
                 </div>
