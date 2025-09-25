@@ -7,39 +7,40 @@ const Ipotimeline = ({ handleAskAI, handleQuesAns , isPrivateDeal}) => {
 
 
 
-  const steps = [
-    { label: "IPO Open Date", date: "Wed, Jul 30, 2025", completed: true },
-    { label: "IPO Close Date", date: "Wed, Jul 30, 2025", completed: true },
-    {
-      label: "Tentative Allotment",
-      date: "Wed, Jul 30, 2025",
-      completed: true,
-    },
-    {
-      label: "Initiation of Refunds",
-      date: "Wed, Jul 30, 2025",
-      completed: false,
-      number: "04",
-    },
-    {
-      label: "Credit of Shares to Demat",
-      date: "Wed, Jul 30, 2025",
-      completed: false,
-      number: "05",
-    },
-    {
-      label: "Tentative Listing Date",
-      date: "Wed, Jul 30, 2025",
-      completed: false,
-      number: "05",
-    },
-    {
-      label: "Cut-off time for UPI mandate confirmation",
-      date: "Wed, Jul 30, 2025",
-      completed: false,
-      number: "05",
-    },
-  ];
+const steps = [
+  { label: "IPO Open Date", date: "Thu, Sep 25, 2025", completed: true },
+  { label: "IPO Close Date", date: "Mon, Sep 29, 2025", completed: true },
+  {
+    label: "Tentative Allotment",
+    date: "Tue, Sep 30, 2025",
+    completed: true,
+  },
+  {
+    label: "Initiation of Refunds",
+    date: "Wed, Oct 01, 2025",
+    completed: false,
+    number: "04",
+  },
+  {
+    label: "Credit of Shares to Demat",
+    date: "Wed, Oct 01, 2025",
+    completed: false,
+    number: "05",
+  },
+  {
+    label: "Tentative Listing Date",
+    date: "Fri, Oct 03, 2025",
+    completed: false,
+    number: "05",
+  },
+  {
+    label: "Cut-off time for UPI mandate confirmation",
+    date: "Tue, Sep 30, 2025, 05:00 PM",
+    completed: false,
+    number: "05",
+  },
+];
+
   return (
     <section className="ask-ai-section">
       {isPrivateDeal && <button className="ask-ai-button"
