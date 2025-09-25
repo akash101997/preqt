@@ -161,8 +161,11 @@
     padding-bottom: 3rem;
 }
 .publicDealDetails .section{
-    background-color: white;
-    box-shadow: none;
+  
+background: #FFF;
+
+/* Base Shadow */
+box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.06);
    
 }
 

@@ -35,7 +35,7 @@
   display: flex;
   gap: 20px;
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .topbar span {
@@ -45,7 +45,7 @@
 }
 
 .body {
-  background-color: rgb(234, 234, 234);
+  /* background-color: rgb(234, 234, 234); */
   width: 62%;
   border-radius: 24px;
   display: flex;
@@ -61,7 +61,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom ,#F7F6F2,#FFFFFF00);
+  background: linear-gradient(to bottom, #F7F6F2, #FFFFFF00);
   padding: 25px 15px;
   height: fit-content;
   gap: 30px;
@@ -222,12 +222,14 @@
 /* src/app/deals/components/progressbar.css */
 
 .firsthalf {
-  background-color: white;
-  padding: 30px;
+
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 30px;
   border-radius: 24px;
+  background: #FFF;
+  box-shadow: 0 4px 60px 0 rgba(0, 0, 0, 0.06);
 }
 
 .valuation-container .progress-fill {
@@ -280,7 +282,7 @@
 }
 
 .smallcards-section section {
-  width: 100%;  
+  width: 100%;
 }
 
 .main-other {
@@ -479,7 +481,7 @@
 
 .why-section {
   border-radius: 24px;
-  padding: 15px 30px;
+  padding:  30px;
   background: linear-gradient(45deg, #ffffff, #ffffff);
 }
 
@@ -533,6 +535,7 @@
   position: absolute;
   top: -8px;
 }
+
 .why-section div img {
   position: absolute;
   top: -8px;
@@ -660,7 +663,7 @@
 }
 
 .secondhalf {
-  padding: 10px 0;
+  /* padding: 10px 0; */
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -981,6 +984,7 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+
 .not-completed {
   position: relative;
 }
@@ -998,7 +1002,8 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
-.timeline .timeline-step:last-child .not-completed::after{
+
+.timeline .timeline-step:last-child .not-completed::after {
   display: none;
 }
 
@@ -1196,7 +1201,8 @@
 .private-deal-theme .shares-section svg line {
   stroke: #878787 !important;
 }
-.private-deal-theme .total-shares{
+
+.private-deal-theme .total-shares {
   color: #FFFFFF !important;
 }
 
@@ -1482,7 +1488,7 @@
     width: 56%;
   }
 
-  .righ-section{
+  .righ-section {
     width: unset;
   }
 
@@ -1501,29 +1507,31 @@
   .righ-section {
     display: none;
   }
-/* .mob-topbar {
+
+  /* .mob-topbar {
     font-size: 16px !important;
     display: flex;
     justify-content: space-between;
     padding: 16px 10px;
   } */
 
-     .body-section4 section {
-        text-align: left !important;
-    }
-    .step-num {
-  
-  height: 23px;
-  width: 23px;
-  text-align: center;
-  background: white;
-  border: 1px solid #a1aebe;
-  border-radius: 50%;
-  /* padding: 6px; */
-  z-index: 9000;
-  position: relative;
-  font-size: 12px;
-}
+  .body-section4 section {
+    text-align: left !important;
+  }
+
+  .step-num {
+
+    height: 23px;
+    width: 23px;
+    text-align: center;
+    background: white;
+    border: 1px solid #a1aebe;
+    border-radius: 50%;
+    /* padding: 6px; */
+    z-index: 9000;
+    position: relative;
+    font-size: 12px;
+  }
 
 
 }
@@ -1586,7 +1594,7 @@
     height: 30px;
   }
 
- 
+
 
 
   .ask-ai-mob-div {
@@ -1759,7 +1767,7 @@
     padding: 0px 5px;
   }
 
-  
+
 
   .body-section2 div {
     display: flex;
@@ -1920,7 +1928,7 @@
     padding: 0px 5px;
   }
 
- 
+
   .why-section section {
     padding: 10px 0px;
   }
@@ -1945,7 +1953,7 @@
     font-size: 18px;
   }
 
-  
+
 
   .accordion-button {
     font-size: 12px !important;
@@ -2027,7 +2035,7 @@
     padding: 16px 10px;
   }
 
- 
+
 
   .bank-det {
     padding: 0 !important;
@@ -2044,9 +2052,10 @@
   }
 
   .lastcarousel {
-    padding:  10px;
+    padding: 10px;
   }
-  .bod-section{
+
+  .bod-section {
     padding-bottom: 0 !important;
   }
 
@@ -2167,7 +2176,8 @@
   .total-shares {
     font-size: 12px;
   }
-  .secondhalf{
+
+  .secondhalf {
     margin-bottom: 20px;
   }
 
@@ -2241,11 +2251,11 @@
     width: 35px;
   }
 
-  .body-section3{
+  .body-section3 {
     align-items: flex-start;
   }
 
-  .body-section3 svg{
+  .body-section3 svg {
     height: 20px;
     width: 35px;
   }
@@ -2312,10 +2322,10 @@
     align-items: center;
   }
 
-    .mob-topbar div svg{
-      width: 13px !important;
-      height: 13px !important;
-    }
+  .mob-topbar div svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
 
   .ss {
     height: 10px !important;
@@ -2351,4 +2361,3 @@
     width: 100%;
   }
 }
-
