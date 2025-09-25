@@ -16,17 +16,17 @@ import {
 } from "recharts";
 
 const privateData = [
-  { year: "2022", revenue: 35.0, ebitda: 2.8, pat: 0.9 },
-  { year: "2023", revenue: 43.4, ebitda: 2.6, pat: 1.0 },
-  { year: "2024", revenue: 66.3, ebitda: 7.9, pat: 2.1 },
-  { year: "2025", revenue: 101.4, ebitda: 13.1, pat: 6.9 },
+  { year: "FY'22", revenue: 35.0, ebitda: 2.8, pat: 0.9 },
+  { year: "FY'23", revenue: 43.4, ebitda: 2.6, pat: 1.0 },
+  { year: "FY'24", revenue: 66.3, ebitda: 7.9, pat: 2.1 },
+  { year: "FY'25", revenue: 101.4, ebitda: 13.1, pat: 6.9 },
 
 ];
 const publicData = [
-  { year: "FY22", revenue: 58.1, ebitda: 14.07, pat: 1.51 },
-  { year: "FY23", revenue: 76.9, ebitda: 15.80, pat: 2.72 },
-  { year: "FY24", revenue: 78.8, ebitda: 17.32, pat: 1.74 },
-  { year: "FY25", revenue: 94.1, ebitda: 26.48, pat: 11.97 },
+  { year: "FY'22", revenue: 58.1, ebitda: 14.07, pat: 1.51 },
+  { year: "FY'23", revenue: 76.9, ebitda: 15.80, pat: 2.72 },
+  { year: "FY'24", revenue: 78.8, ebitda: 17.32, pat: 1.74 },
+  { year: "FY'25", revenue: 94.1, ebitda: 26.48, pat: 11.97 },
   // { year: "Q1FY26", revenue: 26.6, ebitda: 38.87, pat: 17.77 },
 ]
 const Barchart = ({ isPrivateDeal }) => {
@@ -62,7 +62,7 @@ const Barchart = ({ isPrivateDeal }) => {
           }}
 
           tick={{ fontSize: 12 }}
-          tickFormatter={(val) => `${val}Cr`}
+          tickFormatter={(val) => `${val}`}
           axisLine={{ stroke: isPrivateDeal ? "#374151" : "#E2E8F0" }}
           tickLine={{ stroke: isPrivateDeal ? "#374151" : "#E2E8F0" }}
         />
@@ -236,7 +236,7 @@ const Barchart = ({ isPrivateDeal }) => {
           <LabelList
             dataKey="revenue"
             position="top"
-            formatter={(val) => `${val}Cr`}
+             formatter={(val) => Number(val).toFixed(1)}
           />
         </Bar>
 

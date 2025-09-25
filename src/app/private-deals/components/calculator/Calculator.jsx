@@ -147,7 +147,8 @@ const Calculator = ({ onBack, handleAskAI, isPrivateDeal }) => {
           </Link>
         </div>}
 
-        {!isMobile && <button className={styles.imageStack} onClick={() => setShowQnA(true)}>
+        {/* {!isMobile && 
+        <button className={styles.imageStack} onClick={() => setShowQnA(true)}>
           <>
             <div>
               <img src="/assets/pictures/1.png" alt="" />
@@ -159,7 +160,8 @@ const Calculator = ({ onBack, handleAskAI, isPrivateDeal }) => {
               23 Q&A answered in last 3 days{" "}
             </span>
           </>
-        </button>}
+        </button>
+       } */}
       </div>
     </>
   );

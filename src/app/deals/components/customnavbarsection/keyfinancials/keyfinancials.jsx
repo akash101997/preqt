@@ -397,7 +397,7 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
                        {(isPrivateDeal || (item.year !=="2024" && item.year !=="2025" )) &&( <p><span>Inventory Days</span> <span className={item.inventorydays < 0 ? "negative" : "positive"}>{item.inventorydays == 0 ? "-" : item.inventorydays + ""}</span></p>)}
                       </div>
 
-                      {item.year !== "2023" && (
+                      {/* {item.year !== "2023" && (
                         <div className="metric-block">
                           <h4>Asset Efficiency</h4>
                           <p>
@@ -413,7 +413,7 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
                             </span>
                           </p>
                         </div>
-                      )}
+                      )} */}
 
                       <div className="metric-block">
                         <h4>Liquidity</h4>
