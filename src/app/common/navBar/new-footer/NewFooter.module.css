@@ -12,12 +12,15 @@
 
 .logo {
   /* margin: 0 auto; */
-  max-width: 288px;
   margin-bottom: 18px;
   display: grid;
   place-self: center;
   /* font-size: 2rem;
   font-weight: bold; */
+}
+.logo img{
+  height: 90px;
+  width: 288px;
 }
 
 
@@ -63,12 +66,36 @@
 }
 
 @media(max-width:1294px){
-  .nav{
+  /* .nav{
        padding: 0px;
          display: grid;
          justify-items: start;
         grid-template-columns: repeat(auto-fit, minmax(210px, 2fr));
          gap: 10px;
+  } */
+
+}
+
+@media(max-width:920px){
+
+   .nav{
+       padding: 0px;
+         display: grid;
+         justify-items: start;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 2fr));
+         gap: 10px;
+  }
+ .logo{
+    place-self:start ;
+    margin-bottom: 10px;
+  }
+
+   .logo img{
+  height: 58px;
+  width: 174px;
+}
+  .footer{
+     padding: 24px 18px;
   }
 }
 
@@ -87,5 +114,9 @@
     place-self:start ;
     margin-bottom: 10px;
   }
+  .logo img{
+  height: 48px;
+  width: 154px;
+}
 
 }

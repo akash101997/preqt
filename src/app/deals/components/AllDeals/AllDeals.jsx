@@ -125,7 +125,7 @@ function AllDealsContent() {
                         </div>
                     </section>
                 </div>
-
+{/* 
                 <div className={styles.cardFooterMainContainer}>
                     <div className={styles.QandA}>
                         <div className={styles.QandAstats}>23 Q&A answered in last 3 days </div>
@@ -136,7 +136,7 @@ function AllDealsContent() {
                             <img src="assets/pictures/userImage4.png" alt="" className={styles.userImages} />
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </Link>
     );
@@ -206,7 +206,7 @@ function AllDealsContent() {
                     </div>
                 </div>
 
-                <div className={styles.card2Footer}>
+                {/* <div className={styles.card2Footer}>
                     <div className={styles.card2QandA}>
                         <div className={styles.card2QandAStats}>23 Q&A answered in last 3 days</div>
                         <div className={styles.card2UserIcons}>
@@ -216,7 +216,7 @@ function AllDealsContent() {
                             <img src="assets/pictures/userImage4.png" alt="" className={styles.card2UserImage} />
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 {/* <img src="/assets/pictures/star.svg" alt="" className={styles.starImage} /> */}
             </div>

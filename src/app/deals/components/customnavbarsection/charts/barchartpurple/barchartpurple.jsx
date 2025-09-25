@@ -22,7 +22,7 @@ export default function PurpleBarchart({ isPrivate }) {
     { year: "FY23", growth: 30.2 },
     { year: "FY24", growth: 15.8 },
     { year: "FY25", growth: 75.9 },
-    { year: "Q1FY26", growth: 20.79 },
+    // { year: "Q1FY26", growth: 20.79 },
   ];
   return (
     <div style={{ width: "100%", height: 300 }}>
