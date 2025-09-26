@@ -98,7 +98,6 @@ export default function ClientChrome({ children }) {
     return <>{children}</>;
   }
 
-  // console.log("ddssfsfvfe",isPrivateDeal)
   return (
     <div
       className={isPrivateDeal ? "private-deal-theme" : ""}
@@ -109,28 +108,12 @@ export default function ClientChrome({ children }) {
       }}
     >
       <NavBar />
+
       <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
         {children}
       </div>
 
-
-    <div className="newNav"   style={{
-    marginBottom: isPrivateDeal ? "110px" : "0px"
-  }}
->
-
-
-    <div className="newNav"   style={{
-    marginBottom: isPrivateDeal ? "110px" : "0px"
-  }}
->
-      <NewFooter/>
-  
-
-</div>
-    
-        {/* <Footer /> */}
-
+      {/* Footer container */}
       <div
         className="newNav"
         style={{

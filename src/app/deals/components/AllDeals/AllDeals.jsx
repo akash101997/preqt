@@ -26,10 +26,10 @@ function AllDealsContent() {
   {
     id: 1,
     slug: "acmpl-deals",
-    type: "Pre IPO- SME",
+    type: "SME-IPO",
     category: "Logistics",
     companyLogo: "/assets/pictures/acmpl.svg",
-    companyName: "Ashwini Container Movers Limited (ACMPL)",
+    companyName: "Ashwini Container Movers Limited ",
     description: "Ashwini Container Movers Limited is a commercial/container transport & logistics company headquartered in Navi Mumbai.",
     stats: {
       revenue: "₹94.1Cr",
