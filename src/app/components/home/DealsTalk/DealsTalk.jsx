@@ -47,7 +47,7 @@ function DealsTalkContent() {
     const dealsData = [
         {
             id: 1,
-            type: "Pre IPO- SME",
+            type: "SME-IPO",
             category: "Logistics",
             companyLogo: "/assets/pictures/acmpl.svg",
             companyName: "Ashwini Container Movers Limited (ACMPL)",
