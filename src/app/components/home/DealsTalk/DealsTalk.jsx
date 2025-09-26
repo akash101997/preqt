@@ -50,7 +50,7 @@ function DealsTalkContent() {
             type: "SME-IPO",
             category: "Logistics",
             companyLogo: "/assets/pictures/acmpl.svg",
-            companyName: "Ashwini Container Movers Limited (ACMPL)",
+            companyName: "Ashwini Container Movers Limited ",
             description: "Ashwini Container Movers Limited is a commercial/container transport & logistics company headquartered in Navi Mumbai.",
             stats: {
                 revenue: "₹94.1Cr",
@@ -213,7 +213,16 @@ function DealsTalkContent() {
                             <p className={styles.PriceIncr}>{deal.progress.current}</p>
                             <p className={styles.PricePercent}>{deal.progress.percentage}</p>
                         </div>
-                        <img src="/assets/pictures/PriceProgressBar.svg" alt="" />
+                        {/* <img src="/assets/pictures/PriceProgressBar.svg" alt="" /> */}
+                         <div className={styles.progressWrapper}>
+        <div className={styles.progressStack}>
+
+        </div>
+        {/* <div className={styles.progress}>
+
+          <div className={styles.progress-bar} style={{ width: "94%" }}></div>
+        </div> */}
+      </div>
                     </div>
 
                     <div className={styles.promoter}>

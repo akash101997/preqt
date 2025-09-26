@@ -565,7 +565,7 @@
 }
 
 .PriceIncr {
-    color: #FFF;
+    color:#FFFFFF33;
     font-size: 12px;
     font-weight: 500;
 }
@@ -575,6 +575,22 @@
     font-size: 14px;
     font-weight: 700;
 }
+.progressWrapper{
+    height: 8px;
+    max-width: 100%;
+    border-radius: 30px;
+ background-color: #FFFFFF33;
+ 
+}
+/* .progressWrapper .progressBar{
+     height: 8px;
+     max-width: 10%;
+     background: linear-gradient(to left ,#FFD89E,#B88609) !important;
+ 
+} */
+
+
+
 
 .promoter {
     display: flex;
@@ -583,6 +599,7 @@
     gap: 10px;
     flex-wrap: wrap;
 }
+
 
 .Strong {
     max-width: 152px;

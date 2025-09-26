@@ -193,11 +193,18 @@ function AllDealsContent() {
                         <div className={styles.ProgressInPrice}>
                             <p className={styles.PriceIncr}>{deal.progress.current}</p>
                             <p className={styles.PricePercent}>{deal.progress.percentage}</p>
-                        </div>
-                        <img src="/assets/pictures/PriceProgressBar.svg" alt="" />
-                    </div>
+                     
+                      </div>
+                        {/* <img src="/assets/pictures/PriceProgressBar.svg" alt=" " /> */}
+                         <div className={styles.progressWrapper}>
+                            <div className={styles.progress}>
+                           <div className={styles.progressBar} style={{ width: "94%" ,height:"8px",   background: "linear-gradient(to right ,#FFD89E,#B88609)" ,borderRadius:"30px"}}></div>
+                             </div>
+                                  </div>
+                                </div>
+                                  
 
-                    <div className={styles.promoter}>
+                          <div className={styles.promoter}>
                         {deal.tags.map((tag, index) => (
                             <div key={index} className={index === 0 ? styles.Strong : styles.monetization}>
                                 <p>{tag}</p>
