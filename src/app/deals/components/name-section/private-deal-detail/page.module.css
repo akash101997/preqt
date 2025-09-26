@@ -102,21 +102,21 @@
 }
 
 /* keyframes: webkit + standard */
-@-webkit-keyframes glow {
+/* @-webkit-keyframes glow {
     from {
         text-shadow:
             0 0 3px rgba(255, 255, 255, 1),
-            0 0 6px rgba(250, 204, 21, 0.9),
-            0 0 12px rgba(250, 204, 21, 0.6),
-            0 0 18px rgba(250, 204, 21, 0.4);
+            0 0 6px rgba(252, 190, 45, 0.9),
+            0 0 12px rgba(252, 190, 45, 0.6),
+            0 0 18px rgba(252, 190, 45, 0.4);
     }
 
     to {
         text-shadow:
             0 0 6px rgba(255, 255, 255, 1),
-            0 0 12px rgba(250, 204, 21, 1),
-            0 0 18px rgba(250, 204, 21, 0.8),
-            0 0 28px rgba(250, 204, 21, 0.6);
+            0 0 12px rgba(252, 190, 45, 1),
+            0 0 18px rgba(252, 190, 45, 0.8),
+            0 0 28px rgba(252, 190, 45, 0.6);
     }
 }
 
@@ -124,36 +124,28 @@
     from {
         text-shadow:
             0 0 3px rgba(255, 255, 255, 1),
-            0 0 6px rgba(250, 204, 21, 0.9),
-            0 0 12px rgba(250, 204, 21, 0.6),
-            0 0 18px rgba(250, 204, 21, 0.4);
+            0 0 6px rgba(252, 190, 45, 0.9),
+            0 0 12px rgba(252, 190, 45, 0.6),
+            0 0 18px rgba(252, 190, 45, 0.4);
     }
 
     to {
         text-shadow:
             0 0 6px rgba(255, 255, 255, 1),
-            0 0 12px rgba(250, 204, 21, 1),
-            0 0 18px rgba(250, 204, 21, 0.8),
-            0 0 28px rgba(250, 204, 21, 0.6);
+            0 0 12px rgba(252, 190, 45, 1),
+            0 0 18px rgba(252, 190, 45, 0.8),
+            0 0 28px rgba(252, 190, 45, 0.6);
     }
-}
+} */
 
-/* active menu item with pulsing glow */
-.respectedMenu li.active {
-    color: #fff;
-    /* text color */
-    /* font-weight: 400; */
-    display: inline-block;
-    /* keeps text-shadow crisp on some browsers */
-    /* -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility; */
-    will-change: text-shadow;
-
-    /* provide both prefixed and standard animation properties */
-    -webkit-animation: glow 1.2s ease-in-out infinite alternate;
-    animation: glow 1.2s ease-in-out infinite alternate;
-}
-
+/* .respectedMenu li.active {
+  color: #fff;
+  text-shadow: 
+    0 0 15px rgba(252, 190, 45, 0.7),
+    0 0 30px rgba(252, 190, 45, 0.5),
+    0 0 45px rgba(252, 190, 45, 0.3),
+    0 0 60px rgba(252, 190, 45, 0.15);
+} */
 
 .publicDealDetails{
     display: flex;
@@ -177,8 +169,8 @@ box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.06);
     color: #A1A1AA;
 }
 
-.publicDealDetails .respectedDetails li.active{
-    color: #C9A74E;
+.publicDealDetails .respectedDetails li.active span{
+    color: #C9A74E !important;
 }
 
 .publicDealDetails .respectedMenu ul::before{
@@ -190,12 +182,44 @@ box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.06);
     box-shadow: none;
 }
 
-.publicDealDetails .respectedMenu li.active{
-    color: #C9A74E;
-    -webkit-animation: none;
-    animation: none;
-    text-shadow: none;
-    will-change: auto;
+.publicDealDetails .respectedMenu li.active span {
+  color: #C9A74E;
+  text-shadow: none;
+  animation: none;
+}
+
+.privateDealDetails .respectedMenu li.active span {
+  position: relative;
+  color: #fff; /* main text */
+}
+
+/* Layer 1 */
+.privateDealDetails .respectedMenu li.active span::before {
+  content: attr(data-label);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #FCBE2D;
+  filter: blur(6px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Layer 2 */
+.privateDealDetails .respectedMenu li.active span::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #FCBE2D;
+  filter: blur(26px);
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Extra Layer using text-shadow (instead of 3rd span) */
+.privateDealDetails .respectedMenu li.active span {
+  text-shadow: 0 0 5px rgba(252, 190, 45, 0.9);
 }
 
 @media(max-width: 1024px){
