@@ -108,10 +108,12 @@ export default function ClientChrome({ children }) {
       }}
     >
       <NavBar />
+
       <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
         {children}
       </div>
 
+      {/* Footer container */}
       <div
         className="newNav"
         style={{
