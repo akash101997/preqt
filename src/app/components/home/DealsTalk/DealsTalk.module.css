@@ -203,20 +203,35 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
+      /* display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  text-align: start; */
+
 }
 
 .revenueSection {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    /* gap: 8px; */
-    flex-wrap: wrap;
+
+    flex-wrap: wrap; */
+      /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+    display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  text-align: start;
 }
 
 .Revenue {
-    min-width: 90px;
+    /* min-width: 90px;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 2px; */
+      display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .revenuHeading {
@@ -411,9 +426,13 @@
 }
 
 .card2StatsRow {
-    display: flex;
+    /* display: flex;
     /* justify-content: space-between; */
-    gap: 34px;
+    /* gap: 34px; */ 
+      display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 20px;
+  text-align: start;
 }
 
 .card2Stat {
@@ -634,9 +653,13 @@
     }
 
     .revenueSection {
-        width: 100%;
+        /* width: 100%;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 10px; */
+         display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  text-align: start;
     }
 
     .Revenue {
@@ -710,16 +733,20 @@
 
     .revenueSection,
     .card2StatsRow {
-        flex-direction: column;
+        /* flex-direction: column;
         gap: 8px;
-        height: auto;
+        height: auto; */
+         display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  text-align: start;
     }
 
     .Revenue,
     .card2Stat {
         width: 100%;
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
+        /* justify-content: space-between; */
     }
 
     .merchantBanker {
