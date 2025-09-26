@@ -266,7 +266,7 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
                       <div className="metric-block">
                         <h4>Earnings</h4>
                         <p>
-                          <span>EBITDA (Cr) </span>
+                          <span>EBITDA (INR Cr) </span>
 
                           <span
                             className={
