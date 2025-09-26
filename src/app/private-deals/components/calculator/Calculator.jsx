@@ -117,7 +117,7 @@ const Calculator = ({ onBack, handleAskAI, isPrivateDeal }) => {
       {/* Investment amount */}
       <div className={styles.amount}>
         <p>Investment amount </p>
-        <h2>₹ {(lots * pricePerLot).toLocaleString("en-IN")}</h2>
+        <h2>INR {(lots * pricePerLot).toLocaleString("en-IN")}</h2>
       </div>
       <div className={styles.btns}>
         <button

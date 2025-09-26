@@ -265,19 +265,20 @@ export default function PrivateDealDetails({ isPrivateDeal }) {
       </div>
 
       {/* Right Sticky Menu */}
-      <div className={styles.respectedMenu}>
-        <ul>
-          {sections.map((section) => (
-            <li
-              key={section.id}
-              className={activeSection === section.id ? styles.active : ""}
-              onClick={() => scrollToSection(section.id)}
-            >
-              {section.label}
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div className={styles.respectedMenu}>
+    <ul>
+      {sections.map((section) => (
+        <li
+          key={section.id}
+          className={activeSection === section.id ? styles.active : ""}
+          onClick={() => scrollToSection(section.id)}
+        >
+        <span data-label={section.label}>{section.label}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
     </div>
   );
 }
