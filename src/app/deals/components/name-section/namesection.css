@@ -446,7 +446,7 @@
 }
 
 .old-shares-dot {
-  background-color: #e4c469;
+  background-color: #E0BA20;
 }
 
 .label-title {
@@ -505,7 +505,7 @@
 .why-subsection {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
+  gap: 24px;
 }
 
 .why-section h2 {
@@ -525,8 +525,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 12px 24px 12px;
-  background: linear-gradient(180deg, #FDF9EE 0%, rgba(251, 205, 205, 0.00) 76%);
+  padding: 36px 12px 24px 12px;
+  background: linear-gradient(180deg, #FDF9EE 0%, rgba(251, 205, 205, 0.00) 90%);
   text-align: center;
   position: relative;
   border-radius: 20px;
