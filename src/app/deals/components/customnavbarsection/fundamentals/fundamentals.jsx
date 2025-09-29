@@ -118,7 +118,7 @@ const Fundamentals = ({ isPrivateDeal }) => {
   const data = [
     { name: "Capex", value: "12.0%" },
     { name: "Debt Repayment", value: "62.0%" },
-    { name: "Working Capital", value: "26.0%" },
+    { name: "Others", value: "26.0%" },
   ];
   const total = data.reduce((sum, item) => sum + item.value, 0);
 
@@ -313,7 +313,7 @@ const Fundamentals = ({ isPrivateDeal }) => {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <rect width="18" height="17.4375" rx="8.71875" fill="black" />
+                  <rect width="18" height="17.4375" rx="8.71875" fill="#E5E7EB" />
                 </svg>
                 <div>
                   <h2>Close Date </h2>
@@ -341,7 +341,7 @@ const Fundamentals = ({ isPrivateDeal }) => {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <rect width="18" height="17.4375" rx="8.71875" fill="black" />
+                  <rect width="18" height="17.4375" rx="8.71875" fill="#E5E7EB" />
                 </svg>
                 <div>
                   <h2>Listing Date </h2>
@@ -589,7 +589,7 @@ const Fundamentals = ({ isPrivateDeal }) => {
           </section> */}
         </div>
       </Dropdown>
-      <hr className="hr" />
+      {/* <hr className="hr" /> */}
       {/* <Dropdown title="IPO Notes">
         <div className="Ipo-notes-container">
           <section className="ipo-objective-container-section">
@@ -898,7 +898,7 @@ const Fundamentals = ({ isPrivateDeal }) => {
           </section>
         </div>
       </Dropdown> */}
-      <hr className="hr" />
+      {/* <hr className="hr" /> */}
 
       <hr className="hr" />
     </div>

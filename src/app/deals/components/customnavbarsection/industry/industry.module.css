@@ -2,6 +2,10 @@
   padding: 32px;
   padding-top: 10px;
 }
+.pointList .p{
+  padding:0px;
+
+}
 
 .growthSection {
   font-size: 20px;
@@ -124,6 +128,7 @@
   font-weight: 300;
   /* overflow-x: auto; */
   white-space: nowrap;
+
   /* scrollbar-width: none;
   -ms-overflow-style: none; */
 }
@@ -137,18 +142,19 @@
   width: 100%;
   border-collapse: collapse;
   min-width: 600px; /* ensures horizontal scroll when table is wide */
+  
 }
 
 .PeerHeading {
   display: flex;
   justify-content: space-between;
   font-size: 20px;
-  justify-content: space-between;
-  font-size: 20px;
+  /* justify-content: space-between; */
+  /* font-size: 20px; */
   /* margin-bottom: 1rem; */
   font-weight: 300;
   color: #1f2937;
-  color: #1f2937;
+  padding-bottom: 30px;
   /* position: fixed; */
 }
 
@@ -157,6 +163,9 @@
   border-collapse: collapse;
   border-collapse: collapse;
   overflow-x: auto;
+}
+.firstHeading{
+  color: #B7B7B7 !important;
 }
 
 .PeerTable th {
@@ -172,13 +181,13 @@
   font-size: 14px;
   font-weight: 400;
   color: #000000;
-  color: #000000;
   padding-left: 10px;
-  border-right: 2px solid #f3f4f6;
   border-right: 2px solid #f3f4f6;
   /* justify-content: center;  */
   /* position: fixed; */
 }
+
+
 
 .PeerTable th:last-child {
   border-right: none;
@@ -222,6 +231,8 @@
  padding: 10px;
  padding-top: 0;
 }
+
+
 .PeerTable td:last-child {
   border-right: none;
 }
@@ -229,6 +240,7 @@
   border-right: none;
 }
 .PeerTable td:first-child {
+  color: #000000;
   border-right: 2px solid #b18c07;
 }
 .PeerTable td:first-child {
