@@ -1,7 +1,7 @@
 "use client";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, Suspense } from "react";
-import styles from "./otp.module.css";
+import styles from './otp.module.css'
 import { toast } from "react-toastify";
 import Cookies from "js-cookie";
 import Loader from "../components/Loader";
