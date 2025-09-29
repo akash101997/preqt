@@ -489,3 +489,17 @@ gap: 10px;
   background-color: #F3F4F6;
   border-radius: 12px;
 } 
+
+
+@media (max-width:600px) {
+  .chart-timeline-section{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Fundamentals-piechart,
+  .Fundamentals-timeline{
+    width: 100%;
+  }
+  
+}

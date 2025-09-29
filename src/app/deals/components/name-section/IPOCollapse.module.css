@@ -1,6 +1,6 @@
 .ipocollapseBtn {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
     border: none;
     background: transparent;

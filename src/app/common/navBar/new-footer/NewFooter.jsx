@@ -13,6 +13,7 @@ export default function NewFooter({isPrivateDeals}) {
       </div>
 
       <nav className={styles.nav}>
+        <Link href="">Quick Links</Link>
         {/* <Link href="/">Home</Link> */}
         <Link href="/deals">Deals</Link>
         <Link href="/community">Community</Link>
