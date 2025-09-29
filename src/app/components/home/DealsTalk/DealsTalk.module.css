@@ -565,7 +565,7 @@
 }
 
 .PriceIncr {
-    color:#FFFFFF33;
+    color:#ffffff;
     font-size: 12px;
     font-weight: 500;
 }
@@ -576,7 +576,7 @@
     font-weight: 700;
 }
 .progressWrapper{
-    height: 8px;
+    height: 6px;
     max-width: 100%;
     border-radius: 30px;
  background-color: #FFFFFF33;
