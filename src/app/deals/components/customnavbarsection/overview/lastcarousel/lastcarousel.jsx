@@ -45,19 +45,19 @@ const LastCarousel = ({isPrivateDeal}) => {
               className="d-block w-100"
               src={img}
               alt={`Slide ${i + 1}`}
-              style={{ height: "400px", objectFit: "contain" , objectFit:"cover" }}
+              style={{ height: "340px", objectFit: "contain" , objectFit:"cover" }}
             />
           </Carousel.Item>
         ))}
       </Carousel>
 
       {/* Custom Controls */}
-      <div className="d-flex mt-3 buttons justify-content-center align-items-center lastbtns">
-        {/* Prev */}
-        <button
-          className="custom-carousel-prev"
-          onClick={() =>
-            setIndex((prevIndex) =>
+        <div className="d-flex mt-3 buttons justify-content-center align-items-center lastbtns">
+          {/* Prev */}
+          <button
+            className="custom-carousel-prev"
+            onClick={() =>
+              setIndex((prevIndex) =>
               prevIndex === 0 ? images.length - 1 : prevIndex - 1
             )
           }

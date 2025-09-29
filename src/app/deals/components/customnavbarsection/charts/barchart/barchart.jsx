@@ -55,7 +55,7 @@ const Barchart = ({ isPrivateDeal }) => {
           yAxisId="left"
           orientation="left"
           label={{
-            value: "Revenue (Cr)",
+            value: "Revenue (INR Cr)",
             angle: -90,
             position: "insideLeft",
             style: { textAnchor: "middle", fontSize: 15, paddingRight: 15 },

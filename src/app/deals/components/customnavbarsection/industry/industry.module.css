@@ -296,7 +296,11 @@
 /* Golden border line between Metric & Companies */
 .privateIndustryContainer .PeerTable th:first-child,
 .privateIndustryContainer .PeerTable td:first-child {
+    
   border-right: 2px solid #c9a23f; /* golden border */
+}
+.privateIndustryContainer .PeerTable th:first-child{
+  -webkit-text-stroke: 0.2px black;
 }
 
 .privateIndustryContainer .growthHeading{
