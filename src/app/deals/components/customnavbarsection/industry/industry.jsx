@@ -336,7 +336,7 @@ const Industry = ({ isPrivateDeal }) => {
                 <table className={styles.PeerTable}>
                   <thead>
                     <tr>
-                      <th>Metric</th>
+                      <th className={styles.firstHeading}>Metric</th>
                       <th>
                         <div className={styles.tableHeading}>
                           <span>Premium <br/> Roadlines</span>

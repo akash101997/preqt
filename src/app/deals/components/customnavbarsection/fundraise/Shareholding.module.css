@@ -32,7 +32,7 @@
 .progressBar {
   display: flex;
   gap: 4px;
-  border-radius: 24px;
+  border-radius: 6px;
   height: 24px;
   overflow: hidden;
   margin: 0.5rem 0;
@@ -88,6 +88,7 @@
   font-size: 14px;
   font-weight: 500;
   color: #1F2937;
+    border-bottom: 1px solid #eee;
 }
 
 .row {
@@ -136,10 +137,12 @@
   color: #1F2937;
 }
 .publicTotalRow{
+  display: flex;
+  align-items: center;
   background:#FFFFFF;
   font-size: 12px;
   font-weight: 500;
-  color: #1F2937;
+  color: #6B7280;
 }
 
 .grandTotal {
