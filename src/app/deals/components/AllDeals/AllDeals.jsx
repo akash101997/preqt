@@ -3,14 +3,14 @@ import Loader from "@/app/components/Loader";
 import styles from "../../../components/home/DealsTalk/DealsTalk.module.css";
 import stylesdeals from "./AllDeals.module.css";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+// import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
 import React from "react";
 
 function AllDealsContent() {
-    const searchParams = useSearchParams();
-    const dealId = searchParams?.get("dealId");
+    // const searchParams = useSearchParams();
+    // const dealId = searchParams?.get("dealId");
 
     // Define deals data to check if deal is private
     const dealsConfig = {
@@ -20,7 +20,7 @@ function AllDealsContent() {
         "4": { deal: "private" }
     };
 
-    const isPrivateDeal = dealId && dealsConfig[dealId]?.deal === "private";
+    // const isPrivateDeal = dealId && dealsConfig[dealId]?.deal === "private";
 
   const dealsData = [
   {
@@ -198,7 +198,7 @@ function AllDealsContent() {
                         {/* <img src="/assets/pictures/PriceProgressBar.svg" alt=" " /> */}
                          <div className={styles.progressWrapper}>
                             <div className={styles.progress}>
-                           <div className={styles.progressBar} style={{ width: "94%" ,height:"8px",   background: "linear-gradient(to right ,#FFD89E,#B88609)" ,borderRadius:"30px"}}></div>
+                           <div className={styles.progressBar} style={{ width: "94%" ,height:"6px",   background: "linear-gradient(to right ,#FFD89E,#B88609)" ,borderRadius:"30px"}}></div>
                              </div>
                                   </div>
                                 </div>
@@ -231,7 +231,7 @@ function AllDealsContent() {
     );
 
     return (
-        <section className={`${styles.DealsTalkMainContainer} ${stylesdeals.DealsTalkMainContainer} ${isPrivateDeal ? stylesdeals.privateDealTheme : ''}`} >
+        <section className={`${styles.DealsTalkMainContainer} ${stylesdeals.DealsTalkMainContainer}`} >
             <div className={styles.DealsTalkHeading}>
                 Deals People are <span className={styles.SpanDealsTalkHeading}>Talking About </span>
             </div>
