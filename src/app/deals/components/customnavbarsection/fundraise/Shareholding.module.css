@@ -223,13 +223,33 @@ background-color:  #000 !important;
 
 @media(max-width:480px){
   .container{
-    padding: 0 24px;
+    padding: 0 8px;
   }
 
   .section{
     margin-bottom: 0;
+    
   }
   .progressLabel{
     margin-bottom: 0;
   }
+
+  .row .name{
+    padding: 0px 20px 0px 0px;
+  }
+  .tableData,
+  .publicTableData{
+     width: 100px;
+  }
+  .section h3{
+    position: static;
+  }
+  .progressLabel {
+    text-align: start;
+  }
+  .responsiveBr{
+    display: none;
+
+  }
+
 }
