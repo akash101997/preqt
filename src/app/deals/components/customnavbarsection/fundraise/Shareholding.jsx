@@ -112,7 +112,7 @@ export default function Shareholding({ isPrivateDeal }) {
           <div className={styles.section}>
             <h3>Pre-issue shareholding</h3>
             <p className={styles.progressLabel}>
-              Promoter Holding <br />
+              Promoter Holding <br  className={styles.responsiveBr}/>
               <strong>{preprogressbar}%</strong>
             </p>
             <div className={styles.progressBar}>
@@ -131,7 +131,7 @@ export default function Shareholding({ isPrivateDeal }) {
           <div className={styles.section}>
             <h3>Post-Issue Shareholding</h3>
             <p className={styles.progressLabel}>
-              Promoter Holding <br /> <strong>{postprogressbar}%</strong>
+              Promoter Holding <br className={styles.responsiveBr} /> <strong>{postprogressbar}%</strong>
             </p>
             <div className={styles.progressBar}>
               <div
@@ -159,8 +159,9 @@ export default function Shareholding({ isPrivateDeal }) {
             <div className={styles.subHeader}>Promoters</div>
             {data.map((single) => (
               <div className={styles.row} key={single.id}>
-                <span>
-                  <span className={styles.square}></span> {single.name}
+                <span className={styles.name}>
+                  <span className={styles.square}></span>
+                   {single.name}
                 </span>
                 <div className={styles.tableData}>
                   <span>{single.pre_issue}</span>
