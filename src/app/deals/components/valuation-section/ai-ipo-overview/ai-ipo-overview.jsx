@@ -246,7 +246,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
 
               <section>
                 <div>
-                  <span className="data">Revenue (FY25) </span>
+                  <span className="data">Revenue (FY'25) </span>
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><RevenueIcon /></span>
                 </div>
                 <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "INR 101.4 Cr" : "₹94.1 Cr "}</span>
@@ -256,7 +256,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
             <section className="subs top">
               <section>
                 <div>
-                  <span className="data">PAT(FY25)</span>
+                  <span className="data">PAT(FY'25)</span>
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><PatIcon /></span>
                 </div>
                 <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>
