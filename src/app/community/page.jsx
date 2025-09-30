@@ -6,7 +6,7 @@ const community = () => {
   return (
 
     <>
-      <MarqueeCom />
+      {/* <MarqueeCom /> */}
       <CommingSoon />
     </>
   )

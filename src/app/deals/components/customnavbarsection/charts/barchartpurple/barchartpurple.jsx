@@ -35,7 +35,7 @@ export default function PurpleBarchart({ isPrivate }) {
                 />
           <XAxis dataKey="year"
             tick={{
-              fill: "var(--Gray-500, #374151)", // text color
+              fill: "var(--Gray-500, #9CA3AF)", // text color
               fontSize: 14,
               fontStyle: "normal",
               fontWeight: 500,
@@ -49,7 +49,7 @@ export default function PurpleBarchart({ isPrivate }) {
             tickFormatter={(value) => `${value}%`}
             // domain={[-40, 40]} // You can make this dynamic later
             tick={{
-              fill: "var(--Gray-500, #6B7280)", // text color
+              fill: "var(--Gray-500, #9CA3AF)", // text color
               fontSize: 14,
               fontStyle: "normal",
               fontWeight: 500,

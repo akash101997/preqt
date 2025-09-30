@@ -1,6 +1,12 @@
 import React from "react";
 
 const Pitchdeck = ({isPrivateDeal}) => {
+
+
+    const privateFile = "/dealsFile/HVR Solar Deck-preqt.pdf";
+  const publicFile = "/dealsFile/ACML Deck-preqt.pdf";
+  const fileToOpen = isPrivateDeal ? privateFile : publicFile;
+  
   // console.log("ergergerggerge", isPrivateDeal);
   return (
     <div>
@@ -14,6 +20,8 @@ const Pitchdeck = ({isPrivateDeal}) => {
         { isPrivateDeal ?<img src="/deals/private-pitch-deck-img.png"/>: <img src="/deals/pitch-deck-new-img.png" alt="" />}
 
           <div className="overlay">
+              <a href={fileToOpen} target="_blank" rel="noopener noreferrer"   style={{textDecoration:"none"}}>
+
             <button className="pitch-overlay-btn">
               Open in Browser{" "}
               <svg
@@ -36,6 +44,7 @@ const Pitchdeck = ({isPrivateDeal}) => {
                 </defs>
               </svg>
             </button>
+            </a>
           </div>
         </div>
       </section>
