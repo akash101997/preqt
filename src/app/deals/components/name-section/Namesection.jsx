@@ -110,10 +110,10 @@ const Namedetailsection = ({ slug }) => {
     <div className={`main-container ${isPrivateDeal ? 'private-deal-theme' : ''}`}>
       <div className="subcontainer">
         <section className="topbar">
-          <Link href="/">
+          {/* <Link href="/">
             <span className="home">Home</span>
-          </Link>
-          <span>
+          </Link> */}
+          {/* <span>
             <svg
               width="8"
               height="14"
@@ -128,8 +128,8 @@ const Namedetailsection = ({ slug }) => {
                 fill={isPrivateDeal ? 'white' : " #1E293B"}
               />
             </svg>
-          </span>
-          <span className="dea">{isPrivateDeal ? "Private Deal" : "Exclusive Deal"} </span>
+          </span> */}
+          {/* <span className="dea">{isPrivateDeal ? "Private Deal" : "Exclusive Deal"} </span> */}
         </section>
         <section className="mob-topbar">
           <Link href="/">
