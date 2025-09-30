@@ -65,7 +65,6 @@ import { useEffect, useState } from "react";
 export default function ClientChrome({ children }) {
   const pathname = usePathname();
   const router = useRouter();
-
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
@@ -76,7 +75,7 @@ export default function ClientChrome({ children }) {
   }, []);
 
   const hide =
-    pathname === "/signin" ||
+    pathname === "/sign-in" ||
     pathname === "/login" ||
     pathname === "/otp" ||
     pathname === "/signup" ||
@@ -113,7 +112,6 @@ export default function ClientChrome({ children }) {
         {children}
       </div>
 
-      {/* Footer container */}
       <div
         className="newNav"
         style={{

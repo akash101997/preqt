@@ -225,7 +225,7 @@ export default function Sidenav() {
         show={showLogout}
         onClose={() => setShowLogout(false)}
         onLogout={() => {
-          Cookies.remove("accessToken"); router.push("/signin")
+          Cookies.remove("accessToken"); router.push("/sign-in")
         }}
       />}
     </div>
