@@ -348,7 +348,7 @@ background-color: #FF6A55;
     background-color: white;
     /* transform: translateX(0); */
     width: 100%;
-    max-width: 331px;
+    max-width: 314px;
     height: 100vh;
     transition: width 0.3s ease-in-out;
   }
@@ -451,7 +451,7 @@ font-weight: 500;
   .logoImg2 {
     width: 41vw;
     height: 8vh;
-    padding: 12px 24px 12px 24px;
+    padding: 12px 24px 0px 24px;
   }
 
   .logoutContainerDiv {
@@ -465,10 +465,10 @@ font-weight: 500;
     bottom: 15px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   background: #fff;
   border: none; /* light gray border */
-  padding: 10px 24px;
+  padding: 10px 30px;
   border-radius: 8px;
   font-size: 15px;
   font-weight: 500;

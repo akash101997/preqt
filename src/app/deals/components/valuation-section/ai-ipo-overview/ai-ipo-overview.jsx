@@ -300,7 +300,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
 
             <section className="others">
               <h6>Lot Size </h6>
-              <span>10,000</span>
+              <span>-</span>
             </section>
           </section>
 
@@ -331,12 +331,12 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
 
           <section className="main-other">
             <section className="others">
-              <h6>ROE(FY'25)</h6>
+              <h6>ROE (FY'25)</h6>
               <span>68.7%</span>
             </section>
 
             <section className="others">
-              <h6>ROCE(FY'25)</h6>
+              <h6>ROCE (FY'25)</h6>
               <span>59.9%</span>
             </section>
           </section>
@@ -348,7 +348,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
             </section> */}
 
             <section className="others">
-              <h6>Debt/Equity(FY'25)</h6>
+              <h6>Debt/Equity (FY'25)</h6>
               <span>3.0</span>
             </section>
 

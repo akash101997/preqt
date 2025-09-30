@@ -15,10 +15,10 @@ import {
 
 const DebtBarChart = ({ isPrivate }) => {
     const data = isPrivate ? [
-        { year: "2022", value: 13.8 },
-        { year: "2023", value: 14.0 },
-        { year: "2024", value: 9.3 },
-        { year: "2024", value: 3.0 },
+        { year: "FY'22", value: 13.8 },
+        { year: "FY'23", value: 14.0 },
+        { year: "FY'24", value: 9.3 },
+        { year: "FY'25", value: 3.0 },
 
     ] : [
         { year: "FY'23", value: 5.9 },
@@ -37,7 +37,7 @@ const DebtBarChart = ({ isPrivate }) => {
                 <XAxis
                     dataKey="year"
                     tick={{
-                        fill: "var(--Gray-500, #374151)", // text color
+                        fill: "var(--Gray-500, #9CA3AF)", // text color
                         fontSize: 14,
                         fontStyle: "normal",
                         fontWeight: 500,
@@ -46,11 +46,12 @@ const DebtBarChart = ({ isPrivate }) => {
                     }}
                     axisLine={{ stroke: isPrivate ? "#374151" : "#E2E8F0" }}
                     tickLine={{ stroke: isPrivate ? "#374151" : "#E2E8F0" }}
+                    
                 />
                 <YAxis
                     // domain={[0, 1.4]}
                     tick={{
-                        fill: "var(--Gray-500, #6B7280)", // text color
+                        fill: "var(--Gray-500, #9CA3AF)", // text color
                         fontSize: 14,
                         fontStyle: "normal",
                         fontWeight: 500,
@@ -59,6 +60,8 @@ const DebtBarChart = ({ isPrivate }) => {
                     }}
                     axisLine={{ stroke: isPrivate ? "#374151" : "#E2E8F0" }}
                     tickLine={{ stroke: isPrivate ? "#374151" : "#E2E8F0" }}
+                    tickFormatter={(value) => value.toFixed(1)} 
+
                 />
               <Tooltip
                     cursor={{ fill: "transparent" }}
@@ -92,7 +95,7 @@ const DebtBarChart = ({ isPrivate }) => {
                         dataKey="value"
                         position="top"
                         formatter={(val) => val.toFixed(2)}
-                        style={{ fill: "#374151", fontWeight: 600 }}
+                        style={{ fill: "#9CA3AF", fontWeight: 600 }}
                     />
                 </Bar>
             </BarChart>

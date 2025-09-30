@@ -33,12 +33,12 @@ const Valuation = ({ isPrivateDeal }) => {
 
       <div className="progressWrapper">
         <div className="progressStack">
-          <p className="subtext">0 Cr / 15 Cr</p>
-          <span className="progressPercent">94%</span>
+          <p className="subtext">12 Cr / 15 Cr</p>
+          <span className="progressPercent">80%</span>
         </div>
         <div className="progress">
 
-          <div className="progress-bar" style={{ width: "94%" }}></div>
+          <div className="progress-bar" style={{ width: "80%" }}></div>
         </div>
 
 

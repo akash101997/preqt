@@ -29,7 +29,7 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
             ebitda: "5.3",
             pat: "1.4",
             peratio: 1.4,
-            roa: 3.4,
+            roa: 3.83,
             roe: 43.5,
             roce: 31.6,
             debttoequity: 9.3,
@@ -49,11 +49,11 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
             ebitda: "13.3",
             pat: "7.0",
             peratio: 10.7,
-            roa: 12.3,
+            roa: 19.31,
             roe: 68.7,
             roce: 59.9,
             debttoequity: 3.0,
-            interestcoverage: 4.3,
+            interestcoverage: 3.77,
             debtordays: 91,
             inventorydays: 76,
             currentratio: 1.5,
@@ -130,6 +130,7 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
     ...item,
     debttoequity: Number(item.debttoequity).toFixed(1),
     currentratio: Number(item.currentratio).toFixed(1),
+    cogs: Number(item.cogs).toFixed(1),
   }));
 
   // Track open/close state for each main section
@@ -277,7 +278,7 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
                           </span>
                         </p>
                         <p>
-                          <span> PAT (Cr) </span>
+                          <span> PAT (INR Cr) </span>
 
                           <span
                             className={item.pat < 0 ? "negative" : "positive"}
@@ -365,7 +366,7 @@ const Keyfinancials = ({ isPrivateDeal = false }) => {
                           >
                             {item.interestcoverage == 0
                               ? "-"
-                              : item.interestcoverage + "x"}
+                              : item.interestcoverage + ""}
                           </span>
                         </p>
                       </div>

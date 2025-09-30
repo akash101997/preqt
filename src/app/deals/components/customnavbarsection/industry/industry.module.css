@@ -135,6 +135,11 @@
 
 .tableWrapper {
   overflow-x: auto;
+    width: 100%;
+  overflow-x: auto;          /* enables horizontal scroll */
+  scrollbar-width: none;     /* Firefox hide */
+  -ms-overflow-style: none;  /* IE & Edge hide */
+  cursor: grab;  
   -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
 }
 
@@ -162,7 +167,7 @@
   width: 100%;
   border-collapse: collapse;
   border-collapse: collapse;
-  overflow-x: auto;
+  
 }
 .firstHeading{
   color: #B7B7B7 !important;
@@ -191,14 +196,16 @@
 
 .PeerTable th:last-child {
   border-right: none;
+  /* margin: 40px; */
 }
 
 .PeerTable th:first-child {
   border-right: 2px solid #b18c07;
+  
 }
-.PeerTable th:first-child {
+/* .PeerTable th:first-child {
   border-right: 2px solid #b18c07;
-}
+} */
 
 
 .tableHeading {
@@ -245,7 +252,7 @@
 }
 .PeerTable td:first-child {
   border-right: 2px solid #b18c07;
-  padding-right: 30px;
+  padding-right: 45px;
 }
 
 .seperator{

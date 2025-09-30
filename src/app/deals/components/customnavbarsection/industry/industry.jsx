@@ -51,8 +51,8 @@ const Industry = ({ isPrivateDeal }) => {
       },
     ]
     : [
-      { metric: "Revenue (₹ Cr)", premium: "288.2", pranik: "104.7" },
-      { metric: "Net Profit (₹ Cr)", premium: "15.7", pranik: "6.4" },
+      { metric: "Revenue (INR Cr)", premium: "288.2", pranik: "104.7" },
+      { metric: "Net Profit (INR Cr)", premium: "15.7", pranik: "6.4" },
       { metric: "EBITDA Margin", premium: "8.4%", pranik: "11.30%" },
       { metric: "ROE", premium: "17.6%", pranik: "17%" },
       { metric: "ROCE", premium: "17.6%", pranik: "18.30%" },
