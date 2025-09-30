@@ -332,7 +332,7 @@ export default function NavBar() {
         show={showLogout}
         onClose={() => setShowLogout(false)}
         onLogout={() => {
-          Cookies.remove("accessToken"); router.push("/signin")
+          Cookies.remove("accessToken"); router.push("/sign-in")
           // /Addedcomment
         }}
       />}
