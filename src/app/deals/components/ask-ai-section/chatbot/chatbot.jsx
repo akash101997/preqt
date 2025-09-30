@@ -2,8 +2,21 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./chatbot.css";
 import Cookies from "js-cookie";
+import { usePathname } from "next/navigation";
 
 const Chatbot = ({ onBack, isPrivateDeal, showInModal = false, onClose }) => {
+  const pathname = usePathname();
+
+  const slug = pathname?.split("/deals/")[1] || ""; // ✅ "hvr-solar-deals"
+
+  // Map slugs to documents
+  const documentMap = {
+    "hvr-solar-deals": "HVR_Solar_extended",
+    "ashwini-container-movers-limited": "Red_Herring_Prospectus_Ashwini_Container_Movers_Limited"
+    
+  };
+
+  const selectedDocument = documentMap[slug] || "Red_Herring_Prospectus_Ashwini_Container_Movers_Limited";
 
   useEffect(() => {
     if (showInModal) {
@@ -33,7 +46,7 @@ const Chatbot = ({ onBack, isPrivateDeal, showInModal = false, onClose }) => {
   const userId = allData ? JSON.parse(allData)?.id : "user";
 
   // LocalStorage key per user
-  const storageKey = `chatbot_${userId}`;
+  const storageKey = `chatbot_${userId}_${selectedDocument}`;
 
   // Load chats from localStorage on mount
   useEffect(() => {
@@ -59,27 +72,29 @@ const Chatbot = ({ onBack, isPrivateDeal, showInModal = false, onClose }) => {
   }, [userChat]);
 
   // API call
-  const askAI = async (userQuestion) => {
-    try {
-      const payload = {
-        question: userQuestion,
-        top_k: 10,
-        document: "Red_Herring_Prospectus_Ashwini_Container_Movers_Limited"
-      };
+ // API call
+const askAI = async (userQuestion) => {
+  try {
+    const payload = {
+      question: userQuestion,
+      top_k: 10,
+      document: selectedDocument,
+    };
 
-      const response = await fetch("https://pdf.webninjaz.com/ask", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
+    const response = await fetch("https://pdf.webninjaz.com/ask", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
 
-      const data = await response.json();
-      return data.answer || "No answer available.";
-    } catch (error) {
-      console.error("Error fetching AI answer:", error);
-      return "Something went wrong. Please try again.";
-    }
-  };
+    const data = await response.json();
+    return data.answer || "No answer available.";
+  } catch (error) {
+    console.error("Error fetching AI answer:", error);
+    return "Something went wrong. Please try again.";
+  }
+};
+
 
   // Handle question send
   const handleSend = async (userQuestion) => {

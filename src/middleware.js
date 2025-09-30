@@ -12,8 +12,8 @@ export function middleware(request) {
     "/account/:path*",
     "/community",
     "/community/:path*",
-    // "/deals",
-    // "/deals/:path*",
+    "/deals",
+    "/deals/:path*",
     "/private-deals",
     "/private-deals/:path*",
     "/transaction-page",
@@ -24,18 +24,18 @@ export function middleware(request) {
 
   // Public paths (always accessible)
   const publicPaths = [
-    "/signin",
+    "/sign-in",
     "/signup",
     "/forget-password",
     "/reset-password",
   ];
 
   if (!verifyOtp && pathname == "/otp") {
-    return NextResponse.redirect(new URL("/signin", origin));
+    return NextResponse.redirect(new URL("/sign-in", origin));
   }
   if (
     isAuthenticated &&
-    (pathname === "/signin" ||
+    (pathname === "/sign-in" ||
       pathname === "/signup" ||
       pathname.startsWith("/forget-password") ||
       pathname.startsWith("/reset-password"))
@@ -61,7 +61,7 @@ export function middleware(request) {
   });
 
   if (!isAuthenticated && isAccessingSecurePath) {
-    return NextResponse.redirect(new URL("/signin", origin));
+    return NextResponse.redirect(new URL("/sign-in", origin));
   }
 
   // Otherwise → allow
@@ -71,13 +71,13 @@ export function middleware(request) {
 export const config = {
   matcher: [
     "/",
-    "/signin",
+    "/sign-in",
     "/signup",
     "/reset-password/:path*",
     "/forget-password",
     "/account/:path*",
     "/community/:path*",
-    // "/deals/:path*",
+    "/deals/:path*",
     "/private-deals/:path*",
     "/transaction-page/:path*",
     "/events",

@@ -43,7 +43,7 @@ const steps = [
 
   return (
     <section className="ask-ai-section">
-      {isPrivateDeal && <button className="ask-ai-button"
+      <button className="ask-ai-button"
         onClick={() => {
           handleAskAI(true);
 
@@ -70,7 +70,7 @@ const steps = [
           />
         </svg>
         Ask AI About This Deal
-      </button>}
+      </button>
 
 
 
