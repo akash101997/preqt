@@ -37,7 +37,7 @@
 /* .first-navbar .navigation-tabs .nav-item:hover { background-color: transparent; } */
 .first-navbar .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link {
-  color: var(--Golden-gradient, #64748B);
+  color: var(--Golden-gradient, #FFFFFF4D);
   text-align: center;
   font-size: 14px;
   font-style: normal;
