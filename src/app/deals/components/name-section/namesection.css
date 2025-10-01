@@ -1599,6 +1599,20 @@ margin-bottom: 0;
     font-size: 12px;
   }
 
+  .ask-ai-mob-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .ask-ai-mob-div button {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 6px 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid;
+
 
 }
 
@@ -1660,13 +1674,13 @@ margin-bottom: 0;
 
 
 
-  .ask-ai-mob-div {
+  /* .ask-ai-mob-div {
     width: 100%;
     display: flex;
     justify-content: center;
-  }
+  } */
 
-  .ask-ai-mob-div button {
+  /* .ask-ai-mob-div button {
     height: 52px;
     font-size: 15px;
     font-weight: 500;
@@ -1674,7 +1688,7 @@ margin-bottom: 0;
     width: 100%;
     border-radius: 10px;
     border: 1px solid;
-  }
+  } */
 
   .mob-topbar div {
     display: flex;
@@ -2167,19 +2181,7 @@ margin-bottom: 0;
   .share-button svg path {
     stroke: #8E6B0F !important; 
   }
-  .ask-ai-mob-div {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
 
-  .ask-ai-mob-div button {
-    font-size: 15px;
-    font-weight: 500;
-    padding: 6px 10px;
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid;
   }
 
   .body1-buttons span {

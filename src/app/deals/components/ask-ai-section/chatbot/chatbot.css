@@ -165,6 +165,10 @@
   background-image: url("/assets/pictures/Button-Hover.png");
 }
 
+.chatbot-modal{
+  display: none;
+}
+
 .private-deal {
   background-color: #171717 !important;
 }
@@ -365,6 +369,95 @@
   flex-direction: column;
   height: 100%;
 } */
+
+@media(max-width:920px){
+  /* Modal takes viewport height so inner layout can stick */
+  .chatbot-modal {
+    background: #fff;
+    width: 90%;
+    max-width: 600px;
+    /* height: 90vh; */
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden; /* prevent outer scroll; only chat area scrolls */
+  }
+
+  /* Column layout: header (fixed), scrollable content, footer (fixed) */
+  .chatbot-maincontainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    top: auto;
+    min-height: 0; /* allow inner flex child to shrink and scroll */
+  }
+
+  /* Sticky header at top inside modal */
+  .chatbot-head {
+    flex: 0 0 auto;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #fff;
+  }
+
+  /* Scrollable middle */
+  .chatbot-body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 0px 10px 0px;
+    min-height: 0; /* critical to enable scrolling inside flex column */
+  }
+
+  /* Sticky footer at bottom inside modal */
+  .chatbot-body-section2 {
+    flex: 0 0 auto;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    background: #fff;
+  }
+  
+  /* Preserve private-deal theme inside modal on mobile */
+  .private-deal {
+    background-color: #171717 !important;
+  }
+
+  .private-deal .chatbot-head {
+    border-bottom: 1px solid #FFFFFF1A;
+    background: #000 !important;
+  }
+
+  .private-deal .chatbot-head h2 {
+    color: white !important;
+  }
+
+  .private-deal .chatbot-head .arrow path {
+    stroke: white;
+  }
+
+  .private-deal .default-chatbot-data p {
+    color: #ffff !important;
+    border: 1px solid #FFFFFF26 !important;
+  }
+
+  .private-deal .chatbot-body-section2,
+  .private-deal .chatbot-body-section2 input {
+    background-color: #000 ;
+    color: #6B7280;
+    border-color: #FFFFFF26;
+  }
+
+}
 
 
 @media (max-width:450px) {

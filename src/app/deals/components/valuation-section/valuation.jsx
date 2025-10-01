@@ -46,7 +46,7 @@ const Valuation = ({ isPrivateDeal }) => {
     </div>}
 
 
-    {!isPrivateDeal && <div className="ask-ai-mob-div">
+  <div className="ask-ai-mob-div">
       <button className="ask-ai-button" onClick={() => { setShowChatBot(!showChatBot) }}>
         <svg
           width="25"
@@ -70,7 +70,7 @@ const Valuation = ({ isPrivateDeal }) => {
         </svg>
         Ask AI About This Deal
       </button>
-    </div>}
+    </div>
     {
       showChatBot && <Chatbot
         onBack={() => setShowChatBot(false)}

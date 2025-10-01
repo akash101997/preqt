@@ -12,9 +12,19 @@ import "./customnavbar.css";
 const Customnavbar = ({ isPrivateDeal }) => {
   const [key, setKey] = useState("Overview");
   const tabsRef = useRef(null);
-  const contentRef = useRef(null);
+
+  // Keep refs for each tab content
+  const contentRefs = {
+    Overview: useRef(null),
+    Business: useRef(null),
+    "Industry Overview": useRef(null),
+    "Financia Highlights": useRef(null),
+    "Fundraise/Future Plans": useRef(null),
+    Documentation: useRef(null),
+  };
 
   useEffect(() => {
+    // Scroll active tab button into view
     const activeTab = tabsRef.current?.querySelector(".nav-link.active");
     if (activeTab) {
       activeTab.scrollIntoView({
@@ -24,15 +34,18 @@ const Customnavbar = ({ isPrivateDeal }) => {
       });
     }
 
-    contentRef.current?.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    // Reset content scroll to top for the active tab
+    const activeContent = contentRefs[key]?.current;
+    if (activeContent) {
+      activeContent.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
   }, [key]);
 
   return (
     <div className="first-navbar">
-      {/* Navigation Tabs */}
       <Tabs
         id="carousel-tabs"
         ref={tabsRef}
@@ -44,37 +57,37 @@ const Customnavbar = ({ isPrivateDeal }) => {
         unmountOnExit
       >
         <Tab eventKey="Overview" title="Overview">
-          <div ref={contentRef} className="tab-content-wrapper">
+          <div ref={contentRefs["Overview"]} className="tab-content-wrapper">
             <Overview isPrivateDeal={isPrivateDeal} />
           </div>
         </Tab>
 
         <Tab eventKey="Business" title="Business">
-          <div ref={contentRef} className="tab-content-wrapper">
+          <div ref={contentRefs["Business"]} className="tab-content-wrapper">
             <Business isPrivateDeal={isPrivateDeal} />
           </div>
         </Tab>
 
         <Tab eventKey="Industry Overview" title="Industry Overview">
-          <div ref={contentRef} className="tab-content-wrapper">
+          <div ref={contentRefs["Industry Overview"]} className="tab-content-wrapper">
             <Industry isPrivateDeal={isPrivateDeal} />
           </div>
         </Tab>
 
         <Tab eventKey="Financia Highlights" title="Financial Highlights">
-          <div ref={contentRef} className="tab-content-wrapper">
+          <div ref={contentRefs["Financia Highlights"]} className="tab-content-wrapper">
             <Keyfinancials isPrivateDeal={isPrivateDeal} />
           </div>
         </Tab>
 
         <Tab eventKey="Fundraise/Future Plans" title="Fundraise/Future Plans">
-          <div ref={contentRef} className="tab-content-wrapper">
+          <div ref={contentRefs["Fundraise/Future Plans"]} className="tab-content-wrapper">
             <Shareholding isPrivateDeal={isPrivateDeal} />
           </div>
         </Tab>
 
         <Tab eventKey="Documentation" title="Documentation">
-          <div ref={contentRef} className="tab-content-wrapper">
+          <div ref={contentRefs["Documentation"]} className="tab-content-wrapper">
             <Documentation isPrivateDeal={isPrivateDeal} />
           </div>
         </Tab>
