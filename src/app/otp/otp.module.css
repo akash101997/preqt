@@ -196,9 +196,11 @@
 @media (max-width: 480px) {
   .wrapper {
     padding-top: 24px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
   }
+
+ 
 
   .backBtn {
     top: 16px;

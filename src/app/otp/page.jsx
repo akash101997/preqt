@@ -154,7 +154,7 @@ function OtpPageContent() {
       <button
         type="button"
         className={styles.backBtn}
-        onClick={() => router.back()}
+        onClick={() => router.push("/sign-in")}
         aria-label="Go back"
       >
         {/* Back Arrow */}
@@ -171,7 +171,7 @@ function OtpPageContent() {
           />
         </svg>
       </button>
-      <img src="/assets/pictures/logo.svg" alt="Preqt Logo" className={styles.logo} />
+      <img src="/logo.png" alt="Preqt Logo" className={styles.logo} />
       <h1 className={styles.title}>Enter OTP To Verify</h1>
       <p className={styles.subtitle}>Enter 6 digit OTP sent to you on {email}</p>
 

@@ -1,12 +1,8 @@
 .main_container {
   max-width: 936px;
-  /* border: 1px solid red; */
-  /* height: 850px; */
   background-color: rgba(255, 255, 255, 1);
   border-radius: 24px;
   padding: 32px;
-  
-
 }
 
 .h1 {
@@ -58,9 +54,7 @@
   border: none;
   background-color: rgba(229, 231, 235, 1);
   height: 1px;
-  /* margin-top: 10px; */
   max-width: 865px;
-
 }
 
 .hr {

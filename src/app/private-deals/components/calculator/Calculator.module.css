@@ -99,11 +99,11 @@
   border-radius: 34px;
   padding: 14px 20px;
   color: #FFFFFF;
- background-image: url('/assets/pictures/showInterest.png');
- background-position: center;
- background-size: cover;
- background-repeat: no-repeat;
- height: 48px;
+  background-image: url('/assets/pictures/showInterest.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 48px;
   outline: none;
   font-size: 16px;
   /* background-color: #aa3e3e; */
@@ -269,7 +269,10 @@
   padding: 15px;
   border: none;
   border-radius: 30px;
-  background: linear-gradient(90deg, #d4af37, #c9a74e);
+  background-image: url(/assets/pictures/showInterest.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #fff;
   font-size: 16px;
   font-weight: bold;

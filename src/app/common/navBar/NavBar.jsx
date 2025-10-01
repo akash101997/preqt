@@ -133,8 +133,8 @@ export default function NavBar() {
           <img
             src={
               isPrivateDeal
-                ? "/assets/pictures/private-logo.svg"
-                : "/assets/pictures/logo.svg"
+                ? "/private-logo.png"
+                : "/logo.png"
             }
             alt="logo"
             className={styles.logoImg}
@@ -163,18 +163,19 @@ export default function NavBar() {
         >
          <div>
            <Image
-                src="/assets/pictures/logo.svg"
+                src="/logo.png"
                 alt="logo"
-                width={120}   // set width as needed
+                width={128}   // set width as needed
                 height={40}   // set height as needed
-                priority      // makes sure logo loads fast
+                priority 
+                style={{paddingLeft : '10px'}} // makes sure logo loads fast
               />
           <div className={styles.menuContainer}>
            
 
             <div className={styles.menuContainer_main}>
              
-              <div className={styles.profile}>
+              <Link className={styles.profile} href="/account/details" onClick={() => setMenuOpen(false)}>
 
                 <div className={styles.avatar}>{shortName}</div>
                 <div className={styles.avatardetails}>
@@ -201,7 +202,7 @@ export default function NavBar() {
                     </svg>
                   </div>
                 </div>
-              </div>
+              </Link>
 
               {/* <Link className={styles.homeNavButton} href="/">
                 <img src="/assets/pictures/home.svg" alt="" />

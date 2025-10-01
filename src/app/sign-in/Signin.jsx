@@ -49,7 +49,7 @@ const Signin = () => {
     <section className={styles.pageWrapper}>
       <div className={styles.card}>
         <img
-          src="/assets/pictures/logo.svg"
+          src="/logo.png"
           alt="Preqt Logo"
           className={styles.logo}
         />
