@@ -75,11 +75,17 @@ padding: 20px 16px;
   left: 0;
 }
 
+.backBtn{
+  border: none;
+  background: transparent;
+}
+
 
 
 @media(max-width: 580px){
   .account_layout{
     border-radius: 0px;
+    padding-bottom: unset;
 
     /* display: none; */
     
