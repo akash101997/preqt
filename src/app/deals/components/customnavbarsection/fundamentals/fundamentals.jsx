@@ -252,7 +252,7 @@ const Fundamentals = ({ isPrivateDeal }) => {
                 >
                   Source:
                   <br />
-                  Company DRHP
+                  Company RHP
                 </p>
               }
             />
