@@ -197,10 +197,7 @@
   font-family: Helvetica;
   /* font-style: italic; */
 }
-.ipo-objective-container-section p{
-  /* border: 1px solid red; */
-  /* max-width: 200px; */
-}
+
 .ipoObjectiveSection{
   border-radius: 24px;
 background: linear-gradient(180deg, #F3F4F6 0%, #FFF 100%);

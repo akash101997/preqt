@@ -238,7 +238,7 @@ const Fundamentals = ({ isPrivateDeal }) => {
             <div className="Fundamentals-body-head">
               <h3>Fund Allocation</h3>
               <p>
-                Total ₹ <span>INR 66.0 - 67.5 Cr</span>
+                Total: <span>INR 66.0 - 67.5 Cr</span>
               </p>
             </div>
             <Piechart

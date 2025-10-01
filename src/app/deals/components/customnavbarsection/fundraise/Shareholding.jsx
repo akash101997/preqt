@@ -150,7 +150,7 @@ export default function Shareholding({ isPrivateDeal }) {
             <div className={styles.header}>
               <span>Category</span>
               <div className={styles.tableData}>
-                <span>Pre-Issue%</span>
+                <span className={styles.preIssue}>Pre-Issue%</span>
                 <span>Post-Issue%</span>
               </div>
             </div>
