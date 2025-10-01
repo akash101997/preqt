@@ -37,18 +37,40 @@ export default function NavBar() {
   };
   useEffect(() => {
     if (menuOpen) {
-      // Prevent background scroll when menu is open
-      document.body.style.overflow = "hidden";
+      // Save current scroll position
+      const scrollY = window.scrollY;
+  
+      // Apply styles to lock background
+      document.documentElement.style.setProperty("overflow", "hidden", "important");
+      document.body.style.setProperty("overflow", "hidden", "important");
+      document.body.style.setProperty("position", "fixed", "important");
+      document.body.style.setProperty("top", `-${scrollY}px`, "important");
+      document.body.style.setProperty("width", "100%", "important");
     } else {
-      // Restore scrolling when menu is closed
-      document.body.style.overflow = "";
+      // Restore styles
+      const scrollY = document.body.style.top;
+      document.documentElement.style.setProperty("overflow", "", "important");
+      document.body.style.setProperty("overflow", "", "important");
+      document.body.style.setProperty("position", "", "important");
+      document.body.style.setProperty("top", "", "important");
+      document.body.style.setProperty("width", "", "important");
+  
+      // Restore scroll position
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      }
     }
-
-    // Cleanup function to restore scrolling when component unmounts
+  
+    // Cleanup (when component unmounts)
     return () => {
-      document.body.style.overflow = "";
+      document.documentElement.style.setProperty("overflow", "", "important");
+      document.body.style.setProperty("overflow", "", "important");
+      document.body.style.setProperty("position", "", "important");
+      document.body.style.setProperty("top", "", "important");
+      document.body.style.setProperty("width", "", "important");
     };
   }, [menuOpen]);
+  
 
 
 
