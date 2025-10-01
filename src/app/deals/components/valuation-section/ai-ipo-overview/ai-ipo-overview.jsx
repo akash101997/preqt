@@ -159,7 +159,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                     </div>
                     <div className="ipo-dropdown">
                       <h6 className="offer-day">Thursday, September 25, 2025</h6>
-                      <span>{open ? <ChevronUp /> : <ChevronDown />}</span>
+                      <span  className="dropDown">{open ? <ChevronUp /> : <ChevronDown />}</span>
                     </div>
 
                   </div>
@@ -249,7 +249,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                   <span className="data">Revenue (FY'25) </span>
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><RevenueIcon /></span>
                 </div>
-                <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "INR 101.4 Cr" : "₹94.1 Cr "}</span>
+                <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "INR 101.4 Cr" : "INR 94.1 Cr "}</span>
               </section>
             </section>
 
@@ -260,7 +260,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><PatIcon /></span>
                 </div>
                 <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>
-                  {isPrivateDeal ? "INR 7.0 Cr" : "₹11.5 Cr"}
+                  {isPrivateDeal ? "INR 7.0 Cr" : "INR 11.5 Cr"}
                 </span>
               </section>
 
@@ -270,7 +270,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                   <span >{isPrivateDeal ? <span className="data">P/E Multiple</span> : <span className="data">Issue Size</span>}</span>
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><PeMultiple /></span>
                 </div>
-                <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "10.7x" : "66-67.5 Cr"}</span>
+                <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "10.7x" : " INR 66-67.5 Cr"}</span>
               </section>
             </section>
           </div>
@@ -500,7 +500,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                <section className="others">
                 <h6>Debt/Equity(FY'25)</h6>
                 <span>
-                  3.0 
+                  2.6
                 </span>
               </section>
 

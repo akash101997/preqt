@@ -13,6 +13,7 @@ export default function NavBar() {
 
   const [shortName, setShortName] = useState("");
   const [investorName, setInvestorName] = useState("");
+  const [id, setId] = useState("")
   const [showLogout, setShowLogout] = useState(false)
 
 
@@ -83,6 +84,10 @@ export default function NavBar() {
       if (investor.name) {
         // save full name
         setInvestorName(investor.name);
+         const lastSix = investor.id
+          ? investor.id.toString().slice(-6).toUpperCase()
+          : "";
+        setId(lastSix);
 
         // generate initials
         const initials = investor.name
@@ -203,6 +208,7 @@ export default function NavBar() {
                 <div className={styles.avatardetails}>
                   <div className={styles.avatardetails_main}>
                     {/* <div className={styles.id}>CL273874</div> */}
+                         <div className={styles.id}>{id}</div>
                     <div className={styles.name}>{investorName}</div>
                   </div>
 

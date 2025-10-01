@@ -170,9 +170,7 @@ width: 24px;
     align-items: center;
    width: 100%;
   }
-  .ipo-dropdownButton{
-    /* margin-bottom: 10px; */
-  }
+ 
   /* .main-other :nth-child(2){
     text-align: right;
   }
@@ -286,6 +284,9 @@ width: 24px;
         align-items: center;
         justify-content: space-between;
 
+    }
+    .ipo-dropdown .dropDown{
+        margin-right: 8px;
     }
 }
 
