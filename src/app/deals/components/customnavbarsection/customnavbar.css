@@ -37,7 +37,7 @@
 /* .first-navbar .navigation-tabs .nav-item:hover { background-color: transparent; } */
 .first-navbar .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link {
-  color: var(--Golden-gradient, #FFFFFF4D);
+  color: var(--Golden-gradient, #6B7280 ) ;
   text-align: center;
   font-size: 14px;
   font-style: normal;
@@ -46,6 +46,10 @@
   padding: 8px 10px;
  
 }
+/* .private-deal-theme .first-navbar .nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link{
+  color: #FFFFFF4D ;
+} */
 
 .first-navbar .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
