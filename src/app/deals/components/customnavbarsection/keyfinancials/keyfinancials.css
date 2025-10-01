@@ -5,7 +5,7 @@
   gap: 10px;
   align-self: stretch;
   cursor: pointer;
-  padding: 12px 0;
+  padding: 12px 0;  
   /* margin-bottom: 12px; */
 }
 
@@ -430,11 +430,34 @@ box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
 
 }
 
+@media(max-width:768px) {
+   .metric-block p {
+  display: flex;
+  justify-content: space-between;
+  }
+  .metric-block p span {
+  flex: unset;
+}
+.metric-block h4 {
+font-size: 20px;
+}
+  
+
+}
+
+
 @media(max-width:480px) {
   .key-financials-container{
-    padding: 15px;
-    padding-top: 0;
+    padding: 0px;
+    padding-bottom: 15px;
   }
+  /* .metric-block p {
+  display: flex;
+  justify-content: space-between;
+  }
+  .metric-block p span {
+  flex: unset;
+} */
 
   .section-header{
     margin-bottom: 0;
