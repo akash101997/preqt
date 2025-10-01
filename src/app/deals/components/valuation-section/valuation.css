@@ -75,6 +75,7 @@ line-height: 28px; /* 140% */
 .progressWrapper {
   margin-top: 12px;
   position: relative;
+  margin-bottom: 12px;
 }
 .label{
   color: var(--Gray-500, #6B7280);

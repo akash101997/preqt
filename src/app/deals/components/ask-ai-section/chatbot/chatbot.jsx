@@ -7,27 +7,18 @@ import { usePathname } from "next/navigation";
 const Chatbot = ({ onBack, isPrivateDeal, showInModal = false, onClose }) => {
   const pathname = usePathname();
 
-  const slug = pathname?.split("/deals/")[1] || ""; // ✅ "hvr-solar-deals"
+  const slug = pathname?.split("/deals/")[1] || ""; 
 
-  // Map slugs to documents
   const documentMap = {
     "hvr-solar-deals": "HVR_Solar_extended",
     "ashwini-container-movers-limited": "Red_Herring_Prospectus_Ashwini_Container_Movers_Limited"
-    
   };
 
   const selectedDocument = documentMap[slug] || "Red_Herring_Prospectus_Ashwini_Container_Movers_Limited";
 
   useEffect(() => {
-    if (showInModal) {
-      document.body.style.setProperty("overflow", "hidden", "important");
-    } else {
-      document.body.style.setProperty("overflow", "", "important");
-    }
-
-    return () => {
-      document.body.style.setProperty("overflow", "", "important");
-    };
+    document.body.style.setProperty("overflow", showInModal ? "hidden" : "", "important");
+    return () => document.body.style.setProperty("overflow", "", "important");
   }, [showInModal]);
 
   const defaultquestions = [
@@ -39,16 +30,14 @@ const Chatbot = ({ onBack, isPrivateDeal, showInModal = false, onClose }) => {
 
   const [userChat, setUserChat] = useState([]);
   const [question, setQuestion] = useState("");
-  const chatEndRef = useRef(null);
+  const chatContainerRef = useRef(null);
   const [loading, setLoading] = useState(-1);
 
   const allData = Cookies.get("userData");
   const userId = allData ? JSON.parse(allData)?.id : "user";
 
-  // LocalStorage key per user
   const storageKey = `chatbot_${userId}_${selectedDocument}`;
 
-  // Load chats from localStorage on mount
   useEffect(() => {
     const savedChats = localStorage.getItem(storageKey);
     if (savedChats) {
@@ -56,56 +45,40 @@ const Chatbot = ({ onBack, isPrivateDeal, showInModal = false, onClose }) => {
     }
   }, [storageKey]);
 
-  // Save chats to localStorage whenever updated
   useEffect(() => {
     if (userChat.length > 0) {
       localStorage.setItem(storageKey, JSON.stringify(userChat));
     }
   }, [userChat, storageKey]);
 
-  // Auto scroll to latest message
-  const chatContainerRef = useRef(null);
   useEffect(() => {
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
     }
   }, [userChat]);
 
-  // API call
- // API call
-const askAI = async (userQuestion) => {
-  try {
-    const payload = {
-      question: userQuestion,
-      top_k: 10,
-      document: selectedDocument,
-    };
+  const askAI = async (userQuestion) => {
+    try {
+      const payload = { question: userQuestion, top_k: 10, document: selectedDocument };
+      const response = await fetch("https://pdf.webninjaz.com/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await response.json();
+      return data.answer || "No answer available.";
+    } catch (error) {
+      console.error("Error fetching AI answer:", error);
+      return "Something went wrong. Please try again.";
+    }
+  };
 
-    const response = await fetch("https://pdf.webninjaz.com/ask", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-
-    const data = await response.json();
-    return data.answer || "No answer available.";
-  } catch (error) {
-    console.error("Error fetching AI answer:", error);
-    return "Something went wrong. Please try again.";
-  }
-};
-
-
-  // Handle question send
   const handleSend = async (userQuestion) => {
     if (!userQuestion.trim()) return;
-
-    // Add user question first
     const newChat = { user: userQuestion, ai: "" };
     setUserChat((prev) => [...prev, newChat]);
     setQuestion("");
 
-    // Get AI answer
     setLoading(userChat.length);
     const aiAnswer = await askAI(userQuestion);
     setLoading(-1);
@@ -117,115 +90,89 @@ const askAI = async (userQuestion) => {
     );
   };
 
-  const chatbotUI = (
-   <div className={`chatbot-maincontainer ${isPrivateDeal ? "private-deal" : ""}`}>
-  {/* Header */}
-  <section className="chatbot-head">
-    <svg
-      className="arrow"
-      onClick={() => onBack(false)}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M12 19L5 12L12 5"
-        stroke="black"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M19 12H5"
-        stroke="black"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-    <h2>Preqt AI Assistant</h2>
-  </section>
-
-  {/* Chat body (scrollable) */}
-  <section className="chatbot-body" ref={chatContainerRef}>
-    {userChat.length === 0 && (
-      <section className="chatbot-body-section1">
-        <h2>Discuss This Deal with Your Personal AI Assistant</h2>
-        <p>Ask anything about this Pre-IPO Deal</p>
+  const renderChatbotUI = () => (
+    <div className={`chatbot-maincontainer ${isPrivateDeal ? "private-deal" : ""}`}>
+      {/* Header */}
+      <section className="chatbot-head">
+        <svg
+          className="arrow"
+          onClick={() => onBack(false)}
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M12 19L5 12L12 5" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M19 12H5" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+        <h2>Preqt AI Assistant</h2>
       </section>
-    )}
 
-    {userChat.length === 0 && (
-      <section className="default-chatbot-data">
-        {defaultquestions.map((q, index) => (
-          <p
-            key={index}
-            onClick={() => handleSend(q)}
-            className="default-question cursor-pointer"
-          >
-            {q}
-          </p>
+      {/* Chat body */}
+      <section className="chatbot-body" ref={chatContainerRef}>
+        {userChat.length === 0 && (
+          <>
+            <section className="chatbot-body-section1">
+              <h2>Discuss This Deal with Your Personal AI Assistant</h2>
+              <p>Ask anything about this Pre-IPO Deal</p>
+            </section>
+
+            <section className="default-chatbot-data">
+              {defaultquestions.map((q, index) => (
+                <p key={index} onClick={() => handleSend(q)} className="default-question cursor-pointer">
+                  {q}
+                </p>
+              ))}
+            </section>
+          </>
+        )}
+
+        {userChat.map((chat, idx) => (
+          <div key={idx} className="chat-block">
+            <div className="chat-bubble user-bubble animate">{chat.user}</div>
+            {loading === idx ? (
+              <div className="chat-bubble ai-bubble typing"><span></span><span></span><span></span></div>
+            ) : (
+              chat.ai && (
+                <div
+                  className="chat-bubble ai-bubble animate"
+                  dangerouslySetInnerHTML={{
+                    __html: chat.ai.replace(/\n/g, "<br/>").replace(/\*\*(.*?)\*\*/g, "<b>$1</b>"),
+                  }}
+                />
+              )
+            )}
+          </div>
         ))}
       </section>
-    )}
 
-    {/* Chat messages */}
-    {userChat.map((chat, idx) => (
-      <div key={idx} className="chat-block">
-        <div className="chat-bubble user-bubble animate">{chat.user}</div>
-
-        {loading === idx ? (
-          <div className="chat-bubble ai-bubble typing">
-            <span></span><span></span><span></span>
-          </div>
-        ) : (
-          chat.ai && (
-            
-            <div
-              className="chat-bubble ai-bubble animate"
-              dangerouslySetInnerHTML={{
-                __html: chat.ai
-                  .replace(/\n/g, "<br/>")
-                  .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>"),
-              }}
-            ></div>
-          )
-        )}
-      </div>
-    ))}
-    {/* <div ref={chatEndRef}></div> */}
-  </section>
-
-  {/* Input footer */}
-  <section className="chatbot-body-section2">
-    <input
-      type="text"
-      placeholder="Type your question here…"
-      value={question}
-      onChange={(e) => setQuestion(e.target.value)}
-      onKeyDown={(e) => e.key === "Enter" && handleSend(question)}
-    />
-    <img
-      className="action-btn"
-      src="/assets/pictures/Button-Hover.png"
-      alt="send"
-      onClick={() => handleSend(question)}
-    />
-  </section>
-</div>
-
+      {/* Input footer */}
+      <section className="chatbot-body-section2">
+        <input
+          type="text"
+          placeholder="Type your question here…"
+          value={question}
+          onChange={(e) => setQuestion(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleSend(question)}
+        />
+        <img
+          className="action-btn"
+          src="/assets/pictures/Button-Hover.png"
+          alt="send"
+          onClick={() => handleSend(question)}
+        />
+      </section>
+    </div>
   );
 
   if (!showInModal) {
-    return chatbotUI;
+    return renderChatbotUI();
   }
 
-  // If showInModal = true → show inside modal
   return (
     <div className="chatbot-modal-overlay">
       <div className="chatbot-modal">
         <button className="chatbot-modal-close" onClick={onClose}>✕</button>
-        {chatbotUI}
+        {renderChatbotUI()}
       </div>
     </div>
   );
