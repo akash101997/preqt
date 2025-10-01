@@ -32,12 +32,12 @@ function AllDealsContent() {
     companyName: "Ashwini Container Movers Limited ",
     description: "Ashwini Container Movers Limited is a commercial/container transport & logistics company headquartered in Navi Mumbai.",
     stats: {
-      revenue: "₹94.1Cr",
-      pat: "₹11.5 Cr",
-      patMultiple: "₹11.5 Cr",
-      cagrGrowth: "17% ( FY'22-FY'25)",
-      roe: "75.9%(FY'25)",
-      issueDate: "21-05-2026"
+      revenue: "INR 94.1Cr",
+      pat: "INR 11.5 Cr",
+      patMultiple: "-",
+      cagrGrowth: "17% ",
+      roe: "75.9%",
+      issueDate: "Thu,Sep 25, 2025"
     },
     merchantBanker: "Corporate Professionals",
     deal: "public"
@@ -51,15 +51,15 @@ function AllDealsContent() {
     companyName: "HVR Solar Pvt Ltd",
     description: "India’s leading solar module manufacturer powering the green revolution.",
     stats: {
-      revenue: "₹75 Cr",
-      revenue2: "₹101 Cr",
+      revenue: "INR 75 Cr",
+      revenue2: "INR 101.4 Cr",
       expectedListing: "-",
-      pat: "7.0 Cr",
+      pat: "INR 7.0 Cr",
       peMultiple: "10.7x"
     },
     progress: {
-      current: "0Cr / 15Cr",
-      percentage: "94%"
+      current: "12Cr / 15Cr",
+      percentage: "80%"
     },
     tags: ["Strong promoter", "Clear Monetization", "Fund Participating"],
     deal: "private"
@@ -90,11 +90,11 @@ function AllDealsContent() {
                     <div className={styles.revenueMainContainer}>
                         <section className={styles.revenueSection}>
                             <article className={styles.Revenue}>
-                                <p className={styles.revenuHeading}>Revenue</p>
+                                <p className={styles.revenuHeading}>Revenue (FY'25)</p>
                                 <p className={styles.priceInRupee}>{deal.stats.revenue}</p>
                             </article>
                             <article>
-                                <p className={styles.revenuHeading}>PAT</p>
+                                <p className={styles.revenuHeading}>PAT (FY'25)</p>
                                 <p className={styles.priceInRupee}>{deal.stats.pat}</p>
                             </article>
                             <article>
@@ -109,7 +109,7 @@ function AllDealsContent() {
                                 <p className={styles.priceInRupee}>{deal.stats.cagrGrowth}</p>
                             </article>
                             <article>
-                                <p className={styles.revenuHeading}>ROE</p>
+                                <p className={styles.revenuHeading}>ROE (FY'25)</p>
                                 <p className={styles.priceInRupee}>{deal.stats.roe}</p>
                             </article>
                             <article>
@@ -121,7 +121,7 @@ function AllDealsContent() {
 
                     <section className={styles.merchantMainContainer}>
                         <div className={styles.merchantBanker}>
-                            <p className={styles.bankMerchant}>{deal.merchantBanker}</p>
+                            {/* <p className={styles.bankMerchant}>{deal.merchantBanker}</p> */}
                         </div>
                     </section>
                 </div>
@@ -164,11 +164,11 @@ function AllDealsContent() {
                     <div className={styles.card2StatsContainer}>
                         <section className={styles.card2StatsRow}>
                             <article className={styles.card2Stat}>
-                                <p className={styles.card2StatHeading}>Revenue</p>
+                                <p className={styles.card2StatHeading}>Valuation</p>
                                 <p className={styles.card2StatValue}>{deal.stats.revenue}</p>
                             </article>
                             <article className={styles.card2Stat}>
-                                <p className={styles.card2StatHeading}>Revenue</p>
+                                <p className={styles.card2StatHeading}>Revenue (FY'25)</p>
                                 <p className={styles.card2StatValue}>{deal.stats.revenue2}</p>
                             </article>
                             <article className={styles.card2Stat}>
@@ -179,7 +179,7 @@ function AllDealsContent() {
 
                         <section className={styles.card2StatsRow}>
                             <article className={styles.card2Stat}>
-                                <p className={styles.card2StatHeading}>PAT</p>
+                                <p className={styles.card2StatHeading}>PAT (FY'25)</p>
                                 <p className={styles.card2StatValue}>{deal.stats.pat}</p>
                             </article>
                             <article className={styles.card2Stat}>
@@ -198,7 +198,7 @@ function AllDealsContent() {
                         {/* <img src="/assets/pictures/PriceProgressBar.svg" alt=" " /> */}
                          <div className={styles.progressWrapper}>
                             <div className={styles.progress}>
-                           <div className={styles.progressBar} style={{ width: "94%" ,height:"6px",   background: "linear-gradient(to right ,#FFD89E,#B88609)" ,borderRadius:"30px"}}></div>
+                           <div className={styles.progressBar} style={{ width: "80%" ,height:"6px",   background: "linear-gradient(to right ,#FFD89E,#B88609)" ,borderRadius:"30px"}}></div>
                              </div>
                                   </div>
                                 </div>
