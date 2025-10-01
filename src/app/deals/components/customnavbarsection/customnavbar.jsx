@@ -89,6 +89,7 @@ const Customnavbar = ({ isPrivateDeal }) => {
         <Tab eventKey="Documentation" title="Documentation">
           <div ref={contentRefs["Documentation"]} className="tab-content-wrapper">
             <Documentation isPrivateDeal={isPrivateDeal} />
+            {/* Get Doc */}
           </div>
         </Tab>
       </Tabs>
