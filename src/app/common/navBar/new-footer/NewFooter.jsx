@@ -7,7 +7,7 @@ export default function NewFooter({isPrivateDeals}) {
   return (
     <footer className={styles.footer}>
       <div className={styles.logo}>
-        <img src="/assets/pictures/private-logo.svg" alt="" />
+        <img src="/footerLogo.png" alt="" />
         {/* <span className={styles.white}>pr</span>
         <span className={styles.gold}>.eqt.</span> */}
       </div>

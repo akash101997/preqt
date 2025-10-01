@@ -11,6 +11,7 @@ import { usePathname } from 'next/navigation';
 import EditDetails from './editDetails/EditDetails';
 import { useState } from 'react';
 import BreadCrumbs from './BreadCrumb/BreadCrumbs ';
+import { useRouter } from "next/navigation";
 
 
 
@@ -26,6 +27,7 @@ const geistMono = Geist_Mono({
 
 export default function layout({ children }) {
   const pathname = usePathname();
+  const router = useRouter();
   const [showeditModal, setShowEditModal] = useState(false);
   const [sidebaropen, setSidebarOpen] = useState(false);
 
@@ -46,7 +48,7 @@ export default function layout({ children }) {
     return "My Account";
   };
   return (
-    <div className={styles.mainaccount_layout}> 
+    <div className={styles.mainaccount_layout}>
       <div className={styles.navbar}>
         {/* <NavBar /> */}
       </div>
@@ -55,14 +57,19 @@ export default function layout({ children }) {
       </div>
       <div className={styles.arrow}>
         <div>
-          
-        <Link className={styles.Link} href="/account"><img src="/account_sidenav/arrow icon.svg" alt="" />
-       </Link> <span className={styles.arrow_heading}>{getTitle()}</span>
-       </div>
-        <div className={styles.edit_icon}>   
-            {pathname === "/account/details" && (   
-          <Link href="" className={styles.a} onClick={() => setShowEditModal(true)}><div className={styles.responsive_edit_icon}>Edit</div></Link>
-            )}
+
+          <button
+            type="button"
+            className={styles.backBtn}
+            onClick={() => router.back()}
+            aria-label="Go back"
+          ><img src="/account_sidenav/arrow icon.svg" alt="" />
+          </button> <span className={styles.arrow_heading}>{getTitle()}</span>
+        </div>
+        <div className={styles.edit_icon}>
+          {pathname === "/account/details" && (
+            <Link href="" className={styles.a} onClick={() => setShowEditModal(true)}><div className={styles.responsive_edit_icon}>Edit</div></Link>
+          )}
           <EditDetails
             isOpen={showeditModal}
             onClose={() => setShowEditModal(false)}
@@ -70,7 +77,7 @@ export default function layout({ children }) {
         </div>
       </div>
       <div className={styles.account_layout}>
-        <div className={styles.sidebar}>  <Sidenav/></div>            
+        <div className={styles.sidebar}>  <Sidenav /></div>
         <div className={styles.accountwrapper}>
           {children}
         </div>

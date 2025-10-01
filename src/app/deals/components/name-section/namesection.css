@@ -2041,6 +2041,11 @@ margin-bottom: 0;
     padding: 0 10px;
   }
 
+  .private-deal-theme{
+    background-image: url('/mobileEllipse.png') !important;
+    background-size: contain;
+  }
+
   .private-deal-theme .firsthalf {
     padding: 15px !important;
   }
@@ -2051,6 +2056,7 @@ margin-bottom: 0;
 
   .pitch-deck {
     padding: 30px 10px;
+    padding-top: 18px;
   }
 
   .pitch-deck h4 {
@@ -2351,13 +2357,9 @@ margin-bottom: 0;
     gap: 20px;
   }
 
-  .about-section h4 {
-    font-size: 14px;
-  }
 
-  .about-section p {
-    font-size: 12px;
-  }
+
+
 
   .label-title {
     font-size: 12px;

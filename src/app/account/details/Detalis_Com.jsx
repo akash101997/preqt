@@ -8,12 +8,14 @@ import Otp from "../modal-otp-verification/Otp";
 import Cookies from "js-cookie";
 
 export default function Details_Com() {
+  const [shortName, setShortName] = useState("");
+  const [id, setId] = useState("");
+  const [investor, setInvestor] = useState({});
+
   const [showphoneModal, setShowPhoneModal] = useState(false);
   const [showemailModal, setShowEmailModal] = useState(false);
-
   const [showeditModal, setShowEditModal] = useState(false);
   const [showOtp, setShowOtp] = useState(false);
-  const [investor, setInvestor] = useState({});
 
   useEffect(() => {
     if (showemailModal || showphoneModal || showeditModal || showOtp) {
@@ -28,7 +30,23 @@ export default function Details_Com() {
     if (investorStr) {
       try {
         const parsedInvestor = JSON.parse(investorStr);
-        setInvestor(parsedInvestor); // store full object
+        setInvestor(parsedInvestor);
+
+        if (parsedInvestor.name) {
+          // 🔹 generate initials
+          const initials = parsedInvestor.name
+            .trim()
+            .split(/\s+/) // split by spaces
+            .map((n) => n[0].toUpperCase())
+            .join("");
+          setShortName(initials);
+
+          // 🔹 generate last 6 chars of id
+          const lastSix = parsedInvestor.id
+            ? parsedInvestor.id.toString().slice(-6).toUpperCase()
+            : "";
+          setId(lastSix);
+        }
       } catch (error) {
         console.error("Invalid investor cookie:", error);
       }
@@ -38,27 +56,19 @@ export default function Details_Com() {
   return (
     <div className={styles.main_container}>
       <div className={styles.header}>
-        <h1 className={styles.h1}>Account Details </h1>
-        {/* <div className={styles.edit_icon}> */}
-          {/* <a className={styles.Link}  onClick={() => setShowEditModal(true)}><img src="/account_images/edit_icon.svg" alt="" /></a>  */}
-          {/* <a className={styles.a} onClick={() => setShowEditModal(true)}>
-            <img src="/account_images/edit_icon.svg" alt="" />
-          </a>
-          <EditDetails
-            isOpen={showeditModal}
-            onClose={() => setShowEditModal(false)}
-          />
-        </div> */}
+        <h1 className={styles.h1}>Account Details</h1>
       </div>
+
       <div className={styles.responsive_user_details}>
-        <div className={styles.avatar}>AM</div>
+        <div className={styles.avatar}>{shortName}</div>
         <div className={styles.avatardetails}>
-          <div className={styles.id}>CL273874</div>
-          <div className={styles.name}>Anjali Mishra</div>
+          <div className={styles.id}>{id}</div>
+          <div className={styles.name}>{investor?.name}</div>
         </div>
       </div>
 
       <div className={styles.hr_header}></div>
+
       <section className={styles.details_section}>
         <div className={styles.name}>
           <div className={styles.heading}>Name</div>
@@ -70,9 +80,6 @@ export default function Details_Com() {
           <div className={styles.heading}>Email</div>
           <div className={styles.emailChange}>
             <div className={styles.value}>{investor?.email}</div>
-            {/* <a className={styles.Link} onClick={() => setShowEmailModal(true)}>
-              change{" "}
-            </a> */}
             <ChangeEmail
               isOpen={showemailModal}
               onClose={() => setShowEmailModal(false)}
@@ -86,9 +93,6 @@ export default function Details_Com() {
           <div className={styles.heading}>Mobile Number</div>
           <div className={styles.mobileChange}>
             <div className={styles.value}>{investor?.phone || "N/A"}</div>
-            {/* <a className={styles.Link} onClick={() => setShowPhoneModal(true)}>
-              change{" "}
-            </a> */}
             <ChangePhone
               isOpen={showphoneModal}
               onClose={() => setShowPhoneModal(false)}
@@ -99,12 +103,9 @@ export default function Details_Com() {
         <div className={styles.hr}></div>
 
         <div className={styles.inverstor}>
-          <div className={styles.heading}>Inverstor Type</div>
+          <div className={styles.heading}>Investor Type</div>
           <div className={styles.otp}>
             <div className={styles.value}>{investor?.type || "N/A"}</div>
-            {/* <a className={styles.Link} onClick={() => setShowOtp(true)}>
-              otp
-            </a> */}
             <Otp isOpen={showOtp} onClose={() => setShowOtp(false)} />
           </div>
         </div>

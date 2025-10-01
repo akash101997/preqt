@@ -55,7 +55,7 @@ function OnboardingPageContent() {
       </button>
 
       <img
-        src="/assets/pictures/logo.svg"
+        src="/logo.png"
         alt="Preqt Logo"
         className={styles.logo}
       />
