@@ -260,7 +260,9 @@
   width: 100%;
   background: #1D1D1D;
   padding: 20px;
+  padding-bottom: calc(20px + env(safe-area-inset-bottom)); 
   z-index: 1000;
+  -webkit-transform: translateZ(0);
 }
 
 .fixedBottomBtn button {
