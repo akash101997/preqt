@@ -151,7 +151,8 @@ const Namedetailsection = ({ slug }) => {
               <span className="dea">{isPrivateDeal ? "Private Deal" : "Exclusive Deal"} </span>
             </div>
           </Link>
-          {/* <div><ShareIcon/></div> */}
+      <div>
+            <div><ShareIcon/></div>
           <div
             className="bell-icon"
             onClick={() => setBellactive(!bellactive)}>
@@ -161,6 +162,7 @@ const Namedetailsection = ({ slug }) => {
               <BellOff />
             )}
           </div>
+      </div>
         </section>
 
         <div className="body-maincontainer">

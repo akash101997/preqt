@@ -1,5 +1,5 @@
 .footer {
-  background:#060606; /* dark background */
+  background:#000000; /* dark background */
   color: #FFFFFF;
   padding: 60px 69px;
   display: grid;
@@ -109,6 +109,7 @@
 
 @media(max-width:760px){
   .nav{
+    
        padding: 0px;
          display: grid;
          justify-items: start;
@@ -117,6 +118,9 @@
         gap: 10px;
   }
 
+  .nav a {
+    margin: 0px;
+  }
    
   .footer{
      padding: 24px 18px;
