@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import FAQSection from "@/app/components/home/FAQSection/FAQSection";
 
 import "./namesection.css";
-
+import { useRouter } from "next/navigation";
 import Accountfooter from '@/app/account/footer/Accountfooter'
 import Customnavbar from "../customnavbarsection/customnavbar";
 import AskAiSection from "../ask-ai-section/Ask-ai-section";
@@ -39,7 +39,7 @@ const Namedetailsection = ({ slug }) => {
     setIsQuesAnsActive(flag);
   }
 
-
+const router = useRouter();
 
  const dealsIndex = {
     "acmpl-deals": {
@@ -132,25 +132,28 @@ const Namedetailsection = ({ slug }) => {
           <span className="dea">{isPrivateDeal ? "Private Deal" : "Exclusive Deal"} </span> */}
         </section> 
         <section className="mob-topbar">
-           <Link href="/">
-            <div className="breadcrumArrow">
-              <svg
-
-                viewBox="0 0 8 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M7 13L1 7L7 1"
-                  stroke="black"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="dea">{isPrivateDeal ? "Private Deal" : "Exclusive Deal"} </span>
-            </div>
-          </Link> 
+          <button
+        className="breadcrumArrow"
+        onClick={() => router.back()}
+        style={{ cursor: "pointer" ,all: "unset", display: "flex", alignItems: "center", gap: "18px"}}
+      >
+        <svg
+          viewBox="0 0 8 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7 13L1 7L7 1"
+            stroke="black"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        <span className="dea">
+          {isPrivateDeal ? "Private Deal" : "Exclusive Deal"}
+        </span>
+      </button>
       <div>
             <div><ShareIcon/></div>
 

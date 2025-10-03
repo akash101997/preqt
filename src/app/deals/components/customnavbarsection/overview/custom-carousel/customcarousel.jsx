@@ -12,8 +12,7 @@ const FirstCarousel = ({ isPrivateDeal }) => {
 
 
   const getYoutubeEmbedUrl = (url) => {
-    const regExp =
-      /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
     const match = url.match(regExp);
     return match && match[2].length === 11
       ? `https://www.youtube.com/embed/${match[2]}?rel=0&modestbranding=1`
@@ -50,7 +49,7 @@ const FirstCarousel = ({ isPrivateDeal }) => {
                   className={`d-block w-100 carouselImages`}
                   src={item}
                   alt={`Slide ${i + 1}`}
-                  style={{ height: "fit-content", objectFit: "contain" }}
+                  style={{ height: "auto", objectFit: "contain" }}
                 />
               )}
             </Carousel.Item>
