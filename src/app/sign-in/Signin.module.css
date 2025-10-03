@@ -178,6 +178,7 @@
 
 @media (max-width: 480px) {
   .pageWrapper {
+    height: 100vh;
     padding: 0 15px;
   }
   
