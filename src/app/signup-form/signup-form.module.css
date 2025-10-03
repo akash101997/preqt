@@ -146,9 +146,11 @@ text-transform: capitalize;
 
 @media (max-width: 480px) {
   .wrapper {
-    padding-top: 24px;
+    
+    padding-top: unset;
     padding-left: 15px;
     padding-right: 15px;
+    justify-content: center;
   }
   
   .backBtn {
