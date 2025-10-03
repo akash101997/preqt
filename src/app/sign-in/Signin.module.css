@@ -1,9 +1,10 @@
 .pageWrapper {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   /* align-items: center; */
   justify-content: center;
   background: #ffffff;
+  overflow: hidden; /* prevent tiny viewport scroll on mobile */
 }
 
 .card {
@@ -178,7 +179,7 @@
 
 @media (max-width: 480px) {
   .pageWrapper {
-    height: 100vh;
+    min-height: 100dvh;
     padding: 0 15px;
   }
   
