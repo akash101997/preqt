@@ -1,18 +1,27 @@
 'use client'
+
 import React, { useEffect, useRef, useState } from "react";
 import "./chatbot.css";
 import Cookies from "js-cookie";
 import { usePathname } from "next/navigation";
 
-const Chatbot = ({ onBack, isPrivateDeal, showInModal = false, onClose }) => {
+const Chatbot = ({ onBack, showInModal = false, onClose }) => {
   const pathname = usePathname();
-  const slug = pathname?.split("/deals/")[1] || ""; 
+  const slug = pathname?.split("/deals/")[1] || "";
 
+  // Map of deals to documents
   const documentMap = {
     "hvr-solar-deals": "HVR_Solar_extended",
     "ashwini-container-movers-limited": "Red_Herring_Prospectus_Ashwini_Container_Movers_Limited"
   };
-  const selectedDocument = documentMap[slug] || "Red_Herring_Prospectus_Ashwini_Container_Movers_Limited";
+
+  // Select document based on slug
+  const selectedDocument =
+    documentMap[slug] || "Red_Herring_Prospectus_Ashwini_Container_Movers_Limited";
+
+  // Explicitly mark private deals
+  const isPrivate = !!documentMap[slug]; 
+  // e.g. slug = "hvr-solar-deals" → true
 
   const defaultquestions = [
     "What’s the valuation and revenue of this company?",
@@ -30,21 +39,22 @@ const Chatbot = ({ onBack, isPrivateDeal, showInModal = false, onClose }) => {
   const userId = allData ? JSON.parse(allData)?.id : "user";
   const storageKey = `chatbot_${userId}_${selectedDocument}`;
 
-  // Load saved chats from localStorage
+  // Load saved chats
   useEffect(() => {
     const savedChats = localStorage.getItem(storageKey);
     if (savedChats) setUserChat(JSON.parse(savedChats));
   }, [storageKey]);
 
-  // Save chats to localStorage
+  // Save chats
   useEffect(() => {
     if (userChat.length > 0) localStorage.setItem(storageKey, JSON.stringify(userChat));
   }, [userChat, storageKey]);
 
-  // Scroll to bottom on new message
+  // Scroll to bottom
   useEffect(() => {
     if (!chatContainerRef.current) return;
-    chatContainerRef.current.scrollTop = userChat.length > 0 ? chatContainerRef.current.scrollHeight : 0;
+    chatContainerRef.current.scrollTop =
+      userChat.length > 0 ? chatContainerRef.current.scrollHeight : 0;
   }, [userChat]);
 
   // Handle modal overflow
@@ -52,23 +62,6 @@ const Chatbot = ({ onBack, isPrivateDeal, showInModal = false, onClose }) => {
     document.body.style.setProperty("overflow", showInModal ? "hidden" : "", "important");
     return () => document.body.style.setProperty("overflow", "", "important");
   }, [showInModal]);
-
-
-  // useEffect(() => {
-  //   const clearChatbot = () => {
-  //     Object.keys(localStorage).forEach((key) => {
-  //       if (key.startsWith("chatbot_")) localStorage.removeItem(key);
-  //     });
-  //     setUserChat([]); 
-  //   };
-
- 
-  //   window.addEventListener("logout", clearChatbot);
-
-  //   if (!Cookies.get("accessToken")) clearChatbot();
-
-  //   return () => window.removeEventListener("logout", clearChatbot);
-  // }, []);
 
   // Ask AI
   const askAI = async (userQuestion) => {
@@ -87,7 +80,7 @@ const Chatbot = ({ onBack, isPrivateDeal, showInModal = false, onClose }) => {
     }
   };
 
-  // Handle sending message
+  // Handle send
   const handleSend = async (userQuestion) => {
     if (!userQuestion.trim()) return;
     const newChat = { user: userQuestion, ai: "" };
@@ -105,13 +98,14 @@ const Chatbot = ({ onBack, isPrivateDeal, showInModal = false, onClose }) => {
     );
   };
 
-  const renderChatbotUI = (isPrivateDeal = false) => (
-    <div className={`chatbot-maincontainer ${isPrivateDeal ? "private-deal" : ""}`}>
+  // Render Chatbot UI
+  const renderChatbotUI = () => (
+    <div className={`chatbot-maincontainer ${isPrivate ? "private-deal" : ""}`}>
       {/* Header */}
       <section className="chatbot-head">
         <svg
           className="arrow"
-          onClick={() => onBack(false)}
+          onClick={() => onBack && onBack(false)}
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +127,11 @@ const Chatbot = ({ onBack, isPrivateDeal, showInModal = false, onClose }) => {
 
             <section className="default-chatbot-data">
               {defaultquestions.map((q, index) => (
-                <p key={index} onClick={() => handleSend(q)} className="default-question cursor-pointer">
+                <p
+                  key={index}
+                  onClick={() => handleSend(q)}
+                  className="default-question cursor-pointer"
+                >
                   {q}
                 </p>
               ))}
@@ -145,7 +143,9 @@ const Chatbot = ({ onBack, isPrivateDeal, showInModal = false, onClose }) => {
           <div key={idx} className="chat-block">
             <div className="chat-bubble user-bubble animate">{chat.user}</div>
             {loading === idx ? (
-              <div className="chat-bubble ai-bubble typing"><span></span><span></span><span></span></div>
+              <div className="chat-bubble ai-bubble typing">
+                <span></span><span></span><span></span>
+              </div>
             ) : (
               chat.ai && (
                 <div
@@ -179,16 +179,17 @@ const Chatbot = ({ onBack, isPrivateDeal, showInModal = false, onClose }) => {
     </div>
   );
 
-if (!showInModal) return renderChatbotUI(isPrivateDeal);
+  // Render
+  if (!showInModal) return renderChatbotUI();
 
-return (
-  <div className="chatbot-modal-overlay">
-    <div className="chatbot-modal">
-      <button className="chatbot-modal-close" onClick={onClose}>✕</button>
-      {renderChatbotUI(isPrivateDeal)}
+  return (
+    <div className="chatbot-modal-overlay">
+      <div className="chatbot-modal">
+        <button className="chatbot-modal-close" onClick={onClose}>✕</button>
+        {renderChatbotUI()}
+      </div>
     </div>
-  </div>
-);
+  );
 };
 
 export default Chatbot;
