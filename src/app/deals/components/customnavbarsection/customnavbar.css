@@ -91,27 +91,10 @@
   background-color: #171717;
 }
 
-/* .tab-content-wrapper {
-  max-height: calc(100vh - 56px);
-  overflow-y: auto;
 
-  
-  scrollbar-width: none;
-
-  -ms-overflow-style: none;
-} */
-
-/* WebKit browsers (Chrome, Safari, newer Edge) — no space before ::-webkit-scrollbar */
-.tab-content-wrapper::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
 
 @media(max-width: 920px) {
   .first-navbar{
     width: 100%;
   }
 }
-
-
-

@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function NavBar() {
   const pathname = usePathname();
- const router = useRouter();
+  const router = useRouter();
 
   const [shortName, setShortName] = useState("");
   const [investorName, setInvestorName] = useState("");
@@ -18,13 +18,13 @@ export default function NavBar() {
 
 
   // Define deals data to check if deal is private
- const dealsData = {
+  const dealsData = {
     "acmpl-deals": { deal: "public" },
     "hvr-solar-deals": { deal: "private" },
     // add more slugs here if needed
   };
 
- let isPrivateDeal = false;
+  let isPrivateDeal = false;
   if (pathname.startsWith("/deals/")) {
     const slug = pathname.split("/deals/")[1];
     const activeDeal = dealsData[slug];
@@ -40,7 +40,7 @@ export default function NavBar() {
     if (menuOpen) {
       // Save current scroll position
       const scrollY = window.scrollY;
-  
+
       // Apply styles to lock background
       document.documentElement.style.setProperty("overflow", "hidden", "important");
       document.body.style.setProperty("overflow", "hidden", "important");
@@ -55,13 +55,13 @@ export default function NavBar() {
       document.body.style.setProperty("position", "", "important");
       document.body.style.setProperty("top", "", "important");
       document.body.style.setProperty("width", "", "important");
-  
+
       // Restore scroll position
       if (scrollY) {
         window.scrollTo(0, parseInt(scrollY || "0") * -1);
       }
     }
-  
+
     // Cleanup (when component unmounts)
     return () => {
       document.documentElement.style.setProperty("overflow", "", "important");
@@ -71,7 +71,7 @@ export default function NavBar() {
       document.body.style.setProperty("width", "", "important");
     };
   }, [menuOpen]);
-  
+
 
 
 
@@ -84,7 +84,7 @@ export default function NavBar() {
       if (investor.name) {
         // save full name
         setInvestorName(investor.name);
-         const lastSix = investor.id
+        const lastSix = investor.id
           ? investor.id.toString().slice(-6).toUpperCase()
           : "";
         setId(lastSix);
@@ -188,76 +188,76 @@ export default function NavBar() {
           className={styles.openedSideMenu}
           onClick={(e) => e.stopPropagation()}
         >
-         <div>
-           <Image
-                src="/logo.png"
-                alt="logo"
-                width={128}   // set width as needed
-                height={40}   // set height as needed
-                priority 
-                style={{paddingLeft : '10px'}} // makes sure logo loads fast
-              />
-          <div className={styles.menuContainer}>
-           
+          <div>
+            <Image
+              src="/logo.png"
+              alt="logo"
+              width={128}   // set width as needed
+              height={40}   // set height as needed
+              priority
+              style={{ paddingLeft: '10px' }} // makes sure logo loads fast
+            />
+            <div className={styles.menuContainer}>
 
-            <div className={styles.menuContainer_main}>
-             
-              <Link className={styles.profile} href="/account/details" onClick={() => setMenuOpen(false)}>
 
-                <div className={styles.avatar}>{shortName}</div>
-                <div className={styles.avatardetails}>
-                  <div className={styles.avatardetails_main}>
-                    {/* <div className={styles.id}>CL273874</div> */}
-                         <div className={styles.id}>{id}</div>
-                    <div className={styles.name}>{investorName}</div>
+              <div className={styles.menuContainer_main}>
+
+                <Link className={styles.profile} href="/account/details" onClick={() => setMenuOpen(false)}>
+
+                  <div className={styles.avatar}>{shortName}</div>
+                  <div className={styles.avatardetails}>
+                    <div className={styles.avatardetails_main}>
+                      {/* <div className={styles.id}>CL273874</div> */}
+                      <div className={styles.id}>{id}</div>
+                      <div className={styles.name}>{investorName}</div>
+                    </div>
+
+                    <div className={styles.arrow}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                      >
+                        <path
+                          d="M7.5 15L12.5 10L7.5 5"
+                          stroke="#4B5563"
+                          strokeWidth="1.66667"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
                   </div>
+                </Link>
 
-                  <div className={styles.arrow}>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                    >
-                      <path
-                        d="M7.5 15L12.5 10L7.5 5"
-                        stroke="#4B5563"
-                        strokeWidth="1.66667"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </Link>
-
-              {/* <Link className={styles.homeNavButton} href="/">
+                {/* <Link className={styles.homeNavButton} href="/">
                 <img src="/assets/pictures/home.svg" alt="" />
                 <div className={styles.homebtn}>Home</div>
               </Link> */}
-              <Link className={styles.homeNavButton} href="/deals" onClick={() => setMenuOpen(false)}>
-                <img src="/deals/deals-menu.svg" alt="deals"/>
-                <div className={styles.homebtn}>Deals</div>
-              </Link>
-              <Link
-                className={styles.homeNavButton}
-                href="/community"
-                onClick={() => setMenuOpen(false)}
-              >
-                <img src="/assets/pictures/community.svg" alt="" />
-                <div className={styles.homebtn}>Community</div>
-              </Link>
-              <Link className={styles.homeNavButton} href="/events" onClick={() => setMenuOpen(false)}>
-                <img src="/assets/pictures/events.svg" alt="" />
-                <div className={styles.homebtn}>Events</div>
-              </Link>
-              <Link className={styles.homeNavButton} href={"/account"} onClick={() => setMenuOpen(false)}>
-                <img src="/assets/pictures/account.svg" alt="" />
-                <div className={styles.homebtn}>Account</div>
-              </Link>
+                <Link className={styles.homeNavButton} href="/deals" onClick={() => setMenuOpen(false)}>
+                  <img src="/deals/deals-menu.svg" alt="deals" />
+                  <div className={styles.homebtn}>Deals</div>
+                </Link>
+                <Link
+                  className={styles.homeNavButton}
+                  href="/community"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <img src="/assets/pictures/community.svg" alt="" />
+                  <div className={styles.homebtn}>Community</div>
+                </Link>
+                <Link className={styles.homeNavButton} href="/events" onClick={() => setMenuOpen(false)}>
+                  <img src="/assets/pictures/events.svg" alt="" />
+                  <div className={styles.homebtn}>Events</div>
+                </Link>
+                <Link className={styles.homeNavButton} href={"/account"} onClick={() => setMenuOpen(false)}>
+                  <img src="/assets/pictures/account.svg" alt="" />
+                  <div className={styles.homebtn}>Account</div>
+                </Link>
+              </div>
             </div>
-          </div>
           </div>
 
           {/* logout */}
@@ -361,7 +361,10 @@ export default function NavBar() {
         show={showLogout}
         onClose={() => setShowLogout(false)}
         onLogout={() => {
-          Cookies.remove("accessToken"); router.push("/sign-in")
+          Cookies.remove("accessToken"); router.push("/sign-in");
+          Object.keys(localStorage).forEach((key) => {
+            if (key.startsWith("chatbot_")) localStorage.removeItem(key);
+          });
           // /Addedcomment
         }}
       />}
