@@ -373,7 +373,6 @@
 @media(max-width:920px){
   /* Modal takes viewport height so inner layout can stick */
   .chatbot-modal {
-   
     width: 90%;
     max-width: 600px;
     /* height: 90vh; */
@@ -439,7 +438,9 @@
 
   .chatbot-body-section2 {
     padding: 10px;
-    min-height: 55px !important;
+    min-height: unset !important;
+    height: 55px;
+    border-radius: 16px;
   }
 
   .chatbot-body-section2 img {
