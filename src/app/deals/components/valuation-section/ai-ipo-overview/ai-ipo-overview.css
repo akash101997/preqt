@@ -309,4 +309,8 @@ width: 24px;
        .ipo-dropdown{
         margin-bottom: 10px;
        }
+
+       .seperator{
+        margin:10px 0;
+       }
 }

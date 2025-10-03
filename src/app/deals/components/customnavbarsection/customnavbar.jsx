@@ -23,26 +23,33 @@ const Customnavbar = ({ isPrivateDeal }) => {
     Documentation: useRef(null),
   };
 
-  useEffect(() => {
-    // Scroll active tab button into view
-    const activeTab = tabsRef.current?.querySelector(".nav-link.active");
-    if (activeTab) {
-      activeTab.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-        inline: "center",
-      });
-    }
+useEffect(() => {
+  // Scroll active tab button into view (horizontal scroll of nav)
+  const activeTab = tabsRef.current?.querySelector(".nav-link.active");
+  if (activeTab) {
+    activeTab.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+  }
 
-    // Reset content scroll to top for the active tab
-    const activeContent = contentRefs[key]?.current;
-    if (activeContent) {
-      activeContent.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }
-  }, [key]);
+  // Scroll the page so the tab content starts right under the sticky navbar
+  const activeContent = contentRefs[key]?.current;
+  if (activeContent) {
+    const navbarHeight = tabsRef.current?.offsetHeight || 0;
+    const topOffset =
+      activeContent.getBoundingClientRect().top +
+      window.scrollY -
+      navbarHeight;
+
+    window.scrollTo({
+      top: topOffset,
+      behavior: "smooth",
+    });
+  }
+}, [key]);
+
 
   return (
     <div className="first-navbar">

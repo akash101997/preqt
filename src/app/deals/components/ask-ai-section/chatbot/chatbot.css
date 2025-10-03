@@ -397,7 +397,7 @@
     overflow: hidden;
     position: relative;
     top: auto;
-    min-height: 0; /* allow inner flex child to shrink and scroll */
+    min-height: 90vh; /* allow inner flex child to shrink and scroll */
   }
 
   /* Sticky header at top inside modal */
@@ -428,34 +428,10 @@
   }
   
   /* Preserve private-deal theme inside modal on mobile */
-  .private-deal {
-    background-color: #171717 !important;
-  }
-
-  .private-deal .chatbot-head {
-    border-bottom: 1px solid #FFFFFF1A;
-    background: #000 !important;
-  }
-
-  .private-deal .chatbot-head h2 {
-    color: white !important;
-  }
-
-  .private-deal .chatbot-head .arrow path {
-    stroke: white;
-  }
-
-  .private-deal .default-chatbot-data p {
-    color: #ffff !important;
-    border: 1px solid #FFFFFF26 !important;
-  }
-
-  .private-deal .chatbot-body-section2,
-  .private-deal .chatbot-body-section2 input {
-    background-color: #000 ;
-    color: #6B7280;
-    border-color: #FFFFFF26;
-  }
+ .private-deal-modal .chatbot-maincontainer {
+  background: #1a1a1a; /* or your private-deal styles */
+  color: white;
+}
 
 }
 
