@@ -45,7 +45,7 @@ const LastCarousel = ({isPrivateDeal}) => {
               className="d-block w-100"
               src={img}
               alt={`Slide ${i + 1}`}
-              style={{ height: "340px", objectFit: "contain" , objectFit:"cover" }}
+              style={{ height: "auto", objectFit: "contain" , width:"100%" }}
             />
           </Carousel.Item>
         ))}

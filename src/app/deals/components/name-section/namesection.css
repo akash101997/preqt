@@ -1692,7 +1692,7 @@ margin-bottom: 0;
 
   .mob-topbar div {
     display: flex;
-    gap: 20px;
+    gap: 18px;
     align-items: baseline;
   }
    .mob-topbar .breadcrumArrow svg {
@@ -2412,7 +2412,7 @@ margin-bottom: 0;
 
   .mob-topbar div {
     display: flex;
-    gap: 20px !important;
+    gap: 18px ;
     align-items: center;
   }
 
