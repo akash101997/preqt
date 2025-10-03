@@ -1,5 +1,5 @@
 .wrapper { 
-  min-height: 100vh; 
+  min-height: 100dvh; 
   max-width: 632px; 
   display: flex; 
   flex-direction: column; 
@@ -10,6 +10,7 @@
   padding-right: 16px; 
   margin: 0 auto; 
   position: relative; 
+  overflow: hidden;
 }
 .backBtn { 
   position: absolute; 
