@@ -6,6 +6,7 @@ import styles from "./signup-form.module.css";
 import { toast } from "react-toastify";
 import Cookies from "js-cookie";
 import Loader from "../components/Loader";
+import { showErrorToast, showSuccessToast } from "../components/ToastProvider";
 
 function SignupFormPageContent() {
   const router = useRouter();
@@ -52,18 +53,18 @@ function SignupFormPageContent() {
 
       if (!response.ok) {
         const result = await response.json();
-        toast.error(`${result.message}` || "Registration failed");
+        showErrorToast(`${result.message}` || "Registration failed");
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       const result = await response.json();
       console.log("Registration successful:", result);
-      toast.success("Registration successful:");
+      showSuccessToast("Registration successful:");
       Cookies.set("verifyOtp", true)
       router.push(`/otp?email=${encodeURIComponent(registerFormData.email)}`);
     } catch (error) {
       console.error("Registration failed:", error);
-      toast.error("Registration failed. Please try again.");
+      showErrorToast("Registration failed. Please try again.");
       setSubmitError("Registration failed. Please try again.");
     } finally {
       setIsSubmitting(false);
