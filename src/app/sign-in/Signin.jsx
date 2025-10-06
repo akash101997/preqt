@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./Signin.module.css";
-import { toast } from "react-toastify";
+import { showErrorToast } from "../components/ToastProvider";
 import Cookies from "js-cookie";
 
 const Signin = () => {
@@ -36,7 +36,7 @@ const Signin = () => {
 
       const data = await response.json();
       if (!response.ok) {
-        toast.error(data.message || "Something went wrong. Please try again.");
+        showErrorToast(data.message || "Something went wrong. Please try again.");
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
@@ -44,7 +44,6 @@ const Signin = () => {
       router.replace(`/otp?email=${encodeURIComponent(email)}`);
     } catch (error) {
       console.error("Login error:", error);
-      toast.error("Something went wrong");
     } finally {
       setLoading(false);
     }

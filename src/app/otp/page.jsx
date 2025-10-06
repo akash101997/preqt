@@ -5,6 +5,7 @@ import styles from "./otp.module.css";
 import { toast } from "react-toastify";
 import Cookies from "js-cookie";
 import Loader from "../components/Loader";
+import { showErrorToast, showSuccessToast } from "../components/ToastProvider";
 
 function OtpPageContent() {
   const params = useSearchParams();
@@ -75,7 +76,7 @@ function OtpPageContent() {
 
       const data = await response.json();
       if (!response.ok) {
-        toast.error(data.message || "Something went wrong. Please try again.");
+        showErrorToast(data.message || "Something went wrong. Please try again.");
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
@@ -121,13 +122,13 @@ function OtpPageContent() {
 
       const data = await response.json();
       if (!response.ok) {
-        toast.error(data.message || "Failed to resend OTP. Please try again.");
+        showErrorToast(data.message || "Failed to resend OTP. Please try again.");
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       setSeconds(60);
       setCanResend(false);
-      toast.success("OTP has been resent to your email");
+      showSuccessToast("OTP has been resent to your email");
     } catch (error) {
       console.error("Resend OTP error:", error);
     }
