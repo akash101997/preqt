@@ -51,7 +51,7 @@
 //   }}>
 //       <NewFooter/>
 // </div>
-    
+
 //         {/* <Footer /> */}
 //     </div>
 //   );
@@ -61,6 +61,7 @@ import { usePathname, useRouter } from "next/navigation";
 import NavBar from "./common/navBar/NavBar";
 import NewFooter from "./common/navBar/new-footer/NewFooter";
 import { useEffect, useState } from "react";
+import LandingPageHeader from "./components/LandingPage/LandingPageHeader";
 
 export default function ClientChrome({ children }) {
   const pathname = usePathname();
@@ -107,23 +108,24 @@ export default function ClientChrome({ children }) {
         flexDirection: "column",
       }}
     >
-      <NavBar />
+      {/* <NavBar /> */}
+      <LandingPageHeader />
 
       <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
         {children}
       </div>
 
 
-    <div className="newNav"   style={{
-    marginBottom: isPrivateDeal ? "110px" : "0px"
-  }}
->
-      <NewFooter/>
-  
+      <div className="newNav" style={{
+        marginBottom: isPrivateDeal ? "110px" : "0px"
+      }}
+      >
+        <NewFooter />
 
-</div>
-    
-        {/* <Footer /> */}
+
+      </div>
+
+      {/* <Footer /> */}
 
       {/* <div
         className="newNav"
