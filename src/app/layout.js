@@ -51,15 +51,15 @@ export default function RootLayout({ children }) {
           </MultiStepProvider>
         </Suspense>
         <ToastContainer
-         toastClassName="customToast"
-        bodyClassName="customBody"
-        progressClassName="customProgress"
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        closeOnClick
-        pauseOnHover
-        draggable />
+          toastClassName="customToast"
+          bodyClassName="customBody"
+          progressClassName="customProgress"
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          closeOnClick
+          pauseOnHover
+          draggable />
       </body>
     </html>
   );

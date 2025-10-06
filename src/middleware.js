@@ -7,7 +7,7 @@ export function middleware(request) {
   const verifyOtp = request.cookies.get("verifyOtp")?.value == "true";
 
   const securePaths = [
-    "/",
+    // "/",
     "/account",
     "/account/:path*",
     "/community",
@@ -70,7 +70,7 @@ export function middleware(request) {
 
 export const config = {
   matcher: [
-    "/",
+    // "/",
     "/sign-in",
     "/signup",
     "/reset-password/:path*",
