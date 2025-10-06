@@ -65,9 +65,7 @@ const router = useRouter();
   };
 
 
-  const activeDeal = dealsIndex[slug] ?? dealsIndex["hvr-solar-deals"]; // default to 2 to match current content
-
-  // Determine if this is a private deal for theme switching
+  const activeDeal = dealsIndex[slug] ?? dealsIndex["hvr-solar-deals"]; 
   const isPrivateDeal = activeDeal.deal === "private";
 
 
@@ -109,6 +107,7 @@ const router = useRouter();
   return (
     <div className={`main-container ${isPrivateDeal ? 'private-deal-theme' : ''}`}>
       <div className="subcontainer">
+      
         <section className="topbar">
           {/* <Link href="/">
             <span className="home">Home</span>
@@ -156,6 +155,7 @@ const router = useRouter();
       </button>
       <div>
             <div><ShareIcon/></div>
+  
 
                      {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path d="M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 6.65685 16.3431 8 18 8Z" stroke="#B59131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

@@ -245,6 +245,7 @@ function AllDealsContent() {
                     ))}
                 </div>
             </div>
+            {/* <CustomTost/> */}
         </section>
     );
 }

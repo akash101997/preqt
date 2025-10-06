@@ -1,3 +1,4 @@
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,6 +10,7 @@ import Head from "next/head";
 import ClientChrome from "./ClientChrome";
 import Loader from "./components/Loader";
 import ToastProvider from "./components/ToastProvider";
+import { ToastContainer } from "react-toastify";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -23,7 +25,13 @@ export const metadata = {
   title: "Pre Equity",
 };
 
-export default function RootLayout({ children }) {
+
+export default function RootLayout({ children  }) {
+
+
+  
+  
+
   return (
     <html lang="en">
       <Head>
@@ -50,7 +58,19 @@ export default function RootLayout({ children }) {
             <ClientChrome>{children}</ClientChrome>
           </MultiStepProvider>
         </Suspense>
-       <ToastProvider/>
+        <ToastContainer
+         toastClassName="customToast"
+        bodyClassName="customBody"
+        progressClassName="customProgress"
+        position="top-right"
+        autoClose={9000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        
+         />
+       <ToastProvider />
       </body>
     </html>
   );

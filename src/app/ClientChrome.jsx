@@ -98,6 +98,7 @@ export default function ClientChrome({ children }) {
   }
 
   // console.log("ddssfsfvfe",isPrivateDeal)
+  // console.log("ddssfsfvfe",isPrivateDeal)
   return (
     <div
       className={isPrivateDeal ? "private-deal-theme" : ""}
@@ -118,6 +119,8 @@ export default function ClientChrome({ children }) {
     marginBottom: isPrivateDeal ? "110px" : "0px"
   }}
 >
+
+
       <NewFooter/>
   
 
