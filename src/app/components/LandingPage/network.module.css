@@ -1,0 +1,103 @@
+.networkStack {
+    background: #111;
+    padding: 80px 0;
+}
+
+.counterDiv {
+    display: flex;
+    padding: 40px 60px;
+    align-items: center;
+    gap: 60px;
+    border-radius: 32px;
+    border: 1px solid rgba(171, 171, 171, 0.20);
+    background: #1A1A1A;
+    max-width: max-content;
+    margin: auto;
+    margin-bottom: -83px;
+    position: relative;
+    z-index: 9;
+}
+
+
+.verticalLine {
+    width: 50px;
+    height: 1px;
+    transform: rotate(90deg);
+    background: rgba(171, 171, 171, 0.20);
+}
+
+.valueDiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.valueDiv div {
+    color: #FFF;
+    text-align: center;
+    font-family: "Helvetica Neue";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    /* 62.4px */
+}
+
+.valueDiv p {
+    color: #A1A1AA;
+    text-align: center;
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: unset;
+}
+
+.mainContainer {
+    z-index: 8;
+    border-radius: 160px 160px 0 0;
+    border-top: 1px solid rgba(171, 171, 171, 0.40);
+    background: radial-gradient(70.71% 70.71% at 50% 50%, #281D03 0%, #111 55.7%);
+    padding: 100px 0;
+    background: url(/dots-layer.svg) center top no-repeat;
+}
+
+.headingDiv {
+    text-align: center;
+    margin: 60px 0px;
+    color: white;
+}
+
+.headingDiv>div {
+    max-width: max-content;
+    margin: auto;
+}
+
+.headingDiv h1 {
+    font-size: 55px;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(180deg, #FFFFFF 60%, #d8bf7e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.headingDiv h1 span {
+    background: linear-gradient(180deg, #fdf7fe 0%, #d8bf7e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.headingDiv p {
+    color: #FFF;
+    text-align: center;
+    font-family: "Helvetica Neue";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: unset;
+    max-width: 470px;
+    margin: 40px auto 0 auto;
+}
