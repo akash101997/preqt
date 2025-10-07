@@ -28,7 +28,10 @@ function OtpPageContent() {
     return () => clearTimeout(t);
   }, [seconds]);
 
-  const isValidOtp = useMemo(() => otp.every((digit) => /^\d$/.test(digit)), [otp]);
+  const isValidOtp = useMemo(
+    () => otp.every((digit) => /^\d$/.test(digit)),
+    [otp]
+  );
 
   const handleChange = (value, index) => {
     if (!/^\d?$/.test(value)) return; // only single digit allowed
@@ -47,6 +50,7 @@ function OtpPageContent() {
   const handlePaste = (e) => {
     e.preventDefault();
     const pasteData = e.clipboardData.getData("text").replace(/\D/g, "");
+
     if (!pasteData) return;
     const newOtp = [...otp];
     for (let i = 0; i < 6; i++) newOtp[i] = pasteData[i] || "";
@@ -57,6 +61,7 @@ function OtpPageContent() {
     }
   };
 
+  // ---- Proceed
   const handleProceed = async (e) => {
     e.preventDefault();
     if (!isValidOtp || loading) return;
@@ -69,6 +74,7 @@ function OtpPageContent() {
         `${process.env.NEXT_PUBLIC_USER_BASE}investor/api/investor/verify-email-otp`,
         {
           method: "POST",
+          headers: { "Content-Type": "application/json" },
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, otp: otpString }),
         }
@@ -85,21 +91,25 @@ function OtpPageContent() {
       localStorage.removeItem("registerFormData");
 
       if (token) Cookies.set("accessToken", token);
+      if (token) Cookies.set("accessToken", token);
       if (investor) {
-        const simplifiedInvestor = {
-          id: investor.id,
-          name: investor.full_name,
-          username: investor.user_name,
-          email: investor.email,
-          emailVerified: investor.email_verification_status,
-          phone: investor.phone_number,
-          type: investor.investor_type,
-          organization: investor.organization,
-          designation: investor.designation,
-          location: investor.location,
-        };
-        Cookies.set("investor", JSON.stringify(simplifiedInvestor));
+        Cookies.set(
+          "investor",
+          JSON.stringify({
+            id: investor.id,
+            name: investor.full_name,
+            username: investor.user_name,
+            email: investor.email,
+            emailVerified: investor.email_verification_status,
+            phone: investor.phone_number,
+            type: investor.investor_type,
+            organization: investor.organization,
+            designation: investor.designation,
+            location: investor.location,
+          })
+        );
       }
+
       Cookies.remove("verifyOtp");
       window.location.replace("/");
     } catch (error) {
@@ -109,12 +119,14 @@ function OtpPageContent() {
     }
   };
 
+  // ---- Resend
   const handleResendOtp = async () => {
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_USER_BASE}investor/api/investor/resend-email-otp`,
         {
           method: "POST",
+          headers: { "Content-Type": "application/json" },
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email }),
         }
@@ -131,6 +143,18 @@ function OtpPageContent() {
       showSuccessToast("OTP has been resent to your email");
     } catch (error) {
       console.error("Resend OTP error:", error);
+      toast.error("Something went wrong. Please try again.", {
+        icon: <CustomFailIcon />,
+        style: {
+          width: "600px ",
+          fontSize: "30px",
+          fontWeight: "600",
+          color: "#C8746A", // solid text color
+          background: "#FFFFFF", // background of toast
+          padding: "0px 24px",
+          borderRadius: "8px",
+        },
+      });
     }
   };
 
@@ -141,9 +165,11 @@ function OtpPageContent() {
         ←
       </button>
 
+
       <img src="/logo.png" alt="Preqt Logo" className={styles.logo} />
       <h1 className={styles.title}>Enter OTP To Verify</h1>
       <p className={styles.subtitle}>Enter 6 digit OTP sent to {email}</p>
+      {/* <p className={styles.subtitle}>Enter 6 digit OTP sent to {email}</p> */}
 
       <form className={styles.form} onSubmit={handleProceed}>
         {/* OTP Inputs */}
@@ -159,6 +185,7 @@ function OtpPageContent() {
                 onChange={(e) => handleChange(e.target.value, i)}
                 onKeyDown={(e) => handleKeyDown(e, i)}
                 onPaste={handlePaste}
+            
                 ref={(el) => (inputRefs.current[i] = el)}
                 className={styles.otpInput}
               />

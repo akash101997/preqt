@@ -471,6 +471,15 @@ font-size: 20px;
   .section-body h2{
     margin-bottom: 15px !important;
   }
+  .revenue-count{
+   gap: 0px;
+  }   
+  .s22{
+    gap: 5px;
+  }
+  .s22 span svg{
+    display: none;
+  }
 }
 
 

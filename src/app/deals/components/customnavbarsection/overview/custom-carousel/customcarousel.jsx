@@ -49,7 +49,7 @@ const FirstCarousel = ({ isPrivateDeal }) => {
                   className={`d-block w-100 carouselImages`}
                   src={item}
                   alt={`Slide ${i + 1}`}
-                  style={{ height: "auto", objectFit: "contain" }}
+                  style={{ height: "340px",width:"100%" , objectFit: "contain" }}
                 />
               )}
             </Carousel.Item>

@@ -1780,10 +1780,6 @@ margin-bottom: 0;
     flex-direction: row;
   }
 
-  .carousel-item img {
-    /* width: 100%; */
-    border-radius: 20px;
-  }
 
   .ask-ai-section {
     display: none;

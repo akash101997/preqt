@@ -18,6 +18,9 @@
     border-radius: 4px !important;
     margin-bottom: 8px !important; /* optional spacing if you want a gap below */
   }
+  .Toastify__progress-bar--success{
+    background: #FFF2D0 !important;
+  }
   
   /* Ensure the toast layout allows top placement */
   .customToast {
@@ -26,7 +29,7 @@
     position: relative !important;
     overflow: hidden !important;
     background: #fff !important;
-    color: #1e1e2f !important;
+    /* color: #1e1e2f !important; */
     border-radius: 4px !important;
     padding: 24px !important;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15) !important;
@@ -74,13 +77,27 @@
     gap: 12px;
 }
 
-.toastMessage {
-    flex: 1;
-    color: var(--Slate-700, #334155);
+.successToast .toastMessage {
+   flex: 1;
+      background: linear-gradient(to bottom, #FFF2D0, #8E6B0F); /* your gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
     font-family: "Helvetica Neue";
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
+    line-height: 24px;
+
+}
+
+.errorToast .toastMessage {
+    flex: 1;
+    color: var(--Slate-700, #C8746A);
+    font-family: "Helvetica Neue";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
     line-height: 24px;
     /* 133.333% */
 }
@@ -96,4 +113,7 @@
     margin: 0;
     height: 15px;
     width: 15px;
+}
+.privateDeal .customToast{
+  background-color: black !important;
 }
