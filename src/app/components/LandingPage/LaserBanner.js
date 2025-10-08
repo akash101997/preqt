@@ -31,7 +31,7 @@ export default function LaserBanner() {
         <div
             className='landing-container'
             style={{
-                height: '140vh',
+                height: '648px',
                 position: 'relative',
                 // overflow: 'hidden',
                 backgroundColor: 'transparent'
@@ -67,7 +67,7 @@ export default function LaserBanner() {
                     Get early access to high-growth companies before they go public.</p>
                 <AnimatedBtn />
             </div>
-            <div style={{
+            { false && <div style={{
                 position: 'absolute',
                 top: 'calc(68vh - 15px)',
                 left: 'calc(0% + 28px)',
@@ -83,7 +83,6 @@ export default function LaserBanner() {
                 fontSize: '2rem',
                 zIndex: 6,
             }}>
-                {/* Your content here */}
                 <div>
                     <div className={styles.imageParent}>
                         <img src="/laser-flow.png" style={{ height: '100%', width: '100%' }} />
@@ -91,7 +90,7 @@ export default function LaserBanner() {
                     </div>
                 </div>
 
-            </div>
+            </div>}
 
             <img
                 ref={revealImgRef}

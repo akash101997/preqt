@@ -6,10 +6,13 @@
 }
 
 .imageParent {
-    position: absolute;
+    /* position: absolute;
     top: 0;
     left: 0;
-    overflow: hidden;
+    overflow: hidden; */
+    /* margin-bottom: 100px; */
+    position: relative;
+    max-width: 86%;
 }
 
 .imageParent img {
@@ -62,7 +65,7 @@
 
 .overlayEffect {
     position: absolute;
-    top: 80%;
+    top: 75%;
     left: 0;
     max-height: 200px;
 }
@@ -81,7 +84,7 @@
 }
 
 .descText {
-    margin-top: -50px;
+    margin-top: 40px;
 }
 
 .descText>p {
