@@ -242,24 +242,24 @@ void main(){
 export const LaserFlow = ({
     className,
     style,
-    wispDensity = 1,
+    wispDensity = 2,
     dpr,
-    mouseSmoothTime = 0.0,
+    mouseSmoothTime = 1.0,
     mouseTiltStrength = 0.01,
     horizontalBeamOffset = 0.1,
     verticalBeamOffset = 0.0,
     flowSpeed = 0.35,
-    verticalSizing = 2.0,
+    verticalSizing = 4.0,
     horizontalSizing = 0.5,
-    fogIntensity = 0.45,
-    fogScale = 0.3,
-    wispSpeed = 15.0,
-    wispIntensity = 5.0,
+    fogIntensity = 0.0001,
+    fogScale = 0.5,
+    wispSpeed = 30.0,
+    wispIntensity = 10.0,
     flowStrength = 0.25,
     decay = 1.1,
-    falloffStart = 1.2,
-    fogFallSpeed = 0.6,
-    color = '#a79e7c'
+    falloffStart = 2.2,
+    fogFallSpeed = 1.6,
+    color = '#B4A26E'
 }) => {
     const mountRef = useRef(null);
     const rendererRef = useRef(null);

@@ -5,12 +5,20 @@
     pointer-events: none;
 }
 
+.imageParent {
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden; */
+    /* margin-bottom: 100px; */
+    position: relative;
+    max-width: 86%;
+}
+
 .imageParent img {
     height: auto;
     width: 100%;
-    display: none;
-    /* height: auto; */
-    /* max-w */
+
 }
 
 .bannerHeading {
@@ -30,7 +38,7 @@
 }
 
 .bannerHeading h1 span:first-child {
-    background: linear-gradient(180deg, #FFFFFF 0%, #FDF7FE 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #ffffff 50%, #D8BF7E 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -53,4 +61,57 @@
     line-height: 28px;
     letter-spacing: -0.778px;
     max-width: 576px;
+}
+
+.overlayEffect {
+    position: absolute;
+    top: 75%;
+    left: 0;
+    max-height: 200px;
+}
+
+.bottomText {
+    max-width: fit-content;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 16px 0;
+    color: #E5E7EB;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+    font-family: "Helvetica Neue";
+}
+
+.descText {
+    margin-top: 40px;
+}
+
+.descText>p {
+    color: #D4D4D8;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.dotIcon {
+    margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .bottomText {
+        flex-wrap: wrap;
+        font-size: 0.75rem;
+        padding: 1rem 0.5rem;
+    }
+
+    .bottomText>span {
+        padding: 0.25rem 0.4rem;
+    }
+}
+
+.mideSection {
+    background: linear-gradient(180deg, #111 0%, rgba(17, 17, 17, 0.00) 100%);
+    width: 100%;
+    height: 150px;
+    flex-shrink: 0;
 }

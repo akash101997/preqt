@@ -8,7 +8,7 @@ import AnimatedBtn from './AnimatedBtn';
 // NOTE: You can also adjust the variables in the shader for super detailed customization
 
 // Basic Usage
-<div style={{ height: '150vh', position: 'relative', overflow: 'hidden' }}>
+<div style={{ height: '1000', position: 'relative' }}>
     <LaserFlow />
 </div>
 
@@ -16,13 +16,25 @@ import AnimatedBtn from './AnimatedBtn';
 export default function LaserBanner() {
     const revealImgRef = useRef(null);
 
+    const features = [
+        'Verified Deals',
+        'Secure Data Rooms',
+        'Investor Network',
+        'Pre-IPO & IPO Access',
+        'Real-Time Analytics',
+        'Smart Tracking'
+    ];
+
+    const separator = ' • ';
+
     return (
         <div
+            className='landing-container'
             style={{
-                height: 'auto',
+                height: '648px',
                 position: 'relative',
-                overflow: 'hidden',
-                backgroundColor: '#000'
+                // overflow: 'hidden',
+                backgroundColor: 'transparent'
             }}
             onMouseMove={(e) => {
                 const rect = e.currentTarget.getBoundingClientRect();
@@ -44,9 +56,9 @@ export default function LaserBanner() {
         >
 
             <LaserFlow
-                horizontalBeamOffset={0.1}
-                verticalBeamOffset={0.0}
-                color="#a79e7c"
+                horizontalBeamOffset={0.15}
+                verticalBeamOffset={-0.5}
+                color="#B4A26E"
             />
             <div className={styles.bannerHeading}>
                 <h1><span>Access Exclusive</span> <br />
@@ -55,13 +67,12 @@ export default function LaserBanner() {
                     Get early access to high-growth companies before they go public.</p>
                 <AnimatedBtn />
             </div>
-            <div style={{
+            { false && <div style={{
                 position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translateX(-50%)',
+                top: 'calc(68vh - 15px)',
+                left: 'calc(0% + 28px)',
                 width: '86%',
-                height: '100%',
+                height: 'max-content',
                 backgroundColor: '#060010',
                 borderRadius: '20px',
                 border: 'unset',
@@ -71,18 +82,19 @@ export default function LaserBanner() {
                 color: 'white',
                 fontSize: '2rem',
                 zIndex: 6,
-                // maxWidth: '1106px'
-                display: 'none'
             }}>
-                {/* Your content here */}
-                <div className={styles.imageParent}>
-                    <img src="/laser-flow.png" style={{ height: '100%', width: '100%' }} />
+                <div>
+                    <div className={styles.imageParent}>
+                        <img src="/laser-flow.png" style={{ height: '100%', width: '100%' }} />
+                        <img src="/overlay.png" style={{ height: '100%', width: '100%' }} className={styles.overlayEffect} />
+                    </div>
                 </div>
-            </div>
+
+            </div>}
 
             <img
                 ref={revealImgRef}
-                src="/laser-flow.png"
+                src="/laser-bg.png"
                 alt="Reveal effect"
                 style={{
                     position: 'absolute',

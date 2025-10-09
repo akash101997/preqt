@@ -1,61 +1,62 @@
-'use client';
-import React, { useRef } from 'react';
-import styles from './animatedBtn.module.css';
-import { MoveRight } from 'lucide-react';
-import Link from 'next/link';
+import React, { useRef } from "react";
+import styles from "./animatedBtn.module.css";
+import { MoveRight } from "lucide-react";
+import Link from "next/link";
+// import Image from "next/image"; // Image is not used
 
-const AnimatedBtn = ({ text = 'Get Started Today', link = '' }) => {
-  const glowRef = useRef(null);
-  const wrapperRef = useRef(null);
+const AnimatedBtn = ({ text = "Get Started Today", link = "/" }) => {
+    const btnRef = useRef(null);
+    const glowRef = useRef(null);
 
-  const handleMouseMove = (e) => {
-    const wrapper = wrapperRef.current;
-    const glow = glowRef.current;
-    if (!wrapper || !glow) return;
-  
-    const rect = wrapper.getBoundingClientRect();
-    const offsetX = e.clientX - rect.left - rect.width / 2;
-  
-    // ✅ Combine default centering + dynamic movement
-    glow.style.transform = `translate(calc(-50% + ${offsetX}px), -50%)`;
-  };
-  
+    const handleMouseMove = (e) => {
+        const btn = btnRef.current;
+        const glow = glowRef.current;
+        if (!btn || !glow) return;
 
-  const handleMouseLeave = () => {
-    if (glowRef.current) {
-      glowRef.current.style.transform = `translate(-50%, -50%)`;
-    }
-  };
-  
+        const rect = btn.getBoundingClientRect();
+        // Cursor position relative to button center
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
 
-  return (
-    <div
-      className={styles.wrapper}
-      ref={wrapperRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
-      {/* Border Light Blur Layers */}
-      <div className={`${styles.borderBlur} ${styles.borderLayer1}`}></div>
-      <div className={`${styles.borderBlur} ${styles.borderLayer2}`}></div>
+        // Move glow
+        // The glow will stay at its last position due to CSS transition on mouse leave
+        glow.style.transform = `translateX(${x * 1.1}px) translateY(-50%)`;
 
-      {/* Glow sits behind the button */}
-      <div className={styles.glowWrapper} ref={glowRef}>
-        <div className={styles.glow1}></div>
-        <div className={styles.glow2}></div>
-      </div>
+        // Move box shadow with glow (x * 0.4 for less drastic movement)
+        const shadowX = x * 0.4;
 
-      {/* Actual button */}
-      <Link href={link} className={styles.button}>
-        <div className={styles.btnWrap}>
-          <span className={styles.text}>{text}</span>
-          <div className={styles.btnIcon}>
-            <MoveRight size={20} strokeWidth={2} />
-          </div>
+        // Increased blur and opacity for better visibility
+        btn.style.boxShadow = `
+            ${shadowX}px 5px 25px rgba(0, 0, 0, 0.6)
+        `;
+    };
+
+    // NOTE: Removed handleMouseLeave function to keep the glow at its last position.
+
+    return (
+        <div className={styles.wrapper}>
+            <div className={`${styles.borderBlur} ${styles.borderLayer2}`}>
+                <div className={styles.border}></div>
+            </div>
+            <Link
+                href={link}
+                className={styles.button}
+                ref={btnRef}
+                onMouseMove={handleMouseMove}
+            >
+                <div className={styles.glowWrapper} ref={glowRef}>
+                    <div className={styles.glow1}></div>
+                    <div className={styles.glow2}></div>
+                </div>
+                <div className={styles.btnWrap}>
+                    <span className={styles.text}>{text}</span>
+                    <div className={styles.btnIcon}>
+                        <MoveRight size={20} strokeWidth={2} />
+                    </div>
+                </div>
+            </Link>
         </div>
-      </Link>
-    </div>
-  );
+    );
 };
 
 export default AnimatedBtn;

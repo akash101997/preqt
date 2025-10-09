@@ -99,35 +99,49 @@ export default function ClientChrome({ children }) {
   }
 
   // console.log("ddssfsfvfe",isPrivateDeal)
-  return (
-    <div
-      className={isPrivateDeal ? "private-deal-theme" : ""}
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      {/* <NavBar /> */}
-      <LandingPageHeader />
+  return (<>
+    {true ?
 
-      <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
-        {children}
-      </div>
+      <>
+        <div>
+          <LandingPageHeader />
+          <div >
+            {children}
+          </div>
+          <NewFooter />
+        </div>
+      </> :
 
 
-      <div className="newNav" style={{
-        marginBottom: isPrivateDeal ? "110px" : "0px"
-      }}
+      <div
+        className={isPrivateDeal ? "private-deal-theme" : ""}
+        style={{
+          // minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          height: '100%'
+        }}
       >
-        <NewFooter />
+        <NavBar />
 
 
-      </div>
+        <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
+          {children}
+        </div>
 
-      {/* <Footer /> */}
 
-      {/* <div
+        <div className="newNav" style={{
+          marginBottom: isPrivateDeal ? "110px" : "0px"
+        }}
+        >
+          <NewFooter />
+
+
+        </div>
+
+        {/* <Footer /> */}
+
+        {/* <div
         className="newNav"
         style={{
           marginBottom:
@@ -136,6 +150,7 @@ export default function ClientChrome({ children }) {
       >
         <NewFooter />
       </div> */}
-    </div>
+      </div>}
+  </>
   );
 }
