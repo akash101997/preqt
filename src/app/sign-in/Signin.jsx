@@ -3,12 +3,13 @@
 import React, { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./Signin.module.css";
-import { toast } from "react-toastify";
+import { showErrorToast } from "../components/ToastProvider";
 import Cookies from "js-cookie";
 
 const Signin = () => {
   const router = useRouter();
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const isValidEmail = useMemo(() => {
     const regex = /[^@\s]+@[^@\s]+\.[^@\s]+/;
@@ -17,8 +18,9 @@ const Signin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!isValidEmail) return;
+    if (!isValidEmail || loading) return;
 
+    setLoading(true);
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_USER_BASE}investor/api/investor/login-email`,
@@ -34,25 +36,23 @@ const Signin = () => {
 
       const data = await response.json();
       if (!response.ok) {
-        toast.error(data.message || "Something went wrong. Please try again.");
+        showErrorToast(data.message || "Something went wrong. Please try again.");
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      Cookies.set("verifyOtp", true)
+
+      Cookies.set("verifyOtp", true);
       router.replace(`/otp?email=${encodeURIComponent(email)}`);
     } catch (error) {
       console.error("Login error:", error);
-      showToast("Something went wrong", "error");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <section className={styles.pageWrapper}>
       <div className={styles.card}>
-        <img
-          src="/logo.png"
-          alt="Preqt Logo"
-          className={styles.logo}
-        />
+        <img src="/logo.png" alt="Preqt Logo" className={styles.logo} />
         <h1 className={styles.title}>Welcome Back</h1>
         <p className={styles.subtitle}>Sign in to your Preqt Account</p>
 
@@ -74,11 +74,17 @@ const Signin = () => {
 
           <button
             type="submit"
-            className={`${styles.button} ${!isValidEmail ? styles.buttonDisabled : ""
-              }`}
-            disabled={!isValidEmail}
+            className={`${styles.button} ${(!isValidEmail || loading) ? styles.buttonDisabled : ""}`}
+            disabled={!isValidEmail || loading}
           >
-            Send OTP
+            {loading ? (
+              <div className={styles.loaderWrapper}>
+                <span className={styles.loader}></span>
+                <span>Sending...</span>
+              </div>
+            ) : (
+              "Send OTP"
+            )}
           </button>
         </form>
 

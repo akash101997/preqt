@@ -1,5 +1,5 @@
 .wrapper { 
-  min-height: 100vh; 
+  min-height: 100dvh; 
   max-width: 632px; 
   display: flex; 
   flex-direction: column; 
@@ -10,6 +10,8 @@
   padding-right: 16px; 
   margin: 0 auto; 
   position: relative; 
+  overflow: hidden;
+  /* padding-top: 24px; */
 }
 .backBtn { 
   position: absolute; 
@@ -146,9 +148,11 @@ text-transform: capitalize;
 
 @media (max-width: 480px) {
   .wrapper {
-    padding-top: 24px;
+    
+    padding-top: unset;
     padding-left: 15px;
     padding-right: 15px;
+    justify-content: center;
   }
   
   .backBtn {

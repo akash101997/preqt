@@ -208,6 +208,10 @@ height: 6px;
   .customcars .nav-tabs {
     flex-wrap: nowrap;
   }
+
+  .carouselImage {
+    height: 180px;
+  }
 }
 
 .carouselImages {

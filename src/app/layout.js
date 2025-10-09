@@ -3,12 +3,12 @@ import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Suspense } from "react";
 import { MultiStepProvider } from "./utils/MultiStepContext";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 
 import Head from "next/head";
 import ClientChrome from "./ClientChrome";
 import Loader from "./components/Loader";
+import ToastProvider from "./components/ToastProvider";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -50,16 +50,7 @@ export default function RootLayout({ children }) {
             <ClientChrome>{children}</ClientChrome>
           </MultiStepProvider>
         </Suspense>
-        <ToastContainer
-          toastClassName="customToast"
-          bodyClassName="customBody"
-          progressClassName="customProgress"
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          closeOnClick
-          pauseOnHover
-          draggable />
+       <ToastProvider/>
       </body>
     </html>
   );
