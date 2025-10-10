@@ -8,7 +8,7 @@
 
 .scroll-stack-card-wrapper {
     position: sticky;
-    top: 0;
+    top: 20%;
     will-change: transform, opacity;
     transform-origin: center top;
     transition: transform 0.2s ease-out, opacity 0.2s ease-out;

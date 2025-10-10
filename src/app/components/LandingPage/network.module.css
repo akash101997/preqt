@@ -75,7 +75,7 @@
 }
 
 .headingDiv h1 {
-    font-size: 55px;
+    font-size: 53px;
     font-weight: 700;
     margin: 0;
     background: linear-gradient(180deg, #FFFFFF 60%, #d8bf7e 100%);
@@ -195,6 +195,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
+    text-align: left;
 }
 
 .imageCard {

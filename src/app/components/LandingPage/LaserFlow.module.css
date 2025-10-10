@@ -12,7 +12,7 @@
     overflow: hidden; */
     /* margin-bottom: 100px; */
     position: relative;
-    max-width: 86%;
+    max-width: 100%;
 }
 
 .imageParent img {
@@ -24,7 +24,7 @@
 .bannerHeading {
     position: absolute;
     top: 150px;
-    max-width: 1380px;
+    max-width: 1280px;
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
@@ -32,7 +32,7 @@
 }
 
 .bannerHeading h1 {
-    font-size: 74px;
+    font-size: 66px;
     font-weight: 700;
     color: white;
 }

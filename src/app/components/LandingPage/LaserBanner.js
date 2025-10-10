@@ -16,25 +16,17 @@ import AnimatedBtn from './AnimatedBtn';
 export default function LaserBanner() {
     const revealImgRef = useRef(null);
 
-    const features = [
-        'Verified Deals',
-        'Secure Data Rooms',
-        'Investor Network',
-        'Pre-IPO & IPO Access',
-        'Real-Time Analytics',
-        'Smart Tracking'
-    ];
-
-    const separator = ' • ';
-
     return (
         <div
-            className='landing-container'
+            className='landing-containerr'
             style={{
-                height: '648px',
+                height: '1200px',
                 position: 'relative',
                 // overflow: 'hidden',
-                backgroundColor: 'transparent'
+                backgroundColor: '#120a02',
+                maxWidth: '1920px',
+                margin: 'auto',
+
             }}
             onMouseMove={(e) => {
                 const rect = e.currentTarget.getBoundingClientRect();
@@ -55,23 +47,25 @@ export default function LaserBanner() {
             }}
         >
 
-            <LaserFlow
+
+
+            {/* <LaserFlow
                 horizontalBeamOffset={0.15}
                 verticalBeamOffset={-0.5}
                 color="#B4A26E"
-            />
-            <div className={styles.bannerHeading}>
+            /> */}
+            <div className={styles.bannerHeading} style={{ zIndex: 10 }}>
                 <h1><span>Access Exclusive</span> <br />
                     <span> IPO & Pre-IPO Deals</span></h1>
                 <p>Join the premier platform for private equity investments.<br />
                     Get early access to high-growth companies before they go public.</p>
                 <AnimatedBtn />
             </div>
-            { false && <div style={{
+            <div style={{
                 position: 'absolute',
-                top: 'calc(68vh - 15px)',
-                left: 'calc(0% + 28px)',
-                width: '86%',
+                top: 'calc(52% - 17px)',
+                left: 'calc(18% + 2px)',
+                width: 'calc(53% + 13px)',
                 height: 'max-content',
                 backgroundColor: '#060010',
                 borderRadius: '20px',
@@ -90,8 +84,26 @@ export default function LaserBanner() {
                     </div>
                 </div>
 
-            </div>}
+            </div>
 
+            <video
+                src="/hero-banner.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    maxWidth: '1920px',
+                    zIndex: 0, // make sure it stays behind other content
+                }}
+            />
             <img
                 ref={revealImgRef}
                 src="/laser-bg.png"
@@ -100,8 +112,10 @@ export default function LaserBanner() {
                     position: 'absolute',
                     width: '100%',
                     top: '-50%',
-                    zIndex: 5,
+                    height: '100%',
+                    zIndex: 99999,
                     mixBlendMode: 'lighten',
+                    filter: 'blur(2px)',
                     opacity: 0.3,
                     pointerEvents: 'none',
                     '--mx': '-9999px',
@@ -112,6 +126,8 @@ export default function LaserBanner() {
                     maskRepeat: 'no-repeat'
                 }}
             />
+
+
         </div>
     );
 }

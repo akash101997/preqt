@@ -22,7 +22,7 @@ export default function LandingPageHeader() {
     <section className={styles.parentHeader}>
       <header className={styles.header}>
         <div className={styles.firstPart}>
-          <div className={styles.logo}><Image src="/landing-logo.svg" height={32} width={102}  alt="landing page"/> </div>
+          <div className={styles.logo}><Image src="/landing-logo.svg" height={32} width={102} alt="landing page" /> </div>
           <nav className={`${styles.nav} ${menuOpen ? styles.active : ""}`}>
             <Link href="/" className={isActiveLink('/') ? styles.active : ''}>Home</Link>
             <Link href="/" className={isActiveLink('"/') ? styles.active : ''}>Community</Link>
@@ -30,8 +30,11 @@ export default function LandingPageHeader() {
         </div>
 
         <div className={styles.containerBtn}>
-          <Button className={styles.button}>SIGN IN
+          <Button className={styles.button}>
+            SIGN IN
           </Button>
+
+
           <Button className={styles.button}>SIGN UP</Button>
         </div>
         <div

@@ -5,6 +5,9 @@ import { Dot } from 'lucide-react';
 import MarketInvesting from './MarketInvesting';
 import InvestorsCarousel from './InvestorsCarousel';
 import NetworkStack from './NetworkStack';
+import StepsComponent from '@/app/landing-page/stepsComponent/StepsComponent';
+import PreqtAppSection from '@/app/landing-page/preqtAppsection/page';
+import Footer from '@/app/landing-page/footer/Footer';
 
 const LandingPage = () => {
 
@@ -21,13 +24,15 @@ const LandingPage = () => {
 
 
     return (
-        <div style={{ background: '#111111', width: '100%', height: '100%' }}>
-            <LaserBanner />
+        <div style={{ background: '#111', width: '100%', height: '100%' }}>
+            <div style={{ background: '#120a02', width: '100%', height: '100%', margin: 'auto' }}>
+                <LaserBanner />
+            </div>
             <section className='landing-container' style={{ paddingBottom: '50px' }}>
-                <div className={styles.imageParent}>
+                {false && <div className={styles.imageParent}>
                     <img src="/laser-flow.png" style={{ height: '100%', width: '100%' }} />
                     <img src="/overlay.png" style={{ height: '100%', width: '100%' }} className={styles.overlayEffect} />
-                </div>
+                </div>}
                 <div className={styles.descText}>
                     <p>Everything you need to raise capital with confidence</p>
                     <div className={styles.bottomText}>
@@ -52,6 +57,12 @@ const LandingPage = () => {
             <NetworkStack />
 
             <InvestorsCarousel />
+
+
+
+            <StepsComponent />
+            <PreqtAppSection />
+            <Footer />
 
 
         </div>
