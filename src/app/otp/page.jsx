@@ -92,6 +92,7 @@ function OtpPageContent() {
 
       if (token) Cookies.set("accessToken", token);
       if (token) Cookies.set("accessToken", token);
+      if (investor) Cookies.set("investorId", investor.id);
       if (investor) {
         Cookies.set(
           "investor",

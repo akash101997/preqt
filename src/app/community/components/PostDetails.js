@@ -1,19 +1,22 @@
 "use client"
-import Styles from './postSection.module.css'
+import Styles from './PostSection/postSection.module.css'
 import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
 import Cookies from 'js-cookie'
 import { toast } from 'react-toastify'
-import { showErrorToast, showSuccessToast } from '../../../components/ToastProvider'
+import CommentSection from './CommentSection/CommentSection'
+import { showErrorToast, showSuccessToast } from '../../components/ToastProvider'
 
-const PostSection = () => {
+const PostDetails = ({slug}) => {
 
   const [selectedOption, setSelectedOption] = useState(null)
   const [hasVoted, setHasVoted] = useState(false)
   // const [showDot, setShowDot] = useState(false);
   const [posts, setPosts] = useState([])
   const [dotId, setDotId] = useState(null);
-
+   const [comments, setComments] = useState([])
+const [ commentonPost, setCommentonPost] = useState("")
+ const [ refetch, setRefetch] = useState(false)
   // Function to format timestamp
   const formatTimestamp = (timestamp) => {
     if (!timestamp) return '';
@@ -185,38 +188,145 @@ const PostSection = () => {
       }
     }
 
+ const getAllComments = async (postId) => {
+    if(!postId) return;
+    try {
+            console.log(postId)
+   
+  const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/community/posts/${postId}/comments`, {
+    headers: {
+      'Authorization': `Bearer ${Cookies.get('accessToken')}`
+    }
+  })
+  const data = await response.json()
+  console.log("all comments",data.data?.comments)
+  setComments(data.data?.comments)
+  console.log(postId)
+} catch (error) {
+    console.error('Network Error:', error)
+showErrorToast('Network error: Unable to fetch post')
+}
+ }
 
+ useEffect(() => {
+
+    getAllPosts()
+    setRefetch(false)
+ 
+ }, [refetch])
+
+  // Function to submit a new comment
+  const submitComment = async (postId) => {
+    if (!commentonPost.trim()) {
+      showErrorToast('Please enter a comment')
+      return
+    }
+
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/community/posts/${postId}/comment`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${Cookies.get('accessToken')}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          content: commentonPost.trim(),
+          postId: postId,
+          userId: Cookies.get('investorId')
+        })
+      })
+
+      const data = await response.json()
+      console.log('Comment submission response:', data)
+
+      if (response.ok) {
+        showSuccessToast('Comment added successfully!')
+        setCommentonPost('') // Clear the input
+        // Refresh comments to show the new one
+        getAllComments(postId)
+      } else {
+        showErrorToast(data.message || 'Failed to add comment')
+      }
+    } catch (error) {
+      console.error('Error submitting comment:', error)
+      showErrorToast('Network error: Unable to submit comment')
+    }
+  }
+
+  // Function to handle Enter key press
+  const handleKeyPress = (e, postId) => {
+    if (e.key === 'Enter') {
+      submitComment(postId)
+    }
+  }
 
 
 
 
 
     const getAllPosts = async () => {
-      try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/community/posts?page=1&pageSize=10&startDate=2025-09-01T00:00:00.000Z&endDate=2025-09-05T23:59:59.999Z`, {
-      headers: {
-        'Authorization': `Bearer ${Cookies.get('accessToken')}`
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}admin/api/community/posts/slug/${slug}`, {
+        headers: {
+          'Authorization': `Bearer ${Cookies.get('accessToken')}`
+        }
+      })
+      const data = await response.json()
+      console.log('API Response:', data)
+      
+      if (response.ok && data.data.status === 200) {
+        setPosts(data.data.data)
+        getAllComments(data.data.data[0].id)
+      } else if (data.data.status === 404) {
+        console.error('Post not found:', data.message)
+        showErrorToast('Post not found')
+        setPosts(null)
+      } else {
+        console.error('API Error:', data)
+        showErrorToast(data.message || 'Failed to fetch post')
+        setPosts(null)
       }
-    })
-    const data = await response.json()
-    console.log(data)
-    setPosts(data.data)
-  } catch (error) {
-    console.error('Error fetching posts:', error);
-    showErrorToast('Failed to fetch posts');
-  }
+    } catch (error) {
+      console.error('Network Error:', error)
+      showErrorToast('Network error: Unable to fetch post')
+    }
   }
   useEffect(() => {
-    getAllPosts()
-    
-  }, [])
+    if (slug) {
+      getAllPosts()
+    }
+  }, [slug])
 
 
   return (
-    <div className={Styles.postsMainContainer}>
-      
+    <>
+      {!posts || posts === null ? (
+<div className={Styles.pageNotFoundContainer}>
+<div className={Styles.pageNotFoundContent}>
+<div className={Styles.pageNotFoundIcon}>
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="40" cy="40" r="40" fill="url(#gradient)" />
+<path d="M25 25L55 55M55 25L25 55" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+<defs>
+<linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stopColor="#FFF2D0" />
+<stop offset="100%" stopColor="#8E6B0F" />
+</linearGradient>
+</defs>
+</svg>
+</div>
+<h1 className={Styles.pageNotFoundTitle}>Post Not Found</h1>
+<p className={Styles.pageNotFoundDescription}>
+The post you're looking for doesn't exist or may have been removed.
+</p>
+
+</div>
+</div>
+) : (
+        <div className={Styles.postsMainContainer2}>
+         
       {posts.map((post) => (
-        <div key={post.id}>
+        <div key={post.id} className={Styles.postDetailsContainer}>
           {post.type === 'poll' ? (
             <div className={Styles.IndividualPostContainer}>
               <div className={Styles.votingContainer2}>
@@ -348,7 +458,7 @@ const PostSection = () => {
             </div>
 
           ) : (
-            <div className={Styles.IndividualPostContainer}>
+            <div className={`${Styles.IndividualPostContainer} ${Styles.postsMainContainer}`}>
 
               <div>
 
@@ -415,6 +525,38 @@ const PostSection = () => {
             </div>
           )}
 
+              <div className={Styles.totalComments}>
+              {comments.length || 0} Comments
+
+                  <div className={Styles.inputcommentcontainer}>
+                      <span className={Styles.nameInitial}>
+                          AB
+                      </span>
+                       <input 
+                         type="text" 
+                         value={commentonPost} 
+                         placeholder='Add a comment...' 
+                         className={Styles.inputcomment}  
+                         onChange={(e) => setCommentonPost(e.target.value)}
+                         onKeyPress={(e) => handleKeyPress(e, post?.id)}
+                       />
+                       
+                  </div>
+</div>
+
+{comments.length > 0 ? (
+    <CommentSection
+      postId={post?.id}
+      commentsCount={post?.commentsCount}
+      comments={comments}
+      refetch={refetch}
+      setRefetch={setRefetch}
+    />
+    ):(
+    <div className={Styles.noCommentsContainer}>
+    <p className={Styles.noCommentsText}>No comments yet</p>
+    </div>
+)}
 
 
         </div>
@@ -425,14 +567,10 @@ const PostSection = () => {
 
       ))}
 
-
-
-
-
-
-
-    </div>
+        </div>
+      )}
+    </>
   )
 }
 
-export default PostSection;
+export default PostDetails;
