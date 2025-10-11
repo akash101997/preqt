@@ -17,6 +17,8 @@ const PostDetails = ({slug}) => {
    const [comments, setComments] = useState([])
 const [ commentonPost, setCommentonPost] = useState("")
  const [ refetch, setRefetch] = useState(false)
+ const [ currentUser, setCurrentUser] = useState(Cookies.get('investorName'))
+
   // Function to format timestamp
   const formatTimestamp = (timestamp) => {
     if (!timestamp) return '';
@@ -65,7 +67,8 @@ const [ commentonPost, setCommentonPost] = useState("")
     }
   }
 
-  const handleLike = async (id) => {
+  const handleLike = async (e, id) => {
+    e.stopPropagation();
     // Find the post and update UI optimistically
     const postIndex = posts.findIndex(post => post.id === id);
     if (postIndex === -1) return;
@@ -123,7 +126,8 @@ const [ commentonPost, setCommentonPost] = useState("")
     }
   }
 
-  const handleComment = async (id) => {
+  const handleComment = async (e, id) => {
+    e.stopPropagation();
       const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/community/posts/${id}/comments`, {
       headers: {
         'Authorization': `Bearer ${Cookies.get('accessToken')}`
@@ -140,7 +144,8 @@ const [ commentonPost, setCommentonPost] = useState("")
     console.log(id)
   }
 
-  const handleShare = async (id) => {
+        const handleShare = async (e, id) => {
+    e.stopPropagation();
     const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/community/posts/${id}/share`, {
       headers: {
         'Authorization': `Bearer ${Cookies.get('accessToken')}`
@@ -151,7 +156,8 @@ const [ commentonPost, setCommentonPost] = useState("")
     console.log(id)
   }
 
-    const VoteForPoll = async (id, postId) => {
+    const VoteForPoll = async (e, id, postId) => {
+      e.stopPropagation();
       try {
         const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/community/polls/${postId}/vote`, {
           headers: {
@@ -191,21 +197,40 @@ const [ commentonPost, setCommentonPost] = useState("")
  const getAllComments = async (postId) => {
     if(!postId) return;
     try {
-            console.log(postId)
+      console.log('Fetching comments for postId:', postId)
    
-  const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/community/posts/${postId}/comments`, {
-    headers: {
-      'Authorization': `Bearer ${Cookies.get('accessToken')}`
+      const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/community/posts/${postId}/comments`, {
+        headers: {
+          'Authorization': `Bearer ${Cookies.get('accessToken')}`
+        }
+      })
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+      
+      const data = await response.json()
+      console.log("Comments API response:", data)
+      
+      // Handle different response structures
+      let commentsData = []
+      if (data.data?.comments) {
+        commentsData = data.data.comments
+      } else if (data.comments) {
+        commentsData = data.comments
+      } else if (Array.isArray(data.data)) {
+        commentsData = data.data
+      } else if (Array.isArray(data)) {
+        commentsData = data
+      }
+      
+      console.log("Setting comments:", commentsData)
+      setComments(commentsData)
+      
+    } catch (error) {
+      console.error('Network Error:', error)
+      showErrorToast('Network error: Unable to fetch comments')
     }
-  })
-  const data = await response.json()
-  console.log("all comments",data.data?.comments)
-  setComments(data.data?.comments)
-  console.log(postId)
-} catch (error) {
-    console.error('Network Error:', error)
-showErrorToast('Network error: Unable to fetch post')
-}
  }
 
  useEffect(() => {
@@ -242,8 +267,16 @@ showErrorToast('Network error: Unable to fetch post')
       if (response.ok) {
         showSuccessToast('Comment added successfully!')
         setCommentonPost('') // Clear the input
+        
         // Refresh comments to show the new one
-        getAllComments(postId)
+        console.log('Refreshing comments for postId:', postId)
+        await getAllComments(postId)
+        
+        // Also refresh the main post data to update comment count
+        await getAllPosts()
+        
+        // Trigger refetch for CommentSection
+        setRefetch(!refetch)
       } else {
         showErrorToast(data.message || 'Failed to add comment')
       }
@@ -368,7 +401,7 @@ The post you're looking for doesn't exist or may have been removed.
                           key={option.id}
                           className={`${Styles.pollOption} ${selectedOption === option.id ? Styles.selected : ''
                             } ${hasVoted ? Styles.voted : ''}`}
-                          onClick={() => VoteForPoll(option.id, post?.id)}
+                          onClick={(e) => VoteForPoll(e,option.id, post?.id)}
                         >
                           <div className={Styles.optionContent}>
                             <div className={Styles.radioButton}>
@@ -377,7 +410,7 @@ The post you're looking for doesn't exist or may have been removed.
                                 id={`option-${option.id}`}
                                 name="poll"
                                 checked={selectedOption === option.id}
-                                  onChange={() => VoteForPoll(option.id, post?.id)}
+                                  onChange={(e) => VoteForPoll(e,option.id, post?.id)}
                                 disabled={hasVoted}
                               />
                               <span className={Styles.customRadio}>
@@ -422,7 +455,7 @@ The post you're looking for doesn't exist or may have been removed.
                   {/* like and Comment  */}
                   <div className={Styles.likeAndComment}>
                     {/* like */}
-                     <div className={Styles.likeContainer} onClick={() => handleLike(post?.id)}>
+                     <div className={Styles.likeContainer} onClick={(e) => handleLike(e,post?.id)}>
                        <img 
                          src={post?.isLiked ? "/assets/pictures/like.svg" : "/assets/pictures/like.svg"} 
                          alt="" 
@@ -441,14 +474,14 @@ The post you're looking for doesn't exist or may have been removed.
                      </div>
 
                     {/* comment */}
-                    <div className={Styles.likeContainer} onClick={() => handleComment(post?.id)}>
+                    <div className={Styles.likeContainer} onClick={(e) => handleComment(e,post?.id)}>
                       <img src="/assets/pictures/comment.svg" alt="" />
                       <p className={Styles.likesCount}>{post?.commentsCount} comments</p>
                     </div>
                   </div>
 
                   {/* share */}
-                  <div className={Styles.likeContainer} onClick={() => handleShare(post?.id)}>
+                  <div className={Styles.likeContainer} onClick={(e) => handleShare(e,post?.id)}>
                     <img src="/assets/pictures/share-logo.svg" alt="" />
                     <p className={Styles.likesCount}>Share</p>
                   </div>
@@ -491,7 +524,7 @@ The post you're looking for doesn't exist or may have been removed.
                   {/* like and Comment  */}
                   <div className={Styles.likeAndComment}>
                     {/* like */}
-                     <div className={Styles.likeContainer} onClick={() => handleLike(post?.id)}>
+                     <div className={Styles.likeContainer} onClick={(e) => handleLike(e,post?.id)}>
                        <img 
                          src={post?.isLiked ? "/assets/pictures/like-filled.svg" : "/assets/pictures/like.svg"} 
                          alt="" 
@@ -508,14 +541,14 @@ The post you're looking for doesn't exist or may have been removed.
                      </div>
 
                     {/* comment */}
-                    <div className={Styles.likeContainer} onClick={() => handleComment(post?.id)}>
+                    <div className={Styles.likeContainer} onClick={(e) => handleComment(e,post?.id)}>
                       <img src="/assets/pictures/comment.svg" alt="" />
                       <p className={Styles.likesCount}>{post?.commentsCount} comments</p>
                     </div>
                   </div>
 
                   {/* share */}
-                  <div className={Styles.likeContainer} onClick={() => handleShare(post?.id)}>
+                  <div className={Styles.likeContainer} onClick={(e) => handleShare(e,post?.id)}>
                     <img src="/assets/pictures/share-logo.svg" alt="" />
                     <p className={Styles.likesCount}>Share</p>
                   </div>
@@ -540,9 +573,16 @@ The post you're looking for doesn't exist or may have been removed.
                          onChange={(e) => setCommentonPost(e.target.value)}
                          onKeyPress={(e) => handleKeyPress(e, post?.id)}
                        />
-                       
+                       <button 
+                         className={Styles.submitCommentBtn}
+                         onClick={() => submitComment(post?.id)}
+                         disabled={!commentonPost.trim()}
+                       >
+                         Post
+                       </button>
                   </div>
 </div>
+
 
 {comments.length > 0 ? (
     <CommentSection
