@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
+import AuthAnimatedBtn from "./AuthAnimatedBtn";
 
 export default function LandingPageHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,12 +31,14 @@ export default function LandingPageHeader() {
         </div>
 
         <div className={styles.containerBtn}>
-          <Button className={styles.button}>
+          {/* <Button className={styles.button}>
             SIGN IN
-          </Button>
+          </Button> */}
+
+          <AuthAnimatedBtn children="SIGN IN" />
 
 
-          <Button className={styles.button}>SIGN UP</Button>
+          {/* <Button className={styles.button}>SIGN UP</Button> */}
         </div>
         <div
           className={styles.hamburger}

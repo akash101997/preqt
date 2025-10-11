@@ -114,7 +114,7 @@ const InvestorsCarousel = () => {
     return (
         <section ref={sectionRef} className={styles.carouselSection}>
             <div className={styles.parentWrapper}>
-                <ButtonAnimation text="Welcome to Pre" />
+                <ButtonAnimation text="Testimonials" />
                 <h1>What investors are saying</h1>
 
                 <div ref={carouselRef} className={styles.carouselWrapper}>

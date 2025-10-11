@@ -72,6 +72,7 @@
 .headingDiv>div {
     max-width: max-content;
     margin: auto;
+    margin-bottom: 30px;
 }
 
 .headingDiv h1 {

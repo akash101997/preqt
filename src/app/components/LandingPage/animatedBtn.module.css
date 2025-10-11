@@ -142,7 +142,7 @@
     padding: 8px 0px;
 }
 
-.circularAnimation {
+/* .circularAnimation {
     color: #A1A1AA;
     font-family: "Helvetica Neue";
     font-size: 16px;
@@ -152,4 +152,62 @@
     border: 1px solid #D8BF7E;
     padding: 10px 20px;
     border-radius: 100px;
+} */
+
+.circularAnimation {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #A1A1AA;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+
+    padding: 8px 20px;
+    border-radius: 100px;
+    background: rgba(45, 45, 45, 0.4);
+    backdrop-filter: blur(5px);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin-bottom: 30px;
 }
+
+.circularAnimation::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 100px;
+    padding: 1px;
+    background: linear-gradient(170deg,
+            rgba(255, 255, 255, 0.3) 0%,
+            rgba(255, 255, 255, 0) 50%,
+            rgba(255, 255, 255, 0.3) 100%);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+.bullet {
+    color: #A1A1AA;
+    font-size: 20px;
+    line-height: 1;
+}
+
+/* Styling for the overall dark theme, useful for context in an external wrapper */
+/* You would apply this to a parent element like a body or section */
+/* .dark-background {
+    background-color: #111;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
