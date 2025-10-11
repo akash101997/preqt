@@ -2,6 +2,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.css";
 import { Suspense } from "react";
 import { MultiStepProvider } from "./utils/MultiStepContext";
 
@@ -58,18 +59,6 @@ export default function RootLayout({ children  }) {
             <ClientChrome>{children}</ClientChrome>
           </MultiStepProvider>
         </Suspense>
-        <ToastContainer
-         toastClassName="customToast"
-        bodyClassName="customBody"
-        progressClassName="customProgress"
-        position="top-right"
-        autoClose={9000}
-        hideProgressBar={false}
-        closeOnClick
-        pauseOnHover
-        draggable
-        
-         />
        <ToastProvider />
       </body>
     </html>

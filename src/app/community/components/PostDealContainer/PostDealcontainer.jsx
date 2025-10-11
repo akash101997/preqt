@@ -8,9 +8,9 @@ const PostDealcontainer = () => {
     <section className={Styles.postDealMainContainer}>
       <div className={Styles.postDealInnerContainer}>
         <PostSection />
-        <div className={Styles.TopDealContainer}>
+        {/* <div className={Styles.TopDealContainer}>
           <TopDeal />
-        </div>
+        </div> */}
       </div>
     </section>
   )
