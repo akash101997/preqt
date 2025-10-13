@@ -348,8 +348,9 @@ const PostSection = () => {
                       {post?.pollOptions?.map((option) => (
                 <div
                   key={option.id}
-                  className={`${Styles.pollOption} ${selectedOption === option.id ? Styles.selected : ''
+                  className={`${Styles.pollOption} ${(selectedOption === option.id || option?.isVoted) ? Styles.selected : ''
                     } ${hasVoted ? Styles.voted : ''}`}
+                    onClick={(e) => VoteForPoll(e, option.id, post?.id)}
                 >
                           <div className={`${Styles.optionContent} ${isVoting ? Styles.disabled : ''}`}>
                     <div className={Styles.radioButton}>
@@ -357,14 +358,12 @@ const PostSection = () => {
                         type="radio"
                         id={`option-${option.id}`}
                         name="poll"
-                        checked={selectedOption === option.id}
-                                onChange={(e) => VoteForPoll(e, option.id, post?.id)}
+                        checked={selectedOption === option.id || !!option?.isVoted}
+                                // onChange={(e) => VoteForPoll(e, option.id, post?.id)}
                                 disabled={hasVoted || isVoting}
                       />
                       <span className={Styles.customRadio}>
-                                {/* <div className={Styles.dot}></div> */}
-                                {/* <div onClick={()=>toggleDot(option.id)}>w</div> */}
-                                <span className={`${Styles.dot} ${selectedOption === option.id ? Styles.show : ""}`} ></span>
+                                {/* inner dot handled by CSS ::after; no extra element needed */}
                       </span>
                     </div>
 
