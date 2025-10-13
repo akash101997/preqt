@@ -27,18 +27,14 @@ export default function LandingPageHeader() {
           <nav className={`${styles.nav} ${menuOpen ? styles.active : ""}`}>
             <Link href="/" className={isActiveLink('/') ? styles.active : ''}>Home</Link>
             <Link href="/" className={isActiveLink('"/') ? styles.active : ''}>Community</Link>
+            <div className={`${styles.containerBtn} ${styles.showOnMobile}`}>
+              <AuthAnimatedBtn children="SIGN IN" />
+            </div>
           </nav>
         </div>
 
-        <div className={styles.containerBtn}>
-          {/* <Button className={styles.button}>
-            SIGN IN
-          </Button> */}
-
+        <div className={`${styles.containerBtn} ${styles.hideOnMobile}`}>
           <AuthAnimatedBtn children="SIGN IN" />
-
-
-          {/* <Button className={styles.button}>SIGN UP</Button> */}
         </div>
         <div
           className={styles.hamburger}

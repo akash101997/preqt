@@ -14,7 +14,12 @@ const SingleCard = ({ img = "", text = "", name = "", position = "" }) => (
         <div className={styles.cardBody}>
             <blockquote className={styles.cardTextxt}>“{text}”</blockquote>
             <div className={styles.cardFooter}>
-                <Image src={img} height={65} width={65} alt={`${name}'s profile picture`} />
+                <Image
+                    src={img}
+                    height={65}
+                    width={65}
+                    alt={`${name}'s profile picture`}
+                />
                 <div className={styles.personDetails}>
                     <h3>{name}</h3>
                     <p>{position}</p>
@@ -74,17 +79,17 @@ const InvestorsCarousel = () => {
     ];
 
     useEffect(() => {
+        const mm = gsap.matchMedia();
         const section = sectionRef.current;
         const carousel = carouselRef.current;
 
-        // Wait for layout to be ready
-        const updateScroll = () => {
+        mm.add("(min-width: 1025px)", () => {
+            // Desktop horizontal scroll
             const totalCards = carouselData.length;
             const visibleCards = 3.5;
             const wrapperWidth = carousel.offsetWidth;
             const cardWidth = wrapperWidth / visibleCards;
 
-            // ✅ Ensure last card is fully visible
             const scrollDistance =
                 (cardWidth + 20) * totalCards - window.innerWidth;
 
@@ -100,15 +105,19 @@ const InvestorsCarousel = () => {
                     anticipatePin: 1,
                 },
             });
-        };
 
-        updateScroll();
-        window.addEventListener("resize", updateScroll);
+            return () => {
+                ScrollTrigger.getAll().forEach((t) => t.kill());
+            };
+        });
 
-        return () => {
-            window.removeEventListener("resize", updateScroll);
+        // Tablet & Mobile: disable ScrollTrigger
+        mm.add("(max-width: 1024px)", () => {
             ScrollTrigger.getAll().forEach((t) => t.kill());
-        };
+            gsap.set(carousel, { clearProps: "all" });
+        });
+
+        return () => mm.revert();
     }, []);
 
     return (

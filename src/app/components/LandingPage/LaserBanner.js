@@ -61,22 +61,24 @@ export default function LaserBanner() {
                     Get early access to high-growth companies before they go public.</p>
                 <AnimatedBtn />
             </div>
-            <div style={{
-                position: 'absolute',
-                top: 'calc(52% - 17px)',
-                left: 'calc(18% + 2px)',
-                width: 'calc(53% + 13px)',
-                height: 'max-content',
-                backgroundColor: '#060010',
-                borderRadius: '20px',
-                border: 'unset',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'white',
-                fontSize: '2rem',
-                zIndex: 6,
-            }}>
+            <div
+                className={styles.laserFlowVideo}
+                style={{
+                    position: 'absolute',
+                    top: 'calc(52% - 17px)',
+                    left: 'calc(18% + 2px)',
+                    width: 'calc(53% + 13px)',
+                    height: 'max-content',
+                    backgroundColor: '#060010',
+                    borderRadius: '20px',
+                    border: 'unset',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'white',
+                    fontSize: '2rem',
+                    zIndex: 6,
+                }}>
                 <div>
                     <div className={styles.imageParent}>
                         <img src="/laser-flow.png" style={{ height: '100%', width: '100%' }} />

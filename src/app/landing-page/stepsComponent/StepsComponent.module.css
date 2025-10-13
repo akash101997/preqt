@@ -1,9 +1,8 @@
-
 .container {
     display: flex;
     max-width: 1330px;
     justify-content: space-between;
-    padding: 120px 0;
+    padding: 120px 16px;
     width: 100%;
     margin: auto;
     min-height: 100vh;
@@ -49,7 +48,7 @@
     align-items: center;
 }
 
-.leftImage img{
+.leftImage img {
     width: 200px;
     height: 200px;
 }
@@ -61,19 +60,21 @@
     font-size: 32px;
     font-style: normal;
     font-weight: 500;
-    line-height: 48px; /* 150% */
+    line-height: 48px;
+    /* 150% */
     letter-spacing: -0.32px;
     margin-bottom: 16px;
 }
 
 .signUpText p {
     color: var(--Zinc-400, #A1A1AA);
-font-family: "Helvetica Neue";
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 20px; /* 175% */
-margin-bottom: 0;
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 175% */
+    margin-bottom: 0;
 }
 
 
@@ -107,23 +108,23 @@ margin-bottom: 0;
     line-height: 74px;
     letter-spacing: -0.64px;
     -webkit-text-fill-color: transparent;
-   margin-bottom: 60px;
-   max-width: 670px;
-   width: 100%;
+    margin-bottom: 60px;
+    max-width: 670px;
+    width: 100%;
     background: linear-gradient(rgb(255, 255, 255) 0%, rgb(249, 246, 235) 25%, rgb(241, 225, 166) 60%, rgb(216, 191, 126) 85%) text;
 }
 
 .stepCard {
     border-radius: 20px;
-border: 0.5px solid rgba(171, 171, 171, 0.40);
-background: #1A1A1A;
+    border: 0.5px solid rgba(171, 171, 171, 0.40);
+    background: #1A1A1A;
     margin-bottom: 60px;
     overflow: hidden;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
     padding: 24px;
 }
 
-.stepCard:last-child{
+.stepCard:last-child {
     margin-bottom: 0;
 }
 
@@ -149,11 +150,12 @@ background: #1A1A1A;
 
 .cardContent h2 {
     color: #FFF;
-font-size: 20px;
-font-style: normal;
-font-weight: 700;
-line-height: 140%; /* 28px */
-margin-bottom: 14px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    /* 28px */
+    margin-bottom: 14px;
 }
 
 .cardContent p {
@@ -162,6 +164,41 @@ margin-bottom: 14px;
     font-size: 16px;
     font-style: normal;
     font-weight: 300;
-    line-height: 140%; 
+    line-height: 140%;
     margin-bottom: 0;
+}
+
+@media (max-width:1200px) {
+    .leftSection {
+        flex: 1 1 400px;
+        margin-right: 20px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .leftSection {
+        display: none;
+    }
+
+    .container {
+        padding: 60px 16px;
+    }
+
+    .rightSection h1 {
+        font-size: 48px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width:480px) {
+    .rightSection h1 {
+        font-size: 32px;
+        text-align: center;
+        line-height: 36px;
+    }
+
+    .processHeader {
+        justify-content: center;
+    }
 }

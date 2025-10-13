@@ -28,7 +28,7 @@ const LandingPage = () => {
             <div style={{ background: '#120a02', width: '100%', height: '100%', margin: 'auto' }}>
                 <LaserBanner />
             </div>
-            <section className='landing-container' style={{ paddingBottom: '50px' }}>
+            <section className={`landing-container ${styles.hideOnMobile}`} style={{ paddingBottom: '50px' }}>
                 {false && <div className={styles.imageParent}>
                     <img src="/laser-flow.png" style={{ height: '100%', width: '100%' }} />
                     <img src="/overlay.png" style={{ height: '100%', width: '100%' }} className={styles.overlayEffect} />
@@ -54,7 +54,7 @@ const LandingPage = () => {
 
             <MarketInvesting />
 
-            <NetworkStack />
+            <NetworkStack /> 
 
             <InvestorsCarousel />
 

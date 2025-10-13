@@ -52,7 +52,7 @@ const IconCarousel = () => {
                             transition={{ duration: 0.5, ease: "easeInOut" }}
                         >
                             <div className={styles.iconCircle}>
-                                <Image src={Icon} height={50} width={50} />
+                                <Image src={Icon} height={50} width={50} alt="list icon"/>
                             </div>
                         </motion.div>
                     );

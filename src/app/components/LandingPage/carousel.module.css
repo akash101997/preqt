@@ -87,3 +87,109 @@
     gap: 12px;
     margin-top: auto;
 }
+
+@media (max-width: 768px) {
+    .parentWrapper h1 {
+        font-size: 42px;
+        margin: 16px 0 40px 0;
+    }
+
+    .carouselWrapper {
+        padding-left: 20px;
+    }
+
+    .cardWrapper {
+        flex: 0 0 calc(100% / 1.2);
+        height: 400px;
+        padding: 16px;
+    }
+
+    .cardBody {
+        padding: 16px;
+        background-size: 70% auto;
+    }
+
+    .cardTextxt {
+        font-size: 18px;
+    }
+
+    .personDetails h3 {
+        font-size: 14px;
+    }
+
+    .personDetails p {
+        font-size: 12px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .parentWrapper h1 {
+        font-size: 32px;
+        margin: 16px 0 32px 0;
+    }
+
+    .cardWrapper {
+        height: 350px;
+    }
+
+    .cardTextxt {
+        font-size: 16px;
+    }
+
+}
+
+/* ---------------- MOBILE & TABLET RESPONSIVE ---------------- */
+@media (max-width: 767px) {
+  .carouselSection {
+    height: auto;
+    padding: 80px 16px;
+  }
+
+  .parentWrapper {
+    align-items: flex-start;
+  }
+
+  .carouselWrapper {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 20px;
+    transform: none !important;
+  }
+
+  .cardWrapper {
+    flex: 0 0 calc(100% / 2.5);
+    scroll-snap-align: start;
+    height: 420px;
+  }
+
+  .cardBody {
+    padding: 16px;
+  }
+
+  .cardTextxt {
+    font-size: 18px;
+  }
+}
+
+/* ---------------- MOBILE ONLY ---------------- */
+@media (max-width: 480px) {
+  .cardWrapper {
+    flex: 0 0 33.33%;
+    height: 360px;
+  }
+
+  .cardTextxt {
+    font-size: 16px;
+  }
+
+  .parentWrapper h1 {
+    font-size: 28px;
+    text-align: left;
+    margin-left: 20px;
+  }
+}
