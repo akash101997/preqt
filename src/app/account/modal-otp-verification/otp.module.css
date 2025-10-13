@@ -132,9 +132,9 @@
   cursor: pointer;
 }
 
-.continueBtn:hover{
+/* .continueBtn:hover{
     background-color: rgba(201, 167, 78, 1) ;
-}
+} */
 
 @media(max-width:580px){
   .overlay{

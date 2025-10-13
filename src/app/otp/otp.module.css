@@ -1,22 +1,24 @@
 .wrapper {
-  min-height: 100dvh;
-  max-width: 624px;
+  max-width: 571px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 64px;
-  padding-left: 16px;
-  padding-right: 16px;
+padding: 32px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
 }
 
+.titleWrapper{
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
 .backBtn {
-  position: absolute;
-  top: 203px;
-  left: 16px;
+
   width: 40px;
   height: 40px;
   border: none;
@@ -30,14 +32,13 @@
 }
 
 .logo {
-  height: 56px;
-  margin-bottom: 80px;
+  width: 134px;
+  margin-bottom: 32px;
 }
 
 .title {
   color: #1f2937;
-  text-align: center;
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 700;
   text-transform: capitalize;
   margin-bottom: 6px;
@@ -64,10 +65,11 @@
 }
 
 .subtitle {
-  color: #6b7280;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 400;
+color: var(--Gray-500, #6B7280);
+font-size: 14px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
   margin-bottom: 38px;
 }
 
@@ -151,6 +153,25 @@
 .buttonDisabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+/* ==================================Pop up Otp================================== */
+
+.customModalWrapper :global(.modal-content) {
+  background-color: transparent;
+  border: none;
+}
+
+
+.wrapper{
+  border-radius: 32px;
+background: #FFF;
+box-shadow: 0 4px 36.1px 0 rgba(0, 0, 0, 0.10);
+}
+.customModalContent .modal-content{
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 /* Responsive Design */

@@ -4,15 +4,18 @@ import styles from "../../../components/home/DealsTalk/DealsTalk.module.css";
 import stylesdeals from "./AllDeals.module.css";
 import Link from "next/link";
 // import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 import React from "react";
 
 function AllDealsContent() {
-    // const searchParams = useSearchParams();
-    // const dealId = searchParams?.get("dealId");
+    const [loading, setLoading] = useState(true);
+    const [allDeals, setAllDeals] = useState([]);
+    const [error, setError] = useState([]);
 
-    // Define deals data to check if deal is private
+
+
+
     const dealsConfig = {
         "1": { deal: "public" },
         "2": { deal: "private" },
@@ -20,101 +23,86 @@ function AllDealsContent() {
         "4": { deal: "private" }
     };
 
-    // const isPrivateDeal = dealId && dealsConfig[dealId]?.deal === "private";
 
-  const dealsData = [
-  {
-    id: 1,
-    slug: "acmpl-deals",
-    type: "SME-IPO",
-    category: "Logistics",
-    companyLogo: "/assets/pictures/acmpl.svg",
-    companyName: "Ashwini Container Movers Limited ",
-    description: "Ashwini Container Movers Limited is a commercial/container transport & logistics company headquartered in Navi Mumbai.",
-    stats: {
-      revenue: "INR 94.1Cr",
-      pat: "INR 11.5 Cr",
-      patMultiple: "-",
-      cagrGrowth: "17% ",
-      roe: "75.9%",
-      issueDate: "Thu,Sep 25, 2025"
-    },
-    merchantBanker: "Corporate Professionals",
-    deal: "public"
-  },
-  {
-    id: 2,
-    slug: "hvr-solar-deals",
-    type: "Pre IPO- SME",
-    category: "Solar Energy",
-    companyLogo: "/assets/pictures/hvr.svg",
-    companyName: "HVR Solar Pvt Ltd",
-    description: "India’s leading solar module manufacturer powering the green revolution.",
-    stats: {
-      revenue: "INR 75 Cr",
-      revenue2: "INR 101.4 Cr",
-      expectedListing: "-",
-      pat: "INR 7.0 Cr",
-      peMultiple: "10.7x"
-    },
-    progress: {
-      current: "12Cr / 15Cr",
-      percentage: "80%"
-    },
-    tags: ["Strong promoter", "Clear Monetization", "Fund Participating"],
-    deal: "private"
-  }
-];
+    useEffect(() => {
+        async function fetchDeals() {
+            try {
+                const res = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}admin/api/deals/all-deals/?limit=100`);
+                if (!res.ok) {
+                    throw new Error(`HTTP error! status: ${res.status}`);
+
+                }
+                const data = await res.json();
+                console.log('all deals data', data);
+                setAllDeals(data);
+            }
+            catch (err) {
+                setError(err.message);
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchDeals();
+    }, [])
+
+
+
 
 
     const renderCard1 = (deal) => (
-        <Link href={`/deals/${deal.slug}`} className={stylesdeals.cardLink}>
+        <Link href={`/deals/${deal.id}`} className={stylesdeals.cardLink}>
             <div className={styles.cardContainer1}>
                 <div className={styles.cardInnerSections}>
                     <article className={styles.cardIPOsection}>
-                        <div className={styles.IPOheading}>
-                            <p className={styles.HeadingContent}>{deal.type}</p>
-                        </div>
-                        <div className={styles.IPOheading}>
-                            <p className={styles.HeadingContent}>{deal.category}</p>
-                        </div>
+                        {deal.tags
+                            ?.split(",")
+                            .map((tag, index) => (
+                                <div
+                                    key={index}
+                                    className={styles.IPOheading}
+                                // optional for additional styling
+                                >
+                                    <p className={styles.HeadingContent}>{tag.trim()}</p>
+                                </div>
+                            ))}
                     </article>
+
 
                     <div className={styles.AnthemSection}>
                         <img src={deal.companyLogo} alt="" className={styles.anthemPicture} />
-                        <p className={styles.anthemHeading}>{deal.companyName}</p>
+                        <p className={styles.anthemHeading}>{deal.company_name}</p>
                     </div>
 
-                    <p className={styles.dealCardContent}>{deal.description}</p>
+                    <p className={styles.dealCardContent}>{deal.key_highlights}</p>
 
                     <div className={styles.revenueMainContainer}>
                         <section className={styles.revenueSection}>
                             <article className={styles.Revenue}>
                                 <p className={styles.revenuHeading}>Revenue (FY'25)</p>
-                                <p className={styles.priceInRupee}>{deal.stats.revenue}</p>
+                                <p className={styles.priceInRupee}>{deal.revenue}</p>
                             </article>
                             <article>
                                 <p className={styles.revenuHeading}>PAT (FY'25)</p>
-                                <p className={styles.priceInRupee}>{deal.stats.pat}</p>
+                                <p className={styles.priceInRupee}>{deal.pat_fy23}</p>
                             </article>
                             <article>
                                 <p className={styles.revenuHeading}>PAT multiple</p>
-                                <p className={styles.priceInRupee}>{deal.stats.patMultiple}</p>
+                                <p className={styles.priceInRupee}></p>
                             </article>
                         </section>
 
                         <section className={styles.revenueSection}>
                             <article className={styles.Revenue}>
                                 <p className={styles.revenuHeading}>CAGR Growth 3Y</p>
-                                <p className={styles.priceInRupee}>{deal.stats.cagrGrowth}</p>
+                                <p className={styles.priceInRupee}>{deal.cagr_growth3Y}</p>
                             </article>
                             <article>
                                 <p className={styles.revenuHeading}>ROE (FY'25)</p>
-                                <p className={styles.priceInRupee}>{deal.stats.roe}</p>
+                                <p className={styles.priceInRupee}>{deal.roe}</p>
                             </article>
                             <article>
                                 <p className={styles.revenuHeading}>Issue Opening Date</p>
-                                <p className={styles.priceInRupee}>{deal.stats.issueDate}</p>
+                                <p className={styles.priceInRupee}>{deal?.issueDate}</p>
                             </article>
                         </section>
                     </div>
@@ -125,7 +113,7 @@ function AllDealsContent() {
                         </div>
                     </section>
                 </div>
-{/* 
+                {/* 
                 <div className={styles.cardFooterMainContainer}>
                     <div className={styles.QandA}>
                         <div className={styles.QandAstats}>23 Q&A answered in last 3 days </div>
@@ -142,21 +130,28 @@ function AllDealsContent() {
     );
 
     const renderCard2 = (deal) => (
-        <Link href={`/deals/${deal.slug}`} className={stylesdeals.cardLink}>
+        <Link href={`/deals/${deal.id}`} className={stylesdeals.cardLink}>
             <div className={styles.card2Container}>
                 <div className={styles.card2InnerSections}>
                     <article className={styles.card2IPOsection}>
-                        <div className={styles.card2IPOtag}>
-                            <p className={styles.card2IPOtext}>{deal.type}</p>
-                        </div>
-                        <div className={styles.card2IPOtag}>
-                            <p className={styles.card2IPOtext}>{deal.category}</p>
-                        </div>
+
+                        {deal.tags
+                            ?.split(",")
+                            .map((tag, index) => (
+                                <div
+                                    key={index}
+                                    className={styles.card2IPOtag}
+                                // optional for additional styling
+
+                                >
+                                    <p className={styles.card2IPOtext}>{tag.trim()}</p>
+                                </div>
+                            ))}
                     </article>
 
                     <div className={styles.card2CompanySection}>
                         <img src={deal.companyLogo} alt="" className={styles.card2CompanyLogo} />
-                        <p className={styles.card2CompanyName}>{deal.companyName}</p>
+                        <p className={styles.card2CompanyName}>{deal.company_name}</p>
                     </div>
 
                     <p className={styles.card2Description}>{deal.description}</p>
@@ -165,51 +160,51 @@ function AllDealsContent() {
                         <section className={styles.card2StatsRow}>
                             <article className={styles.card2Stat}>
                                 <p className={styles.card2StatHeading}>Valuation</p>
-                                <p className={styles.card2StatValue}>{deal.stats.revenue}</p>
+                                <p className={styles.card2StatValue}>{deal.revenue}</p>
                             </article>
                             <article className={styles.card2Stat}>
                                 <p className={styles.card2StatHeading}>Revenue (FY'25)</p>
-                                <p className={styles.card2StatValue}>{deal.stats.revenue2}</p>
+                                <p className={styles.card2StatValue}>{deal.revenue}</p>
                             </article>
                             <article className={styles.card2Stat}>
                                 <p className={styles.card2StatHeading}>Expected listing </p>
-                                <p className={styles.card2StatValue}>{deal.stats.expectedListing}</p>
+                                <p className={styles.card2StatValue}></p>
                             </article>
                         </section>
 
                         <section className={styles.card2StatsRow}>
                             <article className={styles.card2Stat}>
                                 <p className={styles.card2StatHeading}>PAT (FY'25)</p>
-                                <p className={styles.card2StatValue}>{deal.stats.pat}</p>
+                                <p className={styles.card2StatValue}>{deal.pat_fy23}</p>
                             </article>
                             <article className={styles.card2Stat}>
                                 <p className={styles.card2StatHeading}>P/E Multiple</p>
-                                <p className={styles.card2StatValue}>{deal.stats.peMultiple}</p>
+                                <p className={styles.card2StatValue}>{deal.pe_multiple}</p>
                             </article>
                         </section>
                     </div>
 
                     <div className={styles.progressContainer}>
                         <div className={styles.ProgressInPrice}>
-                            <p className={styles.PriceIncr}>{deal.progress.current}</p>
-                            <p className={styles.PricePercent}>{deal.progress.percentage}</p>
-                     
-                      </div>
-                        {/* <img src="/assets/pictures/PriceProgressBar.svg" alt=" " /> */}
-                         <div className={styles.progressWrapper}>
-                            <div className={styles.progress}>
-                           <div className={styles.progressBar} style={{ width: "80%" ,height:"6px",   background: "linear-gradient(to right ,#FFD89E,#B88609)" ,borderRadius:"30px"}}></div>
-                             </div>
-                                  </div>
-                                </div>
-                                  
+                            {/* <p className={styles.PriceIncr}>{deal.progress.current}</p>
+                            <p className={styles.PricePercent}>{deal.progress.percentage}</p> */}
 
-                          <div className={styles.promoter}>
-                        {deal.tags.map((tag, index) => (
+                        </div>
+                        {/* <img src="/assets/pictures/PriceProgressBar.svg" alt=" " /> */}
+                        <div className={styles.progressWrapper}>
+                            <div className={styles.progress}>
+                                <div className={styles.progressBar} style={{ width: "80%", height: "6px", background: "linear-gradient(to right ,#FFD89E,#B88609)", borderRadius: "30px" }}></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div className={styles.promoter}>
+                        {/* {deal.tags.map((tag, index) => (
                             <div key={index} className={index === 0 ? styles.Strong : styles.monetization}>
                                 <p>{tag}</p>
                             </div>
-                        ))}
+                        ))} */}
                     </div>
                 </div>
 
@@ -230,6 +225,13 @@ function AllDealsContent() {
         </Link>
     );
 
+    if(loading){
+        return<Loader/>;
+    } 
+    if(!allDeals || allDeals.length == 0){
+       return <div>No deals currently available.</div>; 
+    }
+
     return (
         <section className={`${styles.DealsTalkMainContainer} ${stylesdeals.DealsTalkMainContainer}`} >
             <div className={styles.DealsTalkHeading}>
@@ -238,13 +240,17 @@ function AllDealsContent() {
 
             <div className={`${styles.carouselWrapper} carouselWrapper`}>
                 <div className="row g-3">
-                    {dealsData.map((deal, index) => (
+                    {allDeals.data?.map((deal, index) => (
                         <div key={deal.id} className="col-lg-4 col-md-6 col-sm-12">
-                            {index === 0 ? renderCard1(deal) : renderCard2(deal)}
+                            {deal.deal_type === 'private' ?
+                                renderCard2(deal) :
+                                renderCard1(deal)
+                            }
                         </div>
                     ))}
                 </div>
             </div>
+            {/* <CustomTost/> */}
         </section>
     );
 }

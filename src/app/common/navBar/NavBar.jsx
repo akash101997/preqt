@@ -209,7 +209,7 @@ export default function NavBar() {
                     <div className={styles.avatardetails_main}>
                       {/* <div className={styles.id}>CL273874</div> */}
                       <div className={styles.id}>{id}</div>
-                      <div className={styles.name}>{investorName}</div>
+                      <div className={styles.name}>{investorName?investorName.charAt(0).toUpperCase()+investorName.slice(1):""}</div>
                     </div>
 
                     <div className={styles.arrow}>

@@ -42,10 +42,10 @@ const LastCarousel = ({isPrivateDeal}) => {
         {images.map((img, i) => (
           <Carousel.Item key={i}>
             <img
-              className="d-block w-100 carouselImage"
+              className="carouselImage"
               src={img}
               alt={`Slide ${i + 1}`}
-              style={{ height: "450px", objectFit: "contain" , width:"100%" }}
+              style={{ height: "340px", objectFit: "contain" , width:"100%" }}
             />
           </Carousel.Item>
         ))}

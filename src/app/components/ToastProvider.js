@@ -7,9 +7,10 @@ import "react-toastify/dist/ReactToastify.css";
 import "./customToast.css";
 import ErrorIcon from "./ErrorIcon";
 import SuccessIcon from "./SuccessIcon";
+import { usePathname } from "next/navigation";
 
 // ✅ Custom reusable functions
-export const showErrorToast = (message) =>
+export const showErrorToast = (message ) =>
   toast.error(
     <div className="toastContent">
       <div className="toastIcon">
@@ -123,8 +124,22 @@ const CloseButton = ({ type }) => {
 
 // ✅ Toast container configuration
 export default function ToastProvider() {
+  const pathname = usePathname();
+const dealsData = {
+    "acmpl-deals": { deal: "public" },
+    "hvr-solar-deals": { deal: "private" },
+  };
+
+  let isPrivateDeal = false;
+  if (pathname.startsWith("/deals/")) {
+    const slug = pathname.split("/deals/")[1];
+    const activeDeal = dealsData[slug];
+    isPrivateDeal = activeDeal?.deal === "private";
+  }
+
   return (
     <ToastContainer
+     className={isPrivateDeal ? "toastContainer privateDeal" : ""}
       toastClassName={(context) =>
         context?.type === "success"
           ? "customToast successToast"
@@ -135,7 +150,7 @@ export default function ToastProvider() {
       bodyClassName="customBody"
       progressClassName="customProgressTop"
       position="top-right"
-      autoClose={3000}
+     autoClose={isPrivateDeal ? 5000 : 3000}
       hideProgressBar={false}
       closeOnClick
       pauseOnHover

@@ -6,10 +6,11 @@ import styles from "./Signin.module.css";
 import { showErrorToast } from "../components/ToastProvider";
 import Cookies from "js-cookie";
 
-const Signin = () => {
+const Signin = ({ onClose, onShowOtp }) => {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+ 
 
   const isValidEmail = useMemo(() => {
     const regex = /[^@\s]+@[^@\s]+\.[^@\s]+/;
@@ -37,19 +38,23 @@ const Signin = () => {
       const data = await response.json();
       if (!response.ok) {
         showErrorToast(data.message || "Something went wrong. Please try again.");
-        throw new Error(`HTTP error! status: ${response.status}`);
+        // throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       Cookies.set("verifyOtp", true);
-      router.replace(`/otp?email=${encodeURIComponent(email)}`);
+     localStorage.setItem("verifyEmail", email);
+    
+       onShowOtp();
     } catch (error) {
       console.error("Login error:", error);
+      onShowOtp();
     } finally {
       setLoading(false);
     }
   };
 
   return (
+    <>
     <section className={styles.pageWrapper}>
       <div className={styles.card}>
         <img src="/logo.png" alt="Preqt Logo" className={styles.logo} />
@@ -96,7 +101,11 @@ const Signin = () => {
         </p>
       </div>
     </section>
+ 
+    </>
   );
 };
+
+
 
 export default Signin;

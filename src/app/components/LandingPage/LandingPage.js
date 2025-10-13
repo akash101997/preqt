@@ -55,10 +55,9 @@ const LandingPage = () => {
 
             <MarketInvesting />
 
-            <NetworkStack />
-
             <InvestorsCarousel />
 
+            <NetworkStack />
 
 
             <StepsComponent />
