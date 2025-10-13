@@ -5,7 +5,7 @@ import TopDeal from './components/TopDealSection/TopDeal'
 
 const layout = ({ children }) => {
   return (
-    <div>
+    <div style={{marginTop: '110px'}}>
       <MarqueeCom />
       {/* <section className={Styles.postDealMainContainer}> */}
       <div className={Styles.postDealInnerContainer}>
