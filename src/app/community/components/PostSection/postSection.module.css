@@ -14,6 +14,7 @@
   flex-direction: column;
   border-bottom: 1px solid #00000014;
   gap: 8px;
+  cursor: pointer;
 }
 
 .logoAndTime {
@@ -198,25 +199,46 @@
 }
 
 .pollOption:hover {
-  border:2px solid #d1a946;
+  border: 1.2px solid #d1a946;
   background: #fefdf8;
+  /* transform: translateY(-1px); */
+  /* box-shadow: 0 4px 12px rgba(209, 169, 70, 0.15); */
+  transition: all 0.2s ease;
 }
 
 .pollOption.selected {
-  border:2px solid #d1a946;
-  background: #fefdf8;
+  border: 1.2px solid #d1a946;
+  background: linear-gradient(135deg, #fefdf8 0%, #f8f4e6 100%);
+  /* box-shadow: 0 4px 12px rgba(209, 169, 70, 0.2); */
+  /* transform: translateY(-1px); */
 }
 
 .pollOption.voted {
   cursor: default;
+  opacity: 0.8;
 }
+
+.pollOption.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 
 .optionContent {
   display: flex;
   align-items: center;
-  padding: 16px 20px;
+  padding: 14px 18px;
+   border: 1.2px solid transparent;
   position: relative;
   z-index: 2;
+  transition: all 0.2s ease;
+}
+
+.optionContent.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .radioButton {
@@ -244,6 +266,19 @@
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
+}
+
+.pollOption:hover .customRadio {
+  border-color: #d1a946;
+  /* transform: scale(1.1); */
+  box-shadow: 0 0 8px rgba(209, 169, 70, 0.3);
+}
+
+.pollOption.selected .customRadio {
+  border-color: #d1a946;
+  background: #d1a946;
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(209, 169, 70, 0.4);
 }
 /* .dot{
    width: 10px;
@@ -286,12 +321,34 @@ display: none;
   color: #333;
   cursor: pointer;
   user-select: none;
+  transition: all 0.2s ease;
+}
+
+.pollOption:hover .optionLabel {
+  color: #d1a946;
+  /* font-weight: 600; */
+}
+
+.pollOption.selected .optionLabel {
+  color: #d1a946;
+  /* font-weight: 600; */
 }
 
 .percentage {
   font-size: 16px;
   font-weight: 600;
   color: #333;
+  transition: all 0.2s ease;
+}
+
+.pollOption:hover .percentage {
+  color: #d1a946;
+  /* font-weight: 700; */
+}
+
+.pollOption.selected .percentage {
+  color: #d1a946;
+  /* font-weight: 700; */
   margin-left: 12px;
 }
 

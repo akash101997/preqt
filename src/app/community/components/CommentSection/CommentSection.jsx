@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Styles from './commentSection.module.css'
 import { formatTimestamp } from '../../utils/dateUtils'
 import Cookies from 'js-cookie'
@@ -10,9 +10,16 @@ const CommentSection = ({ postId, commentsCount, comments = [], comment, refetch
   const [commentsList, setCommentsList] = useState(comments)
   const [replyingTo, setReplyingTo] = useState(null)
   const [replyText, setReplyText] = useState("")
+  const [currentUser, setCurrentUser] = useState(Cookies.get('investorName'))
 
   const userId = Cookies.get('investorId')
   console.log('CommentSection rendered with:', { postId, commentsCount, comments, commentsList })
+
+  // Sync comments prop with commentsList state
+  useEffect(() => {
+
+    setCommentsList(comments || [])
+  }, [comments])
 
 
 
@@ -120,11 +127,16 @@ const CommentSection = ({ postId, commentsCount, comments = [], comment, refetch
     
       {/* Comments List */}
       <div className={Styles.commentList}>
-        {commentsList.map((comment) => (
+        {console.log('Rendering commentsList:', commentsList)}
+        {console.log('commentsList length:', commentsList?.length)}
+        {commentsList.map((comment) => {
+          console.log('Rendering comment:', comment)
+          return (
           <CommentItem 
             key={comment.id}
             comment={comment}
             userId={userId}
+            currentUser={currentUser}
             replyingTo={replyingTo}
             replyText={replyText}
             setReplyText={setReplyText}
@@ -136,7 +148,8 @@ const CommentSection = ({ postId, commentsCount, comments = [], comment, refetch
             getInitials={getInitials}
             formatTimestamp={formatTimestamp}
           />
-        ))}
+        )
+        })}
       </div>
     </div>
   )
@@ -146,6 +159,7 @@ const CommentSection = ({ postId, commentsCount, comments = [], comment, refetch
 const CommentItem = ({ 
   comment, 
   userId, 
+  currentUser,
   replyingTo, 
   replyText, 
   setReplyText, 
@@ -185,15 +199,24 @@ const CommentItem = ({
         {/* Reply Input */}
         {replyingTo === comment.id && (
           <div className={Styles.replyInputContainer}>
+            <div className={Styles.userDetailsParent}>
+         
             <div className={Styles.userAvatar}>
-              {getInitials("Current User")}
+              {getInitials(currentUser)}
+             
             </div>
-            <div className={Styles.replyInputWrapper}>
+            <div className={Styles.userDetails}>
+            <div className={Styles.userName}>{currentUser || "Current user"}</div>
+            <div className={Styles.commentTime}>{formatTimestamp(new Date().toISOString())}</div>
+              </div>
+             
+             </div>
+            <div className={Styles.inputcommentcontainer}>
               <input
                 type="text"
                 value={replyText}
                 placeholder="Write a reply..."
-                className={Styles.replyInput}
+                className={Styles.inputcomment}
                 onChange={(e) => setReplyText(e.target.value)}
                 onKeyPress={(e) => {
                   if (e.key === 'Enter') {
@@ -203,18 +226,18 @@ const CommentItem = ({
               />
               <div className={Styles.replyActions}>
                 <button 
-                  className={Styles.replyButton}
+                  className={Styles.submitCommentBtn}
                   onClick={() => submitReply(comment.id)}
                   disabled={!replyText.trim()}
                 >
                   Reply
                 </button>
-                <button 
+                {/* <button 
                   className={Styles.cancelButton}
                   onClick={cancelReply}
                 >
                   Cancel
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
@@ -228,6 +251,7 @@ const CommentItem = ({
                 key={reply.id}
                 comment={reply}
                 userId={userId}
+                currentUser={currentUser}
                 replyingTo={replyingTo}
                 replyText={replyText}
                 setReplyText={setReplyText}

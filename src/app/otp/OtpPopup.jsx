@@ -84,24 +84,28 @@ export default function OtpPopup({ show, handleClose, handleBack }) {
       const token = data?.data?.data?.accessToken;
       const investor = data?.data?.data?.investor;
       localStorage.removeItem("registerFormData");
-      localStorage.removeItem("verifyEmail"); // ✅ clear email after verification
-
       if (token) Cookies.set("accessToken", token);
+      localStorage.removeItem("verifyEmail"); // ✅ clear email after verification
+      if (token) Cookies.set("accessToken", token);
+      if (investor) Cookies.set("investorName", investor.full_name);
       if (investor) {
-        const simplifiedInvestor = {
-          id: investor.id,
-          name: investor.full_name,
-          username: investor.user_name,
-          email: investor.email,
-          emailVerified: investor.email_verification_status,
-          phone: investor.phone_number,
-          type: investor.investor_type,
-          organization: investor.organization,
-          designation: investor.designation,
-          location: investor.location,
-        };
-        Cookies.set("investor", JSON.stringify(simplifiedInvestor));
+        Cookies.set(
+          "investor",
+          JSON.stringify({
+            id: investor.id,
+            name: investor.full_name,
+            username: investor.user_name,
+            email: investor.email,
+            emailVerified: investor.email_verification_status,
+            phone: investor.phone_number,
+            type: investor.investor_type,
+            organization: investor.organization,
+            designation: investor.designation,
+            location: investor.location,
+          })
+        );
       }
+
 
       showSuccessToast("Email verified successfully!");
       handleClose(); // ✅ close OTP modal

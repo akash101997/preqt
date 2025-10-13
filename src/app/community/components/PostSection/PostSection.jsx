@@ -5,15 +5,16 @@ import React, { useState, useEffect } from 'react'
 import Cookies from 'js-cookie'
 import { toast } from 'react-toastify'
 import { showErrorToast, showSuccessToast } from '../../../components/ToastProvider'
-
+import { useRouter } from 'next/navigation'
 const PostSection = () => {
 
   const [selectedOption, setSelectedOption] = useState(null)
   const [hasVoted, setHasVoted] = useState(false)
+  const [isVoting, setIsVoting] = useState(false)
   // const [showDot, setShowDot] = useState(false);
   const [posts, setPosts] = useState([])
   const [dotId, setDotId] = useState(null);
-
+  const router = useRouter();
   // Function to format timestamp
   const formatTimestamp = (timestamp) => {
     if (!timestamp) return '';
@@ -46,14 +47,11 @@ const PostSection = () => {
   //   setDotId(id);
   // };
 
-  const pollData = [
-    { id: 1, label: 'Option #1', votes: 2969, percentage: 97 },
-    { id: 2, label: 'Option #2', votes: 92, percentage: 3 },
-    { id: 3, label: 'Option #3', votes: 122, percentage: 4 },
-    { id: 4, label: 'Option #4', votes: 122, percentage: 4 }
-  ]
+   const viewPostDetails = (slug) => {
+    router.push(`/community/${slug}`)
+   }
 
-  const totalVotes = pollData.reduce((sum, option) => sum + option.votes, 0)
+
 
   const handleVote = (optionId) => {
     if (!hasVoted) {
@@ -62,8 +60,9 @@ const PostSection = () => {
     }
   }
 
-  const handleLike = async (id) => {
+  const handleLike = async (e, id) => {
     // Find the post and update UI optimistically
+    e.stopPropagation();
     const postIndex = posts.findIndex(post => post.id === id);
     if (postIndex === -1) return;
 
@@ -120,7 +119,8 @@ const PostSection = () => {
     }
   }
 
-  const handleComment = async (id) => {
+  const handleComment = async (e, id) => {
+    e.stopPropagation();
       const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/community/posts/${id}/comments`, {
       headers: {
         'Authorization': `Bearer ${Cookies.get('accessToken')}`
@@ -137,7 +137,8 @@ const PostSection = () => {
     console.log(id)
   }
 
-  const handleShare = async (id) => {
+  const handleShare = async (e, id) => {
+    e.stopPropagation();
     const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/community/posts/${id}/share`, {
       headers: {
         'Authorization': `Bearer ${Cookies.get('accessToken')}`
@@ -148,7 +149,17 @@ const PostSection = () => {
     console.log(id)
   }
 
-    const VoteForPoll = async (id, postId) => {
+    const VoteForPoll = async (e, id, postId) => {
+      e.stopPropagation();
+      
+      // Prevent multiple rapid calls
+      if (hasVoted || isVoting) {
+        console.log('Already voted or voting in progress, ignoring click');
+        return;
+      }
+      
+      setIsVoting(true);
+      
       try {
         const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/community/polls/${postId}/vote`, {
           headers: {
@@ -182,6 +193,8 @@ const PostSection = () => {
       } catch (error) {
         console.error('Vote error:', error);
         showErrorToast('Network error: Unable to vote');
+      } finally {
+        setIsVoting(false);
       }
     }
 
@@ -206,6 +219,7 @@ const PostSection = () => {
     showErrorToast('Failed to fetch posts');
   }
   }
+  
   useEffect(() => {
     getAllPosts()
     
@@ -218,7 +232,7 @@ const PostSection = () => {
       {posts.map((post) => (
         <div key={post.id}>
           {post.type === 'poll' ? (
-            <div className={Styles.IndividualPostContainer}>
+            <div className={Styles.IndividualPostContainer} onClick={() => viewPostDetails(post.slug)}>
               <div className={Styles.votingContainer2}>
 
                 {/* voting timer container */}
@@ -258,17 +272,16 @@ const PostSection = () => {
                           key={option.id}
                           className={`${Styles.pollOption} ${selectedOption === option.id ? Styles.selected : ''
                             } ${hasVoted ? Styles.voted : ''}`}
-                          onClick={() => VoteForPoll(option.id, post?.id)}
                         >
-                          <div className={Styles.optionContent}>
+                          <div className={`${Styles.optionContent} ${isVoting ? Styles.disabled : ''}`}>
                             <div className={Styles.radioButton}>
                               <input
                                 type="radio"
                                 id={`option-${option.id}`}
                                 name="poll"
                                 checked={selectedOption === option.id}
-                                  onChange={() => VoteForPoll(option.id, post?.id)}
-                                disabled={hasVoted}
+                                onChange={(e) => VoteForPoll(e, option.id, post?.id)}
+                                disabled={hasVoted || isVoting}
                               />
                               <span className={Styles.customRadio}>
                                 {/* <div className={Styles.dot}></div> */}
@@ -277,7 +290,14 @@ const PostSection = () => {
                               </span>
                             </div>
 
-                            <label htmlFor={`option-${option.id}`} className={Styles.optionLabel}>
+                            <label 
+                              htmlFor={`option-${option.id}`} 
+                              className={Styles.optionLabel}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                // Let the input onChange handle the voting
+                              }}
+                            >
                               {option.optionText}
                             </label>
 
@@ -312,7 +332,7 @@ const PostSection = () => {
                   {/* like and Comment  */}
                   <div className={Styles.likeAndComment}>
                     {/* like */}
-                     <div className={Styles.likeContainer} onClick={() => handleLike(post?.id)}>
+                     <div className={Styles.likeContainer} onClick={(e) => handleLike(e, post?.id)}>
                        <img 
                          src={post?.isLiked ? "/assets/pictures/like.svg" : "/assets/pictures/like.svg"} 
                          alt="" 
@@ -331,14 +351,14 @@ const PostSection = () => {
                      </div>
 
                     {/* comment */}
-                    <div className={Styles.likeContainer} onClick={() => handleComment(post?.id)}>
+                    <div className={Styles.likeContainer} onClick={(e) => handleComment(e, post?.id)}>
                       <img src="/assets/pictures/comment.svg" alt="" />
                       <p className={Styles.likesCount}>{post?.commentsCount} comments</p>
                     </div>
                   </div>
 
                   {/* share */}
-                  <div className={Styles.likeContainer} onClick={() => handleShare(post?.id)}>
+                  <div className={Styles.likeContainer} onClick={(e) => handleShare(e, post?.id)}>
                     <img src="/assets/pictures/share-logo.svg" alt="" />
                     <p className={Styles.likesCount}>Share</p>
                   </div>
@@ -348,7 +368,7 @@ const PostSection = () => {
             </div>
 
           ) : (
-            <div className={Styles.IndividualPostContainer}>
+            <div className={Styles.IndividualPostContainer} onClick={() => viewPostDetails(post.slug)}>
 
               <div>
 
@@ -381,7 +401,7 @@ const PostSection = () => {
                   {/* like and Comment  */}
                   <div className={Styles.likeAndComment}>
                     {/* like */}
-                     <div className={Styles.likeContainer} onClick={() => handleLike(post?.id)}>
+                     <div className={Styles.likeContainer} onClick={(e) => handleLike(e, post?.id)}>
                        <img 
                          src={post?.isLiked ? "/assets/pictures/like-filled.svg" : "/assets/pictures/like.svg"} 
                          alt="" 
@@ -398,14 +418,14 @@ const PostSection = () => {
                      </div>
 
                     {/* comment */}
-                    <div className={Styles.likeContainer} onClick={() => handleComment(post?.id)}>
+                    <div className={Styles.likeContainer} onClick={(e) => handleComment(e, post?.id)}>
                       <img src="/assets/pictures/comment.svg" alt="" />
                       <p className={Styles.likesCount}>{post?.commentsCount} comments</p>
                     </div>
                   </div>
 
                   {/* share */}
-                  <div className={Styles.likeContainer} onClick={() => handleShare(post?.id)}>
+                  <div className={Styles.likeContainer} onClick={(e) => handleShare(e, post?.id)}>
                     <img src="/assets/pictures/share-logo.svg" alt="" />
                     <p className={Styles.likesCount}>Share</p>
                   </div>
