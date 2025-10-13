@@ -99,31 +99,19 @@ export default function ClientChrome({ children }) {
   }
 
   // console.log("ddssfsfvfe",isPrivateDeal)
-  return (<>
-    {true ?
-
-      <>
-        <div>
-          <LandingPageHeader />
-          <div >
-            {children}
-          </div>
-          <NewFooter />
-        </div>
-      </> :
-
-
-      <div
-        className={isPrivateDeal ? "private-deal-theme" : ""}
-        style={{
-          // minHeight: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          height: '100%'
-        }}
-      >
-        <NavBar />
-
+  // console.log("ddssfsfvfe",isPrivateDeal)
+  return (
+    <>
+    <div
+      className={isPrivateDeal ? "private-deal-theme" : ""}
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      {/* <NavBar /> */}
+      <LandingPageHeader />
 
         <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
           {children}
@@ -150,7 +138,7 @@ export default function ClientChrome({ children }) {
       >
         <NewFooter />
       </div> */}
-      </div>}
+      </div>
   </>
   );
 }

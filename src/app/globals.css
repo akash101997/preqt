@@ -285,3 +285,9 @@
  /* Generic toast container */
 
 
+
+ .landing-container {
+   max-width: 1380px;
+   margin: auto;
+   padding: 0px 32px;
+ }

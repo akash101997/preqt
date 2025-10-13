@@ -243,7 +243,9 @@ export const LaserFlow = ({
     className,
     style,
     wispDensity = 2,
+    wispDensity = 2,
     dpr,
+    mouseSmoothTime = 1.0,
     mouseSmoothTime = 1.0,
     mouseTiltStrength = 0.01,
     horizontalBeamOffset = 0.1,
@@ -257,6 +259,9 @@ export const LaserFlow = ({
     wispIntensity = 10.0,
     flowStrength = 0.25,
     decay = 1.1,
+    falloffStart = 2.2,
+    fogFallSpeed = 1.6,
+    color = '#B4A26E'
     falloffStart = 2.2,
     fogFallSpeed = 1.6,
     color = '#B4A26E'

@@ -19,6 +19,7 @@
     height: auto;
     width: 100%;
 
+
 }
 
 .bannerHeading {
@@ -38,6 +39,7 @@
 }
 
 .bannerHeading h1 span:first-child {
+    background: linear-gradient(180deg, #ffffff 0%, #ffffff 50%, #D8BF7E 100%);
     background: linear-gradient(180deg, #ffffff 0%, #ffffff 50%, #D8BF7E 100%);
     background-clip: text;
     -webkit-background-clip: text;

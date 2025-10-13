@@ -27,11 +27,23 @@ export default function LaserBanner() {
 
     const separator = ' • ';
 
+    const features = [
+        'Verified Deals',
+        'Secure Data Rooms',
+        'Investor Network',
+        'Pre-IPO & IPO Access',
+        'Real-Time Analytics',
+        'Smart Tracking'
+    ];
+
+    const separator = ' • ';
+
     return (
         <div
             className='landing-container'
+            className='landing-container'
             style={{
-                height: '648px',
+                height: '140vh',
                 position: 'relative',
                 // overflow: 'hidden',
                 backgroundColor: 'transparent'
@@ -71,7 +83,10 @@ export default function LaserBanner() {
                 position: 'absolute',
                 top: 'calc(68vh - 15px)',
                 left: 'calc(0% + 28px)',
+                top: 'calc(68vh - 15px)',
+                left: 'calc(0% + 28px)',
                 width: '86%',
+                height: 'max-content',
                 height: 'max-content',
                 backgroundColor: '#060010',
                 borderRadius: '20px',
@@ -83,6 +98,7 @@ export default function LaserBanner() {
                 fontSize: '2rem',
                 zIndex: 6,
             }}>
+                {/* Your content here */}
                 <div>
                     <div className={styles.imageParent}>
                         <img src="/laser-flow.png" style={{ height: '100%', width: '100%' }} />
@@ -90,7 +106,7 @@ export default function LaserBanner() {
                     </div>
                 </div>
 
-            </div>}
+            </div>
 
             <img
                 ref={revealImgRef}
