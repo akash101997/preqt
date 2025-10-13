@@ -438,7 +438,7 @@ The post you're looking for doesn't exist or may have been removed.
                       {post?.pollOptions?.map((option) => (
                         <div
                           key={option.id}
-                          className={`${Styles.pollOption} ${selectedOption === option.id ? Styles.selected : ''
+                          className={`${Styles.pollOption} ${(selectedOption === option.id || option?.isVoted) ? Styles.selected : ''
                             } ${hasVoted ? Styles.voted : ''}`}
                           onClick={(e) => VoteForPoll(e,option.id, post?.id)}
                         >
@@ -448,15 +448,11 @@ The post you're looking for doesn't exist or may have been removed.
                                 type="radio"
                                 id={`option-${option.id}`}
                                 name="poll"
-                                checked={selectedOption === option.id}
+                                checked={selectedOption === option.id || !!option?.isVoted}
                                   onChange={(e) => VoteForPoll(e,option.id, post?.id)}
                                 disabled={hasVoted}
                               />
-                              <span className={Styles.customRadio}>
-                                {/* <div className={Styles.dot}></div> */}
-                                {/* <div onClick={()=>toggleDot(option.id)}>w</div> */}
-                                <span className={`${Styles.dot} ${selectedOption === option.id ? Styles.show : ""}`} ></span>
-                              </span>
+                              <span className={Styles.customRadio}></span>
                             </div>
 
                             <label htmlFor={`option-${option.id}`} className={Styles.optionLabel}>
