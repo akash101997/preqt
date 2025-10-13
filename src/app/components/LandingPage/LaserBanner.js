@@ -1,5 +1,5 @@
 "use client"
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import LaserFlow from './LaserFlow';
 import Image from 'next/image';
 import styles from "./LaserFlow.module.css"
@@ -15,6 +15,23 @@ import AnimatedBtn from './AnimatedBtn';
 // Image Example Interactive Reveal Effect
 export default function LaserBanner() {
     const revealImgRef = useRef(null);
+
+    const [isMobile, setIsMobile] = useState(
+        typeof window !== 'undefined' ? window.innerWidth <= 700 : false
+    );
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 700);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
 
     return (
         <div
@@ -79,13 +96,12 @@ export default function LaserBanner() {
                     fontSize: '2rem',
                     zIndex: 6,
                 }}>
-                <div>
+                <div style={{ width: '100%' }}>
                     <div className={styles.imageParent}>
-                        <img src="/laser-flow.png" style={{ height: '100%', width: '100%' }} />
+                        <img src={isMobile ? "/mobile-video.png" : "/laser-flow.png"} style={{ height: '100%', width: '100%', objectFit: 'cover' }} />
                         <img src="/overlay.png" style={{ height: '100%', width: '100%' }} className={styles.overlayEffect} />
                     </div>
                 </div>
-
             </div>
 
             <video
