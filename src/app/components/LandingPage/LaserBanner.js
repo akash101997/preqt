@@ -9,7 +9,7 @@ import AnimatedBtn from './AnimatedBtn';
 
 // Basic Usage
 <div style={{ height: '1000', position: 'relative' }}>
-    <LaserFlow />
+    {/* <LaserFlow /> */}
 </div>
 
 // Image Example Interactive Reveal Effect

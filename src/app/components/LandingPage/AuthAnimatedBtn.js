@@ -78,6 +78,7 @@ const AuthAnimatedBtn = ({ children, onClick, className = '' }) => {
           /* On hover, transition the conic gradient to a solid border color */
           background: #ffffff;
           opacity: 1; /* Fully opaque */
+          transition: all 0.5s ease-out;
         }
         
         .animated-border-button:hover {
