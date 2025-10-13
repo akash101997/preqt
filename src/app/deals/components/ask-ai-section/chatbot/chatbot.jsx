@@ -50,7 +50,7 @@ const Chatbot = ({ onBack, showInModal = false, onClose }) => {
     if (userChat.length > 0) localStorage.setItem(storageKey, JSON.stringify(userChat));
   }, [userChat, storageKey]);
 
-  // Scroll to bottom
+  
   useEffect(() => {
     if (!chatContainerRef.current) return;
     chatContainerRef.current.scrollTop =

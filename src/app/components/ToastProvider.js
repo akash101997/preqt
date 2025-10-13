@@ -136,7 +136,6 @@ const dealsData = {
     const activeDeal = dealsData[slug];
     isPrivateDeal = activeDeal?.deal === "private";
   }
-   console.log("ddssfsfvfe",isPrivateDeal)
 
   return (
     <ToastContainer

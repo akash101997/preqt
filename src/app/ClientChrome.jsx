@@ -51,7 +51,7 @@
 //   }}>
 //       <NewFooter/>
 // </div>
-    
+
 //         {/* <Footer /> */}
 //     </div>
 //   );
@@ -61,6 +61,7 @@ import { usePathname, useRouter } from "next/navigation";
 import NavBar from "./common/navBar/NavBar";
 import NewFooter from "./common/navBar/new-footer/NewFooter";
 import { useEffect, useState } from "react";
+import LandingPageHeader from "./components/LandingPage/LandingPageHeader";
 
 export default function ClientChrome({ children }) {
   const pathname = usePathname();
@@ -99,7 +100,9 @@ export default function ClientChrome({ children }) {
 
   // console.log("ddssfsfvfe",isPrivateDeal)
   // console.log("ddssfsfvfe",isPrivateDeal)
+  // console.log("ddssfsfvfe",isPrivateDeal)
   return (
+    <>
     <div
       className={isPrivateDeal ? "private-deal-theme" : ""}
       style={{
@@ -108,27 +111,26 @@ export default function ClientChrome({ children }) {
         flexDirection: "column",
       }}
     >
-      <NavBar />
+      {/* <NavBar /> */}
+      <LandingPageHeader />
 
-      <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
-        {children}
-      </div>
-
-
-    <div className="newNav"   style={{
-    marginBottom: isPrivateDeal ? "110px" : "0px"
-  }}
->
+        <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
+          {children}
+        </div>
 
 
-      <NewFooter/>
-  
+        <div className="newNav" style={{
+          marginBottom: isPrivateDeal ? "110px" : "0px"
+        }}
+        >
+          <NewFooter />
 
-</div>
-    
+
+        </div>
+
         {/* <Footer /> */}
 
-      {/* <div
+        {/* <div
         className="newNav"
         style={{
           marginBottom:
@@ -137,6 +139,7 @@ export default function ClientChrome({ children }) {
       >
         <NewFooter />
       </div> */}
-    </div>
+      </div>
+  </>
   );
 }

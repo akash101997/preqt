@@ -1,0 +1,208 @@
+"use client";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Modal } from "react-bootstrap";
+import styles from "./otp.module.css";
+import { showErrorToast, showSuccessToast } from "../components/ToastProvider";
+import Cookies from "js-cookie";
+
+export default function OtpPopup({ show, handleClose, handleBack }) {
+  const [email, setEmail] = useState("");
+  const [otp, setOtp] = useState(new Array(6).fill(""));
+  const inputRefs = useRef([]);
+  const [seconds, setSeconds] = useState(60);
+  const [canResend, setCanResend] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  // ✅ Fetch email from localStorage
+  useEffect(() => {
+    const storedEmail = localStorage.getItem("verifyEmail");
+    if (storedEmail) setEmail(storedEmail);
+  }, []);
+
+  // ⏱ Countdown
+  useEffect(() => {
+    if (seconds <= 0) {
+      setCanResend(true);
+      return;
+    }
+    const t = setTimeout(() => setSeconds(seconds - 1), 1000);
+    return () => clearTimeout(t);
+  }, [seconds]);
+
+  const isValidOtp = useMemo(() => otp.every((digit) => /^\d$/.test(digit)), [otp]);
+
+  const handleChange = (value, index) => {
+    if (!/^\d?$/.test(value)) return;
+    const newOtp = [...otp];
+    newOtp[index] = value;
+    setOtp(newOtp);
+    if (value && index < 5) inputRefs.current[index + 1].focus();
+  };
+
+  const handleKeyDown = (e, index) => {
+    if (e.key === "Backspace" && !otp[index] && index > 0) {
+      inputRefs.current[index - 1].focus();
+    }
+  };
+
+  const handlePaste = (e) => {
+    e.preventDefault();
+    const pasteData = e.clipboardData.getData("text").replace(/\D/g, "");
+    if (!pasteData) return;
+    const newOtp = [...otp];
+    for (let i = 0; i < 6; i++) newOtp[i] = pasteData[i] || "";
+    setOtp(newOtp);
+    const lastIndex = Math.min(pasteData.length, 6) - 1;
+    if (lastIndex >= 0 && inputRefs.current[lastIndex]) {
+      inputRefs.current[lastIndex].focus();
+    }
+  };
+
+  const handleProceed = async (e) => {
+    e.preventDefault();
+    if (!isValidOtp || loading) return;
+
+    setLoading(true);
+    const otpString = otp.join("");
+
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_USER_BASE}investor/api/investor/verify-email-otp`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, otp: otpString }),
+        }
+      );
+
+      const data = await response.json();
+      if (!response.ok) {
+        showErrorToast(data.message || "Something went wrong. Please try again.");
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const token = data?.data?.data?.accessToken;
+      const investor = data?.data?.data?.investor;
+      localStorage.removeItem("registerFormData");
+      localStorage.removeItem("verifyEmail"); // ✅ clear email after verification
+
+      if (token) Cookies.set("accessToken", token);
+      if (investor) {
+        const simplifiedInvestor = {
+          id: investor.id,
+          name: investor.full_name,
+          username: investor.user_name,
+          email: investor.email,
+          emailVerified: investor.email_verification_status,
+          phone: investor.phone_number,
+          type: investor.investor_type,
+          organization: investor.organization,
+          designation: investor.designation,
+          location: investor.location,
+        };
+        Cookies.set("investor", JSON.stringify(simplifiedInvestor));
+      }
+
+      showSuccessToast("Email verified successfully!");
+      handleClose(); // ✅ close OTP modal
+      window.location.replace("/");
+    } catch (error) {
+      console.error("Login error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleResendOtp = async () => {
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_USER_BASE}investor/api/investor/resend-email-otp`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        }
+      );
+
+      const data = await response.json();
+      if (!response.ok) {
+        showErrorToast(data.message || "Failed to resend OTP. Please try again.");
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      setSeconds(60);
+      setCanResend(false);
+      showSuccessToast("OTP has been resent to your email");
+    } catch (error) {
+      console.error("Resend OTP error:", error);
+    }
+  };
+
+  return (
+    <Modal show={show} onHide={handleClose} centered dialogClassName={styles.customModalWrapper}>
+      <section className={styles.wrapper}>
+
+
+        <img src="/logo.png" alt="Preqt Logo" className={styles.logo} />
+        <div className={styles.titleWrapper}>
+          <button type="button" className={styles.backBtn} onClick={handleBack}>
+            ←
+          </button>
+          <div>
+            <h1 className={styles.title}>Enter OTP To Verify</h1>
+            <p className={styles.subtitle}>Enter 6 digit OTP sent to {email}</p>
+          </div>
+
+        </div>
+
+
+
+        <form className={styles.form} onSubmit={handleProceed}>
+          <div className={styles.formGroup}>
+            <div className={styles.otpInputs}>
+              {otp.map((digit, i) => (
+                <input
+                  key={i}
+                  type="text"
+                  inputMode="numeric"
+                  maxLength={1}
+                  value={digit}
+                  onChange={(e) => handleChange(e.target.value, i)}
+                  onKeyDown={(e) => handleKeyDown(e, i)}
+                  onPaste={handlePaste}
+                  ref={(el) => (inputRefs.current[i] = el)}
+                  className={styles.otpInput}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.resendRow}>
+            {canResend ? (
+              <span className={styles.resendButton} onClick={handleResendOtp}>
+                Resend OTP
+              </span>
+            ) : (
+              <>Resend OTP in <span className={styles.timer}>00:{String(seconds).padStart(2, "0")}</span> sec</>
+            )}
+          </div>
+
+          <button
+            type="submit"
+            className={`${styles.button} ${(!isValidOtp || loading) ? styles.buttonDisabled : ""}`}
+            disabled={!isValidOtp || loading}
+          >
+            {loading ? (
+              <div className={styles.loaderWrapper}>
+                <span className={styles.loader}></span>
+                <span>Verifying...</span>
+              </div>
+            ) : (
+              "Proceed"
+            )}
+          </button>
+        </form>
+      </section>
+    </Modal>
+  );
+}
