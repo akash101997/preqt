@@ -11,59 +11,134 @@ export default function Details_Com() {
   const [shortName, setShortName] = useState("");
   const [id, setId] = useState("");
   const [investor, setInvestor] = useState({});
+  const [newEmail, setNewEmail] = useState();
+  // console.log("newemail", newEmail);
 
   const [showphoneModal, setShowPhoneModal] = useState(false);
   const [showemailModal, setShowEmailModal] = useState(false);
-  const [showeditModal, setShowEditModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
   const [showOtp, setShowOtp] = useState(false);
 
   useEffect(() => {
-    if (showemailModal || showphoneModal || showeditModal || showOtp) {
+    if (showemailModal || showphoneModal || showEditModal || showOtp) {
       document.body.classList.add("no-scroll");
     } else {
       document.body.classList.remove("no-scroll");
     }
-  }, [showemailModal, showphoneModal, showeditModal, showOtp]);
+  }, [showemailModal, showphoneModal, showEditModal, showOtp]);
 
+  // useEffect(() => {
+  // const investorStr = Cookies.get("investor");
+  //   async function fetchInvestor(){
+
+  //   }name
+  //   if (investorStr) {
+  //     try {
+  //       const parsedInvestor = JSON.parse(investorStr);
+  //       setInvestor(parsedInvestor);
+
+  //       if (parsedInvestor.name) {
+  //         // 🔹 generate initials
+  //         const initials = parsedInvestor.name
+  //           .trim()
+  //           .split(/\s+/) // split by spaces
+  //           .map((n) => n[0].toUpperCase())
+  //           .join("");
+  //         setShortName(initials);
+
+  //         // 🔹 generate last 6 chars of id
+  //         const lastSix = parsedInvestor.id
+  //           ? parsedInvestor.id.toString().slice(-6).toUpperCase()
+  //           : "";
+  //         setId(lastSix);
+  //       }
+  //     } catch (error) {
+  //       console.error("Invalid investor cookie:", error);
+  //     }
+  //   }
+  // }, []);
   useEffect(() => {
-    const investorStr = Cookies.get("investor");
-    if (investorStr) {
+    async function fetchInvestor() {
       try {
-        const parsedInvestor = JSON.parse(investorStr);
-        setInvestor(parsedInvestor);
+        const accessToken = Cookies.get("accessToken");
+        if (!accessToken) {
+          console.error("No access token found");
+          return;
+        }
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_USER_BASE}investor/api/investor/account-details`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${accessToken}`,
+            },
+          }
+        );
 
-        if (parsedInvestor.name) {
-          // 🔹 generate initials
-          const initials = parsedInvestor.name
-            .trim()
-            .split(/\s+/) // split by spaces
-            .map((n) => n[0].toUpperCase())
-            .join("");
-          setShortName(initials);
+        const data = await res.json();
+        // if (data.data.name) {
 
-          // 🔹 generate last 6 chars of id
-          const lastSix = parsedInvestor.id
-            ? parsedInvestor.id.toString().slice(-6).toUpperCase()
-            : "";
-          setId(lastSix);
+        // const initials = data.data.name
+        //   .trim()
+        //   .split(/\s+/) // split by spaces
+        //   .map((n) => n[0].toUpperCase())
+        //   .join("");
+        // setShortName(initials);
+
+        const lastsix = data.data.id
+          ? data.data.id.toString().slice(-6).toUpperCase()
+          : "";
+        setId(lastsix);
+
+        localStorage.setItem("investorDetails", JSON.stringify(data.data.id));
+
+        if (data.success) {
+          setInvestor(data.data);
+        } else {
+          console.error("Error:", data.message);
         }
       } catch (error) {
-        console.error("Invalid investor cookie:", error);
+        console.error("Error fetching investor:", error);
       }
     }
+
+    fetchInvestor();
   }, []);
 
   return (
     <div className={styles.main_container}>
       <div className={styles.header}>
         <h1 className={styles.h1}>Account Details</h1>
+        <div
+          className={styles.edit_icon}
+          onClick={() => setShowEditModal(!showEditModal)}
+        >
+          {" "}
+          <img src="/account_images/edit_icon.svg" alt="" />
+        </div>
+      </div>
+      <div>
+        {" "}
+        {showEditModal && (
+          <div className={styles.edit_details_container}>
+            <EditDetails
+              fullName={investor?.full_name}
+              investorType={investor?.investor_type}
+              organization={investor?.organization}
+              location={investor?.location}
+              isOpen={setShowEditModal}
+              onClose={() => setShowEditModal(false)}
+            />
+          </div>
+        )}
       </div>
 
       <div className={styles.responsive_user_details}>
         <div className={styles.avatar}>{shortName}</div>
         <div className={styles.avatardetails}>
           <div className={styles.id}>{id}</div>
-          <div className={styles.name}>{investor?.name}</div>
+          <div className={styles.name}>{investor?.full_name}</div>
         </div>
       </div>
 
@@ -72,7 +147,12 @@ export default function Details_Com() {
       <section className={styles.details_section}>
         <div className={styles.name}>
           <div className={styles.heading}>Name</div>
-          <div className={styles.value}>{investor?.name}</div>
+          <div className={styles.value}>
+            {investor?.full_name
+              ? investor.full_name.charAt(0).toUpperCase() +
+                investor.full_name.slice(1)
+              : ""}
+          </div>
         </div>
         <div className={styles.hr}></div>
 
@@ -80,9 +160,18 @@ export default function Details_Com() {
           <div className={styles.heading}>Email</div>
           <div className={styles.emailChange}>
             <div className={styles.value}>{investor?.email}</div>
+            <a
+              className={styles.Link}
+              href="#"
+              onClick={() => setShowEmailModal(true)}
+            >
+              Change
+            </a>
             <ChangeEmail
+              setShowOtp={setShowOtp}
               isOpen={showemailModal}
               onClose={() => setShowEmailModal(false)}
+              newEmail={setNewEmail}
             />
           </div>
         </div>
@@ -92,11 +181,22 @@ export default function Details_Com() {
         <div className={styles.mobile}>
           <div className={styles.heading}>Mobile Number</div>
           <div className={styles.mobileChange}>
-            <div className={styles.value}>{investor?.phone || "N/A"}</div>
-            <ChangePhone
-              isOpen={showphoneModal}
-              onClose={() => setShowPhoneModal(false)}
-            />
+            <div className={styles.value}>
+              {investor?.phone_number || "N/A"}
+            </div>
+            <div>
+              <a
+                className={styles.Link}
+                href="#"
+                onClick={() => setShowPhoneModal(true)}
+              >
+                Change
+              </a>
+              <ChangePhone
+                isOpen={showphoneModal}
+                onClose={() => setShowPhoneModal(false)}
+              />
+            </div>
           </div>
         </div>
 
@@ -105,8 +205,17 @@ export default function Details_Com() {
         <div className={styles.inverstor}>
           <div className={styles.heading}>Investor Type</div>
           <div className={styles.otp}>
-            <div className={styles.value}>{investor?.type || "N/A"}</div>
-            <Otp isOpen={showOtp} onClose={() => setShowOtp(false)} />
+            <div className={styles.value}>
+              {investor?.investor_type || "N/A"}
+            </div>
+            {showOtp && (
+              <Otp
+                showOtp={showOtp}
+                newEmail={newEmail}
+                setShowOtp={setShowOtp}
+                userId={id}
+              />
+            )}
           </div>
         </div>
         <div className={styles.hr}></div>

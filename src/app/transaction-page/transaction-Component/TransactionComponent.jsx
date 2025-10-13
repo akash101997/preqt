@@ -1,5 +1,8 @@
+"use client";
+import React, { useEffect, useState } from "react";
 import styles from "./Transaction_Component.module.css";
 import Image from "next/image";
+import Cookies from "js-cookie";
 
 export default function TransactionComponent() {
   const transactions = Array(4).fill({
@@ -17,6 +20,100 @@ export default function TransactionComponent() {
     issueDate: "21-08-2025",
     status: "Application under review",
   });
+
+
+const [investorId, setInvestorId] = useState("");
+const [transaction, setTransaction] = useState([]);
+
+useEffect(() => {
+  const id = JSON.parse(localStorage.getItem("investorDetails"));
+  if (id) setInvestorId(id);
+}, []);
+
+
+
+
+
+// useEffect(() => {
+// const investorId = JSON.parse(localStorage.getItem("investorDetails"));
+// console.log("investor id from local storage:", investorId);
+// // const investorId = "01d992b7-13cf-4f04-8344-52b0e95e71be";
+// const url = `${process.env.NEXT_PUBLIC_USER_BASE}investor/api/transactions/investor/${investorId}`;
+
+// const token = Cookies.get("accessToken");
+// if (!token) {
+//   console.error("No access token found");
+//   return;
+// }
+
+
+// fetch(url, {
+//   method: "GET",
+//   headers: {
+//     "Accept": "application/json",
+//     "Authorization": `Bearer ${token}`
+//   },
+//     credentials: "include"
+  
+
+// })
+// .then(response => {
+//   if (!response.ok) {
+//     throw new Error(`HTTP error! status: ${response.status}`);
+//   }
+//   return response.json();
+// })
+// .then(data => {
+//   console.log("Transactions:", data);
+// })
+// .catch(err => {
+//   console.error("Error fetching data:", err);
+// });
+// }, []);
+  const fetchTransactions = async () => {
+    try {
+      const storedId = JSON.parse(localStorage.getItem("investorDetails"));
+      if (!storedId) {
+        console.error("No investor ID found");
+        return;
+      }
+      setInvestorId(storedId);
+
+      const url = `${process.env.NEXT_PUBLIC_USER_BASE}investor/api/transactions/investor/${storedId}`;
+      const token = Cookies.get("accessToken");
+
+      if (!token) {
+        console.error("No access token found");
+        return;
+      }
+
+      const response = await fetch(url, {
+        method: "GET",
+        headers: {
+          "Accept": "application/json",
+          "Authorization": `Bearer ${token}`,
+        },
+        credentials: "include",
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log("Transactions:", data);
+
+      // You can update your state with actual data here
+      setTransaction(data.data || []); // assuming `data.data` has the transaction list
+    } catch (err) {
+      console.error("Error fetching data:", err);
+    }
+  };
+  useEffect(() => {
+    fetchTransactions();
+    console.log("fetchTransactions called");
+  }, []);
+
 
   return (
     <div className={styles.container}>
@@ -75,7 +172,7 @@ export default function TransactionComponent() {
             <div className={styles.statusBox}>
               <span>{t.status}</span>
               <span><Image src={"/transaction/statusBox-watch.svg"} alt="watch-logo"   width={20}
-  height={20}/></span>
+              height={20}/></span>
             </div>
           </div>
         ))}

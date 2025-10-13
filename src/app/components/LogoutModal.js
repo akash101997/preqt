@@ -12,24 +12,23 @@ const LogoutModal = ({ show = false, onClose = () => { }, onLogout = () => { } }
             className="log-out-modal"
         >
             <Modal.Header closeButton>
-                <Modal.Title>Confirm Logout</Modal.Title>
+                <Modal.Title className="title">Log Out</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
-                <p style={{ marginBottom: 'unset' }}>Are you sure you want to log out?</p>
+                <img src="/account_images/logout-logo.svg" alt="logo"  className="logo"/>
+                <p  className="alert">Are you sure you want to log out?</p>
             </Modal.Body>
 
             <Modal.Footer>
-                <Button variant="secondary" onClick={onClose}>
+              {/* <div className="button-group"> */}
+                <Button  variant="secondary" onClick={onClose} id="cancelBtn" className="Btn">
                     Cancel
                 </Button>
-                <Button variant="danger" style={{
-                    background: '#111827',
-                    color: "white",
-                    borderColor: '#111827'
-                }} onClick={onLogout}>
-                    Logout
+                <Button variant="primary" onClick={onLogout} id="logoutBtn" className="Btn">
+                    Log Out
                 </Button>
+                
             </Modal.Footer>
         </Modal>
     );

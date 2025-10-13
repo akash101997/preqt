@@ -124,7 +124,7 @@
   text-decoration: underline;
   text-underline-offset: 4px;
   top: -18px;
-  left: -20px;
+  left: -0px;
   color: rgba(177, 140, 7, 1);
   align-items: center;
   display: flex;
@@ -159,7 +159,7 @@
 /* 📱 Tablet screens */
 @media (max-width: 1024px) {
   .main_container {
-    padding: 20px;
+    padding: 32px;
   }
 
   .h1 {
@@ -176,7 +176,7 @@
 /* 📱 Mobile screens */
 @media (max-width: 768px) {
   .main_container {
-    padding: 16px;
+    padding: 32px;
   }
 
   .header {
@@ -265,6 +265,11 @@
   .value {
     font-size: 0.95rem;
     margin-bottom: 12px;
+  }
+  .Link{
+    font-size: 14px;
+    /* top: -14px;
+    left: -0px; */
   }
 
   .edit_icon {

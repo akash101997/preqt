@@ -57,7 +57,7 @@ export default function Sidenav() {
           <div className={styles.avatar}>{shortName}</div>
           <div className={styles.avatardetails}>
             <div className={styles.id}>{id}</div>
-            <div className={styles.name}>{fullName}</div>
+            <div className={styles.name}>{fullName?fullName.charAt(0).toUpperCase()+fullName.slice(1):""}</div>
           </div>
         </div>
 
@@ -80,7 +80,7 @@ export default function Sidenav() {
           </li>
           <div className={styles.line}></div>
 
-          {/* <li
+          <li
            id={styles.Transactions} 
             className={styles.item}
             onClick={() => router.push("/account/transation")}
@@ -96,8 +96,9 @@ export default function Sidenav() {
                 />
               </button>
             </div>
-          </li> */}
-          {/* <div className={styles.line}></div> */}
+          </li> 
+
+           <div className={styles.line}></div>
 
           <li id={styles.support}
             className={styles.item}
@@ -117,7 +118,7 @@ export default function Sidenav() {
           </li>
           <div className={styles.line}></div>
 
-          {/* <li
+          <li
             className={styles.item}
             onClick={() => router.push("/account/notification")}
           >
@@ -133,8 +134,8 @@ export default function Sidenav() {
                 />
               </button>
             </div>
-          </li> */}
-          {/* <div className={styles.line}></div> */}
+          </li> 
+          <div className={styles.line}></div>
 
           <li
             className={styles.item}
@@ -190,7 +191,7 @@ export default function Sidenav() {
           </li>
           <div className={styles.line}></div>
 
-          {/*   <li
+             <li
             className={styles.item}
             onClick={() => router.push("/account/my-document")}
           >
@@ -205,7 +206,7 @@ export default function Sidenav() {
                 />
               </button>
             </div>
-          </li> */}
+          </li> 
           {/* <div className={styles.line}></div> */}
         </ul>
 

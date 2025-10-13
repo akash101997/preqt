@@ -1,6 +1,8 @@
 'use client'
 import { usePathname } from 'next/navigation';
 import styles from './page.module.css'
+import React, { useEffect } from 'react'
+
 const transactions = [
   {
     name: 'Parth Electricals & Engin...',
@@ -160,6 +162,8 @@ const getStatusClass = (status) => {
 
 export default function TransactionsTable() {
 const path= usePathname();
+
+
   return (
 
     
@@ -168,18 +172,22 @@ const path= usePathname();
       <div className={styles.hr} ></div>
       <div className={styles.table}>
         <div className={`${styles.row} ${styles.header}`}>
+    
           <div>Deal Name</div>
           <div>Amount (₹)</div>
           <div>Units Per Lot</div>
           <div>Lot Size</div>
           <div>Updated At</div>
           <div>Status</div>
+        
           
           
           
         </div>
         {transactions.map((txn, idx) => (
           <div className={styles.row} key={idx}>
+            {/* <div>{response.id}</div> */}
+    
             <div>{txn.name}</div>
             <div>{txn.amount}</div>
             <div>{txn.units}</div>

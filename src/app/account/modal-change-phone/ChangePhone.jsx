@@ -1,8 +1,50 @@
 "use client";
 import styles from "./ChangePhone.module.css";
 
-export default function ChangePhon({ isOpen, onClose }) {
+export default function ChangePhon({ isOpen, onClose , setShowOtp }) {
   if (!isOpen) return null;
+
+  const handleChange = (e) => {
+    setShowOtp(true);
+    // Handle input change if needed
+  }
+
+  const handleSendOtp =  async(e) => {
+    e.preventDefault();
+ 
+ try{
+  const accessToken = Cookies.get("accessToken");
+  if (!accessToken) {
+    console.error("No access token found");
+    return;
+  }
+
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_USER_BASE}investor/api/investor/resend-edit-phone-otp`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify({ new_phone: phoneData }),
+    }
+  );
+  const data = await res.json();
+  if (data.success) {
+    console.log("OTP sent successfully");
+    onClose();
+    setShowOtp(true);
+  } else {
+    console.log("Error:", data.message);
+  }
+
+ }catch(err){
+  console.log("Error sending OTP:", err);
+  throw new Error("Something went wrong");
+ }
+  
+  };
 
   return (
     <div className={styles.overlay}>
