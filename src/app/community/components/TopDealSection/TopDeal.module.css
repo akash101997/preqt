@@ -145,11 +145,13 @@
     border-radius: 34778.34px;
     background-color: #302F2B;
     align-items: center;
+    cursor: pointer;
 }
 
 .ViewAllText {
     color: white;
     margin: 0;
+    cursor: pointer;
 }
 
 .upperRightArrow {

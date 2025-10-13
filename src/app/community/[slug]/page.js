@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import Styles from '../components/PostDealContainer/postDealContainer.module.css'
+import Styles from './page.module.css'
 import PostSection from '../components/PostSection/PostSection'
 import { useParams } from 'next/navigation'
 import TopDeal from '../components/TopDealSection/TopDeal'
@@ -13,7 +13,7 @@ const page = () => {
     <>
     
     
-      <div className={Styles.postDealInnerContainer}>
+      <div className={Styles.postDealMainContainer}>
         <PostDetails slug={slug} />
         
       </div>

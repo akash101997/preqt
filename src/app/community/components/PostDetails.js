@@ -6,8 +6,11 @@ import Cookies from 'js-cookie'
 import { toast } from 'react-toastify'
 import CommentSection from './CommentSection/CommentSection'
 import { showErrorToast, showSuccessToast } from '../../components/ToastProvider'
+import ImageSlide from './ImageSlide'
 
-const PostDetails = ({slug}) => {
+
+const 
+PostDetails = ({slug}) => {
 
   const [selectedOption, setSelectedOption] = useState(null)
   const [hasVoted, setHasVoted] = useState(false)
@@ -19,6 +22,33 @@ const [ commentonPost, setCommentonPost] = useState("")
  const [ refetch, setRefetch] = useState(false)
  const [ currentUser, setCurrentUser] = useState(Cookies.get('investorName'))
 
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  // Function to calculate time remaining for poll
+  const getTimeRemaining = (expiresAt) => {
+    if (!expiresAt) return 'Poll ended';
+    
+    const expiryDate = new Date(expiresAt);
+    const now = currentTime;
+    
+    if (isNaN(expiryDate.getTime())) return 'Invalid date';
+    
+    const timeDiff = expiryDate.getTime() - now.getTime();
+    
+    if (timeDiff <= 0) return 'Poll ended';
+    
+    const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+    
+    if (hours > 0) {
+      return `${hours}hrs ${minutes}mins left`;
+    } else if (minutes > 0) {
+      return `${minutes}mins ${seconds}s left`;
+    } else {
+      return `${seconds}s left`;
+    }
+  };
   // Function to format timestamp
   const formatTimestamp = (timestamp) => {
     if (!timestamp) return '';
@@ -240,7 +270,16 @@ const [ commentonPost, setCommentonPost] = useState("")
  
  }, [refetch])
 
-  // Function to submit a new comment
+  // Update current time every second for poll countdown
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [])
+
+    // Function to submit a new comment
   const submitComment = async (postId) => {
     if (!commentonPost.trim()) {
       showErrorToast('Please enter a comment')
@@ -356,12 +395,12 @@ The post you're looking for doesn't exist or may have been removed.
 </div>
 </div>
 ) : (
-        <div className={Styles.postsMainContainer2}>
+        <div className={Styles.postsMainContainer3}>
          
       {posts.map((post) => (
         <div key={post.id} className={Styles.postDetailsContainer}>
           {post.type === 'poll' ? (
-            <div className={Styles.IndividualPostContainer}>
+            <div className={`${Styles.IndividualPostContainer} ${Styles.postsMainContainer}`}>
               <div className={Styles.votingContainer2}>
 
                 {/* voting timer container */}
@@ -377,7 +416,7 @@ The post you're looking for doesn't exist or may have been removed.
                     <article className={Styles.TimeContainer}>
                       <div className={Styles.timerClockAndHoursLeft}>
                         <img src="/assets/pictures/timerClock.svg" alt="" />
-                        <p className={Styles.HoursLeft}>2hrs left</p>
+                        <p className={Styles.HoursLeft}>{getTimeRemaining(post?.pollExpiresAt)}</p>
                       </div>
                       <div className={Styles.timeContent}>{formatTimestamp(post?.createdAt)}</div>
                     </article>
@@ -429,12 +468,10 @@ The post you're looking for doesn't exist or may have been removed.
                             </span>
                           </div>
 
-                          {hasVoted && (
-                            <div
-                              className={Styles.progressBar}
-                              style={{ width: `${option.votesPercent}%` }}
-                            ></div>
-                          )}
+                          <div
+                            className={Styles.progressBar}
+                            style={{ width: `${option?.votesPercent ?? 0}%` }}
+                          ></div>
                         </div>
                       ))}
 
@@ -457,17 +494,16 @@ The post you're looking for doesn't exist or may have been removed.
                     {/* like */}
                      <div className={Styles.likeContainer} onClick={(e) => handleLike(e,post?.id)}>
                        <img 
-                         src={post?.isLiked ? "/assets/pictures/like.svg" : "/assets/pictures/like.svg"} 
+                         src={post?.isLiked ? "/assets/pictures/liked.svg" : "/assets/pictures/like.svg"} 
                          alt="" 
                          style={{ 
-                           background: post?.isLiked ? 'linear-gradient(90deg, #FFD89E 0%, #B88609 100%)' : 'none',
                            opacity: post?.isLiked ? 1 : 0.7,
-                           borderRadius: post?.isLiked ? '4px' : '0px',
+                         
                            padding: post?.isLiked ? '2px' : '0px'
                          }}
                        />
                        <p className={Styles.likesCount} style={{ 
-                         color: post?.isLiked ? '#007bff' : 'inherit' 
+                         color: post?.isLiked ? '#64748B' : '#64748B' 
                        }}>
                          {post?.likesCount} Likes
                        </p>
@@ -510,13 +546,16 @@ The post you're looking for doesn't exist or may have been removed.
 
                 <div className={Styles.postsAndDescriptionContainer}>
                   <p className={Styles.postDescription}>{post?.content}</p>
-                  <Image
+                  <div style={{width: '100%', maxHeight: '400px'}}>
+                  <ImageSlide images={post?.mediaUrl} />
+                  </div>
+                  {/* <Image
                     src="/assets/pictures/preqtCandidImage.png"
                     alt="Post image"
                     className={Styles.postImage}
                     width={628}
                     height={400}
-                  />
+                  /> */}
                 </div>
                 {/* like comment and share */}
                 <div className={Styles.LCScontainer}>
@@ -526,7 +565,7 @@ The post you're looking for doesn't exist or may have been removed.
                     {/* like */}
                      <div className={Styles.likeContainer} onClick={(e) => handleLike(e,post?.id)}>
                        <img 
-                         src={post?.isLiked ? "/assets/pictures/like-filled.svg" : "/assets/pictures/like.svg"} 
+                          src={post?.isLiked ? "/assets/pictures/liked.svg" : "/assets/pictures/like.svg"} 
                          alt="" 
                          style={{ 
                            filter: post?.isLiked ? 'none' : 'none',
@@ -534,7 +573,7 @@ The post you're looking for doesn't exist or may have been removed.
                          }}
                        />
                        <p className={Styles.likesCount} style={{ 
-                         color: post?.isLiked ? '#007bff' : 'inherit' 
+                         color: post?.isLiked ? '#64748B' : '#64748B' 
                        }}>
                          {post?.likesCount} Likes
                        </p>
