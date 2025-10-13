@@ -159,7 +159,7 @@
 /* 📱 Tablet screens */
 @media (max-width: 1024px) {
   .main_container {
-    padding: 20px;
+    padding: 32px;
   }
 
   .h1 {
@@ -176,7 +176,7 @@
 /* 📱 Mobile screens */
 @media (max-width: 768px) {
   .main_container {
-    padding: 16px;
+    padding: 32px;
   }
 
   .header {

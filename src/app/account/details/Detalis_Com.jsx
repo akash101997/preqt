@@ -7,12 +7,12 @@ import EditDetails from "../editDetails/EditDetails";
 import Otp from "../modal-otp-verification/Otp";
 import Cookies from "js-cookie";
 
-export default function Details_Com( ) {
+export default function Details_Com() {
   const [shortName, setShortName] = useState("");
   const [id, setId] = useState("");
   const [investor, setInvestor] = useState({});
-  const [newEmail ,setNewEmail]= useState()
-  console.log("newemail", newEmail);
+  const [newEmail, setNewEmail] = useState();
+  // console.log("newemail", newEmail);
 
   const [showphoneModal, setShowPhoneModal] = useState(false);
   const [showemailModal, setShowEmailModal] = useState(false);
@@ -20,11 +20,10 @@ export default function Details_Com( ) {
   const [showOtp, setShowOtp] = useState(false);
 
   useEffect(() => {
-    if (showemailModal || showphoneModal || showEditModal ||showOtp ) {
+    if (showemailModal || showphoneModal || showEditModal || showOtp) {
       document.body.classList.add("no-scroll");
     } else {
       document.body.classList.remove("no-scroll");
-  
     }
   }, [showemailModal, showphoneModal, showEditModal, showOtp]);
 
@@ -78,7 +77,19 @@ export default function Details_Com( ) {
         );
 
         const data = await res.json();
-        setId(data.data.id);
+        // if (data.data.name) {
+
+        // const initials = data.data.name
+        //   .trim()
+        //   .split(/\s+/) // split by spaces
+        //   .map((n) => n[0].toUpperCase())
+        //   .join("");
+        // setShortName(initials);
+
+        const lastsix = data.data.id
+          ? data.data.id.toString().slice(-6).toUpperCase()
+          : "";
+        setId(lastsix);
 
         localStorage.setItem("investorDetails", JSON.stringify(data.data.id));
 
@@ -136,7 +147,12 @@ export default function Details_Com( ) {
       <section className={styles.details_section}>
         <div className={styles.name}>
           <div className={styles.heading}>Name</div>
-          <div className={styles.value}>{investor?.full_name}</div>
+          <div className={styles.value}>
+            {investor?.full_name
+              ? investor.full_name.charAt(0).toUpperCase() +
+                investor.full_name.slice(1)
+              : ""}
+          </div>
         </div>
         <div className={styles.hr}></div>
 
@@ -192,7 +208,14 @@ export default function Details_Com( ) {
             <div className={styles.value}>
               {investor?.investor_type || "N/A"}
             </div>
-            {showOtp && <Otp showOtp={showOtp} newEmail={newEmail} setShowOtp={setShowOtp} userId={id} />}
+            {showOtp && (
+              <Otp
+                showOtp={showOtp}
+                newEmail={newEmail}
+                setShowOtp={setShowOtp}
+                userId={id}
+              />
+            )}
           </div>
         </div>
         <div className={styles.hr}></div>

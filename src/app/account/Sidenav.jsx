@@ -57,7 +57,7 @@ export default function Sidenav() {
           <div className={styles.avatar}>{shortName}</div>
           <div className={styles.avatardetails}>
             <div className={styles.id}>{id}</div>
-            <div className={styles.name}>{fullName}</div>
+            <div className={styles.name}>{fullName?fullName.charAt(0).toUpperCase()+fullName.slice(1):""}</div>
           </div>
         </div>
 
