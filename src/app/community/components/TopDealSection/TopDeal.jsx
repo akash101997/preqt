@@ -1,9 +1,11 @@
+"use client"
 import Styles from './TopDeal.module.css'
-
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 const TopDeal = () => {
-    return (
+    const router = useRouter()
+        return (
         <div className={Styles.TopDealMainContainer}>
             {/* top deal heading */}
             <div className={Styles.TopDealsHeading}>
@@ -92,7 +94,7 @@ const TopDeal = () => {
 
                 {/* view all button */}
                 <div className={Styles.viewAllBtnContainer}>
-                    <p className={Styles.ViewAllText}>View All</p>
+                    <p className={Styles.ViewAllText} onClick={() => router.push('/deals')}>View All</p>
                     <img src="/assets/pictures/upperRightArrow.png" alt="" className={Styles.upperRightArrow} />
                 </div>
             </div>
