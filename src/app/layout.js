@@ -63,7 +63,7 @@ export default function RootLayout({ children  }) {
         bodyClassName="customBody"
         progressClassName="customProgress"
         position="top-right"
-        autoClose={9000}
+        autoClose={5000}
         hideProgressBar={false}
         closeOnClick
         pauseOnHover

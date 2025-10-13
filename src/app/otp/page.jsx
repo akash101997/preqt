@@ -110,6 +110,7 @@ function OtpPageContent() {
         );
       }
 
+     
       Cookies.remove("verifyOtp");
       window.location.replace("/");
     } catch (error) {
@@ -157,6 +158,7 @@ function OtpPageContent() {
       });
     }
   };
+  //  console.log("investor id:", investor.id);
 
   return (
     <section className={styles.wrapper}>
