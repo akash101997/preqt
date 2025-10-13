@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import ButtonAnimation from "./ButtonAnimation";
 import styles from "./market.module.css";
+import AuthAnimatedBtn from "./AuthAnimatedBtn";
 
 const MarketInvesting = () => {
     const firstRef = useRef(null);
@@ -108,7 +109,7 @@ const MarketInvesting = () => {
                         </p>
                     </div>
                 </div>
-            </section>
+            </section >
 
         </>
     );

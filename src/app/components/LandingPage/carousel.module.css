@@ -1,89 +1,176 @@
 .carouselSection {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: #0f0f0f;
-    overflow: hidden;
-    /* padding: 100px 0; */
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  /* ensures section fills screen but not clipped */
+  background: #0f0f0f;
+  overflow: visible;
 }
 
 .parentWrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .parentWrapper h1 {
-    font-size: 74px;
-    font-weight: 700;
-    text-align: center;
-    color: white;
-    margin-bottom: 40px;
-    background: linear-gradient(180deg, #fdf7fe 0%, #d8bf7e 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 32px 0 80px 0;
+  font-size: 74px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+  background: linear-gradient(180deg, #fdf7fe 0%, #d8bf7e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 32px 0 80px 0;
 }
 
 .carouselWrapper {
-    display: flex;
-    gap: 20px;
-    will-change: transform;
-    transform: translateX(0);
-    padding-left: 300px;
+  display: flex;
+  gap: 20px;
+  will-change: transform;
+  transform: translateX(0);
+  padding-left: 100px;
+  /* reduced from 300px */
 }
 
 .cardWrapper {
-    flex: 0 0 calc(100% / 3.5);
-    padding: 24px;
-    border-radius: 20px;
-    border: 0.5px solid rgba(171, 171, 171, 0.4);
-    background: #1a1a1a;
-    height: 500px;
+  flex: 0 0 calc(100% / 3.5);
+  padding: 24px;
+  border-radius: 20px;
+  border: 0.5px solid rgba(171, 171, 171, 0.4);
+  background: #1a1a1a;
+  height: 500px;
 }
 
 .cardBody {
-    border-radius: 16px;
-    background: #242424;
-    padding: 20px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-image: url("/card-layer.png");
-    background-repeat: no-repeat;
-    background-position: bottom right;
-    background-size: 75% auto;
+  border-radius: 16px;
+  background: #242424;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url("/card-layer.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 75% auto;
 }
 
 .cardTextxt {
-    color: white;
-    font-size: 24px;
-    font-weight: 300;
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
 }
 
 .personDetails h3 {
-    font-size: 16px;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
 }
 
 .personDetails p {
-    font-size: 14px;
-    font-weight: 400;
-    color: white;
-    margin-bottom: unset;
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: unset;
 }
 
 .cardFooter {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .parentWrapper h1 {
+    font-size: 48px;
+    margin: 16px 0 40px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .carouselSection {
+    min-height: auto;
+    padding: 80px 16px;
+  }
+
+  .parentWrapper h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .cardWrapper {
+    flex: 0 0 80%;
+    height: 420px;
+    padding: 16px;
+  }
+
+  .cardTextxt {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .parentWrapper h1 {
+    font-size: 28px;
+    text-align: left;
+    margin-left: 16px;
+  }
+
+  .cardWrapper {
+    flex: 0 0 100%;
+    height: 360px;
+  }
+
+  .cardTextxt {
+    font-size: 16px;
+  }
+}
+
+/* React Slick customization */
+.slickWrapper :global(.slick-slide) {
+  padding: 0px;
+}
+
+.slickWrapper :global(.slick-dots li button:before) {
+  color: white;
+}
+
+.slickWrapper {
+  width: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+.slideItem {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* keeps card centered inside slide */
+  padding: 0px;
+  /* small gutter */
+  box-sizing: border-box;
+}
+
+/* keep existing .slickWrapper :global rules; ensure wrapper visible */
+.slickWrapper {
+  width: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+.slickWrapper :global(.slick-slide) {
+  display: flex;
+  /* important so slideItem can align */
+  align-items: stretch;
 }

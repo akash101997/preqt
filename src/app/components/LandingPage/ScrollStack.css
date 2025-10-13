@@ -1,6 +1,6 @@
 .scroll-stack-container {
     position: relative;
-    height: 220vh;
+    height: max-content;
     perspective: 1000px;
     overflow: visible;
     /* margin-top: 100px; */
@@ -8,7 +8,7 @@
 
 .scroll-stack-card-wrapper {
     position: sticky;
-    top: 0;
+    top: 20%;
     will-change: transform, opacity;
     transform-origin: center top;
     transition: transform 0.2s ease-out, opacity 0.2s ease-out;
@@ -23,4 +23,14 @@
     margin: 0 auto;
     text-align: center;
     font-size: 24px;
+}
+
+@media (max-width: 768px) {
+    .scroll-stack-container {
+        height: max-content;
+    }
+
+    .scroll-stack-card-wrapper {
+        top: 10%;
+    }
 }

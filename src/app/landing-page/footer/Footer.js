@@ -27,7 +27,7 @@ export default function Footer() {
             </p>
 
             {/* Button */}
-           <AnimatedBtn/>
+            <AnimatedBtn />
             <div>
                 <img src="/landing-asset/landing-footer.png" alt="footer" style={{ maxWidth: '1200px', width: '100%' }} />
             </div>

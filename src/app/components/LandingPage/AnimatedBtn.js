@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import React, { useRef } from "react";
 import styles from "./animatedBtn.module.css";
 import { MoveRight } from "lucide-react";

@@ -82,3 +82,42 @@
 .secondText {
     max-width: 51vw;
 }
+
+@media (max-width: 768px) {
+    .layer h1 {
+        font-size: 42px;
+    }
+
+    .layer p {
+        font-size: 18px;
+        max-width: 80vw;
+    }
+
+    .firstText {
+        max-width: 80vw;
+    }
+
+    .secondText {
+        max-width: 80vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .layer h1 {
+        font-size: 32px;
+    }
+
+    .layer p {
+        font-size: 16px;
+        max-width: 90vw;
+    }
+
+    .firstText {
+        max-width: 90vw;
+    }
+
+    .secondText {
+        max-width: 90vw;
+    }
+
+}

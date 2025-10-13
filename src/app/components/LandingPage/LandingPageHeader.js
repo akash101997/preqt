@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
+import AuthAnimatedBtn from "./AuthAnimatedBtn";
 import SigninPopup from "@/app/sign-in/SigninPopup";
 import OtpPopup from "@/app/otp/OtpPopup";
 import SignupTypePopup from "@/app/signup/SignupTypePopup";
@@ -32,24 +33,23 @@ export default function LandingPageHeader() {
   const handleOtpOpen = () => setShowOtp(true);
   const handleOtpClose = () => setShowOtp(false);
 
- 
-
   return (
     <>
-    <section className={styles.parentHeader}>
-      <header className={styles.header}>
-        <div className={styles.firstPart}>
-          <div className={styles.logo}><Image src="/landing-logo.svg" height={32} width={102}  alt="landing page"/> </div>
-          <nav className={`${styles.nav} ${menuOpen ? styles.active : ""}`}>
-            <Link href="/" className={isActiveLink('/') ? styles.active : ''}>Home</Link>
-            <Link href="/" className={isActiveLink('"/') ? styles.active : ''}>Community</Link>
-          </nav>
-        </div>
+      <section className={styles.parentHeader}>
+        <header className={styles.header}>
+          <div className={styles.firstPart}>
+            <div className={styles.logo}><Image src="/landing-logo.svg" height={32} width={102} alt="landing page" /> </div>
+            <nav className={`${styles.nav} ${menuOpen ? styles.active : ""}`}>
+              <Link href="/" className={isActiveLink('/') ? styles.active : ''}>Home</Link>
+              <Link href="/" className={isActiveLink('"/') ? styles.active : ''}>Community</Link>
+              <div className={`${styles.containerBtn} ${styles.showOnMobile}`}>
+                <AuthAnimatedBtn children="SIGN IN" onClick={handleSigninOpen} />
+              </div>
+            </nav>
+          </div>
 
-          <div className={styles.containerBtn}>
-            <Button className={styles.button} onClick={handleSigninOpen}>SIGN IN
-            </Button>
-            <Button className={styles.button} onClick={()=> setShowSignupType(true)}>SIGN UP</Button>
+          <div className={`${styles.containerBtn} ${styles.hideOnMobile}`}>
+            <AuthAnimatedBtn children="SIGN IN" onClick={handleSigninOpen} />
           </div>
           <div
             className={styles.hamburger}
@@ -94,5 +94,6 @@ export default function LandingPageHeader() {
         }}
       />
     </>
+
   );
 }

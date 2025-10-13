@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './StepsComponent.module.css'; // Adjust path as necessary
+import ButtonAnimation from '@/app/components/LandingPage/ButtonAnimation';
 
 const StepsComponent = () => {
   return (
@@ -11,12 +12,12 @@ const StepsComponent = () => {
             In Next.js, consider using the <Image /> component for optimization 
           */}
           <div className={styles.leftImage}>
-          <img 
-            src="/landing-asset/signin.png" 
-            alt="Sign Up Visual"
-          />
+            <img
+              src="/landing-asset/signin.png"
+              alt="Sign Up Visual"
+            />
           </div>
-          
+
           <div className={styles.signUpText}>
             <h3>Sign Up</h3>
             <p>Create your account and access the deals and opportunities.</p>
@@ -27,7 +28,8 @@ const StepsComponent = () => {
       {/* Right Section: Steps Cards */}
       <div className={styles.rightSection}>
         <div className={styles.processHeader}>
-          <span className={styles.dot}></span> Process
+          {/* <span className={styles.dot}></span> Process */}
+          <ButtonAnimation text="Process" />
         </div>
         <h1>Get started in 3 simple steps</h1>
 
@@ -35,8 +37,8 @@ const StepsComponent = () => {
         <div className={styles.stepCard}>
           <div className={styles.cardImagePlaceholder}>
             {/* TODO: Replace the src with your actual image path */}
-            <img 
-              src="/landing-asset/step1.webp" 
+            <img
+              src="/landing-asset/step1.webp"
               alt="Create Profile"
             />
           </div>
@@ -50,8 +52,8 @@ const StepsComponent = () => {
         <div className={styles.stepCard}>
           <div className={styles.cardImagePlaceholder}>
             {/* TODO: Replace the src with your actual image path */}
-            <img 
-              src="/landing-asset/step2.webp" 
+            <img
+              src="/landing-asset/step2.webp"
               alt="Explore & Connect"
             />
           </div>
@@ -65,8 +67,8 @@ const StepsComponent = () => {
         <div className={styles.stepCard}>
           <div className={styles.cardImagePlaceholder}>
             {/* TODO: Replace the src with your actual image path */}
-            <img 
-             src="/landing-asset/step3.webp" 
+            <img
+              src="/landing-asset/step3.webp"
               alt="Invest or Raise"
             />
           </div>

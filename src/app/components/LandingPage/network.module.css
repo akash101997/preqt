@@ -72,10 +72,11 @@
 .headingDiv>div {
     max-width: max-content;
     margin: auto;
+    margin-bottom: 30px;
 }
 
 .headingDiv h1 {
-    font-size: 55px;
+    font-size: 53px;
     font-weight: 700;
     margin: 0;
     background: linear-gradient(180deg, #FFFFFF 60%, #d8bf7e 100%);
@@ -195,6 +196,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
+    text-align: left;
 }
 
 .imageCard {
@@ -218,4 +220,114 @@
 
 .singleCard2 .imageCard {
     border-bottom-left-radius: 40px;
+}
+
+@media (max-width:1024px) {
+
+    .singleCard .data,
+    .singleCard2 .data {
+        padding: 0px;
+    }
+
+    .imageCard img {
+        width: 100%;
+        object-fit: contain;
+        height: auto;
+    }
+
+    .imageCard {
+        border-radius: 20px 20px 0 0 !important;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        min-width: unset;
+        height: auto;
+    }
+}
+
+@media (max-width:768px) {
+
+    .networkStack {
+        padding: 40px 16px;
+    }
+
+    .counterDiv {
+        padding: 20px 30px;
+        border-radius: 20px;
+    }
+
+    .valueDiv div {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    .headingDiv h1 {
+        font-size: 40px;
+    }
+
+    .singleCard {
+        flex-direction: column-reverse;
+        padding: 20px;
+    }
+
+    .singleCard2 {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+}
+
+@media (max-width:480px) {
+    .listData {
+        margin-top: 20px;
+    }
+    .imageCard img {
+        width: 100%;
+        object-fit: fill;
+    }
+
+    .valueDiv div {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .counterDiv {
+        gap: 20px;
+    }
+
+    .headingDiv h1 {
+        font-size: 28px;
+    }
+
+    .headingDiv p {
+        font-size: 14px;
+    }
+
+    .headingDiv {
+        margin-bottom: 0px;
+    }
+
+    .headText {
+        font-size: 26px;
+    }
+
+    .descText {
+        font-size: 16px;
+        margin-top: unset;
+        line-height: 1.2;
+    }
+
+    .singleCard,
+    .singleCard2 {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .singleList {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+
+    .carouselContent {
+        top: 55%;
+    }
 }
