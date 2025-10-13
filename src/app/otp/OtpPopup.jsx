@@ -4,29 +4,25 @@ import { Modal } from "react-bootstrap";
 import styles from "./otp.module.css";
 import { showErrorToast, showSuccessToast } from "../components/ToastProvider";
 import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 
-export default function OtpPopup({ show, handleClose, handleBack }) {
-  const [email, setEmail] = useState("");
+export default function OtpPopup({ show, handleClose, handleBack, email }) {
   const [otp, setOtp] = useState(new Array(6).fill(""));
   const inputRefs = useRef([]);
   const [seconds, setSeconds] = useState(60);
   const [canResend, setCanResend] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // ✅ Fetch email from localStorage
-  useEffect(() => {
-    const storedEmail = localStorage.getItem("verifyEmail");
-    if (storedEmail) setEmail(storedEmail);
-  }, []);
+  const router = useRouter();
 
-  // ⏱ Countdown
+  // ⏱ Countdown logic
   useEffect(() => {
     if (seconds <= 0) {
       setCanResend(true);
       return;
     }
-    const t = setTimeout(() => setSeconds(seconds - 1), 1000);
-    return () => clearTimeout(t);
+    const timer = setTimeout(() => setSeconds((prev) => prev - 1), 1000);
+    return () => clearTimeout(timer);
   }, [seconds]);
 
   const isValidOtp = useMemo(() => otp.every((digit) => /^\d$/.test(digit)), [otp]);
@@ -83,12 +79,11 @@ export default function OtpPopup({ show, handleClose, handleBack }) {
 
       const token = data?.data?.data?.accessToken;
       const investor = data?.data?.data?.investor;
-      localStorage.removeItem("registerFormData");
+
+      // ✅ Set cookies
       if (token) Cookies.set("accessToken", token);
-      localStorage.removeItem("verifyEmail"); // ✅ clear email after verification
-      if (token) Cookies.set("accessToken", token);
-      if (investor) Cookies.set("investorName", investor.full_name);
       if (investor) {
+        Cookies.set("investorName", investor.full_name);
         Cookies.set(
           "investor",
           JSON.stringify({
@@ -106,12 +101,12 @@ export default function OtpPopup({ show, handleClose, handleBack }) {
         );
       }
 
-
       showSuccessToast("Email verified successfully!");
       handleClose(); // ✅ close OTP modal
-      window.location.replace("/");
+      router.refresh()
     } catch (error) {
       console.error("Login error:", error);
+      showErrorToast("Verification failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -145,21 +140,17 @@ export default function OtpPopup({ show, handleClose, handleBack }) {
   return (
     <Modal show={show} onHide={handleClose} centered dialogClassName={styles.customModalWrapper}>
       <section className={styles.wrapper}>
-
-
         <img src="/logo.png" alt="Preqt Logo" className={styles.logo} />
+
         <div className={styles.titleWrapper}>
           <button type="button" className={styles.backBtn} onClick={handleBack}>
             ←
           </button>
           <div>
             <h1 className={styles.title}>Enter OTP To Verify</h1>
-            <p className={styles.subtitle}>Enter 6 digit OTP sent to {email}</p>
+            <p className={styles.subtitle}>Enter 6-digit OTP sent to <b>{email}</b></p>
           </div>
-
         </div>
-
-
 
         <form className={styles.form} onSubmit={handleProceed}>
           <div className={styles.formGroup}>

@@ -15,6 +15,7 @@ export default function LandingPageHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showSignin, setShowSignin] = useState(false);
   const [showOtp, setShowOtp] = useState(false);
+  const [signinEmail, setSigninEmail] = useState("");
   const [showSignupType, setShowSignupType] = useState(false);
   const [showSignupForm, setShowSignupForm] = useState(false);
   const pathname = usePathname();
@@ -77,8 +78,10 @@ export default function LandingPageHeader() {
             handleSigninClose();
           handleSignupTypeOpen();
         }}
+        onEmailSubmit={(email) => setSigninEmail(email)}
           />
       <OtpPopup show={showOtp}
+        email={signinEmail}
         handleClose={handleOtpClose}
         handleBack={() => {
           handleOtpClose();
