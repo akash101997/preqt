@@ -272,17 +272,44 @@
   transition: all 0.3s ease;
 }
 
+/* inner dot - hidden by default */
+.customRadio::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #B59131;
+  transform: scale(0);
+  transition: transform 0.2s ease;
+}
+
+/* also show inner dot when the native radio is checked */
+.radioButton input[type="radio"]:checked + .customRadio::after {
+  transform: scale(1);
+}
+
 .pollOption:hover .customRadio {
   border-color: #d1a946;
   /* transform: scale(1.1); */
   box-shadow: 0 0 8px rgba(209, 169, 70, 0.3);
 }
 
+/* show inner dot on hover as a preview */
+.pollOption:hover .customRadio::after {
+  transform: scale(1);
+  background: #B59131;
+}
+
 .pollOption.selected .customRadio {
   border-color: #d1a946;
-  background: #d1a946;
+  background: #ffffff; /* keep white so inner dot is visible */
   transform: scale(1.1);
   box-shadow: 0 0 8px rgba(209, 169, 70, 0.4);
+}
+
+/* show inner dot when selected */
+.pollOption.selected .customRadio::after {
+  transform: scale(1);
 }
 /* .dot{
    width: 10px;
