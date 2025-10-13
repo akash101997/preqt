@@ -109,7 +109,7 @@ const MarketInvesting = () => {
                         </p>
                     </div>
                 </div>
-            </section>
+            </section >
 
         </>
     );

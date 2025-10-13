@@ -28,33 +28,34 @@ const LandingPage = () => {
             <div style={{ background: '#120a02', width: '100%', height: '100%', margin: 'auto' }}>
                 <LaserBanner />
             </div>
-            <section className={`landing-container ${styles.hideOnMobile}`} style={{ paddingBottom: '50px' }}>
-                {false && <div className={styles.imageParent}>
-                    <img src="/laser-flow.png" style={{ height: '100%', width: '100%' }} />
-                    <img src="/overlay.png" style={{ height: '100%', width: '100%' }} className={styles.overlayEffect} />
-                </div>}
-                <div className={styles.descText}>
-                    <p>Everything you need to raise capital with confidence</p>
-                    <div className={styles.bottomText}>
-                        {features.map((feature, index) => (
-                            <div key={feature}>
-                                <span className="font-medium">{feature}</span>
+            <div style={{ background: '#120a02', width: '100%', height: '100%' }}>
+                <section className={`landing-container ${styles.hideOnMobile}`} style={{ paddingBottom: '50px' }}>
+                    {false && <div className={styles.imageParent}>
+                        <img src="/laser-flow.png" style={{ height: '100%', width: '100%' }} />
+                        <img src="/overlay.png" style={{ height: '100%', width: '100%' }} className={styles.overlayEffect} />
+                    </div>}
+                    <div className={styles.descText}>
+                        <p>Everything you need to raise capital with confidence</p>
+                        <div className={styles.bottomText}>
+                            {features.map((feature, index) => (
+                                <div key={feature}>
+                                    <span className="font-medium">{feature}</span>
 
-                                {index < features.length - 1 && (
-                                    <span className={styles.dotIcon}>
-                                        <Dot color='#A1A1AA' />
-                                    </span>
-                                )}
-                            </div>
-                        ))}
+                                    {index < features.length - 1 && (
+                                        <span className={styles.dotIcon}>
+                                            <Dot color='#A1A1AA' />
+                                        </span>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </section>
-
+                </section>
+            </div>
 
             <MarketInvesting />
 
-            <NetworkStack /> 
+            <NetworkStack />
 
             <InvestorsCarousel />
 

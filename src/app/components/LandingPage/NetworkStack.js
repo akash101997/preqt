@@ -56,7 +56,7 @@ const NetworkStack = () => {
                 </div>
 
                 <div className={styles.mainContainer}>
-                    <div className='landing-container' style={{ textAlign: 'center' }}>
+                    <div className='landing-container' style={{ textAlign: 'center', padding: '0px' }}>
                         <div className={styles.headingDiv}>
                             <ButtonAnimation text="Why Choose Us" />
                             <h1>A network where founders, retail investors, and</h1>

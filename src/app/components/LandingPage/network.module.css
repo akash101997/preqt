@@ -277,6 +277,9 @@
 }
 
 @media (max-width:480px) {
+    .listData {
+        margin-top: 20px;
+    }
     .imageCard img {
         width: 100%;
         object-fit: fill;
@@ -310,6 +313,7 @@
     .descText {
         font-size: 16px;
         margin-top: unset;
+        line-height: 1.2;
     }
 
     .singleCard,
@@ -324,6 +328,6 @@
     }
 
     .carouselContent {
-        top: 60%;
+        top: 55%;
     }
 }

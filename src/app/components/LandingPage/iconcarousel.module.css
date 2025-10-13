@@ -48,10 +48,13 @@
 }
 
 @media (max-width: 480px) {
-
-    /* .iconCircle {
-        width: 20px;
-        height: 20px;
+    .iconCircle {
+        height: 40px;
+        width: 40px;
     }
-     */
+
+    .iconCircle img {
+        height: 35px;
+        width: 35px;
+    }
 }
