@@ -1,24 +1,22 @@
 .pageWrapper {
-  min-height: 100dvh;
-  display: flex;
-  /* align-items: center; */
-  justify-content: center;
-  background: #ffffff;
-  overflow: hidden; /* prevent tiny viewport scroll on mobile */
+ border-radius: 32px;
+background: #FFF;
+box-shadow: 0 4px 36.1px 0 rgba(0, 0, 0, 0.10); /* prevent tiny viewport scroll on mobile */
+padding: 32px;
 }
 
 .card {
   width: 100%;
   max-width: 648px;
-  padding: 92px 24px 56px;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .logo {
-  height: 56px;
-  margin-bottom: 80px;
+  width: 134px;
+  margin-bottom: 32px;
 }
 
 .title {
@@ -130,6 +128,25 @@
  position: relative;
 }
 
+
+/* =================================================SignUp modal======================================= */
+
+.customModalWrapper :global(.modal-content) {
+  background-color: transparent;
+  border: none;
+}
+
+
+.customModalContent{
+  border-radius: 32px;
+background: #FFF;
+box-shadow: 0 4px 36.1px 0 rgba(0, 0, 0, 0.10);
+}
+.customModalContent .modal-content{
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
 
 
 /* Responsive Design */

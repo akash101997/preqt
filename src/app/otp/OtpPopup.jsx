@@ -1,24 +1,25 @@
 "use client";
-import { useSearchParams, useRouter } from "next/navigation";
-import { useEffect, useMemo, useRef, useState, Suspense } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Modal } from "react-bootstrap";
 import styles from "./otp.module.css";
-import { toast } from "react-toastify";
-import Cookies from "js-cookie";
-import Loader from "../components/Loader";
 import { showErrorToast, showSuccessToast } from "../components/ToastProvider";
+import Cookies from "js-cookie";
 
-function OtpPageContent() {
-  const params = useSearchParams();
-  const router = useRouter();
-  const email = params.get("email") || "";
+export default function OtpPopup({ show, handleClose, handleBack }) {
+  const [email, setEmail] = useState("");
   const [otp, setOtp] = useState(new Array(6).fill(""));
   const inputRefs = useRef([]);
-
   const [seconds, setSeconds] = useState(60);
   const [canResend, setCanResend] = useState(false);
-  const [loading, setLoading] = useState(false); // 🔹 new state
+  const [loading, setLoading] = useState(false);
 
-  // countdown
+  // ✅ Fetch email from localStorage
+  useEffect(() => {
+    const storedEmail = localStorage.getItem("verifyEmail");
+    if (storedEmail) setEmail(storedEmail);
+  }, []);
+
+  // ⏱ Countdown
   useEffect(() => {
     if (seconds <= 0) {
       setCanResend(true);
@@ -31,7 +32,7 @@ function OtpPageContent() {
   const isValidOtp = useMemo(() => otp.every((digit) => /^\d$/.test(digit)), [otp]);
 
   const handleChange = (value, index) => {
-    if (!/^\d?$/.test(value)) return; // only single digit allowed
+    if (!/^\d?$/.test(value)) return;
     const newOtp = [...otp];
     newOtp[index] = value;
     setOtp(newOtp);
@@ -61,7 +62,7 @@ function OtpPageContent() {
     e.preventDefault();
     if (!isValidOtp || loading) return;
 
-    setLoading(true); // 🔹 start loader
+    setLoading(true);
     const otpString = otp.join("");
 
     try {
@@ -83,6 +84,7 @@ function OtpPageContent() {
       const token = data?.data?.data?.accessToken;
       const investor = data?.data?.data?.investor;
       localStorage.removeItem("registerFormData");
+      localStorage.removeItem("verifyEmail"); // ✅ clear email after verification
 
       if (token) Cookies.set("accessToken", token);
       if (investor) {
@@ -100,12 +102,14 @@ function OtpPageContent() {
         };
         Cookies.set("investor", JSON.stringify(simplifiedInvestor));
       }
-      Cookies.remove("verifyOtp");
+
+      showSuccessToast("Email verified successfully!");
+      handleClose(); // ✅ close OTP modal
       window.location.replace("/");
     } catch (error) {
       console.error("Login error:", error);
     } finally {
-      setLoading(false); // 🔹 stop loader
+      setLoading(false);
     }
   };
 
@@ -135,72 +139,70 @@ function OtpPageContent() {
   };
 
   return (
-    <section className={styles.wrapper}>
-      {/* Back Button */}
-      <button type="button" className={styles.backBtn} onClick={() => router.push("/sign-in")}>
-        ←
-      </button>
+    <Modal show={show} onHide={handleClose} centered dialogClassName={styles.customModalWrapper}>
+      <section className={styles.wrapper}>
+     
 
-      <img src="/logo.png" alt="Preqt Logo" className={styles.logo} />
-      <h1 className={styles.title}>Enter OTP To Verify</h1>
-      <p className={styles.subtitle}>Enter 6 digit OTP sent to {email}</p>
-
-      <form className={styles.form} onSubmit={handleProceed}>
-        {/* OTP Inputs */}
-        <div className={styles.formGroup}>
-          <div className={styles.otpInputs}>
-            {otp.map((digit, i) => (
-              <input
-                key={i}
-                type="text"
-                inputMode="numeric"
-                maxLength={1}
-                value={digit}
-                onChange={(e) => handleChange(e.target.value, i)}
-                onKeyDown={(e) => handleKeyDown(e, i)}
-                onPaste={handlePaste}
-                ref={(el) => (inputRefs.current[i] = el)}
-                className={styles.otpInput}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Resend Section */}
-        <div className={styles.resendRow}>
-          {canResend ? (
-            <span className={styles.resendButton} onClick={handleResendOtp}>
-              Resend OTP
-            </span>
-          ) : (
-            <>Resend OTP in <span className={styles.timer}>00:{String(seconds).padStart(2, "0")}</span> sec</>
-          )}
-        </div>
-
-        {/* Proceed Button with loader */}
-        <button
-          type="submit"
-          className={`${styles.button} ${(!isValidOtp || loading) ? styles.buttonDisabled : ""}`}
-          disabled={!isValidOtp || loading}
-        >
-          {loading ? (
-            <div className={styles.loaderWrapper}>
-              <span className={styles.loader}></span>
-              <span>Verifying...</span>
-            </div>
-          ) : (
-            "Proceed"
-          )}
+        <img src="/logo.png" alt="Preqt Logo" className={styles.logo} />
+        <div className={styles.titleWrapper}>
+             <button type="button" className={styles.backBtn} onClick={handleBack}>
+          ←
         </button>
-      </form>
-    </section>
-  );
-}
+        <div>
+            <h1 className={styles.title}>Enter OTP To Verify</h1>
+             <p className={styles.subtitle}>Enter 6 digit OTP sent to {email}</p>
+        </div>
+       
+        </div>
+       
+       
 
-export default function OtpPage() {
-  return (
-    <Suspense fallback={<Loader />}>
-      <OtpPageContent />
-    </Suspense>
+        <form className={styles.form} onSubmit={handleProceed}>
+          <div className={styles.formGroup}>
+            <div className={styles.otpInputs}>
+              {otp.map((digit, i) => (
+                <input
+                  key={i}
+                  type="text"
+                  inputMode="numeric"
+                  maxLength={1}
+                  value={digit}
+                  onChange={(e) => handleChange(e.target.value, i)}
+                  onKeyDown={(e) => handleKeyDown(e, i)}
+                  onPaste={handlePaste}
+                  ref={(el) => (inputRefs.current[i] = el)}
+                  className={styles.otpInput}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.resendRow}>
+            {canResend ? (
+              <span className={styles.resendButton} onClick={handleResendOtp}>
+                Resend OTP
+              </span>
+            ) : (
+              <>Resend OTP in <span className={styles.timer}>00:{String(seconds).padStart(2, "0")}</span> sec</>
+            )}
+          </div>
+
+          <button
+            type="submit"
+            className={`${styles.button} ${(!isValidOtp || loading) ? styles.buttonDisabled : ""}`}
+            disabled={!isValidOtp || loading}
+          >
+            {loading ? (
+              <div className={styles.loaderWrapper}>
+                <span className={styles.loader}></span>
+                <span>Verifying...</span>
+              </div>
+            ) : (
+              "Proceed"
+            )}
+          </button>
+        </form>
+      </section>
+    </Modal>
   );
 }
