@@ -33,7 +33,13 @@ export default function LandingPageHeader() {
   const handleOtpOpen = () => setShowOtp(true);
   const handleOtpClose = () => setShowOtp(false);
 
-  return (
+  const handleSignupTypeOpen = () => setShowSignupType(true);
+  const handleSignupTypeClose = () => setShowSignupType(false);
+
+  const handleSignUpFormOpen = () => setShowSignupForm(true);
+  const handleSignUpFormClose = () => setShowSignupForm(false);
+
+   return (
     <>
       <section className={styles.parentHeader}>
         <header className={styles.header}>
@@ -66,7 +72,12 @@ export default function LandingPageHeader() {
         onShowOtp={() => {
           handleSigninClose();
           handleOtpOpen();
-        }} />
+        }} 
+        onShowSignUp = {() => {
+            handleSigninClose();
+          handleSignupTypeOpen();
+        }}
+          />
       <OtpPopup show={showOtp}
         handleClose={handleOtpClose}
         handleBack={() => {

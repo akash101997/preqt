@@ -109,6 +109,8 @@ padding: 32px;
 }
 
 .link {
+  border: none;
+  background: transparent;
     color: #C9A74E;
     font-size: 16px;
     font-weight: 500;
