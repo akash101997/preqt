@@ -45,6 +45,7 @@ line-height: 20px; /* 142.857% */
 flex-direction: column;
 display: flex;
 gap: 4px;
+max-width: 550px;
 
 }
 .commentTime{

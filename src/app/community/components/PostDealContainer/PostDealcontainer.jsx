@@ -6,12 +6,9 @@ import TopDeal from '../TopDealSection/TopDeal'
 const PostDealcontainer = () => {
   return (
     <section className={Styles.postDealMainContainer}>
-      <div className={Styles.postDealInnerContainer}>
+     
         <PostSection />
-        {/* <div className={Styles.TopDealContainer}>
-          <TopDeal />
-        </div> */}
-      </div>
+       
     </section>
   )
 }

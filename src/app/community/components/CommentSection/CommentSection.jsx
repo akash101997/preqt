@@ -188,7 +188,7 @@ const CommentItem = ({
         </div>
         
         <div className={Styles.commentActions}>
-          <span className={Styles.commentAction} onClick={() => handleReply(comment.id)}>Reply</span>
+          {/* <span className={Styles.commentAction} onClick={() => handleReply(comment.id)}>Reply</span> */}
           {comment.userId === userId && (
             <span className={Styles.DeleteButton} onClick={() => handleDeleteComment(comment.id)}>
               Delete

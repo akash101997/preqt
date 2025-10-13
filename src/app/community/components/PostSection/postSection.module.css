@@ -56,6 +56,9 @@
   gap: 12px;
   justify-content: center;
   /* align-items: center; */
+   /* max-width: 628px; */
+    overflow: hidden;
+     /* max-height: 400px; */
 }
 
 .postDescription {
@@ -101,6 +104,7 @@
   gap: 4px;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .likesCount {
@@ -108,7 +112,7 @@
   font-size: 12px;
   color: #64748B;
   font-weight: 400;
-  cursor: default;
+  cursor: pointer;
 }
 
 .activeLike {
@@ -190,7 +194,7 @@
 .pollOption {
   position: relative;
   margin-bottom: 12px;
-  /* border: 2px solid #e5e5e5; */
+  border: 1.2px solid transparent;
   border-radius: 12px;
   /* background: #f9f9f9; */
   cursor: pointer;
@@ -200,7 +204,7 @@
 
 .pollOption:hover {
   border: 1.2px solid #d1a946;
-  background: #fefdf8;
+  /* background: #fefdf8; */
   /* transform: translateY(-1px); */
   /* box-shadow: 0 4px 12px rgba(209, 169, 70, 0.15); */
   transition: all 0.2s ease;
@@ -228,7 +232,7 @@
 .optionContent {
   display: flex;
   align-items: center;
-  padding: 14px 18px;
+  padding: 9px 18px;
    border: 1.2px solid transparent;
   position: relative;
   z-index: 2;
@@ -333,7 +337,11 @@ display: none;
   color: #d1a946;
   /* font-weight: 600; */
 }
+.likeAndCommentContainer{
+  display: flex;
+  flex-direction: column;
 
+}
 .percentage {
   font-size: 16px;
   font-weight: 600;
@@ -357,7 +365,7 @@ display: none;
   top: 0;
   left: 0;
   height: 100%;
-  background-color: #F6F3EB;
+  background-color:  #F6F3EB;;
   border-radius: 10px;
   z-index: 1;
   transition: width 0.6s ease;
@@ -398,6 +406,14 @@ display: none;
   border-bottom-left-radius: 16px;
 }
 .postsMainContainer2{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+padding: 30px 0px;
+  border-radius: 16px;
+  max-width: 660px;
+}
+.postsMainContainer3{
   display: flex;
   flex-direction: column;
   width: 100%;

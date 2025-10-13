@@ -7,14 +7,14 @@ const layout = ({ children }) => {
   return (
     <div>
       <MarqueeCom />
-      <section className={Styles.postDealMainContainer}>
+      {/* <section className={Styles.postDealMainContainer}> */}
       <div className={Styles.postDealInnerContainer}>
         {children}
-        <div className={Styles.TopDealContainer}>
+        <div className={`${Styles.TopDealContainer} ${Styles.topDealPadding}`}>
           <TopDeal />
         </div>
       </div>
-    </section>
+    {/* </section> */}
       
     </div>
   )
