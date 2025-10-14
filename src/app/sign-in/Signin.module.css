@@ -1,8 +1,5 @@
 .pageWrapper {
- border-radius: 32px;
-background: #FFF;
-box-shadow: 0 4px 36.1px 0 rgba(0, 0, 0, 0.10); /* prevent tiny viewport scroll on mobile */
-padding: 32px;
+
 }
 
 .card {
@@ -141,14 +138,35 @@ padding: 32px;
 
 .customModalContent{
   border-radius: 32px;
-background: #FFF;
-box-shadow: 0 4px 36.1px 0 rgba(0, 0, 0, 0.10);
+  background: #FFF;
+  box-shadow: 0 4px 36.1px 0 rgba(0, 0, 0, 0.10); /* prevent tiny viewport scroll on mobile */
+  padding: 32px;
 }
 .customModalContent .modal-content{
   background-color: transparent;
   border: none;
   box-shadow: none;
 }
+
+.closeButton {
+  position: absolute;
+  top: 15px;       /* adjust as needed */
+  right: 15px;     /* push to the right end */
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  background: #fff;
+  box-shadow: 0 4px 40px 0 rgba(68, 49, 151, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 22px;
+  color: #000;     /* change color if needed */
+  z-index: 10;     /* ensure it stays above other elements */
+}
+
 
 
 /* Responsive Design */
