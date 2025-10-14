@@ -4,6 +4,7 @@ import ChangeEmail from "../modal-change-email/ChangeEmail";
 import styles from "./page.module.css";
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
+import { showErrorToast,showSuccessToast } from "@/app/components/ToastProvider";
 import Otp from "../modal-otp-verification/Otp";
 
 export default function EditDetails({
@@ -85,12 +86,12 @@ export default function EditDetails({
         }
       );
       if (res.ok) {
-        console.log("Details Edited");
+        // console.log("Details Edited");
         onClose();
         window.location.reload();
       }
     } catch (err) {
-      console.error("Error updating details:", err);
+      showErrorToast("Error updating details:", err);
     }
   };
 

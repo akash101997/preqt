@@ -100,7 +100,6 @@ export default function ClientChrome({ children }) {
 
   // console.log("ddssfsfvfe",isPrivateDeal)
   // console.log("ddssfsfvfe",isPrivateDeal)
-  // console.log("ddssfsfvfe",isPrivateDeal)
   return (
     <>
     <div

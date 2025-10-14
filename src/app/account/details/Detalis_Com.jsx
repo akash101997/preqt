@@ -138,7 +138,12 @@ export default function Details_Com() {
         <div className={styles.avatar}>{shortName}</div>
         <div className={styles.avatardetails}>
           <div className={styles.id}>{id}</div>
-          <div className={styles.name}>{investor?.full_name}</div>
+          <div className={styles.name}>
+             {investor?.full_name
+              ? investor.full_name.charAt(0).toUpperCase() +
+                investor.full_name.slice(1)
+              : ""}
+          </div>
         </div>
       </div>
 
