@@ -5,6 +5,7 @@ import styles from "./otp.module.css";
 import { showErrorToast, showSuccessToast } from "../components/ToastProvider";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
+import { IoClose } from "react-icons/io5";
 
 export default function OtpPopup({ show, handleClose, handleBack, email }) {
   const [otp, setOtp] = useState(new Array(6).fill(""));
@@ -14,6 +15,20 @@ export default function OtpPopup({ show, handleClose, handleBack, email }) {
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
+
+  // Reset OTP state whenever the popup is shown
+  useEffect(() => {
+    if (show) {
+      setOtp(new Array(6).fill(""));
+      setSeconds(60);
+      setCanResend(false);
+      setLoading(false);
+      // focus first input after render
+      setTimeout(() => {
+        if (inputRefs.current[0]) inputRefs.current[0].focus();
+      }, 0);
+    }
+  }, [show]);
 
   // ⏱ Countdown logic
   useEffect(() => {
@@ -106,7 +121,6 @@ export default function OtpPopup({ show, handleClose, handleBack, email }) {
       router.refresh()
     } catch (error) {
       console.error("Login error:", error);
-      showErrorToast("Verification failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -138,8 +152,16 @@ export default function OtpPopup({ show, handleClose, handleBack, email }) {
   };
 
   return (
-    <Modal show={show} onHide={handleClose} centered dialogClassName={styles.customModalWrapper}>
+    <Modal show={show} onHide={handleClose} centered dialogClassName={styles.customModalWrapper} backdrop="static" keyboard={false}>
       <section className={styles.wrapper}>
+
+      <button
+            type="button"
+            className={styles.closeButton}
+            onClick={handleClose}
+          >
+           <IoClose/>
+          </button>
         <img src="/logo.png" alt="Preqt Logo" className={styles.logo} />
 
         <div className={styles.titleWrapper}>

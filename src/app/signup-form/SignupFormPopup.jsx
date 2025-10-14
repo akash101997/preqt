@@ -1,14 +1,25 @@
 "use client";
 import { Modal } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useMultiStepContext } from "@/app/utils/MultiStepContext";
 import styles from "./signup-form.module.css";
 import { showErrorToast, showSuccessToast } from "../components/ToastProvider";
 import Cookies from "js-cookie";
+import { IoClose } from "react-icons/io5";
 
-export default function SignupFormPopup({ show, onHide, onShowOtp, onBack }) {
+export default function SignupFormPopup({ show, onHide, onShowOtp, onBack, setSignupEmail}) {
   const { registerFormData, updateFormData } = useMultiStepContext();
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Reset form fields (except investor_type) every time the popup opens
+  useEffect(() => {
+    if (show) {
+      updateFormData("full_name", "");
+      updateFormData("email", "");
+      updateFormData("organization", "");
+      updateFormData("designation", "");
+    }
+  }, [show]);
 
   const isValid =
     registerFormData.full_name.trim().length > 1 &&
@@ -44,10 +55,13 @@ export default function SignupFormPopup({ show, onHide, onShowOtp, onBack }) {
         throw new Error(result.message);
       }
 
-      showSuccessToast("Registration successful!");
+      
       Cookies.set("verifyOtp", true);
       localStorage.setItem("verifyEmail", registerFormData.email);
-      onShowOtp();
+      if (typeof setSignupEmail === "function") {
+        setSignupEmail(registerFormData.email); // 👈 send email to parent
+      }
+      onShowOtp(registerFormData.email);
     } catch (error) {
       console.error("Registration failed:", error);
       showErrorToast("Registration failed. Please try again.");
@@ -57,13 +71,19 @@ export default function SignupFormPopup({ show, onHide, onShowOtp, onBack }) {
   };
 
   return (
-    <Modal show={show} onHide={onHide} centered dialogClassName={styles.customModalWrapper}>
+    <Modal show={show} onHide={onHide} centered dialogClassName={styles.customModalWrapper} backdrop="static" keyboard={false}>
       <section className={styles.wrapper}>
-      
+      <button
+            type="button"
+            className={styles.closeButton}
+            onClick={onHide}
+          >
+           <IoClose />
+          </button>
 
         <img src="/logo.png" alt="Preqt Logo" className={styles.logo} />
         <div className={styles.titleWrapper}>
-             <button type="button" className={styles.backBtn} >
+             <button type="button" className={styles.backBtn} onClick={onBack}>
           ←
         </button>
         <div>

@@ -43,8 +43,8 @@ const Signin = ({ onShowOtp, onShowSignUp, onEmailSubmit }) => {
       // ✅ Instead of localStorage — send it to parent
       if (onEmailSubmit) onEmailSubmit(email);
 
-      // Show OTP popup
-      onShowOtp();
+      // Show OTP popup with email for OTP verification
+      onShowOtp(email);
     } catch (error) {
       console.error("Login error:", error);
       showErrorToast("Network error. Please try again later.");

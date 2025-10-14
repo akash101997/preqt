@@ -9,6 +9,32 @@ margin: 0 auto;
   position: relative; 
   overflow: hidden;
 }
+
+.closeButton {
+  position: absolute;
+  top: 15px;       /* adjust as needed */
+  right: 15px;     /* push to the right end */
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  background: #fff;
+  box-shadow: 0 4px 40px 0 rgba(68, 49, 151, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 22px;
+  color: #000;     /* change color if needed */
+  z-index: 10;     /* ensure it stays above other elements */
+}
+
+.titleWrapper{
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
 .backBtn { 
   width: 40px; 
   height: 40px; 
@@ -27,8 +53,8 @@ margin: 0 auto;
 }
 .title { 
   color: #1F2937; 
-  text-align: center; 
-  font-size: 36px; 
+  text-align: left; 
+  font-size: 28px;
   font-weight: 700; 
   text-transform: capitalize; 
   margin-bottom: 6px; 
