@@ -54,9 +54,7 @@ function AllDealsContent() {
             <div className={styles.cardContainer1}>
                 <div className={styles.cardInnerSections}>
                     <article className={styles.cardIPOsection}>
-                        {deal.tags
-                            ?.split(",")
-                            .map((tag, index) => (
+                        {deal.tags .map((tag, index) => (
                                 <div
                                     key={index}
                                     className={styles.IPOheading}
@@ -135,9 +133,7 @@ function AllDealsContent() {
                 <div className={styles.card2InnerSections}>
                     <article className={styles.card2IPOsection}>
 
-                        {deal.tags
-                            ?.split(",")
-                            .map((tag, index) => (
+                        {deal.tags.map((tag, index) => (
                                 <div
                                     key={index}
                                     className={styles.card2IPOtag}
