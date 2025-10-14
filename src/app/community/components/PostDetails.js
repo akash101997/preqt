@@ -21,6 +21,7 @@ PostDetails = ({slug}) => {
 const [ commentonPost, setCommentonPost] = useState("")
  const [ refetch, setRefetch] = useState(false)
  const [ currentUser, setCurrentUser] = useState(Cookies.get('investorName'))
+ const [isLoading, setIsLoading] = useState(true)
 
   const [currentTime, setCurrentTime] = useState(new Date());
 
@@ -336,8 +337,9 @@ const [ commentonPost, setCommentonPost] = useState("")
 
 
 
-    const getAllPosts = async () => {
+  const getAllPosts = async () => {
     try {
+      setIsLoading(true)
       const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}admin/api/community/posts/slug/${slug}`, {
         headers: {
           'Authorization': `Bearer ${Cookies.get('accessToken')}`
@@ -361,6 +363,8 @@ const [ commentonPost, setCommentonPost] = useState("")
     } catch (error) {
       console.error('Network Error:', error)
       showErrorToast('Network error: Unable to fetch post')
+    } finally {
+      setIsLoading(false)
     }
   }
   useEffect(() => {
@@ -372,7 +376,13 @@ const [ commentonPost, setCommentonPost] = useState("")
 
   return (
     <>
-      {!posts || posts === null ? (
+      {isLoading ? (
+        <div className={Styles.postsMainContainer2}>
+          <div className={Styles.IndividualPostContainer}>
+            <p className={Styles.timeContent}>Loading post…</p>
+          </div>
+        </div>
+      ) : !posts || posts === null ? (
 <div className={Styles.pageNotFoundContainer}>
 <div className={Styles.pageNotFoundContent}>
 <div className={Styles.pageNotFoundIcon}>
@@ -438,7 +448,7 @@ The post you're looking for doesn't exist or may have been removed.
                       {post?.pollOptions?.map((option) => (
                         <div
                           key={option.id}
-                          className={`${Styles.pollOption} ${selectedOption === option.id ? Styles.selected : ''
+                          className={`${Styles.pollOption} ${(selectedOption === option.id || option?.isVoted) ? Styles.selected : ''
                             } ${hasVoted ? Styles.voted : ''}`}
                           onClick={(e) => VoteForPoll(e,option.id, post?.id)}
                         >
@@ -448,15 +458,11 @@ The post you're looking for doesn't exist or may have been removed.
                                 type="radio"
                                 id={`option-${option.id}`}
                                 name="poll"
-                                checked={selectedOption === option.id}
+                                checked={selectedOption === option.id || !!option?.isVoted}
                                   onChange={(e) => VoteForPoll(e,option.id, post?.id)}
                                 disabled={hasVoted}
                               />
-                              <span className={Styles.customRadio}>
-                                {/* <div className={Styles.dot}></div> */}
-                                {/* <div onClick={()=>toggleDot(option.id)}>w</div> */}
-                                <span className={`${Styles.dot} ${selectedOption === option.id ? Styles.show : ""}`} ></span>
-                              </span>
+                              <span className={Styles.customRadio}></span>
                             </div>
 
                             <label htmlFor={`option-${option.id}`} className={Styles.optionLabel}>

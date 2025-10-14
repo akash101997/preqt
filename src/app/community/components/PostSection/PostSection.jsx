@@ -18,6 +18,7 @@ const PostSection = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [showCommentInput, setShowCommentInput] = useState(null); // Track which post has comment input open
   const [commentonPost, setCommentonPost] = useState(""); // Comment input value
+  const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
   // Function to format timestamp
   const formatTimestamp = (timestamp) => {
@@ -276,6 +277,7 @@ const PostSection = () => {
 
    const getAllPosts = async () => {
       try {
+    setIsLoading(true);
     const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/community/posts?page=1&pageSize=10&startDate=2025-09-01T00:00:00.000Z&endDate=2025-09-05T23:59:59.999Z`, {
       headers: {
         'Authorization': `Bearer ${Cookies.get('accessToken')}`
@@ -287,6 +289,8 @@ const PostSection = () => {
   } catch (error) {
     console.error('Error fetching posts:', error);
     showErrorToast('Failed to fetch posts');
+  } finally {
+    setIsLoading(false);
   }
   }
   
@@ -306,8 +310,12 @@ const PostSection = () => {
 
   return (
     <div className={Styles.postsMainContainer}>
-
-        {posts.map((post) => (
+        {isLoading ? (
+          <div className={Styles.IndividualPostContainer}>
+            <p className={Styles.timeContent}>Loading posts…</p>
+          </div>
+        ) : (
+        posts.map((post) => (
         <div key={post.id}>
           {post.type === 'poll' ? (
             <div className={Styles.IndividualPostContainer} onClick={() => viewPostDetails(post.slug)}>
@@ -348,8 +356,9 @@ const PostSection = () => {
                       {post?.pollOptions?.map((option) => (
                 <div
                   key={option.id}
-                  className={`${Styles.pollOption} ${selectedOption === option.id ? Styles.selected : ''
+                  className={`${Styles.pollOption} ${(selectedOption === option.id || option?.isVoted) ? Styles.selected : ''
                     } ${hasVoted ? Styles.voted : ''}`}
+                    onClick={(e) => VoteForPoll(e, option.id, post?.id)}
                 >
                           <div className={`${Styles.optionContent} ${isVoting ? Styles.disabled : ''}`}>
                     <div className={Styles.radioButton}>
@@ -357,14 +366,12 @@ const PostSection = () => {
                         type="radio"
                         id={`option-${option.id}`}
                         name="poll"
-                        checked={selectedOption === option.id}
-                                onChange={(e) => VoteForPoll(e, option.id, post?.id)}
+                        checked={selectedOption === option.id || !!option?.isVoted}
+                                onChange={() => handleVote(option.id)}
                                 disabled={hasVoted || isVoting}
                       />
                       <span className={Styles.customRadio}>
-                                {/* <div className={Styles.dot}></div> */}
-                                {/* <div onClick={()=>toggleDot(option.id)}>w</div> */}
-                                <span className={`${Styles.dot} ${selectedOption === option.id ? Styles.show : ""}`} ></span>
+                                {/* inner dot handled by CSS ::after; no extra element needed */}
                       </span>
                     </div>
 
@@ -414,14 +421,14 @@ const PostSection = () => {
                          src={post?.isLiked ? "/assets/pictures/liked.svg" : "/assets/pictures/like.svg"} 
                          alt="" 
                          style={{ 
-                           background: post?.isLiked ? 'linear-gradient(90deg, #FFD89E 0%, #B88609 100%)' : 'none',
+                   
                            opacity: post?.isLiked ? 1 : 0.7,
-                           borderRadius: post?.isLiked ? '4px' : '0px',
+      
                            padding: post?.isLiked ? '2px' : '0px'
                          }}
                        />
                        <p className={Styles.likesCount} style={{ 
-                         color: post?.isLiked ? '#007bff' : 'inherit' 
+                         color: post?.isLiked ? '#64748B' : '#64748B' 
                        }}>
                          {post?.likesCount} Likes
                        </p>
@@ -589,7 +596,8 @@ const PostSection = () => {
 
 
 
-      ))}
+      ))
+        )}
 
 
 
