@@ -195,6 +195,19 @@
   visibility: visible;
 }
 
+.HomeNavButton.activeLink{
+  position: relative;
+}
+.HomeNavButton.activeLink::after{
+  content: url(/active-header.svg);
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: fit-content;
+  height: auto;
+  transform: translate(-50%, 50%);
+}
+
 @media (max-width: 1024px) {
   .mainContainer {
     padding: 12px 40px;

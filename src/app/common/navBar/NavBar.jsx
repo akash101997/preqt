@@ -289,7 +289,7 @@ export default function NavBar() {
           <div className={styles.navigationButtonContainer}>
             <div className={styles.navigationButton}>
               <Link
-                className={`${styles.HomeNavButton} ${pathname === "/" ? styles.active : ""
+                className={`${styles.HomeNavButton} ${pathname === "/" ? styles.activeLink : ""
                   }`}
                 href="/"
               >
@@ -297,7 +297,7 @@ export default function NavBar() {
               </Link>
               <Link
                 href="/deals"
-                className={`${styles.HomeNavButton} ${pathname === "/deals" ? styles.active : ""
+                className={`${styles.HomeNavButton} ${pathname.includes("/deals") ? styles.activeLink : ""
                   }`}
               >
 
@@ -305,8 +305,8 @@ export default function NavBar() {
               </Link>
               <Link
                 href="/community"
-                className={`${styles.HomeNavButton} ${pathname === "/community"
-                  ? styles.active
+                className={`${styles.HomeNavButton} ${pathname.includes("/community")
+                  ? styles.activeLink
                   : ""
                   }`}
               >
@@ -315,7 +315,7 @@ export default function NavBar() {
               </Link>
               <Link
                 href="/events"
-                className={`${styles.HomeNavButton} ${pathname === "/events" ? styles.active : ""
+                className={`${styles.HomeNavButton} ${pathname.includes("/events") ? styles.activeLink : ""
                   }`}
               >
 
@@ -327,12 +327,12 @@ export default function NavBar() {
 
         <div className={styles.navRightSection}>
           <div className={styles.NotificationIconContainer}>
-            {/* <img
+            <img
               className={styles.icons}
               src="/assets/pictures/notification.svg"
               alt=""
-            /> */}
-            {/* <div className={styles.notificationBadge}>2</div> */}
+            />
+            <div className={styles.notificationBadge}>2</div>
           </div>
           <div className={styles.UserIconContainer}>
             <Link href={"/account/details"} className={styles.Link}>
