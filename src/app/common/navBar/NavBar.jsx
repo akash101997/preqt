@@ -209,7 +209,7 @@ export default function NavBar() {
                     <div className={styles.avatardetails_main}>
                       {/* <div className={styles.id}>CL273874</div> */}
                       <div className={styles.id}>{id}</div>
-                      <div className={styles.name}>{investorName?investorName.charAt(0).toUpperCase()+investorName.slice(1):""}</div>
+                      <div className={styles.name}>{investorName ? investorName.charAt(0).toUpperCase() + investorName.slice(1) : ""}</div>
                     </div>
 
                     <div className={styles.arrow}>
@@ -272,71 +272,56 @@ export default function NavBar() {
         className={`${styles.mainContainer} ${isPrivateDeal ? styles.privateDealTheme : ""
           }`}
       >
-        <Link href="/deals">
-          {" "}
-          <img
-            src={
-              isPrivateDeal
-                ? "/private-logo.png"
-                : "/logo.png"
-            }
-            alt="logo"
-            className={styles.logo}
-          />
-        </Link>
+        <div className={styles.navLeftSection}>
+          <Link href="/deals">
+            {" "}
+            <img
+              src={
+                isPrivateDeal
+                  ? "/private-logo.png"
+                  : "/logo.png"
+              }
+              alt="logo"
+              className={styles.logo}
+            />
+          </Link>
 
-        <div className={styles.navigationButtonContainer}>
-          <div className={styles.navigationButton}>
-            {/* <Link
-              className={`${styles.HomeNavButton} ${pathname === "/" ? styles.active : ""
-                }`}
-              href="/"
-            >
-              <img
-                src="/assets/pictures/home.svg"
-                alt="home"
-                className={styles.HomeIconImage}
-              />
-              <p className={styles.home}>Home</p>
-            </Link> */}
-            <Link
-              href="/deals"
-              className={`${styles.HomeNavButton} ${pathname === "/deals" ? styles.active : ""
-                }`}
-            >
-              <img
-                src="/assets/pictures/Transactions.svg"
-                alt=""
-                className={styles.HomeIconImage}
-              />
-              <p className={styles.home}>Deals</p>
-            </Link>
-            <Link
-              href="/community"
-              className={`${styles.HomeNavButton} ${pathname === "/community"
-                ? styles.active
-                : ""
-                }`}
-            >
-              <img
-                src="/assets/pictures/people.svg"
-                alt=""
-                className={styles.HomeIconImage}
-              />
-              <p className={styles.home}>Community</p>
-            </Link>
-            <Link
-              href="/events"
-              className={`${styles.HomeNavButton} ${pathname === "/events" ? styles.active : ""
-                }`}
-            >
-              <img
-                src="/assets/pictures/events.svg"
-                alt=""
-                className={styles.HomeIconImage}
-              />
-              <p className={styles.home}>Events</p>
-            </Link>
+          <div className={styles.navigationButtonContainer}>
+            <div className={styles.navigationButton}>
+              <Link
+                className={`${styles.HomeNavButton} ${pathname === "/" ? styles.active : ""
+                  }`}
+                href="/"
+              >
+                <p className={styles.home}>Home</p>
+              </Link>
+              <Link
+                href="/deals"
+                className={`${styles.HomeNavButton} ${pathname === "/deals" ? styles.active : ""
+                  }`}
+              >
+
+                <p className={styles.home}>Deals</p>
+              </Link>
+              <Link
+                href="/community"
+                className={`${styles.HomeNavButton} ${pathname === "/community"
+                  ? styles.active
+                  : ""
+                  }`}
+              >
+
+                <p className={styles.home}>Community</p>
+              </Link>
+              <Link
+                href="/events"
+                className={`${styles.HomeNavButton} ${pathname === "/events" ? styles.active : ""
+                  }`}
+              >
+
+                <p className={styles.home}>Events</p>
+              </Link>
+            </div>
           </div>
         </div>
 

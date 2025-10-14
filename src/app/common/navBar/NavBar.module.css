@@ -1,12 +1,18 @@
 .mainContainer {
   /* max-height: 84px; */
   width: 100%;
-border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   background-color: #ffffff;
   padding: 12px 60px 12px 60px;
   align-items: center;
+}
+
+.navLeftSection {
+  display: flex;
+  align-items: center;
+  gap: 83px;
 }
 
 .icons {
@@ -49,7 +55,7 @@ border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
 /* Hover effect (light gray, keep original colors) */
 .HomeNavButton:hover {
-  
+
   /* light gray */
 }
 
@@ -64,8 +70,8 @@ border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
 /* Active effect (gradient + white text/icons) */
 .HomeNavButton.active {
-  
-  border-bottom: 2px solid  #B59131;
+
+  border-bottom: 2px solid #B59131;
   /* background-image: linear-gradient(to bottom right, #fff2d0, #8e6b0f); */
 }
 
@@ -101,7 +107,7 @@ border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   position: absolute;
   top: -5px;
   right: -5px;
-background-color: #FF6A55;
+  background-color: #FF6A55;
   color: white;
   border-radius: 50%;
   width: 20px;
@@ -214,7 +220,8 @@ background-color: #FF6A55;
   .mainContainer {
     padding: 12px 20px;
   }
-  .menuContainer img{
+
+  .menuContainer img {
     height: 24px;
     width: 24px;
   }
@@ -255,7 +262,7 @@ background-color: #FF6A55;
   }
 
   .responsiveNav {
-  
+
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -265,8 +272,9 @@ background-color: #FF6A55;
 
     z-index: 5;
   }
-  .privateDealTheme .responsiveNav{
-     padding: 24px 16px 0px 24px ;
+
+  .privateDealTheme .responsiveNav {
+    padding: 24px 16px 0px 24px;
   }
 
   .mainNavContainer {
@@ -291,10 +299,10 @@ background-color: #FF6A55;
     cursor: pointer;
   }
 
- .privateDealTheme .hamburger svg path {
-  stroke: #fff !important;
-  fill: #fff !important;
-}
+  .privateDealTheme .hamburger svg path {
+    stroke: #fff !important;
+    fill: #fff !important;
+  }
 
   .hamburger span {
     display: block;
@@ -354,7 +362,7 @@ background-color: #FF6A55;
   }
 
   .openedSideMenu {
-    
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -365,24 +373,25 @@ background-color: #FF6A55;
   }
 
   .menuContainer {
-  
+
     display: flex;
     flex-direction: column;
     gap: 32px;
     /* width: 420px; */
   }
-  .menuContainer_main{
-     /* border: 1px solid red; */
-     margin: 30px 8px ;
-     width: 100%;
-     max-width: 299px;
+
+  .menuContainer_main {
+    /* border: 1px solid red; */
+    margin: 30px 8px;
+    width: 100%;
+    max-width: 299px;
 
   }
 
-  
+
 
   .profile {
-    background: linear-gradient(to bottom , #F3F4F6,#FFFFFF);
+    background: linear-gradient(to bottom, #F3F4F6, #FFFFFF);
     display: flex;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -419,17 +428,18 @@ background-color: #FF6A55;
     justify-content: space-between;
     width: 100%;
   }
-  .avatardetails .id {
-  color: #1F2937;
-font-size: 16px;
-font-weight: 500;
-}
 
-.avatardetails .name {
-  color: #6B7280;
-  font-size: 14px;
-  font-weight: 400;
-}
+  .avatardetails .id {
+    color: #1F2937;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .avatardetails .name {
+    color: #6B7280;
+    font-size: 14px;
+    font-weight: 400;
+  }
 
 
 
@@ -465,18 +475,20 @@ font-weight: 500;
   .logoutContainerDiv {
     position: fixed;
     bottom: 15px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: #fff;
-  border: none; /* light gray border */
-  padding: 10px 30px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 500;
-  color: #ef4444; /* red text */
-  cursor: pointer;
-}
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: none;
+    /* light gray border */
+    padding: 10px 30px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #ef4444;
+    /* red text */
+    cursor: pointer;
+  }
 
   .logout {
     color: #EF4444;
@@ -494,9 +506,10 @@ font-weight: 500;
     filter: brightness(0) invert(1);
     /* Makes SVG white */
   }
+
   .homeNavButton:hover .homebtn {
-    color:#fff;
-}
+    color: #fff;
+  }
 
 }
 
@@ -573,10 +586,10 @@ font-weight: 500;
 }
 
 @media (max-width: 480px) {
- .responsiveNav{
-  /* padding-bottom: 0; */
-  /* background-color: white; */
- }
+  .responsiveNav {
+    /* padding-bottom: 0; */
+    /* background-color: white; */
+  }
 }
 
 
@@ -688,6 +701,3 @@ font-weight: 500;
 .privateDealTheme .HomeNavButton.active .home {
   color: #B59131 !important;
 }
-
-  
-
