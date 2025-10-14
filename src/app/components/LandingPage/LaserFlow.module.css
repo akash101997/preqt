@@ -69,7 +69,7 @@
     position: absolute;
     top: 75%;
     left: 0;
-    max-height: 200px;
+    /* max-height: 200px; */
 }
 
 .bottomText {
@@ -110,6 +110,13 @@
     display: block;
 }
 
+.overlayEffectLarge {
+    position: absolute;
+    bottom: -70%;
+    left: 0;
+    z-index: 99;
+}
+
 @media (max-width: 1440px) {
     .laserFlowVideo {
         top: calc(52% - 18px) !important;
@@ -146,6 +153,12 @@
         left: calc(0%) !important;
         width: calc(85% - 10px) !important;
     }
+
+    .bottomText {
+        flex-wrap: wrap;
+        font-size: 0.75rem;
+        padding: 1rem 0.5rem;
+    }
 }
 
 
@@ -156,11 +169,6 @@
         width: calc(95% - 0px) !important;
     }
 
-    .bottomText {
-        flex-wrap: wrap;
-        font-size: 0.75rem;
-        padding: 1rem 0.5rem;
-    }
 
     .bottomText>span {
         padding: 0.25rem 0.4rem;

@@ -73,7 +73,8 @@ const MarketInvesting = () => {
 
     return (
         <>
-            <section className={styles.container} ref={containerRef}>
+            <section className={styles.container} ref={containerRef} style={{ position: 'relative' }}>
+                <img src="/overlay-2.png" alt="background" className={styles.overlay} />
                 <div className={styles.stickyWrapper}>
                     <video
                         className={styles.backgroundVideo}

@@ -99,7 +99,7 @@ export default function LaserBanner() {
                 <div style={{ width: '100%' }}>
                     <div className={styles.imageParent}>
                         <img src={isMobile ? "/mobile-video.png" : "/laser-flow.png"} style={{ height: '100%', width: '100%', objectFit: 'cover' }} />
-                        <img src="/overlay.png" style={{ height: '100%', width: '100%' }} className={styles.overlayEffect} />
+                        <img src="/overlay.png" style={{ height: '150px', width: '100%' }} className={styles.overlayEffect} />
                     </div>
                 </div>
             </div>
