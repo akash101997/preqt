@@ -1,12 +1,13 @@
 "use client"
 import Styles from './postSection.module.css'
 import Image from 'next/image'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Cookies from 'js-cookie'
 import { toast } from 'react-toastify'
 import { showErrorToast, showSuccessToast } from '../../../components/ToastProvider'
 import { useRouter } from 'next/navigation'
 import ImageSlide from '../ImageSlide'
+import ShareModal from '../CommentSection/ShareModal'
 const PostSection = () => {
 
   const [selectedOption, setSelectedOption] = useState(null)
@@ -19,6 +20,12 @@ const PostSection = () => {
   const [showCommentInput, setShowCommentInput] = useState(null); // Track which post has comment input open
   const [commentonPost, setCommentonPost] = useState(""); // Comment input value
   const [isLoading, setIsLoading] = useState(true);
+  const [isShareOpen, setIsShareOpen] = useState(false);
+  const [shareUrl, setShareUrl] = useState("");
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
+  const [isFetchingMore, setIsFetchingMore] = useState(false);
+  const loadMoreRef = useRef(null);
   const router = useRouter();
   // Function to format timestamp
   const formatTimestamp = (timestamp) => {
@@ -220,6 +227,37 @@ const PostSection = () => {
     console.log(id)
   }
 
+  const openShareModal = async (e, post) => {
+    e.stopPropagation();
+    const origin = typeof window !== 'undefined' ? window.location.origin : ''
+    const url = `${origin}/community/${post?.slug ?? ''}`
+    setShareUrl(url)
+
+    try {
+      if (typeof navigator !== 'undefined' && navigator.share) {
+        await navigator.share({
+          title: post?.title || 'Preqt Community',
+          text: post?.content || 'Check out this post',
+          url
+        })
+        return
+      }
+    } catch (_err) {
+      // fall back to custom modal below
+    }
+
+    setIsShareOpen(true)
+  }
+
+  const copyShareUrl = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl)
+      showSuccessToast('Link copied to clipboard')
+    } catch (err) {
+      showErrorToast('Failed to copy link')
+    }
+  }
+
     const VoteForPoll = async (e, id, postId) => {
       e.stopPropagation();
       
@@ -275,28 +313,57 @@ const PostSection = () => {
 
 
 
-   const getAllPosts = async () => {
+  const getAllPosts = async (pageParam = 1, append = false) => {
       try {
-    setIsLoading(true);
-    const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/community/posts?page=1&pageSize=10&startDate=2025-09-01T00:00:00.000Z&endDate=2025-09-05T23:59:59.999Z`, {
+    if (append) {
+      setIsFetchingMore(true);
+    } else {
+      setIsLoading(true);
+    }
+    const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/community/posts?page=${pageParam}&pageSize=10`, {
       headers: {
         'Authorization': `Bearer ${Cookies.get('accessToken')}`
       }
     })
     const data = await response.json()
     console.log(data)
-    setPosts(data.data)
+    const newPosts = Array.isArray(data?.data) ? data.data : []
+    setPosts(prev => append ? [...prev, ...newPosts] : newPosts)
+    if (newPosts.length < 10) {
+      setHasMore(false)
+    }
   } catch (error) {
     console.error('Error fetching posts:', error);
     showErrorToast('Failed to fetch posts');
   } finally {
-    setIsLoading(false);
+    if (append) {
+      setIsFetchingMore(false);
+    } else {
+      setIsLoading(false);
+    }
   }
   }
   
   useEffect(() => {
-    getAllPosts()
+    getAllPosts(1, false)
   }, [])
+
+  // Infinite scroll observer
+  useEffect(() => {
+    if (!hasMore || isFetchingMore) return;
+    const el = loadMoreRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver((entries) => {
+      const first = entries[0];
+      if (first.isIntersecting && hasMore && !isFetchingMore) {
+        const next = page + 1;
+        setPage(next);
+        getAllPosts(next, true);
+      }
+    }, { rootMargin: '200px' });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [page, hasMore, isFetchingMore, posts])
 
   // Update current time every second for poll countdown
   useEffect(() => {
@@ -358,16 +425,15 @@ const PostSection = () => {
                   key={option.id}
                   className={`${Styles.pollOption} ${(selectedOption === option.id || option?.isVoted) ? Styles.selected : ''
                     } ${hasVoted ? Styles.voted : ''}`}
-                    onClick={(e) => VoteForPoll(e, option.id, post?.id)}
                 >
                           <div className={`${Styles.optionContent} ${isVoting ? Styles.disabled : ''}`}>
-                    <div className={Styles.radioButton}>
+                    <div className={Styles.radioButton} onClick={(e) => e.stopPropagation()}>
                       <input
                         type="radio"
                         id={`option-${option.id}`}
                         name="poll"
                         checked={selectedOption === option.id || !!option?.isVoted}
-                                onChange={() => handleVote(option.id)}
+                                onChange={(e) => VoteForPoll(e, option.id, post?.id)}
                                 disabled={hasVoted || isVoting}
                       />
                       <span className={Styles.customRadio}>
@@ -448,7 +514,7 @@ const PostSection = () => {
           </div>
 
           {/* share */}
-                  <div className={Styles.likeContainer} onClick={(e) => handleShare(e, post?.id)}>
+                  <div className={Styles.likeContainer} onClick={(e) => openShareModal(e, post)}>
             <img src="/assets/pictures/share-logo.svg" alt="" />
             <p className={Styles.likesCount}>Share</p>
           </div>
@@ -548,7 +614,7 @@ const PostSection = () => {
           </div>
 
           {/* share */}
-                  <div className={Styles.likeContainer} onClick={(e) => handleShare(e, post?.id)}>
+                  <div className={Styles.likeContainer} onClick={(e) => openShareModal(e, post)}>
             <img src="/assets/pictures/share-logo.svg" alt="" />
             <p className={Styles.likesCount}>Share</p>
         </div>
@@ -601,6 +667,17 @@ const PostSection = () => {
 
 
 
+
+      {hasMore && (
+        <div ref={loadMoreRef} style={{ height: 1 }} />
+      )}
+      {isFetchingMore && (
+        <div className={Styles.IndividualPostContainer}>
+          <p className={Styles.timeContent}>Loading more…</p>
+        </div>
+      )}
+
+      <ShareModal isOpen={isShareOpen} onClose={() => setIsShareOpen(false)} shareUrl={shareUrl} onCopy={copyShareUrl} />
 
     </div>
   )

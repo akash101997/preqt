@@ -450,10 +450,9 @@ The post you're looking for doesn't exist or may have been removed.
                           key={option.id}
                           className={`${Styles.pollOption} ${(selectedOption === option.id || option?.isVoted) ? Styles.selected : ''
                             } ${hasVoted ? Styles.voted : ''}`}
-                          onClick={(e) => VoteForPoll(e,option.id, post?.id)}
                         >
                           <div className={Styles.optionContent}>
-                            <div className={Styles.radioButton}>
+                            <div className={Styles.radioButton} onClick={(e) => e.stopPropagation()}>
                               <input
                                 type="radio"
                                 id={`option-${option.id}`}
