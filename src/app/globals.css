@@ -368,3 +368,9 @@
    margin: auto;
    padding: 0px 32px;
  }
+
+ /* Carousle css */
+
+ .swiper-pagination-bullet-active {
+   background-color: #B18C07 !important;
+ }
