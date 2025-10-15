@@ -10,36 +10,6 @@ import 'swiper/css/pagination';
 import { useEffect, useState } from "react";
 
 export default function LetsHearFromThem() {
-    const testimonialss = [
-        {
-            id: 1,
-            video: "/assets/videos/testimonial_video_1.mp4",
-            title: "Pr.eqt Transparency Gave me confidence i needed",
-            name: "Chitanshi",
-            role: "CEO Healthify"
-        },
-        {
-            id: 2,
-            video: "/assets/videos/testimonial_video_2.mp4",
-            title: "Pr.eqt Transparency Gave me confidence i needed",
-            name: "Chitanshi",
-            role: "CEO Healthify"
-        },
-        {
-            id: 3,
-            video: "/assets/videos/testimonial_video_3.mp4",
-            title: "Pr.eqt Transparency Gave me confidence i needed",
-            name: "Chitanshi",
-            role: "CEO Healthify"
-        },
-        {
-            id: 4,
-            video: "/assets/videos/testimonial_video_3.mp4",
-            title: "Pr.eqt Transparency Gave me confidence i needed",
-            name: "Chitanshi",
-            role: "CEO Healthify"
-        }
-    ];
 
     const [testimonials, setTestimonials] = useState([]);
 
@@ -115,16 +85,37 @@ export default function LetsHearFromThem() {
                         const videoType = videoData?.type;
                         const videoPath = videoData?.path;
 
+                        // 🔹 Extract YouTube Video ID safely from any YouTube URL format
+                        const extractYouTubeId = (url) => {
+                            try {
+                                const shortRegex = /youtu\.be\/([a-zA-Z0-9_-]{11})/;
+                                const watchRegex = /v=([a-zA-Z0-9_-]{11})/;
+                                const shortsRegex = /shorts\/([a-zA-Z0-9_-]{11})/;
+
+                                return (
+                                    url.match(shortRegex)?.[1] ||
+                                    url.match(watchRegex)?.[1] ||
+                                    url.match(shortsRegex)?.[1] ||
+                                    null
+                                );
+                            } catch {
+                                return null;
+                            }
+                        };
+
+                        const videoId = videoType === "youtube" ? extractYouTubeId(videoPath) : null;
+                        const embedUrl = videoId
+                            ? `https://www.youtube.com/embed/${videoId}?enablejsapi=1&controls=0&modestbranding=1&rel=0&showinfo=0`
+                            : "";
+
                         return (
                             <SwiperSlide key={testimonial.id}>
                                 <div
                                     className={styles.testimonialCard}
                                     onMouseEnter={(e) => {
-                                        // Handle <video> hover play
                                         const video = e.currentTarget.querySelector('video');
                                         if (video) video.play();
 
-                                        // Handle <iframe> hover play (YouTube)
                                         const iframe = e.currentTarget.querySelector('iframe');
                                         if (iframe) {
                                             iframe.contentWindow?.postMessage(
@@ -153,18 +144,14 @@ export default function LetsHearFromThem() {
                                             className={styles.testimonialvideo2}
                                             muted
                                             loop
+                                            playsInline
                                         />
                                     )}
 
                                     {/* YouTube video */}
-                                    {videoType === "youtube" && (
+                                    {videoType === "youtube" && videoId && (
                                         <iframe
-                                            src={
-                                                videoPath
-                                                    .replace("youtu.be/", "www.youtube.com/embed/")
-                                                    .split("?")[0] +
-                                                "?enablejsapi=1&controls=0&modestbranding=1&rel=0&showinfo=0"
-                                            }
+                                            src={embedUrl}
                                             className={styles.testimonialvideo2}
                                             title="YouTube video"
                                             frameBorder="0"
@@ -177,13 +164,14 @@ export default function LetsHearFromThem() {
                                         <p className={styles.videoTitle2}>"{testimonial.videoQuotes}"</p>
                                         <p className={styles.titleBy2}>
                                             {testimonial.name} <br />
-                                            <span className={styles.spanTitleBy2}> {testimonial.designation}</span>
+                                            <span className={styles.spanTitleBy2}>{testimonial.designation}</span>
                                         </p>
                                     </div>
                                 </div>
                             </SwiperSlide>
                         );
                     })}
+
 
 
                 </Swiper>

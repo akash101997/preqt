@@ -1,4 +1,6 @@
+import Link from "next/link"
 import styles from "./MarketSentiment.module.css"
+import PostSection from "@/app/community/components/PostSection/PostSection"
 
 export default function MarketSentiment() {
     return (
@@ -65,14 +67,16 @@ export default function MarketSentiment() {
             <div className={styles.RecentPostContainer}>
                 <div className={styles.RecentPostHeader}>
                     <p className={styles.recentPostsHeading}>Recent posts from community</p>
-                    <div className={styles.ExploreStyles}>
-                        <p className={styles.ExploreBtn}>Explore</p>
-                        <img src="/assets/pictures/rightUpperArrow2.png" alt="" className={styles.arrowImg} />
-                    </div>
+                    <Link href={"/community"} style={{ textDecoration: 'unset' }}>
+                        <div className={styles.ExploreStyles}>
+                            <p className={styles.ExploreBtn}>Explore</p>
+                            <img src="/assets/pictures/rightUpperArrow2.png" alt="" className={styles.arrowImg} />
+                        </div>
+                    </Link>
                 </div>
 
                 {/* posts */}
-                <div className={styles.prqtPostConatiner}>
+                {false && <div className={styles.prqtPostConatiner}>
                     {/* logo and Time Div */}
                     <div className={styles.logoAndTimeDiv}>
                         <div className={styles.LogoNew}>
@@ -114,7 +118,11 @@ export default function MarketSentiment() {
                             <p className={styles.commentsCount}>Share</p>
                         </div>
                     </div>
+                </div>}
+                <div style={{ background: 'white', borderRadius: '20px' }}>
+                    <PostSection limit={true} resetSpace={true} />
                 </div>
+
 
             </div>
 

@@ -8,13 +8,13 @@ import { showErrorToast, showSuccessToast } from '../../../components/ToastProvi
 import { useRouter } from 'next/navigation'
 import ImageSlide from '../ImageSlide'
 import ShareModal from '../CommentSection/ShareModal'
-const PostSection = () => {
+const PostSection = ({ limit = false, resetSpace = false }) => {
 
   const [selectedOption, setSelectedOption] = useState(null)
   const [hasVoted, setHasVoted] = useState(false)
   const [isVoting, setIsVoting] = useState(false)
-    // const [showDot, setShowDot] = useState(false);
-    const [posts, setPosts] = useState([])
+  // const [showDot, setShowDot] = useState(false);
+  const [posts, setPosts] = useState([])
   const [dotId, setDotId] = useState(null);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [showCommentInput, setShowCommentInput] = useState(null); // Track which post has comment input open
@@ -58,20 +58,20 @@ const PostSection = () => {
   // Function to calculate time remaining for poll
   const getTimeRemaining = (expiresAt) => {
     if (!expiresAt) return 'Poll ended';
-    
+
     const expiryDate = new Date(expiresAt);
     const now = currentTime;
-    
+
     if (isNaN(expiryDate.getTime())) return 'Invalid date';
-    
+
     const timeDiff = expiryDate.getTime() - now.getTime();
-    
+
     if (timeDiff <= 0) return 'Poll ended';
-    
+
     const hours = Math.floor(timeDiff / (1000 * 60 * 60));
     const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-    
+
     if (hours > 0) {
       return `${hours}hrs ${minutes}mins left`;
     } else if (minutes > 0) {
@@ -85,9 +85,9 @@ const PostSection = () => {
   //   setDotId(id);
   // };
 
-   const viewPostDetails = (slug) => {
+  const viewPostDetails = (slug) => {
     router.push(`/community/${slug}`)
-   }
+  }
 
 
 
@@ -106,7 +106,7 @@ const PostSection = () => {
 
     const currentPost = posts[postIndex];
     const isCurrentlyLiked = currentPost.isLiked;
-    
+
     // Update UI immediately (optimistic update)
     const updatedPosts = [...posts];
     updatedPosts[postIndex] = {
@@ -129,10 +129,10 @@ const PostSection = () => {
           userId: Cookies.get('investorId')
         })
       });
-      
+
       const data = await response.json();
       console.log('Like API response:', data);
-      
+
       // If API call fails, revert the optimistic update
       if (!response.ok) {
         const revertedPosts = [...posts];
@@ -159,7 +159,7 @@ const PostSection = () => {
 
   const handleComment = async (e, id) => {
     // e.stopPropagation();
-    
+
     // Toggle comment input for this post
     if (showCommentInput === id) {
       setShowCommentInput(null); // Close if already open
@@ -244,54 +244,54 @@ const PostSection = () => {
     }
   }
 
-    const VoteForPoll = async (e, id, postId) => {
-      e.stopPropagation();
-      
-      // Prevent multiple rapid calls
-      if (hasVoted || isVoting) {
-        console.log('Already voted or voting in progress, ignoring click');
-        return;
-      }
-      
-      setIsVoting(true);
-      
-      try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/community/polls/${postId}/vote`, {
-          headers: {
-            'Authorization': `Bearer ${Cookies.get('accessToken')}`,
-            'Content-Type': 'application/json'
-          },
-          method: 'POST',
-          body: JSON.stringify({
-            userId: Cookies.get('investorId'),
-            optionId: id
-          })
-        });
-        
-        const data = await response.json();
-        console.log('Vote API response:', data);
-        
-        if (response.ok && data.message !== "Poll expired") {
-          // Update UI optimistically
-          setSelectedOption(id);
-          setHasVoted(true);
-          
-          // Show success message
-          showSuccessToast('Vote recorded successfully!');
-          
-          // Refresh posts to get updated vote counts
-          getAllPosts();
-        } else {
-          console.log('Showing error toast:', data.message);
-          showErrorToast(data.message || 'Vote failed');
-        }
-      } catch (error) {
-        console.error('Vote error:', error);
-        showErrorToast('Network error: Unable to vote');
-      } finally {
-        setIsVoting(false);
-      }
+  const VoteForPoll = async (e, id, postId) => {
+    e.stopPropagation();
+
+    // Prevent multiple rapid calls
+    if (hasVoted || isVoting) {
+      console.log('Already voted or voting in progress, ignoring click');
+      return;
     }
+
+    setIsVoting(true);
+
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/community/polls/${postId}/vote`, {
+        headers: {
+          'Authorization': `Bearer ${Cookies.get('accessToken')}`,
+          'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify({
+          userId: Cookies.get('investorId'),
+          optionId: id
+        })
+      });
+
+      const data = await response.json();
+      console.log('Vote API response:', data);
+
+      if (response.ok && data.message !== "Poll expired") {
+        // Update UI optimistically
+        setSelectedOption(id);
+        setHasVoted(true);
+
+        // Show success message
+        showSuccessToast('Vote recorded successfully!');
+
+        // Refresh posts to get updated vote counts
+        getAllPosts();
+      } else {
+        console.log('Showing error toast:', data.message);
+        showErrorToast(data.message || 'Vote failed');
+      }
+    } catch (error) {
+      console.error('Vote error:', error);
+      showErrorToast('Network error: Unable to vote');
+    } finally {
+      setIsVoting(false);
+    }
+  }
 
 
 
@@ -300,36 +300,43 @@ const PostSection = () => {
 
 
   const getAllPosts = async (pageParam = 1, append = false) => {
-      try {
-    if (append) {
-      setIsFetchingMore(true);
-    } else {
-      setIsLoading(true);
-    }
-    const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/community/posts?page=${pageParam}&pageSize=10`, {
-      headers: {
-        'Authorization': `Bearer ${Cookies.get('accessToken')}`
+    try {
+      if (append) {
+        setIsFetchingMore(true);
+      } else {
+        setIsLoading(true);
       }
-    })
-    const data = await response.json()
-    console.log(data)
-    const newPosts = Array.isArray(data?.data) ? data.data : []
-    setPosts(prev => append ? [...prev, ...newPosts] : newPosts)
-    if (newPosts.length < 10) {
-      setHasMore(false)
-    }
-  } catch (error) {
-    console.error('Error fetching posts:', error);
-    showErrorToast('Failed to fetch posts');
-  } finally {
-    if (append) {
-      setIsFetchingMore(false);
-    } else {
-      setIsLoading(false);
+      let api = `${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/community/posts?page=${pageParam}`;
+      if (limit) {
+        api += "&limit=1"
+      }
+      else {
+        api += "&limit=20"
+      }
+      const response = await fetch(api, {
+        headers: {
+          'Authorization': `Bearer ${Cookies.get('accessToken')}`
+        }
+      })
+      const data = await response.json()
+      console.log(data)
+      const newPosts = Array.isArray(data?.data) ? data.data : []
+      setPosts(prev => append ? [...prev, ...newPosts] : newPosts)
+      if (newPosts.length < 10) {
+        setHasMore(false)
+      }
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+      showErrorToast('Failed to fetch posts');
+    } finally {
+      if (append) {
+        setIsFetchingMore(false);
+      } else {
+        setIsLoading(false);
+      }
     }
   }
-  }
-  
+
   useEffect(() => {
     getAllPosts(1, false)
   }, [])
@@ -362,166 +369,166 @@ const PostSection = () => {
 
 
   return (
-    <div className={Styles.postsMainContainer}>
-        {isLoading ? (
+    <div className={`${Styles.postsMainContainer} ${resetSpace && Styles.resetWidth}`}>
+      {isLoading ? (
           <div className={Styles.IndividualPostContainer}>
-            <p className={Styles.timeContent}>Loading posts…</p>
-          </div>
-        ) : (
+          <p className={Styles.timeContent}>Loading posts…</p>
+        </div>
+      ) : (
         posts.map((post) => (
-        <div key={post.id}>
-          {post.type === 'poll' ? (
-            <div className={Styles.IndividualPostContainer} onClick={() => viewPostDetails(post.slug)}>
-              <div className={Styles.votingContainer2}>
+          <div key={post.id}>
+            {post.type === 'poll' ? (
+              <div className={`${Styles.IndividualPostContainer} ${resetSpace && Styles.resetSpace}`} onClick={() => viewPostDetails(post.slug)}>
+                <div className={Styles.votingContainer2}>
 
-        {/* voting timer container */}
-        <article className={Styles.votingDescription}>
-          <div className={Styles.logoAndTime}>
-            {/* logo */}
-            <article className={Styles.preqtLogoContainer}>
-              <img src="/assets/pictures/preqtLogo.svg" alt="" className={Styles.logoImage} />
-              <p className={Styles.PreqtLogoHeading}>Preqt</p>
-            </article>
+                  {/* voting timer container */}
+                  <article className={Styles.votingDescription}>
+                    <div className={Styles.logoAndTime}>
+                      {/* logo */}
+                      <article className={Styles.preqtLogoContainer}>
+                        <img src="/assets/pictures/preqtLogo.svg" alt="" className={Styles.logoImage} />
+                        <p className={Styles.PreqtLogoHeading}>Preqt</p>
+                      </article>
 
-            {/* time */}
-            <article className={Styles.TimeContainer}>
-              <div className={Styles.timerClockAndHoursLeft}>
-                <img src="/assets/pictures/timerClock.svg" alt="" />
-                        <p className={Styles.HoursLeft}>{getTimeRemaining(post?.pollExpiresAt)}</p>
-              </div>
-                      <div className={Styles.timeContent}>{formatTimestamp(post?.createdAt)}</div>
-            </article>
-          </div>
-        </article>
+                      {/* time */}
+                      <article className={Styles.TimeContainer}>
+                        <div className={Styles.timerClockAndHoursLeft}>
+                          <img src="/assets/pictures/timerClock.svg" alt="" />
+                          <p className={Styles.HoursLeft}>{getTimeRemaining(post?.pollExpiresAt)}</p>
+                        </div>
+                        <div className={Styles.timeContent}>{formatTimestamp(post?.createdAt)}</div>
+                      </article>
+                    </div>
+                  </article>
 
-        {/* voting options */}
-        <article className={Styles.votingQuestionWithOptions}>
-          <div className={Styles.VotingQuestion}>
-                    <p className={Styles.Question}>{post?.pollQuestion}</p>
-          </div>
-
-          <section>
-            {/* option buttons */}
-            <div></div>
-
-            {/* vote count div */}
-            <div className={Styles.pollContainer}>
-                      {post?.pollOptions?.map((option) => (
-                <div
-                  key={option.id}
-                  className={`${Styles.pollOption} ${(selectedOption === option.id || option?.isVoted) ? Styles.selected : ''
-                    } ${hasVoted ? Styles.voted : ''}`}
-                >
-                          <div className={`${Styles.optionContent} ${isVoting ? Styles.disabled : ''}`}>
-                    <div className={Styles.radioButton} onClick={(e) => e.stopPropagation()}>
-                      <input
-                        type="radio"
-                        id={`option-${option.id}`}
-                        name="poll"
-                        checked={selectedOption === option.id || !!option?.isVoted}
-                                onChange={(e) => VoteForPoll(e, option.id, post?.id)}
-                                disabled={hasVoted || isVoting}
-                      />
-                      <span className={Styles.customRadio}>
-                                {/* inner dot handled by CSS ::after; no extra element needed */}
-                      </span>
+                  {/* voting options */}
+                  <article className={Styles.votingQuestionWithOptions}>
+                    <div className={Styles.VotingQuestion}>
+                      <p className={Styles.Question}>{post?.pollQuestion}</p>
                     </div>
 
-                            <label 
-                              htmlFor={`option-${option.id}`} 
-                              className={Styles.optionLabel}
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                // Let the input onChange handle the voting
-                              }}
-                            >
-                              {option.optionText}
-                    </label>
+                    <section>
+                      {/* option buttons */}
+                      <div></div>
 
-                    <span className={Styles.percentage}>
-                              {option.votesPercent}%
-                    </span>
+                      {/* vote count div */}
+                      <div className={Styles.pollContainer}>
+                        {post?.pollOptions?.map((option) => (
+                          <div
+                            key={option.id}
+                            className={`${Styles.pollOption} ${(selectedOption === option.id || option?.isVoted) ? Styles.selected : ''
+                              } ${hasVoted ? Styles.voted : ''}`}
+                          >
+                            <div className={`${Styles.optionContent} ${isVoting ? Styles.disabled : ''}`}>
+                              <div className={Styles.radioButton} onClick={(e) => e.stopPropagation()}>
+                                <input
+                                  type="radio"
+                                  id={`option-${option.id}`}
+                                  name="poll"
+                                  checked={selectedOption === option.id || !!option?.isVoted}
+                                  onChange={(e) => VoteForPoll(e, option.id, post?.id)}
+                                  disabled={hasVoted || isVoting}
+                                />
+                                <span className={Styles.customRadio}>
+                                  {/* inner dot handled by CSS ::after; no extra element needed */}
+                                </span>
+                              </div>
+
+                              <label
+                                htmlFor={`option-${option.id}`}
+                                className={Styles.optionLabel}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  // Let the input onChange handle the voting
+                                }}
+                              >
+                                {option.optionText}
+                              </label>
+
+                              <span className={Styles.percentage}>
+                                {option.votesPercent}%
+                              </span>
+                            </div>
+
+                            <div
+                              className={Styles.progressBar}
+                              style={{ width: `${option?.votesPercent ?? 0}%` }}
+                            ></div>
+                          </div>
+                        ))}
+
+                        <div className={Styles.pollFooter}>
+                          <span className={Styles.votingText}>Vote now and make your voice heard!</span>
+                          <span className={Styles.totalVotes}>{post?.totalVotes?.toLocaleString()} votes</span>
+                        </div>
+                      </div>
+                    </section>
+
+
+                  </article>
+
+
+                  {/* like comment and share */}
+                  <div className={Styles.LCScontainer}>
+
+                    {/* like and Comment  */}
+                    <div className={`${Styles.likeAndComment} ${Styles.likeAndCommentContainer}`} >
+                      {/* like */}
+                      <div className={`${Styles.likeAndComment} `} >
+                        <div className={Styles.likeContainer} onClick={(e) => handleLike(e, post?.id)}>
+                          <img
+                            src={post?.isLiked ? "/assets/pictures/liked.svg" : "/assets/pictures/like.svg"}
+                            alt=""
+                            style={{
+
+                              opacity: post?.isLiked ? 1 : 0.7,
+
+                              padding: post?.isLiked ? '2px' : '0px'
+                            }}
+                          />
+                          <p className={Styles.likesCount} style={{
+                            color: post?.isLiked ? '#64748B' : '#64748B'
+                          }}>
+                            {post?.likesCount} Likes
+                          </p>
+                        </div>
+
+                        {/* comment */}
+                        <div className={Styles.likeContainer} onClick={(e) => handleComment(e, post?.id)}>
+                          <img src="/assets/pictures/comment.svg" alt="" />
+                          <p className={Styles.likesCount}>{post?.commentsCount} comments</p>
+                        </div>
+                      </div>
+
+
+                      {/* Comment Input - Only show when comment button is clicked */}
+
+
+                    </div>
+
+                    {/* share */}
+                    <div className={Styles.likeContainer} onClick={(e) => openShareModal(e, post)}>
+                      <img src="/assets/pictures/share-logo.svg" alt="" />
+                      <p className={Styles.likesCount}>Share</p>
+                    </div>
                   </div>
 
-                  <div
-                    className={Styles.progressBar}
-                            style={{ width: `${option?.votesPercent ?? 0}%` }}
-                  ></div>
-                </div>
-              ))}
-
-              <div className={Styles.pollFooter}>
-                <span className={Styles.votingText}>Vote now and make your voice heard!</span>
-                        <span className={Styles.totalVotes}>{post?.totalVotes?.toLocaleString()} votes</span>
-              </div>
-            </div>
-          </section>
-
-
-        </article>
-
-
-        {/* like comment and share */}
-        <div className={Styles.LCScontainer}>
-
-          {/* like and Comment  */}
-          <div className={`${Styles.likeAndComment} ${Styles.likeAndCommentContainer}`} >
-            {/* like */}
-            <div className={`${Styles.likeAndComment} `} >
-            <div className={Styles.likeContainer} onClick={(e) => handleLike(e, post?.id)}>
-                       <img 
-                         src={post?.isLiked ? "/assets/pictures/liked.svg" : "/assets/pictures/like.svg"} 
-                         alt="" 
-                         style={{ 
-                   
-                           opacity: post?.isLiked ? 1 : 0.7,
-      
-                           padding: post?.isLiked ? '2px' : '0px'
-                         }}
-                       />
-                       <p className={Styles.likesCount} style={{ 
-                         color: post?.isLiked ? '#64748B' : '#64748B' 
-                       }}>
-                         {post?.likesCount} Likes
-                       </p>
-            </div>
-
-            {/* comment */}
-                    <div className={Styles.likeContainer} onClick={(e) => handleComment(e, post?.id)}>
-              <img src="/assets/pictures/comment.svg" alt="" />
-                      <p className={Styles.likesCount}>{post?.commentsCount} comments</p>
-                    </div>
-              </div>
-             
-
-               {/* Comment Input - Only show when comment button is clicked */}
-         
-
-          </div>
-
-          {/* share */}
-                  <div className={Styles.likeContainer} onClick={(e) => openShareModal(e, post)}>
-            <img src="/assets/pictures/share-logo.svg" alt="" />
-            <p className={Styles.likesCount}>Share</p>
-          </div>
-         </div>
- 
-         {showCommentInput === post?.id && (
-                 <div className={Styles.totalComments} onClick={(e) => e.stopPropagation()}>
-                   <div className={Styles.inputcommentcontainer}>
-                       <span className={Styles.nameInitial}>
-                           AB
-                       </span>
-                        <input 
-                          type="text" 
-                          value={commentonPost} 
-                          placeholder='Add a comment...' 
-                          className={Styles.inputcomment}  
+                  {showCommentInput === post?.id && (
+                    <div className={Styles.totalComments} onClick={(e) => e.stopPropagation()}>
+                      <div className={Styles.inputcommentcontainer}>
+                        <span className={Styles.nameInitial}>
+                          AB
+                        </span>
+                        <input
+                          type="text"
+                          value={commentonPost}
+                          placeholder='Add a comment...'
+                          className={Styles.inputcomment}
                           onChange={(e) => setCommentonPost(e.target.value)}
                           onKeyPress={(e) => handleKeyPress(e, post?.id)}
                           onClick={(e) => e.stopPropagation()}
                         />
-                        <button 
+                        <button
                           className={Styles.submitCommentBtn}
                           onClick={(e) => {
                             e.stopPropagation();
@@ -531,134 +538,134 @@ const PostSection = () => {
                         >
                           Post
                         </button>
-            </div>
-                 </div>
-               )}
+                      </div>
+                    </div>
+                  )}
 
-      </div>
-            </div>
+                </div>
+              </div>
 
-          ) : (
-            <div className={Styles.IndividualPostContainer} onClick={() => viewPostDetails(post.slug)}>
+            ) : (
+              <div className={`${Styles.IndividualPostContainer} ${resetSpace && Styles.resetSpace}`} onClick={() => viewPostDetails(post.slug)}>
 
-              <div>
+                <div>
 
 
 
-        <div className={Styles.logoAndTime}>
-          {/* logo */}
-          <article className={Styles.preqtLogoContainer}>
-            <img src="/assets/pictures/preqtLogo.svg" alt="" className={Styles.logoImage} />
-                    <p className={Styles.PreqtLogoHeading}>{post?.title}</p>
-          </article>
+                  <div className={Styles.logoAndTime}>
+                    {/* logo */}
+                    <article className={Styles.preqtLogoContainer}>
+                      <img src="/assets/pictures/preqtLogo.svg" alt="" className={Styles.logoImage} />
+                      <p className={Styles.PreqtLogoHeading}>{post?.title}</p>
+                    </article>
 
-          {/* time */}
-                  <p className={Styles.timeContent}>{formatTimestamp(post?.createdAt)}</p>
-        </div>
-
-        <div className={Styles.postsAndDescriptionContainer}>
-                  <p className={Styles.postDescription}>{post?.content}</p>
-                  <div style={{width: '100%', maxHeight: '400px'}}>
-                  <ImageSlide images={post?.mediaUrl} />
+                    {/* time */}
+                    <p className={Styles.timeContent}>{formatTimestamp(post?.createdAt)}</p>
                   </div>
-                
-          {/* <Image
+
+                  <div className={Styles.postsAndDescriptionContainer}>
+                    <p className={Styles.postDescription}>{post?.content}</p>
+                    <div style={{ width: '100%', maxHeight: '400px' }}>
+                      <ImageSlide images={post?.mediaUrl} />
+                    </div>
+
+                    {/* <Image
                     src="/assets/pictures/preqtCandidImage.png"
             alt="Post image"
             className={Styles.postImage}
             width={628}
             height={400}
           /> */}
-        </div>
-        {/* like comment and share */}
-        <div className={Styles.LCScontainer}>
+                  </div>
+                  {/* like comment and share */}
+                  <div className={Styles.LCScontainer}>
 
-          {/* like and Comment  */}
-          <div className={Styles.likeAndComment}>
-            {/* like */}
-                     <div className={Styles.likeContainer} onClick={(e) => handleLike(e, post?.id)}>
-                       <img 
-                        src={post?.isLiked ? "/assets/pictures/liked.svg" : "/assets/pictures/like.svg"} 
-                         alt="" 
-                         style={{ 
-                           filter: post?.isLiked ? 'none' : 'none',
-                           opacity: post?.isLiked ? 1 : 0.7
-                         }}
-                       />
-                       <p className={Styles.likesCount} style={{ 
-                         color: post?.isLiked ? '#64748B' : '#64748B' 
-                       }}>
-                         {post?.likesCount} Likes
-                       </p>
-            </div>
+                    {/* like and Comment  */}
+                    <div className={Styles.likeAndComment}>
+                      {/* like */}
+                      <div className={Styles.likeContainer} onClick={(e) => handleLike(e, post?.id)}>
+                        <img
+                          src={post?.isLiked ? "/assets/pictures/liked.svg" : "/assets/pictures/like.svg"}
+                          alt=""
+                          style={{
+                            filter: post?.isLiked ? 'none' : 'none',
+                            opacity: post?.isLiked ? 1 : 0.7
+                          }}
+                        />
+                        <p className={Styles.likesCount} style={{
+                          color: post?.isLiked ? '#64748B' : '#64748B'
+                        }}>
+                          {post?.likesCount} Likes
+                        </p>
+                      </div>
 
-            {/* comment */}
-                    <div className={Styles.likeContainer} onClick={(e) => handleComment(e, post?.id)}>
-              <img src="/assets/pictures/comment.svg" alt="" />
-                      <p className={Styles.likesCount}>{post?.commentsCount} comments</p>
-            </div>
-          </div>
+                      {/* comment */}
+                      <div className={Styles.likeContainer} onClick={(e) => handleComment(e, post?.id)}>
+                        <img src="/assets/pictures/comment.svg" alt="" />
+                        <p className={Styles.likesCount}>{post?.commentsCount} comments</p>
+                      </div>
+                    </div>
 
-          {/* share */}
-                  <div className={Styles.likeContainer} onClick={(e) => openShareModal(e, post)}>
-            <img src="/assets/pictures/share-logo.svg" alt="" />
-            <p className={Styles.likesCount}>Share</p>
-        </div>
-      </div>
-
-                {/* Comment Input - Only show when comment button is clicked */}
-                {showCommentInput === post?.id && (
-                  <div className={Styles.totalComments} onClick={(e) => e.stopPropagation()}>
-                    <div className={Styles.inputcommentcontainer}>
-                        <span className={Styles.nameInitial}>
-                            AB
-                        </span>
-                      <input
-                           type="text" 
-                           value={commentonPost} 
-                           placeholder='Add a comment...' 
-                           className={Styles.inputcomment}  
-                           onChange={(e) => setCommentonPost(e.target.value)}
-                           onKeyPress={(e) => handleKeyPress(e, post?.id)}
-                           onClick={(e) => e.stopPropagation()}
-                         />
-                         <button 
-                           className={Styles.submitCommentBtn}
-                           onClick={(e) => {
-                             e.stopPropagation();
-                             submitComment(post?.id);
-                           }}
-                           disabled={!commentonPost.trim()}
-                         >
-                           Post
-                         </button>
+                    {/* share */}
+                    <div className={Styles.likeContainer} onClick={(e) => openShareModal(e, post)}>
+                      <img src="/assets/pictures/share-logo.svg" alt="" />
+                      <p className={Styles.likesCount}>Share</p>
                     </div>
                   </div>
-                )}
+
+                  {/* Comment Input - Only show when comment button is clicked */}
+                  {showCommentInput === post?.id && (
+                    <div className={Styles.totalComments} onClick={(e) => e.stopPropagation()}>
+                      <div className={Styles.inputcommentcontainer}>
+                        <span className={Styles.nameInitial}>
+                          AB
+                        </span>
+                        <input
+                          type="text"
+                          value={commentonPost}
+                          placeholder='Add a comment...'
+                          className={Styles.inputcomment}
+                          onChange={(e) => setCommentonPost(e.target.value)}
+                          onKeyPress={(e) => handleKeyPress(e, post?.id)}
+                          onClick={(e) => e.stopPropagation()}
+                        />
+                        <button
+                          className={Styles.submitCommentBtn}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            submitComment(post?.id);
+                          }}
+                          disabled={!commentonPost.trim()}
+                        >
+                          Post
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
               </div>
-
-            </div>
-          )}
+            )}
 
 
 
-        </div>
+          </div>
 
 
 
 
 
-      ))
-        )}
+        ))
+      )}
 
 
 
 
-      {hasMore && (
+      {!limit && hasMore && (
         <div ref={loadMoreRef} style={{ height: 1 }} />
       )}
       {isFetchingMore && (
-        <div className={Styles.IndividualPostContainer}>
+        <div className={`${Styles.IndividualPostContainer}`}>
           <p className={Styles.timeContent}>Loading more…</p>
         </div>
       )}
