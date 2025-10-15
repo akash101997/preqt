@@ -93,14 +93,22 @@
   gap: 14px;
 }
 
-.NotificationIconContainer {
-  width: fit-content;
+.NotificationIconContainer,
+.NotificationIconContainerMob {
+  /* width: fit-content; */
   height: 52px;
+  width: 52px;
   display: flex;
   /* padding: 11px;*/
   border-radius: 100%;
   background-color: #334155;
   position: relative;
+  cursor: pointer;
+}
+
+.NotificationIconContainerMob {
+  height: 52px;
+  width: 52px;
 }
 
 .notificationBadge {
@@ -195,10 +203,11 @@
   visibility: visible;
 }
 
-.HomeNavButton.activeLink{
+.HomeNavButton.activeLink {
   position: relative;
 }
-.HomeNavButton.activeLink::after{
+
+.HomeNavButton.activeLink::after {
   content: url(/active-header.svg);
   position: absolute;
   left: 50%;
@@ -535,7 +544,7 @@
   .icons {
     max-width: 100%;
     max-width: 100%;
-    width: 42px;
+    /* width: 42px; */
   }
 
   .logo {

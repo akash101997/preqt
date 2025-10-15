@@ -1,6 +1,6 @@
 "use client";
 import styles from "./DealsTalk.module.css";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { useSearchParams } from "next/navigation";
@@ -12,11 +12,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Loader from "../../Loader";
+import Cookies from "js-cookie";
+import { formatDate } from "@/app/utils/FormatDate";
 
 function DealsTalkContent() {
     const swiperRef = useRef(null);
     const searchParams = useSearchParams();
     const dealId = searchParams?.get("dealId");
+    const accessToken = Cookies.get('accessToken');
 
     // Define deals data to check if deal is private
     const dealsConfig = {
@@ -86,66 +89,94 @@ function DealsTalkContent() {
         },
     ];
 
-    const renderCard1 = (deal) => (
+    const [allTopDeals, setAllTopDeals] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    const handleFetchTopDeals = async () => {
+        try {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}/admin/api/deals/all-deals?limit=20`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': `Bearer ${accessToken}`
+                },
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setAllTopDeals(data.data || []);
+            } else {
+                console.log("Failed to fetch top deals");
+            }
+        } catch (error) {
+            console.log("Error fetching top deals:", error);
+        }
+
+    }
+
+    useEffect(() => {
+        handleFetchTopDeals()
+    }, [])
+
+    const renderPublicCard = (deal) => (
         <Link href={`/deals?dealId=${deal.id}`} className={styles.cardLink}>
             <div className={styles.cardContainer1}>
                 <div className={styles.cardInnerSections}>
                     <article className={styles.cardIPOsection}>
-                        <div className={styles.IPOheading}>
-                            <p className={styles.HeadingContent}>{deal.type}</p>
-                        </div>
-                        <div className={styles.IPOheading}>
-                            <p className={styles.HeadingContent}>{deal.category}</p>
-                        </div>
+                        {deal?.tags.length > 0 && deal.tags.map((data, idx) => (
+                            <div className={styles.IPOheading} key={idx}>
+                                <p className={styles.HeadingContent}>{data}</p>
+                            </div>
+                        ))}
                     </article>
 
                     <div className={styles.AnthemSection}>
-                        <img src={deal.companyLogo} alt="" className={styles.anthemPicture} />
-                        <p className={styles.anthemHeading}>{deal.companyName}</p>
+                        <img src={`${process.env.NEXT_PUBLIC_USER_BASE}admin${deal.company_logo[0].path.replace("public", "")}`} alt="" className={styles.anthemPicture} />
+                        <p className={styles.anthemHeading}>{deal.company_name}</p>
                     </div>
 
-                    <p className={styles.dealCardContent}>{deal.description}</p>
+                    <p className={styles.dealCardContent}>{deal.tag_line}</p>
 
                     <div className={styles.revenueMainContainer}>
                         <section className={styles.revenueSection}>
                             <article className={styles.Revenue}>
-                                <p className={styles.revenuHeading}>Revenue</p>
-                                <p className={styles.priceInRupee}>{deal.stats.revenue}</p>
+                                <p className={styles.revenuHeading}>Revenue (FY'25)</p>
+                                <p className={styles.priceInRupee}>INR {deal.revenue_fy25_in_cr} Cr</p>
                             </article>
                             <article>
-                                <p className={styles.revenuHeading}>PAT</p>
-                                <p className={styles.priceInRupee}>{deal.stats.pat}</p>
+                                <p className={styles.revenuHeading}>PAT (FY'25)</p>
+                                <p className={styles.priceInRupee}>INR {deal.pat_fy25_in_cr} Cr</p>
                             </article>
                             <article>
                                 <p className={styles.revenuHeading}>PAT multiple</p>
-                                <p className={styles.priceInRupee}>{deal.stats.patMultiple}</p>
+                                <p className={styles.priceInRupee}>{deal.pat_fy25_in_cr}</p>
                             </article>
                         </section>
 
                         <section className={styles.revenueSection}>
                             <article className={styles.Revenue}>
                                 <p className={styles.revenuHeading}>CAGR Growth 3Y</p>
-                                <p className={styles.priceInRupee}>{deal.stats.cagrGrowth}</p>
+                                <p className={styles.priceInRupee}>{deal.cagr_growth_3y_percent}%</p>
                             </article>
                             <article>
-                                <p className={styles.revenuHeading}>ROE</p>
-                                <p className={styles.priceInRupee}>{deal.stats.roe}</p>
+                                <p className={styles.revenuHeading}>ROE (FY'25)</p>
+                                <p className={styles.priceInRupee}>{deal.roe_fy25_percent}%</p>
                             </article>
                             <article>
                                 <p className={styles.revenuHeading}>Issue Opening Date</p>
-                                <p className={styles.priceInRupee}>{deal.stats.issueDate}</p>
+                                <p className={styles.priceInRupee}>{formatDate(deal.timeline_ipo_open_date)}</p>
                             </article>
                         </section>
                     </div>
 
                     <section className={styles.merchantMainContainer}>
-                        <div className={styles.merchantBanker}>
-                            <p className={styles.bankMerchant}>{deal.merchantBanker}</p>
-                        </div>
+                        {deal.merchant_banker_appointed && <div className={styles.merchantBanker}>
+                            <p className={styles.bankMerchant}>{deal.merchant_banker_appointed}</p>
+                        </div>}
                     </section>
                 </div>
 
-                <div className={styles.cardFooterMainContainer}>
+                {/* <div className={styles.cardFooterMainContainer}>
                     <div className={styles.QandA}>
                         <div className={styles.QandAstats}>23 Q&A answered in last 3 days  </div>
                         <div className={styles.usersIcons}>
@@ -155,78 +186,76 @@ function DealsTalkContent() {
                             <img src="assets/pictures/userImage4.png" alt="" className={styles.userImages} />
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </Link>
     );
 
-    const renderCard2 = (deal) => (
-        <Link href={`/deals?dealId=${deal.id}`} className={styles.cardLink}>
+    const renderPrivateCard = (deal) => (
+        <Link href={`/deals/${deal.slug}`} className={styles.cardLink}>
             <div className={styles.card2Container}>
                 <div className={styles.card2InnerSections}>
                     <article className={styles.card2IPOsection}>
-                        <div className={styles.card2IPOtag}>
-                            <p className={styles.card2IPOtext}>{deal.type}</p>
-                        </div>
-                        <div className={styles.card2IPOtag}>
-                            <p className={styles.card2IPOtext}>{deal.category}</p>
-                        </div>
+                        {deal?.tags && deal?.tags.length > 0 && deal.tags.map((data, idx) => {
+                            <div className={styles.card2IPOtag} key={idx}>
+                                <p className={styles.card2IPOtext}>{data}</p>
+                            </div>
+                        })}
                     </article>
 
                     <div className={styles.card2CompanySection}>
-                        <img src={deal.companyLogo} alt="" className={styles.card2CompanyLogo} />
-                        <p className={styles.card2CompanyName}>{deal.companyName}</p>
+                        <img src={`${process.env.NEXT_PUBLIC_USER_BASE}admin${deal.company_logo[0].path.replace("public", "")}`} alt="" className={styles.card2CompanyLogo} />
+                        <p className={styles.card2CompanyName}>{deal?.company_name || ""}</p>
                     </div>
 
-                    <p className={styles.card2Description}>{deal.description}</p>
+                    <p className={styles.card2Description}>{deal?.tag_line || ""}</p>
 
                     <div className={styles.card2StatsContainer}>
                         <section className={styles.card2StatsRow}>
                             <article className={styles.card2Stat}>
-                                <p className={styles.card2StatHeading}>Revenue</p>
-                                <p className={styles.card2StatValue}>{deal.stats.revenue}</p>
+                                <p className={styles.card2StatHeading}>Valuation</p>
+                                <p className={styles.card2StatValue}>INR {deal.revenue_fy25_in_cr} Cr</p>
                             </article>
                             <article className={styles.card2Stat}>
-                                <p className={styles.card2StatHeading}>Revenue</p>
-                                <p className={styles.card2StatValue}>{deal.stats.revenue2}</p>
+                                <p className={styles.card2StatHeading}>Revenue (FY'25)</p>
+                                <p className={styles.card2StatValue}>INR {deal.pat_fy25_in_cr}  Cr</p>
                             </article>
                             <article className={styles.card2Stat}>
                                 <p className={styles.card2StatHeading}>Expected listing </p>
-                                <p className={styles.card2StatValue}>{deal.stats.expectedListing}</p>
+                                <p className={styles.card2StatValue}>{formatDate(deal.listing_timeline)}</p>
                             </article>
                         </section>
 
                         <section className={styles.card2StatsRow}>
                             <article className={styles.card2Stat}>
-                                <p className={styles.card2StatHeading}>PAT</p>
-                                <p className={styles.card2StatValue}>{deal.stats.pat}</p>
+                                <p className={styles.card2StatHeading}>PAT (FY'25)</p>
+                                <p className={styles.card2StatValue}>INR {deal.pat_fy25_in_cr}  Cr</p>
                             </article>
                             <article className={styles.card2Stat}>
                                 <p className={styles.card2StatHeading}>P/E Multiple</p>
-                                <p className={styles.card2StatValue}>{deal.stats.peMultiple}</p>
+                                <p className={styles.card2StatValue}>{deal.pe_multiple}X</p>
                             </article>
                         </section>
                     </div>
 
-                    <div className={styles.progressContainer}>
+                    {(deal.target_valuation_in_cr || 0) > 0 && <div className={styles.progressContainer}>
                         <div className={styles.ProgressInPrice}>
-                            <p className={styles.PriceIncr}>{deal.progress.current}</p>
-                            <p className={styles.PricePercent}>{deal.progress.percentage}</p>
+                            <p className={styles.PriceIncr}>{deal?.target_funding_in_cr} Cr / {deal?.target_valuation_in_cr} Cr</p>
+                            <p className={styles.PricePercent}>
+                                {(Math.round((deal?.target_funding_in_cr / deal?.target_valuation_in_cr) * 100 * 100) / 100).toFixed(2)}%
+                            </p>
                         </div>
-                        {/* <img src="/assets/pictures/PriceProgressBar.svg" alt="" /> */}
-                         <div className={styles.progressWrapper}>
-        <div className={styles.progressStack}>
-
-        </div>
-        {/* <div className={styles.progress}>
-
-          <div className={styles.progress-bar} style={{ width: "94%" }}></div>
-        </div> */}
-      </div>
-                    </div>
+                        <div className={styles.progressWrapper}>
+                            <div className={styles.progressStack}>
+                            </div>
+                            <div className={styles.progress}>
+                                <div className={styles.progressBar} style={{ width: `${(Math.round((deal?.target_funding_in_cr / deal?.target_valuation_in_cr) * 100 * 100) / 100).toFixed(2) + 20}%` }}></div>
+                            </div>
+                        </div>
+                    </div>}
 
                     <div className={styles.promoter}>
-                        {deal.tags.map((tag, index) => (
+                        {deal?.key_highlights?.map((tag, index) => (
                             <div key={index} className={index === 0 ? styles.Strong : styles.monetization}>
                                 <p>{tag}</p>
                             </div>
@@ -234,7 +263,7 @@ function DealsTalkContent() {
                     </div>
                 </div>
 
-                <div className={styles.card2Footer}>
+                {/* <div className={styles.card2Footer}>
                     <div className={styles.card2QandA}>
                         <div className={styles.card2QandAStats}>23 Q&A answered in last 3 days</div>
                         <div className={styles.card2UserIcons}>
@@ -244,7 +273,7 @@ function DealsTalkContent() {
                             <img src="assets/pictures/userImage4.png" alt="" className={styles.card2UserImage} />
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 <img src="/assets/pictures/star.svg" alt="" className={styles.starImage} />
             </div>
@@ -302,9 +331,9 @@ function DealsTalkContent() {
                     }}
                     className={styles.dealsSwiper}
                 >
-                    {dealsData.map((deal, index) => (
+                    {allTopDeals.map((deal, index) => (
                         <SwiperSlide key={deal.id}>
-                            {index === 0 ? renderCard1(deal) : renderCard2(deal)}
+                            {deal.deal_type === "public" ? renderPublicCard(deal) : renderPrivateCard(deal)}
                         </SwiperSlide>
                     ))}
                 </Swiper>

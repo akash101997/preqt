@@ -11,7 +11,7 @@
     background-color: #FFFFFF;
     box-sizing: border-box;
     gap: 20px;
-    justify-content: center;    
+    justify-content: center;
 }
 
 .heroFrame {
@@ -34,85 +34,101 @@
     width: 100%;
 }
 
-.midlrow{
+.midlrow {
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
 
-.rightclm{
+.rightclm {
     max-width: 68.75vw;
+    min-width: 68.75vw;
+    ;
 }
-.leftclm{
+
+.leftclm {
     max-width: 23.86vw;
 }
 
 @media (max-width: 1500px) {
-    .rightclm{
+    .rightclm {
         max-width: 62.75vw;
+        min-width: 62.75vw;
     }
-    .leftclm{
+
+    .leftclm {
         max-width: 27.86vw;
     }
 }
 
 @media (max-width: 1280px) {
-    .rightclm{
+    .rightclm {
         max-width: 58.75vw;
+        min-width: 58.75vw;
     }
-    .leftclm{
+
+    .leftclm {
         max-width: 29.86vw;
     }
 }
 
 
 @media (max-width: 1120px) {
-    .rightclm{
+    .rightclm {
         max-width: 53.75vw;
+        min-width: 53.75vw;
     }
-    .leftclm{
+
+    .leftclm {
         max-width: 33.86vw;
     }
 }
 
 @media (max-width: 1040px) {
-    .rightclm{
+    .rightclm {
         max-width: 51.15vw;
+        min-width: 51.15vw;
     }
-    .leftclm{
+
+    .leftclm {
         max-width: 38.86vw;
     }
 }
 
 @media (max-width: 1024px) {
-.mainDiv{
-    padding: 0 40px;
-}
+    .mainDiv {
+        padding: 0 40px;
+    }
 }
 
 
 
 @media (max-width: 768px) {
-.midlrow{
-    flex-direction: column;
-}
-.rightclm{
-    max-width: 100%;
-}
-.leftclm{
-    max-width: 100%;
-}
-.mainDiv {
-    padding: 0 16px;
-    /* padding-right: 0; */
-}
+    .midlrow {
+        flex-direction: column;
+    }
+
+    .rightclm {
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    .leftclm {
+        max-width: 100%;
+    }
+
+    .mainDiv {
+        padding: 0 16px;
+        /* padding-right: 0; */
+    }
 }
 
 @media (max-width: 480px) {
-.heroMainContaine{
-    padding: 0;
-}
-.heroMainContainer{
-    background-color: unset;
-}
+    .heroMainContaine {
+        padding: 0;
+    }
+
+    .heroMainContainer {
+        background-color: unset;
+    }
 }

@@ -7,9 +7,10 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { useEffect, useState } from "react";
 
 export default function LetsHearFromThem() {
-    const testimonials = [
+    const testimonialss = [
         {
             id: 1,
             video: "/assets/videos/testimonial_video_1.mp4",
@@ -40,6 +41,28 @@ export default function LetsHearFromThem() {
         }
     ];
 
+    const [testimonials, setTestimonials] = useState([]);
+
+    const handleFetchTestimonials = async () => {
+        try {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}admin/api/ama-videos`, {
+                method: 'GET'
+            })
+
+            const result = await response.json();
+            if (response.ok) {
+                setTestimonials(result.data.data);
+            }
+        } catch (error) {
+            console.log("unable to fetch ")
+        }
+    }
+
+
+    useEffect(() => {
+        handleFetchTestimonials()
+    }, [])
+
     return (
         <section className={styles.testimonailMainContainer}>
             <div className={styles.headingSection}>Let's hear from them!</div>
@@ -56,7 +79,7 @@ export default function LetsHearFromThem() {
                         0: {
                             slidesPerView: 1,
                         },
-                        400:{
+                        400: {
                             slidesPerView: 1.2,
                         },
                         480: {
@@ -83,39 +106,86 @@ export default function LetsHearFromThem() {
                         1730: {
                             slidesPerView: 2.8,
                         },
-                      
+
                     }}
                     className={styles.testimonialSwiper}
                 >
-                    {testimonials.map((testimonial) => (
-                        <SwiperSlide key={testimonial.id}>
-                            <div 
-                                className={styles.testimonialCard} 
-                                onMouseEnter={(e) => {
-                                    const video = e.currentTarget.querySelector('video');
-                                    if (video) video.play();
-                                }}
-                                onMouseLeave={(e) => {
-                                    const video = e.currentTarget.querySelector('video');
-                                    if (video) video.pause();
-                                }}
-                            >
-                                <video 
-                                    src={testimonial.video} 
-                                    className={styles.testimonialvideo2} 
-                                    muted
-                                    loop
-                                />
-                                <div className={styles.titleContainer}>
-                                    <p className={styles.videoTitle2}>"{testimonial.title}"</p>
-                                    <p className={styles.titleBy2}>
-                                        {testimonial.name} <br />
-                                        <span className={styles.spanTitleBy2}> {testimonial.role}</span>
-                                    </p>
+                    {testimonials.map((testimonial) => {
+                        const videoData = testimonial.videoUrls?.[0];
+                        const videoType = videoData?.type;
+                        const videoPath = videoData?.path;
+
+                        return (
+                            <SwiperSlide key={testimonial.id}>
+                                <div
+                                    className={styles.testimonialCard}
+                                    onMouseEnter={(e) => {
+                                        // Handle <video> hover play
+                                        const video = e.currentTarget.querySelector('video');
+                                        if (video) video.play();
+
+                                        // Handle <iframe> hover play (YouTube)
+                                        const iframe = e.currentTarget.querySelector('iframe');
+                                        if (iframe) {
+                                            iframe.contentWindow?.postMessage(
+                                                '{"event":"command","func":"playVideo","args":""}',
+                                                '*'
+                                            );
+                                        }
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        const video = e.currentTarget.querySelector('video');
+                                        if (video) video.pause();
+
+                                        const iframe = e.currentTarget.querySelector('iframe');
+                                        if (iframe) {
+                                            iframe.contentWindow?.postMessage(
+                                                '{"event":"command","func":"pauseVideo","args":""}',
+                                                '*'
+                                            );
+                                        }
+                                    }}
+                                >
+                                    {/* Local AMA video */}
+                                    {videoType === "ama-video" && (
+                                        <video
+                                            src={`${process.env.NEXT_PUBLIC_USER_BASE}${videoPath}`}
+                                            className={styles.testimonialvideo2}
+                                            muted
+                                            loop
+                                        />
+                                    )}
+
+                                    {/* YouTube video */}
+                                    {videoType === "youtube" && (
+                                        <iframe
+                                            src={
+                                                videoPath
+                                                    .replace("youtu.be/", "www.youtube.com/embed/")
+                                                    .split("?")[0] +
+                                                "?enablejsapi=1&controls=0&modestbranding=1&rel=0&showinfo=0"
+                                            }
+                                            className={styles.testimonialvideo2}
+                                            title="YouTube video"
+                                            frameBorder="0"
+                                            allow="autoplay; encrypted-media; picture-in-picture"
+                                            allowFullScreen
+                                        />
+                                    )}
+
+                                    <div className={styles.titleContainer}>
+                                        <p className={styles.videoTitle2}>"{testimonial.videoQuotes}"</p>
+                                        <p className={styles.titleBy2}>
+                                            {testimonial.name} <br />
+                                            <span className={styles.spanTitleBy2}> {testimonial.designation}</span>
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                        </SwiperSlide>
-                    ))}
+                            </SwiperSlide>
+                        );
+                    })}
+
+
                 </Swiper>
             </div>
         </section>

@@ -1,0 +1,132 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 999;
+    display: flex;
+    justify-content: end;
+    align-items: flex-start;
+    overflow: hidden;
+    gap: 100px;
+}
+
+.popup {
+    margin-top: 90px;
+    background: #fff;
+    border-radius: 16px;
+    width: 480px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.25s ease-out;
+    font-family: "Inter", sans-serif;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    padding: 16px 20px;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+    margin: 0;
+}
+
+.sectionTitle {
+    background: rgba(255, 244, 215, 0.89);
+    padding: 10px 16px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+}
+
+.notificationCard {
+    display: flex;
+    gap: 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid #f3f3f3;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.notificationCard:hover {
+    background: #fafafa;
+}
+
+.icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: #B59131;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.content {
+    flex: 1;
+}
+
+.title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1E1919;
+    margin: 0;
+}
+
+.desc {
+    font-size: 14px;
+    color: #6B7280;
+    font-weight: 400;
+    margin: 0;
+}
+
+.time {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(62, 64, 82, 0.82);
+}
+
+@media (max-width:768px) {
+    .overlay {
+        gap: 50px;
+    }
+}
+
+@media (max-width:500px) {
+    .overlay {
+        gap: 0px;
+        padding: 20px;
+    }
+    .notificationCard{
+        padding: 12px;
+    }
+}

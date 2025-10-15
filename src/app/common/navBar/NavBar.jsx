@@ -6,6 +6,7 @@ import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import LogoutModal from "@/app/components/LogoutModal";
 import Image from "next/image";
+import NotificationPopup from "@/app/components/Notifications/NotificationPopup";
 
 export default function NavBar() {
   const pathname = usePathname();
@@ -15,6 +16,7 @@ export default function NavBar() {
   const [investorName, setInvestorName] = useState("");
   const [id, setId] = useState("")
   const [showLogout, setShowLogout] = useState(false)
+  const [openNotifications, setOpenNotifications] = useState(false);
 
 
   // Define deals data to check if deal is private
@@ -168,10 +170,13 @@ export default function NavBar() {
           />
 
           {/* bell icon */}
-          <div className={styles.NotificationIconContainermob}>
-            <div></div>
-            {/* <img src="/assets/pictures/bell.svg" alt="" />
-            <div className={styles.notificationBadge}>1</div> */}
+          <div className={styles.NotificationIconContainerMob} onClick={() => { setOpenNotifications((prev) => !prev) }}>
+            <img
+              className={styles.icons}
+              src="/assets/pictures/notification.svg"
+              alt=""
+            />
+            <div className={styles.notificationBadge}>2</div>
           </div>
 
         </article>
@@ -326,13 +331,14 @@ export default function NavBar() {
         </div>
 
         <div className={styles.navRightSection}>
-          <div className={styles.NotificationIconContainer}>
+          <div className={styles.NotificationIconContainer} onClick={() => { setOpenNotifications((prev) => !prev) }}>
             <img
               className={styles.icons}
               src="/assets/pictures/notification.svg"
               alt=""
             />
             <div className={styles.notificationBadge}>2</div>
+
           </div>
           <div className={styles.UserIconContainer}>
             <Link href={"/account/details"} className={styles.Link}>
@@ -353,6 +359,7 @@ export default function NavBar() {
           // /Addedcomment
         }}
       />}
+      {openNotifications && <NotificationPopup isOpen={openNotifications} onClose={() => setOpenNotifications(false)} />}
     </>
   );
 }
