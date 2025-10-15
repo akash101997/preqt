@@ -227,25 +227,11 @@ const PostSection = () => {
     console.log(id)
   }
 
-  const openShareModal = async (e, post) => {
+  const openShareModal = (e, post) => {
     e.stopPropagation();
     const origin = typeof window !== 'undefined' ? window.location.origin : ''
     const url = `${origin}/community/${post?.slug ?? ''}`
     setShareUrl(url)
-
-    try {
-      if (typeof navigator !== 'undefined' && navigator.share) {
-        await navigator.share({
-          title: post?.title || 'Preqt Community',
-          text: post?.content || 'Check out this post',
-          url
-        })
-        return
-      }
-    } catch (_err) {
-      // fall back to custom modal below
-    }
-
     setIsShareOpen(true)
   }
 
