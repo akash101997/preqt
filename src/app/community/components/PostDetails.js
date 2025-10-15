@@ -7,6 +7,18 @@ import { toast } from 'react-toastify'
 import CommentSection from './CommentSection/CommentSection'
 import { showErrorToast, showSuccessToast } from '../../components/ToastProvider'
 import ImageSlide from './ImageSlide'
+import ShareModal from './CommentSection/ShareModal'
+
+
+const getInitial = (fullName) => {
+  if (!fullName || typeof fullName !== 'string') return 'A'
+  const parts = fullName.trim().split(/\s+/).filter(Boolean)
+  if (parts.length === 1) return parts[0].charAt(0).toUpperCase()
+  const first = parts[0].charAt(0)
+  const last = parts[parts.length - 1].charAt(0)
+  return `${first}${last}`.toUpperCase()
+}
+
 
 
 const 
@@ -22,6 +34,8 @@ const [ commentonPost, setCommentonPost] = useState("")
  const [ refetch, setRefetch] = useState(false)
  const [ currentUser, setCurrentUser] = useState(Cookies.get('investorName'))
  const [isLoading, setIsLoading] = useState(true)
+ const [isShareOpen, setIsShareOpen] = useState(false)
+ const [shareUrl, setShareUrl] = useState("")
 
   const [currentTime, setCurrentTime] = useState(new Date());
 
@@ -185,6 +199,23 @@ const [ commentonPost, setCommentonPost] = useState("")
     const data = await response.json()
     console.log(data)
     console.log(id)
+  }
+
+  const openShareModal = (e, post) => {
+    e.stopPropagation();
+    const origin = typeof window !== 'undefined' ? window.location.origin : ''
+    const url = `${origin}/community/${post?.slug ?? ''}`
+    setShareUrl(url)
+    setIsShareOpen(true)
+  }
+
+  const copyShareUrl = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl)
+      showSuccessToast('Link copied to clipboard')
+    } catch (err) {
+      showErrorToast('Failed to copy link')
+    }
   }
 
     const VoteForPoll = async (e, id, postId) => {
@@ -353,7 +384,7 @@ const [ commentonPost, setCommentonPost] = useState("")
         getAllComments(data.data.data[0].id)
       } else if (data.data.status === 404) {
         console.error('Post not found:', data.message)
-        showErrorToast('Post not found')
+        showErrorToast( data.message || 'Post not found')
         setPosts(null)
       } else {
         console.error('API Error:', data)
@@ -522,7 +553,7 @@ The post you're looking for doesn't exist or may have been removed.
                   </div>
 
                   {/* share */}
-                  <div className={Styles.likeContainer} onClick={(e) => handleShare(e,post?.id)}>
+                  <div className={Styles.likeContainer} onClick={(e) => openShareModal(e, post)}>
                     <img src="/assets/pictures/share-logo.svg" alt="" />
                     <p className={Styles.likesCount}>Share</p>
                   </div>
@@ -592,7 +623,7 @@ The post you're looking for doesn't exist or may have been removed.
                   </div>
 
                   {/* share */}
-                  <div className={Styles.likeContainer} onClick={(e) => handleShare(e,post?.id)}>
+                  <div className={Styles.likeContainer} onClick={(e) => openShareModal(e, post)}>
                     <img src="/assets/pictures/share-logo.svg" alt="" />
                     <p className={Styles.likesCount}>Share</p>
                   </div>
@@ -607,7 +638,7 @@ The post you're looking for doesn't exist or may have been removed.
 
                   <div className={Styles.inputcommentcontainer}>
                       <span className={Styles.nameInitial}>
-                          AB
+                       {getInitial(Cookies.get('investorName')) || Cookies.get('investorName')}
                       </span>
                        <input 
                          type="text" 
@@ -653,6 +684,7 @@ The post you're looking for doesn't exist or may have been removed.
 
         </div>
       )}
+      <ShareModal isOpen={isShareOpen} onClose={() => setIsShareOpen(false)} shareUrl={shareUrl} onCopy={copyShareUrl} />
     </>
   )
 }
