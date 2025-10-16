@@ -294,9 +294,25 @@
     }
 
     .laserFlowVideo {
-        top: calc(61% - 42px) !important;
+        top: calc(61% - 39px) !important;
         left: calc(25px) !important;
         width: calc(89% + 4px) !important;
     }
 
+}
+
+@media (max-width:401px) {
+    .laserFlowVideo {
+        top: calc(61% - 58px) !important;
+        left: calc(21px) !important;
+        width: calc(88% + 7px) !important;
+    }
+}
+
+@media (max-width:380px) {
+    .laserFlowVideo {
+        top: calc(61% - 73px) !important;
+        left: calc(21px) !important;
+        width: calc(88% + 7px) !important;
+    }
 }
