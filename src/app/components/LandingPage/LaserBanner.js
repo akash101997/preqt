@@ -80,11 +80,15 @@ export default function LaserBanner() {
                 loop
                 muted
                 playsInline
-                webkit-playsinline="true"
+                preload="auto"
                 className={styles.videoContainerDiv}
+                webkit-playsinline="true"
+                x-webkit-airplay="allow"
             >
                 <source src="/hero-banner.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
             </video>
+
             <img
                 ref={revealImgRef}
                 src="/laser-bg.png"
