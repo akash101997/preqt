@@ -6,6 +6,17 @@
     perspective: 1200px;
 }
 
+.overlay {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    z-index: 99;
+    height: 50px;
+    width: 100%;
+    transform: translateY(0%);
+}
+
+
 .stickyWrapper {
     position: sticky;
     top: 0;
@@ -119,5 +130,4 @@
     .secondText {
         max-width: 90vw;
     }
-
 }

@@ -3,6 +3,7 @@ import { Modal } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import styles from "./onboarding.module.css";
 import { useMultiStepContext } from "@/app/utils/MultiStepContext";
+import { IoClose } from "react-icons/io5";
 
 const investorTypes = [
   "Retail Investor",
@@ -13,7 +14,7 @@ const investorTypes = [
   "Others",
 ];
 
-export default function SignupTypePopup({ show, onHide, onProceed }) {
+export default function SignupTypePopup({ show, onHide, onProceed, onBack }) {
   const [selected, setSelected] = useState(investorTypes[0]);
   const { updateFormData, registerFormData } = useMultiStepContext();
 
@@ -30,18 +31,29 @@ export default function SignupTypePopup({ show, onHide, onProceed }) {
   };
 
   return (
-    <Modal show={show} onHide={onHide} centered dialogClassName={styles.customModalWrapper}>
+    <Modal show={show} onHide={onHide} centered dialogClassName={styles.customModalWrapper} backdrop="static" keyboard={false}>
       <section className={styles.wrapper}>
-        <button type="button" className={styles.backBtn} onClick={onHide}>
-          ←
-        </button>
+      <button
+            type="button"
+            className={styles.closeButton}
+            onClick={onHide}
+          >
+           <IoClose/>
+          </button>
+       
 
         <img src="/logo.png" alt="Preqt Logo" className={styles.logo} />
         <div className={styles.titleWrapper}>
-            <h1 className={styles.title}>Help Us Get To Know You</h1>
+        <button type="button" className={styles.backBtn} onClick={onBack}>
+          ←
+        </button>
+          <div>
+          <h1 className={styles.title}>Help Us Get To Know You</h1>
         <p className={styles.subtitle}>
           Tell us a little more about yourself so we can set up things for you.
         </p>
+          </div>
+           
         </div>
       
 

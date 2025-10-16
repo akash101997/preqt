@@ -11,8 +11,26 @@ const CommentSection = ({ postId, commentsCount, comments = [], comment, refetch
   const [replyingTo, setReplyingTo] = useState(null)
   const [replyText, setReplyText] = useState("")
   const [currentUser, setCurrentUser] = useState(Cookies.get('investorName'))
+  const investor = Cookies.get('investor')
+  // Extract id from either 'investorId', 'id', or URL-encoded JSON in 'investor'
+  const getUserIdFromCookies = () => {
+    const fromInvestorId = Cookies.get('investorId')
+    if (fromInvestorId) return fromInvestorId
+    const fromId = Cookies.get('id')
+    if (fromId) return fromId
+    if (!investor) return undefined
+    try {
+      const decoded = decodeURIComponent(investor)
+      const parsed = JSON.parse(decoded)
+      if (parsed?.name && !currentUser) setCurrentUser(parsed.name)
+      return parsed?.id
+    } catch (_e) {
+      return undefined
+    }
+  }
+  const userId = getUserIdFromCookies()
 
-  const userId = Cookies.get('investorId')
+   console.log('userId', userId)
   console.log('CommentSection rendered with:', { postId, commentsCount, comments, commentsList })
 
   // Sync comments prop with commentsList state

@@ -18,13 +18,13 @@ export default function LandingPageHeader() {
   const [signinEmail, setSigninEmail] = useState("");
   const [showSignupType, setShowSignupType] = useState(false);
   const [showSignupForm, setShowSignupForm] = useState(false);
+  const [signupEmail, setSignupEmail] = useState("");
+  const [otpEmail, setOtpEmail] = useState(""); // ✅ single email for OTP
+  const [otpSource, setOtpSource] = useState(""); // 'signin' | 'signup'
   const pathname = usePathname();
 
   const isActiveLink = (hrefPath) => {
-    if (hrefPath === '/') {
-      return pathname === hrefPath;
-    }
-
+    if (hrefPath === '/') return pathname === hrefPath;
     return pathname.startsWith(hrefPath);
   };
 
@@ -40,12 +40,32 @@ export default function LandingPageHeader() {
   const handleSignUpFormOpen = () => setShowSignupForm(true);
   const handleSignUpFormClose = () => setShowSignupForm(false);
 
-   return (
+  // Called from Signup form
+  const handleSignupShowOtp = (email) => {
+    setSignupEmail(email);
+    setOtpEmail(email); // ✅ send to OTP popup
+    setOtpSource("signup");
+    setShowSignupForm(false);
+    setShowOtp(true);
+  };
+
+  // Called from Signin form
+  const handleSigninShowOtp = (email) => {
+    setSigninEmail(email);
+    setOtpEmail(email); // ✅ send to OTP popup
+    setOtpSource("signin");
+    setShowSignin(false);
+    setShowOtp(true);
+  };
+
+  return (
     <>
       <section className={styles.parentHeader}>
         <header className={styles.header}>
           <div className={styles.firstPart}>
-            <div className={styles.logo}><Image src="/landing-logo.svg" height={32} width={102} alt="landing page" /> </div>
+            <div className={styles.logo}>
+              <Image src="/landing-logo.svg" height={32} width={102} alt="landing page" />
+            </div>
             <nav className={`${styles.nav} ${menuOpen ? styles.active : ""}`}>
               <Link href="/" className={isActiveLink('/') ? styles.active : ''}>Home</Link>
               <Link href="/" className={isActiveLink('"/') ? styles.active : ''}>Community</Link>
@@ -68,33 +88,50 @@ export default function LandingPageHeader() {
           </div>
         </header>
       </section>
-      <SigninPopup show={showSignin}
+
+      {/* Signin Popup */}
+      <SigninPopup
+        show={showSignin}
         onHide={handleSigninClose}
-        onShowOtp={() => {
+        onShowOtp={(email) => handleSigninShowOtp(email)} // ✅ email passed
+        onShowSignUp={() => {
           handleSigninClose();
-          handleOtpOpen();
-        }} 
-        onShowSignUp = {() => {
-            handleSigninClose();
           handleSignupTypeOpen();
         }}
-        onEmailSubmit={(email) => setSigninEmail(email)}
-          />
-      <OtpPopup show={showOtp}
-        email={signinEmail}
+        onEmailSubmit={(email) => setSigninEmail(email)} // optional
+      />
+
+      {/* OTP Popup */}
+      <OtpPopup
+        show={showOtp}
+        email={otpEmail} // ✅ always send correct email
         handleClose={handleOtpClose}
         handleBack={() => {
           handleOtpClose();
-          handleSigninOpen();
-        }} />
+          // Return to correct previous modal based on flow
+          if (otpSource === "signup") {
+            setShowSignupForm(true);
+          } else if (otpSource === "signin") {
+            setShowSignin(true);
+          }
+        }}
+      />
 
-      <SignupTypePopup show={showSignupType}
+      {/* Signup Type Selection */}
+      <SignupTypePopup
+        show={showSignupType}
         onHide={() => setShowSignupType(false)}
         onProceed={() => {
           setShowSignupType(false);
           setShowSignupForm(true);
-        }} />
+        }}
+        onBack={() => {
+          handleSigninOpen();
+          setShowSignupType(false);
+        } }
+      />
 
+      {/* Signup Form */}
       <SignupFormPopup
         show={showSignupForm}
         onHide={() => setShowSignupForm(false)}
@@ -102,12 +139,9 @@ export default function LandingPageHeader() {
           setShowSignupForm(false);
           setShowSignupType(true);
         }}
-        onShowOtp={() => {
-          setShowSignupForm(false);
-          setShowOtp(true);
-        }}
+        onShowOtp={(email) => handleSignupShowOtp(email)} // ✅ email passed
+        setSignupEmail={setSignupEmail} // optional
       />
     </>
-
   );
 }

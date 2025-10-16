@@ -14,6 +14,7 @@ const NetworkStack = () => {
 
 
             <section className={styles.networkStack}>
+                <img src="/stack-overlay.png" alt="background" className={styles.overlay} />
 
                 <div>
                     <div className={styles.counterDiv}>

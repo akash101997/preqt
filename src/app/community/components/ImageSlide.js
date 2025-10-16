@@ -44,7 +44,7 @@ export default function ImageSlide({ images }) {
     <>
       <Swiper
         pagination={{ clickable: true, dynamicBullets: true }}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        // autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop={true}
         modules={[Pagination, Autoplay]}
         className="mySwiper"

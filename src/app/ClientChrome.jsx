@@ -1,67 +1,10 @@
-// "use client"
-// import { usePathname, useRouter } from "next/navigation";
-// import NavBar from "./common/navBar/NavBar";
-// import Footer from "./common/navBar/Footer";
-// import NewFooter from "./common/navBar/new-footer/NewFooter";
-// import { useEffect, useState } from "react";
-
-// export default function ClientChrome({ children }) {
-//   const pathname = usePathname();
-//  const router = useRouter();
-
-
-
-//   const hide = pathname === "/signin" || pathname === "/login" || pathname === "/otp" || pathname === "/signup" || pathname === "/signup-form";
-
-//  const dealsData = {
-//     "acmpl-deals": { deal: "public" },
-//     "hvr-solar-deals": { deal: "private" },
-//     // add more slugs here if needed
-//   };
-
-//  let isPrivateDeal = false;
-//   if (pathname.startsWith("/deals/")) {
-//     const slug = pathname.split("/deals/")[1];
-//     const activeDeal = dealsData[slug];
-//     isPrivateDeal = activeDeal?.deal === "private";
-//   }
-
-//   if (hide) {
-//     return <>{children}</>;
-//   }
-
-//   // console.log("ddssfsfvfe",isPrivateDeal)
-//   return (
-//     <div
-//       className={isPrivateDeal ? "private-deal-theme" : ""}
-//       style={{
-//         minHeight: "100vh",
-//         display: "flex",
-//         flexDirection: "column",
-//       }}
-//     >
-//       <NavBar />
-//       <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
-//         {children}
-//       </div>
-
-
-//     <div className="newNav"   style={{
-//     marginBottom: isPrivateDeal ? "110px" : "0px"
-//   }}>
-//       <NewFooter/>
-// </div>
-
-//         {/* <Footer /> */}
-//     </div>
-//   );
-// }
 "use client";
 import { usePathname, useRouter } from "next/navigation";
 import NavBar from "./common/navBar/NavBar";
 import NewFooter from "./common/navBar/new-footer/NewFooter";
 import { useEffect, useState } from "react";
 import LandingPageHeader from "./components/LandingPage/LandingPageHeader";
+import Cookies from "js-cookie";
 
 export default function ClientChrome({ children }) {
   const pathname = usePathname();
@@ -98,20 +41,19 @@ export default function ClientChrome({ children }) {
     return <>{children}</>;
   }
 
-  // console.log("ddssfsfvfe",isPrivateDeal)
-  // console.log("ddssfsfvfe",isPrivateDeal)
+  const accessToken = Cookies.get("accessToken");
   return (
     <>
-    <div
-      className={isPrivateDeal ? "private-deal-theme" : ""}
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      {/* <NavBar /> */}
-      <LandingPageHeader />
+      <div
+        className={isPrivateDeal ? "private-deal-theme" : ""}
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        {accessToken ? <NavBar /> :
+          <LandingPageHeader />}
 
         <div style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
           {children}
@@ -139,6 +81,6 @@ export default function ClientChrome({ children }) {
         <NewFooter />
       </div> */}
       </div>
-  </>
+    </>
   );
 }
