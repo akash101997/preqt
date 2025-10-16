@@ -116,6 +116,29 @@ const AuthAnimatedBtn = ({ children, onClick, className = '' }) => {
         .animated-border-button:hover .animated-border-button-content {
            background-color: #000; /* Background color remains black on hover */
         }
+
+        @media(max-width:769px){
+          .animated-border-button {
+              width:100%
+          }
+          .animated-border-button-content{
+            padding:12px 16px;
+          }
+          .animated-border-button::before {
+          background: conic-gradient(
+            rgba(255, 255, 255, 0) 0deg, 
+            rgba(255, 255, 255, 0) 180deg, 
+            rgba(255, 255, 255, 1) 185deg, /* Start of the wider light arc */
+            rgba(255, 255, 255, 1) 255deg, /* End of the wider light arc (30 degrees wide) */
+            rgba(255, 255, 255, 0) 270deg
+          );
+            width: 250%;
+            height: 100%;
+            top: 9%;
+            left: -75%;
+             transition: opacity 2s;
+          }
+        }
         
       `}</style>
 

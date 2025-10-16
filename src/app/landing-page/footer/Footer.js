@@ -9,16 +9,15 @@ export default function Footer() {
             {/* Marquee Heading */}
             <div className={styles.marquee}>
                 <div className={styles.marqueeInner}>
-                    <h2 className={styles.heading}>
-                        Connect with a <span>Network of Trusted Investors</span>
-                    </h2>
-                    <h2 className={styles.heading}>
-                        Connect with a <span>Network of Trusted Investors</span>
-                    </h2>
-                    <h2 className={styles.heading}>
-                        Connect with a <span>Network of Trusted Investors</span>
-                    </h2>
+                    {
+                        Array(100).fill().map((_, idx) => (
+                            <h2 key={idx} className={styles.heading} id={idx}>
+                                Connect with a <span>Network of Trusted Investors</span>
+                            </h2>
+                        ))
+                    }
                 </div>
+
             </div>
 
             {/* Subtext */}
@@ -28,7 +27,7 @@ export default function Footer() {
 
             {/* Button */}
             <AnimatedBtn />
-            <div>
+            <div className={styles.earthImg}>
                 <img src="/landing-asset/landing-footer.png" alt="footer" style={{ maxWidth: '1200px', width: '100%' }} />
             </div>
 

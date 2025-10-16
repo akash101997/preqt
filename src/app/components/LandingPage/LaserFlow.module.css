@@ -57,12 +57,12 @@
 .bannerHeading p {
     color: #E5E5E7;
     font-family: "Helvetica Neue";
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 28px;
-    letter-spacing: -0.778px;
-    max-width: 576px;
+    letter-spacing: 0.778px;
+    max-width: 630px;
 }
 
 .overlayEffect {
@@ -75,14 +75,15 @@
 .bottomText {
     max-width: fit-content;
     display: flex;
-    gap: 20px;
+    gap: 0px;
     align-items: center;
     margin: 16px 0;
     color: #E5E7EB;
     font-size: 14px;
     line-height: 1.5;
-    font-weight: 500;
+    font-weight: 400;
     font-family: "Helvetica Neue";
+    letter-spacing: 0.303px;
 }
 
 .descText {
@@ -91,12 +92,14 @@
 
 .descText>p {
     color: #D4D4D8;
+    opacity: 0.6;
     font-size: 16px;
     font-weight: 300;
 }
 
 .dotIcon {
-    margin-left: 20px;
+    margin: 0px 1px;
+    max-width: max-content;
 }
 
 .mideSection {
@@ -179,7 +182,7 @@
     }
 
     .bannerHeading p {
-        font-size: 18px;
+        font-size: 17px;
         max-width: 100%;
     }
 }

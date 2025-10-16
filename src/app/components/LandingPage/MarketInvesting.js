@@ -87,7 +87,7 @@ const MarketInvesting = () => {
                         Your browser does not support the video tag.
                     </video>
                     <div className={`${styles.layer}`} ref={firstRef}>
-                        <ButtonAnimation text="Welcome to Pre" />
+                        <ButtonAnimation text="Welcome to pr.eqt." />
                         <h1>
                             <span>The Premier Platform for Private</span> <br />
                             <span>Market Investing</span>

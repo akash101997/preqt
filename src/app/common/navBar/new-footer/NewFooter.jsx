@@ -3,14 +3,13 @@ import React from "react";
 import styles from "./NewFooter.module.css";
 import Link from "next/link";
 
-export default function NewFooter({isPrivateDeals}) {
+export default function NewFooter({ isPrivateDeals }) {
   return (
     <footer className={styles.footer}>
       <div className={styles.logo}>
         <img src="/footerLogo.png" alt="" />
-        {/* <span className={styles.white}>pr</span>
-        <span className={styles.gold}>.eqt.</span> */}
       </div>
+      <hr className={styles.line} style={{ margin: '20px 0' }} />
 
       <nav className={styles.nav}>
         {/* <Link href="">Quick Links</Link> */}
@@ -20,9 +19,9 @@ export default function NewFooter({isPrivateDeals}) {
         <Link href="/account/privacyPolicy">Privacy Policy</Link>
         <Link href="/account/terms&condition">Terms And Conditions</Link>
         {/* <Link href="/contact">Contact Us</Link> */}
-        <Link href="/account/details">Account</Link>
+        {/* <Link href="/account/details">Account</Link> */}
       </nav>
-      <hr className={styles.line}/>
+      <hr className={styles.line} />
       <div className={styles.copy}>
         © 2025 Pr.Eqt. Private Ltd. | Powered By Passion, Driven By Discovery.
       </div>

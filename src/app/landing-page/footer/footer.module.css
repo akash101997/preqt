@@ -64,7 +64,7 @@
 .marqueeInner {
   display: flex;
   width: fit-content;
-  animation: marquee 30s linear infinite;
+  animation: marquee 600s linear infinite;
 }
 
 @keyframes marquee {
@@ -107,7 +107,7 @@
 /* === Subtext === */
 .subText {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 1);
   margin: 1.5rem 0 2.5rem;
 }
 
@@ -147,7 +147,7 @@
 
 @media (max-width:480px) {
   .footer {
-    padding: 20px 16px;
+    padding: 20px 0px;
   }
 
   .heading {
@@ -156,10 +156,15 @@
 
   .subText {
     font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
   }
 
   .marquee::before,
   .marquee::after {
     display: none;
+  }
+  .earthImg{
+    margin-top: 30px;
   }
 }

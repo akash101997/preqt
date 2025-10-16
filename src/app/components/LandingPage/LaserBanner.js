@@ -16,21 +16,18 @@ import AnimatedBtn from './AnimatedBtn';
 export default function LaserBanner() {
     const revealImgRef = useRef(null);
 
-    const [isMobile, setIsMobile] = useState(
-        typeof window !== 'undefined' ? window.innerWidth <= 700 : false
-    );
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        const handleResize = () => {
+        const checkMobile = () => {
             setIsMobile(window.innerWidth <= 700);
         };
 
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
     }, []);
+
 
 
     return (

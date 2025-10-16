@@ -57,11 +57,13 @@ const NetworkStack = () => {
                 </div>
 
                 <div className={styles.mainContainer}>
-                    <div className='landing-container' style={{ textAlign: 'center', padding: '0px' }}>
+                    <div className={`landing-container ${styles.mainMobileDiv}`} style={{ textAlign: 'center', padding: '0px' }}>
                         <div className={styles.headingDiv}>
                             <ButtonAnimation text="Why Choose Us" />
-                            <h1>A network where founders, retail investors, and</h1>
-                            <h1><span>institutions connect.</span></h1>
+                            <div className={styles.sectionGlowHead}>
+                                <h1>A network where founders, retail investors, and</h1>
+                                <h1><span>institutions connect.</span></h1>
+                            </div>
 
                             <p>The seamless, trusted platform for founders and investors.</p>
                         </div>
