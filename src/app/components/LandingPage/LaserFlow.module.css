@@ -360,3 +360,24 @@
         width: calc(88% + 7px) !important;
     }
 }
+
+@media (max-width:300px) {
+    .flowContainer {
+        height: 650px;
+    }
+
+    .bannerHeading {
+        top: 45px;
+    }
+
+    .bannerHeading p {
+        max-width: 85%;
+        font-size: 13px;
+    }
+
+    .laserFlowVideo {
+        top: calc(56% - 89px) !important;
+        left: calc(18px) !important;
+        width: calc(88% + 7px) !important;
+    }
+}
