@@ -211,8 +211,8 @@ export default function Sidenav() {
         </ul>
 
         <div className={styles.logout_section}>
-          <div className={styles.lagout_hr}></div>
-
+          {/* <div className={styles.lagout_hr}></div> */}
+{/* <div className={styles.hr}></div>  */}
           <div className={styles.logout} onClick={() => { setShowLogout(true) }}>
             {/* <div className={styles.hr}></div>  */}
             <Logout_svg className={styles.UserSvg} />

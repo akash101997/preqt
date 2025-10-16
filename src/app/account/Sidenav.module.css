@@ -133,8 +133,8 @@
 
 .hr {
 
-  margin-top: 25px;
-  border: none;
+  /* margin-top: 25px; */
+  /* border: 1px solid red; */
   background-color: rgba(229, 231, 235, 1);
   height: 1px;
 }
