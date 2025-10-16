@@ -344,7 +344,17 @@
     }
 }
 
+@media (max-width:350px) {
+    .flowContainer {
+        height: 650px;
+    }
 
+    .laserFlowVideo {
+        top: calc(56% - 76px) !important;
+        left: calc(18px) !important;
+        width: calc(88% + 7px) !important;
+    }
+}
 @media (max-width:321px) {
     .flowContainer {
         height: 650px;

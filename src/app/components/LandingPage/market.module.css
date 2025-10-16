@@ -119,6 +119,7 @@
 @media (max-width: 480px) {
     .layer h1 {
         font-size: 32px;
+        max-width: 81%;
     }
 
     .layer p {
