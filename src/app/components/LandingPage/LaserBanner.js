@@ -32,16 +32,7 @@ export default function LaserBanner() {
 
     return (
         <div
-            className='landing-containerr'
-            style={{
-                height: '1200px',
-                position: 'relative',
-                // overflow: 'hidden',
-                backgroundColor: '#120a02',
-                maxWidth: '1920px',
-                margin: 'auto',
-
-            }}
+            className={`landing-containerr ${styles.flowContainer}`}
             onMouseMove={(e) => {
                 const rect = e.currentTarget.getBoundingClientRect();
                 const x = e.clientX - rect.left;
@@ -68,31 +59,14 @@ export default function LaserBanner() {
                 verticalBeamOffset={-0.5}
                 color="#B4A26E"
             /> */}
-            <div className={styles.bannerHeading} style={{ zIndex: 10 }}>
+            <div className={styles.bannerHeading}>
                 <h1><span>Access Exclusive</span> <br />
                     <span> IPO & Pre-IPO Deals</span></h1>
                 <p>Join the premier platform for private equity investments.<br />
                     Get early access to high-growth companies before they go public.</p>
                 <AnimatedBtn />
             </div>
-            <div
-                className={styles.laserFlowVideo}
-                style={{
-                    position: 'absolute',
-                    top: 'calc(52% - 17px)',
-                    left: 'calc(18% + 2px)',
-                    width: 'calc(53% + 13px)',
-                    height: 'max-content',
-                    backgroundColor: '#060010',
-                    borderRadius: '20px',
-                    border: 'unset',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'white',
-                    fontSize: '2rem',
-                    zIndex: 6,
-                }}>
+            <div className={styles.laserFlowVideo}>
                 <div style={{ width: '100%' }}>
                     <div className={styles.imageParent}>
                         <img src={isMobile ? "/mobile-video.png" : "/laser-flow.png"} style={{ height: '100%', width: '100%', objectFit: 'cover' }} />
@@ -102,23 +76,15 @@ export default function LaserBanner() {
             </div>
 
             <video
-                src="/hero-banner.mp4"
                 autoPlay
                 loop
                 muted
                 playsInline
-                style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    maxWidth: '1920px',
-                    zIndex: 0, // make sure it stays behind other content
-                }}
-            />
+                webkit-playsinline="true"
+                className={styles.videoContainerDiv}
+            >
+                <source src="/hero-banner.mp4" type="video/mp4" />
+            </video>
             <img
                 ref={revealImgRef}
                 src="/laser-bg.png"

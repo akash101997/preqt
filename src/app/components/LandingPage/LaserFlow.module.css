@@ -28,6 +28,7 @@
     max-width: 1280px;
     width: 100%;
     left: 50%;
+    z-index: 99;
     transform: translateX(-50%);
     padding: 16px 32px;
 }
@@ -120,6 +121,43 @@
     z-index: 99;
 }
 
+.flowContainer {
+    height: 1200px;
+    position: relative;
+    background-color: #120a02;
+    max-width: 1920px;
+    margin: auto;
+}
+
+.videoContainerDiv {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 1920px;
+    z-index: 0;
+}
+
+.laserFlowVideo {
+    position: absolute;
+    top: calc(52% - 17px);
+    left: calc(18% + 2px);
+    width: calc(53% + 13px);
+    height: max-content;
+    background-color: #060010;
+    border-radius: 20px;
+    border: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    z-index: 6;
+}
+
 @media (max-width: 1440px) {
     .laserFlowVideo {
         top: calc(52% - 18px) !important;
@@ -167,7 +205,7 @@
 
 @media (max-width: 768px) {
     .laserFlowVideo {
-        top: calc(52% - 18px) !important;
+        top: calc(54% - 42px) !important;
         left: calc(0%) !important;
         width: calc(95% - 0px) !important;
     }
@@ -182,8 +220,8 @@
     }
 
     .bannerHeading p {
-        font-size: 17px;
-        max-width: 100%;
+        font-size: 16px;
+        max-width: 59%;
     }
 }
 
@@ -203,26 +241,62 @@
 }
 
 @media (max-width: 480px) {
+    .flowContainer {
+        height: 650px;
+        overflow: hidden;
+    }
 
+    .flowContainer {
+        position: relative;
+    }
+
+    .flowContainer:before {
+        position: absolute;
+        top: 0px;
+        content: "";
+        height: 150px;
+        width: 100%;
+        z-index: 99;
+        background: linear-gradient(180deg, black 60%, transparent 100%);
+    }
 
     .bannerHeading h1 {
-        font-size: 32px;
+        font-size: 24px;
     }
 
     .bannerHeading p {
-        font-size: 16px;
-        max-width: 100%;
+        font-size: 14px;
+        max-width: 69%;
         line-height: 1.4;
     }
 
     .laserFlowVideo {
-        width: 100% !important;
+        width: calc(100% - 43px) !important;
         height: auto !important;
-        left: unset !important;
+        left: 25px !important;
+        border-radius: 8px !important;
     }
 
     .bannerHeading {
         padding: 16px;
+        z-index: 100;
+        top: 70px;
+    }
+
+    .videoContainerDiv {
+        position: absolute;
+        top: 85px;
+        left: 59%;
+        transform: translateX(-50%);
+        width: 168%;
+        height: auto;
+        object-fit: unset;
+    }
+
+    .laserFlowVideo {
+        top: calc(61% - 42px) !important;
+        left: calc(25px) !important;
+        width: calc(89% + 4px) !important;
     }
 
 }
