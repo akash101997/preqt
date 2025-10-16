@@ -296,9 +296,30 @@
     .laserFlowVideo {
         top: calc(61% - 42px) !important;
         left: calc(25px) !important;
-        width: calc(89% + 4px) !important;
+        width: calc(89% + 6px) !important;
     }
 
+}
+
+@media (max-width:430px) {
+    .laserFlowVideo {
+        top: calc(61% - 39px) !important;
+        left: calc(23px) !important;
+    }
+}
+
+@media (max-width:425px) {
+    .laserFlowVideo {
+        top: calc(61% - 42px) !important;
+        left: calc(23px) !important;
+    }
+}
+
+@media (max-width:415px) {
+    .laserFlowVideo {
+        top: calc(61% - 48px) !important;
+        left: calc(23px) !important;
+    }
 }
 
 @media (max-width:401px) {
@@ -309,10 +330,33 @@
     }
 }
 
+@media (max-width:395px) {
+    .laserFlowVideo {
+        top: calc(61% - 63px) !important;
+    }
+}
+
 @media (max-width:380px) {
     .laserFlowVideo {
         top: calc(61% - 74px) !important;
         left: calc(21px) !important;
+        width: calc(88% + 7px) !important;
+    }
+}
+
+
+@media (max-width:321px) {
+    .flowContainer {
+        height: 650px;
+    }
+
+    .bannerHeading {
+        top: 20px;
+    }
+
+    .laserFlowVideo {
+        top: calc(56% - 76px) !important;
+        left: calc(18px) !important;
         width: calc(88% + 7px) !important;
     }
 }

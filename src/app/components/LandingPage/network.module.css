@@ -372,3 +372,11 @@
         padding: 30px 0px;
     }
 }
+
+@media (max-width:350px) {
+    .counterDiv {
+        gap: 10px;
+        padding: 15px 17px;
+    }
+
+}
