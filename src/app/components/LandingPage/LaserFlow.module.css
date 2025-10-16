@@ -221,4 +221,8 @@
         left: unset !important;
     }
 
+    .bannerHeading {
+        padding: 16px;
+    }
+
 }
