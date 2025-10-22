@@ -294,9 +294,9 @@
     }
 
     .laserFlowVideo {
-        top: calc(61% - 42px) !important;
-        left: calc(25px) !important;
-        width: calc(89% + 6px) !important;
+        top: calc(63% - 42px)!important;
+        left: calc(25px)!important;
+        width: calc(89% + 0px)!important;
     }
 
 }

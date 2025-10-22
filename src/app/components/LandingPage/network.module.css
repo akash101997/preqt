@@ -50,7 +50,7 @@
     font-family: "Helvetica Neue";
     font-size: 48px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 130%;
     /* 62.4px */
 }
@@ -368,8 +368,8 @@
 
     .mainContainer {
         border-radius: 20px 20px 0 0;
-       background-size: 200%, 300%;
-        background-position: center 10%, center 5%;
+       background-size: 200%, 200%;
+        background-position: center 4%, center 7%;
     }
 
     .networkStack {

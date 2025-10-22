@@ -55,21 +55,22 @@
     color: #fff;
     padding-bottom: 5px;
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 0.5px;
     z-index: 2;
     display: inline-block;
 }
 
-.nav a.active::after {
+/* Active & Hover states share same positioning */
+.nav a.active::after,
+.nav a:hover::after {
     content: url(/link-after.svg);
     position: absolute;
-    bottom: 0;
-    top: 15px;
-    width: 100%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-65%);
+    transform: translate(-50%, -5%); /* centers horizontally and adjusts vertically */
     z-index: 1;
+    pointer-events: none;
 }
 
 .firstPart {

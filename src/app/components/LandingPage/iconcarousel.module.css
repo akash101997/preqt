@@ -45,6 +45,9 @@
         height: 40px;
         width: 40px;
     }
+    .iconWrapper{
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
