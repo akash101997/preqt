@@ -123,10 +123,13 @@
 }
 
 @media (max-width: 480px) {
+  .parentWrapper{
+    overflow: unset;
+  }
   .parentWrapper h1 {
     font-size: 28px;
-    text-align: left;
-    margin-left: 16px;
+    text-align: center;
+    
   }
 
   .cardWrapper {
@@ -147,12 +150,49 @@
 }
 
 /* React Slick customization */
+/* React Slick customization */
 .slickWrapper :global(.slick-slide) {
   padding: 0px;
+  display: flex;
+  align-items: stretch;
+  
+}
+
+.slickWrapper :global(.slick-dots) {
+  position: absolute;
+  bottom: -36px; /* distance from slider */
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
 }
 
 .slickWrapper :global(.slick-dots li button:before) {
-  color: white;
+  color: rgba(255, 255, 255, 0.4); /* inactive dot */
+  font-size: 12px;
+  opacity: 1;
+}
+
+/* Remove margin between dots */
+.slickWrapper :global(.slick-dots li) {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  padding: 0;
+  margin: 0; /* remove spacing */
+  cursor: pointer;
+}
+
+/* Active dot */
+.slickWrapper :global(.slick-dots li.slick-active button:before) {
+  color: #fff;
+}
+
+/* Optional hover effect */
+.slickWrapper :global(.slick-dots li button:hover:before) {
+  color: #fff;
 }
 
 .slickWrapper {
@@ -165,21 +205,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  /* keeps card centered inside slide */
   padding: 0px;
-  /* small gutter */
   box-sizing: border-box;
 }
 
-/* keep existing .slickWrapper :global rules; ensure wrapper visible */
-.slickWrapper {
-  width: 100%;
-  position: relative;
-  overflow: visible;
-}
-
-.slickWrapper :global(.slick-slide) {
-  display: flex;
-  /* important so slideItem can align */
-  align-items: stretch;
-}

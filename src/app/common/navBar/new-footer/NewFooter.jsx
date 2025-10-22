@@ -9,7 +9,7 @@ export default function NewFooter({ isPrivateDeals }) {
       <div className={styles.logo}>
         <img src="/footerLogo.png" alt="" />
       </div>
-      <hr className={styles.line} style={{ margin: '20px 0' }} />
+     
 
       <nav className={styles.nav}>
         {/* <Link href="">Quick Links</Link> */}

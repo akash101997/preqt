@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation"; 
+import { useParams } from "next/navigation";
 import FAQSection from "@/app/components/home/FAQSection/FAQSection";
 
 import "./namesection.css";
@@ -20,17 +20,67 @@ import IPOCollapse from "./IPOCollapse";
 import { Bellactive, BellOff, ShareIcon } from "./svgicon";
 import { useMediaQuery } from "react-responsive";
 
-const Namedetailsection = ({ slug }) => {
+import Cookies from "js-cookie";
+import { useDealStore } from "@/store/dealStore";
+import Loader from "@/app/components/Loader";
+
+const Namedetailsection = ({ slug, deal }) => {
   const [bellactive, setBellactive] = useState(false);
   const [isAskAiActive, setIsAskAiActive] = useState(false);
   const [isQuesAnsActive, setIsQuesAnsActive] = useState(false);
+  const [dealDetails, setDealDetails] = useState(deal || null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
   const isMobile = useMediaQuery({ maxWidth: 920 });
+  const { selectedDeal } = useDealStore();
+  const activeDealFromStore = deal ?? selectedDeal;
+  const dealId = activeDealFromStore?.id;
+  const { setDealDataDetails } = useDealStore();
 
-    useEffect(() => {
+  useEffect(() => {
     if (isMobile) {
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     }
   }, [isMobile]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!dealId) {
+        setLoading(false);
+        return;
+      }
+      const apiUrl = `${process.env.NEXT_PUBLIC_USER_BASE}admin/api/deals/public/details/${dealId}`;
+      const authToken = Cookies.get('accessToken');
+
+      try {
+        const response = await fetch(apiUrl, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${authToken}`, // Bearer token is a common type
+            'Content-Type': 'application/json', // Example for JSON data
+            'Accept': 'application/json',
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        console.log('Result For Laxmi Chit Fund', result);
+        setDealDetails(result);
+        setDealDataDetails(result);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [dealId]);
+
+
 
   const handleAskAI = (flag) => {
     setIsAskAiActive(flag);
@@ -39,34 +89,11 @@ const Namedetailsection = ({ slug }) => {
     setIsQuesAnsActive(flag);
   }
 
-const router = useRouter();
+  const router = useRouter();
 
- const dealsIndex = {
-    "acmpl-deals": {
-      id: 1,
-      type: "Pre IPO- SME",
-      sector: "Logistics",
-      logo: "/deals/AMCPL logo.png",
-      name: "Ashwini Container Movers Limited",
-      deal: "public",
-      description:
-        "Ashwini Container Movers Limited is a commercial/container transport & logistics company headquartered in Navi Mumbai.",
-    },
-    "hvr-solar-deals": {
-      id: 2,
-      type: "Pre IPO- SME",
-      sector: "Solar Energy",
-      logo: "/assets/pictures/hvr.svg",
-      name: "HVR Solar Pvt Ltd",
-      deal: "private",
-      description:
-        "India’s leading solar module manufacturer powering the green revolution.",
-    },
-  };
+  const isPrivateDeal = dealDetails?.data?.deal_type === "private";
 
-
-  const activeDeal = dealsIndex[slug] ?? dealsIndex["hvr-solar-deals"]; 
-  const isPrivateDeal = activeDeal.deal === "private";
+  const dealData = dealDetails?.data?.deal_setpData;
 
 
   const steps = [
@@ -103,16 +130,19 @@ const router = useRouter();
     },
   ];
 
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className={`main-container ${isPrivateDeal ? 'private-deal-theme' : ''}`}>
       <div className="subcontainer">
-      
+
         <section className="topbar">
-          {/* <Link href="/">
+          <Link href="/">
             <span className="home">Home</span>
-          </Link> */}
-           {/* <span>
+          </Link>
+          <span>
             <svg
               width="8"
               height="14"
@@ -127,79 +157,76 @@ const router = useRouter();
                 fill={isPrivateDeal ? 'white' : " #1E293B"}
               />
             </svg>
-          </span> 
-          <span className="dea">{isPrivateDeal ? "Private Deal" : "Exclusive Deal"} </span> */}
-        </section> 
+          </span>
+          <span className="dea">{isPrivateDeal ? "Private Deal" : "Exclusive Deal"} </span>
+        </section>
         <section className="mob-topbar">
           <button
-        className="breadcrumArrow"
-        onClick={() => router.back()}
-        style={{ cursor: "pointer" ,all: "unset", display: "flex", alignItems: "center", gap: "18px"}}
-      >
-        <svg
-          viewBox="0 0 8 14"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M7 13L1 7L7 1"
-            stroke="black"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-        <span className="dea">
-          {isPrivateDeal ? "Private Deal" : "Exclusive Deal"}
-        </span>
-      </button>
-      <div>
-            <div><ShareIcon/></div>
-  
-
-                     {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-  <path d="M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 6.65685 16.3431 8 18 8Z" stroke="#B59131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  <path d="M6 15C7.65685 15 9 13.6569 9 12C9 10.3431 7.65685 9 6 9C4.34315 9 3 10.3431 3 12C3 13.6569 4.34315 15 6 15Z" stroke="#B59131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  <path d="M18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z" stroke="#B59131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  <path d="M8.58984 13.5098L15.4198 17.4898" stroke="#B59131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  <path d="M15.4098 6.50977L8.58984 10.4898" stroke="#B59131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-</svg> */}
-          <div
-            className="bell-icon"
-            onClick={() => setBellactive(!bellactive)}>
-            {!bellactive ? (
-              <Bellactive />
-            ) : (
-              <BellOff />
-            )}
+            className="breadcrumArrow"
+            onClick={() => router.back()}
+            style={{ cursor: "pointer", all: "unset", display: "flex", alignItems: "center", gap: "18px" }}
+          >
+            <svg
+              viewBox="0 0 8 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 13L1 7L7 1"
+                stroke="black"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span className="dea">
+              {isPrivateDeal ? "Private Deal" : "Exclusive Deal"}
+            </span>
+          </button>
+          <div>
+            <div><ShareIcon /></div>
+            <div
+              className="bell-icon"
+              onClick={() => setBellactive(!bellactive)}>
+              {!bellactive ? (
+                <Bellactive />
+              ) : (
+                <BellOff />
+              )}
+            </div>
           </div>
-      </div>
         </section>
 
         <div className="body-maincontainer">
           <section className="body">
             <div className="firsthalf">
-              <section className="body1-buttons">
-                <span>{activeDeal.type}</span>
-                <span>{activeDeal.sector} </span>
-              </section>
+              {dealData?.tags?.status &&
+                Array.isArray(dealData.tags.data) &&
+                dealData.tags.data.length > 0 && (
+                  <section className="body1-buttons">
+                    {dealData.tags.data.map((tag, index) => (
+                      <span key={index}>{tag}</span>
+                    ))}
+                  </section>
+                )}
+
 
               <section className="body-section2">
                 <div>
-                  <img src={activeDeal.logo} alt="" />
-                  <span>{activeDeal.name}</span>
+                  <img src={`${process.env.NEXT_PUBLIC_USER_BASE}admin/${dealData.company_logo?.[0]?.path.replace("public/", "")}`} alt="" />
+                  <span>{dealData.company_name}</span>
                 </div>
                 <div className='svg-icons-button'>
                   <button className="share-button">
                     {/* <ShareIcon /> */}
 
-                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-  <path d="M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 6.65685 16.3431 8 18 8Z" stroke="#B59131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  <path d="M6 15C7.65685 15 9 13.6569 9 12C9 10.3431 7.65685 9 6 9C4.34315 9 3 10.3431 3 12C3 13.6569 4.34315 15 6 15Z" stroke="#B59131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  <path d="M18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z" stroke="#B59131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  <path d="M8.58984 13.5098L15.4198 17.4898" stroke="#B59131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  <path d="M15.4098 6.50977L8.58984 10.4898" stroke="#B59131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-</svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 6.65685 16.3431 8 18 8Z" stroke="#B59131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M6 15C7.65685 15 9 13.6569 9 12C9 10.3431 7.65685 9 6 9C4.34315 9 3 10.3431 3 12C3 13.6569 4.34315 15 6 15Z" stroke="#B59131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z" stroke="#B59131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M8.58984 13.5098L15.4198 17.4898" stroke="#B59131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M15.4098 6.50977L8.58984 10.4898" stroke="#B59131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
                   </button>
                   <div
                     className="bell-icon"
@@ -213,25 +240,27 @@ const router = useRouter();
                   </div>
                 </div>
               </section>
+              {dealData?.tag_line?.status && (
+                <section className="body-section3">
+                  <svg
+                    width="34"
+                    height="34"
+                    viewBox="0 0 34 34"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M18.4167 4.25H15.5833V13.5799L8.98612 6.98266L6.98265 8.98613L13.5799 15.5833H4.25V18.4167H13.5799L6.98266 25.0139L8.98613 27.0173L15.5833 20.4201V29.75H18.4167V20.4201L25.0139 27.0173L27.0173 25.0139L20.4201 18.4167H29.75V15.5833H20.4201L27.0173 8.98612L25.0139 6.98265L18.4167 13.5799V4.25Z"
+                      fill="#B18C07"
+                    />
+                  </svg>
 
-              <section className="body-section3">
-                <svg
-                  width="34"
-                  height="34"
-                  viewBox="0 0 34 34"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M18.4167 4.25H15.5833V13.5799L8.98612 6.98266L6.98265 8.98613L13.5799 15.5833H4.25V18.4167H13.5799L6.98266 25.0139L8.98613 27.0173L15.5833 20.4201V29.75H18.4167V20.4201L25.0139 27.0173L27.0173 25.0139L20.4201 18.4167H29.75V15.5833H20.4201L27.0173 8.98612L25.0139 6.98265L18.4167 13.5799V4.25Z"
-                    fill="#B18C07"
-                  />
-                </svg>
+                  <span>
+                    {dealData?.tag_line?.data}
+                  </span>
+                </section>
+              )}
 
-                <span>
-                  {activeDeal.description}
-                </span>
-              </section>
 
               {isPrivateDeal ? <>
                 <div className="private-qualities">
@@ -243,15 +272,15 @@ const router = useRouter();
 
               <IPOCollapse isPrivateDeal={isPrivateDeal} />
 
-             
+
 
 
               <Valuation isPrivateDeal={isPrivateDeal} />
 
 
-            
 
-              <Shares isPrivateDeal = {isPrivateDeal} />
+
+              <Shares isPrivateDeal={isPrivateDeal} />
               {/* <div className="ipo-timeline-section mobile-ipo-timeline-section">
                 <h3>IPO Timeline</h3>
 
@@ -310,7 +339,7 @@ const router = useRouter();
               </div> */}
             </div>
 
-            <Featured isPrivateDeal={isPrivateDeal} />
+            <Featured isPrivateDeal={isPrivateDeal} data={setDealDataDetails} />
 
 
           </section>

@@ -11,8 +11,6 @@ import IconCarousel from './IconCarousel'
 const NetworkStack = () => {
     return (
         <>
-
-
             <section className={styles.networkStack}>
                 <img src="/stack-overlay.png" alt="background" className={styles.overlay} />
 

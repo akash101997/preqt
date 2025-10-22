@@ -1119,6 +1119,7 @@ margin-bottom: 0;
 
 .topbar {
   display: flex;
+  align-items: center;
 }
 
 .shares-header {

@@ -1,41 +1,53 @@
-import React from 'react'
-import { PrivateDart, PrivateFire, PrivateGrowth, PrivateNetwork, PublicDart, PublicFire, PublicGrowth, PublicNetwork } from './SvgIcon'
+"use client";
+import React from "react";
+import { useDealStore } from "@/store/dealStore";
 
 const Featured = ({ isPrivateDeal }) => {
-  return (
+  const dealDetails = useDealStore((state) => state.dealDetails);
+  const dealData = dealDetails?.data?.deal_setpData;
 
-    <section className="why-section">
+  const features = dealData?.features?.data || [];
+
+  if (dealData?.featured?.status ) return null;
+
+  return (
+    <section className={`why-section ${isPrivateDeal ? "private" : "public"}`}>
       <h2>Why This is Featured on Preqt</h2>
       <section>
         <div className="why-subsection">
-          <div>
-            {isPrivateDeal ? <PrivateDart /> : <PublicDart />}
-
-            {isPrivateDeal ? <h4> Experienced, Vision-Led Founding Team</h4> : <h4>Knowledge & Experience of  Promotors</h4>}
-
-          </div>
-          <div>
-            {isPrivateDeal ? <PrivateFire /> : <PublicFire />}
-            {isPrivateDeal ? <h4>End-to-End Execution Model</h4> : <h4>Scalable & Flexible  Fleet Model</h4>}
-
-          </div>
+          {features.slice(0, 2).map((feature, idx) => (
+            <div key={idx} className="why-feature">
+               {feature.attachments?.[0]?.path ? (
+                <img
+                src={`${process.env.NEXT_PUBLIC_USER_BASE}/admin${feature.attachments[0].path.replace(/^public\//, "")}`}
+                  alt={feature.title || "Feature icon"}
+                  className={`feature-icon ${isPrivateDeal ? "private-icon" : "public-icon"}`}
+                />
+              ) : null}
+              <h4>{feature?.title || "N/A"}</h4>
+              <p>{feature?.description || ""}</p>
+            </div>
+          ))}
         </div>
 
         <div className="why-subsection">
-          <div>
-            {isPrivateDeal ? <PrivateGrowth/> : <PublicGrowth/>}
-            {isPrivateDeal ? <h4>Capacity Expansion and High-Growth Plans</h4> : <h4>Elivia - Vehicle Tracking Technology</h4>}
-          </div>
-          <div>
-          {isPrivateDeal? <PrivateNetwork/> : <PublicNetwork/>}
-            {isPrivateDeal ? <h4>Diversified Revenue Streams</h4> : <h4>Robust Network</h4>}
-
-          </div>
+          {features.slice(2, 4).map((feature, idx) => (
+            <div key={idx} className="why-feature">
+               {feature.attachments?.[0]?.path ? (
+                <img
+                  src={`${process.env.NEXT_PUBLIC_USER_BASE}/admin${feature.attachments[0].path.replace(/^public\//, "")}`}
+                  alt={feature.title || "Feature icon"}
+                  className={`feature-icon ${isPrivateDeal ? "private-icon" : "public-icon"}`}
+                />
+              ) : null}
+              <h4>{feature?.title || "N/A"}</h4>
+              <p>{feature?.description || ""}</p>
+            </div>
+          ))}
         </div>
       </section>
     </section>
+  );
+};
 
-  )
-}
-
-export default Featured
+export default Featured;

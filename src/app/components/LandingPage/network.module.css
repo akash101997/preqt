@@ -4,6 +4,7 @@
     position: relative;
 }
 
+
 .overlay {
     position: absolute;
     top: 0%;
@@ -67,14 +68,15 @@
 }
 
 .mainContainer {
-    z-index: 8;
     border-radius: 160px 160px 0 0;
     border-top: 1px solid rgba(171, 171, 171, 0.40);
-    background: radial-gradient(70.71% 70.71% at 50% 50%, #281D03 0%, #111 55.7%);
+    background: 
+      url('/dots-layer.svg') center 2% no-repeat,   /* top layer */
+      url('/landing-ellipse.png') center 1% no-repeat; /* bottom layer */ /* background gradient */
+      background-size: 75%, 120%;
     padding: 125px 0 215px 0;
-    background: url(/dots-layer.svg) center top no-repeat;
-    z-index: 10;
-}
+    position: relative;
+  }
 
 .headingDiv {
     text-align: center;
@@ -366,10 +368,13 @@
 
     .mainContainer {
         border-radius: 20px 20px 0 0;
+       background-size: 200%, 300%;
+        background-position: center 10%, center 5%;
     }
 
     .networkStack {
         padding: 30px 0px;
+        padding-bottom: 0;
     }
 }
 

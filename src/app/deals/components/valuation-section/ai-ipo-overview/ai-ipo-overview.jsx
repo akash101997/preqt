@@ -4,10 +4,14 @@ import Image from "next/image";
 import { OfferDateIcon, PatIcon, PeMultiple, RevenueIcon, Valuation } from "../../name-section/svgicon";
 import { Collapse } from "react-bootstrap";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { useDealStore } from "@/store/dealStore";
+import Link from "next/link";
 
 const AiIpoOverview = ({ isPrivateDeal = false }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [open, setOpen] = useState(false);
+  const dealDetails = useDealStore((state) => state.dealDetails);
+  const dealData = dealDetails?.data?.deal_setpData;
 
   useEffect(() => {
     const handleResize = () => {
@@ -59,70 +63,38 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
       {!isPrivateDeal &&
         <>
           <section className="body-section4" >
-            <section>
-              <p>Minimum Investment</p>
-              <h6 className="mb-0">-</h6>
-            </section>
+            {dealData?.min_investment?.status && (
+              <section>
+                <p>Minimum Investment</p>
+                <h6 className="mb-0">INR {dealData?.min_investment?.data?.amount_in_inr} {dealData?.min_investment?.data?.per_lots && (<small>/{dealData?.min_investment?.data?.lot_size}Lots</small>)}</h6>
+              </section>
+            )}
 
-            <section className="bank-sec">
-              <div className="bank-det">
-                <p>Merchant Banker</p>
-                <div className="bank-det-value">
-                  <h6 className="mb-0">Corporate Professionals</h6>
-                  <img src="/assets/pictures/corporate.svg" alt="" style={{ height: "36px", width: "36px" }} />
-                </div>
-              </div>
+            {
+              dealData?.merchant_banker?.status && (
+                <section className="bank-sec">
+                  <div className="bank-det">
+                    <p>Merchant Banker</p>
+                    <div className="bank-det-value">
+                      <h6 className="mb-0">{dealData?.merchant_banker?.data?.banker_name}</h6>
+                      <img src={`${process.env.NEXT_PUBLIC_USER_BASE}admin/${dealData?.merchant_banker?.data?.logo?.[0]?.path}`} alt="" style={{ height: "36px", width: "36px" }} />
+                    </div>
+                  </div>
 
-            </section>
+                </section>
+              )
+            }
 
-            <section className="ipoDoc">
-              <p>IPO Doc</p>
-              <h6 className="drhp mb-0">
-                DRHP/RHP
-                <svg
+{dealData?.ipo_doc?.status && (
+  <section className="ipoDoc">
+    <p>IPO Doc</p>
+    <h6 className="drhp mb-0">
+      {dealData?.ipo_doc?.data?.label_name || "No Document"}
+    </h6>
+  </section>
+)}
 
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M15 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V7L15 2Z"
-                    stroke="#B59131"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M14 2V6C14 6.53043 14.2107 7.03914 14.5858 7.41421C14.9609 7.78929 15.4696 8 16 8H20"
-                    stroke="#B59131"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M10 9H8"
-                    stroke="#B59131"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M16 13H8"
-                    stroke="#B59131"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M16 17H8"
-                    stroke="#B59131"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </h6>
-            </section>
+
           </section>
           <div className="seperator"></div>
         </>
@@ -153,14 +125,21 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                     className="ipo-dropdownButton"
                     onClick={() => setOpen(!open)}
                   >
-                    <div className="ipo-dropdown">
-                      <p>Offer Date</p>
-                      <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><OfferDateIcon /></span>
-                    </div>
-                    <div className="ipo-dropdown">
-                      <h6 className="offer-day">Thursday, September 25, 2025</h6>
-                      <span  className="dropDown">{open ? <ChevronUp /> : <ChevronDown />}</span>
-                    </div>
+                    {
+                      dealData?.offer_date?.status && (
+                        <>
+                          <div className="ipo-dropdown">
+                            <p>Offer Date</p>
+                            <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><OfferDateIcon /></span>
+                          </div>
+                          <div className="ipo-dropdown">
+                            <h6 className="offer-day">{dealData?.offer_date?.data?.from} - {dealData?.offer_date?.data?.to}</h6>
+                            <span className="dropDown">{open ? <ChevronUp /> : <ChevronDown />}</span>
+                          </div>
+                        </>
+                      )
+                    }
+
 
                   </div>
 
@@ -224,54 +203,73 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                 </>
               ) : (
                 <>
-                  <div>
-                    <p>Offer Date</p>
-                    <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><OfferDateIcon /></span>
-                  </div>
-                  <h6 className="offer-day">Thursday, September 25, 2025</h6>
+                  {dealData?.offer_date?.status && (
+                    <>
+                      <div>
+                        <p>Offer Date</p>
+                        <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><OfferDateIcon /></span>
+                      </div>
+                      <h6 className="offer-day">{dealData?.offer_date?.data?.from} - {dealData?.offer_date?.data?.to}</h6>
+                    </>
+                  )}
+
                 </>
               )}
             </section>
           )}
           <div className="smallcard-section-subcontainer-div">
-            <section className="subs top">
-              <section>
-                <div>
-                  <span className="data">Valuation</span>
 
-                  <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><Valuation /></span>
-                </div>
-                <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "INR 75 Cr" : "-"}</span>
+            {dealData?.valuation_in_cr?.status && (
+              <section className="subs top">
+                <section>
+                  <div>
+                    <span className="data">Valuation</span>
+
+                    <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><Valuation /></span>
+                  </div>
+                  <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>INR {dealData?.valuation_in_cr?.data} Cr</span>
+                </section>
+
+                {
+                  dealData?.revenue_fy25_in_cr?.status && (<section>
+                    <div>
+                      <span className="data">Revenue (FY'25) </span>
+                      <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><RevenueIcon /></span>
+                    </div>
+                    <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>INR {dealData?.revenue_fy25_in_cr?.data} Cr</span>
+                  </section>)
+                }
+
               </section>
+            )}
 
-              <section>
-                <div>
-                  <span className="data">Revenue (FY'25) </span>
-                  <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><RevenueIcon /></span>
-                </div>
-                <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "INR 101.4 Cr" : "INR 94.1 Cr "}</span>
-              </section>
-            </section>
 
             <section className="subs top">
-              <section>
+
+              {dealData?.pat_fy25_in_cr?.status && (<section>
                 <div>
                   <span className="data">PAT(FY'25)</span>
                   <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><PatIcon /></span>
                 </div>
                 <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>
-                  {isPrivateDeal ? "INR 7.0 Cr" : "INR 11.5 Cr"}
+                  INR {dealData?.pat_fy25_in_cr?.data} Cr
                 </span>
-              </section>
+              </section>)}
+
 
               {/* {color:"#000000" , fontWeight:"500"} */}
-              <section>
-                <div>
-                  <span >{isPrivateDeal ? <span className="data">P/E Multiple</span> : <span className="data">Issue Size</span>}</span>
-                  <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><PeMultiple /></span>
-                </div>
-                <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}>{isPrivateDeal ? "10.7x" : " INR 66-67.5 Cr"}</span>
-              </section>
+
+              {dealData?.issue_size?.status &&
+                (
+                  <section>
+                    <div>
+                      <span >{isPrivateDeal ? <span className="data">P/E Multiple</span> : <span className="data">Issue Size</span>}</span>
+                      <span className={isPrivateDeal ? "valuation-bg" : "valuation-bg-light"}><PeMultiple /></span>
+                    </div>
+                    <span className="offer-day" style={{ color: isPrivateDeal ? "white" : "#000000" }}></span>
+                  </section>
+                )}
+
             </section>
           </div>
         </div>
@@ -279,93 +277,138 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
 
 
 
-        {isPrivateDeal ? <>
+        {isPrivateDeal ?
+         <>
           <section className="main-other">
-            <section className="others">
-              <h6>Round Size</h6>
-              <span>INR 15 Cr</span>
-            </section>
+            {dealData?.round_size?.status && (
+              <section className="others">
+                <h6>Round Size</h6>
+                <span>INR 15 Cr</span>
+              </section>
+            )}
 
-            <section className="others">
-              <h6>Face Value</h6>
-              <span>INR 10</span>
-            </section>
+
+{dealData?.face_value?.status && (
+  <section className="others">
+    <h6>Face Value</h6>
+    <span>
+      {dealData?.face_value?.data?.data ??
+       dealData?.face_value?.data ??
+       "-"}
+    </span>
+  </section>
+)}
+
+
+
           </section>
 
           <section className="main-other">
-            <section className="others">
-              <h6>Offer Price</h6>
-              <span>INR 200</span>
-            </section>
 
-            <section className="others">
-              <h6>Lot Size </h6>
-              <span>-</span>
-            </section>
+            {dealData?.offer_price?.status && (
+              <section className="others">
+                <h6>Offer Price</h6>
+                <span>INR {dealData?.offer_price?.data}</span>
+              </section>
+            )}
+
+            {dealData?.lot_size?.status && (
+              <section className="others">
+                <h6>Lot Size </h6>
+                <span>{dealData?.lot_size?.data} Shares</span>
+              </section>
+            )}
           </section>
 
           <section className="main-other">
-            <section className="others">
-              <h6>Sale Type</h6>
-              <span>Fresh Issue</span>
-            </section>
+            {
+              dealData?.sale_type?.status && (
+                <section className="others">
+                  <h6>Sale Type</h6>
+                  <span>{dealData?.sale_type?.data}</span>
+                </section>
+              )
+            }
 
-            <section className="others">
-              <h6>PAT (FY25)</h6>
-              <span>INR 7.0 Cr</span>
-            </section>
+            {dealData?.pat_fy25_in_cr?.status && (
+              <section className="others">
+                <h6>PAT (FY25)</h6>
+                <span>INR {dealData?.pat_fy25_in_cr?.data} Cr</span>
+              </section>
+            )}
           </section>
 
 
           <section className="main-other">
-            <section className="others">
-              <h6>P/E Multiple</h6>
-              <span>10.7x</span>
-            </section>
 
-            <section className="others">
-              <h6>CAGR Growth 3Y</h6>
-              <span>42.6%</span>
-            </section>
+            {dealData?.pe_multiple?.status && (
+              <section className="others">
+                <h6>P/E Multiple</h6>
+                <span>{dealData?.pe_multiple?.data}x</span>
+              </section>
+            )}
+
+            {dealData?.cagr_growth_3y_percent?.status && (
+              <section className="others">
+                <h6>CAGR Growth 3Y</h6>
+                <span>{dealData?.cagr_growth_3y_percent?.data}%</span>
+              </section>
+            )}
+
           </section>
 
           <section className="main-other">
-            <section className="others">
-              <h6>ROE (FY'25)</h6>
-              <span>68.7%</span>
-            </section>
+            {dealData?.roe_fy25_percent?.status && (
+              <section className="others">
+                <h6>ROE (FY'25)</h6>
+                <span>{dealData?.roe_fy25_percent?.data}%</span>
+              </section>
+            )}
 
-            <section className="others">
-              <h6>ROCE (FY'25)</h6>
-              <span>59.9%</span>
-            </section>
+            {dealData?.roce_fy25_percent?.status && (
+              <section className="others">
+                <h6>ROCE (FY'25)</h6>
+                <span>{dealData?.roce_fy25_percent?.data}%</span>
+              </section>
+            )}
+
           </section>
 
-       <section className="main-other">
-               {/* <section className="others">
+          <section className="main-other">
+            {/* <section className="others">
               <h6>Price to Book Value</h6>
               <span>-</span>
             </section> */}
 
-            <section className="others">
-              <h6>Debt/Equity (FY'25)</h6>
-              <span>3.0</span>
-            </section>
+            {
+              dealData?.debt_to_equity_fy25?.status && (
+                <section className="others">
+                  <h6>Debt/Equity (FY'25)</h6>
+                  <span>{dealData?.debt_to_equity_fy25?.data}</span>
+                </section>
+              )
+            }
 
-             <section className="others">
-              <h6>Merchant banker appointed</h6>
-              <span>-</span>
-            </section>
+
+            {
+              dealData?.merchant_banker_appointed?.status && (
+                <section className="others">
+                  <h6>Merchant banker appointed</h6>
+                  <span>-</span>
+                </section>
+              )
+            }
+
           </section>
 
 
           {/* <section className="main-other"> */}
-            {/* <section className="others">
+          {/* <section className="others">
               <h6>Merchant banker appointed</h6>
               <span>-</span>
             </section> */}
 
-            {/* <section className="others">
+          {/* <section className="others">
               <h6>Expecting listing date</h6>
               <span>-</span>
             </section> */}
@@ -380,143 +423,7 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
               <span>-</span>
             </section> */}
 
-            <section className="others">
-              <h6>
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g clipPath="url(#clip0_2198_15260)">
-                    <path
-                      d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z"
-                      stroke="black"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M9 1.5C7.07418 3.52212 6 6.20756 6 9C6 11.7924 7.07418 14.4779 9 16.5C10.9258 14.4779 12 11.7924 12 9C12 6.20756 10.9258 3.52212 9 1.5Z"
-                      stroke="black"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M1.5 9H16.5"
-                      stroke="black"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_2198_15260">
-                      <rect width="18" height="18" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-                Company Website
-              </h6>
-              <a href="https://hvrsolar.com/" target="_blank">www.hvrsolar.com/</a>
-            </section>
-          </section>
-
-
-
-
-        </>
-
-          : <>
-            <section className="main-other">
-              <section className="others">
-                <h6>Face Value</h6>
-                <span>10</span>
-              </section>
-
-              <section className="others">
-                <h6>Offer Price</h6>
-                <span>INR 384</span>
-              </section>
-            </section>
-
-            <section className="main-other">
-              <section className="others">
-                <h6>Lot Size </h6>
-                <span>1000 Shares</span>
-              </section>
-
-              <section className="others">
-                <h6>Sale Type</h6>
-                <span>Fresh Issue</span>
-              </section>
-            </section>
-
-            <section className="main-other">
-              <section className="others">
-                <h6>PAT (FY25)</h6>
-                <span>INR 11.5 Cr</span>
-              </section>
-
-              <section className="others">
-                <h6>PAT Margin (FY25)</h6>
-                <span>12%</span>
-              </section>
-            </section>
-
-            <section className="main-other">
-              <section className="others">
-                <h6>P/E Multiple</h6>
-                <span>-</span>
-              </section>
-
-              <section className="others">
-                <h6>EBITDA(FY'25)</h6>
-                <span>INR 24.9 Cr </span>
-              </section>
-            </section>
-
-            <section className="main-other">
-
-              <section className="others">
-                <h6>CAGR Growth ( FY'22-FY'25)</h6>
-                <span>17% </span>
-              </section>
-
-              <section className="others">
-                <h6>ROE (FY'25)</h6>
-                <span>75.9%</span>
-              </section>
-            </section>
-
-            <section className="main-other">
-
-              <section className="others">
-                <h6>ROCE (FY'25)</h6>
-                <span>25.3%</span>
-              </section>
-               <section className="others">
-                <h6>Debt/Equity(FY'25)</h6>
-                <span>
-                  2.6
-                </span>
-              </section>
-
-
-             
-
-            </section >
-            <section className="main-other">
-              {/* <section className="others">
-                <h6>Debt/Equity(FY'25)</h6>
-                <span>
-                  3.0 
-                </span>
-              </section> */}
-
-
+            {dealData?.company_website?.status && (
               <section className="others">
                 <h6>
                   <svg
@@ -557,10 +464,175 @@ const AiIpoOverview = ({ isPrivateDeal = false }) => {
                   </svg>
                   Company Website
                 </h6>
-                <a href="">www.ashwinimovers.com</a>
+                <Link href={`${dealData?.company_website?.data}`} target='_blank'>{dealData?.company_website?.data}</Link>
               </section>
+            )}
+          </section>
+
+
+
+
+        </>
+
+          :
+           <>
+            <section className="main-other">
+              {dealData?.face_value?.status && (
+                <section className="others">
+                  <h6>Face Value</h6>
+                  {dealData?.face_value?.data?.status && (<span>{dealData?.face_value?.data?.data}</span>)}
+                </section>
+              )}
+
+              {dealData?.offer_price?.status && (
+                <section className="others">
+                  <h6>Offer Price</h6>
+                  <span>INR {dealData?.offer_price?.data}</span>
+                </section>
+              )}
             </section>
-          </>}
+
+            <section className="main-other">
+              {dealData?.lot_size?.status && (
+                <section className="others">
+                  <h6>Lot Size </h6>
+                  <span>{dealData?.lot_size?.data} Shares</span>
+                </section>
+              )}
+
+              {
+                dealData?.sale_type?.status && (
+                  <section className="others">
+                    <h6>Sale Type</h6>
+                    <span>{dealData?.sale_type?.data}</span>
+                  </section>
+                )
+              }
+
+            </section>
+            <section className="main-other">
+              {dealData?.pat_fy25_in_cr?.status && (
+                <section className="others">
+                  <h6>PAT (FY25)</h6>
+                  <span>INR {dealData?.pat_fy25_in_cr?.data} Cr</span>
+                </section>
+              )}
+
+              {dealData?.pat_margin_percent?.status && (
+                <section className="others">
+                  <h6>PAT Margin (FY25)</h6>
+                  <span>{dealData?.pat_margin_percent?.data}%</span>
+                </section>
+              )}
+
+            </section>
+
+            <section className="main-other">
+
+              {dealData?.pe_multiple?.status && (
+                <section className="others">
+                  <h6>P/E Multiple</h6>
+                  <span>{dealData?.pe_multiple?.data}</span>
+                </section>
+              )}
+
+              {dealData?.ebitda_fy25_in_cr?.status && (
+                <section className="others">
+                  <h6>EBITDA(FY'25)</h6>
+                  <span>INR {dealData?.ebitda_fy25_in_cr?.data} Cr </span>
+                </section>
+              )}
+
+            </section>
+
+            <section className="main-other">
+              {dealData?.cagr_growth_3y_percent?.status && (
+                <section className="others">
+                  <h6>CAGR Growth ( FY'22-FY'25)</h6>
+                  <span>{dealData?.cagr_growth_3y_percent?.data}%</span>
+                </section>
+              )}
+
+              {
+                dealData?.roe_fy25_percent?.status && (
+                  <section className="others">
+                    <h6>ROE (FY'25)</h6>
+                    <span>{dealData?.roe_fy25_percent?.data}%</span>
+                  </section>
+                )
+              }
+
+            </section>
+
+            <section className="main-other">
+              {dealData?.roce_fy25_percent?.status && (
+                <section className="others">
+                  <h6>ROCE (FY'25)</h6>
+                  <span>{dealData?.roce_fy25_percent?.data}%</span>
+                </section>
+              )}
+
+              {dealData?.debt_to_equity_fy25?.status && (
+                <section className="others">
+                  <h6>Debt/Equity(FY'25)</h6>
+                  <span>
+                    {dealData?.debt_to_equity_fy25?.data}
+                  </span>
+                </section>
+              )}
+
+
+
+            </section >
+            <section className="main-other">
+              {dealData?.company_website?.status && (
+                <section className="others">
+                  <h6>
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clipPath="url(#clip0_2198_15260)">
+                        <path
+                          d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z"
+                          stroke="black"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M9 1.5C7.07418 3.52212 6 6.20756 6 9C6 11.7924 7.07418 14.4779 9 16.5C10.9258 14.4779 12 11.7924 12 9C12 6.20756 10.9258 3.52212 9 1.5Z"
+                          stroke="black"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M1.5 9H16.5"
+                          stroke="black"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_2198_15260">
+                          <rect width="18" height="18" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    Company Website
+                  </h6>
+                  <Link href={`${dealData?.company_website?.data}`} target='_blank'>{dealData?.company_website?.data}</Link>
+                </section>
+              )}
+
+            </section>
+          </>
+          }
 
       </section >
     </div >

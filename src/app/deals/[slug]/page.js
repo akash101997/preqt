@@ -2,16 +2,17 @@
 
 import { useParams } from "next/navigation";
 import Namedetailsection from "../components/name-section/Namesection";
+import { useDealStore } from "@/store/dealStore";
 
 
 export default function DealPage() {
   const { slug } = useParams();
+  const { selectedDeal } = useDealStore();
 
-  // You can fetch deal data here based on slug
-  // For now just pass slug to your detail component
+
   return (
     <div>
-      <Namedetailsection slug={slug} />
+      <Namedetailsection slug={slug} deal={selectedDeal} />
     </div>
   );
 }

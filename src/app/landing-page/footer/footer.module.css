@@ -34,7 +34,6 @@
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
-  margin-bottom: 1.5rem;
 }
 
 /* Left + Right fade gradients */
@@ -106,9 +105,16 @@
 
 /* === Subtext === */
 .subText {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 1);
-  margin: 1.5rem 0 2.5rem;
+  color: #FFF;
+text-align: center;
+font-family: "Helvetica Neue";
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 32px; /* 133.333% */
+max-width: 625px;
+ margin: 0 auto;
+ padding: 17px 0 32px 0;
 }
 
 /* === Golden Button === */

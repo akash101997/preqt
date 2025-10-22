@@ -1,10 +1,12 @@
 "use client";
+import { useDealStore } from "@/store/dealStore";
 import Loader from "@/app/components/Loader";
 import styles from "../../../components/home/DealsTalk/DealsTalk.module.css";
 import stylesdeals from "./AllDeals.module.css";
 import Link from "next/link";
 // import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
+import Cookies from "js-cookie";
 
 import React from "react";
 
@@ -12,91 +14,94 @@ function AllDealsContent() {
     const [loading, setLoading] = useState(true);
     const [allDeals, setAllDeals] = useState([]);
     const [error, setError] = useState([]);
-
-
-
-
-    const dealsConfig = {
-        "1": { deal: "public" },
-        "2": { deal: "private" },
-        "3": { deal: "private" },
-        "4": { deal: "private" }
-    };
+    const { setSelectedDeal } = useDealStore();
+   
 
 
     useEffect(() => {
         async function fetchDeals() {
+            setLoading(true);
             try {
-                const res = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}admin/api/deals/all-deals/?limit=100`);
+                const authToken = Cookies.get('accessToken') ; // or from cookies
+                const res = await fetch(`${process.env.NEXT_PUBLIC_USER_BASE}admin/api/deals/all-deals/?limit=200`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${authToken}` // pass the token here
+                    }
+                });
+    
                 if (!res.ok) {
                     throw new Error(`HTTP error! status: ${res.status}`);
-
                 }
+    
                 const data = await res.json();
                 console.log('all deals data', data);
                 setAllDeals(data);
-            }
-            catch (err) {
+            } catch (err) {
                 setError(err.message);
             } finally {
                 setLoading(false);
             }
         }
+    
         fetchDeals();
-    }, [])
-
-
-
-
+    }, []);
+    
 
     const renderCard1 = (deal) => (
-        <Link href={`/deals/${deal.id}`} className={stylesdeals.cardLink}>
+        <Link href={`/deals/${deal.slug}`} 
+        onClick={() => setSelectedDeal(deal)}
+        className={stylesdeals.cardLink}>
             <div className={styles.cardContainer1}>
                 <div className={styles.cardInnerSections}>
                     <article className={styles.cardIPOsection}>
-                        {deal.tags .map((tag, index) => (
-                                <div
-                                    key={index}
-                                    className={styles.IPOheading}
-                                // optional for additional styling
-                                >
-                                    <p className={styles.HeadingContent}>{tag.trim()}</p>
-                                </div>
-                            ))}
+                        {deal.tags.map((tag, index) => (
+                            <div
+                                key={index}
+                                className={styles.IPOheading}
+                            >
+                                <p className={styles.HeadingContent}>{tag.trim()}</p>
+                            </div>
+                        ))}
                     </article>
 
 
                     <div className={styles.AnthemSection}>
-                        <img src={deal.companyLogo} alt="" className={styles.anthemPicture} />
+                        <img
+                            src={`${process.env.NEXT_PUBLIC_USER_BASE}admin/${deal.company_logo?.[0]?.path.replace("public/", "")}`}
+                            alt={deal.company_name}
+                            className={styles.anthemPicture}
+                        />
                         <p className={styles.anthemHeading}>{deal.company_name}</p>
                     </div>
 
-                    <p className={styles.dealCardContent}>{deal.key_highlights}</p>
+                    <p className={styles.dealCardContent}>{deal.tag_line}</p>
 
                     <div className={styles.revenueMainContainer}>
                         <section className={styles.revenueSection}>
                             <article className={styles.Revenue}>
                                 <p className={styles.revenuHeading}>Revenue (FY'25)</p>
-                                <p className={styles.priceInRupee}>{deal.revenue}</p>
+                                <p className={styles.priceInRupee}>INR {deal.revenue_fy25_in_cr} Cr</p>
                             </article>
                             <article>
                                 <p className={styles.revenuHeading}>PAT (FY'25)</p>
-                                <p className={styles.priceInRupee}>{deal.pat_fy23}</p>
+                                <p className={styles.priceInRupee}>INR {deal.pat_fy25_in_cr} Cr</p>
                             </article>
                             <article>
                                 <p className={styles.revenuHeading}>PAT multiple</p>
-                                <p className={styles.priceInRupee}></p>
+                                <p className={styles.priceInRupee}>({deal.pat_margin_percent}%)</p>
                             </article>
                         </section>
 
                         <section className={styles.revenueSection}>
                             <article className={styles.Revenue}>
                                 <p className={styles.revenuHeading}>CAGR Growth 3Y</p>
-                                <p className={styles.priceInRupee}>{deal.cagr_growth3Y}</p>
+                                <p className={styles.priceInRupee}>{deal.cagr_growth_3y_percent}</p>
                             </article>
                             <article>
                                 <p className={styles.revenuHeading}>ROE (FY'25)</p>
-                                <p className={styles.priceInRupee}>{deal.roe}</p>
+                                <p className={styles.priceInRupee}>{deal.roe_fy25_percent}</p>
                             </article>
                             <article>
                                 <p className={styles.revenuHeading}>Issue Opening Date</p>
@@ -128,21 +133,21 @@ function AllDealsContent() {
     );
 
     const renderCard2 = (deal) => (
-        <Link href={`/deals/${deal.id}`} className={stylesdeals.cardLink}>
+        <Link href={`/deals/${deal.slug}`}
+        onClick={() => setSelectedDeal(deal)}
+         className={stylesdeals.cardLink}>
             <div className={styles.card2Container}>
                 <div className={styles.card2InnerSections}>
                     <article className={styles.card2IPOsection}>
 
-                        {deal.tags.map((tag, index) => (
-                                <div
-                                    key={index}
-                                    className={styles.card2IPOtag}
-                                // optional for additional styling
-
-                                >
-                                    <p className={styles.card2IPOtext}>{tag.trim()}</p>
-                                </div>
-                            ))}
+                        {deal.tags?.map((tag, index) => (
+                            <div
+                                key={index}
+                                className={styles.card2IPOtag}
+                            >
+                                <p className={styles.card2IPOtext}>{tag.trim()}</p>
+                            </div>
+                        ))}
                     </article>
 
                     <div className={styles.card2CompanySection}>
@@ -221,11 +226,11 @@ function AllDealsContent() {
         </Link>
     );
 
-    if(loading){
-        return<Loader/>;
-    } 
-    if(!allDeals || allDeals.length == 0){
-       return <div>No deals currently available.</div>; 
+    if (loading) {
+        return <Loader />;
+    }
+    if (!allDeals || allDeals.length == 0) {
+        return <div>No deals currently available.</div>;
     }
 
     return (

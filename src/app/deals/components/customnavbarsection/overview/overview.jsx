@@ -10,10 +10,6 @@ import { useSearchParams } from "next/navigation";
 import Shareholding from "../fundraise/Shareholding";
 
 const Overview = ({isPrivateDeal}) => {
-  // const searchParams = useSearchParams();
-  // const dealId = searchParams?.get("dealId");
-  // console.log("This is the dealid",dealId);
-  // const isPrivateDeal = ["2", "3", "4"].includes(dealId);
   return (
     <div className="overview-container">
       

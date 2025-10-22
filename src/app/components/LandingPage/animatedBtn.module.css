@@ -216,6 +216,9 @@
     .wrapper{
         max-width: 250px;
     }
+    .circularAnimation{
+        margin-bottom: 10px;
+    }
     .button{
         padding: 0px 35px;
     }
