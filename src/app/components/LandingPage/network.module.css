@@ -222,6 +222,7 @@
     overflow: hidden;
     min-width: max-content;
     position: relative;
+    
 }
 
 .carouselContent {
@@ -306,6 +307,11 @@
     .imageCard img {
         width: 100%;
         object-fit: fill;
+        transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
     }
 
     .valueDiv div {
