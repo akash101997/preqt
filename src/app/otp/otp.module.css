@@ -236,10 +236,7 @@ box-shadow: 0 4px 36.1px 0 rgba(0, 0, 0, 0.10);
 
 @media (max-width: 480px) {
   .wrapper {
-    padding-top: 0;
-    padding-left: 25px;
-    padding-right: 25px;
-    justify-content: center;
+    padding: 25px 15px;
   }
 
  

@@ -171,10 +171,7 @@ box-shadow: 0 4px 36.1px 0 rgba(0, 0, 0, 0.10);
 
 @media (max-width: 480px) {
   .wrapper {
-    padding-top: unset;
-    padding-left: 15px;
-    padding-right: 15px;
-    justify-content: center;
+   padding: 25px 15px;
   }
   
   .backBtn {

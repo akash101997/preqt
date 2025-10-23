@@ -160,11 +160,11 @@
 }
 
 .slickWrapper :global(.slick-dots) {
-  position: absolute;
-  bottom: -36px; /* distance from slider */
+  position: static; /* distance from slider */
   display: block;
   width: 100%;
   padding: 0;
+  padding-top: 10px;
   margin: 0;
   list-style: none;
   text-align: center;
